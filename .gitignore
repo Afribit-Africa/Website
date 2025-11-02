@@ -49,3 +49,8 @@ next-env.d.ts
 *.swo
 *~
 .DS_Store
+
+# Large video files (deploy via Vercel directly or use CDN)
+public/Media/Videos/Merchant\ Interviews/
+public/Media/Videos/News\ and\ major\ shoutouts/
+public/Media/Videos/Complilation*.mp4
