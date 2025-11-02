@@ -1,0 +1,355 @@
+@import "tailwindcss";
+
+/* ===============================================
+   AFRIBIT AFRICA - PROFESSIONAL DESIGN SYSTEM
+   Dark Theme with Glassmorphism
+   =============================================== */
+
+@layer base {
+  :root {
+    /* Bitcoin Colors */
+    --bitcoin: #F7931A;
+    --bitcoin-dark: #E68A17;
+    --bitcoin-light: #FFB84D;
+    
+    /* Dark Theme */
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #141414;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A0A0A0;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem; /* Account for floating header */
+  }
+
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 0;
+      scroll-padding-bottom: 5rem; /* Account for bottom nav on mobile */
+    }
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-inter), sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Font Classes */
+  .font-display {
+    font-family: var(--font-orbitron), sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-heading {
+    font-family: var(--font-space-grotesk), sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-numbers {
+    font-family: var(--font-rajdhani), sans-serif;
+    font-feature-settings: "tnum" 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .font-space-grotesk {
+    font-family: var(--font-space-grotesk), sans-serif;
+  }
+
+  /* Safe area for mobile (top navigation) */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  /* Animations */
+  @keyframes island-expand {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .animate-island-expand {
+    animation: island-expand 0.3s ease-out;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Cards */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(247, 147, 26, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 40px rgba(247, 147, 26, 0.15);
+  }
+
+  /* Thin floating header style */
+  header .glass-card {
+    padding: 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Bitcoin Gradient Text */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--bitcoin) 0%, var(--bitcoin-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Background Gradients */
+  .bg-gradient-radial {
+    background: radial-gradient(circle at center, rgba(247, 147, 26, 0.05) 0%, transparent 70%);
+  }
+
+  .bg-gradient-bitcoin {
+    background: linear-gradient(135deg, var(--bitcoin) 0%, var(--bitcoin-dark) 100%);
+  }
+
+  .bg-linear-to-b {
+    background: linear-gradient(to bottom, var(--tw-gradient-stops));
+  }
+
+  /* Button Styles */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    white-space: nowrap;
+    font-family: inherit;
+  }
+
+  .btn-lg {
+    padding: 1rem 2rem;  /* 16px 32px - PROPER PADDING */
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--bitcoin) 0%, var(--bitcoin-dark) 100%);
+    color: white;
+    box-shadow: 0 4px 14px rgba(247, 147, 26, 0.4);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(247, 147, 26, 0.6);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: calc(1rem - 2px) calc(2rem - 2px); /* Account for border */
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(247, 147, 26, 0.5);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .btn-ghost:hover {
+    color: var(--bitcoin);
+    background: rgba(247, 147, 26, 0.1);
+  }
+
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Section Spacing */
+  .section-lg {
+    padding: 8rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .section-lg {
+      padding: 4rem 0;
+    }
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes wave {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-25%) translateY(-5px);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  /* Skeleton Shimmer Effect */
+  .shimmer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 2s infinite;
+  }
+
+  .wave-animation {
+    animation: wave 3s ease-in-out infinite;
+  }
+
+  .wave-animation-delay {
+    animation: wave 3s ease-in-out infinite;
+    animation-delay: -1.5s;
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(247, 147, 26, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 20px 10px rgba(247, 147, 26, 0.1);
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--bitcoin-dark);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--bitcoin);
+  }
+
+  /* GPU Acceleration for GSAP animations */
+  .hero-title,
+  .hero-subtitle,
+  .hero-cta,
+  .mission-text,
+  .program-card,
+  .testimonial-card,
+  .stat-item {
+    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
