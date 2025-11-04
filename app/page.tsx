@@ -41,6 +41,7 @@ export default function HomePage() {
             muted 
             playsInline
             preload="metadata"
+            poster="/Media/Images/Hero section video background fallback.png"
             className="w-full h-full object-cover opacity-30"
           >
             <source src="/Media/Videos/Home hero section video.mp4" type="video/mp4" />

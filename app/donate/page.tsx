@@ -136,20 +136,25 @@ export default function DonatePage() {
       
       while (retries > 0 && !lightningInvoice) {
         try {
-          console.log(`Fetching payment methods (attempt ${4 - retries}/3)...`);
+          // Only log in development mode
+          if (process.env.NODE_ENV === 'development') {
+            console.log(`Fetching payment methods (attempt ${4 - retries}/3)...`);
+          }
           
           const paymentMethodsResponse = await fetch(`/api/donations/${data.invoice.id}/payment-methods`);
           paymentMethodsData = await paymentMethodsResponse.json();
           
-          console.log('Payment methods response:', {
-            ok: paymentMethodsResponse.ok,
-            status: paymentMethodsResponse.status,
-            isArray: Array.isArray(paymentMethodsData),
-            count: Array.isArray(paymentMethodsData) ? paymentMethodsData.length : 0,
-            methods: Array.isArray(paymentMethodsData) 
-              ? paymentMethodsData.map((pm: any) => pm.paymentMethod)
-              : 'not an array'
-          });
+          if (process.env.NODE_ENV === 'development') {
+            console.log('Payment methods response:', {
+              ok: paymentMethodsResponse.ok,
+              status: paymentMethodsResponse.status,
+              isArray: Array.isArray(paymentMethodsData),
+              count: Array.isArray(paymentMethodsData) ? paymentMethodsData.length : 0,
+              methods: Array.isArray(paymentMethodsData) 
+                ? paymentMethodsData.map((pm: any) => pm.paymentMethod)
+                : 'not an array'
+            });
+          }
           
           if (paymentMethodsResponse.ok && Array.isArray(paymentMethodsData)) {
             // Find the Lightning payment method
@@ -162,13 +167,15 @@ export default function DonatePage() {
               (pm.cryptoCode === 'BTC' && pm.paymentMethod?.includes('Lightning'))
             );
             
-            console.log('Lightning method search:', {
-              found: !!lightningMethod,
-              paymentMethodId: lightningMethod?.paymentMethodId,
-              method: lightningMethod?.paymentMethod,
-              hasDestination: !!lightningMethod?.destination,
-              destination: lightningMethod?.destination?.substring(0, 20) + '...'
-            });
+            if (process.env.NODE_ENV === 'development') {
+              console.log('Lightning method search:', {
+                found: !!lightningMethod,
+                paymentMethodId: lightningMethod?.paymentMethodId,
+                method: lightningMethod?.paymentMethod,
+                hasDestination: !!lightningMethod?.destination,
+                destination: lightningMethod?.destination?.substring(0, 20) + '...'
+              });
+            }
             
             if (lightningMethod?.destination) {
               lightningInvoice = lightningMethod.destination;
@@ -178,12 +185,16 @@ export default function DonatePage() {
           
           // Wait before retry
           if (retries > 1) {
-            console.log('Lightning not ready, waiting 2 seconds...');
+            if (process.env.NODE_ENV === 'development') {
+              console.log('Lightning not ready, waiting 2 seconds...');
+            }
             await new Promise(resolve => setTimeout(resolve, 2000));
           }
           retries--;
         } catch (error) {
-          console.error('Error fetching payment methods:', error);
+          if (process.env.NODE_ENV === 'development') {
+            console.error('Error fetching payment methods:', error);
+          }
           retries--;
           if (retries > 0) {
             await new Promise(resolve => setTimeout(resolve, 2000));
