@@ -34,15 +34,17 @@ export default function HomePage() {
       {/* ========== HERO SECTION ========== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-24 md:pb-0 pt-24 lg:pt-32">
         {/* Background Video */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 overflow-hidden">
           <video 
             autoPlay 
             loop 
             muted 
-            playsInline 
+            playsInline
+            preload="metadata"
             className="w-full h-full object-cover opacity-30"
           >
             <source src="/Media/Videos/Home hero section video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
           </video>
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/60 to-black" />
