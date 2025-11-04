@@ -32,7 +32,7 @@ export default function HomePage() {
       <GSAPAnimations>
         <div className="min-h-screen">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-24 md:pb-0">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-24 md:pb-0 pt-24 lg:pt-32">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
           <video 
@@ -52,7 +52,7 @@ export default function HomePage() {
         <div className="relative z-10 container max-w-5xl px-4 sm:px-6">
           <div className="text-center space-y-6 sm:space-y-8">
             {/* Main Heading */}
-            <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-display mt-12 md:mt-0">
+            <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-display">
               Empowering African Communities
               <br />
               <span className="text-gradient">Through Bitcoin</span>
@@ -85,15 +85,21 @@ export default function HomePage() {
             {/* Stats Row */}
             <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-12 sm:pt-16 mt-12 sm:mt-16 border-t border-white/10 max-w-3xl mx-auto">
               <div className="stat-item text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient font-numbers">2,000+</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient font-numbers">
+                  <span className="counter" data-target="2000">0</span>+
+                </div>
                 <div className="text-gray-400 mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">Transactions</div>
               </div>
               <div className="stat-item text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient font-numbers">200+</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient font-numbers">
+                  <span className="counter" data-target="40">0</span>+
+                </div>
                 <div className="text-gray-400 mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">Merchants</div>
               </div>
               <div className="stat-item text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient font-numbers">5</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient font-numbers">
+                  <span className="counter" data-target="5">0</span>
+                </div>
                 <div className="text-gray-400 mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">Programs</div>
               </div>
             </div>

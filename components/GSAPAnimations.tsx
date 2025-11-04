@@ -44,6 +44,28 @@ export function GSAPAnimations({ children }: { children: React.ReactNode }) {
       }
     });
 
+    // Counter animation for hero stats
+    const animateCounter = (el: Element) => {
+      const target = parseInt(el.getAttribute('data-target') || '0');
+      gsap.to(el, {
+        innerText: target,
+        duration: 2,
+        ease: "power1.out",
+        snap: { innerText: 1 },
+        onUpdate: function() {
+          el.textContent = Math.ceil((this.targets()[0] as any).innerText);
+        }
+      });
+    };
+
+    // Animate counters when they come into view
+    const counters = document.querySelectorAll('.counter');
+    if (counters.length > 0) {
+      setTimeout(() => {
+        counters.forEach(counter => animateCounter(counter));
+      }, 800); // Delay after hero animation
+    }
+
     // Batch scroll-triggered animations for better performance
     ScrollTrigger.batch(".mission-text, .program-card, .testimonial-card, .stat-item", {
       onEnter: (elements) => {

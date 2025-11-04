@@ -175,11 +175,11 @@ export default function MapsPage() {
                 className={`px-5 py-2.5 rounded-xl flex items-center gap-2 font-semibold transition-all ${
                   viewMode === 'list'
                     ? 'bg-bitcoin text-black'
-                    : 'bg-black/50 text-gray-400 hover:text-white border border-gray-800 hover:border-bitcoin/30'
+                    : 'bg-white/10 text-white hover:bg-white/20 border border-white/20 hover:border-bitcoin/30'
                 }`}
               >
                 <FiList className="w-4 h-4" />
-                <span className={`text-sm ${viewMode === 'list' ? 'text-black' : 'text-gray-400'}`}>List</span>
+                <span className="text-sm">List</span>
               </button>
               
               <button
@@ -187,11 +187,11 @@ export default function MapsPage() {
                 className={`px-5 py-2.5 rounded-xl flex items-center gap-2 font-semibold transition-all ${
                   viewMode === 'map'
                     ? 'bg-bitcoin text-black'
-                    : 'bg-black/50 text-gray-400 hover:text-white border border-gray-800 hover:border-bitcoin/30'
+                    : 'bg-white/10 text-white hover:bg-white/20 border border-white/20 hover:border-bitcoin/30'
                 }`}
               >
                 <FiMap className="w-4 h-4" />
-                <span className={`text-sm ${viewMode === 'map' ? 'text-black' : 'text-gray-400'}`}>Map</span>
+                <span className="text-sm">Map</span>
               </button>
             </div>
           </div>
