@@ -53,7 +53,7 @@ export function GSAPAnimations({ children }: { children: React.ReactNode }) {
         ease: "power1.out",
         snap: { innerText: 1 },
         onUpdate: function() {
-          el.textContent = Math.ceil((this.targets()[0] as any).innerText);
+          el.textContent = Math.ceil((this.targets()[0] as any).innerText).toString();
         }
       });
     };
