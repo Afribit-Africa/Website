@@ -131,21 +131,44 @@ export default function TestimonialsCarousel() {
         })}
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Desktop: side positions, Mobile: below */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-linear-to-br from-white/20 to-white/10 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center text-white hover:from-bitcoin/30 hover:to-bitcoin/20 hover:border-bitcoin/50 transition-all duration-300 z-30"
+        className="absolute left-0 top-1/2 -translate-y-1/2 hidden md:flex w-14 h-14 bg-linear-to-br from-white/20 to-white/10 backdrop-blur-sm border border-white/30 rounded-full items-center justify-center text-white hover:from-bitcoin/30 hover:to-bitcoin/20 hover:border-bitcoin/50 transition-all duration-300 z-30"
         aria-label="Previous testimonial"
       >
-        <FiChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+        <FiChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-linear-to-br from-white/20 to-white/10 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center text-white hover:from-bitcoin/30 hover:to-bitcoin/20 hover:border-bitcoin/50 transition-all duration-300 z-30"
+        className="absolute right-0 top-1/2 -translate-y-1/2 hidden md:flex w-14 h-14 bg-linear-to-br from-white/20 to-white/10 backdrop-blur-sm border border-white/30 rounded-full items-center justify-center text-white hover:from-bitcoin/30 hover:to-bitcoin/20 hover:border-bitcoin/50 transition-all duration-300 z-30"
         aria-label="Next testimonial"
       >
-        <FiChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+        <FiChevronRight className="w-6 h-6" />
       </button>
+
+      {/* Mobile Navigation Below + Swipe Hint */}
+      <div className="md:hidden mt-6 space-y-3">
+        <p className="text-center text-xs text-gray-400">
+          Swipe left or right to view more testimonials
+        </p>
+        <div className="flex justify-center gap-4">
+          <button
+            onClick={prevSlide}
+            className="w-12 h-12 bg-linear-to-br from-white/20 to-white/10 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center text-white active:scale-95 transition-all"
+            aria-label="Previous testimonial"
+          >
+            <FiChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="w-12 h-12 bg-linear-to-br from-white/20 to-white/10 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center text-white active:scale-95 transition-all"
+            aria-label="Next testimonial"
+          >
+            <FiChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
 
       {/* Dots Indicator - Desktop only */}
       <div className="hidden md:flex justify-center gap-3 mt-8">

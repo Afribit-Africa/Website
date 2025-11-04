@@ -250,31 +250,31 @@ export default function DonatePage() {
 
           {/* Step Indicator */}
           <div className="max-w-3xl mx-auto mb-12">
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-2 sm:gap-4">
             {[
               { key: 'tiers', label: 'Choose Tier', num: 1 },
               { key: 'details', label: 'Details', num: 2 },
               { key: 'payment', label: 'Payment', num: 3 }
             ].map((s, idx) => (
-              <div key={s.key} className="flex items-center gap-4">
-                <div className="flex items-center gap-3">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 font-bold text-sm ${
+              <div key={s.key} className="flex items-center gap-2 sm:gap-4">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center border-2 font-bold text-sm transition-all duration-300 ${
                     step === s.key
-                      ? 'bg-bitcoin border-bitcoin text-black'
+                      ? 'bg-bitcoin border-bitcoin text-black shadow-lg shadow-bitcoin/50'
                       : ['tiers', 'details', 'payment'].indexOf(step) > idx
                       ? 'bg-bitcoin/20 border-bitcoin/50 text-bitcoin'
                       : 'bg-white/5 border-white/20 text-gray-500'
                   }`}>
-                    {['tiers', 'details', 'payment'].indexOf(step) > idx ? <FiCheck /> : s.num}
+                    {['tiers', 'details', 'payment'].indexOf(step) > idx ? <FiCheck className="w-4 h-4" /> : s.num}
                   </div>
-                  <span className={`text-sm font-medium hidden sm:inline ${
+                  <span className={`text-xs sm:text-sm font-medium hidden md:inline transition-colors ${
                     step === s.key ? 'text-white' : 'text-gray-400'
                   }`}>
                     {s.label}
                   </span>
                 </div>
                 {idx < 2 && (
-                  <div className={`w-12 h-0.5 ${
+                  <div className={`w-8 sm:w-12 lg:w-16 h-0.5 transition-all duration-300 ${
                     idx < ['tiers', 'details', 'payment'].indexOf(step)
                       ? 'bg-bitcoin/50'
                       : 'bg-white/10'
@@ -298,7 +298,7 @@ export default function DonatePage() {
                   <button
                     key={tier.id}
                     onClick={() => handleTierSelect(tier)}
-                    className={`group relative overflow-hidden rounded-2xl bg-linear-to-br ${tier.bgGradient} border-2 border-white/10 hover:border-bitcoin/50 transition-all duration-300 text-left hover:scale-105`}
+                    className={`group relative overflow-hidden rounded-2xl bg-linear-to-br ${tier.bgGradient} border-2 border-white/10 hover:border-bitcoin/50 transition-all duration-300 text-left hover:scale-105 cursor-pointer`}
                   >
                     {/* Image */}
                     <div className="relative h-48 overflow-hidden">
@@ -545,10 +545,10 @@ export default function DonatePage() {
                         Phoenix
                       </a>
                       <a
-                        href={`lightning:${lightningInvoice}`}
+                        href={`walletofsatoshi:lightning:${lightningInvoice}`}
                         className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white hover:bg-white/10 transition-colors text-center"
                       >
-                        Muun
+                        Wallet of Satoshi
                       </a>
                       <a
                         href={`lightning:${lightningInvoice}`}

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { FaGraduationCap, FaStore, FaRecycle, FaCrown, FaMotorcycle } from 'react-icons/fa';
 
 export default function ProgramsPage() {
 
@@ -21,20 +22,20 @@ export default function ProgramsPage() {
       ],
       stats: {
         participants: "200+",
-        merchants: "150+",
+        merchants: "40+",
         sessions: "50+"
       },
-      icon: "📚",
+      icon: FaGraduationCap,
       gradient: "from-bitcoin to-orange-500"
     },
     {
       id: "merchants",
       title: "Merchant Onboarding",
       tagline: "Building the Circular Economy",
-      description: "We onboard local businesses—from mama mbogas to boda-boda riders—to accept Bitcoin payments using BTCPay Server, creating a thriving circular economy in Kibera.",
+      description: "We onboard local businesses—from mama mbogas to boda-boda riders—to accept Bitcoin payments, creating a thriving circular economy in Kibera.",
       impact: "Every merchant becomes a node in our circular economy. They earn sats, save for their future, and spend within the community. Merchants like Steph expanded their business buying motorbikes with Bitcoin earnings.",
       benefits: [
-        "Free BTCPay Server setup",
+        "BTCPay Server guidance and support",
         "Point-of-sale training and hardware",
         "Marketing materials and signage",
         "Ongoing technical support",
@@ -42,11 +43,11 @@ export default function ProgramsPage() {
         "Featured on BTC Map"
       ],
       stats: {
-        merchants: "150+",
+        merchants: "40+",
         transactions: "2,000+",
         volume: "Growing"
       },
-      icon: "🏪",
+      icon: FaStore,
       gradient: "from-green-500 to-emerald-600"
     },
     {
@@ -68,7 +69,7 @@ export default function ProgramsPage() {
         waste: "Tons collected",
         income: "Weekly sats"
       },
-      icon: "♻️",
+      icon: FaRecycle,
       gradient: "from-blue-500 to-cyan-600"
     },
     {
@@ -90,7 +91,7 @@ export default function ProgramsPage() {
         products: "100s",
         income: "Weekly"
       },
-      icon: "👑",
+      icon: FaCrown,
       gradient: "from-purple-500 to-pink-600"
     },
     {
@@ -112,7 +113,7 @@ export default function ProgramsPage() {
         loans: "50+",
         repayment: "Affordable"
       },
-      icon: "🏍️",
+      icon: FaMotorcycle,
       gradient: "from-yellow-500 to-orange-600"
     }
   ];
@@ -191,12 +192,12 @@ export default function ProgramsPage() {
                   {/* Program Card */}
                   <div className="flex-1 space-y-6">
                     <div className="flex items-center gap-4">
-                      <div className={`w-20 h-20 rounded-2xl bg-linear-to-br ${program.gradient} flex items-center justify-center text-4xl`}>
-                        {program.icon}
+                      <div className={`w-20 h-20 rounded-2xl bg-linear-to-br ${program.gradient} flex items-center justify-center text-white shadow-lg`}>
+                        <program.icon className="w-10 h-10" />
                       </div>
                       <div>
-                        <h2 className="text-4xl font-bold">{program.title}</h2>
-                        <p className="text-bitcoin text-lg">{program.tagline}</p>
+                        <h2 className="text-3xl md:text-4xl font-bold">{program.title}</h2>
+                        <p className="text-bitcoin text-base md:text-lg">{program.tagline}</p>
                       </div>
                     </div>
 
