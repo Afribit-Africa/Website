@@ -271,15 +271,15 @@ export default function DonatePage() {
                 <div className="flex items-center gap-2 sm:gap-3">
                   <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center border-2 font-bold text-sm transition-all duration-300 ${
                     step === s.key
-                      ? 'bg-bitcoin border-bitcoin text-black shadow-lg shadow-bitcoin/50'
+                      ? 'bg-bitcoin border-bitcoin text-black shadow-lg shadow-bitcoin/50 scale-110'
                       : ['tiers', 'details', 'payment'].indexOf(step) > idx
-                      ? 'bg-bitcoin/20 border-bitcoin/50 text-bitcoin'
+                      ? 'bg-bitcoin/30 border-bitcoin/60 text-white'
                       : 'bg-white/5 border-white/20 text-gray-500'
                   }`}>
                     {['tiers', 'details', 'payment'].indexOf(step) > idx ? <FiCheck className="w-4 h-4" /> : s.num}
                   </div>
                   <span className={`text-xs sm:text-sm font-medium hidden md:inline transition-colors ${
-                    step === s.key ? 'text-white' : 'text-gray-400'
+                    step === s.key ? 'text-bitcoin font-bold' : 'text-gray-400'
                   }`}>
                     {s.label}
                   </span>
@@ -321,7 +321,7 @@ export default function DonatePage() {
                       <div className="absolute inset-0 bg-linear-to-t from-black via-black/70 to-black/30" />
                       
                       {/* Amount Badge - Always visible with shadow */}
-                      <div className="absolute top-3 right-3 bg-black/80 backdrop-blur-sm text-white border-2 border-bitcoin px-3 py-1.5 rounded-full font-bold text-sm shadow-xl">
+                      <div className="absolute top-3 right-3 bg-black/80 backdrop-blur-sm text-white border border-bitcoin px-2.5 py-1 rounded-full font-semibold text-xs shadow-xl">
                         {tier.isCustom ? 'Any Amount' : `$${tier.amount}`}
                       </div>
 

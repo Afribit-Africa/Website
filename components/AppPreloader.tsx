@@ -65,12 +65,12 @@ export default function AppPreloader() {
                 <motion.div
                   style={{ width: `${progress}%` }}
                   transition={{ duration: 0.05, ease: "linear" }}
-                  className="h-full bg-gradient-to-r from-bitcoin to-orange-500 rounded-full shadow-lg shadow-bitcoin/50"
+                  className="h-full bg-white rounded-full shadow-lg shadow-white/30"
                 />
               </div>
               
               {/* Progress Percentage */}
-              <div className="mt-3 text-bitcoin text-sm font-mono">
+              <div className="mt-3 text-white text-sm font-mono">
                 {Math.round(progress)}%
               </div>
             </motion.div>

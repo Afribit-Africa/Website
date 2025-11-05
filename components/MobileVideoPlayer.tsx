@@ -13,9 +13,9 @@ export function MobileVideoPlayer() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const videos = [
-    { url: '/Media/Videos/Yeti video.mp4', title: 'Yeti on Afribit' },
-    { url: '/Media/Videos/Yeti fun video of Afribit.mp4', title: 'Yeti Fun Video' },
-    { url: '/Media/Videos/Afribit Explanation.mp4', title: 'Afribit Explanation' }
+    { url: '/Media/Videos/Yeti%20video.mp4', title: 'Yeti on Afribit' },
+    { url: '/Media/Videos/Yeti%20fun%20video%20of%20Afribit.mp4', title: 'Yeti Fun Video' },
+    { url: '/Media/Videos/Afribit%20Explanation.mp4', title: 'Afribit Explanation' }
   ];
 
   useEffect(() => {
