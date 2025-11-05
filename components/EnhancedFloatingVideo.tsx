@@ -98,15 +98,15 @@ export function EnhancedFloatingVideo() {
             </video>
 
             {/* Video Controls Overlay */}
-            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
               {/* Top Bar - Title & Close */}
-              <div className="absolute top-0 left-0 right-0 p-3 flex items-center justify-between">
+              <div className="absolute top-0 left-0 right-0 p-3 flex items-center justify-between pointer-events-auto">
                 <span className="text-white text-sm font-semibold font-heading">
                   {videos[currentVideoIndex].title}
                 </span>
                 <button
                   onClick={handleClose}
-                  className="w-8 h-8 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-bitcoin hover:text-black transition-all duration-300"
+                  className="w-8 h-8 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-bitcoin hover:text-black transition-all duration-300 relative z-50"
                   aria-label="Close video"
                 >
                   <FiX className="w-4 h-4" />
@@ -114,7 +114,7 @@ export function EnhancedFloatingVideo() {
               </div>
 
               {/* Center Play/Pause Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-auto">
                 <button
                   onClick={togglePlayPause}
                   className="w-16 h-16 bg-bitcoin/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 hover:bg-bitcoin"
@@ -129,7 +129,7 @@ export function EnhancedFloatingVideo() {
               </div>
 
               {/* Bottom Controls */}
-              <div className="absolute bottom-0 left-0 right-0 p-4">
+              <div className="absolute bottom-0 left-0 right-0 p-4 pointer-events-auto">
                 <div className="flex items-center justify-between gap-4">
                   {/* Left Controls - Navigation */}
                   <div className="flex items-center gap-2">

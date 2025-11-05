@@ -91,15 +91,15 @@ export function MobileVideoPlayer() {
         <div className="md:hidden fixed bottom-20 right-4 z-50">
           <button
             onClick={openLightbox}
-            className="w-14 h-14 rounded-full bg-linear-to-br from-bitcoin to-orange-500 shadow-lg shadow-bitcoin/50 flex items-center justify-center hover:scale-110 transition-all"
+            className="w-14 h-14 rounded-full bg-black backdrop-blur-sm border-2 border-white/20 shadow-lg shadow-black/50 flex items-center justify-center hover:scale-110 transition-all hover:border-white/40"
           >
-            <FiVideo className="w-6 h-6 text-black" />
+            <FiPlay className="w-6 h-6 text-white ml-0.5" />
           </button>
           <button
             onClick={handleClose}
-            className="absolute -top-1 -right-1 w-5 h-5 bg-black rounded-full flex items-center justify-center border border-white/20"
+            className="absolute -top-1 -right-1 w-5 h-5 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-black/10 hover:bg-white transition-all"
           >
-            <FiX className="w-3 h-3 text-white" />
+            <FiX className="w-3 h-3 text-black" />
           </button>
         </div>
       )}

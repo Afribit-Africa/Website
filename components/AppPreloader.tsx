@@ -9,25 +9,29 @@ export default function AppPreloader() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Animate progress bar
-    const progressInterval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(progressInterval);
-          return 100;
-        }
-        return prev + 10;
-      });
-    }, 100);
+    // Simulate loading with smooth progress
+    const duration = 2000; // 2 seconds total
+    const steps = 50; // Number of updates
+    const increment = 100 / steps;
+    const interval = duration / steps;
 
-    // Hide preloader after animation
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1300);
+    let currentStep = 0;
+    const progressInterval = setInterval(() => {
+      currentStep++;
+      const newProgress = Math.min(currentStep * increment, 100);
+      setProgress(newProgress);
+
+      if (newProgress >= 100) {
+        clearInterval(progressInterval);
+        // Hide preloader after bar fills
+        setTimeout(() => {
+          setLoading(false);
+        }, 400);
+      }
+    }, interval);
 
     return () => {
       clearInterval(progressInterval);
-      clearTimeout(timer);
     };
   }, []);
 
@@ -57,13 +61,17 @@ export default function AppPreloader() {
               </h2>
               
               {/* Loading Bar */}
-              <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden mx-auto">
+              <div className="w-64 h-1.5 bg-white/10 rounded-full overflow-hidden mx-auto relative">
                 <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: `${progress}%` }}
-                  transition={{ duration: 0.1 }}
-                  className="h-full bg-bitcoin rounded-full"
+                  style={{ width: `${progress}%` }}
+                  transition={{ duration: 0.05, ease: "linear" }}
+                  className="h-full bg-gradient-to-r from-bitcoin to-orange-500 rounded-full shadow-lg shadow-bitcoin/50"
                 />
+              </div>
+              
+              {/* Progress Percentage */}
+              <div className="mt-3 text-bitcoin text-sm font-mono">
+                {Math.round(progress)}%
               </div>
             </motion.div>
           </div>
