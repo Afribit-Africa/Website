@@ -1,29 +1,6 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
-// Create reusable transporter with more compatible settings
-// Try port 587 with STARTTLS if 465 doesn't work
-const smtpPort = parseInt(process.env.SMTP_PORT || '465');
-const useSecure = smtpPort === 465; // Use SSL for 465, STARTTLS for 587
-
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: smtpPort,
-  secure: useSecure, // true for 465 (SSL), false for 587 (STARTTLS)
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASSWORD,
-  },
-  tls: {
-    // Don't fail on invalid certs
-    rejectUnauthorized: false
-  },
-  // Connection timeout
-  connectionTimeout: 10000,
-  // Socket timeout
-  socketTimeout: 10000,
-  debug: process.env.NODE_ENV === 'development', // Enable debug output in dev
-  logger: process.env.NODE_ENV === 'development' // Log to console in dev
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export interface DonationReceiptData {
   donorName: string;
@@ -39,12 +16,6 @@ export async function sendDonationReceipt(data: DonationReceiptData) {
   const { donorName, donorEmail, amount, tier, invoiceId, date, transactionId } = data;
 
   console.log('Preparing email for:', donorEmail);
-  console.log('Email config:', {
-    host: process.env.SMTP_HOST,
-    port: process.env.SMTP_PORT,
-    user: process.env.SMTP_USER,
-    from: process.env.EMAIL_FROM,
-  });
 
   const emailHtml = `
 <!DOCTYPE html>
@@ -59,7 +30,7 @@ export async function sendDonationReceipt(data: DonationReceiptData) {
     <tr>
       <td align="center" style="padding: 40px 20px;">
         <table width="600" cellpadding="0" cellspacing="0" style="background-color: #1a1a1a; border: 1px solid #F7931A; border-radius: 8px; overflow: hidden;">
-
+          
           <!-- Header -->
           <tr>
             <td style="background: linear-gradient(135deg, #F7931A 0%, #ff8c00 100%); padding: 40px 30px; text-align: center;">
@@ -88,7 +59,7 @@ export async function sendDonationReceipt(data: DonationReceiptData) {
                 <tr>
                   <td style="padding: 30px;">
                     <h3 style="margin: 0 0 20px 0; color: #F7931A; font-size: 20px; text-align: center;">Receipt Details</h3>
-
+                    
                     <table width="100%" cellpadding="0" cellspacing="0">
                       <tr>
                         <td style="padding: 12px 0; color: #888888; font-size: 14px;">Donation Amount:</td>
@@ -229,18 +200,19 @@ Questions? Contact us at info@afribit.africa
   `;
 
   try {
-    console.log('Attempting to send email via transporter...');
-    const info = await transporter.sendMail({
-      from: `"${process.env.EMAIL_FROM_NAME}" <${process.env.EMAIL_FROM}>`,
+    console.log('Attempting to send email via Resend...');
+    const result = await resend.emails.send({
+      from: `${process.env.EMAIL_FROM_NAME} <${process.env.EMAIL_FROM}>`,
       to: donorEmail,
       subject: `Thank You for Your Donation - Receipt #${invoiceId.substring(0, 8)}`,
       text: emailText,
       html: emailHtml,
     });
-    console.log('Email sent successfully:', info.messageId);
-    return info;
+    
+    console.log('Email sent successfully via Resend:', result);
+    return result;
   } catch (error) {
-    console.error('Transporter sendMail error:', error);
+    console.error('Resend email error:', error);
     throw error;
   }
 }
@@ -250,6 +222,9 @@ function getTierImpactMessage(tier: string, amount: number): string {
     'supporter': 'Your contribution helps us provide basic Bitcoin education materials to community members, enabling them to take their first steps toward financial sovereignty.',
     'advocate': 'Your generous support enables us to run educational workshops and onboard small businesses to accept Bitcoin, creating real-world use cases in our community.',
     'champion': 'Your exceptional contribution powers our comprehensive programs including merchant training, community events, and ongoing support systems that transform entire neighborhoods.',
+    'friend': 'Your vital contribution directly supports the daily operational success and foundational growth of all Afribit Kibera initiatives.',
+    'business': 'Your support fuels local entrepreneurship and helps scale community businesses sustainably with Bitcoin.',
+    'education': 'Your contribution trains community ambassadors who will spread Bitcoin education throughout Kibera.',
     'custom': `Your generous donation of $${amount.toFixed(2)} makes a real difference in bringing Bitcoin education and economic empowerment to communities in Kibera and beyond.`,
   };
 
@@ -270,7 +245,7 @@ export async function sendWelcomeEmail(donorName: string, donorEmail: string) {
     <tr>
       <td align="center" style="padding: 40px 20px;">
         <table width="600" cellpadding="0" cellspacing="0" style="background-color: #1a1a1a; border: 1px solid #F7931A; border-radius: 8px; overflow: hidden;">
-
+          
           <!-- Header -->
           <tr>
             <td style="background: linear-gradient(135deg, #F7931A 0%, #ff8c00 100%); padding: 40px 30px; text-align: center;">
@@ -321,29 +296,31 @@ export async function sendWelcomeEmail(donorName: string, donorEmail: string) {
 </html>
   `;
 
-  await transporter.sendMail({
-    from: `"${process.env.EMAIL_FROM_NAME}" <${process.env.EMAIL_FROM}>`,
-    to: donorEmail,
-    subject: 'Welcome to Afribit Africa Community! 🎉',
-    html: emailHtml,
-  });
+  try {
+    const result = await resend.emails.send({
+      from: `${process.env.EMAIL_FROM_NAME} <${process.env.EMAIL_FROM}>`,
+      to: donorEmail,
+      subject: 'Welcome to Afribit Africa Community! 🎉',
+      html: emailHtml,
+    });
+    return result;
+  } catch (error) {
+    console.error('Welcome email error:', error);
+    throw error;
+  }
 }
 
-// Verify email configuration
+// Verify Resend API key is configured
 export async function verifyEmailConfig() {
   try {
-    console.log('Verifying email config...');
-    console.log('Host:', process.env.SMTP_HOST);
-    console.log('Port:', process.env.SMTP_PORT);
-    console.log('User:', process.env.SMTP_USER);
-    console.log('Secure:', process.env.SMTP_SECURE);
-
-    await transporter.verify();
-    console.log('Email configuration verified successfully');
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not set');
+      return false;
+    }
+    console.log('Resend API key is configured');
     return true;
   } catch (error) {
     console.error('Email configuration error:', error);
-    console.error('Error details:', JSON.stringify(error, null, 2));
     return false;
   }
 }

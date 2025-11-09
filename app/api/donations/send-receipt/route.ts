@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { sendDonationReceipt } from '@/lib/email-service';
+import { sendDonationReceipt } from '@/lib/resend-email';
 import { getDonorByInvoiceId } from '@/lib/donor-db';
 import { handleAPIError } from '@/lib/api-helpers';
 
