@@ -1,14 +1,20 @@
 import nodemailer from 'nodemailer';
 
-// Create reusable transporter
+// Create reusable transporter with more compatible settings
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: parseInt(process.env.SMTP_PORT || '465'),
-  secure: process.env.SMTP_SECURE === 'true',
+  secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASSWORD,
   },
+  tls: {
+    // Don't fail on invalid certs
+    rejectUnauthorized: false
+  },
+  debug: true, // Enable debug output
+  logger: true // Log to console
 });
 
 export interface DonationReceiptData {
@@ -318,10 +324,18 @@ export async function sendWelcomeEmail(donorName: string, donorEmail: string) {
 // Verify email configuration
 export async function verifyEmailConfig() {
   try {
+    console.log('Verifying email config...');
+    console.log('Host:', process.env.SMTP_HOST);
+    console.log('Port:', process.env.SMTP_PORT);
+    console.log('User:', process.env.SMTP_USER);
+    console.log('Secure:', process.env.SMTP_SECURE);
+    
     await transporter.verify();
+    console.log('Email configuration verified successfully');
     return true;
   } catch (error) {
     console.error('Email configuration error:', error);
+    console.error('Error details:', JSON.stringify(error, null, 2));
     return false;
   }
 }

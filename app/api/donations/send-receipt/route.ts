@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
         }),
         transactionId,
       });
-      
+
       console.log('Receipt sent successfully to:', donor.email);
     } catch (emailError) {
       console.error('Email sending error:', emailError);

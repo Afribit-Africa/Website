@@ -4,12 +4,42 @@ import { handleAPIError } from '@/lib/api-helpers';
 
 export async function GET(request: NextRequest) {
   try {
+    console.log('=== EMAIL TEST ENDPOINT CALLED ===');
+    
+    // First check if environment variables are set
+    const envCheck = {
+      SMTP_HOST: !!process.env.SMTP_HOST,
+      SMTP_PORT: !!process.env.SMTP_PORT,
+      SMTP_USER: !!process.env.SMTP_USER,
+      SMTP_PASSWORD: !!process.env.SMTP_PASSWORD,
+      EMAIL_FROM: !!process.env.EMAIL_FROM,
+    };
+    
+    console.log('Environment variables present:', envCheck);
+    
+    const missingVars = Object.entries(envCheck)
+      .filter(([_, present]) => !present)
+      .map(([key, _]) => key);
+    
+    if (missingVars.length > 0) {
+      return NextResponse.json({
+        success: false,
+        error: 'Missing environment variables',
+        missing: missingVars,
+        hint: 'Make sure these variables are set in Vercel environment settings'
+      }, { status: 500 });
+    }
+    
     // Verify email configuration
     const isValid = await verifyEmailConfig();
 
     if (!isValid) {
       return NextResponse.json(
-        { success: false, error: 'Email configuration is invalid' },
+        { 
+          success: false, 
+          error: 'Email configuration is invalid',
+          hint: 'Check server logs for detailed SMTP error'
+        },
         { status: 500 }
       );
     }
@@ -19,6 +49,8 @@ export async function GET(request: NextRequest) {
     const testEmail = searchParams.get('email');
 
     if (testEmail) {
+      console.log('Sending test receipt to:', testEmail);
+      
       // Send a test receipt
       await sendDonationReceipt({
         donorName: 'Test Donor',
@@ -47,6 +79,7 @@ export async function GET(request: NextRequest) {
         port: process.env.SMTP_PORT,
         secure: process.env.SMTP_SECURE,
         from: process.env.EMAIL_FROM,
+        user: process.env.SMTP_USER,
       },
     });
   } catch (error) {

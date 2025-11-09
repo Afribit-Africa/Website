@@ -308,7 +308,7 @@ export default function DonatePage() {
                       transactionId: data.invoice.id,
                     }),
                   });
-                  
+
                   if (!response.ok) {
                     const errorData = await response.json();
                     console.error('Receipt email error:', errorData);
