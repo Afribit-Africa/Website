@@ -201,8 +201,16 @@ Questions? Contact us at info@afribit.africa
 
   try {
     console.log('Attempting to send email via Resend...');
+    
+    // Use onboarding email for testing if custom domain not verified
+    const fromEmail = process.env.EMAIL_FROM_VERIFIED === 'true' 
+      ? `${process.env.EMAIL_FROM_NAME} <${process.env.EMAIL_FROM}>`
+      : 'Afribit Africa <onboarding@resend.dev>';
+    
+    console.log('Sending from:', fromEmail);
+    
     const result = await resend.emails.send({
-      from: `${process.env.EMAIL_FROM_NAME} <${process.env.EMAIL_FROM}>`,
+      from: fromEmail,
       to: donorEmail,
       subject: `Thank You for Your Donation - Receipt #${invoiceId.substring(0, 8)}`,
       text: emailText,
@@ -297,8 +305,13 @@ export async function sendWelcomeEmail(donorName: string, donorEmail: string) {
   `;
 
   try {
+    // Use onboarding email for testing if custom domain not verified
+    const fromEmail = process.env.EMAIL_FROM_VERIFIED === 'true' 
+      ? `${process.env.EMAIL_FROM_NAME} <${process.env.EMAIL_FROM}>`
+      : 'Afribit Africa <onboarding@resend.dev>';
+      
     const result = await resend.emails.send({
-      from: `${process.env.EMAIL_FROM_NAME} <${process.env.EMAIL_FROM}>`,
+      from: fromEmail,
       to: donorEmail,
       subject: 'Welcome to Afribit Africa Community! 🎉',
       html: emailHtml,
