@@ -295,22 +295,31 @@ export default function DonatePage() {
             setPaymentStatus('paid');
             setStep('success');
             clearInterval(pollInterval);
-            
-            // Send receipt email for named donations
+
+            // Send receipt email for named donations (with delay to ensure DB is updated)
             if (donationType === 'named' && donorEmail) {
-              try {
-                await fetch('/api/donations/send-receipt', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({
-                    invoiceId: invoiceData.id,
-                    transactionId: data.invoice.id,
-                  }),
-                });
-              } catch (emailError) {
-                console.error('Failed to send receipt email:', emailError);
-                // Don't block success flow if email fails
-              }
+              setTimeout(async () => {
+                try {
+                  const response = await fetch('/api/donations/send-receipt', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      invoiceId: invoiceData.id,
+                      transactionId: data.invoice.id,
+                    }),
+                  });
+                  
+                  if (!response.ok) {
+                    const errorData = await response.json();
+                    console.error('Receipt email error:', errorData);
+                  } else {
+                    console.log('Receipt email sent successfully');
+                  }
+                } catch (emailError) {
+                  console.error('Failed to send receipt email:', emailError);
+                  // Don't block success flow if email fails
+                }
+              }, 2000); // Wait 2 seconds for DB to be fully updated
             }
           } else if (status === 'expired' || status === 'invalid') {
             setPaymentStatus('expired');
