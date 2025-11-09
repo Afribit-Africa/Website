@@ -295,6 +295,23 @@ export default function DonatePage() {
             setPaymentStatus('paid');
             setStep('success');
             clearInterval(pollInterval);
+            
+            // Send receipt email for named donations
+            if (donationType === 'named' && donorEmail) {
+              try {
+                await fetch('/api/donations/send-receipt', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    invoiceId: invoiceData.id,
+                    transactionId: data.invoice.id,
+                  }),
+                });
+              } catch (emailError) {
+                console.error('Failed to send receipt email:', emailError);
+                // Don't block success flow if email fails
+              }
+            }
           } else if (status === 'expired' || status === 'invalid') {
             setPaymentStatus('expired');
             setIsExpired(true);

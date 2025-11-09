@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
 
     // Get all named donors (default)
     const donors = await getAllDonors();
-    
+
     return NextResponse.json({
       success: true,
       donors,

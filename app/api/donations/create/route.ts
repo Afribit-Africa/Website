@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     try {
       // Ensure table exists
       await initDonorsTable();
-      
+
       // Save donor info (including anonymous donations for stats)
       await saveDonorInfo({
         invoiceId: invoice.id,
@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
         tier: tier || 'custom',
         donationType: donationType || 'anonymous',
       });
-      
+
       console.log('Donor info saved to database:', invoice.id);
     } catch (dbError) {
       // Log error but don't fail the invoice creation

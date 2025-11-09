@@ -25,13 +25,13 @@ export async function initDonorsTable() {
       INDEX idx_created_at (created_at)
     )
   `;
-  
+
   await executeQuery(createTableQuery);
 }
 
 export async function saveDonorInfo(donorInfo: DonorInfo) {
   const { invoiceId, name, email, amount, tier, donationType } = donorInfo;
-  
+
   const query = `
     INSERT INTO donors (invoice_id, name, email, amount, tier, donation_type)
     VALUES (?, ?, ?, ?, ?, ?)
@@ -42,7 +42,7 @@ export async function saveDonorInfo(donorInfo: DonorInfo) {
       tier = VALUES(tier),
       donation_type = VALUES(donation_type)
   `;
-  
+
   await executeQuery(query, [
     invoiceId,
     donationType === 'named' ? name : null,
@@ -61,8 +61,8 @@ export async function getDonorByInvoiceId(invoiceId: string) {
 
 export async function getAllDonors() {
   const query = `
-    SELECT * FROM donors 
-    WHERE donation_type = 'named' 
+    SELECT * FROM donors
+    WHERE donation_type = 'named'
     ORDER BY created_at DESC
   `;
   return await executeQuery<any[]>(query);
@@ -70,7 +70,7 @@ export async function getAllDonors() {
 
 export async function getDonorStats() {
   const query = `
-    SELECT 
+    SELECT
       COUNT(*) as total_donations,
       SUM(amount) as total_amount,
       COUNT(CASE WHEN donation_type = 'named' THEN 1 END) as named_donations,
