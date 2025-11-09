@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createInvoice } from '@/lib/btcpay-client';
 import { handleAPIError, validateInput, APIError, withRetry } from '@/lib/api-helpers';
+import { saveDonorInfo, initDonorsTable } from '@/lib/donor-db';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    
+
     // Validate input
     validateInput(body, {
       amount: (val) => typeof val === 'number' && val > 0 && val < 1000000,
@@ -36,11 +37,25 @@ export async function POST(request: NextRequest) {
 
     console.log('Invoice created successfully:', invoice.id);
 
-    // TODO: Save donor information to database for named donations
-    // This would be implemented when database is set up
-    if (donationType === 'named' && donorName && donorEmail) {
-      // await saveDonorInfo({ invoiceId: invoice.id, name: donorName, email: donorEmail, amount, tier });
-      console.log('Named donation info:', { invoiceId: invoice.id, name: donorName, email: donorEmail });
+    // Save donor information to database
+    try {
+      // Ensure table exists
+      await initDonorsTable();
+      
+      // Save donor info (including anonymous donations for stats)
+      await saveDonorInfo({
+        invoiceId: invoice.id,
+        name: donationType === 'named' ? donorName : '',
+        email: donationType === 'named' ? donorEmail : '',
+        amount: parseFloat(amount),
+        tier: tier || 'custom',
+        donationType: donationType || 'anonymous',
+      });
+      
+      console.log('Donor info saved to database:', invoice.id);
+    } catch (dbError) {
+      // Log error but don't fail the invoice creation
+      console.error('Failed to save donor info to database:', dbError);
     }
 
     return NextResponse.json({

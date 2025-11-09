@@ -161,9 +161,9 @@ export default function ProgramsPage() {
           <div className="absolute top-20 left-10 w-72 h-72 bg-bitcoin rounded-full blur-3xl" />
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500 rounded-full blur-3xl" />
         </div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -176,15 +176,15 @@ export default function ProgramsPage() {
               Empowering Kibera through Bitcoin adoption, education, and sustainable development
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-              <Link 
+              <Link
                 href="/donate"
                 className="bg-bitcoin hover:bg-bitcoin/90 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 inline-flex items-center justify-center gap-2 shadow-lg shadow-bitcoin/30"
               >
                 <FaBitcoin className="w-5 h-5" />
                 Support Our Programs
               </Link>
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-xl transition-all border border-white/20 inline-flex items-center justify-center gap-2"
               >
                 Get Involved
@@ -345,7 +345,7 @@ export default function ProgramsPage() {
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-bitcoin/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
         </div>
-        
+
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -355,7 +355,7 @@ export default function ProgramsPage() {
             className="relative bg-gradient-to-br from-bitcoin/30 via-orange-600/20 to-bitcoin/30 backdrop-blur-xl border-2 border-bitcoin/40 rounded-3xl p-12 md:p-16 text-center overflow-hidden shadow-2xl shadow-bitcoin/20"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(247,147,26,0.15),transparent_70%)]" />
-            
+
             <div className="relative z-10 space-y-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

@@ -17,11 +17,11 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Here you would integrate with your backend API
     // For now, we'll simulate a submission
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     alert('Thank you for your message! We will get back to you soon.');
     setFormData({ name: '', email: '', subject: '', message: '' });
     setIsSubmitting(false);
@@ -67,7 +67,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -84,7 +84,7 @@ export default function ContactPage() {
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-12">
-          
+
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -92,7 +92,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-1 space-y-8"
           >
-            
+
             {/* Contact Methods */}
             <div className="space-y-6">
               {contactMethods.map((method, index) => (
@@ -110,7 +110,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-white font-semibold mb-1">{method.title}</h3>
                       {method.link ? (
-                        <a 
+                        <a
                           href={method.link}
                           className="text-gray-400 hover:text-bitcoin transition-colors"
                         >
@@ -153,7 +153,7 @@ export default function ContactPage() {
             className="lg:col-span-2"
           >
             <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-              
+
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label htmlFor="name" className="block text-white font-medium mb-2">
@@ -170,7 +170,7 @@ export default function ContactPage() {
                     placeholder="John Doe"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-white font-medium mb-2">
                     Your Email *
