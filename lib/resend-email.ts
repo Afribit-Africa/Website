@@ -30,7 +30,7 @@ export async function sendDonationReceipt(data: DonationReceiptData) {
     <tr>
       <td align="center" style="padding: 40px 20px;">
         <table width="600" cellpadding="0" cellspacing="0" style="background-color: #1a1a1a; border: 1px solid #F7931A; border-radius: 8px; overflow: hidden;">
-          
+
           <!-- Header -->
           <tr>
             <td style="background: linear-gradient(135deg, #F7931A 0%, #ff8c00 100%); padding: 40px 30px; text-align: center;">
@@ -59,7 +59,7 @@ export async function sendDonationReceipt(data: DonationReceiptData) {
                 <tr>
                   <td style="padding: 30px;">
                     <h3 style="margin: 0 0 20px 0; color: #F7931A; font-size: 20px; text-align: center;">Receipt Details</h3>
-                    
+
                     <table width="100%" cellpadding="0" cellspacing="0">
                       <tr>
                         <td style="padding: 12px 0; color: #888888; font-size: 14px;">Donation Amount:</td>
@@ -201,14 +201,14 @@ Questions? Contact us at info@afribit.africa
 
   try {
     console.log('Attempting to send email via Resend...');
-    
+
     // Use onboarding email for testing if custom domain not verified
-    const fromEmail = process.env.EMAIL_FROM_VERIFIED === 'true' 
+    const fromEmail = process.env.EMAIL_FROM_VERIFIED === 'true'
       ? `${process.env.EMAIL_FROM_NAME} <${process.env.EMAIL_FROM}>`
       : 'Afribit Africa <onboarding@resend.dev>';
-    
+
     console.log('Sending from:', fromEmail);
-    
+
     const result = await resend.emails.send({
       from: fromEmail,
       to: donorEmail,
@@ -216,7 +216,7 @@ Questions? Contact us at info@afribit.africa
       text: emailText,
       html: emailHtml,
     });
-    
+
     console.log('Email sent successfully via Resend:', result);
     return result;
   } catch (error) {
@@ -253,7 +253,7 @@ export async function sendWelcomeEmail(donorName: string, donorEmail: string) {
     <tr>
       <td align="center" style="padding: 40px 20px;">
         <table width="600" cellpadding="0" cellspacing="0" style="background-color: #1a1a1a; border: 1px solid #F7931A; border-radius: 8px; overflow: hidden;">
-          
+
           <!-- Header -->
           <tr>
             <td style="background: linear-gradient(135deg, #F7931A 0%, #ff8c00 100%); padding: 40px 30px; text-align: center;">
@@ -306,10 +306,10 @@ export async function sendWelcomeEmail(donorName: string, donorEmail: string) {
 
   try {
     // Use onboarding email for testing if custom domain not verified
-    const fromEmail = process.env.EMAIL_FROM_VERIFIED === 'true' 
+    const fromEmail = process.env.EMAIL_FROM_VERIFIED === 'true'
       ? `${process.env.EMAIL_FROM_NAME} <${process.env.EMAIL_FROM}>`
       : 'Afribit Africa <onboarding@resend.dev>';
-      
+
     const result = await resend.emails.send({
       from: fromEmail,
       to: donorEmail,

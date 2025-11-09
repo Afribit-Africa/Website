@@ -1,48 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { verifyEmailConfig, sendDonationReceipt } from '@/lib/resend-email';
+import { sendDonationReceipt } from '@/lib/resend-email';
 import { handleAPIError } from '@/lib/api-helpers';
 
 export async function GET(request: NextRequest) {
   try {
     console.log('=== EMAIL TEST ENDPOINT CALLED ===');
 
-    // First check if environment variables are set
-    const envCheck = {
-      SMTP_HOST: !!process.env.SMTP_HOST,
-      SMTP_PORT: !!process.env.SMTP_PORT,
-      SMTP_USER: !!process.env.SMTP_USER,
-      SMTP_PASSWORD: !!process.env.SMTP_PASSWORD,
-      EMAIL_FROM: !!process.env.EMAIL_FROM,
-    };
-
-    console.log('Environment variables present:', envCheck);
-
-    const missingVars = Object.entries(envCheck)
-      .filter(([_, present]) => !present)
-      .map(([key, _]) => key);
-
-    if (missingVars.length > 0) {
+    // Check if Resend API key is set
+    if (!process.env.RESEND_API_KEY) {
       return NextResponse.json({
         success: false,
-        error: 'Missing environment variables',
-        missing: missingVars,
-        hint: 'Make sure these variables are set in Vercel environment settings'
+        error: 'Missing RESEND_API_KEY environment variable',
+        hint: 'Add RESEND_API_KEY to your Vercel environment settings'
       }, { status: 500 });
     }
 
-    // Verify email configuration
-    const isValid = await verifyEmailConfig();
-
-    if (!isValid) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: 'Email configuration is invalid',
-          hint: 'Check server logs for detailed SMTP error'
-        },
-        { status: 500 }
-      );
-    }
+    console.log('Resend API key is present');
 
     // Get test email from query params
     const { searchParams } = new URL(request.url);
@@ -51,35 +24,46 @@ export async function GET(request: NextRequest) {
     if (testEmail) {
       console.log('Sending test receipt to:', testEmail);
 
-      // Send a test receipt
-      await sendDonationReceipt({
-        donorName: 'Test Donor',
-        donorEmail: testEmail,
-        amount: 25,
-        tier: 'friend',
-        invoiceId: 'TEST-' + Date.now(),
-        date: new Date().toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        }),
-      });
+      try {
+        // Send a test receipt
+        const result = await sendDonationReceipt({
+          donorName: 'Test Donor',
+          donorEmail: testEmail,
+          amount: 25,
+          tier: 'friend',
+          invoiceId: 'TEST-' + Date.now(),
+          date: new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          }),
+        });
 
-      return NextResponse.json({
-        success: true,
-        message: `Test receipt sent to ${testEmail}`,
-      });
+        console.log('Email sent successfully:', result);
+
+        return NextResponse.json({
+          success: true,
+          message: `Test receipt sent to ${testEmail}`,
+          emailId: result.data?.id,
+        });
+      } catch (emailError: any) {
+        console.error('Failed to send test email:', emailError);
+        return NextResponse.json({
+          success: false,
+          error: 'Failed to send email',
+          details: emailError.message || String(emailError)
+        }, { status: 500 });
+      }
     }
 
     return NextResponse.json({
       success: true,
-      message: 'Email configuration is valid',
+      message: 'Resend email configuration is valid',
       config: {
-        host: process.env.SMTP_HOST,
-        port: process.env.SMTP_PORT,
-        secure: process.env.SMTP_SECURE,
-        from: process.env.EMAIL_FROM,
-        user: process.env.SMTP_USER,
+        apiKeyPresent: true,
+        fromEmail: process.env.EMAIL_FROM_VERIFIED === 'true'
+          ? process.env.EMAIL_FROM
+          : 'onboarding@resend.dev',
       },
     });
   } catch (error) {
