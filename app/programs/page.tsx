@@ -169,31 +169,30 @@ export default function ProgramsPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center space-y-6"
           >
-            <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-bitcoin via-orange-400 to-bitcoin">
-              Our Programs
+            <h1 className="font-display text-5xl md:text-7xl font-bold">
+              <span className="text-gradient">Our Programs</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-heading">
               Empowering Kibera through Bitcoin adoption, education, and sustainable development
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <Link 
                 href="/donate"
-                className="bg-bitcoin hover:bg-bitcoin/90 text-black font-bold py-4 px-8 rounded-xl transition-all hover:scale-105"
+                className="bg-bitcoin hover:bg-bitcoin/90 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 inline-flex items-center justify-center gap-2 shadow-lg shadow-bitcoin/30"
               >
+                <FaBitcoin className="w-5 h-5" />
                 Support Our Programs
               </Link>
               <Link 
                 href="/contact" 
-                className="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-xl transition-all border border-white/20"
+                className="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-xl transition-all border border-white/20 inline-flex items-center justify-center gap-2"
               >
                 Get Involved
               </Link>
             </div>
           </motion.div>
         </div>
-      </section>
-
-      {/* Programs Grid */}
+      </section>      {/* Programs Grid */}
       <section className="py-16">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -212,7 +211,7 @@ export default function ProgramsPage() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-2">{program.title}</h3>
+                <h3 className="text-2xl font-bold mb-2 font-heading">{program.title}</h3>
                 <p className="text-bitcoin text-sm font-semibold mb-4">{program.tagline}</p>
 
                 {/* Description */}
@@ -224,7 +223,7 @@ export default function ProgramsPage() {
                 <div className="grid grid-cols-3 gap-3 mb-6">
                   {Object.entries(program.stats).map(([key, value]) => (
                     <div key={key} className="text-center">
-                      <div className="text-lg font-bold text-bitcoin">{value}</div>
+                      <div className="text-lg font-bold text-bitcoin font-numbers">{value}</div>
                       <div className="text-xs text-gray-500 capitalize">{key}</div>
                     </div>
                   ))}
@@ -316,7 +315,7 @@ export default function ProgramsPage() {
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold">{program.title}</h3>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="text-lg font-semibold text-bitcoin mb-4">Program Benefits</h4>
@@ -341,38 +340,90 @@ export default function ProgramsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6 max-w-5xl">
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-bitcoin/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
+        </div>
+        
+        <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative bg-gradient-to-br from-bitcoin/20 via-orange-600/20 to-bitcoin/20 backdrop-blur-md border border-bitcoin/30 rounded-3xl p-12 md:p-16 text-center overflow-hidden"
+            className="relative bg-gradient-to-br from-bitcoin/30 via-orange-600/20 to-bitcoin/30 backdrop-blur-xl border-2 border-bitcoin/40 rounded-3xl p-12 md:p-16 text-center overflow-hidden shadow-2xl shadow-bitcoin/20"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(247,147,26,0.1),transparent_70%)]" />
-            <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Every Sat Makes a Difference
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-                Your donation doesn't just fund programs—it transforms lives. From a mama mboga expanding her business to a youth stacking sats for their future, every contribution builds real financial freedom in Kibera.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link 
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(247,147,26,0.15),transparent_70%)]" />
+            
+            <div className="relative z-10 space-y-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <h2 className="font-display text-4xl md:text-6xl font-bold mb-4">
+                  <span className="text-gradient">Every Sat Makes a Difference</span>
+                </h2>
+                <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto font-heading">
+                  Your donation doesn't just fund programs—it transforms lives
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+              >
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+                  <div className="text-4xl font-bold text-bitcoin mb-2 font-numbers">200+</div>
+                  <p className="text-gray-300 text-sm">Community members trained</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+                  <div className="text-4xl font-bold text-bitcoin mb-2 font-numbers">40+</div>
+                  <p className="text-gray-300 text-sm">Merchants onboarded</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+                  <div className="text-4xl font-bold text-bitcoin mb-2 font-numbers">2,000+</div>
+                  <p className="text-gray-300 text-sm">Bitcoin transactions</p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
+              >
+                <Link
                   href="/donate"
-                  className="bg-bitcoin hover:bg-bitcoin/90 text-black font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 inline-flex items-center justify-center gap-2"
+                  className="bg-bitcoin hover:bg-bitcoin/90 text-white font-bold py-4 px-10 rounded-xl transition-all hover:scale-105 inline-flex items-center justify-center gap-3 shadow-lg shadow-bitcoin/50 text-lg"
                 >
-                  <FaBitcoin className="w-5 h-5" />
+                  <FaBitcoin className="w-6 h-6" />
                   Donate with Bitcoin
                 </Link>
-                <Link 
-                  href="/contact" 
-                  className="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-xl transition-all border border-white/20"
+                <Link
+                  href="/contact"
+                  className="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-10 rounded-xl transition-all border-2 border-white/30 hover:border-bitcoin inline-flex items-center justify-center gap-2 text-lg"
                 >
                   Get Involved
+                  <FaBitcoin className="w-5 h-5" />
                 </Link>
-              </div>
+              </motion.div>
+
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.8 }}
+                className="text-sm text-gray-400 max-w-2xl mx-auto"
+              >
+                From a mama mboga expanding her business to a youth stacking sats for their future, every contribution builds real financial freedom in Kibera.
+              </motion.p>
             </div>
           </motion.div>
         </div>

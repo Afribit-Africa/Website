@@ -101,6 +101,9 @@ export default function DonatePage() {
   const [timeLeft, setTimeLeft] = useState(900); // 15 minutes in seconds
   const [isExpired, setIsExpired] = useState(false);
   const [paymentStatus, setPaymentStatus] = useState<'pending' | 'paid' | 'expired'>('pending');
+  const [donationType, setDonationType] = useState<'anonymous' | 'named'>('anonymous');
+  const [donorName, setDonorName] = useState('');
+  const [donorEmail, setDonorEmail] = useState('');
 
   const handleTierSelect = (tier: typeof DONATION_TIERS[0]) => {
     setSelectedTier(tier);
@@ -109,19 +112,26 @@ export default function DonatePage() {
 
   const handleContinueToPayment = async () => {
     if (selectedTier?.isCustom && !customAmount) return;
-    
+    if (donationType === 'named' && (!donorName || !donorEmail)) {
+      setError('Please provide your name and email for recognition');
+      return;
+    }
+
     setLoading(true);
     setError('');
-    
+
     try {
       const amount = selectedTier?.isCustom ? parseFloat(customAmount) : selectedTier?.amount;
-      
+
       const response = await fetch('/api/donations/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           amount,
           tier: selectedTier?.id,
+          donationType,
+          donorName: donationType === 'named' ? donorName : undefined,
+          donorEmail: donationType === 'named' ? donorEmail : undefined,
         }),
       });
 
@@ -132,45 +142,45 @@ export default function DonatePage() {
       }
 
       setInvoiceData(data.invoice);
-      
+
       // Fetch payment methods with retry logic
       let paymentMethodsData = null;
       let lightningInvoice = null;
       let retries = 3;
-      
+
       while (retries > 0 && !lightningInvoice) {
         try {
           // Only log in development mode
           if (process.env.NODE_ENV === 'development') {
             console.log(`Fetching payment methods (attempt ${4 - retries}/3)...`);
           }
-          
+
           const paymentMethodsResponse = await fetch(`/api/donations/${data.invoice.id}/payment-methods`);
           paymentMethodsData = await paymentMethodsResponse.json();
-          
+
           if (process.env.NODE_ENV === 'development') {
             console.log('Payment methods response:', {
               ok: paymentMethodsResponse.ok,
               status: paymentMethodsResponse.status,
               isArray: Array.isArray(paymentMethodsData),
               count: Array.isArray(paymentMethodsData) ? paymentMethodsData.length : 0,
-              methods: Array.isArray(paymentMethodsData) 
+              methods: Array.isArray(paymentMethodsData)
                 ? paymentMethodsData.map((pm: any) => pm.paymentMethod)
                 : 'not an array'
             });
           }
-          
+
           if (paymentMethodsResponse.ok && Array.isArray(paymentMethodsData)) {
             // Find the Lightning payment method
             // BTCPay uses paymentMethodId field, not paymentMethod
-            const lightningMethod = paymentMethodsData.find((pm: any) => 
+            const lightningMethod = paymentMethodsData.find((pm: any) =>
               pm.paymentMethodId === 'BTC-LN' ||
               pm.paymentMethodId === 'BTC-LNURL' ||
-              pm.paymentMethod === 'BTC-LightningNetwork' || 
+              pm.paymentMethod === 'BTC-LightningNetwork' ||
               pm.paymentMethod === 'BTC_LightningNetwork' ||
               (pm.cryptoCode === 'BTC' && pm.paymentMethod?.includes('Lightning'))
             );
-            
+
             if (process.env.NODE_ENV === 'development') {
               console.log('Lightning method search:', {
                 found: !!lightningMethod,
@@ -180,13 +190,13 @@ export default function DonatePage() {
                 destination: lightningMethod?.destination?.substring(0, 20) + '...'
               });
             }
-            
+
             if (lightningMethod?.destination) {
               lightningInvoice = lightningMethod.destination;
               break;
             }
           }
-          
+
           // Wait before retry
           if (retries > 1) {
             if (process.env.NODE_ENV === 'development') {
@@ -205,17 +215,17 @@ export default function DonatePage() {
           }
         }
       }
-      
+
       // Use Lightning invoice if found, otherwise use checkout link
       const finalInvoice = lightningInvoice || data.invoice.checkoutLink;
       const invoiceType = lightningInvoice ? 'Lightning' : 'Checkout Link';
-      
+
       if (process.env.NODE_ENV === 'development') {
         console.log(`Using ${invoiceType} for QR code:`, finalInvoice.substring(0, 30) + '...');
       }
-      
+
       setLightningInvoice(finalInvoice);
-      
+
       // Generate QR code
       const qrUrl = await QRCode.toDataURL(finalInvoice, {
         width: 300,
@@ -280,7 +290,7 @@ export default function DonatePage() {
 
         if (data.success && data.invoice) {
           const status = data.invoice.status?.toLowerCase();
-          
+
           if (status === 'settled' || status === 'processing' || status === 'paid') {
             setPaymentStatus('paid');
             setStep('success');
@@ -318,7 +328,7 @@ export default function DonatePage() {
     <>
       {/* Payment Processing Loader */}
       {loading && <PaymentLoader message="Creating your Lightning invoice..." />}
-      
+
       <div className="min-h-screen bg-black pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Header */}
@@ -343,7 +353,7 @@ export default function DonatePage() {
                 <div className="flex flex-col items-center gap-2">
                   <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border-2 font-bold text-sm md:text-base transition-all duration-300 ${
                     step === s.key
-                      ? 'bg-bitcoin border-bitcoin text-black shadow-lg shadow-bitcoin/50 scale-110'
+                      ? 'bg-bitcoin border-bitcoin text-white shadow-lg shadow-bitcoin/50 scale-110'
                       : ['tiers', 'details', 'payment'].indexOf(step) > idx
                       ? 'bg-bitcoin/20 border-bitcoin text-bitcoin'
                       : 'bg-white/5 border-white/30 text-gray-500'
@@ -385,13 +395,13 @@ export default function DonatePage() {
                   >
                     {/* Image */}
                     <div className="relative h-48 overflow-hidden">
-                      <img 
-                        src={tier.image} 
+                      <img
+                        src={tier.image}
                         alt={tier.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-linear-to-t from-black via-black/70 to-black/30" />
-                      
+
                       {/* Amount Badge - Always visible with shadow */}
                       <div className="absolute top-3 right-3 bg-black/80 backdrop-blur-sm text-white border border-bitcoin px-2.5 py-1 rounded-full font-semibold text-xs shadow-xl">
                         {tier.isCustom ? 'Any Amount' : `$${tier.amount}`}
@@ -413,13 +423,13 @@ export default function DonatePage() {
                       <p className="text-sm text-gray-300 mb-4 leading-relaxed line-clamp-3">
                         {tier.description}
                       </p>
-                      
+
                       {tier.goal && (
                         <div className="mb-3 text-xs text-bitcoin font-semibold">
                           Goal: ${tier.goal.toLocaleString()}
                         </div>
                       )}
-                      
+
                       {/* Perk */}
                       <div className="pt-4 border-t border-white/10">
                         <div className="flex items-start gap-2">
@@ -451,9 +461,9 @@ export default function DonatePage() {
                 {/* Selected Tier Summary with Image */}
                 <div className="mb-6 overflow-hidden rounded-xl border border-white/10">
                   <div className="relative h-40 md:h-48">
-                    <img 
-                      src={selectedTier.image} 
-                      alt={selectedTier.title} 
+                    <img
+                      src={selectedTier.image}
+                      alt={selectedTier.title}
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black via-black/70 to-black/30" />
@@ -510,6 +520,74 @@ export default function DonatePage() {
                   </div>
                 )}
 
+                {/* Donation Type Selection */}
+                <div className="mb-6">
+                  <label className="block text-sm font-semibold text-white uppercase mb-3">
+                    Donation Type
+                  </label>
+                  <div className="grid grid-cols-2 gap-4">
+                    <button
+                      type="button"
+                      onClick={() => setDonationType('anonymous')}
+                      className={`p-4 rounded-xl border-2 transition-all ${
+                        donationType === 'anonymous'
+                          ? 'bg-bitcoin/20 border-bitcoin text-white'
+                          : 'bg-white/5 border-white/20 text-gray-400 hover:border-white/40'
+                      }`}
+                    >
+                      <div className="font-bold mb-1">Anonymous</div>
+                      <div className="text-xs">No email or name required</div>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setDonationType('named')}
+                      className={`p-4 rounded-xl border-2 transition-all ${
+                        donationType === 'named'
+                          ? 'bg-bitcoin/20 border-bitcoin text-white'
+                          : 'bg-white/5 border-white/20 text-gray-400 hover:border-white/40'
+                      }`}
+                    >
+                      <div className="font-bold mb-1">Get Recognition</div>
+                      <div className="text-xs">Receive perks & updates</div>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Named Donation Fields */}
+                {donationType === 'named' && (
+                  <div className="space-y-4 mb-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-white uppercase mb-2">
+                        Your Name *
+                      </label>
+                      <input
+                        type="text"
+                        value={donorName}
+                        onChange={(e) => setDonorName(e.target.value)}
+                        placeholder="Enter your name"
+                        className="w-full px-4 py-3 bg-black/60 border-2 border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-bitcoin"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-white uppercase mb-2">
+                        Your Email *
+                      </label>
+                      <input
+                        type="email"
+                        value={donorEmail}
+                        onChange={(e) => setDonorEmail(e.target.value)}
+                        placeholder="Enter your email"
+                        className="w-full px-4 py-3 bg-black/60 border-2 border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-bitcoin"
+                      />
+                    </div>
+                    <div className="p-3 bg-bitcoin/10 border border-bitcoin/30 rounded-lg">
+                      <p className="text-xs text-gray-300">
+                        We'll use your email to send your perk rewards and keep you updated on the impact of your donation.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
                 {error && (
                   <div className="mb-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm">
                     {error}
@@ -518,7 +596,7 @@ export default function DonatePage() {
 
                 <button
                   onClick={handleContinueToPayment}
-                  disabled={loading || (selectedTier.isCustom && !customAmount)}
+                  disabled={loading || (selectedTier.isCustom && !customAmount) || (donationType === 'named' && (!donorName || !donorEmail))}
                   className="w-full bg-bitcoin hover:bg-bitcoin-dark text-white font-bold py-4 rounded-xl hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-bitcoin/50"
                 >
                   {loading ? 'Creating Invoice...' : 'Continue to Payment'}
@@ -545,7 +623,7 @@ export default function DonatePage() {
                   ${selectedTier?.isCustom ? customAmount : selectedTier?.amount}
                 </div>
                 <p className="text-sm text-gray-400">{selectedTier?.title}</p>
-                
+
                 {/* Timer */}
                 <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/20 rounded-full">
                   <div className={`w-2 h-2 rounded-full animate-pulse ${isExpired ? 'bg-red-500' : 'bg-green-500'}`} />
@@ -589,7 +667,7 @@ export default function DonatePage() {
                     )}
                   </div>
                 )}
-                
+
                 {/* QR Code */}
                 {qrCodeDataUrl && (
                   <div className="flex justify-center mb-6">
@@ -679,7 +757,7 @@ export default function DonatePage() {
                     </div>
                   </div>
                 )}
-                
+
                 {/* Payment Link Button - Only show when Lightning unavailable */}
                 {!lightningInvoice.startsWith('lnbc') && (
                   <div className="mb-6">
@@ -731,11 +809,11 @@ export default function DonatePage() {
                   initial={{ scale: 0 }}
                   animate={{ scale: [0, 1.2, 1] }}
                   transition={{ duration: 0.6, times: [0, 0.6, 1] }}
-                  className="w-32 h-32 mx-auto bg-gradient-to-br from-bitcoin to-orange-600 rounded-full flex items-center justify-center shadow-2xl shadow-bitcoin/50"
+                  className="w-32 h-32 mx-auto bg-bitcoin rounded-full flex items-center justify-center shadow-2xl shadow-bitcoin/50"
                 >
                   <FiCheck className="w-16 h-16 text-white" />
                 </motion.div>
-                
+
                 {/* Floating particles */}
                 {[...Array(12)].map((_, i) => (
                   <motion.div
@@ -782,38 +860,77 @@ export default function DonatePage() {
               >
                 <h3 className="text-xl font-bold mb-4">What Happens Next?</h3>
                 <div className="space-y-4 text-left">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-bitcoin/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-bitcoin font-bold text-sm">1</span>
-                    </div>
-                    <div>
-                      <p className="text-gray-300">
-                        <span className="font-semibold text-white">Confirmation Email:</span> You'll receive a receipt at the email address associated with your payment
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-bitcoin/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-bitcoin font-bold text-sm">2</span>
-                    </div>
-                    <div>
-                      <p className="text-gray-300">
-                        <span className="font-semibold text-white">Immediate Impact:</span> Your contribution is already making a difference in Kibera
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-bitcoin/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-bitcoin font-bold text-sm">3</span>
-                    </div>
-                    <div>
-                      <p className="text-gray-300">
-                        <span className="font-semibold text-white">Claim Your Perk:</span> Email us at <a href="mailto:connect@afribit.africa" className="text-bitcoin hover:underline">connect@afribit.africa</a> with your payment details to receive your recognition
-                      </p>
-                    </div>
-                  </div>
+                  {donationType === 'named' ? (
+                    <>
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full bg-bitcoin/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-bitcoin font-bold text-sm">1</span>
+                        </div>
+                        <div>
+                          <p className="text-gray-300">
+                            <span className="font-semibold text-white">Confirmation Email:</span> We'll send your perks and impact updates to {donorEmail}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full bg-bitcoin/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-bitcoin font-bold text-sm">2</span>
+                        </div>
+                        <div>
+                          <p className="text-gray-300">
+                            <span className="font-semibold text-white">Your Recognition:</span> Your name will be added to our supporters page and you'll receive your tier-specific perks within 2 weeks
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full bg-bitcoin/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-bitcoin font-bold text-sm">3</span>
+                        </div>
+                        <div>
+                          <p className="text-gray-300">
+                            <span className="font-semibold text-white">Immediate Impact:</span> Your contribution is already making a difference in Kibera
+                          </p>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full bg-bitcoin/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-bitcoin font-bold text-sm">1</span>
+                        </div>
+                        <div>
+                          <p className="text-gray-300">
+                            <span className="font-semibold text-white">Anonymous Contribution:</span> Your donation has been received and no personal information was collected
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full bg-bitcoin/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-bitcoin font-bold text-sm">2</span>
+                        </div>
+                        <div>
+                          <p className="text-gray-300">
+                            <span className="font-semibold text-white">Immediate Impact:</span> Your contribution is already making a difference in Kibera
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full bg-bitcoin/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-bitcoin font-bold text-sm">3</span>
+                        </div>
+                        <div>
+                          <p className="text-gray-300">
+                            <span className="font-semibold text-white">Want Recognition?</span> Email us at <a href="mailto:connect@afribit.africa" className="text-bitcoin hover:underline">connect@afribit.africa</a> with your payment details to claim your perks
+                          </p>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </motion.div>
 
@@ -834,6 +951,9 @@ export default function DonatePage() {
                     setTimeLeft(900);
                     setIsExpired(false);
                     setPaymentStatus('pending');
+                    setDonationType('anonymous');
+                    setDonorName('');
+                    setDonorEmail('');
                   }}
                   className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-8 rounded-xl transition-all border border-white/20"
                 >
