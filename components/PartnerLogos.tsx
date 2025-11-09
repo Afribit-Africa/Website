@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const partners = [
   { name: 'Bitcoin Conference', logo: '/Media/Partner logos/Bitcoin-confed.jpg' },
@@ -12,7 +12,9 @@ const partners = [
 
 export default function PartnerLogos() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Desktop auto-scroll
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
@@ -35,6 +37,15 @@ export default function PartnerLogos() {
     return () => cancelAnimationFrame(animationFrameId);
   }, []);
 
+  // Mobile carousel auto-advance
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % partners.length);
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
   const duplicatedLogos = [...partners, ...partners, ...partners];
 
   return (
@@ -47,80 +58,64 @@ export default function PartnerLogos() {
           </p>
         </div>
 
-        {/* Mobile: Half-Faded Orbit Layout */}
-        <div className="md:hidden relative h-96 flex items-center justify-center mb-8 overflow-hidden">
-          {/* Center Logo */}
-          <motion.div
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="absolute z-10 w-28 h-28 bg-white rounded-full flex items-center justify-center shadow-2xl shadow-bitcoin/30 border-2 border-bitcoin/20"
-          >
-            <img
-              src="/Media/Logo/Full logo png transparent.png"
-              alt="Afribit"
-              className="w-24 h-24 object-contain"
-            />
-          </motion.div>
-
-          {/* Half Orbit Ring with Gradient Fade */}
-          <div className="absolute w-80 h-80 pointer-events-none">
-            <svg className="w-full h-full" viewBox="0 0 320 320">
-              <defs>
-                <linearGradient id="orbitGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="rgba(255, 255, 255, 0)" />
-                  <stop offset="50%" stopColor="rgba(255, 255, 255, 0.15)" />
-                  <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
-                </linearGradient>
-              </defs>
-              <circle
-                cx="160"
-                cy="160"
-                r="140"
-                fill="none"
-                stroke="url(#orbitGradient)"
-                strokeWidth="2"
-                strokeDasharray="4 4"
+        {/* Mobile: Carousel */}
+        <div className="md:hidden">
+          <div className="relative h-64 flex flex-col items-center justify-center">
+            {/* Center Afribit Logo */}
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              className="mb-8 w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-xl shadow-bitcoin/30 border-2 border-bitcoin/20"
+            >
+              <img
+                src="/Media/Logo/Full logo png transparent.png"
+                alt="Afribit"
+                className="w-20 h-20 object-contain"
               />
-            </svg>
-          </div>
+            </motion.div>
 
-          {/* Static Partner Logos on Half Circle */}
-          {partners.map((partner, index) => {
-            // Position logos only on the right half (0° to 180° from right)
-            const angle = -90 + (index * 180) / (partners.length - 1); // -90° to 90° (right semicircle)
-            const radius = 140;
-            const x = Math.cos((angle * Math.PI) / 180) * radius;
-            const y = Math.sin((angle * Math.PI) / 180) * radius;
+            {/* Carousel Container */}
+            <div className="relative w-full max-w-xs h-32">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-40 h-32 flex items-center justify-center">
+                    <img
+                      src={partners[currentIndex].logo}
+                      alt={partners[currentIndex].name}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-            return (
-              <motion.div
-                key={partner.name}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{
-                  scale: 1,
-                  opacity: 1
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.3 + index * 0.15,
-                  ease: "easeOut"
-                }}
-                className="absolute w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-2 flex items-center justify-center"
-                style={{
-                  left: `calc(50% + ${x}px)`,
-                  top: `calc(50% + ${y}px)`,
-                  transform: 'translate(-50%, -50%)'
-                }}
-              >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="w-full h-full object-contain opacity-70"
+            {/* Carousel Indicators */}
+            <div className="flex gap-2 mt-6">
+              {partners.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    index === currentIndex
+                      ? 'bg-bitcoin w-8'
+                      : 'bg-white/30 hover:bg-white/50'
+                  }`}
+                  aria-label={`Go to partner ${index + 1}`}
                 />
-              </motion.div>
-            );
-          })}
+              ))}
+            </div>
+
+            {/* Partner Name */}
+            <p className="text-gray-400 text-sm mt-4">{partners[currentIndex].name}</p>
+          </div>
         </div>
 
         {/* Desktop: Horizontal Scroll */}
