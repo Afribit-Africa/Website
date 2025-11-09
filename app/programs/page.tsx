@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { FaGraduationCap, FaStore, FaRecycle, FaCrown, FaMotorcycle } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { FaGraduationCap, FaStore, FaRecycle, FaCrown, FaMotorcycle, FaBitcoin } from 'react-icons/fa';
 
 export default function ProgramsPage() {
 
@@ -154,159 +155,227 @@ export default function ProgramsPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-b from-bitcoin/10 via-black to-black" />
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-bitcoin/5 via-black to-black" />
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-bitcoin rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500 rounded-full blur-3xl" />
+        </div>
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-5xl md:text-7xl font-bold">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center space-y-6"
+          >
+            <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-bitcoin via-orange-400 to-bitcoin">
               Our Programs
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-              Comprehensive initiatives empowering Kibera through Bitcoin adoption, education, and sustainable development
+              Empowering Kibera through Bitcoin adoption, education, and sustainable development
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <Link 
                 href="/donate"
-                className="btn btn-primary btn-lg"
+                className="bg-bitcoin hover:bg-bitcoin/90 text-black font-bold py-4 px-8 rounded-xl transition-all hover:scale-105"
               >
                 Support Our Programs
               </Link>
-              <Link href="/#testimonials" className="btn btn-secondary btn-lg">
-                Success Stories
+              <Link 
+                href="/contact" 
+                className="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-xl transition-all border border-white/20"
+              >
+                Get Involved
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Programs Grid */}
-      <section className="py-20">
-          <div className="container mx-auto px-6 max-w-7xl">
-            <div className="space-y-20">
-              {programs.map((program, index) => (
-                <div 
-                  key={program.id}
-                  className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}
-                >
-                  {/* Program Card */}
-                  <div className="flex-1 space-y-6">
-                    <div className="flex items-center gap-4">
-                      <div className={`w-20 h-20 rounded-2xl bg-linear-to-br ${program.gradient} flex items-center justify-center text-white shadow-lg`}>
-                        <program.icon className="w-10 h-10" />
-                      </div>
-                      <div>
-                        <h2 className="text-3xl md:text-4xl font-bold">{program.title}</h2>
-                        <p className="text-bitcoin text-base md:text-lg">{program.tagline}</p>
-                      </div>
-                    </div>
-
-                    <p className="text-gray-300 text-lg leading-relaxed">
-                      {program.description}
-                    </p>
-
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                      <h3 className="text-xl font-bold mb-3 text-bitcoin">Real Impact</h3>
-                      <p className="text-gray-300 leading-relaxed">
-                        {program.impact}
-                      </p>
-                    </div>
-
-                    {/* Stats */}
-                    <div className="grid grid-cols-3 gap-4">
-                      {Object.entries(program.stats).map(([key, value]) => (
-                        <div key={key} className="text-center p-4 bg-white/5 rounded-xl">
-                          <div className="text-2xl font-bold text-bitcoin">{value}</div>
-                          <div className="text-sm text-gray-400 capitalize">{key}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Benefits List */}
-                  <div className="flex-1">
-                    <div className="bg-linear-to-br from-white/10 to-white/5 backdrop-blur-md border border-white/20 rounded-3xl p-8">
-                      <h3 className="text-2xl font-bold mb-6">What We Provide</h3>
-                      <ul className="space-y-4">
-                        {program.benefits.map((benefit, i) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <span className="text-bitcoin text-xl mt-1">✓</span>
-                            <span className="text-gray-300">{benefit}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <Link
-                        href="/donate"
-                        className="w-full mt-8 btn btn-primary block text-center"
-                      >
-                        Fund This Program
-                      </Link>
-                    </div>
-                  </div>
+      <section className="py-16">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {programs.map((program, index) => (
+              <motion.div
+                key={program.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-bitcoin/50 transition-all duration-300 hover:shadow-2xl hover:shadow-bitcoin/20"
+              >
+                {/* Icon */}
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${program.gradient} flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform`}>
+                  <program.icon className="w-8 h-8" />
                 </div>
-              ))}
-            </div>
+
+                {/* Title */}
+                <h3 className="text-2xl font-bold mb-2">{program.title}</h3>
+                <p className="text-bitcoin text-sm font-semibold mb-4">{program.tagline}</p>
+
+                {/* Description */}
+                <p className="text-gray-400 leading-relaxed mb-6">
+                  {program.description}
+                </p>
+
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-3 mb-6">
+                  {Object.entries(program.stats).map(([key, value]) => (
+                    <div key={key} className="text-center">
+                      <div className="text-lg font-bold text-bitcoin">{value}</div>
+                      <div className="text-xs text-gray-500 capitalize">{key}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <Link
+                  href="/donate"
+                  className="w-full block text-center py-3 px-6 bg-white/5 hover:bg-bitcoin/20 border border-white/10 hover:border-bitcoin rounded-xl transition-all font-semibold text-sm"
+                >
+                  Fund This Program
+                </Link>
+              </motion.div>
+            ))}
           </div>
+        </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-linear-to-b from-black to-bitcoin/5">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Community Voices</h2>
-              <p className="text-xl text-gray-400">Real stories from real people</p>
-            </div>
+      {/* Impact Details Section */}
+      <section className="py-20 bg-gradient-to-b from-black to-bitcoin/5">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Real Impact Stories</h2>
+            <p className="text-xl text-gray-400">See how Bitcoin is changing lives in Kibera</p>
+          </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              {testimonials.map((testimonial, index) => (
-                <div 
-                  key={index}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-bitcoin/50 transition-all"
-                >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-linear-to-br from-bitcoin to-orange-600 flex items-center justify-center text-xl font-bold">
-                      {testimonial.name[0]}
-                    </div>
-                    <div>
-                      <div className="font-bold">{testimonial.name}</div>
-                      <div className="text-sm text-gray-400">{testimonial.role}</div>
-                    </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-bitcoin/30 transition-all"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-bitcoin to-orange-600 flex items-center justify-center text-xl font-bold flex-shrink-0">
+                    {testimonial.name[0]}
                   </div>
-                  <p className="text-gray-300 italic leading-relaxed mb-4">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="text-xs text-bitcoin uppercase tracking-wide">
-                    {testimonial.program}
+                  <div>
+                    <div className="font-bold text-lg">{testimonial.name}</div>
+                    <div className="text-sm text-gray-400">{testimonial.role}</div>
+                    <div className="text-xs text-bitcoin uppercase tracking-wide mt-1">
+                      {testimonial.program}
+                    </div>
                   </div>
                 </div>
-              ))}
-            </div>
+                <p className="text-gray-300 italic leading-relaxed">
+                  "{testimonial.quote}"
+                </p>
+              </motion.div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* What We Provide Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">What We Provide</h2>
+            <p className="text-xl text-gray-400">Comprehensive support for each program</p>
+          </motion.div>
+
+          <div className="space-y-12">
+            {programs.map((program, index) => (
+              <motion.div
+                key={program.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-10"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${program.gradient} flex items-center justify-center`}>
+                    <program.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold">{program.title}</h3>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="text-lg font-semibold text-bitcoin mb-4">Program Benefits</h4>
+                    <ul className="space-y-3">
+                      {program.benefits.map((benefit, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <FaBitcoin className="text-bitcoin text-sm mt-1 flex-shrink-0" />
+                          <span className="text-gray-300 text-sm">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-bitcoin mb-4">Real Impact</h4>
+                    <p className="text-gray-300 leading-relaxed">{program.impact}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20">
-          <div className="container mx-auto px-6 max-w-4xl text-center">
-            <div className="bg-linear-to-br from-bitcoin/20 to-orange-600/20 backdrop-blur-md border border-bitcoin/30 rounded-3xl p-12">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative bg-gradient-to-br from-bitcoin/20 via-orange-600/20 to-bitcoin/20 backdrop-blur-md border border-bitcoin/30 rounded-3xl p-12 md:p-16 text-center overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(247,147,26,0.1),transparent_70%)]" />
+            <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Every Sat Makes a Difference
               </h2>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
                 Your donation doesn't just fund programs—it transforms lives. From a mama mboga expanding her business to a youth stacking sats for their future, every contribution builds real financial freedom in Kibera.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   href="/donate"
-                  className="btn btn-primary btn-lg"
+                  className="bg-bitcoin hover:bg-bitcoin/90 text-black font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 inline-flex items-center justify-center gap-2"
                 >
+                  <FaBitcoin className="w-5 h-5" />
                   Donate with Bitcoin
                 </Link>
-                <Link href="/contact" className="btn btn-secondary btn-lg">
+                <Link 
+                  href="/contact" 
+                  className="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-xl transition-all border border-white/20"
+                >
                   Get Involved
                 </Link>
               </div>
             </div>
-          </div>
+          </motion.div>
+        </div>
       </section>
     </div>
   );

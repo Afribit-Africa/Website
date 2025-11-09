@@ -47,25 +47,48 @@ export default function PartnerLogos() {
           </p>
         </div>
 
-        {/* Mobile: Circular Orbit Layout */}
-        <div className="md:hidden relative h-96 flex items-center justify-center mb-8">
+        {/* Mobile: Half-Faded Orbit Layout */}
+        <div className="md:hidden relative h-96 flex items-center justify-center mb-8 overflow-hidden">
           {/* Center Logo */}
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="absolute z-10 w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-2xl shadow-bitcoin/30 border-4 border-bitcoin/20"
+            transition={{ duration: 0.8 }}
+            className="absolute z-10 w-28 h-28 bg-white rounded-full flex items-center justify-center shadow-2xl shadow-bitcoin/30 border-2 border-bitcoin/20"
           >
             <img
               src="/Media/Logo/Full logo png transparent.png"
               alt="Afribit"
-              className="w-28 h-28 object-contain"
+              className="w-24 h-24 object-contain"
             />
           </motion.div>
 
-          {/* Orbiting Partner Logos */}
+          {/* Half Orbit Ring with Gradient Fade */}
+          <div className="absolute w-80 h-80 pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 320 320">
+              <defs>
+                <linearGradient id="orbitGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(255, 255, 255, 0)" />
+                  <stop offset="50%" stopColor="rgba(255, 255, 255, 0.15)" />
+                  <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
+                </linearGradient>
+              </defs>
+              <circle
+                cx="160"
+                cy="160"
+                r="140"
+                fill="none"
+                stroke="url(#orbitGradient)"
+                strokeWidth="2"
+                strokeDasharray="4 4"
+              />
+            </svg>
+          </div>
+
+          {/* Static Partner Logos on Half Circle */}
           {partners.map((partner, index) => {
-            const angle = (index * 360) / partners.length;
+            // Position logos only on the right half (0° to 180° from right)
+            const angle = -90 + (index * 180) / (partners.length - 1); // -90° to 90° (right semicircle)
             const radius = 140;
             const x = Math.cos((angle * Math.PI) / 180) * radius;
             const y = Math.sin((angle * Math.PI) / 180) * radius;
@@ -74,17 +97,16 @@ export default function PartnerLogos() {
               <motion.div
                 key={partner.name}
                 initial={{ scale: 0, opacity: 0 }}
-                animate={{ 
-                  scale: 1, 
-                  opacity: 1,
-                  rotate: [0, 360]
+                animate={{
+                  scale: 1,
+                  opacity: 1
                 }}
                 transition={{
-                  scale: { duration: 0.4, delay: 0.4 + index * 0.1 },
-                  opacity: { duration: 0.4, delay: 0.4 + index * 0.1 },
-                  rotate: { duration: 30, repeat: Infinity, ease: "linear" }
+                  duration: 0.5,
+                  delay: 0.3 + index * 0.15,
+                  ease: "easeOut"
                 }}
-                className="absolute w-20 h-20 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-2 flex items-center justify-center hover:border-bitcoin/50 transition-colors"
+                className="absolute w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-2 flex items-center justify-center"
                 style={{
                   left: `calc(50% + ${x}px)`,
                   top: `calc(50% + ${y}px)`,
@@ -94,14 +116,11 @@ export default function PartnerLogos() {
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all"
+                  className="w-full h-full object-contain opacity-70"
                 />
               </motion.div>
             );
           })}
-
-          {/* Orbit Ring */}
-          <div className="absolute w-80 h-80 border-2 border-dashed border-white/10 rounded-full animate-spin" style={{ animationDuration: '40s' }} />
         </div>
 
         {/* Desktop: Horizontal Scroll */}

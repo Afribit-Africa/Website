@@ -38,20 +38,8 @@ export default function ContactPage() {
     {
       icon: FiMail,
       title: 'Email',
-      value: 'hello@afribit.africa',
-      link: 'mailto:hello@afribit.africa'
-    },
-    {
-      icon: FiPhone,
-      title: 'Phone',
-      value: '+254 XXX XXX XXX',
-      link: 'tel:+254XXXXXXXXX'
-    },
-    {
-      icon: FiMapPin,
-      title: 'Location',
-      value: 'Nairobi, Kenya',
-      link: null
+      value: 'connect@afribit.africa',
+      link: 'mailto:connect@afribit.africa'
     }
   ];
 
@@ -59,7 +47,7 @@ export default function ContactPage() {
     {
       icon: FaWhatsapp,
       name: 'WhatsApp',
-      link: 'https://wa.me/254XXXXXXXXX',
+      link: 'https://wa.me/254746385499',
       color: 'hover:text-green-500'
     },
     {
@@ -70,8 +58,8 @@ export default function ContactPage() {
     },
     {
       icon: FaTwitter,
-      name: 'Twitter',
-      link: 'https://twitter.com/afribit_africa',
+      name: 'X (Twitter)',
+      link: 'https://x.com/afribitkibera',
       color: 'hover:text-sky-500'
     }
   ];
@@ -235,11 +223,11 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-bitcoin hover:bg-bitcoin/90 text-black font-semibold py-4 px-8 rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-bitcoin hover:bg-bitcoin/90 text-white font-semibold py-4 px-8 rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
-                    <div className="w-5 h-5 border-2 border-black/20 border-t-black rounded-full animate-spin" />
+                    <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
                     Sending...
                   </>
                 ) : (
