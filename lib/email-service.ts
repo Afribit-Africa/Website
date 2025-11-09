@@ -1,10 +1,14 @@
 import nodemailer from 'nodemailer';
 
 // Create reusable transporter with more compatible settings
+// Try port 587 with STARTTLS if 465 doesn't work
+const smtpPort = parseInt(process.env.SMTP_PORT || '465');
+const useSecure = smtpPort === 465; // Use SSL for 465, STARTTLS for 587
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT || '465'),
-  secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+  port: smtpPort,
+  secure: useSecure, // true for 465 (SSL), false for 587 (STARTTLS)
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASSWORD,
@@ -13,8 +17,12 @@ const transporter = nodemailer.createTransport({
     // Don't fail on invalid certs
     rejectUnauthorized: false
   },
-  debug: true, // Enable debug output
-  logger: true // Log to console
+  // Connection timeout
+  connectionTimeout: 10000,
+  // Socket timeout  
+  socketTimeout: 10000,
+  debug: process.env.NODE_ENV === 'development', // Enable debug output in dev
+  logger: process.env.NODE_ENV === 'development' // Log to console in dev
 });
 
 export interface DonationReceiptData {
