@@ -2,19 +2,38 @@ import { NextRequest, NextResponse } from 'next/server';
 import { sendDonationReceipt } from '@/lib/resend-email';
 import { getDonorByInvoiceId } from '@/lib/donor-db';
 import { handleAPIError } from '@/lib/api-helpers';
+import { rateLimit, rateLimitConfigs, RateLimitError } from '@/lib/rate-limit';
+import { sendReceiptSchema, formatZodError } from '@/lib/validation';
 
 export async function POST(request: NextRequest) {
   try {
-    const { invoiceId, transactionId } = await request.json();
+    // Apply rate limiting
+    try {
+      await rateLimit(request, rateLimitConfigs.strict);
+    } catch (error) {
+      if (error instanceof RateLimitError) {
+        return NextResponse.json(
+          { success: false, error: 'Too many requests. Please try again later.' },
+          { status: 429, headers: { 'Retry-After': error.retryAfter.toString() } }
+        );
+      }
+      throw error;
+    }
 
-    console.log('Attempting to send receipt for invoice:', invoiceId);
+    const body = await request.json();
 
-    if (!invoiceId) {
+    // Validate input
+    const validation = sendReceiptSchema.safeParse(body);
+    if (!validation.success) {
       return NextResponse.json(
-        { success: false, error: 'Invoice ID is required' },
+        { success: false, error: formatZodError(validation.error) },
         { status: 400 }
       );
     }
+
+    const { invoiceId, transactionId } = validation.data;
+
+    console.log('Attempting to send receipt for invoice:', invoiceId);
 
     // Get donor info from database
     let donor;

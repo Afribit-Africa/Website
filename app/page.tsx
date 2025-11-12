@@ -1,38 +1,72 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { BitcoinValuesMarquee } from "@/components/BitcoinValuesMarquee";
 import { GSAPAnimations } from "@/components/GSAPAnimations";
-import { DonationStats } from "@/components/DonationStats";
-import { MobileVideoPlayer } from "@/components/MobileVideoPlayer";
-import { FloatingAudioPlayer } from "@/components/FloatingAudioPlayer";
-import TestimonialsCarousel from "@/components/TestimonialsCarousel";
-import PartnerLogos from "@/components/PartnerLogos";
-import ImpactStats from "@/components/ImpactStats";
-import WhyKibera from "@/components/WhyKibera";
-import NewsSection from "@/components/NewsSection";
-import FAQ from "@/components/FAQ";
+import { Skeleton } from "@/components/Skeleton";
 import Link from "next/link";
+
+// Lazy load heavy components
+const DonationStats = dynamic(() => import("@/components/DonationStats").then(mod => ({ default: mod.DonationStats })), {
+  loading: () => <Skeleton className="h-64 w-full" />,
+  ssr: false
+});
+
+const MobileVideoPlayer = dynamic(() => import("@/components/MobileVideoPlayer").then(mod => ({ default: mod.MobileVideoPlayer })), {
+  loading: () => null,
+  ssr: false
+});
+
+const FloatingAudioPlayer = dynamic(() => import("@/components/FloatingAudioPlayer").then(mod => ({ default: mod.FloatingAudioPlayer })), {
+  loading: () => null,
+  ssr: false
+});
+
+const TestimonialsCarousel = dynamic(() => import("@/components/TestimonialsCarousel"), {
+  loading: () => <Skeleton className="h-96 w-full" />,
+  ssr: false
+});
+
+const PartnerLogos = dynamic(() => import("@/components/PartnerLogos"), {
+  loading: () => <Skeleton className="h-64 w-full" />,
+});
+
+const ImpactStats = dynamic(() => import("@/components/ImpactStats"), {
+  loading: () => <Skeleton className="h-96 w-full" />,
+});
+
+const WhyKibera = dynamic(() => import("@/components/WhyKibera"), {
+  loading: () => <Skeleton className="h-96 w-full" />,
+});
+
+const NewsSection = dynamic(() => import("@/components/NewsSection"), {
+  loading: () => <Skeleton className="h-96 w-full" />,
+});
+
+const FAQ = dynamic(() => import("@/components/FAQ"), {
+  loading: () => <Skeleton className="h-96 w-full" />,
+});
 
 export default function HomePage() {
   return (
     <>
-      
+
       {/* Mobile Video Icon & Lightbox */}
       <MobileVideoPlayer />
-      
+
       {/* Floating Audio Player */}
       <FloatingAudioPlayer />
-      
+
       <GSAPAnimations>
         <div className="min-h-screen">
       {/* ========== HERO SECTION ========== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-24 md:pb-0 pt-24 lg:pt-32">
         {/* Background Video */}
         <div className="absolute inset-0 overflow-hidden">
-          <video 
-            autoPlay 
-            loop 
-            muted 
+          <video
+            autoPlay
+            loop
+            muted
             playsInline
             preload="metadata"
             poster="/Media/Images/Hero section video background fallback.png"
@@ -44,7 +78,7 @@ export default function HomePage() {
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/60 to-black" />
         </div>
-        
+
         {/* Content - PROPERLY CENTERED */}
         <div className="relative z-10 container max-w-5xl px-4 sm:px-6">
           <div className="text-center space-y-6 sm:space-y-8">
@@ -54,15 +88,15 @@ export default function HomePage() {
               <br />
               <span className="text-gradient">Through Bitcoin</span>
             </h1>
-            
+
             {/* Subtitle */}
             <p className="hero-subtitle text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Financial freedom, environmental stewardship, and community resilience — powered by sats.
             </p>
-            
+
             {/* CTA Buttons - Properly Spaced */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-4">
-              <Link 
+              <Link
                 href="/donate"
                 className="btn btn-primary btn-lg w-full sm:w-auto"
               >
@@ -78,7 +112,7 @@ export default function HomePage() {
                 View Programs
               </a>
             </div>
-            
+
             {/* Stats Row */}
             <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-12 sm:pt-16 mt-12 sm:mt-16 border-t border-white/10 max-w-3xl mx-auto">
               <div className="stat-item text-center">
@@ -145,30 +179,30 @@ export default function HomePage() {
               Financial freedom, environmental stewardship, and community resilience — powered by sats
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Program 1 - Micro-Merchants & Traders */}
             <div className="program-card group overflow-hidden rounded-3xl bg-linear-to-b from-white/5 to-white/2 border border-white/10 hover:border-bitcoin/50 transition-all duration-500">
               {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
-                <img 
-                  src="/Media/Images/Mama mboga groceries accepting bitcoin.jpg" 
-                  alt="Micro-Merchants & Traders" 
+                <img
+                  src="/Media/Images/Mama mboga groceries accepting bitcoin.jpg"
+                  alt="Micro-Merchants & Traders"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
               </div>
-              
+
               {/* Content Section */}
               <div className="p-6">
                 <h3 className="text-2xl font-bold font-heading mb-3 text-white">Micro-Merchants & Traders</h3>
-                
+
                 <p className="text-gray-300 text-base mb-6 leading-relaxed">
                   Empowering local merchants to accept Bitcoin payments, building a thriving circular economy from the ground up.
                 </p>
-                
+
                 <a href="/programs#merchants" className="inline-flex items-center text-bitcoin font-semibold hover:text-white transition-colors group/link text-sm">
-                  Learn More 
+                  Learn More
                   <svg className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -180,24 +214,24 @@ export default function HomePage() {
             <div className="program-card group overflow-hidden rounded-3xl bg-linear-to-b from-white/5 to-white/2 border border-white/10 hover:border-bitcoin/50 transition-all duration-500">
               {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
-                <img 
-                  src="/Media/Images/Trezor Academy session pics/IMG-20250914-WA0155.jpg" 
-                  alt="Women's Upcycling Collective" 
+                <img
+                  src="/Media/Images/Trezor Academy session pics/IMG-20250914-WA0155.jpg"
+                  alt="Women's Upcycling Collective"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
               </div>
-              
+
               {/* Content Section */}
               <div className="p-6">
                 <h3 className="text-2xl font-bold font-heading mb-3 text-white">Women's Upcycling Collective</h3>
-                
+
                 <p className="text-gray-300 text-base mb-6 leading-relaxed">
                   Training women to create valuable products from waste materials, earning Bitcoin while protecting the environment.
                 </p>
-                
+
                 <a href="/programs#upcycle" className="inline-flex items-center text-bitcoin font-semibold hover:text-white transition-colors group/link text-sm">
-                  Learn More 
+                  Learn More
                   <svg className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -209,24 +243,24 @@ export default function HomePage() {
             <div className="program-card group overflow-hidden rounded-3xl bg-linear-to-b from-white/5 to-white/2 border border-white/10 hover:border-bitcoin/50 transition-all duration-500">
               {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
-                <img 
-                  src="/Media/Images/Waste Collection.jpg" 
-                  alt="Waste Incentives Program" 
+                <img
+                  src="/Media/Images/Waste Collection.jpg"
+                  alt="Waste Incentives Program"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
               </div>
-              
+
               {/* Content Section */}
               <div className="p-6">
                 <h3 className="text-2xl font-bold font-heading mb-3 text-white">Waste Incentives Program</h3>
-                
+
                 <p className="text-gray-300 text-base mb-6 leading-relaxed">
                   Rewarding community members with Bitcoin for collecting and recycling waste, creating a cleaner Kibera.
                 </p>
-                
+
                 <a href="/programs#waste" className="inline-flex items-center text-bitcoin font-semibold hover:text-white transition-colors group/link text-sm">
-                  Learn More 
+                  Learn More
                   <svg className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -238,24 +272,24 @@ export default function HomePage() {
             <div className="program-card group overflow-hidden rounded-3xl bg-linear-to-b from-white/5 to-white/2 border border-white/10 hover:border-bitcoin/50 transition-all duration-500">
               {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
-                <img 
-                  src="/Media/Images/Motorbike bitcoin onboarding.jpg" 
-                  alt="Boda-Boda Ride to Freedom" 
+                <img
+                  src="/Media/Images/Motorbike bitcoin onboarding.jpg"
+                  alt="Boda-Boda Ride to Freedom"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
               </div>
-              
+
               {/* Content Section */}
               <div className="p-6">
                 <h3 className="text-2xl font-bold font-heading mb-3 text-white">Boda-Boda "Ride to Freedom"</h3>
-                
+
                 <p className="text-gray-300 text-base mb-6 leading-relaxed">
                   Providing motorcycle riders with Bitcoin microloans for licensing, insurance, and financial independence.
                 </p>
-                
+
                 <a href="/programs#bodaboda" className="inline-flex items-center text-bitcoin font-semibold hover:text-white transition-colors group/link text-sm">
-                  Learn More 
+                  Learn More
                   <svg className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -275,7 +309,7 @@ export default function HomePage() {
               Hear from real people whose lives have been transformed by Bitcoin
             </p>
           </div>
-          
+
           <TestimonialsCarousel />
         </div>
       </section>
@@ -296,15 +330,15 @@ export default function HomePage() {
             <div className="inline-block px-4 py-2 bg-black/5 border border-black/10 rounded-full">
               <span className="text-black font-semibold text-sm">Twitter</span>
             </div>
-            
+
             <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl font-bold text-black">
               Don't miss what's next
             </h2>
-            
+
             <p className="text-lg sm:text-xl md:text-2xl text-black/70 leading-relaxed max-w-2xl mx-auto">
               Stay updated with stories from the streets of Kibera — fresh from our community, partners, and friends.
             </p>
-            
+
             <a
               href="https://twitter.com/afribitAfrica"
               target="_blank"

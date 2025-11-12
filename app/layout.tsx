@@ -13,7 +13,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"], // Reduced from 4 to 3 weights
 });
 
 // Headings - modern fintech style
@@ -21,23 +21,15 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "700"], // Reduced from 4 to 2 weights
 });
 
-// Titles/Display - futuristic tech
-const orbitron = Orbitron({
-  subsets: ["latin"],
-  variable: "--font-orbitron",
-  display: "swap",
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
-
-// Numbers/Stats - technical display
+// Numbers/Stats - technical display (keeping one display font)
 const rajdhani = Rajdhani({
   subsets: ["latin"],
   variable: "--font-rajdhani",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "600", "700"], // Reduced from 5 to 3 weights
 });
 
 export const metadata: Metadata = {
@@ -101,9 +93,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html 
-      lang="en" 
-      className={`${inter.variable} ${spaceGrotesk.variable} ${orbitron.variable} ${rajdhani.variable}`} 
+    <html
+      lang="en"
+      className={`${inter.variable} ${spaceGrotesk.variable} ${rajdhani.variable}`}
       suppressHydrationWarning
     >
       <body className="font-sans antialiased" suppressHydrationWarning>

@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Performance optimizations
   compress: true,
-  
+
   // Image optimization
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
   },
-  
+
   // Enable React strict mode
   reactStrictMode: true,
 

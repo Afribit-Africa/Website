@@ -2,33 +2,48 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createInvoice } from '@/lib/btcpay-client';
 import { handleAPIError, validateInput, APIError, withRetry } from '@/lib/api-helpers';
 import { saveDonorInfo, initDonorsTable } from '@/lib/donor-db';
+import { rateLimit, rateLimitConfigs, RateLimitError } from '@/lib/rate-limit';
+import { createDonationSchema, formatZodError } from '@/lib/validation';
 
 export async function POST(request: NextRequest) {
   try {
+    // Apply rate limiting
+    try {
+      await rateLimit(request, rateLimitConfigs.moderate);
+    } catch (error) {
+      if (error instanceof RateLimitError) {
+        return NextResponse.json(
+          { error: 'Too many requests. Please try again later.', retryAfter: error.retryAfter },
+          { status: 429, headers: { 'Retry-After': error.retryAfter.toString() } }
+        );
+      }
+      throw error;
+    }
+
     const body = await request.json();
 
-    // Validate input
-    validateInput(body, {
-      amount: (val) => typeof val === 'number' && val > 0 && val < 1000000,
-      tier: (val) => typeof val === 'string' || val === undefined,
-      donationType: (val) => val === 'anonymous' || val === 'named' || val === undefined,
-      donorName: (val) => typeof val === 'string' || val === undefined,
-      donorEmail: (val) => typeof val === 'string' || val === undefined,
-    });
+    // Validate input with Zod
+    const validation = createDonationSchema.safeParse(body);
+    if (!validation.success) {
+      return NextResponse.json(
+        { error: formatZodError(validation.error) },
+        { status: 400 }
+      );
+    }
 
-    const { amount, tier, donationType, donorName, donorEmail } = body;
+    const { amount, tier, donationType, name, email } = validation.data;
 
     // Create invoice with retry logic
     const invoice = await withRetry(async () => {
       return await createInvoice({
-        amount: parseFloat(amount),
+        amount: amount,
         currency: 'USD',
-        buyerEmail: donationType === 'named' ? donorEmail : undefined,
+        buyerEmail: donationType === 'named' ? email : undefined,
         metadata: {
           tier: tier || 'custom',
           donationType: donationType || 'anonymous',
-          donorName: donationType === 'named' ? donorName : undefined,
-          donorEmail: donationType === 'named' ? donorEmail : undefined,
+          donorName: donationType === 'named' ? name : undefined,
+          donorEmail: donationType === 'named' ? email : undefined,
           source: 'website-donation-widget',
           timestamp: new Date().toISOString(),
         },
@@ -45,9 +60,9 @@ export async function POST(request: NextRequest) {
       // Save donor info (including anonymous donations for stats)
       await saveDonorInfo({
         invoiceId: invoice.id,
-        name: donationType === 'named' ? donorName : '',
-        email: donationType === 'named' ? donorEmail : '',
-        amount: parseFloat(amount),
+        name: donationType === 'named' ? (name || '') : '',
+        email: donationType === 'named' ? (email || '') : '',
+        amount: amount,
         tier: tier || 'custom',
         donationType: donationType || 'anonymous',
       });

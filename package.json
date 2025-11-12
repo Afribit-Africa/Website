@@ -17,6 +17,7 @@
     "gltfjsx": "^6.5.3",
     "gsap": "^3.13.0",
     "leaflet": "^1.9.4",
+    "lucide-react": "^0.553.0",
     "mysql2": "^3.15.3",
     "next": "16.0.0",
     "nodemailer": "^7.0.10",
@@ -29,7 +30,8 @@
     "react-qr-code": "^2.0.18",
     "resend": "^6.4.2",
     "three": "^0.180.0",
-    "three-stdlib": "^2.36.0"
+    "three-stdlib": "^2.36.0",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.16",

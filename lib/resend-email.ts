@@ -16,7 +16,7 @@ export async function sendDonationReceipt(data: DonationReceiptData) {
   const { donorName, donorEmail, amount, tier, invoiceId, date, transactionId } = data;
 
   console.log('Preparing email for:', donorEmail);
-  
+
   // Use verified domain: updates.afribit.africa
   const fromEmail = 'receipts@updates.afribit.africa';
   const fromName = 'Afribit Africa';

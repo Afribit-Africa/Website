@@ -2,12 +2,13 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const partners = [
-  { name: 'Bitcoin Conference', logo: '/Media/Partner logos/Bitcoin-confed.jpg' },
-  { name: 'FBCE Global', logo: '/Media/Partner logos/fbceglobal_logo.jpg' },
-  { name: 'Geyser', logo: '/Media/Partner logos/Geyser.png' },
-  { name: 'Rottweil', logo: '/Media/Partner logos/Rottweil.jpg' },
+  { name: 'Bitcoin Conference', logo: '/Media/Partner logos/Bitcoin-confed.jpg', width: 160, height: 80 },
+  { name: 'FBCE Global', logo: '/Media/Partner logos/fbceglobal_logo.jpg', width: 160, height: 80 },
+  { name: 'Geyser', logo: '/Media/Partner logos/Geyser.png', width: 160, height: 80 },
+  { name: 'Rottweil', logo: '/Media/Partner logos/Rottweil.jpg', width: 160, height: 80 },
 ];
 
 export default function PartnerLogos() {
@@ -68,10 +69,13 @@ export default function PartnerLogos() {
               transition={{ duration: 0.6 }}
               className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg shadow-bitcoin/20 border border-bitcoin/10"
             >
-              <img
+              <Image
                 src="/Media/Logo/Full logo png transparent.png"
-                alt="Afribit"
-                className="w-14 h-14 object-contain p-1"
+                alt="Afribit Africa"
+                width={56}
+                height={56}
+                className="object-contain p-1"
+                priority
               />
             </motion.div>
 
@@ -86,11 +90,14 @@ export default function PartnerLogos() {
                   transition={{ duration: 0.4 }}
                   className="flex flex-col items-center"
                 >
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-8 w-full max-w-xs h-40 flex items-center justify-center shadow-xl">
-                    <img
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-8 w-full max-w-xs h-40 flex items-center justify-center shadow-xl relative">
+                    <Image
                       src={partners[currentIndex].logo}
                       alt={partners[currentIndex].name}
-                      className="max-w-full max-h-full object-contain filter brightness-110"
+                      width={partners[currentIndex].width}
+                      height={partners[currentIndex].height}
+                      className="object-contain filter brightness-110"
+                      loading="lazy"
                     />
                   </div>
                   {/* Partner Name */}
@@ -131,12 +138,15 @@ export default function PartnerLogos() {
               {duplicatedLogos.map((partner, index) => (
                 <div
                   key={`${partner.name}-${index}`}
-                  className="shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl p-4 md:p-6 backdrop-blur-sm hover:border-bitcoin/30"
+                  className="shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl p-4 md:p-6 backdrop-blur-sm hover:border-bitcoin/30 relative"
                 >
-                  <img
+                  <Image
                     src={partner.logo}
                     alt={partner.name}
+                    width={partner.width}
+                    height={partner.height}
                     className="h-10 md:h-16 w-auto object-contain"
+                    loading="lazy"
                   />
                 </div>
               ))}
