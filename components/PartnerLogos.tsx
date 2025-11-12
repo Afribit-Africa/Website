@@ -15,10 +15,10 @@ const partners = [
 const createMasonryPattern = () => {
   const pattern = [];
   const rows = 3; // 3 rows for masonry effect
-  
+
   // Duplicate partners multiple times for continuous scroll
   const extendedPartners = [...partners, ...partners, ...partners, ...partners, ...partners];
-  
+
   // Distribute logos across rows with varied positions
   for (let i = 0; i < extendedPartners.length; i++) {
     const row = i % rows;
@@ -28,7 +28,7 @@ const createMasonryPattern = () => {
       offset: Math.random() * 20, // Random vertical offset within row
     });
   }
-  
+
   return pattern;
 };
 
@@ -46,11 +46,11 @@ export default function PartnerLogos() {
     const animate = () => {
       scrollPosition += scrollSpeed;
       const maxScroll = scrollContainer.scrollWidth / 2;
-      
+
       if (scrollPosition >= maxScroll) {
         scrollPosition = 0;
       }
-      
+
       scrollContainer.style.transform = `translateX(-${scrollPosition}px)`;
       requestAnimationFrame(animate);
     };
@@ -62,46 +62,50 @@ export default function PartnerLogos() {
   const getSizeClasses = (size: string) => {
     switch (size) {
       case 'sm':
-        return 'w-20 h-20 md:w-24 md:h-24';
+        return 'w-16 h-16 md:w-20 md:h-20';
       case 'lg':
-        return 'w-32 h-32 md:w-40 md:h-40';
+        return 'w-20 h-20 md:w-28 md:h-28';
       default:
-        return 'w-24 h-24 md:w-32 md:h-32';
+        return 'w-18 h-18 md:w-24 md:h-24';
     }
   };
 
   return (
     <section className="py-20 bg-black overflow-hidden relative">
-      <div className="container mx-auto px-6 mb-16">
+      <div className="container mx-auto px-6 mb-12">
         <div className="text-center">
           <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4">Our Partners</h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-300 text-base md:text-lg">
             Collaborating with organizations that share our vision for Bitcoin adoption
           </p>
         </div>
       </div>
 
-      {/* Fade Overlays */}
-      <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-black via-black to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-black via-black to-transparent z-10 pointer-events-none" />
+      {/* Logo Container with Fade Overlays */}
+      <div className="relative">
+        {/* Fade Overlays - Only on logo area */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-black/60 to-transparent z-10 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none" />
 
-      {/* Masonry Grid Container */}
-      <div className="relative h-64 md:h-80 overflow-hidden">
-        <div
-          ref={scrollRef}
-          className="absolute inset-0 flex items-center"
-          style={{ width: 'fit-content' }}
-        >
-          {/* Row-based masonry layout */}
-          <div className="flex flex-col justify-center h-full gap-4 md:gap-6">
+        {/* Masonry Grid Container */}
+        <div className="relative h-56 md:h-64 overflow-hidden">
+          <div
+            ref={scrollRef}
+            className="absolute inset-0 flex items-center"
+            style={{ width: 'fit-content' }}
+          >
+            {/* Row-based masonry layout */}
+            <div className="flex flex-col justify-center h-full gap-3 md:gap-4">
             {/* Row 1 */}
-            <div className="flex items-center gap-4 md:gap-8">
+            <div className="flex items-center gap-3 md:gap-6">
               {masonryPattern
                 .filter(item => item.row === 0)
                 .map((partner, index) => (
                   <div
                     key={`row1-${index}`}
-                    className={`${getSizeClasses(partner.size)} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-3 md:p-4 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
+                    className={`${getSizeClasses(partner.size)} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg md:rounded-xl p-2 md:p-3 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
                     style={{
                       transform: `translateY(${partner.offset}px)`,
                     }}
@@ -119,13 +123,13 @@ export default function PartnerLogos() {
             </div>
 
             {/* Row 2 */}
-            <div className="flex items-center gap-4 md:gap-8">
+            <div className="flex items-center gap-3 md:gap-6">
               {masonryPattern
                 .filter(item => item.row === 1)
                 .map((partner, index) => (
                   <div
                     key={`row2-${index}`}
-                    className={`${getSizeClasses(partner.size)} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-3 md:p-4 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
+                    className={`${getSizeClasses(partner.size)} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg md:rounded-xl p-2 md:p-3 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
                     style={{
                       transform: `translateY(${partner.offset}px)`,
                     }}
@@ -143,13 +147,13 @@ export default function PartnerLogos() {
             </div>
 
             {/* Row 3 */}
-            <div className="flex items-center gap-4 md:gap-8">
+            <div className="flex items-center gap-3 md:gap-6">
               {masonryPattern
                 .filter(item => item.row === 2)
                 .map((partner, index) => (
                   <div
                     key={`row3-${index}`}
-                    className={`${getSizeClasses(partner.size)} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-3 md:p-4 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
+                    className={`${getSizeClasses(partner.size)} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg md:rounded-xl p-2 md:p-3 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
                     style={{
                       transform: `translateY(${partner.offset}px)`,
                     }}
@@ -168,10 +172,11 @@ export default function PartnerLogos() {
           </div>
         </div>
       </div>
+      </div>
 
       {/* Call to Action */}
-      <div className="text-center mt-16">
-        <p className="text-gray-500 text-sm md:text-base">
+      <div className="text-center mt-12">
+        <p className="text-gray-400 text-sm md:text-base">
           Interested in partnering with Afribit?{' '}
           <a href="/contact" className="text-bitcoin hover:text-white transition-colors font-semibold">
             Get in touch
