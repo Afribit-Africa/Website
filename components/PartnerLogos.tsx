@@ -60,61 +60,60 @@ export default function PartnerLogos() {
 
         {/* Mobile: Carousel */}
         <div className="md:hidden">
-          <div className="relative h-64 flex flex-col items-center justify-center">
-            {/* Center Afribit Logo */}
+          <div className="relative flex flex-col items-center justify-center space-y-8">
+            {/* Center Afribit Logo - Smaller and more refined */}
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="mb-8 w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-xl shadow-bitcoin/30 border-2 border-bitcoin/20"
+              className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg shadow-bitcoin/20 border border-bitcoin/10"
             >
               <img
                 src="/Media/Logo/Full logo png transparent.png"
                 alt="Afribit"
-                className="w-20 h-20 object-contain"
+                className="w-14 h-14 object-contain p-1"
               />
             </motion.div>
 
-            {/* Carousel Container */}
-            <div className="relative w-full max-w-xs h-32">
+            {/* Carousel Container - Larger cards */}
+            <div className="relative w-full px-4">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0 flex items-center justify-center"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4 }}
+                  className="flex flex-col items-center"
                 >
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-40 h-32 flex items-center justify-center">
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-8 w-full max-w-xs h-40 flex items-center justify-center shadow-xl">
                     <img
                       src={partners[currentIndex].logo}
                       alt={partners[currentIndex].name}
-                      className="max-w-full max-h-full object-contain"
+                      className="max-w-full max-h-full object-contain filter brightness-110"
                     />
                   </div>
+                  {/* Partner Name */}
+                  <p className="text-gray-300 text-base font-medium mt-4">{partners[currentIndex].name}</p>
                 </motion.div>
               </AnimatePresence>
             </div>
 
             {/* Carousel Indicators */}
-            <div className="flex gap-2 mt-6">
+            <div className="flex gap-2">
               {partners.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
+                  className={`h-2 rounded-full transition-all ${
                     index === currentIndex
                       ? 'bg-bitcoin w-8'
-                      : 'bg-white/30 hover:bg-white/50'
+                      : 'bg-white/30 hover:bg-white/50 w-2'
                   }`}
                   aria-label={`Go to partner ${index + 1}`}
                 />
               ))}
             </div>
-
-            {/* Partner Name */}
-            <p className="text-gray-400 text-sm mt-4">{partners[currentIndex].name}</p>
           </div>
         </div>
 

@@ -21,9 +21,11 @@ export async function initDonorsTable() {
       tier VARCHAR(50) NOT NULL,
       donation_type ENUM('anonymous', 'named') NOT NULL,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      INDEX idx_invoice_id (invoice_id),
       INDEX idx_email (email),
-      INDEX idx_created_at (created_at)
-    )
+      INDEX idx_created_at (created_at),
+      INDEX idx_donation_type (donation_type)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
   `;
 
   await executeQuery(createTableQuery);

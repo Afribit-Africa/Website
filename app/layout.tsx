@@ -41,8 +41,58 @@ const rajdhani = Rajdhani({
 });
 
 export const metadata: Metadata = {
-  title: "Afribit Africa - Empowering Communities Through Bitcoin",
-  description: "Building a sustainable future with Bitcoin education, merchant onboarding, and community development initiatives in Kenya.",
+  metadataBase: new URL('https://afribit.africa'),
+  title: {
+    default: "Afribit Africa - Bitcoin Education & Empowerment in Kenya",
+    template: "%s | Afribit Africa"
+  },
+  description: "Empowering communities in Kibera, Nairobi through Bitcoin education, merchant adoption, and financial literacy. Join us in building Africa's Bitcoin economy.",
+  keywords: ["Bitcoin Kenya", "Bitcoin Africa", "Kibera Bitcoin", "Bitcoin education", "cryptocurrency Kenya", "Bitcoin merchants", "financial literacy Africa", "Bitcoin adoption", "Nairobi Bitcoin"],
+  authors: [{ name: "Afribit Africa" }],
+  creator: "Afribit Africa",
+  publisher: "Afribit Africa",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://afribit.africa",
+    title: "Afribit Africa - Bitcoin Education & Empowerment in Kenya",
+    description: "Empowering communities in Kibera, Nairobi through Bitcoin education, merchant adoption, and financial literacy.",
+    siteName: "Afribit Africa",
+    images: [
+      {
+        url: "/Media/Logo/Full logo png transparent.png",
+        width: 1200,
+        height: 630,
+        alt: "Afribit Africa Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Afribit Africa - Bitcoin Education & Empowerment in Kenya",
+    description: "Empowering communities in Kibera, Nairobi through Bitcoin education, merchant adoption, and financial literacy.",
+    images: ["/Media/Logo/Full logo png transparent.png"],
+    creator: "@AfribitAfrica",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
+  },
 };
 
 export default function RootLayout({

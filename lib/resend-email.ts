@@ -16,6 +16,10 @@ export async function sendDonationReceipt(data: DonationReceiptData) {
   const { donorName, donorEmail, amount, tier, invoiceId, date, transactionId } = data;
 
   console.log('Preparing email for:', donorEmail);
+  
+  // Use verified domain: updates.afribit.africa
+  const fromEmail = 'receipts@updates.afribit.africa';
+  const fromName = 'Afribit Africa';
 
   const emailHtml = `
 <!DOCTYPE html>
@@ -202,10 +206,8 @@ Questions? Contact us at info@afribit.africa
   try {
     console.log('Attempting to send email via Resend...');
 
-    // Use onboarding email for testing if custom domain not verified
-    const fromEmail = process.env.EMAIL_FROM_VERIFIED === 'true'
-      ? `${process.env.EMAIL_FROM_NAME} <${process.env.EMAIL_FROM}>`
-      : 'Afribit Africa <onboarding@resend.dev>';
+    // Use verified domain: updates.afribit.africa
+    const fromEmail = 'Afribit Africa <receipts@updates.afribit.africa>';
 
     console.log('Sending from:', fromEmail);
 
@@ -305,10 +307,8 @@ export async function sendWelcomeEmail(donorName: string, donorEmail: string) {
   `;
 
   try {
-    // Use onboarding email for testing if custom domain not verified
-    const fromEmail = process.env.EMAIL_FROM_VERIFIED === 'true'
-      ? `${process.env.EMAIL_FROM_NAME} <${process.env.EMAIL_FROM}>`
-      : 'Afribit Africa <onboarding@resend.dev>';
+    // Use verified domain: updates.afribit.africa
+    const fromEmail = 'Afribit Africa <hello@updates.afribit.africa>';
 
     const result = await resend.emails.send({
       from: fromEmail,

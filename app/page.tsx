@@ -3,7 +3,6 @@
 import { BitcoinValuesMarquee } from "@/components/BitcoinValuesMarquee";
 import { GSAPAnimations } from "@/components/GSAPAnimations";
 import { DonationStats } from "@/components/DonationStats";
-import { EnhancedFloatingVideo } from "@/components/EnhancedFloatingVideo";
 import { MobileVideoPlayer } from "@/components/MobileVideoPlayer";
 import { FloatingAudioPlayer } from "@/components/FloatingAudioPlayer";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
@@ -17,11 +16,6 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <>
-      
-      {/* Desktop Video Player */}
-      <div className="hidden md:block">
-        <EnhancedFloatingVideo />
-      </div>
       
       {/* Mobile Video Icon & Lightbox */}
       <MobileVideoPlayer />
