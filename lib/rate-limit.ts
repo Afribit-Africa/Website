@@ -37,11 +37,11 @@ export async function rateLimit(
   config: RateLimitConfig
 ): Promise<void> {
   // Get identifier (IP or user agent as fallback)
-  const ip = 
+  const ip =
     request.headers.get('x-forwarded-for')?.split(',')[0] ||
     request.headers.get('x-real-ip') ||
     'unknown';
-  
+
   const identifier = `${ip}-${request.url}`;
   const now = Date.now();
 

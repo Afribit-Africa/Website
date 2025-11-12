@@ -1,167 +1,182 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 const partners = [
-  { name: 'Bitcoin Conference', logo: '/Media/Partner logos/Bitcoin-confed.jpg', width: 160, height: 80 },
-  { name: 'FBCE Global', logo: '/Media/Partner logos/fbceglobal_logo.jpg', width: 160, height: 80 },
-  { name: 'Geyser', logo: '/Media/Partner logos/Geyser.png', width: 160, height: 80 },
-  { name: 'Rottweil', logo: '/Media/Partner logos/Rottweil.jpg', width: 160, height: 80 },
+  { name: 'Bitcoin Conference', logo: '/Media/Partner logos/Bitcoin-confed.jpg', width: 120, height: 60, size: 'md' },
+  { name: 'FBCE Global', logo: '/Media/Partner logos/fbceglobal_logo.jpg', width: 100, height: 50, size: 'sm' },
+  { name: 'Geyser', logo: '/Media/Partner logos/Geyser.png', width: 140, height: 70, size: 'lg' },
+  { name: 'Rottweil', logo: '/Media/Partner logos/Rottweil.jpg', width: 110, height: 55, size: 'md' },
+  { name: 'Afribit', logo: '/Media/Logo/Full logo png transparent.png', width: 90, height: 45, size: 'sm' },
 ];
+
+// Create a masonry-style grid with varied sizes
+const createMasonryPattern = () => {
+  const pattern = [];
+  const rows = 3; // 3 rows for masonry effect
+  
+  // Duplicate partners multiple times for continuous scroll
+  const extendedPartners = [...partners, ...partners, ...partners, ...partners, ...partners];
+  
+  // Distribute logos across rows with varied positions
+  for (let i = 0; i < extendedPartners.length; i++) {
+    const row = i % rows;
+    pattern.push({
+      ...extendedPartners[i],
+      row,
+      offset: Math.random() * 20, // Random vertical offset within row
+    });
+  }
+  
+  return pattern;
+};
 
 export default function PartnerLogos() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const masonryPattern = createMasonryPattern();
 
-  // Desktop auto-scroll
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    let animationFrameId: number;
     let scrollPosition = 0;
-    const scrollSpeed = 0.5;
+    const scrollSpeed = 0.3; // Slow, smooth scrolling
 
     const animate = () => {
       scrollPosition += scrollSpeed;
       const maxScroll = scrollContainer.scrollWidth / 2;
+      
       if (scrollPosition >= maxScroll) {
         scrollPosition = 0;
       }
+      
       scrollContainer.style.transform = `translateX(-${scrollPosition}px)`;
-      animationFrameId = requestAnimationFrame(animate);
+      requestAnimationFrame(animate);
     };
 
-    animationFrameId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrameId);
+    const animationId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationId);
   }, []);
 
-  // Mobile carousel auto-advance
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % partners.length);
-    }, 3000); // Change slide every 3 seconds
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const duplicatedLogos = [...partners, ...partners, ...partners];
+  const getSizeClasses = (size: string) => {
+    switch (size) {
+      case 'sm':
+        return 'w-20 h-20 md:w-24 md:h-24';
+      case 'lg':
+        return 'w-32 h-32 md:w-40 md:h-40';
+      default:
+        return 'w-24 h-24 md:w-32 md:h-32';
+    }
+  };
 
   return (
-    <section className="py-16 bg-black overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
+    <section className="py-20 bg-black overflow-hidden relative">
+      <div className="container mx-auto px-6 mb-16">
+        <div className="text-center">
           <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4">Our Partners</h2>
           <p className="text-gray-400 text-lg">
             Collaborating with organizations that share our vision for Bitcoin adoption
           </p>
         </div>
+      </div>
 
-        {/* Mobile: Carousel */}
-        <div className="md:hidden">
-          <div className="relative flex flex-col items-center justify-center space-y-8">
-            {/* Center Afribit Logo - Smaller and more refined */}
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg shadow-bitcoin/20 border border-bitcoin/10"
-            >
-              <Image
-                src="/Media/Logo/Full logo png transparent.png"
-                alt="Afribit Africa"
-                width={56}
-                height={56}
-                className="object-contain p-1"
-                priority
-              />
-            </motion.div>
+      {/* Fade Overlays */}
+      <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-black via-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-black via-black to-transparent z-10 pointer-events-none" />
 
-            {/* Carousel Container - Larger cards */}
-            <div className="relative w-full px-4">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentIndex}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4 }}
-                  className="flex flex-col items-center"
-                >
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-8 w-full max-w-xs h-40 flex items-center justify-center shadow-xl relative">
+      {/* Masonry Grid Container */}
+      <div className="relative h-64 md:h-80 overflow-hidden">
+        <div
+          ref={scrollRef}
+          className="absolute inset-0 flex items-center"
+          style={{ width: 'fit-content' }}
+        >
+          {/* Row-based masonry layout */}
+          <div className="flex flex-col justify-center h-full gap-4 md:gap-6">
+            {/* Row 1 */}
+            <div className="flex items-center gap-4 md:gap-8">
+              {masonryPattern
+                .filter(item => item.row === 0)
+                .map((partner, index) => (
+                  <div
+                    key={`row1-${index}`}
+                    className={`${getSizeClasses(partner.size)} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-3 md:p-4 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
+                    style={{
+                      transform: `translateY(${partner.offset}px)`,
+                    }}
+                  >
                     <Image
-                      src={partners[currentIndex].logo}
-                      alt={partners[currentIndex].name}
-                      width={partners[currentIndex].width}
-                      height={partners[currentIndex].height}
-                      className="object-contain filter brightness-110"
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={partner.width}
+                      height={partner.height}
+                      className="object-contain w-full h-full"
                       loading="lazy"
                     />
                   </div>
-                  {/* Partner Name */}
-                  <p className="text-gray-300 text-base font-medium mt-4">{partners[currentIndex].name}</p>
-                </motion.div>
-              </AnimatePresence>
+                ))}
             </div>
 
-            {/* Carousel Indicators */}
-            <div className="flex gap-2">
-              {partners.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`h-2 rounded-full transition-all ${
-                    index === currentIndex
-                      ? 'bg-bitcoin w-8'
-                      : 'bg-white/30 hover:bg-white/50 w-2'
-                  }`}
-                  aria-label={`Go to partner ${index + 1}`}
-                />
-              ))}
+            {/* Row 2 */}
+            <div className="flex items-center gap-4 md:gap-8">
+              {masonryPattern
+                .filter(item => item.row === 1)
+                .map((partner, index) => (
+                  <div
+                    key={`row2-${index}`}
+                    className={`${getSizeClasses(partner.size)} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-3 md:p-4 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
+                    style={{
+                      transform: `translateY(${partner.offset}px)`,
+                    }}
+                  >
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={partner.width}
+                      height={partner.height}
+                      className="object-contain w-full h-full"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+            </div>
+
+            {/* Row 3 */}
+            <div className="flex items-center gap-4 md:gap-8">
+              {masonryPattern
+                .filter(item => item.row === 2)
+                .map((partner, index) => (
+                  <div
+                    key={`row3-${index}`}
+                    className={`${getSizeClasses(partner.size)} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-3 md:p-4 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
+                    style={{
+                      transform: `translateY(${partner.offset}px)`,
+                    }}
+                  >
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={partner.width}
+                      height={partner.height}
+                      className="object-contain w-full h-full"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Desktop: Horizontal Scroll */}
-        <div className="hidden md:block relative">
-          <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-linear-to-r from-black via-black to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-linear-to-l from-black via-black to-transparent z-10 pointer-events-none" />
-
-          <div className="overflow-hidden">
-            <div
-              ref={scrollRef}
-              className="flex items-center gap-8 md:gap-24"
-              style={{ width: 'fit-content' }}
-            >
-              {duplicatedLogos.map((partner, index) => (
-                <div
-                  key={`${partner.name}-${index}`}
-                  className="shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl p-4 md:p-6 backdrop-blur-sm hover:border-bitcoin/30 relative"
-                >
-                  <Image
-                    src={partner.logo}
-                    alt={partner.name}
-                    width={partner.width}
-                    height={partner.height}
-                    className="h-10 md:h-16 w-auto object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center mt-12">
-          <p className="text-gray-500 text-sm">
-            Interested in partnering with Afribit?{' '}
-            <a href="/contact" className="text-bitcoin hover:text-white transition-colors font-semibold">
-              Get in touch
-            </a>
-          </p>
-        </div>
+      {/* Call to Action */}
+      <div className="text-center mt-16">
+        <p className="text-gray-500 text-sm md:text-base">
+          Interested in partnering with Afribit?{' '}
+          <a href="/contact" className="text-bitcoin hover:text-white transition-colors font-semibold">
+            Get in touch
+          </a>
+        </p>
       </div>
     </section>
   );

@@ -184,8 +184,8 @@
 
 **Usage Example:**
 ```tsx
-<Alert 
-  variant="success" 
+<Alert
+  variant="success"
   message="Donation successful!"
 />
 ```
@@ -403,10 +403,10 @@ The Afribit Africa website is now:
 
 ---
 
-**Total Implementation Time:** ~2 hours  
-**Files Modified:** 15  
-**Lines Added:** ~600  
-**Bundle Size Reduction:** ~210KB  
-**Performance Gain:** 30-40%  
+**Total Implementation Time:** ~2 hours
+**Files Modified:** 15
+**Lines Added:** ~600
+**Bundle Size Reduction:** ~210KB
+**Performance Gain:** 30-40%
 
 🎉 **All objectives achieved!**
