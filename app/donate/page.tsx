@@ -359,10 +359,10 @@ export default function DonatePage() {
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="font-heading text-4xl md:text-6xl font-bold mb-4">
+            <h1 className="font-heading text-3xl md:text-5xl font-bold mb-4">
               Fuel the <span className="text-bitcoin">Bitcoin Revolution</span>
             </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
               Your contribution powers financial freedom, environmental stewardship, and community resilience in Kibera
             </p>
           </div>
@@ -377,17 +377,22 @@ export default function DonatePage() {
             ].map((s, idx) => (
               <div key={s.key} className="flex items-center gap-3 md:gap-6">
                 <div className="flex flex-col items-center gap-2">
-                  <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border-2 font-bold text-sm md:text-base transition-all duration-300 ${
-                    step === s.key
-                      ? 'bg-bitcoin border-bitcoin text-white shadow-lg shadow-bitcoin/50 scale-110'
-                      : ['tiers', 'details', 'payment'].indexOf(step) > idx
-                      ? 'bg-bitcoin/20 border-bitcoin text-bitcoin'
-                      : 'bg-white/5 border-white/30 text-gray-500'
-                  }`}>
+                  <div 
+                    className={`w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center border-2 font-bold text-sm md:text-base transition-all duration-300 ${
+                      step === s.key
+                        ? 'bg-bitcoin border-bitcoin text-white shadow-lg shadow-bitcoin/50 scale-105'
+                        : ['tiers', 'details', 'payment'].indexOf(step) > idx
+                        ? 'bg-bitcoin/20 border-bitcoin text-bitcoin'
+                        : 'bg-white/5 border-white/30 text-gray-400'
+                    }`}
+                    aria-label={`Step ${s.num}: ${s.label}`}
+                    role="status"
+                    aria-current={step === s.key ? 'step' : undefined}
+                  >
                     {['tiers', 'details', 'payment'].indexOf(step) > idx ? <FiCheck className="w-5 h-5 md:w-6 md:h-6" /> : s.num}
                   </div>
                   <span className={`text-xs md:text-sm font-medium transition-colors whitespace-nowrap ${
-                    step === s.key ? 'text-bitcoin font-bold' : 'text-gray-500'
+                    step === s.key ? 'text-bitcoin font-bold' : 'text-gray-400'
                   }`}>
                     {s.label}
                   </span>
@@ -409,8 +414,8 @@ export default function DonatePage() {
           {/* Step 1: Tier Selection */}
           {step === 'tiers' && (
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3 text-center">Choose Your Impact</h2>
-              <p className="text-base text-gray-400 text-center mb-8">Select a tier that resonates with you or contribute a custom amount</p>
+              <h2 className="text-2xl md:text-3xl font-bold font-heading mb-3 text-center">Choose Your Impact</h2>
+              <p className="text-sm md:text-base text-gray-300 text-center mb-8">Select a tier that resonates with you or contribute a custom amount</p>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {DONATION_TIERS.map((tier) => (
@@ -418,9 +423,10 @@ export default function DonatePage() {
                     key={tier.id}
                     onClick={() => handleTierSelect(tier)}
                     className={`group relative overflow-hidden rounded-2xl bg-linear-to-br ${tier.bgGradient} border-2 border-white/10 hover:border-bitcoin/50 transition-all duration-300 text-left hover:scale-105 cursor-pointer`}
+                    aria-label={`Select ${tier.title} donation tier${tier.isCustom ? '' : ` for $${tier.amount}`}`}
                   >
                     {/* Image */}
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-36 md:h-48 overflow-hidden">
                       <img
                         src={tier.image}
                         alt={tier.title}
@@ -435,11 +441,11 @@ export default function DonatePage() {
 
                       {/* Title on Image */}
                       <div className="absolute bottom-4 left-4 right-4">
-                        <h3 className="text-2xl font-bold font-heading text-white drop-shadow-lg">
+                        <h3 className="text-xl md:text-2xl font-bold font-heading text-white drop-shadow-lg">
                           {tier.title}
                         </h3>
                         {tier.subtitle && (
-                          <p className="text-sm text-gray-200 mt-1 drop-shadow-md">{tier.subtitle}</p>
+                          <p className="text-xs md:text-sm text-gray-200 mt-1 drop-shadow-md">{tier.subtitle}</p>
                         )}
                       </div>
                     </div>
@@ -486,7 +492,7 @@ export default function DonatePage() {
 
                 {/* Selected Tier Summary with Image */}
                 <div className="mb-6 overflow-hidden rounded-xl border border-white/10">
-                  <div className="relative h-40 md:h-48">
+                  <div className="relative h-32 md:h-40">
                     <img
                       src={selectedTier.image}
                       alt={selectedTier.title}
@@ -499,7 +505,7 @@ export default function DonatePage() {
                         <p className="text-xs md:text-sm text-gray-200 mt-1 drop-shadow-md">{selectedTier.subtitle}</p>
                       )}
                     </div>
-                    <div className="absolute top-3 right-3 bg-black/80 backdrop-blur-sm text-white border-2 border-bitcoin px-3 py-1.5 rounded-full font-bold text-sm md:text-base shadow-xl">
+                    <div className="absolute top-3 right-3 bg-black/80 backdrop-blur-sm text-white border-2 border-bitcoin px-3 py-1.5 rounded-full font-bold text-xs md:text-sm shadow-xl">
                       {selectedTier.isCustom ? 'Any Amount' : `$${selectedTier.amount}`}
                     </div>
                   </div>
@@ -507,7 +513,7 @@ export default function DonatePage() {
                   <div className="p-4 md:p-6 bg-black/60">
                     {/* Description */}
                     <div className="mb-4">
-                      <h4 className="text-xs font-semibold text-bitcoin uppercase mb-2">Impact</h4>
+                      <h4 className="text-xs font-semibold text-bitcoin uppercase tracking-wide mb-2">Impact</h4>
                       <p className="text-sm text-gray-200 leading-relaxed">{selectedTier.description}</p>
                     </div>
 
@@ -520,7 +526,7 @@ export default function DonatePage() {
 
                     {/* Perk */}
                     <div>
-                      <h4 className="text-xs font-semibold text-bitcoin uppercase mb-2">Your Perk</h4>
+                      <h4 className="text-xs font-semibold text-bitcoin uppercase tracking-wide mb-2">Your Perk</h4>
                       <div className="flex items-start gap-2">
                         <FiCheck className="w-4 h-4 text-bitcoin shrink-0 mt-0.5" />
                         <p className="text-sm text-gray-200 leading-relaxed">{selectedTier.perk}</p>
@@ -560,6 +566,8 @@ export default function DonatePage() {
                           ? 'bg-bitcoin/20 border-bitcoin text-white'
                           : 'bg-white/5 border-white/20 text-gray-400 hover:border-white/40'
                       }`}
+                      aria-pressed={donationType === 'anonymous'}
+                      aria-label="Choose anonymous donation (no email required)"
                     >
                       <div className="font-bold mb-1">Anonymous</div>
                       <div className="text-xs">No email or name required</div>
@@ -572,6 +580,8 @@ export default function DonatePage() {
                           ? 'bg-bitcoin/20 border-bitcoin text-white'
                           : 'bg-white/5 border-white/20 text-gray-400 hover:border-white/40'
                       }`}
+                      aria-pressed={donationType === 'named'}
+                      aria-label="Choose named donation (receive perks and updates)"
                     >
                       <div className="font-bold mb-1">Get Recognition</div>
                       <div className="text-xs">Receive perks & updates</div>
@@ -615,17 +625,19 @@ export default function DonatePage() {
                 )}
 
                 {error && (
-                  <div className="mb-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm">
-                    {error}
+                  <div className="mb-4 p-3 bg-red-500/10 border border-red-400/30 rounded-lg flex items-start gap-2">
+                    <FiAlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                    <p className="text-sm text-red-300">{error}</p>
                   </div>
                 )}
 
                 <button
                   onClick={handleContinueToPayment}
                   disabled={loading || (selectedTier.isCustom && !customAmount) || (donationType === 'named' && (!donorName || !donorEmail))}
-                  className="w-full bg-bitcoin hover:bg-bitcoin-dark text-white font-bold py-4 rounded-xl hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-bitcoin/50"
+                  className="w-full bg-bitcoin hover:bg-bitcoin-dark text-white font-semibold py-3 px-6 rounded-lg hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2 shadow-lg shadow-bitcoin/50"
+                  aria-label="Continue to payment step"
                 >
-                  {loading ? 'Creating Invoice...' : 'Continue to Payment'}
+                  {loading ? 'Creating Invoice...' : 'Continue'}
                   {!loading && <FiArrowRight className="w-5 h-5" />}
                 </button>
               </div>
@@ -644,17 +656,17 @@ export default function DonatePage() {
               </button>
 
               <div className="text-center mb-6">
-                <h2 className="text-3xl font-bold font-heading mb-2">Complete Your Contribution</h2>
-                <div className="text-4xl font-bold text-bitcoin mb-2">
+                <h2 className="text-2xl md:text-3xl font-bold font-heading mb-2">Complete Your Contribution</h2>
+                <div className="text-2xl md:text-3xl font-bold text-bitcoin mb-2">
                   ${selectedTier?.isCustom ? customAmount : selectedTier?.amount}
                 </div>
-                <p className="text-sm text-gray-400">{selectedTier?.title}</p>
+                <p className="text-sm text-gray-300">{selectedTier?.title}</p>
 
                 {/* Timer */}
                 <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/20 rounded-full">
-                  <div className={`w-2 h-2 rounded-full animate-pulse ${isExpired ? 'bg-red-500' : 'bg-green-500'}`} />
-                  <span className={`text-sm font-mono font-semibold ${isExpired ? 'text-red-400' : 'text-gray-300'}`}>
-                    {isExpired ? 'Expired' : formatTime(timeLeft)}
+                  <div className={`w-2 h-2 rounded-full ${isExpired ? 'bg-red-500' : 'bg-green-500'}`} />
+                  <span className={`text-xs md:text-sm font-mono font-semibold ${isExpired ? 'text-red-400' : 'text-gray-300'}`}>
+                    {isExpired ? 'Expired' : `Expires in ${formatTime(timeLeft)}`}
                   </span>
                 </div>
               </div>
@@ -662,15 +674,16 @@ export default function DonatePage() {
               {isExpired ? (
                 <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-8 text-center">
                   <FiAlertCircle className="w-16 h-16 text-red-400 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-red-400 mb-2">Invoice Expired</h3>
-                  <p className="text-gray-300 mb-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-red-400 mb-2">Invoice Expired</h3>
+                  <p className="text-sm md:text-base text-gray-300 mb-6">
                     This payment request has expired. Please generate a new invoice to continue.
                   </p>
                   <button
                     onClick={handleRegenerateInvoice}
-                    className="bg-bitcoin hover:bg-bitcoin/90 text-white font-bold py-3 px-8 rounded-xl transition-all inline-flex items-center gap-2"
+                    className="bg-bitcoin hover:bg-bitcoin/90 text-white font-semibold py-3 px-6 rounded-lg transition-all inline-flex items-center gap-2"
+                    aria-label="Generate new payment invoice"
                   >
-                    Generate New Invoice
+                    Retry Payment
                     <FiArrowRight className="w-5 h-5" />
                   </button>
                 </div>
@@ -698,7 +711,11 @@ export default function DonatePage() {
                 {qrCodeDataUrl && (
                   <div className="flex justify-center mb-6">
                     <div className="bg-white p-4 rounded-xl shadow-2xl">
-                      <img src={qrCodeDataUrl} alt="Lightning Invoice QR Code" className="w-56 h-56 object-contain" />
+                      <img 
+                        src={qrCodeDataUrl} 
+                        alt="Lightning Invoice QR Code" 
+                        className="w-48 h-48 md:w-56 md:h-56 object-contain"
+                      />
                     </div>
                   </div>
                 )}
@@ -723,6 +740,7 @@ export default function DonatePage() {
                         setTimeout(() => setCopied(false), 2000);
                       }}
                       className="absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-bitcoin text-black text-xs font-semibold rounded-md hover:scale-105 transition-all flex items-center gap-1"
+                      aria-label="Copy invoice to clipboard"
                     >
                       {copied ? (
                         <>
@@ -747,36 +765,42 @@ export default function DonatePage() {
                       <a
                         href={`lightning:${lightningInvoice}`}
                         className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white hover:bg-white/10 transition-colors text-center"
+                        aria-label="Open in Blink wallet"
                       >
                         Blink
                       </a>
                       <a
                         href={`lightning:${lightningInvoice}`}
                         className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white hover:bg-white/10 transition-colors text-center"
+                        aria-label="Open in Phoenix wallet"
                       >
                         Phoenix
                       </a>
                       <a
                         href={`walletofsatoshi:lightning:${lightningInvoice}`}
                         className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white hover:bg-white/10 transition-colors text-center"
+                        aria-label="Open in Wallet of Satoshi"
                       >
                         Wallet of Satoshi
                       </a>
                       <a
                         href={`lightning:${lightningInvoice}`}
                         className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white hover:bg-white/10 transition-colors text-center"
+                        aria-label="Open in BlueWallet"
                       >
                         BlueWallet
                       </a>
                       <a
                         href={`lightning:${lightningInvoice}`}
                         className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white hover:bg-white/10 transition-colors text-center"
+                        aria-label="Open in Breez wallet"
                       >
                         Breez
                       </a>
                       <a
                         href={`lightning:${lightningInvoice}`}
                         className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white hover:bg-white/10 transition-colors text-center"
+                        aria-label="Open in Zeus wallet"
                       >
                         Zeus
                       </a>
@@ -867,13 +891,13 @@ export default function DonatePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4 bg-gradient-to-r from-bitcoin via-orange-400 to-bitcoin bg-clip-text text-transparent">
+                <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 bg-gradient-to-r from-bitcoin via-orange-400 to-bitcoin bg-clip-text text-transparent">
                   Payment Received!
                 </h2>
-                <p className="text-xl text-gray-300 mb-2">
+                <p className="text-lg md:text-xl text-gray-300 mb-2">
                   Thank you for your generous contribution
                 </p>
-                <div className="text-3xl font-bold text-bitcoin mb-8">
+                <div className="text-2xl md:text-3xl font-bold text-bitcoin mb-8">
                   ${selectedTier?.isCustom ? customAmount : selectedTier?.amount}
                 </div>
               </motion.div>
@@ -964,7 +988,7 @@ export default function DonatePage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.5 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center"
+                className="flex flex-col sm:flex-row gap-3 justify-center"
               >
                 <button
                   onClick={() => {
@@ -981,13 +1005,15 @@ export default function DonatePage() {
                     setDonorName('');
                     setDonorEmail('');
                   }}
-                  className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-8 rounded-xl transition-all border border-white/20"
+                  className="bg-white/10 hover:bg-white/20 text-white font-semibold py-2.5 px-6 rounded-lg transition-all border border-white/20"
+                  aria-label="Make another donation"
                 >
-                  Make Another Donation
+                  Donate Again
                 </button>
                 <a
                   href="/"
-                  className="bg-bitcoin hover:bg-bitcoin/90 text-white font-bold py-3 px-8 rounded-xl transition-all inline-flex items-center justify-center gap-2"
+                  className="bg-bitcoin hover:bg-bitcoin/90 text-white font-semibold py-2.5 px-6 rounded-lg transition-all inline-flex items-center justify-center gap-2"
+                  aria-label="Return to homepage"
                 >
                   Back to Home
                   <FiArrowRight className="w-5 h-5" />
