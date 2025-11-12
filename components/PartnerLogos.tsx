@@ -45,7 +45,7 @@ export default function PartnerLogos() {
 
     const animate = () => {
       scrollPosition += scrollSpeed;
-      
+
       // Get the width of half the content (one complete set of logos)
       const containerWidth = scrollContainer.scrollWidth;
       const halfWidth = containerWidth / 2;
@@ -66,11 +66,11 @@ export default function PartnerLogos() {
   const getSizeClasses = (size: string) => {
     switch (size) {
       case 'sm':
-        return 'w-16 h-16 md:w-20 md:h-20';
+        return 'w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24';
       case 'lg':
-        return 'w-20 h-20 md:w-28 md:h-28';
+        return 'w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32';
       default:
-        return 'w-18 h-18 md:w-24 md:h-24';
+        return 'w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28';
     }
   };
 
@@ -94,16 +94,15 @@ export default function PartnerLogos() {
         <div className="absolute bottom-0 left-0 right-0 h-16 md:h-20 bg-gradient-to-t from-black via-black/80 to-transparent z-10 pointer-events-none" />
 
         {/* Masonry Grid Container */}
-        <div className="relative h-56 md:h-64 overflow-hidden">
+        <div className="relative h-56 md:h-64 lg:h-72 overflow-hidden">
           <div
             ref={scrollRef}
             className="absolute inset-0 flex items-center will-change-transform"
             style={{ width: 'fit-content' }}
           >
             {/* Row-based masonry layout - Duplicate for seamless loop */}
-            <div className="flex flex-col justify-center h-full gap-3 md:gap-4">
-            {/* Row 1 */}
-            <div className="flex items-center gap-3 md:gap-6">{masonryPattern
+            <div className="flex flex-col justify-center h-full gap-3 md:gap-4 lg:gap-5">{/* Row 1 */}
+            <div className="flex items-center gap-3 md:gap-6 lg:gap-8">{masonryPattern
                 .filter(item => item.row === 0)
                 .map((partner, index) => (
                   <div
@@ -126,7 +125,7 @@ export default function PartnerLogos() {
             </div>
 
             {/* Row 2 */}
-            <div className="flex items-center gap-3 md:gap-6">
+            <div className="flex items-center gap-3 md:gap-6 lg:gap-8">
               {masonryPattern
                 .filter(item => item.row === 1)
                 .map((partner, index) => (
@@ -150,7 +149,7 @@ export default function PartnerLogos() {
             </div>
 
             {/* Row 3 */}
-            <div className="flex items-center gap-3 md:gap-6">
+            <div className="flex items-center gap-3 md:gap-6 lg:gap-8">
               {masonryPattern
                 .filter(item => item.row === 2)
                 .map((partner, index) => (
