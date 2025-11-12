@@ -16,8 +16,8 @@ const createMasonryPattern = () => {
   const pattern = [];
   const rows = 3; // 3 rows for masonry effect
 
-  // Duplicate partners multiple times for continuous scroll
-  const extendedPartners = [...partners, ...partners, ...partners, ...partners, ...partners];
+  // Duplicate partners many times for seamless continuous scroll
+  const extendedPartners = [...partners, ...partners, ...partners, ...partners, ...partners, ...partners];
 
   // Distribute logos across rows with varied positions
   for (let i = 0; i < extendedPartners.length; i++) {
@@ -25,7 +25,7 @@ const createMasonryPattern = () => {
     pattern.push({
       ...extendedPartners[i],
       row,
-      offset: Math.random() * 20, // Random vertical offset within row
+      offset: Math.random() * 15, // Random vertical offset within row
     });
   }
 
@@ -41,14 +41,18 @@ export default function PartnerLogos() {
     if (!scrollContainer) return;
 
     let scrollPosition = 0;
-    const scrollSpeed = 0.3; // Slow, smooth scrolling
+    const scrollSpeed = 0.5; // Smooth scrolling speed
 
     const animate = () => {
       scrollPosition += scrollSpeed;
-      const maxScroll = scrollContainer.scrollWidth / 2;
+      
+      // Get the width of half the content (one complete set of logos)
+      const containerWidth = scrollContainer.scrollWidth;
+      const halfWidth = containerWidth / 2;
 
-      if (scrollPosition >= maxScroll) {
-        scrollPosition = 0;
+      // Reset position seamlessly when we've scrolled through half the content
+      if (scrollPosition >= halfWidth) {
+        scrollPosition = scrollPosition - halfWidth;
       }
 
       scrollContainer.style.transform = `translateX(-${scrollPosition}px)`;
@@ -83,24 +87,23 @@ export default function PartnerLogos() {
 
       {/* Logo Container with Fade Overlays */}
       <div className="relative">
-        {/* Fade Overlays - Only on logo area */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-black/60 to-transparent z-10 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none" />
+        {/* Fade Overlays - Smooth gradients on all sides */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 md:w-56 bg-gradient-to-r from-black via-black/90 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 md:w-56 bg-gradient-to-l from-black via-black/90 to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-16 md:h-20 bg-gradient-to-b from-black via-black/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 md:h-20 bg-gradient-to-t from-black via-black/80 to-transparent z-10 pointer-events-none" />
 
         {/* Masonry Grid Container */}
         <div className="relative h-56 md:h-64 overflow-hidden">
           <div
             ref={scrollRef}
-            className="absolute inset-0 flex items-center"
+            className="absolute inset-0 flex items-center will-change-transform"
             style={{ width: 'fit-content' }}
           >
-            {/* Row-based masonry layout */}
+            {/* Row-based masonry layout - Duplicate for seamless loop */}
             <div className="flex flex-col justify-center h-full gap-3 md:gap-4">
             {/* Row 1 */}
-            <div className="flex items-center gap-3 md:gap-6">
-              {masonryPattern
+            <div className="flex items-center gap-3 md:gap-6">{masonryPattern
                 .filter(item => item.row === 0)
                 .map((partner, index) => (
                   <div
