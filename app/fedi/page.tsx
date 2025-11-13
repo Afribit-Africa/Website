@@ -37,9 +37,13 @@ export default function FediPage() {
               className="rounded-full"
             />
             <span className="text-3xl font-bold text-gray-400">×</span>
-            <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center border-2 border-white">
-              <span className="text-2xl font-bold" style={{fontFamily: 'monospace'}}>fd</span>
-            </div>
+            <Image
+              src="/Media/Partner logos/Fedi logo.jpg"
+              alt="Fedi"
+              width={48}
+              height={48}
+              className="rounded-lg"
+            />
           </div>
           <h1 className="font-heading text-4xl md:text-6xl font-bold mb-4">
             Join Afribit on <span className="text-gradient bg-gradient-to-r from-purple-400 to-pink-400">Fedi</span>

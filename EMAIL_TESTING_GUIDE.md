@@ -32,7 +32,7 @@ RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxx
 **Content Sections:**
 1. **Header**: Orange gradient with Afribit Africa branding
 2. **Thank You Message**: Personalized greeting with impact statement
-3. **Receipt Details**: 
+3. **Receipt Details**:
    - Donation amount (in USD)
    - Support tier
    - Date
@@ -295,7 +295,7 @@ Before going live:
 
 ---
 
-**Last Updated:** January 2025  
-**Email Service:** Resend  
-**Template Version:** 1.0  
+**Last Updated:** January 2025
+**Email Service:** Resend
+**Template Version:** 1.0
 **Status:** ✅ Production Ready

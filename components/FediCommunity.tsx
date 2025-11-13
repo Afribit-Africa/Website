@@ -18,9 +18,13 @@ export default function FediCommunity() {
         {/* Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-3 mb-4 bg-purple-500/10 border border-purple-500/20 px-4 py-2 rounded-full">
-            <div className="w-8 h-8 bg-black rounded flex items-center justify-center border border-white/80">
-              <span className="text-sm font-bold" style={{fontFamily: 'monospace'}}>fd</span>
-            </div>
+            <Image
+              src="/Media/Partner logos/Fedi logo.jpg"
+              alt="Fedi"
+              width={32}
+              height={32}
+              className="rounded"
+            />
             <span className="text-sm font-semibold text-purple-300">New: We're on Fedi</span>
           </div>
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">

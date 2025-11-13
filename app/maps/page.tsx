@@ -3,13 +3,13 @@
 import { useState, useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { 
-  FiMapPin, 
-  FiPhone, 
-  FiSearch, 
-  FiFilter, 
-  FiExternalLink, 
-  FiMap, 
+import {
+  FiMapPin,
+  FiPhone,
+  FiSearch,
+  FiFilter,
+  FiExternalLink,
+  FiMap,
   FiList,
   FiShoppingBag,
   FiTruck,
@@ -52,7 +52,7 @@ export default function MapsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [viewMode, setViewMode] = useState<'list' | 'map'>('list');
-  
+
   const categories = useMemo(() => getCategories(), []);
 
   // Filter merchants based on search and category
@@ -65,7 +65,7 @@ export default function MapsPage() {
 
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(m => 
+      filtered = filtered.filter(m =>
         m.businessName.toLowerCase().includes(query) ||
         m.ownerName.toLowerCase().includes(query) ||
         m.location.toLowerCase().includes(query) ||
@@ -79,7 +79,7 @@ export default function MapsPage() {
   // Group merchants by category
   const merchantsByCategory = useMemo(() => {
     const grouped: Record<string, typeof filteredMerchants> = {};
-    
+
     filteredMerchants.forEach(merchant => {
       const category = merchant.category || 'other';
       if (!grouped[category]) {
@@ -165,33 +165,38 @@ export default function MapsPage() {
 
           {/* View Mode Toggle */}
           <div className="flex items-center justify-between pt-6 border-t border-white/10">
-            <div className="text-sm text-gray-400 font-medium">
+            <div className="text-sm text-gray-300 font-medium">
               {filteredMerchants.length} {filteredMerchants.length === 1 ? 'merchant' : 'merchants'}
+              {viewMode === 'map' && (
+                <span className="text-xs text-gray-500 ml-2">
+                  ({filteredMerchants.filter(m => m.latitude && m.longitude).length} on map)
+                </span>
+              )}
             </div>
-            
-            <div className="flex gap-3">
+
+            <div className="flex gap-2">
               <button
                 onClick={() => setViewMode('list')}
-                className={`px-5 py-2.5 rounded-xl flex items-center gap-2 font-semibold transition-all ${
+                className={`px-4 md:px-5 py-2 md:py-2.5 rounded-lg flex items-center gap-2 font-semibold transition-all text-sm ${
                   viewMode === 'list'
-                    ? 'bg-bitcoin text-black'
-                    : 'bg-white/10 text-white hover:bg-white/20 border border-white/20 hover:border-bitcoin/30'
+                    ? 'bg-bitcoin text-black shadow-lg shadow-bitcoin/25'
+                    : 'bg-black/80 text-gray-300 hover:text-white hover:bg-black border border-white/20 hover:border-bitcoin/40'
                 }`}
               >
                 <FiList className="w-4 h-4" />
-                <span className="text-sm">List</span>
+                <span className="hidden sm:inline">List</span>
               </button>
-              
+
               <button
                 onClick={() => setViewMode('map')}
-                className={`px-5 py-2.5 rounded-xl flex items-center gap-2 font-semibold transition-all ${
+                className={`px-4 md:px-5 py-2 md:py-2.5 rounded-lg flex items-center gap-2 font-semibold transition-all text-sm ${
                   viewMode === 'map'
-                    ? 'bg-bitcoin text-black'
-                    : 'bg-white/10 text-white hover:bg-white/20 border border-white/20 hover:border-bitcoin/30'
+                    ? 'bg-bitcoin text-black shadow-lg shadow-bitcoin/25'
+                    : 'bg-black/80 text-gray-300 hover:text-white hover:bg-black border border-white/20 hover:border-bitcoin/40'
                 }`}
               >
                 <FiMap className="w-4 h-4" />
-                <span className="text-sm">Map</span>
+                <span className="hidden sm:inline">Map</span>
               </button>
             </div>
           </div>
@@ -217,9 +222,16 @@ export default function MapsPage() {
           /* Map View */
           <div className="mb-12">
             <MerchantsMap merchants={filteredMerchants} />
-            <p className="text-xs text-gray-500 mt-4 text-center">
-              Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-400">OpenStreetMap</a> contributors
-            </p>
+            <div className="mt-4 space-y-2">
+              <p className="text-xs text-gray-500 text-center">
+                Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="text-bitcoin hover:text-bitcoin-light underline transition-colors">OpenStreetMap</a> contributors
+              </p>
+              {filteredMerchants.some(m => !m.latitude || !m.longitude) && (
+                <p className="text-xs text-gray-600 text-center">
+                  Some merchants don't have GPS coordinates yet and appear at the default Kibera center location
+                </p>
+              )}
+            </div>
           </div>
         ) : (
           /* List View - Grouped by Category */
@@ -233,7 +245,7 @@ export default function MapsPage() {
                 })
                 .map(([category, merchants]) => {
                   const categoryInfo = CATEGORY_INFO[category];
-                  
+
                   return (
                     <div key={category}>
                       {/* Category Header */}
@@ -276,7 +288,7 @@ export default function MapsPage() {
                                 <FiMapPin className="w-3.5 md:w-4 h-3.5 md:h-4 text-bitcoin mt-0.5 shrink-0" />
                                 <span className="line-clamp-2 leading-relaxed">{merchant.location}</span>
                               </div>
-                              
+
                               {merchant.phoneNumber && (
                                 <div className="flex items-center gap-2 text-xs md:text-sm text-gray-300">
                                   <FiPhone className="w-3.5 md:w-4 h-3.5 md:h-4 text-bitcoin shrink-0" />
@@ -290,7 +302,7 @@ export default function MapsPage() {
                                 <SiBitcoin className="w-3.5 md:w-4 h-3.5 md:h-4 text-bitcoin shrink-0" />
                                 <span className="font-mono text-[10px] md:text-xs text-gray-400 truncate">{merchant.blinkAddress}</span>
                               </div>
-                              
+
                               <div className="flex items-center justify-between">
                                 {merchant.btcMapUrl && (
                                   <span className="inline-flex items-center gap-1 text-[10px] md:text-xs text-gray-500">
@@ -316,7 +328,7 @@ export default function MapsPage() {
               {filteredMerchants.map((merchant) => {
                 const categoryInfo = CATEGORY_INFO[merchant.category || 'other'];
                 const category = merchant.category || 'other';
-                
+
                 return (
                   <Link
                     key={merchant.id}
@@ -342,7 +354,7 @@ export default function MapsPage() {
                         <FiMapPin className="w-3.5 md:w-4 h-3.5 md:h-4 text-bitcoin mt-0.5 shrink-0" />
                         <span className="line-clamp-2 leading-relaxed">{merchant.location}</span>
                       </div>
-                      
+
                       {merchant.phoneNumber && (
                         <div className="flex items-center gap-2 text-xs md:text-sm text-gray-300">
                           <FiPhone className="w-3.5 md:w-4 h-3.5 md:h-4 text-bitcoin shrink-0" />
@@ -356,7 +368,7 @@ export default function MapsPage() {
                         <SiBitcoin className="w-3.5 md:w-4 h-3.5 md:h-4 text-bitcoin shrink-0" />
                         <span className="font-mono text-[10px] md:text-xs text-gray-400 truncate">{merchant.blinkAddress}</span>
                       </div>
-                      
+
                       <div className="flex items-center justify-between">
                         {merchant.btcMapUrl && (
                           <span className="inline-flex items-center gap-1 text-[10px] md:text-xs text-gray-500">
@@ -405,7 +417,7 @@ export default function MapsPage() {
             <div className="flex-1">
               <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">About This Directory</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                All merchants listed here are part of the Afribit Bitcoin Circular Economy program in Kibera, Nairobi. 
+                All merchants listed here are part of the Afribit Bitcoin Circular Economy program in Kibera, Nairobi.
                 Each business accepts Bitcoin payments via the Lightning Network through their Blink wallets.
               </p>
               <p className="text-gray-300 mb-4 leading-relaxed">
@@ -414,9 +426,9 @@ export default function MapsPage() {
               </p>
               <p className="text-sm text-gray-500 leading-relaxed">
                 Merchant locations and additional details provided by{' '}
-                <a 
-                  href="https://btcmap.org" 
-                  target="_blank" 
+                <a
+                  href="https://btcmap.org"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-bitcoin hover:text-bitcoin-light transition-colors underline"
                 >
@@ -434,7 +446,7 @@ export default function MapsPage() {
             Accept Bitcoin in Your Business
           </h3>
           <p className="text-gray-300 text-sm md:text-base lg:text-lg mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join our growing network of Bitcoin merchants in Kibera. Get listed on this directory, 
+            Join our growing network of Bitcoin merchants in Kibera. Get listed on this directory,
             receive training, and connect with donors worldwide.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

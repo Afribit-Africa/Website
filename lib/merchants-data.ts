@@ -340,50 +340,223 @@ const merchantDirectory = [
 ];
 
 // BTCMap links mapping
-const btcMapLinks: Record<string, string | { url: string; latitude: number; longitude: number }> = {
-  "MUANZO MPYA ORGANISATION": "https://btcmap.org/merchant/node:12300475666",
-  "BLACK AND WHITE": "https://btcmap.org/merchant/node:12300467146",
-  "JOSEPH PUBLIC WASHROOM": "https://btcmap.org/merchant/node:12300462657",
-  "KHEEZONIX FASHIONS AND STYLES": "https://btcmap.org/merchant/node:12300462658",
-  "BIOGAS PUBLIC WASHROOMS": "https://btcmap.org/merchant/node:12300462655",
-  "ABUKI DISTRIBUTORS": "https://btcmap.org/merchant/node:12300462656",
-  "Yummytummygoodies": { url: "https://btcmap.org/merchant/node:12167701319", latitude: -1.3162669, longitude: 36.7758709 },
-  "3WEST BUTCHERY": "https://btcmap.org/merchant/node:12300469780",
-  "Kibera the Largest slum tour": "https://btcmap.org/merchant/node:12300469783",
-  "Evalyncafeterian": "https://btcmap.org/merchant/node:12700628232",
-  "ABEBO VEGEZ": "https://btcmap.org/merchant/node:12300439008",
-  "MAMA NONNY SHOP": "https://btcmap.org/merchant/node:12300462946",
-  "Domiano Fast foods": "https://btcmap.org/merchant/node:12700702059",
-  "Wamboya": "https://btcmap.org/merchant/node:12700702058",
-  "ACGassuppliers": "https://btcmap.org/merchant/node:12700702057",
-  "GalaxyToilets": "https://btcmap.org/merchant/node:12700702056",
-  "Mama Clinton Groceries": "https://btcmap.org/merchant/node:12700702055",
-  "Fred Collections": "https://btcmap.org/merchant/node:12700702054",
-  "Arca Tech Services": "https://btcmap.org/merchant/node:12300515181",
-  "Maji safi": "https://btcmap.org/merchant/node:12300469782",
-  "WERE TOURS": "https://btcmap.org/merchant/node:12300462913",
-  "WILSON ASWETO": "https://btcmap.org/merchant/node:12300443594",
-  "ELIJAH DRAXLER": "https://btcmap.org/merchant/node:12300443592",
-  "MOSESO RIDES": "https://btcmap.org/merchant/node:12300433274",
-  "CHARLIE RIDER": "https://btcmap.org/merchant/node:12300433273",
-  "BIG BROTHER CAR WASH": "https://btcmap.org/merchant/node:12300417204",
-  "Unique Barber Shop": { url: "https://btcmap.org/merchant/node:12254721499", latitude: -1.3242558, longitude: 36.7798852 },
-  "Shiko's Ferments": { url: "https://btcmap.org/merchant/node:12281745878", latitude: -1.3262918, longitude: 36.7745343 },
-  "Kosmos Solutions LTD": { url: "https://btcmap.org/merchant/node:12281743822", latitude: -1.3262854, longitude: 36.774496 },
-  "Outdoor Kids Kenya": { url: "https://btcmap.org/merchant/node:12281727715", latitude: -1.3262825, longitude: 36.7745143 },
-  "Njema Safaris": { url: "https://btcmap.org/merchant/node:12280177485", latitude: -1.3262967, longitude: 36.7744685 },
-  "Greencard Mtaani": { url: "https://btcmap.org/merchant/node:12255259652", latitude: -1.317556, longitude: 36.800528 },
-  "RonnieFund": { url: "https://btcmap.org/merchant/node:12280168473", latitude: -1.326282, longitude: 36.7744761 },
-  "Obadia Nyaenda": { url: "https://btcmap.org/merchant/node:12254733210", latitude: -1.316536, longitude: 36.776282 },
-  "Kera Transport": { url: "https://btcmap.org/merchant/node:12254728433", latitude: -1.316536, longitude: 36.776281 },
-  "Felix": { url: "https://btcmap.org/merchant/node:12254728431", latitude: -1.316536, longitude: 36.77628 },
-  "Mama Design": { url: "https://btcmap.org/merchant/node:12254678587", latitude: -1.3172348, longitude: 36.7770329 },
-  "Calisto Enterprise": { url: "https://btcmap.org/merchant/node:12253101509", latitude: -1.3175962, longitude: 36.7781406 },
-  "Kevo DS Station": { url: "https://btcmap.org/merchant/node:12254686388", latitude: -1.3168, longitude: 36.778401 },
-  "For People Forever LTD": { url: "https://btcmap.org/merchant/node:12254728432", latitude: -1.3175197, longitude: 36.7744085 },
-  "Fishpoint Eateries": { url: "https://btcmap.org/merchant/node:12254752062", latitude: -1.308111, longitude: 36.782139 },
-  "Spira": { url: "https://btcmap.org/merchant/node:12168076295", latitude: -1.326304, longitude: 36.7744835 },
-  "Dess Gaming": "https://btcmap.org/merchant/node:12165688182"
+// BTCMap links with coordinates fetched from OpenStreetMap API
+const btcMapLinks: Record<string, { url: string; latitude: number; longitude: number }> = {
+  'MUANZO MPYA ORGANISATION': {
+    url: 'https://btcmap.org/merchant/node:12300475666',
+    latitude: -1.3154688,
+    longitude: 36.7753889
+  },
+  'BLACK AND WHITE': {
+    url: 'https://btcmap.org/merchant/node:12300467146',
+    latitude: -1.3153178,
+    longitude: 36.7753389
+  },
+  'JOSEPH PUBLIC WASHROOM': {
+    url: 'https://btcmap.org/merchant/node:12300462657',
+    latitude: -1.3153938,
+    longitude: 36.7753496
+  },
+  'KHEEZONIX FASHIONS AND STYLES': {
+    url: 'https://btcmap.org/merchant/node:12300462658',
+    latitude: -1.3153553,
+    longitude: 36.7753935
+  },
+  'BIOGAS PUBLIC WASHROOMS': {
+    url: 'https://btcmap.org/merchant/node:12300462655',
+    latitude: -1.3154473,
+    longitude: 36.7753734
+  },
+  'ABUKI DISTRIBUTORS': {
+    url: 'https://btcmap.org/merchant/node:12300462656',
+    latitude: -1.3153899,
+    longitude: 36.7753604
+  },
+  'Yummytummygoodies': {
+    url: 'https://btcmap.org/merchant/node:12167701319',
+    latitude: -1.3162669,
+    longitude: 36.7758709
+  },
+  '3WEST BUTCHERY': {
+    url: 'https://btcmap.org/merchant/node:12300469780',
+    latitude: -1.3162886,
+    longitude: 36.7761446
+  },
+  'Kibera the Largest slum tour': {
+    url: 'https://btcmap.org/merchant/node:12300469783',
+    latitude: -1.3163203,
+    longitude: 36.776195
+  },
+  'Evalyncafeterian': {
+    url: 'https://btcmap.org/merchant/node:12700628232',
+    latitude: -1.31638,
+    longitude: 36.77609
+  },
+  'ABEBO VEGEZ': {
+    url: 'https://btcmap.org/merchant/node:12300439008',
+    latitude: -1.316352,
+    longitude: 36.7761673
+  },
+  'MAMA NONNY SHOP': {
+    url: 'https://btcmap.org/merchant/node:12300462946',
+    latitude: -1.3162781,
+    longitude: 36.7761248
+  },
+  'Domiano Fast foods': {
+    url: 'https://btcmap.org/merchant/node:12700702059',
+    latitude: -1.31657,
+    longitude: 36.77625
+  },
+  'Wamboya': {
+    url: 'https://btcmap.org/merchant/node:12700702058',
+    latitude: -1.3165775,
+    longitude: 36.7764178
+  },
+  'ACGassuppliers': {
+    url: 'https://btcmap.org/merchant/node:12700702057',
+    latitude: -1.3165775,
+    longitude: 36.7764531
+  },
+  'GalaxyToilets': {
+    url: 'https://btcmap.org/merchant/node:12700702056',
+    latitude: -1.31664,
+    longitude: 36.77622
+  },
+  'Mama Clinton Groceries': {
+    url: 'https://btcmap.org/merchant/node:12700702055',
+    latitude: -1.31673,
+    longitude: 36.77701
+  },
+  'Fred Collections': {
+    url: 'https://btcmap.org/merchant/node:12700702054',
+    latitude: -1.31725,
+    longitude: 36.77808
+  },
+  'Arca Tech Services': {
+    url: 'https://btcmap.org/merchant/node:12300515181',
+    latitude: -1.3262898,
+    longitude: 36.7744848
+  },
+  'Maji safi': {
+    url: 'https://btcmap.org/merchant/node:12300469782',
+    latitude: -1.3163061,
+    longitude: 36.7761773
+  },
+  'WERE TOURS': {
+    url: 'https://btcmap.org/merchant/node:12300462913',
+    latitude: -1.31544,
+    longitude: 36.7753815
+  },
+  'WILSON ASWETO': {
+    url: 'https://btcmap.org/merchant/node:12300443594',
+    latitude: -1.3165382,
+    longitude: 36.7762789
+  },
+  'ELIJAH DRAXLER': {
+    url: 'https://btcmap.org/merchant/node:12300443592',
+    latitude: -1.3165359,
+    longitude: 36.7762768
+  },
+  'MOSESO RIDES': {
+    url: 'https://btcmap.org/merchant/node:12300433274',
+    latitude: -1.316536,
+    longitude: 36.7762784
+  },
+  'CHARLIE RIDER': {
+    url: 'https://btcmap.org/merchant/node:12300433273',
+    latitude: -1.3165361,
+    longitude: 36.7762838
+  },
+  'BIG BROTHER CAR WASH': {
+    url: 'https://btcmap.org/merchant/node:12300417204',
+    latitude: -1.3175001,
+    longitude: 36.7780995
+  },
+  'Unique Barber Shop': {
+    url: 'https://btcmap.org/merchant/node:12254721499',
+    latitude: -1.323549,
+    longitude: 36.780057
+  },
+  'Shiko\'s Ferments': {
+    url: 'https://btcmap.org/merchant/node:12281745878',
+    latitude: -1.3262918,
+    longitude: 36.7745343
+  },
+  'Kosmos Solutions LTD': {
+    url: 'https://btcmap.org/merchant/node:12281743822',
+    latitude: -1.3262854,
+    longitude: 36.774496
+  },
+  'Outdoor Kids Kenya': {
+    url: 'https://btcmap.org/merchant/node:12281727715',
+    latitude: -1.3262825,
+    longitude: 36.7745143
+  },
+  'Njema Safaris': {
+    url: 'https://btcmap.org/merchant/node:12280177485',
+    latitude: -1.3262967,
+    longitude: 36.7744685
+  },
+  'Greencard Mtaani': {
+    url: 'https://btcmap.org/merchant/node:12255259652',
+    latitude: -1.317556,
+    longitude: 36.800528
+  },
+  'RonnieFund': {
+    url: 'https://btcmap.org/merchant/node:12280168473',
+    latitude: -1.326282,
+    longitude: 36.7744761
+  },
+  'Obadia Nyaenda': {
+    url: 'https://btcmap.org/merchant/node:12254733210',
+    latitude: -1.316536,
+    longitude: 36.776282
+  },
+  'Kera Transport': {
+    url: 'https://btcmap.org/merchant/node:12254728433',
+    latitude: -1.316536,
+    longitude: 36.776281
+  },
+  'Felix': {
+    url: 'https://btcmap.org/merchant/node:12254728431',
+    latitude: -1.316536,
+    longitude: 36.77628
+  },
+  'Mama Design': {
+    url: 'https://btcmap.org/merchant/node:12254678587',
+    latitude: -1.3172348,
+    longitude: 36.7770329
+  },
+  'Calisto Enterprise': {
+    url: 'https://btcmap.org/merchant/node:12253101509',
+    latitude: -1.3175962,
+    longitude: 36.7781406
+  },
+  'Kevo DS Station': {
+    url: 'https://btcmap.org/merchant/node:12254686388',
+    latitude: -1.3168,
+    longitude: 36.778401
+  },
+  'For People Forever LTD': {
+    url: 'https://btcmap.org/merchant/node:12254728432',
+    latitude: -1.3175197,
+    longitude: 36.7744085
+  },
+  'Fishpoint Eateries': {
+    url: 'https://btcmap.org/merchant/node:12254752062',
+    latitude: -1.308111,
+    longitude: 36.782139
+  },
+  'Spira': {
+    url: 'https://btcmap.org/merchant/node:12168076295',
+    latitude: -1.326304,
+    longitude: 36.7744835
+  },
+  'Dess Gaming': {
+    url: 'https://btcmap.org/merchant/node:12165688182',
+    latitude: -1.2836066,
+    longitude: 36.873254
+  }
 };
 
 // Helper function to create slug from business name
@@ -437,14 +610,11 @@ export const MERCHANTS: Merchant[] = merchantDirectory.map((merchant, index) => 
   let longitude: number | undefined;
   
   const btcMapData = btcMapLinks[merchant.businessName];
-  if (typeof btcMapData === 'string') {
-    btcMapUrl = btcMapData;
-  } else if (btcMapData) {
+  if (btcMapData) {
     btcMapUrl = btcMapData.url;
     latitude = btcMapData.latitude;
     longitude = btcMapData.longitude;
-  }
-  if (!btcMapUrl) {
+  } else {
     // Try variations
     const variations = [
       merchant.businessName.toUpperCase(),
@@ -455,13 +625,9 @@ export const MERCHANTS: Merchant[] = merchantDirectory.map((merchant, index) => 
     for (const variation of variations) {
       if (btcMapLinks[variation]) {
         const data = btcMapLinks[variation];
-        if (typeof data === 'string') {
-          btcMapUrl = data;
-        } else {
-          btcMapUrl = data.url;
-          latitude = data.latitude;
-          longitude = data.longitude;
-        }
+        btcMapUrl = data.url;
+        latitude = data.latitude;
+        longitude = data.longitude;
         break;
       }
     }
