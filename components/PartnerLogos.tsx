@@ -9,23 +9,26 @@ const partners = [
   { name: 'Geyser', logo: '/Media/Partner logos/Geyser.png', width: 140, height: 70, size: 'lg' },
   { name: 'Rottweil', logo: '/Media/Partner logos/Rottweil.jpg', width: 110, height: 55, size: 'md' },
   { name: 'Afribit', logo: '/Media/Logo/Full logo png transparent.png', width: 90, height: 45, size: 'sm' },
+  { name: 'Fedi', logo: '/Media/Partner logos/Fedi logo.jpg', width: 100, height: 50, size: 'sm' },
 ];
 
-// Create a masonry-style grid with varied sizes
+// Create a masonry-style grid with varied sizes - deterministic for consistent loop
 const createMasonryPattern = () => {
   const pattern = [];
   const rows = 3; // 3 rows for masonry effect
 
-  // Duplicate partners many times for seamless continuous scroll
-  const extendedPartners = [...partners, ...partners, ...partners, ...partners, ...partners, ...partners];
+  // Duplicate partners MANY times for truly seamless infinite scroll
+  const duplicates = 20; // Increase duplicates significantly
+  const extendedPartners = Array(duplicates).fill(partners).flat();
 
-  // Distribute logos across rows with varied positions
+  // Distribute logos across rows with consistent offsets
   for (let i = 0; i < extendedPartners.length; i++) {
     const row = i % rows;
+    const partnerIndex = i % partners.length;
     pattern.push({
       ...extendedPartners[i],
       row,
-      offset: Math.random() * 15, // Random vertical offset within row
+      offset: (partnerIndex * 7) % 12, // Deterministic offset for seamless loop
     });
   }
 
@@ -41,18 +44,17 @@ export default function PartnerLogos() {
     if (!scrollContainer) return;
 
     let scrollPosition = 0;
-    const scrollSpeed = 0.5; // Smooth scrolling speed
+    const scrollSpeed = 0.8; // Slightly faster for better visual
 
     const animate = () => {
       scrollPosition += scrollSpeed;
 
-      // Get the width of half the content (one complete set of logos)
-      const containerWidth = scrollContainer.scrollWidth;
-      const halfWidth = containerWidth / 2;
-
-      // Reset position seamlessly when we've scrolled through half the content
-      if (scrollPosition >= halfWidth) {
-        scrollPosition = scrollPosition - halfWidth;
+      // Calculate one complete cycle (based on number of actual partners * spacing)
+      const singleSetWidth = (partners.length * 150); // Approximate width per partner set
+      
+      // Reset seamlessly when one complete set has scrolled
+      if (scrollPosition >= singleSetWidth) {
+        scrollPosition = 0;
       }
 
       scrollContainer.style.transform = `translateX(-${scrollPosition}px)`;
@@ -87,9 +89,11 @@ export default function PartnerLogos() {
 
       {/* Logo Container with Fade Overlays */}
       <div className="relative max-w-7xl mx-auto">
-        {/* Fade Overlays - Only left and right for centered design */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-black via-black/90 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-black via-black/90 to-transparent z-10 pointer-events-none" />
+        {/* Fade Overlays - All four sides for professional look */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-black via-black/95 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-black via-black/95 to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-16 md:h-20 bg-gradient-to-b from-black via-black/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 md:h-20 bg-gradient-to-t from-black via-black/80 to-transparent z-10 pointer-events-none" />
 
         {/* Masonry Grid Container */}
         <div className="relative h-56 md:h-64 lg:h-72 overflow-hidden">

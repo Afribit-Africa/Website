@@ -570,7 +570,7 @@ function createSlug(name: string): string {
 // Helper function to categorize merchants
 function categorizeByBusiness(name: string): string {
   const lowerName = name.toLowerCase();
-  
+
   if (lowerName.includes('food') || lowerName.includes('dishes') || lowerName.includes('cafeteria') || lowerName.includes('eateries')) {
     return 'restaurant';
   }
@@ -595,7 +595,7 @@ function categorizeByBusiness(name: string): string {
   if (lowerName.includes('foundation') || lowerName.includes('initiative') || lowerName.includes('organisation') || lowerName.includes('youth group')) {
     return 'nonprofit';
   }
-  
+
   return 'other';
 }
 
@@ -603,12 +603,12 @@ function categorizeByBusiness(name: string): string {
 export const MERCHANTS: Merchant[] = merchantDirectory.map((merchant, index) => {
   const slug = createSlug(merchant.businessName);
   const category = categorizeByBusiness(merchant.businessName);
-  
+
   // Try to match with BTCMap links (case-insensitive and flexible matching)
   let btcMapUrl: string | undefined;
   let latitude: number | undefined;
   let longitude: number | undefined;
-  
+
   const btcMapData = btcMapLinks[merchant.businessName];
   if (btcMapData) {
     btcMapUrl = btcMapData.url;
@@ -621,7 +621,7 @@ export const MERCHANTS: Merchant[] = merchantDirectory.map((merchant, index) => 
       merchant.businessName.toLowerCase(),
       merchant.businessName
     ];
-    
+
     for (const variation of variations) {
       if (btcMapLinks[variation]) {
         const data = btcMapLinks[variation];
@@ -632,9 +632,9 @@ export const MERCHANTS: Merchant[] = merchantDirectory.map((merchant, index) => 
       }
     }
   }
-  
+
   const btcMapNodeId = btcMapUrl ? btcMapUrl.split(':')[1] : undefined;
-  
+
   return {
     id: `merchant-${index + 1}`,
     businessName: merchant.businessName,

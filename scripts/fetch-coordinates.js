@@ -1,6 +1,6 @@
 /**
  * Fetch merchant coordinates from OpenStreetMap API
- * 
+ *
  * This script reads BTCMap merchant links from CSV, extracts OSM node IDs,
  * fetches lat/long coordinates from OSM API, and outputs formatted data.
  */
@@ -66,16 +66,16 @@ const DELAY_MS = 1000;
  */
 async function fetchNodeData(nodeId) {
   const url = `${OSM_API_BASE}/node/${nodeId}.json`;
-  
+
   try {
     const response = await fetch(url);
-    
+
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
-    
+
     const data = await response.json();
-    
+
     // OSM JSON format: { elements: [{ type: "node", id: X, lat: Y, lon: Z, ... }] }
     if (data.elements && data.elements.length > 0) {
       const node = data.elements[0];
@@ -85,7 +85,7 @@ async function fetchNodeData(nodeId) {
         tags: node.tags || {}
       };
     }
-    
+
     throw new Error('No node data found');
   } catch (error) {
     console.error(`Error fetching node ${nodeId}:`, error.message);
@@ -105,17 +105,17 @@ function sleep(ms) {
  */
 async function main() {
   console.log(`Fetching coordinates for ${merchants.length} merchants...\n`);
-  
+
   const results = [];
   let successCount = 0;
   let failCount = 0;
-  
+
   for (let i = 0; i < merchants.length; i++) {
     const merchant = merchants[i];
     console.log(`[${i + 1}/${merchants.length}] Fetching: ${merchant.name}`);
-    
+
     const nodeData = await fetchNodeData(merchant.nodeId);
-    
+
     if (nodeData) {
       results.push({
         name: merchant.name,
@@ -130,27 +130,27 @@ async function main() {
       console.log(`  ✗ Failed to fetch coordinates`);
       failCount++;
     }
-    
+
     // Rate limiting: wait between requests
     if (i < merchants.length - 1) {
       await sleep(DELAY_MS);
     }
   }
-  
+
   console.log(`\n=== Summary ===`);
   console.log(`Success: ${successCount}`);
   console.log(`Failed: ${failCount}`);
   console.log(`Total: ${merchants.length}`);
-  
+
   // Save results to JSON file
   const outputPath = path.join(__dirname, 'merchant-coordinates.json');
   fs.writeFileSync(outputPath, JSON.stringify(results, null, 2));
   console.log(`\nResults saved to: ${outputPath}`);
-  
+
   // Generate TypeScript code for btcMapLinks
   console.log('\n=== TypeScript Code for lib/merchants-data.ts ===\n');
   console.log('export const btcMapLinks: Record<string, { url: string; latitude?: number; longitude?: number }> = {');
-  
+
   results.forEach((merchant, index) => {
     const key = merchant.name.replace(/'/g, "\\'");
     console.log(`  '${key}': {`);
@@ -159,7 +159,7 @@ async function main() {
     console.log(`    longitude: ${merchant.longitude}`);
     console.log(`  }${index < results.length - 1 ? ',' : ''}`);
   });
-  
+
   console.log('};');
 }
 
