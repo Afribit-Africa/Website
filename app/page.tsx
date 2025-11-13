@@ -31,6 +31,10 @@ const PartnerLogos = dynamic(() => import("@/components/PartnerLogos"), {
   loading: () => <Skeleton className="h-64 w-full" />,
 });
 
+const FediCommunity = dynamic(() => import("@/components/FediCommunity"), {
+  loading: () => <Skeleton className="h-96 w-full" />,
+});
+
 const ImpactStats = dynamic(() => import("@/components/ImpactStats"), {
   loading: () => <Skeleton className="h-96 w-full" />,
 });
@@ -316,6 +320,9 @@ export default function HomePage() {
 
       {/* ========== PARTNER LOGOS SECTION ========== */}
       <PartnerLogos />
+
+      {/* ========== FEDI COMMUNITY SECTION ========== */}
+      <FediCommunity />
 
       {/* ========== NEWS SECTION ========== */}
       <NewsSection />

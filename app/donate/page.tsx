@@ -398,10 +398,10 @@ export default function DonatePage() {
                   </span>
                 </div>
                 {idx < 2 && (
-                  <div className={`w-16 md:w-24 lg:w-32 h-1 -mx-2 transition-all duration-300 ${
+                  <div className={`w-16 md:w-24 lg:w-32 h-0.5 -mx-2 transition-all duration-300 ${
                     idx < ['tiers', 'details', 'payment'].indexOf(step)
                       ? 'bg-bitcoin'
-                      : 'bg-white/30'
+                      : 'bg-white/20'
                   }`} />
                 )}
               </div>

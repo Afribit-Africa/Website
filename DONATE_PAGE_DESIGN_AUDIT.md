@@ -1,7 +1,7 @@
 # Donate Page Design Audit & Improvement Report
 
-**Date:** November 12, 2025  
-**Page:** `/donate` - Multi-step Donation Form  
+**Date:** November 12, 2025
+**Page:** `/donate` - Multi-step Donation Form
 **Status:** 🔴 Needs Design Refinement
 
 ---
@@ -111,7 +111,7 @@ className="bg-white/10 hover:bg-white/20 text-white font-medium py-2.5 px-5 roun
 
 **Examples:**
 - "Continue to Payment" (18 chars)
-- "Make Another Donation" (21 chars) 
+- "Make Another Donation" (21 chars)
 - "Generate New Invoice" (20 chars)
 
 **Recommendation:**
@@ -257,7 +257,7 @@ Standardize to 3 levels:
 // Default state
 border-white/10 (subtle containers)
 
-// Hover/Focus state  
+// Hover/Focus state
 border-white/20 (interactive elements)
 
 // Active/Accent state
@@ -503,14 +503,14 @@ Disabled text: text-gray-500 (but ensure context is clear)
   <div className="relative h-32 md:h-40 overflow-hidden"> // Was h-48
     <img className="w-full h-full object-cover" />
     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-    
+
     {/* Title on image - Keep */}
     <div className="absolute bottom-2 left-3 right-3">
       <h3 className="text-lg md:text-xl font-bold"> // Reduce: 2xl→lg/xl
         {tier.title}
       </h3>
     </div>
-    
+
     {/* Amount badge - Make smaller */}
     <div className="absolute top-2 right-2 bg-black/90 backdrop-blur-sm px-2 py-1 rounded-full">
       <span className="text-xs font-semibold text-bitcoin"> // Reduce text size
@@ -523,7 +523,7 @@ Disabled text: text-gray-500 (but ensure context is clear)
   <div className="p-4 md:p-5 bg-black/40"> // Reduce padding
     {/* Subtitle */}
     <p className="text-xs text-gray-400 mb-2">{tier.subtitle}</p>
-    
+
     {/* Description - No clamp on desktop */}
     <p className="text-sm text-gray-300 mb-3 leading-relaxed md:line-clamp-none line-clamp-3">
       {tier.description}

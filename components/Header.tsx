@@ -16,10 +16,10 @@ export function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Set scrolled state for darker background
       setScrolled(currentScrollY > 50);
-      
+
       // Show/hide based on scroll direction
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         // Scrolling down
@@ -28,7 +28,7 @@ export function Header() {
         // Scrolling up
         setVisible(true);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -39,12 +39,12 @@ export function Header() {
   return (
     <>
       {/* Desktop Floating Header - Thin & Minimalistic */}
-      <header 
+      <header
         className={`hidden md:block fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl transition-all duration-300 ${
           visible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
         }`}
       >
-        <nav 
+        <nav
           className={`glass-card py-3 px-6 transition-all duration-300 ${
             scrolled ? 'bg-black/80 backdrop-blur-xl' : ''
           }`}
@@ -69,26 +69,32 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <div className="flex items-center gap-6">
-              <Link 
-                href="/#approach" 
+              <Link
+                href="/#approach"
                 className="text-sm text-gray-300 hover:text-bitcoin transition-colors"
               >
                 Our Approach
               </Link>
-              <Link 
-                href="/#impact" 
+              <Link
+                href="/#impact"
                 className="text-sm text-gray-300 hover:text-bitcoin transition-colors"
               >
                 Impact
               </Link>
-              <Link 
-                href="/maps" 
+              <Link
+                href="/maps"
                 className="text-sm text-gray-300 hover:text-bitcoin transition-colors"
               >
                 Merchants
               </Link>
-              <Link 
-                href="/contact" 
+              <Link
+                href="/fedi"
+                className="text-sm text-gray-300 hover:text-bitcoin transition-colors"
+              >
+                Community
+              </Link>
+              <Link
+                href="/contact"
                 className="text-sm text-gray-300 hover:text-bitcoin transition-colors"
               >
                 Contact
@@ -108,8 +114,8 @@ export function Header() {
       <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-black/95 backdrop-blur-lg pb-safe">
         <div className="flex items-center justify-around py-3 px-2">
           {/* Home */}
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-1 rounded-lg transition-all ${
               pathname === '/' ? 'text-bitcoin' : 'text-gray-400 hover:text-bitcoin'
             }`}
@@ -119,8 +125,8 @@ export function Header() {
           </Link>
 
           {/* Merchants */}
-          <Link 
-            href="/maps" 
+          <Link
+            href="/maps"
             className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-1 rounded-lg transition-all ${
               pathname === '/maps' ? 'text-bitcoin' : 'text-gray-400 hover:text-bitcoin'
             }`}
@@ -129,8 +135,19 @@ export function Header() {
             <span className="text-[10px] font-medium">Merchants</span>
           </Link>
 
+          {/* Fedi Community */}
+          <Link
+            href="/fedi"
+            className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-1 rounded-lg transition-all ${
+              pathname === '/fedi' ? 'text-bitcoin' : 'text-gray-400 hover:text-bitcoin'
+            }`}
+          >
+            <FiHelpCircle className="w-6 h-6" />
+            <span className="text-[10px] font-medium">Community</span>
+          </Link>
+
           {/* Donate - Bitcoin Icon */}
-          <Link 
+          <Link
             href="/donate"
             className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-1 rounded-lg transition-all ${
               pathname === '/donate' ? 'text-bitcoin' : 'text-gray-400 hover:text-bitcoin'
@@ -141,8 +158,8 @@ export function Header() {
           </Link>
 
           {/* Contact */}
-          <Link 
-            href="/contact" 
+          <Link
+            href="/contact"
             className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-1 rounded-lg transition-all ${
               pathname === '/contact' ? 'text-bitcoin' : 'text-gray-400 hover:text-bitcoin'
             }`}

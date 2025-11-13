@@ -75,8 +75,8 @@ export default function PartnerLogos() {
   };
 
   return (
-    <section className="py-20 bg-black overflow-hidden relative">
-      <div className="container mx-auto px-6 mb-12">
+    <section className="py-20 md:py-32 bg-black overflow-hidden relative">
+      <div className="container mx-auto px-4 md:px-6 mb-12">
         <div className="text-center">
           <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4">Our Partners</h2>
           <p className="text-gray-300 text-base md:text-lg">
@@ -86,12 +86,10 @@ export default function PartnerLogos() {
       </div>
 
       {/* Logo Container with Fade Overlays */}
-      <div className="relative">
-        {/* Fade Overlays - Smooth gradients on all sides */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 md:w-56 bg-gradient-to-r from-black via-black/90 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 md:w-56 bg-gradient-to-l from-black via-black/90 to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 left-0 right-0 h-16 md:h-20 bg-gradient-to-b from-black via-black/80 to-transparent z-10 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-16 md:h-20 bg-gradient-to-t from-black via-black/80 to-transparent z-10 pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto">
+        {/* Fade Overlays - Only left and right for centered design */}
+        <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-black via-black/90 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-black via-black/90 to-transparent z-10 pointer-events-none" />
 
         {/* Masonry Grid Container */}
         <div className="relative h-56 md:h-64 lg:h-72 overflow-hidden">
