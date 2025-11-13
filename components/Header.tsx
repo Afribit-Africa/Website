@@ -82,22 +82,16 @@ export function Header() {
                 Impact
               </Link>
               <Link 
-                href="/#testimonials" 
-                className="text-sm text-gray-300 hover:text-bitcoin transition-colors"
-              >
-                Testimonials
-              </Link>
-              <Link 
-                href="/#faq" 
-                className="text-sm text-gray-300 hover:text-bitcoin transition-colors"
-              >
-                FAQ
-              </Link>
-              <Link 
                 href="/maps" 
                 className="text-sm text-gray-300 hover:text-bitcoin transition-colors"
               >
                 Merchants
+              </Link>
+              <Link 
+                href="/contact" 
+                className="text-sm text-gray-300 hover:text-bitcoin transition-colors"
+              >
+                Contact
               </Link>
               <Link
                 href="/donate"
@@ -111,52 +105,50 @@ export function Header() {
       </header>
 
       {/* Mobile Bottom Navigation - Black Background with Better Icons */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-black pb-safe">
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-black/95 backdrop-blur-lg pb-safe">
         <div className="flex items-center justify-around py-3 px-2">
           {/* Home */}
           <Link 
             href="/" 
-            className={`flex items-center justify-center w-12 h-10 rounded-lg transition-all ${
-              pathname === '/' ? 'text-bitcoin bg-bitcoin/10' : 'text-gray-400 hover:text-bitcoin'
+            className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-1 rounded-lg transition-all ${
+              pathname === '/' ? 'text-bitcoin' : 'text-gray-400 hover:text-bitcoin'
             }`}
           >
             <FiHome className="w-6 h-6" />
+            <span className="text-[10px] font-medium">Home</span>
           </Link>
 
           {/* Merchants */}
           <Link 
             href="/maps" 
-            className={`flex items-center justify-center w-12 h-10 rounded-lg transition-all ${
-              pathname === '/maps' ? 'text-bitcoin bg-bitcoin/10' : 'text-gray-400 hover:text-bitcoin'
+            className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-1 rounded-lg transition-all ${
+              pathname === '/maps' ? 'text-bitcoin' : 'text-gray-400 hover:text-bitcoin'
             }`}
           >
             <FiMapPin className="w-6 h-6" />
+            <span className="text-[10px] font-medium">Merchants</span>
           </Link>
 
           {/* Donate - Bitcoin Icon */}
           <Link 
             href="/donate"
-            className={`flex items-center justify-center w-12 h-10 rounded-lg transition-all ${
-              pathname === '/donate' ? 'text-bitcoin bg-bitcoin/10' : 'text-gray-400 hover:text-bitcoin'
+            className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-1 rounded-lg transition-all ${
+              pathname === '/donate' ? 'text-bitcoin' : 'text-gray-400 hover:text-bitcoin'
             }`}
           >
             <SiBitcoin className="w-6 h-6" />
+            <span className="text-[10px] font-medium">Donate</span>
           </Link>
 
-          {/* Contact - Mail Icon */}
-          <a 
-            href="mailto:connect@afribit.africa" 
-            className="flex items-center justify-center w-12 h-10 rounded-lg text-gray-400 hover:text-bitcoin transition-all"
+          {/* Contact */}
+          <Link 
+            href="/contact" 
+            className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-1 rounded-lg transition-all ${
+              pathname === '/contact' ? 'text-bitcoin' : 'text-gray-400 hover:text-bitcoin'
+            }`}
           >
             <FiMail className="w-6 h-6" />
-          </a>
-
-          {/* FAQ - Help Icon */}
-          <Link 
-            href="/#faq" 
-            className="flex items-center justify-center w-12 h-10 rounded-lg text-gray-400 hover:text-bitcoin transition-all"
-          >
-            <FiHelpCircle className="w-6 h-6" />
+            <span className="text-[10px] font-medium">Contact</span>
           </Link>
         </div>
       </nav>

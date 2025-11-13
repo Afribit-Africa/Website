@@ -369,16 +369,16 @@ export default function DonatePage() {
 
           {/* Step Indicator */}
           <div className="max-w-3xl mx-auto mb-12">
-            <div className="flex items-center justify-center gap-3 md:gap-6">
+            <div className="flex items-center justify-center">
             {[
               { key: 'tiers', label: 'Choose Tier', num: 1 },
               { key: 'details', label: 'Details', num: 2 },
               { key: 'payment', label: 'Payment', num: 3 }
             ].map((s, idx) => (
-              <div key={s.key} className="flex items-center gap-3 md:gap-6">
+              <div key={s.key} className="flex items-center">
                 <div className="flex flex-col items-center gap-2">
-                  <div 
-                    className={`w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center border-2 font-bold text-sm md:text-base transition-all duration-300 ${
+                  <div
+                    className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border-2 font-bold text-sm md:text-base transition-all duration-300 z-10 ${
                       step === s.key
                         ? 'bg-bitcoin border-bitcoin text-white shadow-lg shadow-bitcoin/50 scale-105'
                         : ['tiers', 'details', 'payment'].indexOf(step) > idx
@@ -398,10 +398,10 @@ export default function DonatePage() {
                   </span>
                 </div>
                 {idx < 2 && (
-                  <div className={`w-12 md:w-20 lg:w-24 h-0.5 mb-6 transition-all duration-300 ${
+                  <div className={`w-16 md:w-24 lg:w-32 h-1 -mx-2 transition-all duration-300 ${
                     idx < ['tiers', 'details', 'payment'].indexOf(step)
                       ? 'bg-bitcoin'
-                      : 'bg-white/20'
+                      : 'bg-white/30'
                   }`} />
                 )}
               </div>
@@ -422,50 +422,52 @@ export default function DonatePage() {
                   <button
                     key={tier.id}
                     onClick={() => handleTierSelect(tier)}
-                    className={`group relative overflow-hidden rounded-2xl bg-linear-to-br ${tier.bgGradient} border-2 border-white/10 hover:border-bitcoin/50 transition-all duration-300 text-left hover:scale-105 cursor-pointer`}
+                    className="group relative overflow-hidden rounded-xl border-2 border-white/10 hover:border-bitcoin/40 transition-all duration-300 text-left hover:scale-[1.02] cursor-pointer bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm flex flex-col"
                     aria-label={`Select ${tier.title} donation tier${tier.isCustom ? '' : ` for $${tier.amount}`}`}
                   >
-                    {/* Image */}
-                    <div className="relative h-36 md:h-48 overflow-hidden">
+                    {/* Image Container - Fixed Aspect Ratio */}
+                    <div className="relative w-full aspect-[4/3] overflow-hidden">
                       <img
                         src={tier.image}
                         alt={tier.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-linear-to-t from-black via-black/70 to-black/30" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
-                      {/* Amount Badge - Always visible with shadow */}
-                      <div className="absolute top-3 right-3 bg-black/80 backdrop-blur-sm text-white border border-bitcoin px-2.5 py-1 rounded-full font-semibold text-xs shadow-xl">
+                      {/* Amount Badge */}
+                      <div className="absolute top-3 right-3 bg-black/90 backdrop-blur-md text-white border border-bitcoin/50 px-3 py-1.5 rounded-full font-bold text-xs shadow-lg">
                         {tier.isCustom ? 'Any Amount' : `$${tier.amount}`}
                       </div>
 
-                      {/* Title on Image */}
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <h3 className="text-xl md:text-2xl font-bold font-heading text-white drop-shadow-lg">
-                          {tier.title}
-                        </h3>
-                        {tier.subtitle && (
-                          <p className="text-xs md:text-sm text-gray-200 mt-1 drop-shadow-md">{tier.subtitle}</p>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-6 bg-black/40">
-                      <p className="text-sm text-gray-300 mb-4 leading-relaxed line-clamp-3">
-                        {tier.description}
-                      </p>
-
+                      {/* Goal Badge */}
                       {tier.goal && (
-                        <div className="mb-3 text-xs text-bitcoin font-semibold">
+                        <div className="absolute top-3 left-3 bg-bitcoin/90 backdrop-blur-md text-white px-3 py-1.5 rounded-full font-semibold text-xs shadow-lg">
                           Goal: ${tier.goal.toLocaleString()}
                         </div>
                       )}
+                    </div>
+
+                    {/* Content - Better Structure */}
+                    <div className="flex-1 flex flex-col p-5">
+                      {/* Title & Subtitle */}
+                      <div className="mb-3">
+                        <h3 className="text-lg md:text-xl font-bold font-heading text-white mb-1">
+                          {tier.title}
+                        </h3>
+                        {tier.subtitle && (
+                          <p className="text-xs text-gray-400">{tier.subtitle}</p>
+                        )}
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-sm text-gray-300 mb-4 leading-relaxed line-clamp-3 flex-1">
+                        {tier.description}
+                      </p>
 
                       {/* Perk */}
-                      <div className="pt-4 border-t border-white/10">
+                      <div className="pt-3 border-t border-white/10">
                         <div className="flex items-start gap-2">
-                          <FiCheck className="w-5 h-5 text-bitcoin shrink-0 mt-0.5" />
+                          <FiCheck className="w-4 h-4 text-bitcoin shrink-0 mt-0.5" />
                           <p className="text-xs text-gray-400 leading-relaxed line-clamp-2">{tier.perk}</p>
                         </div>
                       </div>
@@ -554,37 +556,43 @@ export default function DonatePage() {
 
                 {/* Donation Type Selection */}
                 <div className="mb-6">
-                  <label className="block text-sm font-semibold text-white uppercase mb-3">
-                    Donation Type
+                  <label className="block text-sm font-semibold text-white uppercase tracking-wide mb-4">
+                    Choose Donation Type
                   </label>
                   <div className="grid grid-cols-2 gap-4">
                     <button
                       type="button"
                       onClick={() => setDonationType('anonymous')}
-                      className={`p-4 rounded-xl border-2 transition-all ${
+                      className={`group p-5 rounded-xl border-2 transition-all relative overflow-hidden ${
                         donationType === 'anonymous'
-                          ? 'bg-bitcoin/20 border-bitcoin text-white'
-                          : 'bg-white/5 border-white/20 text-gray-400 hover:border-white/40'
+                          ? 'bg-bitcoin/20 border-bitcoin text-white shadow-lg shadow-bitcoin/20'
+                          : 'bg-white/5 border-white/20 text-gray-300 hover:border-white/40 hover:bg-white/10'
                       }`}
                       aria-pressed={donationType === 'anonymous'}
                       aria-label="Choose anonymous donation (no email required)"
                     >
-                      <div className="font-bold mb-1">Anonymous</div>
-                      <div className="text-xs">No email or name required</div>
+                      <div className="flex items-center gap-2 mb-2">
+                        {donationType === 'anonymous' && <FiCheck className="w-5 h-5 text-bitcoin" />}
+                        <div className="font-bold text-base">Anonymous</div>
+                      </div>
+                      <div className="text-xs leading-relaxed">Quick donation with no signup needed</div>
                     </button>
                     <button
                       type="button"
                       onClick={() => setDonationType('named')}
-                      className={`p-4 rounded-xl border-2 transition-all ${
+                      className={`group p-5 rounded-xl border-2 transition-all relative overflow-hidden ${
                         donationType === 'named'
-                          ? 'bg-bitcoin/20 border-bitcoin text-white'
-                          : 'bg-white/5 border-white/20 text-gray-400 hover:border-white/40'
+                          ? 'bg-bitcoin/20 border-bitcoin text-white shadow-lg shadow-bitcoin/20'
+                          : 'bg-white/5 border-white/20 text-gray-300 hover:border-white/40 hover:bg-white/10'
                       }`}
                       aria-pressed={donationType === 'named'}
                       aria-label="Choose named donation (receive perks and updates)"
                     >
-                      <div className="font-bold mb-1">Get Recognition</div>
-                      <div className="text-xs">Receive perks & updates</div>
+                      <div className="flex items-center gap-2 mb-2">
+                        {donationType === 'named' && <FiCheck className="w-5 h-5 text-bitcoin" />}
+                        <div className="font-bold text-base">Get Perks</div>
+                      </div>
+                      <div className="text-xs leading-relaxed">Receive rewards and impact updates</div>
                     </button>
                   </div>
                 </div>
@@ -711,9 +719,9 @@ export default function DonatePage() {
                 {qrCodeDataUrl && (
                   <div className="flex justify-center mb-6">
                     <div className="bg-white p-4 rounded-xl shadow-2xl">
-                      <img 
-                        src={qrCodeDataUrl} 
-                        alt="Lightning Invoice QR Code" 
+                      <img
+                        src={qrCodeDataUrl}
+                        alt="Lightning Invoice QR Code"
                         className="w-48 h-48 md:w-56 md:h-56 object-contain"
                       />
                     </div>
