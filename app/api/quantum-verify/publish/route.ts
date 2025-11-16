@@ -143,22 +143,6 @@ export async function POST(request: NextRequest) {
       logger.error('Failed to send published email:', emailError);
       // Don't fail the publish if email fails
     }
-      ]
-    );
-
-    // Send published email to merchant
-    try {
-      const { sendMerchantPublishedEmail } = await import('@/lib/resend-email');
-      await sendMerchantPublishedEmail({
-        email: submission.contact_email,
-        businessName: submission.business_name,
-        osmNodeId: nodeId,
-        btcmapUrl: `https://btcmap.org/merchant/${nodeId}`
-      });
-      logger.info('Published email sent to merchant:', submission.contact_email);
-    } catch (emailError) {
-      logger.error('Failed to send published email:', emailError);
-    }
 
     return NextResponse.json({
       success: true,
