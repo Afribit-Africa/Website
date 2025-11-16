@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendDonationReceipt } from '@/lib/resend-email';
 import { handleAPIError } from '@/lib/api-helpers';
+import { logger } from '@/lib/logger';
 
 export async function GET(request: NextRequest) {
   try {
-    console.log('=== EMAIL TEST ENDPOINT CALLED ===');
+    logger.info('=== EMAIL TEST ENDPOINT CALLED ===');
 
     // Check if Resend API key is set
     if (!process.env.RESEND_API_KEY) {
@@ -15,14 +16,14 @@ export async function GET(request: NextRequest) {
       }, { status: 500 });
     }
 
-    console.log('Resend API key is present');
+    logger.info('Resend API key is present');
 
     // Get test email from query params
     const { searchParams } = new URL(request.url);
     const testEmail = searchParams.get('email');
 
     if (testEmail) {
-      console.log('Sending test receipt to:', testEmail);
+      logger.info('Sending test receipt to:', testEmail);
 
       try {
         // Send a test receipt
@@ -39,7 +40,7 @@ export async function GET(request: NextRequest) {
           }),
         });
 
-        console.log('Email sent successfully:', result);
+        logger.info('Email sent successfully:', result);
 
         return NextResponse.json({
           success: true,
@@ -47,7 +48,7 @@ export async function GET(request: NextRequest) {
           emailId: result.data?.id,
         });
       } catch (emailError: any) {
-        console.error('Failed to send test email:', emailError);
+        logger.error('Failed to send test email:', emailError);
         return NextResponse.json({
           success: false,
           error: 'Failed to send email',
@@ -67,7 +68,7 @@ export async function GET(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error('Email test error:', error);
+    logger.error('Email test error:', error);
     return handleAPIError(error);
   }
 }

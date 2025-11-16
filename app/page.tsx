@@ -98,23 +98,26 @@ export default function HomePage() {
               Financial freedom, environmental stewardship, and community resilience — powered by sats.
             </p>
 
-            {/* CTA Buttons - Properly Spaced */}
+            {/* CTA Buttons - Improved Size */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-4">
               <Link
                 href="/donate"
-                className="btn btn-primary btn-lg w-full sm:w-auto"
+                className="btn btn-primary px-6 py-3 w-full sm:w-auto text-base flex items-center justify-center gap-2 shadow-xl shadow-bitcoin/25 hover:shadow-bitcoin/40 transition-all"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
                 </svg>
                 Fuel the Movement
               </Link>
-              <a href="#programs" className="btn btn-secondary btn-lg w-full sm:w-auto">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <Link
+                href="/programs"
+                className="btn btn-secondary px-6 py-3 w-full sm:w-auto text-base flex items-center justify-center gap-2"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
                 View Programs
-              </a>
+              </Link>
             </div>
 
             {/* Stats Row */}
@@ -186,7 +189,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Program 1 - Micro-Merchants & Traders */}
-            <div className="program-card group overflow-hidden rounded-3xl bg-linear-to-b from-white/5 to-white/2 border border-white/10 hover:border-bitcoin/50 transition-all duration-500">
+            <div className="group overflow-hidden rounded-3xl bg-gradient-to-b from-white/5 to-white/2 border border-white/10 hover:border-bitcoin/50 transition-all duration-300">
               {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -205,7 +208,7 @@ export default function HomePage() {
                   Empowering local merchants to accept Bitcoin payments, building a thriving circular economy from the ground up.
                 </p>
 
-                <a href="/programs#merchants" className="inline-flex items-center text-bitcoin font-semibold hover:text-white transition-colors group/link text-sm">
+                <a href="/programs/merchants" className="inline-flex items-center text-bitcoin font-semibold hover:text-white transition-colors group/link text-sm">
                   Learn More
                   <svg className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -215,7 +218,7 @@ export default function HomePage() {
             </div>
 
             {/* Program 2 - Women's Upcycling Collective */}
-            <div className="program-card group overflow-hidden rounded-3xl bg-linear-to-b from-white/5 to-white/2 border border-white/10 hover:border-bitcoin/50 transition-all duration-500">
+            <div className="group overflow-hidden rounded-3xl bg-gradient-to-b from-white/5 to-white/2 border border-white/10 hover:border-bitcoin/50 transition-all duration-300">
               {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -234,7 +237,7 @@ export default function HomePage() {
                   Training women to create valuable products from waste materials, earning Bitcoin while protecting the environment.
                 </p>
 
-                <a href="/programs#upcycle" className="inline-flex items-center text-bitcoin font-semibold hover:text-white transition-colors group/link text-sm">
+                <a href="/programs/upcycling" className="inline-flex items-center text-bitcoin font-semibold hover:text-white transition-colors group/link text-sm">
                   Learn More
                   <svg className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -244,7 +247,7 @@ export default function HomePage() {
             </div>
 
             {/* Program 3 - Waste Incentives Program */}
-            <div className="program-card group overflow-hidden rounded-3xl bg-linear-to-b from-white/5 to-white/2 border border-white/10 hover:border-bitcoin/50 transition-all duration-500">
+            <div className="group overflow-hidden rounded-3xl bg-gradient-to-b from-white/5 to-white/2 border border-white/10 hover:border-bitcoin/50 transition-all duration-300">
               {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -263,7 +266,7 @@ export default function HomePage() {
                   Rewarding community members with Bitcoin for collecting and recycling waste, creating a cleaner Kibera.
                 </p>
 
-                <a href="/programs#waste" className="inline-flex items-center text-bitcoin font-semibold hover:text-white transition-colors group/link text-sm">
+                <a href="/programs/waste-management" className="inline-flex items-center text-bitcoin font-semibold hover:text-white transition-colors group/link text-sm">
                   Learn More
                   <svg className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -273,7 +276,7 @@ export default function HomePage() {
             </div>
 
             {/* Program 4 - Boda-Boda "Ride to Freedom" */}
-            <div className="program-card group overflow-hidden rounded-3xl bg-linear-to-b from-white/5 to-white/2 border border-white/10 hover:border-bitcoin/50 transition-all duration-500">
+            <div className="group overflow-hidden rounded-3xl bg-gradient-to-b from-white/5 to-white/2 border border-white/10 hover:border-bitcoin/50 transition-all duration-300">
               {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -292,7 +295,7 @@ export default function HomePage() {
                   Providing motorcycle riders with Bitcoin microloans for licensing, insurance, and financial independence.
                 </p>
 
-                <a href="/programs#bodaboda" className="inline-flex items-center text-bitcoin font-semibold hover:text-white transition-colors group/link text-sm">
+                <a href="/programs/bodaboda" className="inline-flex items-center text-bitcoin font-semibold hover:text-white transition-colors group/link text-sm">
                   Learn More
                   <svg className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

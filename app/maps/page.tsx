@@ -168,7 +168,7 @@ export default function MapsPage() {
             <div className="text-sm text-gray-300 font-medium">
               {filteredMerchants.length} {filteredMerchants.length === 1 ? 'merchant' : 'merchants'}
               {viewMode === 'map' && (
-                <span className="text-xs text-gray-500 ml-2">
+                <span className="text-xs text-gray-400 ml-2">
                   ({filteredMerchants.filter(m => m.latitude && m.longitude).length} on map)
                 </span>
               )}
@@ -179,7 +179,7 @@ export default function MapsPage() {
                 onClick={() => setViewMode('list')}
                 className={`px-4 md:px-5 py-2 md:py-2.5 rounded-lg flex items-center gap-2 font-semibold transition-all text-sm ${
                   viewMode === 'list'
-                    ? 'bg-bitcoin text-black shadow-lg shadow-bitcoin/25'
+                    ? 'bg-bitcoin text-white shadow-lg shadow-bitcoin/25'
                     : 'bg-black/80 text-gray-300 hover:text-white hover:bg-black border border-white/20 hover:border-bitcoin/40'
                 }`}
               >
@@ -191,7 +191,7 @@ export default function MapsPage() {
                 onClick={() => setViewMode('map')}
                 className={`px-4 md:px-5 py-2 md:py-2.5 rounded-lg flex items-center gap-2 font-semibold transition-all text-sm ${
                   viewMode === 'map'
-                    ? 'bg-bitcoin text-black shadow-lg shadow-bitcoin/25'
+                    ? 'bg-bitcoin text-white shadow-lg shadow-bitcoin/25'
                     : 'bg-black/80 text-gray-300 hover:text-white hover:bg-black border border-white/20 hover:border-bitcoin/40'
                 }`}
               >
@@ -446,23 +446,23 @@ export default function MapsPage() {
             Accept Bitcoin in Your Business
           </h3>
           <p className="text-gray-300 text-sm md:text-base lg:text-lg mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join our growing network of Bitcoin merchants in Kibera. Get listed on this directory,
-            receive training, and connect with donors worldwide.
+            Join our growing network of Bitcoin merchants in Kibera. Register your business directly,
+            get listed on this directory, and connect with the global Bitcoin community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:ronnie@afribit.africa?subject=Add My Business to Merchant Directory"
+            <Link
+              href="/register"
               className="btn btn-primary btn-lg"
             >
-              Add Your Business
-            </a>
+              Register Your Business
+            </Link>
             <a
               href="https://btcmap.org"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary btn-lg inline-flex items-center gap-2"
             >
-              <span>Add to BTCMap</span>
+              <span>View on BTCMap</span>
               <FiExternalLink className="w-4 h-4" />
             </a>
           </div>

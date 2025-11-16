@@ -27,7 +27,7 @@ export function EnhancedFloatingVideo() {
   useEffect(() => {
     // Ensure video plays when index changes
     if (videoRef.current && isPlaying) {
-      videoRef.current.play().catch(err => console.log('Video play error:', err));
+      videoRef.current.play().catch(() => {}); // Suppress video autoplay errors
     }
   }, [currentVideoIndex]);
 

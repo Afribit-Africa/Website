@@ -3,6 +3,8 @@
  * BTCMap uses OpenStreetMap data and provides coordinates for merchants
  */
 
+import { logger } from './logger';
+
 interface OSMJson {
   type: string;
   id: number;
@@ -47,7 +49,7 @@ export async function fetchAllBTCMapElements(): Promise<BTCMapElement[]> {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('Error fetching BTCMap elements:', error);
+    logger.error('Error fetching BTCMap elements:', error);
     throw error;
   }
 }
@@ -59,17 +61,17 @@ export async function getCoordinatesForNode(nodeId: string): Promise<Coordinates
   try {
     const elements = await fetchAllBTCMapElements();
     const element = elements.find(el => el.id === `node:${nodeId}`);
-    
+
     if (element && element.osm_json) {
       return {
         latitude: element.osm_json.lat,
         longitude: element.osm_json.lon
       };
     }
-    
+
     return null;
   } catch (error) {
-    console.error(`Error getting coordinates for node ${nodeId}:`, error);
+    logger.error(`Error getting coordinates for node ${nodeId}:`, error);
     return null;
   }
 }
@@ -80,10 +82,10 @@ export async function getCoordinatesForNode(nodeId: string): Promise<Coordinates
  */
 export async function getCoordinatesForNodes(nodeIds: string[]): Promise<Map<string, Coordinates>> {
   const coordinatesMap = new Map<string, Coordinates>();
-  
+
   try {
     const elements = await fetchAllBTCMapElements();
-    
+
     for (const nodeId of nodeIds) {
       const element = elements.find(el => el.id === `node:${nodeId}`);
       if (element && element.osm_json) {
@@ -94,9 +96,9 @@ export async function getCoordinatesForNodes(nodeIds: string[]): Promise<Map<str
       }
     }
   } catch (error) {
-    console.error('Error getting coordinates for nodes:', error);
+    logger.error('Error getting coordinates for nodes:', error);
   }
-  
+
   return coordinatesMap;
 }
 
@@ -106,12 +108,12 @@ export async function getCoordinatesForNodes(nodeIds: string[]): Promise<Map<str
 export function parseMerchantCSV(csvContent: string): Array<{ name: string; nodeId: string }> {
   const lines = csvContent.split('\n');
   const merchants: Array<{ name: string; nodeId: string }> = [];
-  
+
   // Skip header rows (first 3 lines)
   for (let i = 3; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
-    
+
     const [name, url] = line.split(',');
     if (name && url) {
       const nodeId = extractNodeId(url);
@@ -123,6 +125,6 @@ export function parseMerchantCSV(csvContent: string): Array<{ name: string; node
       }
     }
   }
-  
+
   return merchants;
 }

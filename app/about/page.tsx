@@ -1,214 +1,352 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaStore, FaRecycle, FaHeart, FaRocket, FaUsers, FaBitcoin } from 'react-icons/fa';
-import { FiTarget, FiTrendingUp } from 'react-icons/fi';
+import { FiTarget, FiHeart, FiZap, FiShield, FiGlobe, FiTrendingUp, FiAward, FiUsers } from 'react-icons/fi';
+import { SiBitcoin } from 'react-icons/si';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AboutPage() {
-  const stats = [
-    { icon: FiTrendingUp, value: '2000+', label: 'Transactions' },
-    { icon: FaStore, value: '40+', label: 'Merchants' },
-    { icon: FaGraduationCap, value: '5', label: 'Programs' },
-    { icon: FaUsers, value: '500+', label: 'Community Members' }
+  const impactStats = [
+    { icon: FiTrendingUp, value: '2,000+', label: 'Bitcoin Transactions', color: 'text-bitcoin' },
+    { icon: FiUsers, value: '40+', label: 'Active Merchants', color: 'text-green-400' },
+    { icon: FiZap, value: '500+', label: 'Community Members', color: 'text-blue-400' },
+    { icon: FiAward, value: '5', label: 'Impact Programs', color: 'text-purple-400' }
   ];
 
-  const values = [
+  const coreValues = [
     {
-      icon: FaBitcoin,
-      title: 'Bitcoin First',
-      description: 'We believe Bitcoin offers financial freedom and sovereignty to communities across Africa.'
+      icon: SiBitcoin,
+      title: 'Bitcoin Sovereignty',
+      description: 'We champion financial self-custody and economic freedom through Bitcoin adoption, believing every individual deserves control over their wealth.',
+      gradient: 'from-bitcoin/20 to-orange-500/20'
     },
     {
-      icon: FaGraduationCap,
-      title: 'Education',
-      description: 'Knowledge is power. We empower communities through comprehensive Bitcoin education programs.'
+      icon: FiHeart,
+      title: 'Community First',
+      description: 'Our programs are co-created with local communities, ensuring solutions that genuinely address real needs and respect cultural context.',
+      gradient: 'from-pink-500/20 to-red-500/20'
     },
     {
-      icon: FaHeart,
-      title: 'Community Driven',
-      description: 'Our initiatives are designed and implemented with the community, for the community.'
+      icon: FiGlobe,
+      title: 'Circular Economy',
+      description: 'Building interconnected networks where Bitcoin flows between merchants, service providers, and community members sustainably.',
+      gradient: 'from-green-500/20 to-teal-500/20'
     },
     {
-      icon: FiTarget,
-      title: 'Sustainable Impact',
-      description: 'We focus on creating long-term, sustainable economic opportunities for African communities.'
+      icon: FiShield,
+      title: 'Education & Empowerment',
+      description: 'Knowledge transforms lives. We provide comprehensive training that turns novices into Bitcoin advocates and entrepreneurs.',
+      gradient: 'from-blue-500/20 to-purple-500/20'
     }
   ];
 
-  const milestones = [
+  const timeline = [
     {
       year: '2023',
-      title: 'Foundation',
-      description: 'Afribit Africa was founded with a mission to bring Bitcoin adoption to Kenya and beyond.'
+      quarter: 'Q3',
+      title: 'The Beginning',
+      description: 'Founded in Nairobi with a vision to bring Bitcoin circular economy to Kibera, one of Africa\'s largest informal settlements.',
+      milestone: 'First 5 merchants onboarded'
+    },
+    {
+      year: '2023',
+      quarter: 'Q4',
+      title: 'Building Momentum',
+      description: 'Launched Bitcoin education workshops and established partnerships with Fedi, Geyser, and global Bitcoin educators.',
+      milestone: '15 merchants accepting Bitcoin'
     },
     {
       year: '2024',
-      title: 'Merchant Network',
-      description: 'Onboarded 40+ merchants accepting Bitcoin, creating a circular Bitcoin economy in Nairobi.'
+      quarter: 'Q1-Q2',
+      title: 'Program Expansion',
+      description: 'Launched Women\'s Upcycling Collective, Waste Incentives, and Boda-Boda microloans. Community adoption accelerated.',
+      milestone: '40+ merchants, 4 active programs'
     },
     {
       year: '2024',
-      title: 'Education Programs',
-      description: 'Launched 5 comprehensive programs covering education, merchant support, and community development.'
+      quarter: 'Q3-Q4',
+      title: 'Recognition & Growth',
+      description: 'Featured at major Bitcoin conferences, received international support, and documented over 2,000 Bitcoin transactions.',
+      milestone: '500+ community members trained'
     },
     {
       year: '2025',
-      title: 'Regional Expansion',
-      description: 'Expanding our initiatives across East Africa, bringing Bitcoin to more communities.'
+      quarter: 'Q1',
+      title: 'Scaling Impact',
+      description: 'Expanding to new areas, increasing program capacity, and building sustainable infrastructure for long-term growth.',
+      milestone: 'Target: 100 merchants by year-end'
+    }
+  ];
+
+  const team = [
+    {
+      role: 'Community Leadership',
+      description: 'Local leaders who understand the unique challenges and opportunities in Kibera, driving grassroots adoption.'
+    },
+    {
+      role: 'Bitcoin Educators',
+      description: 'Passionate trainers who break down complex concepts into accessible knowledge for all community members.'
+    },
+    {
+      role: 'Technical Support',
+      description: 'Tech-savvy volunteers helping with wallet setup, merchant integrations, and Lightning Network infrastructure.'
+    },
+    {
+      role: 'Global Partners',
+      description: 'International Bitcoin organizations providing resources, mentorship, and amplifying our impact worldwide.'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black pt-24 pb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
-        >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-            About <span className="text-bitcoin">Afribit Africa</span>
-          </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            We're building a sustainable Bitcoin economy in Africa, empowering communities through 
-            education, merchant onboarding, and economic development initiatives.
-          </p>
-        </motion.div>
+    <div className="min-h-screen bg-gradient-to-br from-[#0A0A0A] via-[#1A0A00] to-[#0A0A0A] text-white pt-24 pb-16 relative overflow-hidden">
+      {/* Background Pattern - Consistent throughout */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, #F7931A 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
+      </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-          {stats.map((stat, index) => (
+      {/* Bitcoin Orange Gradient Overlay */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-bitcoin/20 via-bitcoin/5 to-transparent"></div>
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-bitcoin/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-bitcoin/5 rounded-full blur-3xl"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10">
+      {/* Hero Section */}
+      <section className="mb-24">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h1 className="text-5xl md:text-7xl font-bold font-heading mb-6">
+              Building Africa's <span className="text-bitcoin">Bitcoin Future</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+              Afribit Africa is pioneering grassroots Bitcoin adoption in Kenya, creating sustainable circular economies that empower communities through financial sovereignty and digital literacy.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/merchants"
+                className="btn btn-primary px-8 py-4 text-lg"
+              >
+                Find Merchants
+              </Link>
+              <Link
+                href="/donate"
+                className="btn btn-secondary px-8 py-4 text-lg"
+              >
+                Support Our Mission
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Impact Stats */}
+      <section className="container mx-auto px-4 max-w-7xl mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {impactStats.map((stat, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-bitcoin/30 transition-all"
             >
-              <stat.icon className="w-8 h-8 text-bitcoin mx-auto mb-3" />
-              <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
-              <div className="text-gray-400 text-sm">{stat.label}</div>
+              <stat.icon className={`w-10 h-10 ${stat.color} mx-auto mb-3`} />
+              <div className="text-3xl md:text-4xl font-bold font-numbers mb-2">{stat.value}</div>
+              <div className="text-sm text-gray-400">{stat.label}</div>
             </motion.div>
           ))}
         </div>
+      </section>
 
-        {/* Mission Statement */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-gradient-to-r from-bitcoin/10 to-orange-500/10 border border-bitcoin/20 rounded-3xl p-8 md:p-12 mb-20"
-        >
-          <div className="flex items-center gap-3 mb-6">
-            <FaRocket className="w-8 h-8 text-bitcoin" />
-            <h2 className="text-3xl md:text-4xl font-bold text-white">Our Mission</h2>
-          </div>
-          <p className="text-xl text-gray-300 leading-relaxed">
-            To empower African communities with Bitcoin knowledge, infrastructure, and economic opportunities. 
-            We believe in a future where Bitcoin serves as a tool for financial inclusion, economic sovereignty, 
-            and sustainable development across the continent.
-          </p>
-        </motion.div>
-
-        {/* Core Values */}
-        <div className="mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12"
-          >
-            Our <span className="text-bitcoin">Core Values</span>
-          </motion.h2>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-bitcoin/50 transition-all"
-              >
-                <div className="w-12 h-12 bg-bitcoin/10 rounded-xl flex items-center justify-center mb-4">
-                  <value.icon className="w-6 h-6 text-bitcoin" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
-                <p className="text-gray-400">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Timeline */}
-        <div className="mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12"
-          >
-            Our <span className="text-bitcoin">Journey</span>
-          </motion.h2>
-
-          <div className="space-y-6">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-bitcoin/50 transition-all"
-              >
-                <div className="flex flex-col md:flex-row md:items-center gap-4">
-                  <div className="w-20 h-20 bg-bitcoin/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl font-bold text-bitcoin">{milestone.year}</span>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white mb-2">{milestone.title}</h3>
-                    <p className="text-gray-400">{milestone.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA */}
+      {/* Mission Statement */}
+      <section className="container mx-auto px-4 max-w-7xl mb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-12"
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="bg-gradient-to-br from-bitcoin/20 to-orange-500/10 border border-bitcoin/30 rounded-3xl p-8 md:p-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Join Our <span className="text-bitcoin">Mission</span>
+          <div className="flex items-start gap-4 mb-6">
+            <div className="w-16 h-16 bg-bitcoin rounded-2xl flex items-center justify-center flex-shrink-0">
+              <FiTarget className="w-8 h-8 text-black" />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Our Mission</h2>
+              <p className="text-xl text-gray-200 leading-relaxed">
+                To create self-sustaining Bitcoin circular economies in African communities, starting with Kibera. We provide education, infrastructure, and economic opportunities that enable financial sovereignty, environmental responsibility, and community resilience—all powered by sats.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Core Values */}
+      <section className="container mx-auto px-4 max-w-7xl mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">
+            Our <span className="text-bitcoin">Core Values</span>
           </h2>
-          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Be part of the Bitcoin revolution in Africa. Whether you're a merchant, educator, or supporter, 
-            there's a place for you in our community.
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            The principles that guide every decision and action we take
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {coreValues.map((value, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`bg-gradient-to-br ${value.gradient} border border-white/10 rounded-2xl p-8 hover:border-white/30 transition-all`}
+            >
+              <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6">
+                <value.icon className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold font-heading mb-4">{value.title}</h3>
+              <p className="text-gray-300 leading-relaxed">{value.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="container mx-auto px-4 max-w-7xl mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">
+            Our <span className="text-bitcoin">Journey</span>
+          </h2>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            From humble beginnings to building Africa's first Bitcoin circular economy
+          </p>
+        </motion.div>
+
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-bitcoin via-orange-500 to-transparent" />
+
+          <div className="space-y-12">
+            {timeline.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className={`relative flex flex-col md:flex-row gap-8 ${
+                  index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                }`}
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-bitcoin rounded-full border-4 border-black -ml-2" />
+
+                {/* Content */}
+                <div className="md:w-1/2 ml-20 md:ml-0">
+                  <div className={`bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-bitcoin/30 transition-all ${
+                    index % 2 === 0 ? 'md:mr-12' : 'md:ml-12'
+                  }`}>
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-bitcoin font-bold text-lg">{item.year}</span>
+                      <span className="text-gray-500">•</span>
+                      <span className="text-gray-400 text-sm">{item.quarter}</span>
+                    </div>
+                    <h3 className="text-2xl font-bold font-heading mb-3">{item.title}</h3>
+                    <p className="text-gray-300 mb-4 leading-relaxed">{item.description}</p>
+                    <div className="bg-bitcoin/10 border border-bitcoin/30 rounded-lg px-4 py-2 inline-block">
+                      <span className="text-bitcoin text-sm font-semibold">{item.milestone}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="hidden md:block md:w-1/2" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="container mx-auto px-4 max-w-7xl mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">
+            Powered by <span className="text-bitcoin">Community</span>
+          </h2>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            Our strength comes from diverse talents united by a common vision
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {team.map((member, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl p-6 hover:border-bitcoin/30 transition-all"
+            >
+              <h3 className="text-xl font-bold font-heading mb-3 text-bitcoin">{member.role}</h3>
+              <p className="text-gray-300 leading-relaxed">{member.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="container mx-auto px-4 max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="bg-gradient-to-br from-bitcoin/20 to-orange-500/10 border border-bitcoin/30 rounded-3xl p-12 text-center"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">
+            Join the <span className="text-bitcoin">Revolution</span>
+          </h2>
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Whether you're a merchant ready to accept Bitcoin, a community member wanting to learn, or a supporter of financial freedom—there's a place for you at Afribit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/programs"
-              className="bg-bitcoin hover:bg-bitcoin/90 text-black font-semibold py-4 px-8 rounded-xl transition-all inline-flex items-center justify-center gap-2"
-            >
-              <FaGraduationCap className="w-5 h-5" />
-              Explore Our Programs
+            <Link href="/register" className="btn btn-primary px-8 py-4 text-lg">
+              Become a Merchant
             </Link>
-            <Link
-              href="/contact"
-              className="bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl transition-all border border-white/20 inline-flex items-center justify-center"
-            >
-              Get in Touch
+            <Link href="/contact" className="btn btn-secondary px-8 py-4 text-lg">
+              Get Involved
             </Link>
           </div>
         </motion.div>
-
+      </section>
       </div>
     </div>
   );

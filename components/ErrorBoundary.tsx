@@ -2,6 +2,7 @@
 
 import { Component, ReactNode } from 'react';
 import { FiAlertCircle } from 'react-icons/fi';
+import * as Sentry from '@sentry/nextjs';
 
 interface Props {
   children: ReactNode;
@@ -11,6 +12,7 @@ interface Props {
 interface State {
   hasError: boolean;
   error?: Error;
+  eventId?: string;
 }
 
 export class ErrorBoundary extends Component<Props, State> {
@@ -24,7 +26,14 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: any) {
-    console.error('Error caught by boundary:', error, errorInfo);
+    // Log to Sentry
+    Sentry.captureException(error, {
+      contexts: {
+        react: {
+          componentStack: errorInfo.componentStack,
+        },
+      },
+    });
   }
 
   render() {
@@ -41,11 +50,11 @@ export class ErrorBoundary extends Component<Props, State> {
                 <FiAlertCircle className="w-8 h-8 text-red-500" />
               </div>
             </div>
-            
+
             <h1 className="text-2xl font-bold text-white mb-2">
               Something went wrong
             </h1>
-            
+
             <p className="text-gray-400 mb-6">
               We're sorry, but something unexpected happened. Please try refreshing the page.
             </p>

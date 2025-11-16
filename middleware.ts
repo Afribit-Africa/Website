@@ -1,18 +1,21 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { getToken } from 'next-auth/jwt';
+import { logger } from './lib/logger';
+import { getApiRateLimiter, isRedisAvailable, getRateLimitInfo } from './lib/upstash-redis';
 
-// Simple in-memory rate limiter
+// Fallback in-memory rate limiter for when Redis is not available
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
 const MAX_REQUESTS_PER_WINDOW = 20; // 20 requests per minute
 
-export function rateLimit(identifier: string): boolean {
+// In-memory rate limiter (fallback)
+function inMemoryRateLimit(identifier: string): boolean {
   const now = Date.now();
   const record = rateLimitMap.get(identifier);
 
   if (!record || now > record.resetTime) {
-    // Create new record or reset expired one
     rateLimitMap.set(identifier, {
       count: 1,
       resetTime: now + RATE_LIMIT_WINDOW,
@@ -21,33 +24,91 @@ export function rateLimit(identifier: string): boolean {
   }
 
   if (record.count >= MAX_REQUESTS_PER_WINDOW) {
-    return false; // Rate limit exceeded
+    return false;
   }
 
-  // Increment count
   record.count++;
   return true;
 }
 
-// Clean up old entries periodically
-setInterval(() => {
-  const now = Date.now();
-  for (const [key, value] of rateLimitMap.entries()) {
-    if (now > value.resetTime) {
-      rateLimitMap.delete(key);
+// Clean up old entries periodically (only for in-memory fallback)
+if (!isRedisAvailable()) {
+  setInterval(() => {
+    const now = Date.now();
+    for (const [key, value] of rateLimitMap.entries()) {
+      if (now > value.resetTime) {
+        rateLimitMap.delete(key);
+      }
+    }
+  }, RATE_LIMIT_WINDOW);
+}
+
+// Unified rate limit function with Redis + fallback
+async function rateLimit(identifier: string): Promise<boolean> {
+  // Try Redis first
+  if (isRedisAvailable()) {
+    try {
+      const limiter = getApiRateLimiter();
+      const result = await getRateLimitInfo(limiter, identifier);
+      return result.success;
+    } catch (error) {
+      logger.warn('Redis rate limit failed, falling back to in-memory:', error);
+      return inMemoryRateLimit(identifier);
     }
   }
-}, RATE_LIMIT_WINDOW);
 
-export function middleware(request: NextRequest) {
+  // Fallback to in-memory
+  return inMemoryRateLimit(identifier);
+}
+
+export async function middleware(request: NextRequest) {
   // Get client IP
   const ip = request.headers.get('x-forwarded-for') ?? request.headers.get('x-real-ip') ?? 'unknown';
-  
+
+  // Protect admin routes
+  if (request.nextUrl.pathname.startsWith('/admin') &&
+      !request.nextUrl.pathname.startsWith('/admin/login')) {
+    const token = await getToken({
+      req: request,
+      secret: process.env.NEXTAUTH_SECRET
+    });
+
+    if (!token) {
+      const loginUrl = new URL('/admin/login', request.url);
+      loginUrl.searchParams.set('callbackUrl', request.nextUrl.pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+
+    // Redirect verifiers trying to access admin pages to verifier dashboard
+    if (token.role === 'verifier' && request.nextUrl.pathname !== '/admin/login') {
+      return NextResponse.redirect(new URL('/verifier/dashboard', request.url));
+    }
+  }
+
+  // Protect verifier routes
+  if (request.nextUrl.pathname.startsWith('/verifier')) {
+    const token = await getToken({
+      req: request,
+      secret: process.env.NEXTAUTH_SECRET
+    });
+
+    if (!token) {
+      const loginUrl = new URL('/admin/login', request.url);
+      return NextResponse.redirect(loginUrl);
+    }
+
+    // Ensure only verifiers can access verifier pages
+    if (token.role !== 'verifier' && token.role !== 'admin') {
+      return NextResponse.redirect(new URL('/admin/dashboard', request.url));
+    }
+  }
+
   // Apply rate limiting to API routes and donation page
-  if (request.nextUrl.pathname.startsWith('/api/') || 
+  if (request.nextUrl.pathname.startsWith('/api/') ||
       request.nextUrl.pathname.startsWith('/donate')) {
-    
-    if (!rateLimit(ip)) {
+
+    const allowed = await rateLimit(ip);
+    if (!allowed) {
       return new NextResponse(
         JSON.stringify({ error: 'Too many requests. Please try again later.' }),
         {
@@ -63,20 +124,23 @@ export function middleware(request: NextRequest) {
 
   // Security headers
   const response = NextResponse.next();
-  
+
   // Prevent clickjacking
   response.headers.set('X-Frame-Options', 'DENY');
-  
+
   // XSS Protection
   response.headers.set('X-Content-Type-Options', 'nosniff');
-  
+
   // Referrer Policy
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-  
-  // Permissions Policy
+
+  // Permissions Policy (allow geolocation for verifier pages)
+  const allowGeolocation = request.nextUrl.pathname.startsWith('/verifier');
   response.headers.set(
     'Permissions-Policy',
-    'camera=(), microphone=(), geolocation=()'
+    allowGeolocation
+      ? 'camera=(), microphone=(), geolocation=(self)'
+      : 'camera=(), microphone=(), geolocation=()'
   );
 
   return response;

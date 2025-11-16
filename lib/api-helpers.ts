@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { logger } from './logger';
 
 export class APIError extends Error {
   constructor(
@@ -12,7 +13,7 @@ export class APIError extends Error {
 }
 
 export function handleAPIError(error: unknown) {
-  console.error('API Error:', error);
+  logger.error('API Error:', error);
 
   if (error instanceof APIError) {
     return NextResponse.json(
@@ -53,7 +54,7 @@ export async function withRetry<T>(
       return await fn();
     } catch (error) {
       lastError = error as Error;
-      
+
       if (i < maxRetries - 1) {
         await new Promise(resolve => setTimeout(resolve, delay * (i + 1)));
       }
@@ -72,7 +73,7 @@ export function validateInput(data: unknown, schema: Record<string, (value: any)
 
   for (const [key, validator] of Object.entries(schema)) {
     const value = (data as Record<string, any>)[key];
-    
+
     if (!validator(value)) {
       errors.push(`Invalid value for ${key}`);
     }

@@ -1,25 +1,37 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const partners = [
-  { name: 'Bitcoin Conference', logo: '/Media/Partner logos/Bitcoin-confed.jpg', width: 120, height: 60, size: 'md' },
-  { name: 'FBCE Global', logo: '/Media/Partner logos/fbceglobal_logo.jpg', width: 100, height: 50, size: 'sm' },
-  { name: 'Geyser', logo: '/Media/Partner logos/Geyser.png', width: 140, height: 70, size: 'lg' },
-  { name: 'Rottweil', logo: '/Media/Partner logos/Rottweil.jpg', width: 110, height: 55, size: 'md' },
-  { name: 'Afribit', logo: '/Media/Logo/Full logo png transparent.png', width: 90, height: 45, size: 'sm' },
-  { name: 'Fedi', logo: '/Media/Partner logos/Fedi logo.jpg', width: 100, height: 50, size: 'sm' },
+  { name: 'Bitcoin Conference', logo: '/Media/Partner logos/Bitcoin-confed.jpg', height: 60 },
+  { name: 'FBCE Global', logo: '/Media/Partner logos/fbceglobal_logo.jpg', height: 60 },
+  { name: 'Geyser', logo: '/Media/Partner logos/Geyser.png', height: 60 },
+  { name: 'Rottweil', logo: '/Media/Partner logos/Rottweil.jpg', height: 60 },
+  { name: 'Fedi', logo: '/Media/Partner logos/Fedi logo.jpg', height: 60 },
 ];
 
-// Create a masonry-style grid with varied sizes - deterministic for consistent loop
+// Shuffle array function
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+// Create a masonry-style grid with varied sizes
 const createMasonryPattern = () => {
   const pattern = [];
-  const rows = 3; // 3 rows for masonry effect
+  const rows = 3;
 
-  // Duplicate partners MANY times for truly seamless infinite scroll
-  const duplicates = 20; // Increase duplicates significantly
-  const extendedPartners = Array(duplicates).fill(partners).flat();
+  // Shuffle partners for variety
+  const shuffledPartners = shuffleArray(partners);
+
+  // Create enough duplicates for smooth infinite scroll
+  const duplicates = 30; // Increased for smoother transitions
+  const extendedPartners = Array(duplicates).fill(shuffledPartners).flat();
 
   // Distribute logos across rows with consistent offsets
   for (let i = 0; i < extendedPartners.length; i++) {
@@ -28,7 +40,7 @@ const createMasonryPattern = () => {
     pattern.push({
       ...extendedPartners[i],
       row,
-      offset: (partnerIndex * 7) % 12, // Deterministic offset for seamless loop
+      offset: (partnerIndex * 7) % 12,
     });
   }
 
@@ -37,24 +49,34 @@ const createMasonryPattern = () => {
 
 export default function PartnerLogos() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const masonryPattern = createMasonryPattern();
+  const [masonryPattern, setMasonryPattern] = useState<ReturnType<typeof createMasonryPattern>>([]);
+  const [isClient, setIsClient] = useState(false);
+  const loopCountRef = useRef(0);
+
+  // Initialize pattern on client only to avoid hydration mismatch
+  useEffect(() => {
+    setIsClient(true);
+    setMasonryPattern(createMasonryPattern());
+  }, []);
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+    if (!scrollContainer || !isClient) return;
 
     let scrollPosition = 0;
-    const scrollSpeed = 0.8; // Slightly faster for better visual
+    const scrollSpeed = 0.3; // Slower speed for better viewing
+    const singleSetWidth = partners.length * 160; // Approximate width per partner set
 
     const animate = () => {
       scrollPosition += scrollSpeed;
 
-      // Calculate one complete cycle (based on number of actual partners * spacing)
-      const singleSetWidth = (partners.length * 150); // Approximate width per partner set
-      
-      // Reset seamlessly when one complete set has scrolled
+      // Reset and reshuffle when one complete set has scrolled
       if (scrollPosition >= singleSetWidth) {
         scrollPosition = 0;
+        loopCountRef.current += 1;
+
+        // Reshuffle logos every loop
+        setMasonryPattern(createMasonryPattern());
       }
 
       scrollContainer.style.transform = `translateX(-${scrollPosition}px)`;
@@ -63,17 +85,39 @@ export default function PartnerLogos() {
 
     const animationId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationId);
-  }, []);
+  }, [isClient]);
 
-  const getSizeClasses = (size: string) => {
-    switch (size) {
-      case 'sm':
-        return 'w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24';
-      case 'lg':
-        return 'w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32';
-      default:
-        return 'w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28';
-    }
+  // Show loading skeleton during SSR/initial client render
+  if (!isClient || masonryPattern.length === 0) {
+    return (
+      <section className="py-20 md:py-32 bg-black overflow-hidden relative">
+        <div className="container mx-auto px-4 md:px-6 mb-12">
+          <div className="text-center">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4">Our Partners</h2>
+            <p className="text-gray-300 text-base md:text-lg">
+              Collaborating with organizations that share our vision for Bitcoin adoption
+            </p>
+          </div>
+        </div>
+        <div className="relative max-w-7xl mx-auto">
+          <div className="relative h-56 md:h-64 lg:h-72 overflow-hidden flex items-center justify-center">
+            <div className="flex gap-6">
+              {partners.map((partner, i) => (
+                <div
+                  key={i}
+                  className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 shrink-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg md:rounded-xl animate-pulse"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const getSizeClasses = () => {
+    // All logos same height for uniformity
+    return 'h-14 md:h-16 lg:h-20 w-auto';
   };
 
   return (
@@ -109,7 +153,7 @@ export default function PartnerLogos() {
                 .map((partner, index) => (
                   <div
                     key={`row1-${index}`}
-                    className={`${getSizeClasses(partner.size)} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg md:rounded-xl p-2 md:p-3 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
+                    className={`${getSizeClasses()} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
                     style={{
                       transform: `translateY(${partner.offset}px)`,
                     }}
@@ -117,9 +161,9 @@ export default function PartnerLogos() {
                     <Image
                       src={partner.logo}
                       alt={partner.name}
-                      width={partner.width}
+                      width={120}
                       height={partner.height}
-                      className="object-contain w-full h-full"
+                      className="object-contain w-auto h-full"
                       loading="lazy"
                     />
                   </div>
@@ -133,7 +177,7 @@ export default function PartnerLogos() {
                 .map((partner, index) => (
                   <div
                     key={`row2-${index}`}
-                    className={`${getSizeClasses(partner.size)} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg md:rounded-xl p-2 md:p-3 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
+                    className={`${getSizeClasses()} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
                     style={{
                       transform: `translateY(${partner.offset}px)`,
                     }}
@@ -141,9 +185,9 @@ export default function PartnerLogos() {
                     <Image
                       src={partner.logo}
                       alt={partner.name}
-                      width={partner.width}
+                      width={120}
                       height={partner.height}
-                      className="object-contain w-full h-full"
+                      className="object-contain w-auto h-full"
                       loading="lazy"
                     />
                   </div>
@@ -157,7 +201,7 @@ export default function PartnerLogos() {
                 .map((partner, index) => (
                   <div
                     key={`row3-${index}`}
-                    className={`${getSizeClasses(partner.size)} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg md:rounded-xl p-2 md:p-3 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
+                    className={`${getSizeClasses()} shrink-0 flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg md:rounded-xl p-3 md:p-4 hover:bg-white/10 hover:border-bitcoin/30 transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100`}
                     style={{
                       transform: `translateY(${partner.offset}px)`,
                     }}
@@ -165,9 +209,9 @@ export default function PartnerLogos() {
                     <Image
                       src={partner.logo}
                       alt={partner.name}
-                      width={partner.width}
+                      width={120}
                       height={partner.height}
-                      className="object-contain w-full h-full"
+                      className="object-contain w-auto h-full"
                       loading="lazy"
                     />
                   </div>

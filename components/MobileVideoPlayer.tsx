@@ -26,7 +26,7 @@ export function MobileVideoPlayer() {
 
   useEffect(() => {
     if (videoRef.current && isPlaying && showLightbox) {
-      videoRef.current.play().catch(err => console.log('Video play error:', err));
+      videoRef.current.play().catch(() => {}); // Suppress video autoplay errors
     }
   }, [currentVideoIndex, showLightbox]);
 

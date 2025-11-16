@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createMerchantInvoice, extractBlinkUsername } from '@/lib/blink-client';
 import { getMerchantBySlug } from '@/lib/merchants-data';
+import { logger } from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,7 +18,7 @@ export async function POST(request: NextRequest) {
 
     // Get merchant data
     const merchant = getMerchantBySlug(merchantSlug);
-    
+
     if (!merchant) {
       return NextResponse.json(
         { error: 'Merchant not found' },
@@ -65,7 +66,7 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Error in merchant invoice API:', error);
+    logger.error('Error in merchant invoice API:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

@@ -4,6 +4,8 @@
  * GraphQL Endpoint: https://api.blink.sv/graphql
  */
 
+import { logger } from './logger';
+
 interface BlinkInvoiceResponse {
   data?: {
     lnNoAmountInvoiceCreateOnBehalfOfRecipient?: {
@@ -78,13 +80,13 @@ export async function getBlinkWalletId(username: string): Promise<string | null>
     const data: BlinkWalletResponse = await response.json();
 
     if (data.errors && data.errors.length > 0) {
-      console.error('Blink API error:', data.errors);
+      logger.error('Blink API error:', data.errors);
       return null;
     }
 
     return data.data?.accountDefaultWallet?.id || null;
   } catch (error) {
-    console.error('Error fetching Blink wallet ID:', error);
+    logger.error('Error fetching Blink wallet ID:', error);
     return null;
   }
 }
@@ -93,7 +95,7 @@ export async function getBlinkWalletId(username: string): Promise<string | null>
  * Create a no-amount invoice on behalf of a merchant
  * This allows donors to specify the amount when paying
  * Uses lnNoAmountInvoiceCreateOnBehalfOfRecipient mutation
- * 
+ *
  * @param blinkUsername - The merchant's Blink username (e.g., "muanzompya" from muanzompya@blink.sv)
  * @param memo - Optional memo for the invoice
  * @returns Invoice data or null on error
@@ -104,9 +106,9 @@ export async function createMerchantInvoice(
 ): Promise<BlinkInvoice | null> {
   // First, get the wallet ID from the username
   const walletId = await getBlinkWalletId(blinkUsername);
-  
+
   if (!walletId) {
-    console.error('Could not resolve Blink username to wallet ID');
+    logger.error('Could not resolve Blink username to wallet ID');
     return null;
   }
 
@@ -147,26 +149,26 @@ export async function createMerchantInvoice(
     const data: BlinkInvoiceResponse = await response.json();
 
     if (data.errors && data.errors.length > 0) {
-      console.error('Blink API errors:', data.errors);
+      logger.error('Blink API errors:', data.errors);
       return null;
     }
 
-    if (data.data?.lnNoAmountInvoiceCreateOnBehalfOfRecipient?.errors && 
+    if (data.data?.lnNoAmountInvoiceCreateOnBehalfOfRecipient?.errors &&
         data.data.lnNoAmountInvoiceCreateOnBehalfOfRecipient.errors.length > 0) {
-      console.error('Invoice creation errors:', data.data.lnNoAmountInvoiceCreateOnBehalfOfRecipient.errors);
+      logger.error('Invoice creation errors:', data.data.lnNoAmountInvoiceCreateOnBehalfOfRecipient.errors);
       return null;
     }
 
     const invoice = data.data?.lnNoAmountInvoiceCreateOnBehalfOfRecipient?.invoice;
-    
+
     if (!invoice) {
-      console.error('No invoice returned from Blink API');
+      logger.error('No invoice returned from Blink API');
       return null;
     }
 
     return invoice;
   } catch (error) {
-    console.error('Error creating merchant invoice:', error);
+    logger.error('Error creating merchant invoice:', error);
     return null;
   }
 }
@@ -187,7 +189,7 @@ export function extractBlinkUsername(blinkAddress: string): string {
  */
 export function generateWalletLinks(paymentRequest: string) {
   const encoded = encodeURIComponent(paymentRequest);
-  
+
   return {
     blink: `https://blink.sv/pay?lightning=${encoded}`,
     phoenix: `phoenix://pay?lightning=${encoded}`,

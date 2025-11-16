@@ -139,13 +139,13 @@ export default function FediPage() {
             </p>
 
             {/* QR Code */}
-            <div className="bg-white rounded-xl p-6 mb-6 flex items-center justify-center">
+            <div className="bg-white rounded-lg p-2 mb-6 flex items-center justify-center">
               <Image
                 src="/Media/Images/fedi-community-qr.png"
                 alt="Afribit Community QR Code"
-                width={256}
-                height={256}
-                className="rounded-lg"
+                width={180}
+                height={180}
+                className="rounded"
               />
             </div>
 
@@ -197,13 +197,13 @@ export default function FediPage() {
             </p>
 
             {/* QR Code */}
-            <div className="bg-white rounded-xl p-6 mb-6 flex items-center justify-center">
+            <div className="bg-white rounded-lg p-2 mb-6 flex items-center justify-center">
               <Image
                 src="/Media/Images/fedi-federation-qr.png"
                 alt="Afribit Federation QR Code"
-                width={256}
-                height={256}
-                className="rounded-lg"
+                width={180}
+                height={180}
+                className="rounded"
               />
             </div>
 

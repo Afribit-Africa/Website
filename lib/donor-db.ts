@@ -1,4 +1,6 @@
 import { executeQuery } from './db';
+import { logger } from './logger';
+import type { Donor, DonorStats } from './types/database';
 
 export interface DonorInfo {
   invoiceId: string;
@@ -28,7 +30,13 @@ export async function initDonorsTable() {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
   `;
 
-  await executeQuery(createTableQuery);
+  try {
+    await executeQuery(createTableQuery);
+    logger.info('Donors table initialized successfully');
+  } catch (error) {
+    logger.error('Failed to initialize donors table:', error);
+    throw error;
+  }
 }
 
 export async function saveDonorInfo(donorInfo: DonorInfo) {
@@ -45,32 +53,50 @@ export async function saveDonorInfo(donorInfo: DonorInfo) {
       donation_type = VALUES(donation_type)
   `;
 
-  await executeQuery(query, [
-    invoiceId,
-    donationType === 'named' ? name : null,
-    donationType === 'named' ? email : null,
-    amount,
-    tier,
-    donationType,
-  ]);
+  try {
+    await executeQuery(query, [
+      invoiceId,
+      donationType === 'named' ? name : null,
+      donationType === 'named' ? email : null,
+      amount,
+      tier,
+      donationType,
+    ]);
+    logger.info('Donor info saved successfully:', invoiceId);
+  } catch (error) {
+    logger.error('Failed to save donor info:', { invoiceId, error });
+    throw error;
+  }
 }
 
-export async function getDonorByInvoiceId(invoiceId: string) {
+export async function getDonorByInvoiceId(invoiceId: string): Promise<Donor | null> {
   const query = `SELECT * FROM donors WHERE invoice_id = ?`;
-  const results = await executeQuery<any[]>(query, [invoiceId]);
-  return results[0] || null;
+
+  try {
+    const results = await executeQuery<Donor[]>(query, [invoiceId]);
+    return results[0] || null;
+  } catch (error) {
+    logger.error('Failed to get donor by invoice ID:', { invoiceId, error });
+    throw error;
+  }
 }
 
-export async function getAllDonors() {
+export async function getAllDonors(): Promise<Donor[]> {
   const query = `
     SELECT * FROM donors
     WHERE donation_type = 'named'
     ORDER BY created_at DESC
   `;
-  return await executeQuery<any[]>(query);
+
+  try {
+    return await executeQuery<Donor[]>(query);
+  } catch (error) {
+    logger.error('Failed to get all donors:', error);
+    throw error;
+  }
 }
 
-export async function getDonorStats() {
+export async function getDonorStats(): Promise<DonorStats | null> {
   const query = `
     SELECT
       COUNT(*) as total_donations,
@@ -79,6 +105,12 @@ export async function getDonorStats() {
       COUNT(CASE WHEN donation_type = 'anonymous' THEN 1 END) as anonymous_donations
     FROM donors
   `;
-  const results = await executeQuery<any[]>(query);
-  return results[0] || null;
+
+  try {
+    const results = await executeQuery<DonorStats[]>(query);
+    return results[0] || null;
+  } catch (error) {
+    logger.error('Failed to get donor stats:', error);
+    throw error;
+  }
 }

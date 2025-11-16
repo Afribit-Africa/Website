@@ -7,6 +7,8 @@ import { Footer } from "@/components/Footer";
 import AppPreloader from "@/components/AppPreloader";
 import PageTransition from "@/components/PageTransition";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import NextAuthProvider from "@/components/NextAuthProvider";
+import ConditionalLayout from "@/components/ConditionalLayout";
 
 // Body text - clean and readable
 const inter = Inter({
@@ -99,16 +101,14 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="font-sans antialiased" suppressHydrationWarning>
-        <ErrorBoundary>
-          <AppPreloader />
-          <Header />
-          <main className="min-h-screen">
-            <PageTransition>
+        <NextAuthProvider>
+          <ErrorBoundary>
+            <AppPreloader />
+            <ConditionalLayout>
               {children}
-            </PageTransition>
-          </main>
-          <Footer />
-        </ErrorBoundary>
+            </ConditionalLayout>
+          </ErrorBoundary>
+        </NextAuthProvider>
       </body>
     </html>
   );

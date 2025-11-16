@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCrowdfundStats } from '@/lib/btcpay-client';
+import { logger } from '@/lib/logger';
 
-export const dynamic = 'force-dynamic';
+// Cache for 30 seconds, revalidate every 30 seconds
+export const revalidate = 30;
 
 export async function GET(request: NextRequest) {
   try {
@@ -12,7 +14,7 @@ export async function GET(request: NextRequest) {
       stats,
     });
   } catch (error: any) {
-    console.error('Error fetching donation stats:', error);
+    logger.error('Error fetching donation stats:', error);
     return NextResponse.json(
       { error: error.message || 'Failed to fetch stats' },
       { status: 500 }

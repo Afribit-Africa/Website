@@ -4,6 +4,7 @@ import { handleAPIError, validateInput, APIError, withRetry } from '@/lib/api-he
 import { saveDonorInfo, initDonorsTable } from '@/lib/donor-db';
 import { rateLimit, rateLimitConfigs, RateLimitError } from '@/lib/rate-limit';
 import { createDonationSchema, formatZodError } from '@/lib/validation';
+import { logger } from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
   try {
@@ -50,7 +51,7 @@ export async function POST(request: NextRequest) {
       });
     }, 2, 1000); // 2 retries, 1 second delay
 
-    console.log('Invoice created successfully:', invoice.id);
+    logger.info('Invoice created successfully:', invoice.id);
 
     // Save donor information to database
     try {
@@ -67,10 +68,10 @@ export async function POST(request: NextRequest) {
         donationType: donationType || 'anonymous',
       });
 
-      console.log('Donor info saved to database:', invoice.id);
+      logger.info('Donor info saved to database:', invoice.id);
     } catch (dbError) {
       // Log error but don't fail the invoice creation
-      console.error('Failed to save donor info to database:', dbError);
+      logger.error('Failed to save donor info to database:', dbError);
     }
 
     return NextResponse.json({

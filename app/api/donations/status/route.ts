@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getInvoiceStatus } from '@/lib/btcpay-client';
+import { logger } from '@/lib/logger';
 
 export async function GET(request: NextRequest) {
   try {
@@ -20,7 +21,7 @@ export async function GET(request: NextRequest) {
       invoice,
     });
   } catch (error: any) {
-    console.error('Error fetching invoice status:', error);
+    logger.error('Error fetching invoice status:', error);
     return NextResponse.json(
       { error: error.message || 'Failed to fetch invoice status' },
       { status: 500 }

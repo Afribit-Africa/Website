@@ -1,18 +1,19 @@
 import { NextResponse } from 'next/server';
+import { logger } from '@/lib/logger';
 
 export async function GET() {
   const host = process.env.BTCPAY_HOST;
   const storeId = process.env.BTCPAY_STORE_ID;
   const apiKey = process.env.BTCPAY_API_KEY;
 
-  console.log('Testing BTCPay connection...');
-  console.log('Host:', host);
-  console.log('Store ID:', storeId);
+  logger.info('Testing BTCPay connection...');
+  logger.info('Host:', host);
+  logger.info('Store ID:', storeId);
 
   try {
     // Try to fetch store info (simpler endpoint)
     const url = `${host}/api/v1/stores/${storeId}`;
-    console.log('Testing URL:', url);
+    logger.info('Testing URL:', url);
 
     const response = await fetch(url, {
       method: 'GET',
@@ -22,10 +23,10 @@ export async function GET() {
       },
     });
 
-    console.log('Response status:', response.status);
-    
+    logger.info('Response status:', response.status);
+
     const data = await response.text();
-    console.log('Response body:', data.substring(0, 200));
+    logger.info('Response body:', data.substring(0, 200));
 
     return NextResponse.json({
       success: response.ok,
@@ -35,7 +36,7 @@ export async function GET() {
       preview: data.substring(0, 200),
     });
   } catch (error: any) {
-    console.error('Connection test failed:', error);
+    logger.error('Connection test failed:', error);
     return NextResponse.json({
       success: false,
       canConnect: false,

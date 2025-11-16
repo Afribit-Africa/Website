@@ -7,6 +7,7 @@ import QRCode from 'qrcode';
 import PaymentLoader from '@/components/PaymentLoader';
 import { DonationCardSkeleton } from '@/components/Skeleton';
 import { motion } from 'framer-motion';
+import * as Sentry from '@sentry/nextjs';
 
 const DONATION_TIERS = [
   {
@@ -150,25 +151,8 @@ export default function DonatePage() {
 
       while (retries > 0 && !lightningInvoice) {
         try {
-          // Only log in development mode
-          if (process.env.NODE_ENV === 'development') {
-            console.log(`Fetching payment methods (attempt ${4 - retries}/3)...`);
-          }
-
           const paymentMethodsResponse = await fetch(`/api/donations/${data.invoice.id}/payment-methods`);
           paymentMethodsData = await paymentMethodsResponse.json();
-
-          if (process.env.NODE_ENV === 'development') {
-            console.log('Payment methods response:', {
-              ok: paymentMethodsResponse.ok,
-              status: paymentMethodsResponse.status,
-              isArray: Array.isArray(paymentMethodsData),
-              count: Array.isArray(paymentMethodsData) ? paymentMethodsData.length : 0,
-              methods: Array.isArray(paymentMethodsData)
-                ? paymentMethodsData.map((pm: any) => pm.paymentMethod)
-                : 'not an array'
-            });
-          }
 
           if (paymentMethodsResponse.ok && Array.isArray(paymentMethodsData)) {
             // Find the Lightning payment method
@@ -181,16 +165,6 @@ export default function DonatePage() {
               (pm.cryptoCode === 'BTC' && pm.paymentMethod?.includes('Lightning'))
             );
 
-            if (process.env.NODE_ENV === 'development') {
-              console.log('Lightning method search:', {
-                found: !!lightningMethod,
-                paymentMethodId: lightningMethod?.paymentMethodId,
-                method: lightningMethod?.paymentMethod,
-                hasDestination: !!lightningMethod?.destination,
-                destination: lightningMethod?.destination?.substring(0, 20) + '...'
-              });
-            }
-
             if (lightningMethod?.destination) {
               lightningInvoice = lightningMethod.destination;
               break;
@@ -199,16 +173,11 @@ export default function DonatePage() {
 
           // Wait before retry
           if (retries > 1) {
-            if (process.env.NODE_ENV === 'development') {
-              console.log('Lightning not ready, waiting 2 seconds...');
-            }
             await new Promise(resolve => setTimeout(resolve, 2000));
           }
           retries--;
         } catch (error) {
-          if (process.env.NODE_ENV === 'development') {
-            console.error('Error fetching payment methods:', error);
-          }
+          Sentry.captureException(error);
           retries--;
           if (retries > 0) {
             await new Promise(resolve => setTimeout(resolve, 2000));
@@ -219,10 +188,6 @@ export default function DonatePage() {
       // Use Lightning invoice if found, otherwise use checkout link
       const finalInvoice = lightningInvoice || data.invoice.checkoutLink;
       const invoiceType = lightningInvoice ? 'Lightning' : 'Checkout Link';
-
-      if (process.env.NODE_ENV === 'development') {
-        console.log(`Using ${invoiceType} for QR code:`, finalInvoice.substring(0, 30) + '...');
-      }
 
       setLightningInvoice(finalInvoice);
 
@@ -238,9 +203,7 @@ export default function DonatePage() {
       setQrCodeDataUrl(qrUrl);
       setStep('payment');
     } catch (err: any) {
-      if (process.env.NODE_ENV === 'development') {
-        console.error('Payment error:', err);
-      }
+      Sentry.captureException(err);
       setError(err.message || 'Failed to create payment. Please try again.');
       setStep('details');
       setLightningInvoice('');
@@ -311,12 +274,10 @@ export default function DonatePage() {
 
                   if (!response.ok) {
                     const errorData = await response.json();
-                    console.error('Receipt email error:', errorData);
-                  } else {
-                    console.log('Receipt email sent successfully');
+                    Sentry.captureMessage('Receipt email error: ' + JSON.stringify(errorData));
                   }
                 } catch (emailError) {
-                  console.error('Failed to send receipt email:', emailError);
+                  Sentry.captureException(emailError);
                   // Don't block success flow if email fails
                 }
               }, 2000); // Wait 2 seconds for DB to be fully updated
@@ -328,9 +289,7 @@ export default function DonatePage() {
           }
         }
       } catch (error) {
-        if (process.env.NODE_ENV === 'development') {
-          console.error('Error polling payment status:', error);
-        }
+        Sentry.captureException(error);
       }
     }, 3000); // Poll every 3 seconds
 
@@ -358,55 +317,13 @@ export default function DonatePage() {
       <div className="min-h-screen bg-black pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="font-heading text-3xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-16">
+            <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6">
               Fuel the <span className="text-bitcoin">Bitcoin Revolution</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Your contribution powers financial freedom, environmental stewardship, and community resilience in Kibera
             </p>
-          </div>
-
-          {/* Step Indicator */}
-          <div className="max-w-3xl mx-auto mb-12">
-            <div className="flex items-center justify-center">
-            {[
-              { key: 'tiers', label: 'Choose Tier', num: 1 },
-              { key: 'details', label: 'Details', num: 2 },
-              { key: 'payment', label: 'Payment', num: 3 }
-            ].map((s, idx) => (
-              <div key={s.key} className="flex items-center">
-                <div className="flex flex-col items-center gap-2">
-                  <div
-                    className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border-2 font-bold text-sm md:text-base transition-all duration-300 z-10 ${
-                      step === s.key
-                        ? 'bg-bitcoin border-bitcoin text-white shadow-lg shadow-bitcoin/50 scale-105'
-                        : ['tiers', 'details', 'payment'].indexOf(step) > idx
-                        ? 'bg-bitcoin/20 border-bitcoin text-bitcoin'
-                        : 'bg-white/5 border-white/30 text-gray-400'
-                    }`}
-                    aria-label={`Step ${s.num}: ${s.label}`}
-                    role="status"
-                    aria-current={step === s.key ? 'step' : undefined}
-                  >
-                    {['tiers', 'details', 'payment'].indexOf(step) > idx ? <FiCheck className="w-5 h-5 md:w-6 md:h-6" /> : s.num}
-                  </div>
-                  <span className={`text-xs md:text-sm font-medium transition-colors whitespace-nowrap ${
-                    step === s.key ? 'text-bitcoin font-bold' : 'text-gray-400'
-                  }`}>
-                    {s.label}
-                  </span>
-                </div>
-                {idx < 2 && (
-                  <div className={`w-16 md:w-24 lg:w-32 h-0.5 -mx-2 transition-all duration-300 ${
-                    idx < ['tiers', 'details', 'payment'].indexOf(step)
-                      ? 'bg-bitcoin'
-                      : 'bg-white/20'
-                  }`} />
-                )}
-              </div>
-            ))}
-            </div>
           </div>
 
           {/* Content */}
@@ -414,15 +331,15 @@ export default function DonatePage() {
           {/* Step 1: Tier Selection */}
           {step === 'tiers' && (
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold font-heading mb-3 text-center">Choose Your Impact</h2>
-              <p className="text-sm md:text-base text-gray-300 text-center mb-8">Select a tier that resonates with you or contribute a custom amount</p>
+              <h2 className="text-3xl font-bold font-heading mb-4 text-center">Choose Your Impact</h2>
+              <p className="text-base text-gray-400 text-center mb-12">Select a tier that resonates with you or contribute a custom amount</p>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {DONATION_TIERS.map((tier) => (
                   <button
                     key={tier.id}
                     onClick={() => handleTierSelect(tier)}
-                    className="group relative overflow-hidden rounded-xl border-2 border-white/10 hover:border-bitcoin/40 transition-all duration-300 text-left hover:scale-[1.02] cursor-pointer bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm flex flex-col"
+                    className="group relative overflow-hidden rounded-2xl border-2 border-white/10 hover:border-bitcoin/50 transition-all duration-300 text-left hover:scale-[1.02] cursor-pointer bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm flex flex-col"
                     aria-label={`Select ${tier.title} donation tier${tier.isCustom ? '' : ` for $${tier.amount}`}`}
                   >
                     {/* Image Container - Fixed Aspect Ratio */}

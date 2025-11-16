@@ -4,6 +4,7 @@ import { getDonorByInvoiceId } from '@/lib/donor-db';
 import { handleAPIError } from '@/lib/api-helpers';
 import { rateLimit, rateLimitConfigs, RateLimitError } from '@/lib/rate-limit';
 import { sendReceiptSchema, formatZodError } from '@/lib/validation';
+import { logger } from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
   try {
@@ -33,15 +34,15 @@ export async function POST(request: NextRequest) {
 
     const { invoiceId, transactionId } = validation.data;
 
-    console.log('Attempting to send receipt for invoice:', invoiceId);
+    logger.info('Attempting to send receipt for invoice:', invoiceId);
 
     // Get donor info from database
     let donor;
     try {
       donor = await getDonorByInvoiceId(invoiceId);
-      console.log('Donor found:', donor ? 'Yes' : 'No');
+      logger.info('Donor found:', donor ? 'Yes' : 'No');
     } catch (dbError) {
-      console.error('Database error when fetching donor:', dbError);
+      logger.error('Database error when fetching donor:', dbError);
       return NextResponse.json(
         { success: false, error: 'Database error', details: String(dbError) },
         { status: 500 }
@@ -49,7 +50,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (!donor) {
-      console.log('No donor found for invoice:', invoiceId);
+      logger.info('No donor found for invoice:', invoiceId);
       return NextResponse.json(
         { success: false, error: 'Donor not found in database' },
         { status: 404 }
@@ -58,14 +59,14 @@ export async function POST(request: NextRequest) {
 
     // Only send receipts to named donors
     if (donor.donation_type !== 'named' || !donor.email) {
-      console.log('Skipping email - donation type:', donor.donation_type, 'email:', donor.email);
+      logger.info('Skipping email - donation type:', donor.donation_type, 'email:', donor.email);
       return NextResponse.json(
         { success: false, error: 'Email receipt not applicable for anonymous donations' },
         { status: 400 }
       );
     }
 
-    console.log('Sending receipt email to:', donor.email);
+    logger.info('Sending receipt email to:', donor.email);
 
     // Send receipt email
     try {
@@ -83,9 +84,9 @@ export async function POST(request: NextRequest) {
         transactionId,
       });
 
-      console.log('Receipt sent successfully to:', donor.email);
+      logger.info('Receipt sent successfully to:', donor.email);
     } catch (emailError) {
-      console.error('Email sending error:', emailError);
+      logger.error('Email sending error:', emailError);
       return NextResponse.json(
         { success: false, error: 'Failed to send email', details: String(emailError) },
         { status: 500 }
@@ -97,7 +98,7 @@ export async function POST(request: NextRequest) {
       message: 'Receipt sent successfully',
     });
   } catch (error) {
-    console.error('Failed to send receipt - general error:', error);
+    logger.error('Failed to send receipt - general error:', error);
     return handleAPIError(error);
   }
 }

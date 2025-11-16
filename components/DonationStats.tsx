@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import * as Sentry from "@sentry/nextjs";
 
 interface DonationStats {
   totalRaised: number;
@@ -56,12 +58,12 @@ export function DonationStats() {
     try {
       const response = await fetch('/api/donations/stats');
       const data = await response.json();
-      
+
       if (data.success && data.stats) {
         setStats(data.stats);
       }
     } catch (error) {
-      console.error('Error fetching donation stats:', error);
+      Sentry.captureException(error);
     } finally {
       setLoading(false);
     }
@@ -86,14 +88,14 @@ export function DonationStats() {
             of ${stats.goal.toLocaleString('en-US')} goal
           </span>
         </div>
-        
+
         <div className="relative w-full h-3 bg-white/5 rounded-full overflow-hidden">
-          <div 
-            className="h-full bg-bitcoin rounded-full transition-all duration-500 ease-out"
-            style={{ width: `${Math.min(stats.percentageComplete, 100)}%` }}
+          <div
+            className="h-full bg-gradient-to-r from-bitcoin to-orange-500 rounded-full transition-all duration-1000 ease-out"
+            style={{ width: `${Math.max(stats.percentageComplete, 3)}%` }}
           />
         </div>
-        
+
         <div className="flex justify-between items-center mt-2">
           <span className="text-sm text-gray-400">{stats.percentageComplete.toFixed(2)}% funded</span>
           <span className="text-sm text-gray-400">{stats.contributors} contributors</span>
@@ -108,14 +110,14 @@ export function DonationStats() {
           </div>
           <div className="text-[10px] md:text-sm text-gray-400 mt-0.5 md:mt-1">Contributors</div>
         </div>
-        
+
         <div className="text-center p-3 md:p-4 bg-white/5 border border-white/10 rounded-lg md:rounded-xl">
           <div className="text-xl md:text-3xl font-bold text-bitcoin font-numbers">
             ${(animatedTotal / stats.contributors).toFixed(0)}
           </div>
           <div className="text-[10px] md:text-sm text-gray-400 mt-0.5 md:mt-1">Avg Donation</div>
         </div>
-        
+
         <div className="text-center p-3 md:p-4 bg-white/5 border border-white/10 rounded-lg md:rounded-xl">
           <div className="text-xl md:text-3xl font-bold text-bitcoin font-numbers">
             ${(stats.goal - animatedTotal).toLocaleString('en-US', { maximumFractionDigits: 0 })}

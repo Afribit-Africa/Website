@@ -3,6 +3,8 @@
  * Handles all interactions with BTCPay Server Greenfield API
  */
 
+import { logger } from './logger';
+
 // Get environment variables - these are only available on server side
 function getEnvVar(key: string, defaultValue: string = ''): string {
   if (typeof process !== 'undefined' && process.env) {
@@ -48,7 +50,7 @@ export async function createInvoice(params: CreateInvoiceParams): Promise<Invoic
 
   const { host, storeId, apiKey } = getBTCPayConfig();
 
-  console.log('BTCPay Config Check:', {
+  logger.debug('BTCPay Config Check:', {
     hasHost: !!host,
     hasStoreId: !!storeId,
     hasApiKey: !!apiKey,
@@ -57,13 +59,15 @@ export async function createInvoice(params: CreateInvoiceParams): Promise<Invoic
   });
 
   if (!host || !storeId || !apiKey) {
-    throw new Error('BTCPay Server configuration is missing. Please check environment variables.');
+    const error = new Error('BTCPay Server configuration is missing. Please check environment variables.');
+    logger.error('BTCPay configuration error');
+    throw error;
   }
 
-  console.log('Creating invoice with BTCPay Server:', { host, storeId, amount, currency });
+  logger.info('Creating invoice with BTCPay Server:', { amount, currency });
 
   const url = `${host}/api/v1/stores/${storeId}/invoices`;
-  console.log('Full API URL:', url);
+  logger.debug('BTCPay API URL:', url);
 
   let response;
   try {
@@ -89,7 +93,7 @@ export async function createInvoice(params: CreateInvoiceParams): Promise<Invoic
       }),
     });
   } catch (fetchError: any) {
-    console.error('Fetch error details:', {
+    logger.error('BTCPay fetch error:', {
       message: fetchError.message,
       cause: fetchError.cause,
       type: fetchError.constructor.name,
@@ -97,15 +101,16 @@ export async function createInvoice(params: CreateInvoiceParams): Promise<Invoic
     throw new Error(`Network error connecting to BTCPay Server: ${fetchError.message}`);
   }
 
-  console.log('BTCPay response status:', response.status);
+  logger.debug('BTCPay response status:', response.status);
 
   if (!response.ok) {
     const error = await response.text();
-    console.error('BTCPay API error response:', error);
+    logger.error('BTCPay API error response:', error);
     throw new Error(`BTCPay API Error: ${response.status} - ${error}`);
   }
 
   const data = await response.json();
+  logger.info('BTCPay invoice created successfully:', data.id);
 
   return {
     id: data.id,
@@ -123,7 +128,7 @@ export async function createInvoice(params: CreateInvoiceParams): Promise<Invoic
  */
 export async function getInvoiceStatus(invoiceId: string): Promise<InvoiceData> {
   const { host, storeId, apiKey } = getBTCPayConfig();
-  
+
   const response = await fetch(`${host}/api/v1/stores/${storeId}/invoices/${invoiceId}`, {
     headers: {
       'Authorization': `token ${apiKey}`,
@@ -153,7 +158,7 @@ export async function getInvoiceStatus(invoiceId: string): Promise<InvoiceData> 
  */
 export async function getInvoicePaymentMethods(invoiceId: string) {
   const { host, storeId, apiKey } = getBTCPayConfig();
-  
+
   const response = await fetch(`${host}/api/v1/stores/${storeId}/invoices/${invoiceId}/payment-methods`, {
     headers: {
       'Authorization': `token ${apiKey}`,
@@ -168,17 +173,43 @@ export async function getInvoicePaymentMethods(invoiceId: string) {
 }
 
 /**
+ * Get all settled invoices (for donor tracking)
+ */
+export async function getSettledInvoices(limit: number = 100) {
+  try {
+    const { host, storeId, apiKey } = getBTCPayConfig();
+
+    const response = await fetch(`${host}/api/v1/stores/${storeId}/invoices?status=settled&take=${limit}`, {
+      headers: {
+        'Authorization': `token ${apiKey}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch invoices from BTCPay Server');
+    }
+
+    const invoices = await response.json();
+    logger.info(`Fetched ${invoices.length} settled invoices`);
+    return invoices;
+  } catch (error) {
+    logger.error('Error fetching settled invoices:', error);
+    return [];
+  }
+}
+
+/**
  * Get crowdfund statistics (approximate using invoice data)
  */
 export async function getCrowdfundStats() {
   try {
     const { host, storeId, apiKey } = getBTCPayConfig();
-    
+
     // Note: This is a simplified version. For accurate stats, you'd need to:
     // 1. Track invoices in your database
     // 2. Use BTCPay's reporting features
     // 3. Or fetch from the crowdfund app directly
-    
+
     const response = await fetch(`${host}/api/v1/stores/${storeId}/invoices?status=settled&take=100`, {
       headers: {
         'Authorization': `token ${apiKey}`,
@@ -186,6 +217,7 @@ export async function getCrowdfundStats() {
     });
 
     if (!response.ok) {
+      logger.warn('Failed to fetch crowdfund stats, using fallback values');
       return {
         totalRaised: 2149.45, // Fallback to known value
         goal: 100000,
@@ -206,7 +238,7 @@ export async function getCrowdfundStats() {
       percentageComplete: (totalRaised / 100000) * 100,
     };
   } catch (error) {
-    console.error('Error fetching crowdfund stats:', error);
+    logger.error('Error fetching crowdfund stats:', error);
     return {
       totalRaised: 2149.45,
       goal: 100000,
@@ -221,4 +253,5 @@ export const btcpayClient = {
   getInvoiceStatus,
   getInvoicePaymentMethods,
   getCrowdfundStats,
+  getSettledInvoices,
 };
