@@ -4,8 +4,8 @@ import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { executeQuery } from '@/lib/db';
 import { logger } from '@/lib/logger';
 
-// Cache for 60 seconds for authenticated users
-export const revalidate = 60;
+// Force dynamic rendering for this route
+export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
   try {
