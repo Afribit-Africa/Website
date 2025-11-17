@@ -29,7 +29,7 @@ const transporter = nodemailer.createTransport({
 export interface DonationReceiptData {
   donorName: string;
   donorEmail: string;
-  amount: number;
+  amount: string | number;
   tier: string;
   invoiceId: string;
   date: string;
@@ -38,6 +38,9 @@ export interface DonationReceiptData {
 
 export async function sendDonationReceipt(data: DonationReceiptData) {
   const { donorName, donorEmail, amount, tier, invoiceId, date, transactionId } = data;
+
+  // Ensure amount is a number for formatting
+  const amountNumber = typeof amount === 'string' ? parseFloat(amount) : amount;
 
   logger.info('Preparing donation receipt email for:', donorEmail);
   logger.debug('Email config:', {
@@ -93,7 +96,7 @@ export async function sendDonationReceipt(data: DonationReceiptData) {
                     <table width="100%" cellpadding="0" cellspacing="0">
                       <tr>
                         <td style="padding: 12px 0; color: #888888; font-size: 14px;">Donation Amount:</td>
-                        <td style="padding: 12px 0; color: #F7931A; font-size: 18px; font-weight: bold; text-align: right;">$${amount.toFixed(2)} USD</td>
+                        <td style="padding: 12px 0; color: #F7931A; font-size: 18px; font-weight: bold; text-align: right;">$${amountNumber.toFixed(2)} USD</td>
                       </tr>
                       <tr style="border-top: 1px solid #333333;">
                         <td style="padding: 12px 0; color: #888888; font-size: 14px;">Support Tier:</td>
@@ -126,7 +129,7 @@ export async function sendDonationReceipt(data: DonationReceiptData) {
               <div style="background-color: #0a0a0a; border-left: 4px solid #F7931A; padding: 20px; border-radius: 4px;">
                 <h4 style="margin: 0 0 10px 0; color: #F7931A; font-size: 18px;">Your Impact</h4>
                 <p style="margin: 0; color: #cccccc; font-size: 14px; line-height: 1.6;">
-                  ${getTierImpactMessage(tier, amount)}
+                  ${getTierImpactMessage(tier, amountNumber)}
                 </p>
               </div>
             </td>
@@ -194,11 +197,11 @@ Thank You for Your Donation!
 
 Dear ${donorName},
 
-We are incredibly grateful for your generous contribution of $${amount.toFixed(2)} USD. Your support helps us empower communities in Kenya with Bitcoin education, merchant adoption, and financial freedom.
+We are incredibly grateful for your generous contribution of $${amountNumber.toFixed(2)} USD. Your support helps us empower communities in Kenya with Bitcoin education, merchant adoption, and financial freedom.
 
 RECEIPT DETAILS
 ---------------
-Donation Amount: $${amount.toFixed(2)} USD
+Donation Amount: $${amountNumber.toFixed(2)} USD
 Support Tier: ${tier}
 Date: ${date}
 Receipt ID: ${invoiceId}
@@ -206,7 +209,7 @@ ${transactionId ? `Transaction ID: ${transactionId}` : ''}
 
 YOUR IMPACT
 -----------
-${getTierImpactMessage(tier, amount)}
+${getTierImpactMessage(tier, amountNumber)}
 
 WHAT'S NEXT?
 ------------

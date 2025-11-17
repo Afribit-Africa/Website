@@ -32,10 +32,6 @@ export function getDbPool(): mysql.Pool {
         logger.debug('New database connection established');
       });
 
-      pool.on('error', (err) => {
-        logger.error('Database pool error:', err);
-      });
-
       logger.info('Database connection pool created');
     } catch (error) {
       logger.error('Failed to create database pool:', error);

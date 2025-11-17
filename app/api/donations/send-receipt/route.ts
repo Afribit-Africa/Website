@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { sendDonationReceipt } from '@/lib/resend-email';
+import { sendDonationReceipt } from '@/lib/email-service';
 import { getDonorByInvoiceId } from '@/lib/donor-db';
 import { handleAPIError } from '@/lib/api-helpers';
 import { rateLimit, rateLimitConfigs, RateLimitError } from '@/lib/rate-limit';
@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
       await sendDonationReceipt({
         donorName: donor.name || 'Anonymous',
         donorEmail: donor.email,
-        amount: parseFloat(donor.amount),
+        amount: donor.amount,
         tier: donor.tier || 'Custom',
         invoiceId: donor.invoice_id,
         date: new Date(donor.created_at).toLocaleDateString('en-US', {

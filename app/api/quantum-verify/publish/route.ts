@@ -134,7 +134,7 @@ export async function POST(request: NextRequest) {
         await sendMerchantPublishedEmail({
           email: merchant.contact_email,
           businessName: merchant.business_name,
-          osmNodeId: nodeId,
+          osmNodeId: nodeId.toString(),
           btcmapUrl: `https://btcmap.org/merchant/${nodeId}`,
         });
         logger.info('Published notification email sent to:', merchant.contact_email);

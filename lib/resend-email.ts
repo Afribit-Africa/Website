@@ -220,7 +220,7 @@ Questions? Contact us at info@afribit.africa
       html: emailHtml,
     });
 
-    logger.info('Donation receipt email sent successfully:', result.id);
+    logger.info('Donation receipt email sent successfully:', result.data?.id || 'unknown');
     return result;
   } catch (error) {
     logger.error('Resend email error:', error);
@@ -703,7 +703,7 @@ export async function sendMerchantRejectionEmail(
       replyTo: 'info@afribit.africa'
     });
 
-    logger.info('Rejection email sent:', result.id);
+    logger.info('Rejection email sent:', result.data?.id || 'unknown');
     return result;
   } catch (error) {
     logger.error('Failed to send rejection email:', error);
@@ -792,7 +792,7 @@ export async function sendPasswordResetEmail(data: {
       replyTo: 'info@afribit.africa'
     });
 
-    logger.info('Password reset email sent:', result.id);
+    logger.info('Password reset email sent:', result.data?.id || 'unknown');
     return result;
   } catch (error) {
     logger.error('Failed to send password reset email:', error);
@@ -881,7 +881,7 @@ export async function sendMerchantVerificationRejectionEmail(data: {
       replyTo: 'info@afribit.africa'
     });
 
-    logger.info('Verification rejection email sent:', result.id);
+    logger.info('Verification rejection email sent:', result.data?.id || 'unknown');
     return result;
   } catch (error) {
     logger.error('Failed to send verification rejection email:', error);
@@ -985,7 +985,7 @@ export async function sendAdminNotificationEmail(data: {
       replyTo: contactEmail
     });
 
-    logger.info('Admin notification email sent:', result.id);
+    logger.info('Admin notification email sent:', result.data?.id || 'unknown');
     return result;
   } catch (error) {
     logger.error('Failed to send admin notification email:', error);
@@ -1091,7 +1091,7 @@ export async function sendMerchantPublishedEmail(data: {
       replyTo: 'info@afribit.africa'
     });
 
-    logger.info('Published notification email sent:', result.id);
+    logger.info('Published notification email sent:', result.data?.id || 'unknown');
     return result;
   } catch (error) {
     logger.error('Failed to send published email:', error);
