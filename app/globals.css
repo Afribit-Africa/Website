@@ -11,7 +11,7 @@
     --bitcoin: #F7931A;
     --bitcoin-dark: #E68A17;
     --bitcoin-light: #FFB84D;
-    
+
     /* Dark Theme */
     --bg-primary: #0A0A0A;
     --bg-secondary: #141414;
@@ -70,7 +70,7 @@
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom);
   }
-  
+
   .pt-safe {
     padding-top: env(safe-area-inset-top);
   }
