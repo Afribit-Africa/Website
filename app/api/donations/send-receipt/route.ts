@@ -71,10 +71,10 @@ export async function POST(request: NextRequest) {
     // Send receipt email
     try {
       await sendDonationReceipt({
-        donorName: donor.name,
+        donorName: donor.name || 'Anonymous',
         donorEmail: donor.email,
         amount: parseFloat(donor.amount),
-        tier: donor.tier,
+        tier: donor.tier || 'Custom',
         invoiceId: donor.invoice_id,
         date: new Date(donor.created_at).toLocaleDateString('en-US', {
           year: 'numeric',
