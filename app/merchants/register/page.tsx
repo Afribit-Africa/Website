@@ -474,18 +474,38 @@ export default function MerchantRegisterPage() {
                 />
               </div>
 
-              <div className="bg-bitcoin/10 border border-bitcoin/30 rounded-lg p-4">
-                <h3 className="font-medium text-bitcoin mb-3 flex items-center gap-2 text-sm md:text-base">
+              {/* Lightning Address - Prominent */}
+              <div className="bg-bitcoin/10 border-2 border-bitcoin/40 rounded-lg p-5">
+                <h3 className="font-semibold text-bitcoin mb-2 flex items-center gap-2 text-base md:text-lg">
+                  <Zap className="w-6 h-6 flex-shrink-0" />
+                  Lightning Address
+                </h3>
+                <p className="text-xs md:text-sm text-gray-300 leading-relaxed mb-4">
+                  Share your Lightning address so customers and donors can easily send you Bitcoin payments.
+                </p>
+                <Input
+                  label="Your Lightning Address"
+                  type="text"
+                  value={formData.lightningAddress}
+                  onChange={(e) => updateField('lightningAddress', e.target.value)}
+                  placeholder="yourname@blink.sv or you@getalby.com"
+                  helper="Looks like an email - get one from wallets below"
+                  icon={<Zap className="w-5 h-5" />}
+                />
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+                <h3 className="font-medium text-white mb-3 flex items-center gap-2 text-sm md:text-base">
                   <Bitcoin className="w-5 h-5 flex-shrink-0" />
                   Need a Bitcoin Wallet?
                 </h3>
                 <p className="text-xs md:text-sm text-gray-300 leading-relaxed mb-3">
-                  We recommend these wallets for accepting Bitcoin:
+                  Get a Lightning address from these recommended wallets:
                 </p>
                 <ul className="space-y-2 text-xs md:text-sm text-gray-300">
                   <li className="flex items-start gap-2">
                     <Zap className="w-4 h-4 text-bitcoin flex-shrink-0 mt-0.5" />
-                    <span><a href="https://blink.sv" target="_blank" rel="noopener noreferrer" className="text-bitcoin font-semibold underline">Blink</a> - Easy Lightning wallet with instant payments</span>
+                    <span><a href="https://blink.sv" target="_blank" rel="noopener noreferrer" className="text-bitcoin font-semibold underline">Blink</a> - Easy Lightning wallet with instant payments (yourname@blink.sv)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Zap className="w-4 h-4 text-bitcoin flex-shrink-0 mt-0.5" />
@@ -500,16 +520,6 @@ export default function MerchantRegisterPage() {
                   Need help? <a href="mailto:info@afribit.africa" className="text-bitcoin underline">Contact us</a> for wallet setup assistance.
                 </p>
               </div>
-
-              <Input
-                label="Lightning Address (Optional)"
-                type="text"
-                value={formData.lightningAddress}
-                onChange={(e) => updateField('lightningAddress', e.target.value)}
-                placeholder="you@blink.sv or username@getalby.com"
-                helper="Your Lightning address for receiving payments (looks like an email)"
-                icon={<Zap className="w-5 h-5" />}
-              />
 
               <Input
                 label="Phone Number"

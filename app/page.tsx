@@ -196,6 +196,10 @@ export default function HomePage() {
                   src="/Media/Images/Mama mboga groceries accepting bitcoin.jpg"
                   alt="Micro-Merchants & Traders"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="192"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
               </div>
@@ -225,6 +229,10 @@ export default function HomePage() {
                   src="/Media/Images/Trezor Academy session pics/IMG-20250914-WA0155.jpg"
                   alt="Women's Upcycling Collective"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="192"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
               </div>
@@ -254,6 +262,10 @@ export default function HomePage() {
                   src="/Media/Images/Waste Collection.jpg"
                   alt="Waste Incentives Program"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="192"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
               </div>
@@ -280,9 +292,13 @@ export default function HomePage() {
               {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
                 <img
-                  src="/Media/Images/Motorbike bitcoin onboarding.jpg"
+                  src="/Media/Images/Boda Boda.jpg"
                   alt="Boda-Boda Ride to Freedom"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="192"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
               </div>

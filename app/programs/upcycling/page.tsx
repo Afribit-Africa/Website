@@ -32,6 +32,9 @@ export default function UpcyclingProgram() {
               src="/Media/Images/Trezor Academy session pics/IMG-20250914-WA0155.jpg"
               alt="Women's Upcycling Collective"
               className="w-full h-full object-cover"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
