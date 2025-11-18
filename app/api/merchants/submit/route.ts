@@ -58,6 +58,7 @@ export async function POST(request: NextRequest) {
       contactName: sanitizeText(body.contactName || ''),
       contactEmail: sanitizeEmail(body.contactEmail || ''),
       contactRelationship: body.contactRelationship ? sanitizeText(body.contactRelationship) : null,
+      lightningAddress: body.lightningAddress ? sanitizeEmail(body.lightningAddress) : null,
       latitude: parseFloat(body.latitude) || 0,
       longitude: parseFloat(body.longitude) || 0,
       paymentOnchain: Boolean(body.paymentOnchain),
@@ -122,9 +123,10 @@ export async function POST(request: NextRequest) {
         phone, website, opening_hours,
         social_twitter, social_facebook, social_instagram,
         payment_onchain, payment_lightning, payment_lightning_contactless,
+        lightning_address,
         contact_name, contact_email, contact_relationship,
         evidence_urls, edit_token, status, is_early_adopter
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', false)`,
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', false)`,
       [
         submissionId,
         sanitizedData.businessName,
@@ -143,6 +145,7 @@ export async function POST(request: NextRequest) {
         sanitizedData.paymentOnchain,
         sanitizedData.paymentLightning,
         sanitizedData.paymentLightningContactless,
+        sanitizedData.lightningAddress,
         sanitizedData.contactName,
         sanitizedData.contactEmail,
         sanitizedData.contactRelationship,

@@ -131,6 +131,10 @@ export async function PUT(
       updateFields.push('payment_lightning_contactless = ?');
       updateValues.push(updateData.paymentLightningContactless);
     }
+    if (updateData.lightningAddress !== undefined) {
+      updateFields.push('lightning_address = ?');
+      updateValues.push(updateData.lightningAddress);
+    }
 
     // Always update last_edited_at
     updateFields.push('last_edited_at = NOW()');

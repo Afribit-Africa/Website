@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS merchant_submissions (
   payment_onchain BOOLEAN DEFAULT false,
   payment_lightning BOOLEAN DEFAULT false,
   payment_lightning_contactless BOOLEAN DEFAULT false,
+  lightning_address VARCHAR(255), -- Lightning address like user@blink.sv
 
   -- Merchant Contact
   contact_name VARCHAR(255) NOT NULL,
