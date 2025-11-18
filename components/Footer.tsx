@@ -89,8 +89,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/programs" className="text-gray-400 hover:text-bitcoin transition-colors flex items-center gap-1.5 group">
-                  <span>Our Programs</span>
+                <Link href="/programs/merchants" className="text-gray-400 hover:text-bitcoin transition-colors flex items-center gap-1.5 group">
+                  <span>Merchant Program</span>
                 </Link>
               </li>
               <li>
