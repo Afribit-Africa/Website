@@ -333,6 +333,80 @@ export default function HomePage() {
       {/* ========== FAQ SECTION ========== */}
       <FAQ />
 
+      {/* ========== 2026 STRATEGIC GOALS SECTION ========== */}
+      <section className="py-20 sm:py-24 md:py-32 bg-gradient-to-br from-bitcoin/5 via-orange-600/5 to-bitcoin/5">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-2 bg-bitcoin/10 border border-bitcoin/30 rounded-full mb-6">
+              <span className="text-bitcoin font-semibold text-sm">2026 Vision</span>
+            </div>
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white">
+              Strategic Goals <span className="text-bitcoin">2026</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Building sustainable circular economy models and empowering communities through Bitcoin
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Goal 1 */}
+            <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-bitcoin/50 transition-all duration-300 group">
+              <div className="w-12 h-12 bg-bitcoin/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-bitcoin/30 transition-colors">
+                <span className="text-2xl">♻️</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Expand Upcycling Enterprise</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Train and empower <span className="text-bitcoin font-semibold">80+ beneficiaries</span>, broaden the range of upcycled products, and reinvest 40% of all revenue back into the enterprise to strengthen long-term sustainability.
+              </p>
+            </div>
+
+            {/* Goal 2 */}
+            <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-bitcoin/50 transition-all duration-300 group">
+              <div className="w-12 h-12 bg-bitcoin/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-bitcoin/30 transition-colors">
+                <span className="text-2xl">🌍</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Strengthen Waste Management</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Grow waste-management revenue by <span className="text-bitcoin font-semibold">60%</span> while channeling 20% of profits directly into a shared Bitcoin community treasury for collective resilience.
+              </p>
+            </div>
+
+            {/* Goal 3 */}
+            <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-bitcoin/50 transition-all duration-300 group">
+              <div className="w-12 h-12 bg-bitcoin/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-bitcoin/30 transition-colors">
+                <span className="text-2xl">📚</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Monthly Bitcoin Education</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Deliver <span className="text-bitcoin font-semibold">four high-impact workshops every month</span>, ensuring consistent community learning and onboarding into the Bitcoin economy.
+              </p>
+            </div>
+
+            {/* Goal 4 */}
+            <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-bitcoin/50 transition-all duration-300 group">
+              <div className="w-12 h-12 bg-bitcoin/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-bitcoin/30 transition-colors">
+                <span className="text-2xl">🏪</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Merchant Accelerator Program</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Equip existing merchants with the <span className="text-bitcoin font-semibold">tools, knowledge, and support</span> needed to integrate Bitcoin seamlessly into their daily business operations.
+              </p>
+            </div>
+
+            {/* Goal 5 */}
+            <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-bitcoin/50 transition-all duration-300 group md:col-span-2 lg:col-span-1">
+              <div className="w-12 h-12 bg-bitcoin/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-bitcoin/30 transition-colors">
+                <span className="text-2xl">🤝</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Bitcoin Ambassadors Network</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Develop and mentor <span className="text-bitcoin font-semibold">12 trained Bitcoin Ambassadors</span> who will extend knowledge, support, and replication of circular economy models in other communities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ========== TWITTER CTA SECTION ========== */}
       <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

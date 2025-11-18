@@ -76,6 +76,13 @@ export default function AboutPage() {
       title: 'Scaling Impact',
       description: 'Expanding to new areas, increasing program capacity, and building sustainable infrastructure for long-term growth.',
       milestone: 'Target: 100 merchants by year-end'
+    },
+    {
+      year: '2026',
+      quarter: 'Strategic Goals',
+      title: 'Community Empowerment',
+      description: 'Five-pillar strategy: Expand upcycling (80+ beneficiaries), grow waste management revenue 60%, deliver monthly Bitcoin education, launch merchant accelerator program, and develop 12 trained Bitcoin Ambassadors.',
+      milestone: 'Circular economy replication models'
     }
   ];
 

@@ -43,6 +43,7 @@ export default function MerchantRegisterPage() {
     address: '',
     phone: '',
     website: '',
+    lightningAddress: '',
     paymentOnchain: false,
     paymentLightning: false,
     paymentLightningContactless: false,
@@ -474,16 +475,41 @@ export default function MerchantRegisterPage() {
               </div>
 
               <div className="bg-bitcoin/10 border border-bitcoin/30 rounded-lg p-4">
-                <h3 className="font-medium text-bitcoin mb-2 flex items-center gap-2 text-sm md:text-base">
+                <h3 className="font-medium text-bitcoin mb-3 flex items-center gap-2 text-sm md:text-base">
                   <Bitcoin className="w-5 h-5 flex-shrink-0" />
                   Need a Bitcoin Wallet?
                 </h3>
-                <p className="text-xs md:text-sm text-gray-300 leading-relaxed">
-                  We recommend <a href="https://getalby.com" target="_blank" rel="noopener noreferrer" className="text-bitcoin underline">Alby</a> for Lightning,{' '}
-                  <a href="https://muun.com" target="_blank" rel="noopener noreferrer" className="text-bitcoin underline">Muun</a> for on-chain, or{' '}
-                  <a href="mailto:info@afribit.africa" className="text-bitcoin underline">contact us</a> for setup help.
+                <p className="text-xs md:text-sm text-gray-300 leading-relaxed mb-3">
+                  We recommend these wallets for accepting Bitcoin:
+                </p>
+                <ul className="space-y-2 text-xs md:text-sm text-gray-300">
+                  <li className="flex items-start gap-2">
+                    <Zap className="w-4 h-4 text-bitcoin flex-shrink-0 mt-0.5" />
+                    <span><a href="https://blink.sv" target="_blank" rel="noopener noreferrer" className="text-bitcoin font-semibold underline">Blink</a> - Easy Lightning wallet with instant payments</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Zap className="w-4 h-4 text-bitcoin flex-shrink-0 mt-0.5" />
+                    <span><a href="https://www.fedi.xyz" target="_blank" rel="noopener noreferrer" className="text-bitcoin font-semibold underline">Fedi</a> - Community-powered Bitcoin wallet</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Zap className="w-4 h-4 text-bitcoin flex-shrink-0 mt-0.5" />
+                    <span><a href="https://muun.com" target="_blank" rel="noopener noreferrer" className="text-bitcoin font-semibold underline">Muun</a> - Lightning & on-chain in one app</span>
+                  </li>
+                </ul>
+                <p className="text-xs text-gray-400 mt-3">
+                  Need help? <a href="mailto:info@afribit.africa" className="text-bitcoin underline">Contact us</a> for wallet setup assistance.
                 </p>
               </div>
+
+              <Input
+                label="Lightning Address (Optional)"
+                type="text"
+                value={formData.lightningAddress}
+                onChange={(e) => updateField('lightningAddress', e.target.value)}
+                placeholder="you@blink.sv or username@getalby.com"
+                helper="Your Lightning address for receiving payments (looks like an email)"
+                icon={<Zap className="w-5 h-5" />}
+              />
 
               <Input
                 label="Phone Number"
