@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { submissionId, notes } = body;
+    const { submissionId, notes, adminOverride } = body;
 
     if (!submissionId) {
       return NextResponse.json(
@@ -42,13 +42,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if submission has been verified by a verifier
-    if (submission.verification_status !== 'verified') {
+    // Check if submission has been verified by a verifier (unless admin override)
+    if (submission.verification_status !== 'verified' && !adminOverride) {
       return NextResponse.json(
         {
           success: false,
           error: 'This submission must be verified by a verifier before approval',
-          verificationStatus: submission.verification_status
+          verificationStatus: submission.verification_status,
+          hint: 'Use adminOverride: true to bypass verification requirement'
         },
         { status: 400 }
       );
@@ -109,10 +110,14 @@ export async function POST(request: NextRequest) {
     );
 
     // Log admin activity
+    const activityDetails = adminOverride 
+      ? `Admin Override: ${notes || 'Approved without verifier verification'}` 
+      : notes || 'No notes provided';
+    
     await executeQuery(
       `INSERT INTO admin_activity_log (id, merchant_submission_id, admin_email, action, details, created_at)
        VALUES (?, ?, ?, 'approved', ?, NOW())`,
-      [randomUUID(), submissionId, session.user?.email, notes || 'No notes provided']
+      [randomUUID(), submissionId, session.user?.email, activityDetails]
     );
 
     // Send approval email to merchant
