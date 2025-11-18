@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import * as Sentry from "@sentry/nextjs";
 
 interface DonationStats {
   totalRaised: number;
@@ -63,7 +62,7 @@ export function DonationStats() {
         setStats(data.stats);
       }
     } catch (error) {
-      Sentry.captureException(error);
+      console.error('Failed to fetch donation stats:', error);
     } finally {
       setLoading(false);
     }

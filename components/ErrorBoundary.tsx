@@ -2,7 +2,6 @@
 
 import { Component, ReactNode } from 'react';
 import { FiAlertCircle } from 'react-icons/fi';
-import * as Sentry from '@sentry/nextjs';
 
 interface Props {
   children: ReactNode;
@@ -26,14 +25,8 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: any) {
-    // Log to Sentry
-    Sentry.captureException(error, {
-      contexts: {
-        react: {
-          componentStack: errorInfo.componentStack,
-        },
-      },
-    });
+    // Log error to console for debugging
+    console.error('Error caught by boundary:', error, errorInfo);
   }
 
   render() {

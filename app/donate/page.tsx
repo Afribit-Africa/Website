@@ -7,7 +7,6 @@ import QRCode from 'qrcode';
 import PaymentLoader from '@/components/PaymentLoader';
 import { DonationCardSkeleton } from '@/components/Skeleton';
 import { motion } from 'framer-motion';
-import * as Sentry from '@sentry/nextjs';
 
 const DONATION_TIERS = [
   {
@@ -177,7 +176,7 @@ export default function DonatePage() {
           }
           retries--;
         } catch (error) {
-          Sentry.captureException(error);
+          console.error(error);
           retries--;
           if (retries > 0) {
             await new Promise(resolve => setTimeout(resolve, 2000));
@@ -203,7 +202,7 @@ export default function DonatePage() {
       setQrCodeDataUrl(qrUrl);
       setStep('payment');
     } catch (err: any) {
-      Sentry.captureException(err);
+      console.error(error);
       setError(err.message || 'Failed to create payment. Please try again.');
       setStep('details');
       setLightningInvoice('');
@@ -274,10 +273,10 @@ export default function DonatePage() {
 
                   if (!response.ok) {
                     const errorData = await response.json();
-                    Sentry.captureMessage('Receipt email error: ' + JSON.stringify(errorData));
+                    console.error('Receipt email error:', errorData);
                   }
                 } catch (emailError) {
-                  Sentry.captureException(emailError);
+                  console.error(error);
                   // Don't block success flow if email fails
                 }
               }, 2000); // Wait 2 seconds for DB to be fully updated
@@ -289,7 +288,7 @@ export default function DonatePage() {
           }
         }
       } catch (error) {
-        Sentry.captureException(error);
+        console.error(error);
       }
     }, 3000); // Poll every 3 seconds
 
@@ -972,3 +971,4 @@ export default function DonatePage() {
     </>
   );
 }
+
