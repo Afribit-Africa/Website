@@ -52,8 +52,8 @@ if (updateData.lightningAddress !== undefined) {
 #### SQL Migration
 **File:** `scripts/add-lightning-address-column.sql`
 ```sql
-ALTER TABLE merchant_submissions 
-ADD COLUMN IF NOT EXISTS lightning_address VARCHAR(255) NULL 
+ALTER TABLE merchant_submissions
+ADD COLUMN IF NOT EXISTS lightning_address VARCHAR(255) NULL
 AFTER payment_lightning_contactless;
 
 CREATE INDEX IF NOT EXISTS idx_lightning_address ON merchant_submissions(lightning_address);
@@ -143,13 +143,13 @@ git push origin main
 -- Check column exists
 SELECT COLUMN_NAME, DATA_TYPE, IS_NULLABLE
 FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = 'merchant_submissions' 
+WHERE TABLE_NAME = 'merchant_submissions'
 AND COLUMN_NAME = 'lightning_address';
 
 -- Test query
-SELECT id, business_name, lightning_address 
-FROM merchant_submissions 
-ORDER BY submitted_at DESC 
+SELECT id, business_name, lightning_address
+FROM merchant_submissions
+ORDER BY submitted_at DESC
 LIMIT 5;
 ```
 

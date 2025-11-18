@@ -3,8 +3,8 @@
 -- Description: Add Lightning address field to support merchant Lightning addresses
 
 -- Add lightning_address column if it doesn't exist
-ALTER TABLE merchant_submissions 
-ADD COLUMN IF NOT EXISTS lightning_address VARCHAR(255) NULL 
+ALTER TABLE merchant_submissions
+ADD COLUMN IF NOT EXISTS lightning_address VARCHAR(255) NULL
 AFTER payment_lightning_contactless;
 
 -- Add index for lightning address lookups

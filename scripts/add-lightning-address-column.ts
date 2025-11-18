@@ -1,12 +1,12 @@
 /**
  * Migration Script: Add Lightning Address Column
  * Run this script to add the lightning_address column to existing databases
- * 
+ *
  * Usage: npx ts-node scripts/add-lightning-address-column.ts
  */
 
-import { executeQuery } from '../lib/db';
-import { logger } from '../lib/logger';
+import { executeQuery } from '../lib/db.js';
+import { logger } from '../lib/logger.js';
 
 async function migrateLightningAddress() {
   try {
@@ -14,8 +14,8 @@ async function migrateLightningAddress() {
 
     // Add column
     await executeQuery(`
-      ALTER TABLE merchant_submissions 
-      ADD COLUMN lightning_address VARCHAR(255) NULL 
+      ALTER TABLE merchant_submissions
+      ADD COLUMN lightning_address VARCHAR(255) NULL
       AFTER payment_lightning_contactless
     `);
 
@@ -23,7 +23,7 @@ async function migrateLightningAddress() {
 
     // Add index
     await executeQuery(`
-      CREATE INDEX idx_lightning_address 
+      CREATE INDEX idx_lightning_address
       ON merchant_submissions(lightning_address)
     `);
 
@@ -33,7 +33,7 @@ async function migrateLightningAddress() {
     const result = await executeQuery<any[]>(`
       SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, IS_NULLABLE
       FROM INFORMATION_SCHEMA.COLUMNS
-      WHERE TABLE_NAME = 'merchant_submissions' 
+      WHERE TABLE_NAME = 'merchant_submissions'
       AND COLUMN_NAME = 'lightning_address'
     `);
 
@@ -50,7 +50,7 @@ async function migrateLightningAddress() {
       logger.info('ℹ️ Column lightning_address already exists');
       return;
     }
-    
+
     // Index already exists error
     if (error.code === 'ER_DUP_KEYNAME') {
       logger.info('ℹ️ Index idx_lightning_address already exists');

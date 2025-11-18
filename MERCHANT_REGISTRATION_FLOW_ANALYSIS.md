@@ -86,7 +86,7 @@ Merchant Registration → Database Submission → Verifier Verification → Admi
 ---
 
 ## 3. MERCHANT EDIT FUNCTIONALITY
-**Files:** 
+**Files:**
 - `app/merchants/edit/[id]/page.tsx` (Frontend)
 - `app/api/merchants/edit/[id]/route.ts` (Backend)
 
