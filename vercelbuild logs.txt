@@ -1,0 +1,1159 @@
+07:37:20.295 Running build in Washington, D.C., USA (East) – iad1
+07:37:20.296 Build machine configuration: 2 cores, 8 GB
+07:37:20.428 Cloning github.com/Afribit-Africa/Website (Branch: main, Commit: 8668fe7)
+07:37:24.680 Cloning completed: 4.252s
+07:37:24.823 Restored build cache from previous deployment (D1LA3yriWLBs66aukUF9f42HvYov)
+07:37:25.626 Running "vercel build"
+07:37:26.045 Vercel CLI 48.10.2
+07:37:26.423 Installing dependencies...
+07:37:29.732 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+07:37:30.108 npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+07:37:30.296 npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+07:37:31.313 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+07:37:31.539 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+07:37:31.937 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+07:37:32.320 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+07:37:39.060
+07:37:39.061 added 692 packages, removed 128 packages, and changed 1 package in 12s
+07:37:39.062
+07:37:39.062 203 packages are looking for funding
+07:37:39.063   run `npm fund` for details
+07:37:39.099 Detected Next.js version: 16.0.0
+07:37:39.109 Running "npm run build"
+07:37:39.216
+07:37:39.217 > afribit-africa@2.0.0 build
+07:37:39.217 > next build
+07:37:39.217
+07:37:41.153    ▲ Next.js 16.0.0 (Turbopack)
+07:37:41.154    - Experiments (use with caution):
+07:37:41.155      · clientTraceMetadata
+07:37:41.155      · optimizePackageImports
+07:37:41.155
+07:37:41.291    Creating an optimized production build ...
+07:38:14.854  ✓ Compiled successfully in 32.5s
+07:38:14.872    Running next.config.js provided runAfterProductionCompile ...
+07:38:15.252 [@sentry/nextjs - After Production Compile] Info: Sending telemetry data on issues and performance to Sentry. To disable telemetry, set `options.telemetry` to `false`.
+07:38:16.964 > Found 132 files
+07:38:16.981 > Analyzing 132 sources
+07:38:17.013 > Analyzing completed in 0.031s
+07:38:17.014 > Rewriting sources
+07:38:17.052 > Found 781 files
+07:38:17.089 > Analyzing 781 sources
+07:38:17.158 > Analyzing completed in 0.069s
+07:38:17.159 > Rewriting sources
+07:38:17.447 > Rewriting completed in 0.433s
+07:38:17.449 > Adding source map references
+07:38:18.295 > Rewriting completed in 1.135s
+07:38:18.316 > Adding source map references
+07:38:19.186 > Bundling completed in 1.736s
+07:38:19.187 > Bundled 132 files for upload
+07:38:19.187 > Bundle ID: eef4a4c6-ac3f-5f97-8b76-eef6cde6dfa6
+07:38:19.244 > Optimizing completed in 0.057s
+07:38:19.591 > Uploading completed in 0.15s
+07:38:19.593 > Uploaded files to Sentry
+07:38:19.764 > Processing completed in 0.169s
+07:38:19.765 > File upload complete (processing pending on server)
+07:38:19.765 > Organization: afribit-africa
+07:38:19.766 > Projects: afribit
+07:38:19.766 > Release: 8668fe7855cb08a290aebdac369b1e6f46806cba
+07:38:19.766 > Dist: None
+07:38:19.766 > Upload type: artifact bundle
+07:38:19.767
+07:38:19.767 Source Map Upload Report
+07:38:19.767   Scripts
+07:38:19.768     ~/06ddc2fb41d684b6.js (sourcemap at 0cf093a3b2846b18.js.map, debug id fc459525-9b27-3a16-b3b4-2a0cc4e5dd47)
+07:38:19.768     ~/06f493de2b1749ea.js (sourcemap at fdc48e02d0eadba4.js.map, debug id 1dc0e489-3d84-d9ca-d6fd-dbad40a0de9a)
+07:38:19.768     ~/072b415ab4d91681.js (sourcemap at ae43038b1a0fb240.js.map, debug id 11a1d692-403b-2a8a-ef1c-e9315cc5717c)
+07:38:19.769     ~/107c959e3c638c39.js (sourcemap at 112030b10f5c562a.js.map, debug id bc4f8a13-316a-0f41-106f-4ca37f5014df)
+07:38:19.769     ~/10f241108d5fb6e6.js (sourcemap at 3f833dfb57d33b4a.js.map, debug id 171379b6-b21e-4d1e-90d4-02cbf5ed87f9)
+07:38:19.769     ~/1154c6b573bccd0c.js (sourcemap at 015758c27b118e11.js.map, debug id ab1a86e5-3b72-0448-8b29-c14425b77b25)
+07:38:19.769     ~/12980ea52bda19f6.js (sourcemap at 1a76727d3552725e.js.map, debug id 942357b5-9a1d-ee47-3310-e7e9399988cf)
+07:38:19.770     ~/14477c31f03374c1.js (sourcemap at 76e8b57f7d8ff785.js.map, debug id 0c02ff9f-46d4-c1cd-e40d-235d00db3280)
+07:38:19.770     ~/144eb37d0d28382e.js (sourcemap at b7bd35de57d53342.js.map, debug id 44604d2a-d219-ec1f-5775-4ddec99728a7)
+07:38:19.770     ~/16741861ba48d1ff.js (sourcemap at 72851ef145c5afea.js.map, debug id b46d4380-594c-8afe-7d68-4890f7497cd4)
+07:38:19.771     ~/3d23756a5e2b1c88.js (sourcemap at dd8b8d4493f04f94.js.map, debug id e4dbeb10-ddcf-394a-c21f-3f506bbc99ed)
+07:38:19.771     ~/3d3c70adfba4a762.js (sourcemap at a0f6bde5abcbd013.js.map, debug id ed18d05f-0bd0-42ae-645e-b6d9654ce595)
+07:38:19.771     ~/3ddf0b98a495712a.js (sourcemap at b286542971cc72fb.js.map, debug id 0dc5a264-15f9-cf51-9b08-58e26ba570b3)
+07:38:19.772     ~/40f8c62d4215f3bd.js (sourcemap at 79f91bb42f48d982.js.map, debug id f5446b8a-72f4-5b58-4bdf-ccf776495216)
+07:38:19.772     ~/46bd289256830db9.js (sourcemap at da4977129640155a.js.map, debug id 1bee0a22-5878-b0c1-9405-2c57ae892c01)
+07:38:19.772     ~/4a205182ecf38492.js (sourcemap at 0d1db4c1f513bf3c.js.map, debug id 99c6b5e5-b645-fecc-be34-28ce5ac4a108)
+07:38:19.776     ~/58b50103ec04e51c.js (sourcemap at d9e5aedfd0d0d680.js.map, debug id b5ef91cc-5928-a362-6552-b0320a3baa34)
+07:38:19.776     ~/5a99e157689ad8ca.js (sourcemap at 8982122a73a78c29.js.map, debug id 0c1f5e31-117e-1650-0e6d-8471847675d9)
+07:38:19.776     ~/6a740595ccd20064.js (sourcemap at 5bb5c915556bdc52.js.map, debug id 971eac18-a53a-c188-cd02-f610157084c0)
+07:38:19.777     ~/6ec0e6e93aff5f4d.js (sourcemap at bd1df046ab67433c.js.map, debug id 8b973acf-ceb6-7a37-1782-db5090591b9e)
+07:38:19.777     ~/71a41eaf3790de80.js (sourcemap at aa0d21badaba2b8e.js.map, debug id d5525962-5d06-1404-a3b6-6a15ac32d8cf)
+07:38:19.778     ~/732fcafd2155d2b0.js (sourcemap at d90c95cc4e8db980.js.map, debug id 30cd1e16-ede5-35fd-42b2-67672c048d03)
+07:38:19.778     ~/778d6318300e5663.js (sourcemap at c172405667abd2e8.js.map, debug id 01c98b12-e14c-8e4f-a0b2-81503477e291)
+07:38:19.778     ~/7aa975cf5ec868a3.js (sourcemap at b663470fdf8bf5a8.js.map, debug id 98352f27-79aa-06ba-711f-e347ba66baa3)
+07:38:19.779     ~/7c95442ce5166580.js (sourcemap at cf72f28ebab9b926.js.map, debug id cb003e59-d8d2-1b21-9ce8-089ddf58f0e9)
+07:38:19.781     ~/823af069f34739a0.js (sourcemap at 246f4009302b22ec.js.map, debug id ad18a14b-af19-b70d-a139-c6dab14fc662)
+07:38:19.782     ~/88bcf9834712f610.js (sourcemap at 4544d3719dafc0db.js.map, debug id 71477099-d372-996c-a365-6b135b99ff19)
+07:38:19.785     ~/8b65bca0dba2531d.js (sourcemap at 5ca4c2d6810b9618.js.map, debug id 50c95001-dbcb-d0fc-d614-77ac9420c8c1)
+07:38:19.786     ~/8c1a54147ed49e7b.js (sourcemap at 93a68d13e0e51a5d.js.map, debug id 20524a80-9a39-74ff-a9ef-3011d11011b1)
+07:38:19.786     ~/8ce8d0f42edd3dca.js (sourcemap at 726362386d37fe7f.js.map, debug id 17f595d6-8f8c-4fe4-62fd-f95c89ee3bfa)
+07:38:19.787     ~/8d05545077656fcf.js (sourcemap at 7f24e890ca966995.js.map, debug id 8a755bfa-b470-8761-4f33-eee1274bf702)
+07:38:19.787     ~/8dffc0bb156e3f42.js (sourcemap at 0adfcf1e5a18c673.js.map, debug id b8b09007-82c6-97c8-5293-70c09c7294f8)
+07:38:19.787     ~/8f504415c53f97bf.js (sourcemap at 4cc29b31a62ad89f.js.map, debug id 7c7a6269-9bf6-de7b-d743-1fdf4774b555)
+07:38:19.788     ~/93bbead4a5df2c30.js (sourcemap at b16b8ada6cc93b81.js.map, debug id ac01944d-5895-1cc5-aeab-6d425552ca5d)
+07:38:19.789     ~/965eae15f8126498.js (sourcemap at 186c44fbca445e1c.js.map, debug id d4a464de-37cc-6460-e479-416157fb44e2)
+07:38:19.789     ~/9980d6588c56a960.js (sourcemap at 6e9ca5a12a6e0174.js.map, debug id 4205d802-d267-6608-eb93-da57af8a7f75)
+07:38:19.789     ~/9a1ab2c53072f92f.js (sourcemap at 074bf11a9359d8bd.js.map, debug id 820b2264-f5db-108d-2f14-8304cf3f06f8)
+07:38:19.789     ~/9d7b9acd7f382248.js (sourcemap at a1af8a81359d7a84.js.map, debug id 198f86a3-fa41-f5f1-45ca-b7c7f060be84)
+07:38:19.789     ~/9e297cefc3e22b61.js (sourcemap at e93b54c589da3c01.js.map, debug id 03c781e2-b9a9-0799-bf47-0e12f658cfcb)
+07:38:19.789     ~/a11794c0aec11e9a.js (sourcemap at 2af90c473725de6b.js.map, debug id 0c23af97-f6a0-a643-800f-047845b32308)
+07:38:19.789     ~/a6dad97d9634a72d.js (no sourcemap found)
+07:38:19.789       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/a6dad97d9634a72d.js)
+07:38:19.789     ~/b0d4b945489fccbd.js (sourcemap at 99ee68e8baae1c22.js.map, debug id 6076f9b8-062c-4990-18d6-9096dd478268)
+07:38:19.789     ~/b44e25f588774548.js (sourcemap at a20bbed6517cd59d.js.map, debug id caa27c43-fa41-6b68-74f3-c07264c6559c)
+07:38:19.789     ~/b4f03692cadabb5e.js (sourcemap at aae2ecb80b1a70c0.js.map, debug id ad2724c3-2c99-0738-7fc2-02a1316801ea)
+07:38:19.789     ~/b61b51bde154d1c2.js (sourcemap at d1ab8071e878aef1.js.map, debug id 4f3f4a09-ea9b-aef6-61ee-cb235a4610fc)
+07:38:19.789     ~/bcc0e5305b56c28a.js (sourcemap at 00e358a14e452cc3.js.map, debug id cbf886c5-1c02-5785-370c-ece850e34afb)
+07:38:19.789     ~/c010ce8fef0775be.js (sourcemap at d181b7bd5267a005.js.map, debug id 8ffc7f94-66b5-9102-b83e-322316b1dca1)
+07:38:19.789     ~/ce67f0225590353d.js (sourcemap at ca617349e879c060.js.map, debug id e5300531-992b-9b26-b145-21cf0c023e04)
+07:38:19.789     ~/d019fd3111458a0c.js (sourcemap at b44607df5b76de11.js.map, debug id b5cf8f3c-edeb-06ea-3693-898d4edb11d7)
+07:38:19.789     ~/d3fde9cc8d4c8bf7.js (sourcemap at 6701007d69a350ab.js.map, debug id ccf24f78-924e-1b5d-b56b-b5dffe801629)
+07:38:19.790     ~/d664b732258cbaa6.js (sourcemap at fca5d3a94ff5a1a5.js.map, debug id b67f6e2a-f425-0232-2858-5be30761fa7b)
+07:38:19.790     ~/db157fa59685e946.js (sourcemap at 4349af5d293969bb.js.map, debug id 12f800f6-8097-27fe-0977-c1c1d74fb454)
+07:38:19.790     ~/dd4dd01088920e08.js (sourcemap at 6112a8d4d983af3e.js.map, debug id c92510f1-687a-6f89-90f7-b23fa72d8ce3)
+07:38:19.790     ~/de377ed3b732beed.js (sourcemap at a352ab8e5389c884.js.map, debug id 32bc553e-c90e-8854-dff6-5c96d4d4b37b)
+07:38:19.790     ~/e4e586d85d0925a4.js (sourcemap at 0b2b67d84c5b80d6.js.map, debug id 000a6d47-cbc6-4608-6e3c-68a0054b5ec5)
+07:38:19.790     ~/e5677081763dea60.js (sourcemap at 76330fe7e93479dc.js.map, debug id 88e6ad7a-d836-54de-8d28-7ee6cd984ed1)
+07:38:19.790     ~/e65f745d23e9b1b6.js (sourcemap at 524fb970e4130051.js.map, debug id 216a297b-1d72-3bf8-91f3-c4307c034aed)
+07:38:19.790     ~/e67eff015a084857.js (sourcemap at 6a7b1287b0951a17.js.map, debug id f329d602-e3a3-fa1a-3cb4-e2398ab389a8)
+07:38:19.790     ~/eb533ab3ed9fb8b5.js (sourcemap at 6470cccb1c0dc52b.js.map, debug id 4a021a7a-b8c3-ec06-240a-49c0bf57b37a)
+07:38:19.790     ~/ebaf4b27c6bc22df.js (sourcemap at 9848ed2093c85836.js.map, debug id d9e959fb-0073-cc59-b1d0-b28b662509be)
+07:38:19.790     ~/ec26cc7775087421.js (sourcemap at 9942131a655eab0f.js.map, debug id 82f5e8a0-7594-f893-12ee-bdc950743623)
+07:38:19.790     ~/f38ba83f67552d38.js (sourcemap at 1e7b9116c7cb1e6a.js.map, debug id b6875a9e-0b2d-2737-6fe7-b7de5c7e5f57)
+07:38:19.790     ~/f450e03b62384d63.js (sourcemap at e6548b9eff02b84b.js.map, debug id 4a2be6ba-b5f4-58be-b193-0522318ad507)
+07:38:19.790     ~/f5c599f9d8b0ecd9.js (sourcemap at 55a3757fdb6dbe41.js.map, debug id bd4228f4-f966-dd56-74fb-8205bacaeb4a)
+07:38:19.790     ~/turbopack-f83d7da177747a72.js (sourcemap at 79ccc7b75fa40c63.js.map, debug id 94b08e2d-b812-db27-6e95-89d9e1a7e63f)
+07:38:19.790   Source Maps
+07:38:19.790     ~/00e358a14e452cc3.js.map (debug id cbf886c5-1c02-5785-370c-ece850e34afb)
+07:38:19.790     ~/015758c27b118e11.js.map (debug id ab1a86e5-3b72-0448-8b29-c14425b77b25)
+07:38:19.790     ~/074bf11a9359d8bd.js.map (debug id 820b2264-f5db-108d-2f14-8304cf3f06f8)
+07:38:19.790     ~/0adfcf1e5a18c673.js.map (debug id b8b09007-82c6-97c8-5293-70c09c7294f8)
+07:38:19.790     ~/0b2b67d84c5b80d6.js.map (debug id 000a6d47-cbc6-4608-6e3c-68a0054b5ec5)
+07:38:19.790     ~/0cf093a3b2846b18.js.map (debug id fc459525-9b27-3a16-b3b4-2a0cc4e5dd47)
+07:38:19.790     ~/0d1db4c1f513bf3c.js.map (debug id 99c6b5e5-b645-fecc-be34-28ce5ac4a108)
+07:38:19.790     ~/112030b10f5c562a.js.map (debug id bc4f8a13-316a-0f41-106f-4ca37f5014df)
+07:38:19.790     ~/186c44fbca445e1c.js.map (debug id d4a464de-37cc-6460-e479-416157fb44e2)
+07:38:19.790     ~/1a76727d3552725e.js.map (debug id 942357b5-9a1d-ee47-3310-e7e9399988cf)
+07:38:19.790     ~/1e7b9116c7cb1e6a.js.map (debug id b6875a9e-0b2d-2737-6fe7-b7de5c7e5f57)
+07:38:19.790     ~/246f4009302b22ec.js.map (debug id ad18a14b-af19-b70d-a139-c6dab14fc662)
+07:38:19.790     ~/2af90c473725de6b.js.map (debug id 0c23af97-f6a0-a643-800f-047845b32308)
+07:38:19.790     ~/3f833dfb57d33b4a.js.map (debug id 171379b6-b21e-4d1e-90d4-02cbf5ed87f9)
+07:38:19.790     ~/4349af5d293969bb.js.map (debug id 12f800f6-8097-27fe-0977-c1c1d74fb454)
+07:38:19.790     ~/4544d3719dafc0db.js.map (debug id 71477099-d372-996c-a365-6b135b99ff19)
+07:38:19.790     ~/4cc29b31a62ad89f.js.map (debug id 7c7a6269-9bf6-de7b-d743-1fdf4774b555)
+07:38:19.790     ~/524fb970e4130051.js.map (debug id 216a297b-1d72-3bf8-91f3-c4307c034aed)
+07:38:19.790     ~/55a3757fdb6dbe41.js.map (debug id bd4228f4-f966-dd56-74fb-8205bacaeb4a)
+07:38:19.790     ~/5bb5c915556bdc52.js.map (debug id 971eac18-a53a-c188-cd02-f610157084c0)
+07:38:19.790     ~/5c360117c49accd5.css.map
+07:38:19.790     ~/5ca4c2d6810b9618.js.map (debug id 50c95001-dbcb-d0fc-d614-77ac9420c8c1)
+07:38:19.790     ~/6112a8d4d983af3e.js.map (debug id c92510f1-687a-6f89-90f7-b23fa72d8ce3)
+07:38:19.790     ~/6470cccb1c0dc52b.js.map (debug id 4a021a7a-b8c3-ec06-240a-49c0bf57b37a)
+07:38:19.790     ~/6701007d69a350ab.js.map (debug id ccf24f78-924e-1b5d-b56b-b5dffe801629)
+07:38:19.790     ~/6a7b1287b0951a17.js.map (debug id f329d602-e3a3-fa1a-3cb4-e2398ab389a8)
+07:38:19.790     ~/6e9ca5a12a6e0174.js.map (debug id 4205d802-d267-6608-eb93-da57af8a7f75)
+07:38:19.790     ~/726362386d37fe7f.js.map (debug id 17f595d6-8f8c-4fe4-62fd-f95c89ee3bfa)
+07:38:19.790     ~/72851ef145c5afea.js.map (debug id b46d4380-594c-8afe-7d68-4890f7497cd4)
+07:38:19.790     ~/76330fe7e93479dc.js.map (debug id 88e6ad7a-d836-54de-8d28-7ee6cd984ed1)
+07:38:19.790     ~/76e8b57f7d8ff785.js.map (debug id 0c02ff9f-46d4-c1cd-e40d-235d00db3280)
+07:38:19.790     ~/79ccc7b75fa40c63.js.map (debug id 94b08e2d-b812-db27-6e95-89d9e1a7e63f)
+07:38:19.791     ~/79f91bb42f48d982.js.map (debug id f5446b8a-72f4-5b58-4bdf-ccf776495216)
+07:38:19.791     ~/7f24e890ca966995.js.map (debug id 8a755bfa-b470-8761-4f33-eee1274bf702)
+07:38:19.791     ~/8982122a73a78c29.js.map (debug id 0c1f5e31-117e-1650-0e6d-8471847675d9)
+07:38:19.791     ~/93a68d13e0e51a5d.js.map (debug id 20524a80-9a39-74ff-a9ef-3011d11011b1)
+07:38:19.791     ~/9848ed2093c85836.js.map (debug id d9e959fb-0073-cc59-b1d0-b28b662509be)
+07:38:19.791     ~/9942131a655eab0f.js.map (debug id 82f5e8a0-7594-f893-12ee-bdc950743623)
+07:38:19.791     ~/99ee68e8baae1c22.js.map (debug id 6076f9b8-062c-4990-18d6-9096dd478268)
+07:38:19.791     ~/a0f6bde5abcbd013.js.map (debug id ed18d05f-0bd0-42ae-645e-b6d9654ce595)
+07:38:19.791     ~/a1af8a81359d7a84.js.map (debug id 198f86a3-fa41-f5f1-45ca-b7c7f060be84)
+07:38:19.791     ~/a20bbed6517cd59d.js.map (debug id caa27c43-fa41-6b68-74f3-c07264c6559c)
+07:38:19.791     ~/a352ab8e5389c884.js.map (debug id 32bc553e-c90e-8854-dff6-5c96d4d4b37b)
+07:38:19.791     ~/aa0d21badaba2b8e.js.map (debug id d5525962-5d06-1404-a3b6-6a15ac32d8cf)
+07:38:19.791     ~/aae2ecb80b1a70c0.js.map (debug id ad2724c3-2c99-0738-7fc2-02a1316801ea)
+07:38:19.791     ~/ae43038b1a0fb240.js.map (debug id 11a1d692-403b-2a8a-ef1c-e9315cc5717c)
+07:38:19.791     ~/b16b8ada6cc93b81.js.map (debug id ac01944d-5895-1cc5-aeab-6d425552ca5d)
+07:38:19.791     ~/b286542971cc72fb.js.map (debug id 0dc5a264-15f9-cf51-9b08-58e26ba570b3)
+07:38:19.791     ~/b44607df5b76de11.js.map (debug id b5cf8f3c-edeb-06ea-3693-898d4edb11d7)
+07:38:19.791     ~/b663470fdf8bf5a8.js.map (debug id 98352f27-79aa-06ba-711f-e347ba66baa3)
+07:38:19.791     ~/b7bd35de57d53342.js.map (debug id 44604d2a-d219-ec1f-5775-4ddec99728a7)
+07:38:19.791     ~/bd1df046ab67433c.js.map (debug id 8b973acf-ceb6-7a37-1782-db5090591b9e)
+07:38:19.791     ~/c172405667abd2e8.js.map (debug id 01c98b12-e14c-8e4f-a0b2-81503477e291)
+07:38:19.791     ~/ca617349e879c060.js.map (debug id e5300531-992b-9b26-b145-21cf0c023e04)
+07:38:19.791     ~/cf72f28ebab9b926.js.map (debug id cb003e59-d8d2-1b21-9ce8-089ddf58f0e9)
+07:38:19.791     ~/d181b7bd5267a005.js.map (debug id 8ffc7f94-66b5-9102-b83e-322316b1dca1)
+07:38:19.791     ~/d1ab8071e878aef1.js.map (debug id 4f3f4a09-ea9b-aef6-61ee-cb235a4610fc)
+07:38:19.791     ~/d539a164e6f0ea9a.css.map
+07:38:19.791     ~/d90c95cc4e8db980.js.map (debug id 30cd1e16-ede5-35fd-42b2-67672c048d03)
+07:38:19.791     ~/d9e5aedfd0d0d680.js.map (debug id b5ef91cc-5928-a362-6552-b0320a3baa34)
+07:38:19.806     ~/da4977129640155a.js.map (debug id 1bee0a22-5878-b0c1-9405-2c57ae892c01)
+07:38:19.807     ~/dd8b8d4493f04f94.js.map (debug id e4dbeb10-ddcf-394a-c21f-3f506bbc99ed)
+07:38:19.807     ~/e2fe63df963ee5ad.css.map
+07:38:19.808     ~/e6548b9eff02b84b.js.map (debug id 4a2be6ba-b5f4-58be-b193-0522318ad507)
+07:38:19.808     ~/e93b54c589da3c01.js.map (debug id 03c781e2-b9a9-0799-bf47-0e12f658cfcb)
+07:38:19.808     ~/fca5d3a94ff5a1a5.js.map (debug id b67f6e2a-f425-0232-2858-5be30761fa7b)
+07:38:19.808     ~/fdc48e02d0eadba4.js.map (debug id 1dc0e489-3d84-d9ca-d6fd-dbad40a0de9a)
+07:38:21.597 > Bundling completed in 3.279s
+07:38:21.599 > Bundled 781 files for upload
+07:38:21.599 > Bundle ID: b71b7a74-2551-55f4-b1b9-91982c87faf8
+07:38:21.665 > Optimizing completed in 0.067s
+07:38:23.435 > Uploading completed in 1.614s
+07:38:23.436 > Uploaded files to Sentry
+07:38:23.675 > Processing completed in 0.239s
+07:38:23.675 > File upload complete (processing pending on server)
+07:38:23.675 > Organization: afribit-africa
+07:38:23.675 > Projects: afribit
+07:38:23.675 > Release: 8668fe7855cb08a290aebdac369b1e6f46806cba
+07:38:23.675 > Dist: None
+07:38:23.675 > Upload type: artifact bundle
+07:38:23.678
+07:38:23.679 Source Map Upload Report
+07:38:23.679   Scripts
+07:38:23.680     ~/app/_global-error/page.js (sourcemap at page.js.map)
+07:38:23.680     ~/app/_global-error/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.680       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/_global-error/page_client-reference-manifest.js)
+07:38:23.680     ~/app/_not-found/page.js (sourcemap at page.js.map)
+07:38:23.681     ~/app/_not-found/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.681       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/_not-found/page_client-reference-manifest.js)
+07:38:23.681     ~/app/about/page.js (sourcemap at page.js.map)
+07:38:23.681     ~/app/about/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.681       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/about/page_client-reference-manifest.js)
+07:38:23.681     ~/app/admin/dashboard/page.js (sourcemap at page.js.map)
+07:38:23.681     ~/app/admin/dashboard/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.681       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/admin/dashboard/page_client-reference-manifest.js)
+07:38:23.681     ~/app/admin/forgot-password/page.js (sourcemap at page.js.map)
+07:38:23.682     ~/app/admin/forgot-password/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.682       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/admin/forgot-password/page_client-reference-manifest.js)
+07:38:23.682     ~/app/admin/login/page.js (sourcemap at page.js.map)
+07:38:23.682     ~/app/admin/login/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.682       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/admin/login/page_client-reference-manifest.js)
+07:38:23.682     ~/app/admin/merchants/manage/page.js (sourcemap at page.js.map)
+07:38:23.682     ~/app/admin/merchants/manage/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.682       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/admin/merchants/manage/page_client-reference-manifest.js)
+07:38:23.682     ~/app/admin/merchants/page.js (sourcemap at page.js.map)
+07:38:23.682     ~/app/admin/merchants/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.682       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/admin/merchants/page_client-reference-manifest.js)
+07:38:23.683     ~/app/admin/profile/page.js (sourcemap at page.js.map)
+07:38:23.683     ~/app/admin/profile/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.683       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/admin/profile/page_client-reference-manifest.js)
+07:38:23.683     ~/app/admin/reset-password/page.js (sourcemap at page.js.map)
+07:38:23.683     ~/app/admin/reset-password/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.683       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/admin/reset-password/page_client-reference-manifest.js)
+07:38:23.683     ~/app/admin/settings/page.js (sourcemap at page.js.map)
+07:38:23.683     ~/app/admin/settings/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.684       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/admin/settings/page_client-reference-manifest.js)
+07:38:23.684     ~/app/admin/submissions/page.js (sourcemap at page.js.map)
+07:38:23.684     ~/app/admin/submissions/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.684       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/admin/submissions/page_client-reference-manifest.js)
+07:38:23.685     ~/app/api/admin/auth/request-reset/route.js (sourcemap at route.js.map)
+07:38:23.685     ~/app/api/admin/auth/request-reset/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.685       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/admin/auth/request-reset/route_client-reference-manifest.js)
+07:38:23.685     ~/app/api/admin/auth/reset-password/route.js (sourcemap at route.js.map)
+07:38:23.685     ~/app/api/admin/auth/reset-password/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.685       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/admin/auth/reset-password/route_client-reference-manifest.js)
+07:38:23.685     ~/app/api/admin/dashboard/route.js (sourcemap at route.js.map)
+07:38:23.685     ~/app/api/admin/dashboard/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.685       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/admin/dashboard/route_client-reference-manifest.js)
+07:38:23.685     ~/app/api/admin/merchants/[id]/route.js (sourcemap at route.js.map)
+07:38:23.685     ~/app/api/admin/merchants/[id]/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.685       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/admin/merchants/[id]/route_client-reference-manifest.js)
+07:38:23.686     ~/app/api/admin/merchants/list/route.js (sourcemap at route.js.map)
+07:38:23.686     ~/app/api/admin/merchants/list/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.686       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/admin/merchants/list/route_client-reference-manifest.js)
+07:38:23.686     ~/app/api/admin/merchants/route.js (sourcemap at route.js.map)
+07:38:23.686     ~/app/api/admin/merchants/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.686       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/admin/merchants/route_client-reference-manifest.js)
+07:38:23.686     ~/app/api/admin/submissions/approve/route.js (sourcemap at route.js.map)
+07:38:23.686     ~/app/api/admin/submissions/approve/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.686       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/admin/submissions/approve/route_client-reference-manifest.js)
+07:38:23.686     ~/app/api/admin/submissions/reject/route.js (sourcemap at route.js.map)
+07:38:23.686     ~/app/api/admin/submissions/reject/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.686       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/admin/submissions/reject/route_client-reference-manifest.js)
+07:38:23.686     ~/app/api/admin/submissions/route.js (sourcemap at route.js.map)
+07:38:23.686     ~/app/api/admin/submissions/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.687       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/admin/submissions/route_client-reference-manifest.js)
+07:38:23.687     ~/app/api/auth/[...nextauth]/route.js (sourcemap at route.js.map)
+07:38:23.687     ~/app/api/auth/[...nextauth]/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.687       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/auth/[...nextauth]/route_client-reference-manifest.js)
+07:38:23.687     ~/app/api/auth/osm/callback/route.js (sourcemap at route.js.map)
+07:38:23.687     ~/app/api/auth/osm/callback/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.687       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/auth/osm/callback/route_client-reference-manifest.js)
+07:38:23.687     ~/app/api/check-env/route.js (sourcemap at route.js.map)
+07:38:23.687     ~/app/api/check-env/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.687       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/check-env/route_client-reference-manifest.js)
+07:38:23.687     ~/app/api/donations/[invoiceId]/payment-methods/route.js (sourcemap at route.js.map)
+07:38:23.687     ~/app/api/donations/[invoiceId]/payment-methods/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.687       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/donations/[invoiceId]/payment-methods/route_client-reference-manifest.js)
+07:38:23.687     ~/app/api/donations/create/route.js (sourcemap at route.js.map)
+07:38:23.687     ~/app/api/donations/create/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.687       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/donations/create/route_client-reference-manifest.js)
+07:38:23.687     ~/app/api/donations/send-receipt/route.js (sourcemap at route.js.map)
+07:38:23.687     ~/app/api/donations/send-receipt/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.687       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/donations/send-receipt/route_client-reference-manifest.js)
+07:38:23.687     ~/app/api/donations/stats/route.js (sourcemap at route.js.map)
+07:38:23.688     ~/app/api/donations/stats/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.688       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/donations/stats/route_client-reference-manifest.js)
+07:38:23.688     ~/app/api/donations/status/route.js (sourcemap at route.js.map)
+07:38:23.688     ~/app/api/donations/status/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.688       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/donations/status/route_client-reference-manifest.js)
+07:38:23.688     ~/app/api/donors/route.js (sourcemap at route.js.map)
+07:38:23.688     ~/app/api/donors/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.688       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/donors/route_client-reference-manifest.js)
+07:38:23.688     ~/app/api/merchants/edit/[id]/route.js (sourcemap at route.js.map)
+07:38:23.688     ~/app/api/merchants/edit/[id]/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.688       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/merchants/edit/[id]/route_client-reference-manifest.js)
+07:38:23.688     ~/app/api/merchants/invoice/route.js (sourcemap at route.js.map)
+07:38:23.688     ~/app/api/merchants/invoice/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.688       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/merchants/invoice/route_client-reference-manifest.js)
+07:38:23.688     ~/app/api/merchants/submit/route.js (sourcemap at route.js.map)
+07:38:23.688     ~/app/api/merchants/submit/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.688       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/merchants/submit/route_client-reference-manifest.js)
+07:38:23.688     ~/app/api/quantum-verify/approve/route.js (sourcemap at route.js.map)
+07:38:23.688     ~/app/api/quantum-verify/approve/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.688       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/quantum-verify/approve/route_client-reference-manifest.js)
+07:38:23.689     ~/app/api/quantum-verify/publish/route.js (sourcemap at route.js.map)
+07:38:23.689     ~/app/api/quantum-verify/publish/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.689       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/quantum-verify/publish/route_client-reference-manifest.js)
+07:38:23.689     ~/app/api/quantum-verify/reject/route.js (sourcemap at route.js.map)
+07:38:23.689     ~/app/api/quantum-verify/reject/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.689       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/quantum-verify/reject/route_client-reference-manifest.js)
+07:38:23.689     ~/app/api/quantum-verify/submissions/route.js (sourcemap at route.js.map)
+07:38:23.689     ~/app/api/quantum-verify/submissions/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.689       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/quantum-verify/submissions/route_client-reference-manifest.js)
+07:38:23.689     ~/app/api/test-btcpay/route.js (sourcemap at route.js.map)
+07:38:23.689     ~/app/api/test-btcpay/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.689       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/test-btcpay/route_client-reference-manifest.js)
+07:38:23.689     ~/app/api/test-email/route.js (sourcemap at route.js.map)
+07:38:23.689     ~/app/api/test-email/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.689       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/test-email/route_client-reference-manifest.js)
+07:38:23.689     ~/app/api/test-env/route.js (sourcemap at route.js.map)
+07:38:23.689     ~/app/api/test-env/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.690       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/test-env/route_client-reference-manifest.js)
+07:38:23.690     ~/app/api/test-merchant-email/route.js (sourcemap at route.js.map)
+07:38:23.690     ~/app/api/test-merchant-email/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.690       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/test-merchant-email/route_client-reference-manifest.js)
+07:38:23.690     ~/app/api/test-sentry/route.js (sourcemap at route.js.map)
+07:38:23.690     ~/app/api/test-sentry/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.690       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/test-sentry/route_client-reference-manifest.js)
+07:38:23.690     ~/app/api/verifier/history/route.js (sourcemap at route.js.map)
+07:38:23.690     ~/app/api/verifier/history/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.690       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/verifier/history/route_client-reference-manifest.js)
+07:38:23.690     ~/app/api/verifier/nearby-submissions/route.js (sourcemap at route.js.map)
+07:38:23.690     ~/app/api/verifier/nearby-submissions/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.690       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/verifier/nearby-submissions/route_client-reference-manifest.js)
+07:38:23.690     ~/app/api/verifier/stats/route.js (sourcemap at route.js.map)
+07:38:23.690     ~/app/api/verifier/stats/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.691       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/verifier/stats/route_client-reference-manifest.js)
+07:38:23.691     ~/app/api/verifier/submission/[id]/route.js (sourcemap at route.js.map)
+07:38:23.691     ~/app/api/verifier/submission/[id]/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.691       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/verifier/submission/[id]/route_client-reference-manifest.js)
+07:38:23.691     ~/app/api/verifier/submit-verification/route.js (sourcemap at route.js.map)
+07:38:23.691     ~/app/api/verifier/submit-verification/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.691       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/verifier/submit-verification/route_client-reference-manifest.js)
+07:38:23.691     ~/app/contact/page.js (sourcemap at page.js.map)
+07:38:23.694     ~/app/contact/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.694       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/contact/page_client-reference-manifest.js)
+07:38:23.694     ~/app/donate/page.js (sourcemap at page.js.map)
+07:38:23.694     ~/app/donate/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.695       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/donate/page_client-reference-manifest.js)
+07:38:23.695     ~/app/fedi/page.js (sourcemap at page.js.map)
+07:38:23.696     ~/app/fedi/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.696       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/fedi/page_client-reference-manifest.js)
+07:38:23.696     ~/app/icon.png/route.js (sourcemap at route.js.map)
+07:38:23.696     ~/app/maps/page.js (sourcemap at page.js.map)
+07:38:23.696     ~/app/maps/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.696       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/maps/page_client-reference-manifest.js)
+07:38:23.696     ~/app/merchants/[slug]/page.js (sourcemap at page.js.map)
+07:38:23.696     ~/app/merchants/[slug]/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.696       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/merchants/[slug]/page_client-reference-manifest.js)
+07:38:23.696     ~/app/merchants/edit/[id]/page.js (sourcemap at page.js.map)
+07:38:23.696     ~/app/merchants/edit/[id]/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.696       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/merchants/edit/[id]/page_client-reference-manifest.js)
+07:38:23.700     ~/app/merchants/page.js (sourcemap at page.js.map)
+07:38:23.700     ~/app/merchants/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.700       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/merchants/page_client-reference-manifest.js)
+07:38:23.700     ~/app/merchants/register/page.js (sourcemap at page.js.map)
+07:38:23.700     ~/app/merchants/register/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.700       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/merchants/register/page_client-reference-manifest.js)
+07:38:23.701     ~/app/merchants/submission-success/page.js (sourcemap at page.js.map)
+07:38:23.701     ~/app/merchants/submission-success/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.701       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/merchants/submission-success/page_client-reference-manifest.js)
+07:38:23.701     ~/app/merchants/success/page.js (sourcemap at page.js.map)
+07:38:23.701     ~/app/merchants/success/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.701       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/merchants/success/page_client-reference-manifest.js)
+07:38:23.701     ~/app/offline/page.js (sourcemap at page.js.map)
+07:38:23.701     ~/app/offline/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.701       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/offline/page_client-reference-manifest.js)
+07:38:23.701     ~/app/page.js (sourcemap at page.js.map)
+07:38:23.701     ~/app/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.701       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/page_client-reference-manifest.js)
+07:38:23.701     ~/app/programs/bodaboda/page.js (sourcemap at page.js.map)
+07:38:23.701     ~/app/programs/bodaboda/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.701       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/programs/bodaboda/page_client-reference-manifest.js)
+07:38:23.702     ~/app/programs/merchants/page.js (sourcemap at page.js.map)
+07:38:23.702     ~/app/programs/merchants/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.702       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/programs/merchants/page_client-reference-manifest.js)
+07:38:23.702     ~/app/programs/upcycling/page.js (sourcemap at page.js.map)
+07:38:23.702     ~/app/programs/upcycling/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.702       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/programs/upcycling/page_client-reference-manifest.js)
+07:38:23.702     ~/app/programs/waste-management/page.js (sourcemap at page.js.map)
+07:38:23.702     ~/app/programs/waste-management/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.702       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/programs/waste-management/page_client-reference-manifest.js)
+07:38:23.702     ~/app/register/page.js (sourcemap at page.js.map)
+07:38:23.702     ~/app/register/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.702       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/register/page_client-reference-manifest.js)
+07:38:23.702     ~/app/robots.txt/route.js (sourcemap at route.js.map)
+07:38:23.702     ~/app/robots.txt/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.702       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/robots.txt/route_client-reference-manifest.js)
+07:38:23.702     ~/app/sitemap.xml/route.js (sourcemap at route.js.map)
+07:38:23.702     ~/app/sitemap.xml/route_client-reference-manifest.js (no sourcemap found)
+07:38:23.703       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/sitemap.xml/route_client-reference-manifest.js)
+07:38:23.703     ~/app/verifier/dashboard/page.js (sourcemap at page.js.map)
+07:38:23.703     ~/app/verifier/dashboard/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.703       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/verifier/dashboard/page_client-reference-manifest.js)
+07:38:23.703     ~/app/verifier/history/page.js (sourcemap at page.js.map)
+07:38:23.703     ~/app/verifier/history/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.703       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/verifier/history/page_client-reference-manifest.js)
+07:38:23.703     ~/app/verifier/verify/[id]/page.js (sourcemap at page.js.map)
+07:38:23.703     ~/app/verifier/verify/[id]/page_client-reference-manifest.js (no sourcemap found)
+07:38:23.703       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/verifier/verify/[id]/page_client-reference-manifest.js)
+07:38:23.703     ~/chunks/0bf35_build_esm_detectors_platform_node_machine-id_getMachineId-linux_6b4e949a.js (sourcemap at 0bf35_build_esm_detectors_platform_node_machine-id_getMachineId-linux_6b4e949a.js.map, debug id 7abf6668-0581-2f20-e8d4-3bc0398b85f4)
+07:38:23.703     ~/chunks/0bf35_build_esm_detectors_platform_node_machine-id_getMachineId-unsupported_c81aba5d.js (sourcemap at 0bf35_build_esm_detectors_platform_node_machine-id_getMachineId-unsupported_c81aba5d.js.map, debug id cf9027d0-f1c3-0ebf-94b9-aa7a411a8357)
+07:38:23.703     ~/chunks/[externals]_node:crypto_c20cce38._.js (sourcemap at %5Bexternals%5D_node%3Acrypto_c20cce38._.js.map, debug id af8542cc-c606-758d-4664-0f1131d54b55)
+07:38:23.703     ~/chunks/[externals]_node:inspector_7a4283c6._.js (sourcemap at %5Bexternals%5D_node%3Ainspector_7a4283c6._.js.map, debug id bbb7096f-41e0-233c-11dd-d03d0fc428b4)
+07:38:23.703     ~/chunks/[root-of-the-server]__0bddd269._.js (sourcemap at %5Broot-of-the-server%5D__0bddd269._.js.map, debug id 675b7e11-2010-ffe3-76e1-3014cc50dc16)
+07:38:23.703     ~/chunks/[root-of-the-server]__0cdc4fc0._.js (sourcemap at %5Broot-of-the-server%5D__0cdc4fc0._.js.map, debug id af3db2e7-0ed9-f58d-6bb1-44f082cca01a)
+07:38:23.703     ~/chunks/[root-of-the-server]__0dafc2f3._.js (sourcemap at %5Broot-of-the-server%5D__0dafc2f3._.js.map, debug id 69b722d2-408a-817d-f150-7b9f4db74540)
+07:38:23.703     ~/chunks/[root-of-the-server]__0fe8fe72._.js (sourcemap at %5Broot-of-the-server%5D__0fe8fe72._.js.map, debug id 7f23587b-1e60-6144-4303-df210606b64c)
+07:38:23.703     ~/chunks/[root-of-the-server]__18421380._.js (sourcemap at %5Broot-of-the-server%5D__18421380._.js.map, debug id f9c2f05d-1b14-4493-8cc1-62955a3bb009)
+07:38:23.703     ~/chunks/[root-of-the-server]__1d32bac1._.js (sourcemap at %5Broot-of-the-server%5D__1d32bac1._.js.map, debug id 2930548b-3cb0-bdd3-9a97-11fae0596308)
+07:38:23.703     ~/chunks/[root-of-the-server]__23d5e086._.js (sourcemap at %5Broot-of-the-server%5D__23d5e086._.js.map, debug id e398d073-837f-4818-0665-037137141548)
+07:38:23.703     ~/chunks/[root-of-the-server]__25e428ce._.js (sourcemap at %5Broot-of-the-server%5D__25e428ce._.js.map, debug id a4961ddf-17c6-8d20-4799-f9bade5b532f)
+07:38:23.703     ~/chunks/[root-of-the-server]__34d4d111._.js (sourcemap at %5Broot-of-the-server%5D__34d4d111._.js.map, debug id c8630af0-78fc-86b8-da75-d7738b9ed4e8)
+07:38:23.703     ~/chunks/[root-of-the-server]__34e8ab4f._.js (sourcemap at %5Broot-of-the-server%5D__34e8ab4f._.js.map, debug id 171d58eb-2bf5-8e63-b698-ed3bdfb90272)
+07:38:23.703     ~/chunks/[root-of-the-server]__37712219._.js (sourcemap at %5Broot-of-the-server%5D__37712219._.js.map, debug id 2b60f4eb-8351-f6e6-ef0d-20fe2f7810aa)
+07:38:23.703     ~/chunks/[root-of-the-server]__3d3c6359._.js (sourcemap at %5Broot-of-the-server%5D__3d3c6359._.js.map, debug id 4089d93c-7891-19c3-d1f2-44ceb560b79b)
+07:38:23.703     ~/chunks/[root-of-the-server]__3e28257f._.js (sourcemap at %5Broot-of-the-server%5D__3e28257f._.js.map, debug id b546de3d-3be0-f87f-c5f8-760ec7c3c3b9)
+07:38:23.704     ~/chunks/[root-of-the-server]__3e815d2c._.js (sourcemap at %5Broot-of-the-server%5D__3e815d2c._.js.map, debug id fc1ab084-5aeb-9599-9e43-817fc56d8ed8)
+07:38:23.704     ~/chunks/[root-of-the-server]__549f74dc._.js (sourcemap at %5Broot-of-the-server%5D__549f74dc._.js.map, debug id f39da37c-7464-5aeb-4bc5-d55a5209803e)
+07:38:23.704     ~/chunks/[root-of-the-server]__563078fc._.js (sourcemap at %5Broot-of-the-server%5D__563078fc._.js.map, debug id a410c2c8-7833-d82a-62d1-96ac7a6c61cf)
+07:38:23.704     ~/chunks/[root-of-the-server]__568e323b._.js (sourcemap at %5Broot-of-the-server%5D__568e323b._.js.map, debug id 365051cf-1231-8fb2-be7c-cb471639acf1)
+07:38:23.704     ~/chunks/[root-of-the-server]__6234bf4c._.js (sourcemap at %5Broot-of-the-server%5D__6234bf4c._.js.map, debug id 1e7950e3-64b7-50a0-f5c4-9ec8347c3d5c)
+07:38:23.704     ~/chunks/[root-of-the-server]__74e0f5d4._.js (sourcemap at %5Broot-of-the-server%5D__74e0f5d4._.js.map, debug id 1ea5834e-4964-11be-d247-dba103af742d)
+07:38:23.704     ~/chunks/[root-of-the-server]__76e7cd51._.js (sourcemap at %5Broot-of-the-server%5D__76e7cd51._.js.map, debug id 3ce6b522-ecde-8355-9dca-52df59861727)
+07:38:23.704     ~/chunks/[root-of-the-server]__7a93ba04._.js (sourcemap at %5Broot-of-the-server%5D__7a93ba04._.js.map, debug id 2f4fd029-a8de-1817-65d4-17ac934dbca6)
+07:38:23.704     ~/chunks/[root-of-the-server]__7e9bb5b1._.js (sourcemap at %5Broot-of-the-server%5D__7e9bb5b1._.js.map, debug id 77422868-22ba-a9c2-9e24-3d5661c5c5ac)
+07:38:23.704     ~/chunks/[root-of-the-server]__7f49abfa._.js (sourcemap at %5Broot-of-the-server%5D__7f49abfa._.js.map, debug id 58d1bbd6-465e-dfc9-44e5-a9c057beefc7)
+07:38:23.704     ~/chunks/[root-of-the-server]__7f9a02fc._.js (sourcemap at %5Broot-of-the-server%5D__7f9a02fc._.js.map, debug id 683f21fa-e0cc-283d-2cbd-f43f628fd834)
+07:38:23.704     ~/chunks/[root-of-the-server]__87a1a916._.js (sourcemap at %5Broot-of-the-server%5D__87a1a916._.js.map, debug id 441fe729-5a8c-667e-1851-95a2ac4c6d32)
+07:38:23.704     ~/chunks/[root-of-the-server]__8a7b7a73._.js (sourcemap at %5Broot-of-the-server%5D__8a7b7a73._.js.map, debug id eb64141a-365a-e7d8-9b80-23b11c112364)
+07:38:23.704     ~/chunks/[root-of-the-server]__9d4a27ad._.js (sourcemap at %5Broot-of-the-server%5D__9d4a27ad._.js.map, debug id 74a34049-5f67-240a-0438-381bd1c06ff1)
+07:38:23.704     ~/chunks/[root-of-the-server]__9d530167._.js (sourcemap at %5Broot-of-the-server%5D__9d530167._.js.map, debug id 425df79c-4e2b-4caf-335d-72fef4a9ce62)
+07:38:23.704     ~/chunks/[root-of-the-server]__a609e475._.js (sourcemap at %5Broot-of-the-server%5D__a609e475._.js.map, debug id 2da6afd3-1014-6ff2-4fa1-138504ad4af0)
+07:38:23.704     ~/chunks/[root-of-the-server]__b0bd14bb._.js (sourcemap at %5Broot-of-the-server%5D__b0bd14bb._.js.map, debug id 234ad6c3-012d-93a0-d04c-9415e327ca37)
+07:38:23.704     ~/chunks/[root-of-the-server]__b0e5ed83._.js (sourcemap at %5Broot-of-the-server%5D__b0e5ed83._.js.map, debug id 0fad9883-54b8-d07a-3ba8-356faf763def)
+07:38:23.704     ~/chunks/[root-of-the-server]__b8921356._.js (sourcemap at %5Broot-of-the-server%5D__b8921356._.js.map, debug id 3b05a8d3-1596-11d4-9fc7-65c80543326b)
+07:38:23.704     ~/chunks/[root-of-the-server]__ba0ca042._.js (sourcemap at %5Broot-of-the-server%5D__ba0ca042._.js.map, debug id 2d7d6b3e-72cc-5afe-9f82-1a39805e2b59)
+07:38:23.704     ~/chunks/[root-of-the-server]__befe4a75._.js (sourcemap at %5Broot-of-the-server%5D__befe4a75._.js.map, debug id aa57076c-65bb-9ece-d0ec-cfde946aac50)
+07:38:23.704     ~/chunks/[root-of-the-server]__c03a2c23._.js (sourcemap at %5Broot-of-the-server%5D__c03a2c23._.js.map, debug id 1a358f3f-0175-b429-defe-546f9ec177e9)
+07:38:23.704     ~/chunks/[root-of-the-server]__c2536f33._.js (sourcemap at %5Broot-of-the-server%5D__c2536f33._.js.map, debug id f45d5b1e-8f42-26c4-4cae-010a97e09bc0)
+07:38:23.704     ~/chunks/[root-of-the-server]__c5d5e009._.js (sourcemap at %5Broot-of-the-server%5D__c5d5e009._.js.map, debug id 6c84c454-479b-c447-0383-5cb2c5d2f0a1)
+07:38:23.704     ~/chunks/[root-of-the-server]__cb7da9d4._.js (sourcemap at %5Broot-of-the-server%5D__cb7da9d4._.js.map, debug id 040f7e19-3bbf-abe5-74d8-3269588ebbc8)
+07:38:23.704     ~/chunks/[root-of-the-server]__d3b2baea._.js (sourcemap at %5Broot-of-the-server%5D__d3b2baea._.js.map, debug id 48685286-c61d-43e9-351f-1d4a082e0d33)
+07:38:23.704     ~/chunks/[root-of-the-server]__da76da3b._.js (sourcemap at %5Broot-of-the-server%5D__da76da3b._.js.map, debug id f0d04506-2268-bff8-99c7-189f503025e9)
+07:38:23.704     ~/chunks/[root-of-the-server]__dc33a92e._.js (sourcemap at %5Broot-of-the-server%5D__dc33a92e._.js.map, debug id d870407d-6166-aa27-8538-ba32949eeecf)
+07:38:23.704     ~/chunks/[root-of-the-server]__dcc7468d._.js (sourcemap at %5Broot-of-the-server%5D__dcc7468d._.js.map, debug id 3c8f8adc-6de0-3b05-72f6-78dd0dfae181)
+07:38:23.704     ~/chunks/[root-of-the-server]__e59dc875._.js (sourcemap at %5Broot-of-the-server%5D__e59dc875._.js.map, debug id 26a8f3c9-bb81-e102-d688-9645d2cad37c)
+07:38:23.704     ~/chunks/[root-of-the-server]__e78d78ce._.js (sourcemap at %5Broot-of-the-server%5D__e78d78ce._.js.map, debug id deb00303-a997-24f9-68a5-5b142c22cab2)
+07:38:23.704     ~/chunks/[root-of-the-server]__eac693ab._.js (sourcemap at %5Broot-of-the-server%5D__eac693ab._.js.map, debug id ca372969-cf2f-5f5a-5e82-8d487c2ac5f6)
+07:38:23.704     ~/chunks/[root-of-the-server]__f876316a._.js (sourcemap at %5Broot-of-the-server%5D__f876316a._.js.map, debug id 304e12b9-1a17-f6d9-c8de-27b04207f3b6)
+07:38:23.704     ~/chunks/[turbopack]_runtime.js (sourcemap at %5Bturbopack%5D_runtime.js.map)
+07:38:23.704     ~/chunks/_d656e617._.js (sourcemap at _d656e617._.js.map, debug id 2553b498-0ddd-4710-5b05-6f1388cf8873)
+07:38:23.704     ~/chunks/_next-internal_server_app_api_admin_auth_request-reset_route_actions_b5caea23.js (sourcemap at _next-internal_server_app_api_admin_auth_request-reset_route_actions_b5caea23.js.map, debug id 577fb15c-4585-b901-ae75-60b12771dae8)
+07:38:23.704     ~/chunks/_next-internal_server_app_api_admin_auth_reset-password_route_actions_f3f210d4.js (sourcemap at _next-internal_server_app_api_admin_auth_reset-password_route_actions_f3f210d4.js.map, debug id de325adb-ead6-0b6f-f003-f93dd897dba5)
+07:38:23.704     ~/chunks/_next-internal_server_app_api_admin_dashboard_route_actions_bbe806ca.js (sourcemap at _next-internal_server_app_api_admin_dashboard_route_actions_bbe806ca.js.map, debug id f68d3546-b01c-e74f-870a-5b566e884218)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_admin_merchants_[id]_route_actions_cd74495d.js (sourcemap at _next-internal_server_app_api_admin_merchants_%5Bid%5D_route_actions_cd74495d.js.map, debug id ea2209b1-c752-eee9-6e28-30df04ced639)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_admin_merchants_list_route_actions_935b2e7c.js (sourcemap at _next-internal_server_app_api_admin_merchants_list_route_actions_935b2e7c.js.map, debug id dcea521b-d404-065f-719e-e4754aa1d322)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_admin_merchants_route_actions_2ff06989.js (sourcemap at _next-internal_server_app_api_admin_merchants_route_actions_2ff06989.js.map, debug id 37a69972-cd30-da0b-ddb3-dfd26452c758)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_admin_submissions_approve_route_actions_392431ec.js (sourcemap at _next-internal_server_app_api_admin_submissions_approve_route_actions_392431ec.js.map, debug id c2d5f931-26b0-71cb-de42-b2a2cf97c243)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_admin_submissions_reject_route_actions_69af83a7.js (sourcemap at _next-internal_server_app_api_admin_submissions_reject_route_actions_69af83a7.js.map, debug id 9fa41a85-6eca-af13-a2b8-ff140876d639)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_admin_submissions_route_actions_b0e2d595.js (sourcemap at _next-internal_server_app_api_admin_submissions_route_actions_b0e2d595.js.map, debug id 547637b4-9742-a70c-41d5-7ebb627ce599)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_auth_[___nextauth]_route_actions_1c865db8.js (sourcemap at _next-internal_server_app_api_auth_%5B___nextauth%5D_route_actions_1c865db8.js.map, debug id afb61b18-df3b-75ab-b813-bb39e99e2b11)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_auth_osm_callback_route_actions_46ce7711.js (sourcemap at _next-internal_server_app_api_auth_osm_callback_route_actions_46ce7711.js.map, debug id d51ae18b-c90a-9959-06ab-753cd84f3476)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_check-env_route_actions_5c62667e.js (sourcemap at _next-internal_server_app_api_check-env_route_actions_5c62667e.js.map, debug id 52ede2df-5052-893d-818e-5d5f6d6951f9)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_donations_create_route_actions_70ec5b09.js (sourcemap at _next-internal_server_app_api_donations_create_route_actions_70ec5b09.js.map, debug id e01a47fa-7cb2-a424-5b82-5c4c1ad115b9)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_donations_send-receipt_route_actions_61fe3489.js (sourcemap at _next-internal_server_app_api_donations_send-receipt_route_actions_61fe3489.js.map, debug id 50b7094f-1fbb-76d6-fe63-d6e4c8cb310d)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_donations_stats_route_actions_945555fa.js (sourcemap at _next-internal_server_app_api_donations_stats_route_actions_945555fa.js.map, debug id 421cec96-cc45-e9c9-fd1c-f7e1e720ff21)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_donations_status_route_actions_7b8f8ed3.js (sourcemap at _next-internal_server_app_api_donations_status_route_actions_7b8f8ed3.js.map, debug id 1664e7aa-171f-0a61-6707-8b426558fc23)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_donors_route_actions_c73b838a.js (sourcemap at _next-internal_server_app_api_donors_route_actions_c73b838a.js.map, debug id f8c0313d-f352-80fe-4502-ce2036ecb936)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_merchants_edit_[id]_route_actions_974b15c7.js (sourcemap at _next-internal_server_app_api_merchants_edit_%5Bid%5D_route_actions_974b15c7.js.map, debug id f70fd7e0-459e-460f-6850-6092b8a903e5)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_merchants_invoice_route_actions_b379f9ea.js (sourcemap at _next-internal_server_app_api_merchants_invoice_route_actions_b379f9ea.js.map, debug id 1159fbef-bbbd-8e86-79b6-d83e187f5b46)
+07:38:23.705     ~/chunks/_next-internal_server_app_api_merchants_submit_route_actions_18ac5419.js (sourcemap at _next-internal_server_app_api_merchants_submit_route_actions_18ac5419.js.map, debug id decc0966-095f-aaae-bfc7-0a0ae03e09c4)
+07:38:23.720     ~/chunks/_next-internal_server_app_api_quantum-verify_approve_route_actions_b5b6a646.js (sourcemap at _next-internal_server_app_api_quantum-verify_approve_route_actions_b5b6a646.js.map, debug id 876b3a1b-9009-1b32-84fc-c7f1a98775d3)
+07:38:23.720     ~/chunks/_next-internal_server_app_api_quantum-verify_publish_route_actions_747606c2.js (sourcemap at _next-internal_server_app_api_quantum-verify_publish_route_actions_747606c2.js.map, debug id b17b5fc5-a338-0d80-3842-b4070104fb04)
+07:38:23.721     ~/chunks/_next-internal_server_app_api_quantum-verify_reject_route_actions_d336c338.js (sourcemap at _next-internal_server_app_api_quantum-verify_reject_route_actions_d336c338.js.map, debug id a53d7e33-300a-6392-ac0a-8476b2115668)
+07:38:23.721     ~/chunks/_next-internal_server_app_api_quantum-verify_submissions_route_actions_709b9700.js (sourcemap at _next-internal_server_app_api_quantum-verify_submissions_route_actions_709b9700.js.map, debug id 83722c9c-44bf-5a6e-d4c7-98cbc8c5e1a3)
+07:38:23.721     ~/chunks/_next-internal_server_app_api_test-btcpay_route_actions_60bf5866.js (sourcemap at _next-internal_server_app_api_test-btcpay_route_actions_60bf5866.js.map, debug id eeb42548-6f4a-61a1-a2d9-50f6063aab93)
+07:38:23.721     ~/chunks/_next-internal_server_app_api_test-email_route_actions_b773a4a6.js (sourcemap at _next-internal_server_app_api_test-email_route_actions_b773a4a6.js.map, debug id 13b467c0-8c00-9599-9456-eecfb1b4f179)
+07:38:23.721     ~/chunks/_next-internal_server_app_api_test-env_route_actions_ca614177.js (sourcemap at _next-internal_server_app_api_test-env_route_actions_ca614177.js.map, debug id 44cdb0e9-1512-a185-adfc-f25249907389)
+07:38:23.721     ~/chunks/_next-internal_server_app_api_test-merchant-email_route_actions_3da01f09.js (sourcemap at _next-internal_server_app_api_test-merchant-email_route_actions_3da01f09.js.map, debug id 34afe4e7-a0b3-14c7-241b-48ea6738eac7)
+07:38:23.721     ~/chunks/_next-internal_server_app_api_test-sentry_route_actions_b9e7d235.js (sourcemap at _next-internal_server_app_api_test-sentry_route_actions_b9e7d235.js.map, debug id 311727b4-4119-ec10-6c67-9d074b0d7007)
+07:38:23.721     ~/chunks/_next-internal_server_app_api_verifier_history_route_actions_12a050fa.js (sourcemap at _next-internal_server_app_api_verifier_history_route_actions_12a050fa.js.map, debug id 4f39655c-9c2a-38d2-72b1-a9a5abeb0b20)
+07:38:23.722     ~/chunks/_next-internal_server_app_api_verifier_nearby-submissions_route_actions_27a4a3c1.js (sourcemap at _next-internal_server_app_api_verifier_nearby-submissions_route_actions_27a4a3c1.js.map, debug id 8086b137-3436-18fa-2260-ce41eb206121)
+07:38:23.722     ~/chunks/_next-internal_server_app_api_verifier_stats_route_actions_85c950fc.js (sourcemap at _next-internal_server_app_api_verifier_stats_route_actions_85c950fc.js.map, debug id dac1b66e-0e46-7e0a-58d1-729cb48dddae)
+07:38:23.722     ~/chunks/_next-internal_server_app_api_verifier_submission_[id]_route_actions_b1d79369.js (sourcemap at _next-internal_server_app_api_verifier_submission_%5Bid%5D_route_actions_b1d79369.js.map, debug id 5309724a-155d-0c0a-587f-fb9f9f22cedd)
+07:38:23.722     ~/chunks/_next-internal_server_app_icon_png_route_actions_fa3562e2.js (sourcemap at _next-internal_server_app_icon_png_route_actions_fa3562e2.js.map, debug id 2899835f-555e-28c0-0a9d-0b6f9ab9745c)
+07:38:23.722     ~/chunks/_next-internal_server_app_robots_txt_route_actions_9118e90f.js (sourcemap at _next-internal_server_app_robots_txt_route_actions_9118e90f.js.map, debug id 51931146-9fb3-cd98-e540-15c252cb6341)
+07:38:23.722     ~/chunks/_next-internal_server_app_sitemap_xml_route_actions_12658ace.js (sourcemap at _next-internal_server_app_sitemap_xml_route_actions_12658ace.js.map, debug id 5dd89965-00d8-7136-d953-7babf28b444b)
+07:38:23.722     ~/chunks/a9bf9_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_3c882e41._.js (sourcemap at a9bf9_%40opentelemetry_resources_build_esm_detectors_platform_node_machine-id_3c882e41._.js.map, debug id 650e853c-6ec6-dcad-24fa-87036df57e35)
+07:38:23.723     ~/chunks/a9bf9_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_559309af._.js (sourcemap at a9bf9_%40opentelemetry_resources_build_esm_detectors_platform_node_machine-id_559309af._.js.map, debug id 3110ccfc-8b5f-74f3-fe35-9fb6e9b98a1f)
+07:38:23.723     ~/chunks/a9bf9_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_5fd8c034._.js (sourcemap at a9bf9_%40opentelemetry_resources_build_esm_detectors_platform_node_machine-id_5fd8c034._.js.map, debug id 7faafb3d-0d53-efa1-74f7-ad098335c32e)
+07:38:23.723     ~/chunks/ce889_server_app_api_donations_[invoiceId]_payment-methods_route_actions_dc760a8e.js (sourcemap at ce889_server_app_api_donations_%5BinvoiceId%5D_payment-methods_route_actions_dc760a8e.js.map, debug id 2bc85be5-d1c3-6bc3-b1cb-23cfe9d61c64)
+07:38:23.723     ~/chunks/ce889_server_app_api_verifier_submit-verification_route_actions_f94c7cc6.js (sourcemap at ce889_server_app_api_verifier_submit-verification_route_actions_f94c7cc6.js.map, debug id b2f078a3-391b-ae76-42d6-238988872bae)
+07:38:23.723     ~/chunks/lib_rate-limit_ts_b57afc9a._.js (sourcemap at lib_rate-limit_ts_b57afc9a._.js.map, debug id 4829706c-adcc-dfe1-eb5a-55ecc195ea65)
+07:38:23.723     ~/chunks/node_modules_bcryptjs_68d01eb0._.js (sourcemap at node_modules_bcryptjs_68d01eb0._.js.map, debug id 8305eb2b-0187-7ffc-efe4-9a952a02ef1a)
+07:38:23.723     ~/chunks/node_modules_c6b60bbb._.js (sourcemap at node_modules_c6b60bbb._.js.map, debug id eb5d23ae-0bc2-3260-33b0-27cab6ef8a7c)
+07:38:23.724     ~/chunks/node_modules_ecf37db8._.js (sourcemap at node_modules_ecf37db8._.js.map, debug id 16c508ad-f6db-64ac-a146-6c67c90b5e52)
+07:38:23.724     ~/chunks/node_modules_next_dist_esm_build_templates_app-route_07412ca1.js (sourcemap at node_modules_next_dist_esm_build_templates_app-route_07412ca1.js.map, debug id 25406089-3249-f147-425f-c9dee7090b5f)
+07:38:23.724     ~/chunks/node_modules_next_dist_esm_build_templates_app-route_5b95058d.js (sourcemap at node_modules_next_dist_esm_build_templates_app-route_5b95058d.js.map, debug id f07bd1a8-0935-025d-58a4-ea1d74c92249)
+07:38:23.724     ~/chunks/node_modules_next_dist_esm_build_templates_app-route_64175717.js (sourcemap at node_modules_next_dist_esm_build_templates_app-route_64175717.js.map, debug id fd896a74-4bed-cb03-169e-6fbc37791715)
+07:38:23.724     ~/chunks/node_modules_next_dist_esm_build_templates_app-route_e07c56a9.js (sourcemap at node_modules_next_dist_esm_build_templates_app-route_e07c56a9.js.map, debug id 4746a85c-de69-487d-edd7-ef69eaf49344)
+07:38:23.724     ~/chunks/node_modules_next_f2da0d3e._.js (sourcemap at node_modules_next_f2da0d3e._.js.map, debug id 7c173aa3-e63b-e149-10e8-1f7b4638fb7f)
+07:38:23.725     ~/chunks/ssr/0bf35_build_esm_detectors_platform_node_machine-id_getMachineId-linux_4784470b.js (sourcemap at 0bf35_build_esm_detectors_platform_node_machine-id_getMachineId-linux_4784470b.js.map, debug id 8a434f0b-6376-3615-0e18-5a4830f3e7b7)
+07:38:23.725     ~/chunks/ssr/0bf35_build_esm_detectors_platform_node_machine-id_getMachineId-unsupported_715e656b.js (sourcemap at 0bf35_build_esm_detectors_platform_node_machine-id_getMachineId-unsupported_715e656b.js.map, debug id 6c29bf3f-d8be-2af0-e500-d4c470873809)
+07:38:23.725     ~/chunks/ssr/[externals]_node:inspector_7a4283c6._.js (sourcemap at %5Bexternals%5D_node%3Ainspector_7a4283c6._.js.map, debug id 5f41589b-d010-1718-2c15-d0250c8535f0)
+07:38:23.725     ~/chunks/ssr/[root-of-the-server]__02b29e7b._.js (sourcemap at %5Broot-of-the-server%5D__02b29e7b._.js.map, debug id 0e40f8ae-ce2a-f9cb-0297-a4a690927a58)
+07:38:23.725     ~/chunks/ssr/[root-of-the-server]__04ee6ac6._.js (sourcemap at %5Broot-of-the-server%5D__04ee6ac6._.js.map, debug id bda0ab6f-7564-5dd6-e7ad-a8bf16747033)
+07:38:23.725     ~/chunks/ssr/[root-of-the-server]__07c18362._.js (sourcemap at %5Broot-of-the-server%5D__07c18362._.js.map, debug id 15849115-4805-e5a8-3e7b-5e8723aaf1c1)
+07:38:23.725     ~/chunks/ssr/[root-of-the-server]__0ab33ac5._.js (sourcemap at %5Broot-of-the-server%5D__0ab33ac5._.js.map, debug id 3ea011fa-e4bc-f1ab-1c5a-706677ec42e6)
+07:38:23.726     ~/chunks/ssr/[root-of-the-server]__0bbe6963._.js (sourcemap at %5Broot-of-the-server%5D__0bbe6963._.js.map, debug id eecd6537-64c5-9a0c-01b0-356ed0c9e7e2)
+07:38:23.726     ~/chunks/ssr/[root-of-the-server]__1d381d1f._.js (sourcemap at %5Broot-of-the-server%5D__1d381d1f._.js.map, debug id ca2bf51b-fe61-9591-977d-ad7bd90fa23c)
+07:38:23.726     ~/chunks/ssr/[root-of-the-server]__2bead3f5._.js (sourcemap at %5Broot-of-the-server%5D__2bead3f5._.js.map, debug id 8687a2fd-f6fe-c68a-a088-ad3a090c965d)
+07:38:23.726     ~/chunks/ssr/[root-of-the-server]__2d75bc51._.js (sourcemap at %5Broot-of-the-server%5D__2d75bc51._.js.map, debug id d4888e82-467c-bae2-0cf8-1523bab43650)
+07:38:23.726     ~/chunks/ssr/[root-of-the-server]__2eebbe0f._.js (sourcemap at %5Broot-of-the-server%5D__2eebbe0f._.js.map, debug id d70aad10-861f-2b60-cd0a-a49d8b3bce0e)
+07:38:23.726     ~/chunks/ssr/[root-of-the-server]__3bc7ad0a._.js (sourcemap at %5Broot-of-the-server%5D__3bc7ad0a._.js.map, debug id 02a73abd-2554-96fb-4890-b62c988bbeb0)
+07:38:23.726     ~/chunks/ssr/[root-of-the-server]__425f84be._.js (sourcemap at %5Broot-of-the-server%5D__425f84be._.js.map, debug id 17accff5-be84-5599-9a57-3626c9064cd8)
+07:38:23.727     ~/chunks/ssr/[root-of-the-server]__4afc1147._.js (sourcemap at %5Broot-of-the-server%5D__4afc1147._.js.map, debug id e9b86e64-726a-2131-e1d6-aa30788b3c6b)
+07:38:23.727     ~/chunks/ssr/[root-of-the-server]__4f788405._.js (sourcemap at %5Broot-of-the-server%5D__4f788405._.js.map, debug id 62b754ac-6aca-243d-fe49-07ae173675fc)
+07:38:23.727     ~/chunks/ssr/[root-of-the-server]__5220a6fd._.js (sourcemap at %5Broot-of-the-server%5D__5220a6fd._.js.map, debug id 45226847-d989-8393-1b63-612616674afe)
+07:38:23.727     ~/chunks/ssr/[root-of-the-server]__571b3576._.js (sourcemap at %5Broot-of-the-server%5D__571b3576._.js.map, debug id d8d06a06-7033-a15e-d722-53add824ac31)
+07:38:23.727     ~/chunks/ssr/[root-of-the-server]__5ad79845._.js (sourcemap at %5Broot-of-the-server%5D__5ad79845._.js.map, debug id eda87111-7099-8a33-37b9-57d12db71340)
+07:38:23.727     ~/chunks/ssr/[root-of-the-server]__5e47ba41._.js (sourcemap at %5Broot-of-the-server%5D__5e47ba41._.js.map, debug id df10957f-a9eb-70ac-ef3f-bdd5861f6d8d)
+07:38:23.727     ~/chunks/ssr/[root-of-the-server]__64167884._.js (sourcemap at %5Broot-of-the-server%5D__64167884._.js.map, debug id d96d9438-7b51-0041-feb7-833f4861f0c6)
+07:38:23.728     ~/chunks/ssr/[root-of-the-server]__64c737de._.js (sourcemap at %5Broot-of-the-server%5D__64c737de._.js.map, debug id 64f762c6-0ad4-fa0e-3fa7-138646124821)
+07:38:23.728     ~/chunks/ssr/[root-of-the-server]__692c0a58._.js (sourcemap at %5Broot-of-the-server%5D__692c0a58._.js.map, debug id 5dd0cc9f-15b3-f5ce-1437-8d0ee14789ae)
+07:38:23.728     ~/chunks/ssr/[root-of-the-server]__77b2356b._.js (sourcemap at %5Broot-of-the-server%5D__77b2356b._.js.map, debug id eb956293-9c3e-b162-bcb1-e937587f5b64)
+07:38:23.728     ~/chunks/ssr/[root-of-the-server]__81c7322d._.js (sourcemap at %5Broot-of-the-server%5D__81c7322d._.js.map, debug id d9cc917a-d7b9-4771-a675-5d16ca87a2bb)
+07:38:23.728     ~/chunks/ssr/[root-of-the-server]__88a12a92._.js (sourcemap at %5Broot-of-the-server%5D__88a12a92._.js.map, debug id ff2a2e46-f506-c125-fc12-dec8756ce352)
+07:38:23.728     ~/chunks/ssr/[root-of-the-server]__8ab95f0d._.js (sourcemap at %5Broot-of-the-server%5D__8ab95f0d._.js.map, debug id 9f9640cf-d691-5ff3-f9cb-0420e3af4e25)
+07:38:23.728     ~/chunks/ssr/[root-of-the-server]__90e6065d._.js (sourcemap at %5Broot-of-the-server%5D__90e6065d._.js.map, debug id b160f0f1-0e29-b61e-ee7d-098487245c6e)
+07:38:23.729     ~/chunks/ssr/[root-of-the-server]__a24c24ce._.js (sourcemap at %5Broot-of-the-server%5D__a24c24ce._.js.map, debug id 90e45c00-cf0b-9666-c8ae-3fa938b0cda5)
+07:38:23.729     ~/chunks/ssr/[root-of-the-server]__a457c799._.js (sourcemap at %5Broot-of-the-server%5D__a457c799._.js.map, debug id 159a1d7b-8e58-52a6-526c-cfef9c9bb3b4)
+07:38:23.729     ~/chunks/ssr/[root-of-the-server]__aefd40bd._.js (sourcemap at %5Broot-of-the-server%5D__aefd40bd._.js.map, debug id 24b7444d-3c1b-85c9-6931-19486d51c940)
+07:38:23.729     ~/chunks/ssr/[root-of-the-server]__b3045641._.js (sourcemap at %5Broot-of-the-server%5D__b3045641._.js.map, debug id ee2333a2-fff3-9bc1-082c-09a98382b989)
+07:38:23.729     ~/chunks/ssr/[root-of-the-server]__b7e62280._.js (sourcemap at %5Broot-of-the-server%5D__b7e62280._.js.map, debug id 1bd58d76-b110-36d1-d70f-79c7afc35aac)
+07:38:23.730     ~/chunks/ssr/[root-of-the-server]__c53236a6._.js (sourcemap at %5Broot-of-the-server%5D__c53236a6._.js.map, debug id 7a33208a-e7ad-8d8b-76c8-2b79bbd15ab9)
+07:38:23.730     ~/chunks/ssr/[root-of-the-server]__c6e7a7f4._.js (sourcemap at %5Broot-of-the-server%5D__c6e7a7f4._.js.map, debug id 882d4321-cf62-398d-5e09-6ce3abf619f8)
+07:38:23.730     ~/chunks/ssr/[root-of-the-server]__ce7c97a1._.js (sourcemap at %5Broot-of-the-server%5D__ce7c97a1._.js.map, debug id 877ff760-3dd0-dbd0-4289-3274060fafb7)
+07:38:23.730     ~/chunks/ssr/[root-of-the-server]__cfdce4e9._.js (sourcemap at %5Broot-of-the-server%5D__cfdce4e9._.js.map, debug id f709768b-2ba0-1761-0960-7db2f086ecc1)
+07:38:23.730     ~/chunks/ssr/[root-of-the-server]__d9260960._.js (sourcemap at %5Broot-of-the-server%5D__d9260960._.js.map, debug id cb42cb3c-5f47-9a16-3978-31c1ed40f485)
+07:38:23.730     ~/chunks/ssr/[root-of-the-server]__db6249bd._.js (sourcemap at %5Broot-of-the-server%5D__db6249bd._.js.map, debug id 0ed15ece-bb3e-8a52-ce6e-150eb01f7650)
+07:38:23.730     ~/chunks/ssr/[root-of-the-server]__e1cc5545._.js (sourcemap at %5Broot-of-the-server%5D__e1cc5545._.js.map, debug id 06b52f4c-33cf-81bf-8f05-2f954d238d27)
+07:38:23.731     ~/chunks/ssr/[root-of-the-server]__e2e52c6e._.js (sourcemap at %5Broot-of-the-server%5D__e2e52c6e._.js.map, debug id 95f9ae2b-6bb7-b540-8aae-9bf60a3579a1)
+07:38:23.731     ~/chunks/ssr/[root-of-the-server]__eee55e54._.js (sourcemap at %5Broot-of-the-server%5D__eee55e54._.js.map, debug id aef1356d-f1bb-b060-d3c3-4a0242a3bf0e)
+07:38:23.731     ~/chunks/ssr/[root-of-the-server]__f827141b._.js (sourcemap at %5Broot-of-the-server%5D__f827141b._.js.map, debug id 5f1217d7-3dce-572c-430b-377bb3336e15)
+07:38:23.731     ~/chunks/ssr/[root-of-the-server]__fdcc95cb._.js (sourcemap at %5Broot-of-the-server%5D__fdcc95cb._.js.map, debug id 87dba978-b1e8-eff7-094d-85fa7174fc40)
+07:38:23.731     ~/chunks/ssr/[turbopack]_runtime.js (sourcemap at %5Bturbopack%5D_runtime.js.map)
+07:38:23.731     ~/chunks/ssr/_01ebacef._.js (sourcemap at _01ebacef._.js.map, debug id 80050c5b-7e94-fa39-50d3-c6976dc6b74d)
+07:38:23.731     ~/chunks/ssr/_089a7fb8._.js (sourcemap at _089a7fb8._.js.map, debug id cd12c6d8-a1dd-d3a7-8aea-d5748d090252)
+07:38:23.732     ~/chunks/ssr/_154902d0._.js (sourcemap at _154902d0._.js.map, debug id f5d64c32-fcd6-c4ca-fa95-b14fabec6f2a)
+07:38:23.732     ~/chunks/ssr/_1e1c11a3._.js (sourcemap at _1e1c11a3._.js.map, debug id 4ae47a8d-063a-9c40-e128-be6c26469626)
+07:38:23.732     ~/chunks/ssr/_1ebe86c5._.js (sourcemap at _1ebe86c5._.js.map, debug id 4e5a5547-c846-e602-bbf2-cb93fd1a3fab)
+07:38:23.732     ~/chunks/ssr/_21ec4b45._.js (sourcemap at _21ec4b45._.js.map, debug id 25933ca0-b131-2732-ef1e-e3e200bfc18c)
+07:38:23.732     ~/chunks/ssr/_232ec68f._.js (sourcemap at _232ec68f._.js.map, debug id c006f0d6-36cb-34b9-b5b3-53c14472f052)
+07:38:23.732     ~/chunks/ssr/_25e2d92c._.js (sourcemap at _25e2d92c._.js.map, debug id 370cf8aa-aae6-a93a-517a-de4717d7cc20)
+07:38:23.733     ~/chunks/ssr/_2ce7c914._.js (sourcemap at _2ce7c914._.js.map, debug id abde60bc-490c-8c0e-fc4c-2186967fc6c4)
+07:38:23.733     ~/chunks/ssr/_2f47eeb3._.js (sourcemap at _2f47eeb3._.js.map, debug id 9601fe39-d51b-e0a7-29dd-d8422890da07)
+07:38:23.733     ~/chunks/ssr/_3128e612._.js (sourcemap at _3128e612._.js.map, debug id d518798f-2ff8-60a3-c149-8884289885d7)
+07:38:23.733     ~/chunks/ssr/_37d1238f._.js (sourcemap at _37d1238f._.js.map, debug id 3c39a756-7577-8068-0a0c-714454b61096)
+07:38:23.733     ~/chunks/ssr/_3ad4ce1b._.js (sourcemap at _3ad4ce1b._.js.map, debug id 7698d1ad-3780-2eb3-de20-3372911cf8df)
+07:38:23.733     ~/chunks/ssr/_449002b4._.js (sourcemap at _449002b4._.js.map, debug id 36714a16-c53a-4d85-3202-19f09efc9cf5)
+07:38:23.733     ~/chunks/ssr/_449df4ed._.js (sourcemap at _449df4ed._.js.map, debug id b1980981-254c-f535-e354-1705daed75da)
+07:38:23.734     ~/chunks/ssr/_49193159._.js (sourcemap at _49193159._.js.map, debug id 66e723d5-244d-877f-ef93-04f48f95a01c)
+07:38:23.734     ~/chunks/ssr/_50a144fc._.js (sourcemap at _50a144fc._.js.map, debug id 7e28146c-71a7-e91a-e2de-53e4e1fd5e46)
+07:38:23.734     ~/chunks/ssr/_5c6070d6._.js (sourcemap at _5c6070d6._.js.map, debug id 6c4471de-5581-162b-7f0c-719b15e3c93a)
+07:38:23.734     ~/chunks/ssr/_5d7a3564._.js (sourcemap at _5d7a3564._.js.map, debug id 5d69d51c-68b4-95bd-99bd-8caa992b262d)
+07:38:23.734     ~/chunks/ssr/_5de35b32._.js (sourcemap at _5de35b32._.js.map, debug id 6a7e4e0e-33cb-1520-c7ba-729b1f072aaa)
+07:38:23.734     ~/chunks/ssr/_5ec4c8ee._.js (sourcemap at _5ec4c8ee._.js.map, debug id 881e1e2e-f61d-1387-dcc0-04233a9b2b9e)
+07:38:23.734     ~/chunks/ssr/_5fa056aa._.js (sourcemap at _5fa056aa._.js.map, debug id 94b7d5c5-0d4d-a3f0-3214-05715531b4d6)
+07:38:23.735     ~/chunks/ssr/_5ffd0450._.js (sourcemap at _5ffd0450._.js.map, debug id c52acc57-c0f6-0e5d-6314-d3426f62c801)
+07:38:23.735     ~/chunks/ssr/_677a2a5c._.js (sourcemap at _677a2a5c._.js.map, debug id ca1603b9-30e2-b5d3-cee4-07241c8a820a)
+07:38:23.735     ~/chunks/ssr/_694ff555._.js (sourcemap at _694ff555._.js.map, debug id 8cc19cdb-982b-fcc3-c405-7543b10f1a06)
+07:38:23.735     ~/chunks/ssr/_6b453964._.js (sourcemap at _6b453964._.js.map, debug id 0bdb4204-680e-1383-884f-9ae549479ace)
+07:38:23.735     ~/chunks/ssr/_6fa18673._.js (sourcemap at _6fa18673._.js.map, debug id 65bc6549-b83e-ffc5-e320-e43242b5dd15)
+07:38:23.735     ~/chunks/ssr/_76b39280._.js (sourcemap at _76b39280._.js.map, debug id a41863a4-7ae6-93ad-b04b-623264fc3818)
+07:38:23.736     ~/chunks/ssr/_77625e87._.js (sourcemap at _77625e87._.js.map, debug id 4520ee3e-b602-9b7e-d659-8cea2524e4ea)
+07:38:23.736     ~/chunks/ssr/_7acff888._.js (sourcemap at _7acff888._.js.map, debug id a5861ee9-b1bf-e043-c36e-7418bcd5eab0)
+07:38:23.736     ~/chunks/ssr/_7ff0c2e1._.js (sourcemap at _7ff0c2e1._.js.map, debug id 581b8960-7a65-6925-955b-ba99182b179c)
+07:38:23.736     ~/chunks/ssr/_823ed050._.js (sourcemap at _823ed050._.js.map, debug id 6c80e29b-ea28-10fc-2072-d9c0abb60d80)
+07:38:23.736     ~/chunks/ssr/_84752583._.js (sourcemap at _84752583._.js.map, debug id b2764ca0-91ed-65ca-31c1-98d2ec32e564)
+07:38:23.736     ~/chunks/ssr/_855cd46b._.js (sourcemap at _855cd46b._.js.map, debug id 5caded32-3005-2660-935a-1636e1a9a26f)
+07:38:23.737     ~/chunks/ssr/_92b05052._.js (sourcemap at _92b05052._.js.map, debug id df3c1f4d-5696-3e81-4e44-e2c15acb4722)
+07:38:23.737     ~/chunks/ssr/_a16842f8._.js (sourcemap at _a16842f8._.js.map, debug id 1c3b6c21-7cc9-1d69-bc0a-c579e0620e2f)
+07:38:23.738     ~/chunks/ssr/_a79bf1e1._.js (sourcemap at _a79bf1e1._.js.map, debug id 645a58c3-b372-29b6-3f09-a0ffd35ebeaf)
+07:38:23.738     ~/chunks/ssr/_b3afcc72._.js (sourcemap at _b3afcc72._.js.map, debug id 46f3f796-f6a0-9787-bece-bc43f12a72ab)
+07:38:23.738     ~/chunks/ssr/_b647af05._.js (sourcemap at _b647af05._.js.map, debug id eb64b78d-7997-b602-64cd-bda56b54abf6)
+07:38:23.738     ~/chunks/ssr/_b7267ab9._.js (sourcemap at _b7267ab9._.js.map, debug id e1ebb1d1-970c-51ed-ec52-fd6eb2798ff9)
+07:38:23.738     ~/chunks/ssr/_ba96bdce._.js (sourcemap at _ba96bdce._.js.map, debug id 44b65dd2-0b87-d117-1e64-b5ca68958988)
+07:38:23.739     ~/chunks/ssr/_c4bd2687._.js (sourcemap at _c4bd2687._.js.map, debug id b7fb6877-9605-9da6-0240-d933334b4fb8)
+07:38:23.739     ~/chunks/ssr/_c6cc163e._.js (sourcemap at _c6cc163e._.js.map, debug id 90db22fe-454d-fdc1-7e0a-92e00677d647)
+07:38:23.739     ~/chunks/ssr/_d1ac8fed._.js (sourcemap at _d1ac8fed._.js.map, debug id 6188e11b-7976-e98d-cf19-62dd43ea8239)
+07:38:23.739     ~/chunks/ssr/_d27553b8._.js (sourcemap at _d27553b8._.js.map, debug id 9bdfcd9b-19a7-65a4-c9cc-982ee6b93e89)
+07:38:23.739     ~/chunks/ssr/_d3056a62._.js (sourcemap at _d3056a62._.js.map, debug id 27557406-e15d-cc66-08a1-b917dbec4622)
+07:38:23.739     ~/chunks/ssr/_d5527ab4._.js (sourcemap at _d5527ab4._.js.map, debug id 98d50f10-f94e-98bb-db4f-29cb4383251f)
+07:38:23.740     ~/chunks/ssr/_d587dc2c._.js (sourcemap at _d587dc2c._.js.map, debug id 6a62ceb2-007a-a456-bcee-2940218b1f5f)
+07:38:23.740     ~/chunks/ssr/_d70b375b._.js (sourcemap at _d70b375b._.js.map, debug id 99afa0fc-03ff-d1ce-9fd1-39a16128c441)
+07:38:23.740     ~/chunks/ssr/_e88e579f._.js (sourcemap at _e88e579f._.js.map, debug id 2bd41496-1d1e-149c-c087-a6ce04043ae6)
+07:38:23.740     ~/chunks/ssr/_e91c1e0f._.js (sourcemap at _e91c1e0f._.js.map, debug id 47c33f78-96ce-de53-035f-411b1dc7a5f2)
+07:38:23.740     ~/chunks/ssr/_f09cd050._.js (sourcemap at _f09cd050._.js.map, debug id 812cfaf8-2248-ded7-cd4c-93ca33bd432f)
+07:38:23.740     ~/chunks/ssr/_f0ec696b._.js (sourcemap at _f0ec696b._.js.map, debug id 9aad929e-8165-2e84-84d8-d69b1d9c5084)
+07:38:23.740     ~/chunks/ssr/_f64c7ce6._.js (sourcemap at _f64c7ce6._.js.map, debug id 2d41fc15-99f8-06d9-d8be-3bcb95ad7688)
+07:38:23.741     ~/chunks/ssr/_next-internal_server_app__global-error_page_actions_75761787.js (sourcemap at _next-internal_server_app__global-error_page_actions_75761787.js.map, debug id 8b14a72b-d518-1c2b-3fa2-47cdf74323ad)
+07:38:23.741     ~/chunks/ssr/_next-internal_server_app__not-found_page_actions_554ec2bf.js (sourcemap at _next-internal_server_app__not-found_page_actions_554ec2bf.js.map, debug id 6449725e-fc81-0773-3853-ac691e723025)
+07:38:23.741     ~/chunks/ssr/_next-internal_server_app_about_page_actions_6fff35e4.js (sourcemap at _next-internal_server_app_about_page_actions_6fff35e4.js.map, debug id e3a3f007-d609-4cb3-74bd-7c2cf7407d71)
+07:38:23.741     ~/chunks/ssr/_next-internal_server_app_admin_dashboard_page_actions_b058c280.js (sourcemap at _next-internal_server_app_admin_dashboard_page_actions_b058c280.js.map, debug id a0aaa441-9780-b801-0426-30406995538c)
+07:38:23.741     ~/chunks/ssr/_next-internal_server_app_admin_forgot-password_page_actions_90892c45.js (sourcemap at _next-internal_server_app_admin_forgot-password_page_actions_90892c45.js.map, debug id 133ac60f-dcbf-ce44-f99e-02640d91c8d1)
+07:38:23.741     ~/chunks/ssr/_next-internal_server_app_admin_login_page_actions_0700d525.js (sourcemap at _next-internal_server_app_admin_login_page_actions_0700d525.js.map, debug id e1c72320-1c00-d620-6ba4-dc7e381ba2e7)
+07:38:23.742     ~/chunks/ssr/_next-internal_server_app_admin_merchants_manage_page_actions_d8add244.js (sourcemap at _next-internal_server_app_admin_merchants_manage_page_actions_d8add244.js.map, debug id f9a795f4-f222-e829-a128-c637000f25a6)
+07:38:23.742     ~/chunks/ssr/_next-internal_server_app_admin_merchants_page_actions_abfd4b75.js (sourcemap at _next-internal_server_app_admin_merchants_page_actions_abfd4b75.js.map, debug id 6f04d2e1-3521-eeff-72a0-2e95bcce8cc4)
+07:38:23.742     ~/chunks/ssr/_next-internal_server_app_admin_profile_page_actions_f43720f6.js (sourcemap at _next-internal_server_app_admin_profile_page_actions_f43720f6.js.map, debug id e5b4cd4c-31da-9171-9e9b-3e3ba697cc18)
+07:38:23.742     ~/chunks/ssr/_next-internal_server_app_admin_reset-password_page_actions_cbefad1e.js (sourcemap at _next-internal_server_app_admin_reset-password_page_actions_cbefad1e.js.map, debug id 42d02959-de29-4c89-afb0-d88a7c6ba52f)
+07:38:23.742     ~/chunks/ssr/_next-internal_server_app_admin_settings_page_actions_d95b6266.js (sourcemap at _next-internal_server_app_admin_settings_page_actions_d95b6266.js.map, debug id 31899119-e2be-d1e0-a21f-52f4f66e58ca)
+07:38:23.743     ~/chunks/ssr/_next-internal_server_app_admin_submissions_page_actions_c584b705.js (sourcemap at _next-internal_server_app_admin_submissions_page_actions_c584b705.js.map, debug id ec694ae8-1208-9cc7-24f3-ad14d62bf457)
+07:38:23.743     ~/chunks/ssr/_next-internal_server_app_contact_page_actions_44e32ac3.js (sourcemap at _next-internal_server_app_contact_page_actions_44e32ac3.js.map, debug id 10c5b4ab-fd31-a918-55c2-31a00d15a571)
+07:38:23.743     ~/chunks/ssr/_next-internal_server_app_donate_page_actions_539061cf.js (sourcemap at _next-internal_server_app_donate_page_actions_539061cf.js.map, debug id 3fe30547-f7e6-82ee-8f07-e6fc75ec2dec)
+07:38:23.743     ~/chunks/ssr/_next-internal_server_app_fedi_page_actions_4f834cc6.js (sourcemap at _next-internal_server_app_fedi_page_actions_4f834cc6.js.map, debug id 8ed4d13d-14b8-d6da-f040-5af1164d244a)
+07:38:23.743     ~/chunks/ssr/_next-internal_server_app_maps_page_actions_53e28af7.js (sourcemap at _next-internal_server_app_maps_page_actions_53e28af7.js.map, debug id 6c24547e-5cf0-2a00-6de8-2e4690a4736f)
+07:38:23.743     ~/chunks/ssr/_next-internal_server_app_merchants_[slug]_page_actions_2ea40a0f.js (sourcemap at _next-internal_server_app_merchants_%5Bslug%5D_page_actions_2ea40a0f.js.map, debug id ad5acb31-1be9-52c4-3fab-b062393dda1d)
+07:38:23.743     ~/chunks/ssr/_next-internal_server_app_merchants_edit_[id]_page_actions_d0ee194d.js (sourcemap at _next-internal_server_app_merchants_edit_%5Bid%5D_page_actions_d0ee194d.js.map, debug id 2e508032-5af0-888c-0fca-e3027a62f6ce)
+07:38:23.744     ~/chunks/ssr/_next-internal_server_app_merchants_page_actions_bbd3ddd2.js (sourcemap at _next-internal_server_app_merchants_page_actions_bbd3ddd2.js.map, debug id 70d381a6-922f-6474-8726-71306402df79)
+07:38:23.744     ~/chunks/ssr/_next-internal_server_app_merchants_register_page_actions_fec502d5.js (sourcemap at _next-internal_server_app_merchants_register_page_actions_fec502d5.js.map, debug id 222d7cf6-b01e-1da8-a4d3-5cb171f1a9b1)
+07:38:23.744     ~/chunks/ssr/_next-internal_server_app_merchants_submission-success_page_actions_8c0d4a9c.js (sourcemap at _next-internal_server_app_merchants_submission-success_page_actions_8c0d4a9c.js.map, debug id 732b9c71-38d3-02b0-65c2-a73ec7053859)
+07:38:23.744     ~/chunks/ssr/_next-internal_server_app_merchants_success_page_actions_c64cfe34.js (sourcemap at _next-internal_server_app_merchants_success_page_actions_c64cfe34.js.map, debug id 9a895aa6-2c96-9f8f-e35c-d90132a00775)
+07:38:23.744     ~/chunks/ssr/_next-internal_server_app_offline_page_actions_6f2efa6f.js (sourcemap at _next-internal_server_app_offline_page_actions_6f2efa6f.js.map, debug id b165bd1b-b791-4c16-fcaf-46adbe0147d9)
+07:38:23.744     ~/chunks/ssr/_next-internal_server_app_page_actions_39d4fc33.js (sourcemap at _next-internal_server_app_page_actions_39d4fc33.js.map, debug id 1d2df1ad-733c-35c8-e52b-2194ceecf45c)
+07:38:23.744     ~/chunks/ssr/_next-internal_server_app_programs_bodaboda_page_actions_0ae4c663.js (sourcemap at _next-internal_server_app_programs_bodaboda_page_actions_0ae4c663.js.map, debug id f61d30ae-496a-2f75-9dc8-9ab7bfe321d2)
+07:38:23.745     ~/chunks/ssr/_next-internal_server_app_programs_merchants_page_actions_a82fda2a.js (sourcemap at _next-internal_server_app_programs_merchants_page_actions_a82fda2a.js.map, debug id 38feca08-0a47-bbb4-fdfc-746ac9c06d16)
+07:38:23.745     ~/chunks/ssr/_next-internal_server_app_programs_upcycling_page_actions_20dae62e.js (sourcemap at _next-internal_server_app_programs_upcycling_page_actions_20dae62e.js.map, debug id d605a4ae-5192-aeb9-b508-55cc309cce93)
+07:38:23.745     ~/chunks/ssr/_next-internal_server_app_programs_waste-management_page_actions_8c4ae069.js (sourcemap at _next-internal_server_app_programs_waste-management_page_actions_8c4ae069.js.map, debug id 56d3f3c2-3c16-9cc9-9a22-635e31f32ff3)
+07:38:23.745     ~/chunks/ssr/_next-internal_server_app_register_page_actions_cf89a161.js (sourcemap at _next-internal_server_app_register_page_actions_cf89a161.js.map, debug id 2696567c-4463-3093-e2ae-d9e4d745874a)
+07:38:23.745     ~/chunks/ssr/_next-internal_server_app_verifier_dashboard_page_actions_b8f6c8d5.js (sourcemap at _next-internal_server_app_verifier_dashboard_page_actions_b8f6c8d5.js.map, debug id d385cb1b-a068-16ac-701a-3c09cda75a7c)
+07:38:23.745     ~/chunks/ssr/_next-internal_server_app_verifier_history_page_actions_3ee541d0.js (sourcemap at _next-internal_server_app_verifier_history_page_actions_3ee541d0.js.map, debug id cd8681ec-be7e-b5ae-8256-6ac463c8a9a1)
+07:38:23.746     ~/chunks/ssr/_next-internal_server_app_verifier_verify_[id]_page_actions_d9952376.js (sourcemap at _next-internal_server_app_verifier_verify_%5Bid%5D_page_actions_d9952376.js.map, debug id 626aa56d-8b07-d12e-497f-4c0c40e20abf)
+07:38:23.746     ~/chunks/ssr/a9bf9_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_0dd1d6f3._.js (sourcemap at a9bf9_%40opentelemetry_resources_build_esm_detectors_platform_node_machine-id_0dd1d6f3._.js.map, debug id d1583bfd-f709-c59d-18b8-aea5c0d75795)
+07:38:23.746     ~/chunks/ssr/a9bf9_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_49941087._.js (sourcemap at a9bf9_%40opentelemetry_resources_build_esm_detectors_platform_node_machine-id_49941087._.js.map, debug id 14bf2d33-adfc-aa51-1828-53a5dcc1d52b)
+07:38:23.746     ~/chunks/ssr/a9bf9_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_673d4da5._.js (sourcemap at a9bf9_%40opentelemetry_resources_build_esm_detectors_platform_node_machine-id_673d4da5._.js.map, debug id 25062897-c56e-11ea-8aa1-282137ef221d)
+07:38:23.746     ~/chunks/ssr/app_about_page_tsx_bc4cb8b8._.js (sourcemap at app_about_page_tsx_bc4cb8b8._.js.map, debug id 93fc6687-f944-2643-1020-b5e3ed53c5b6)
+07:38:23.746     ~/chunks/ssr/app_admin_layout_tsx_dd3cf12f._.js (sourcemap at app_admin_layout_tsx_dd3cf12f._.js.map, debug id 294f404e-f8df-a184-75b7-3fe0b58dcaa3)
+07:38:23.747     ~/chunks/ssr/app_admin_submissions_page_tsx_37fced50._.js (sourcemap at app_admin_submissions_page_tsx_37fced50._.js.map, debug id fe42df77-73c2-8b15-464c-4f619eaebf95)
+07:38:23.747     ~/chunks/ssr/app_contact_page_tsx_92a0d050._.js (sourcemap at app_contact_page_tsx_92a0d050._.js.map, debug id d76b58aa-d3ba-1758-c8d6-869d53710b5f)
+07:38:23.747     ~/chunks/ssr/app_e744e06a._.js (sourcemap at app_e744e06a._.js.map, debug id b91b8e78-7e5a-a761-4e97-33f37c4593b0)
+07:38:23.747     ~/chunks/ssr/app_fedi_page_tsx_f3d1ab8b._.js (sourcemap at app_fedi_page_tsx_f3d1ab8b._.js.map, debug id b19e54e5-9922-7f88-a4be-0038403718d7)
+07:38:23.747     ~/chunks/ssr/app_maps_page_tsx_336416df._.js (sourcemap at app_maps_page_tsx_336416df._.js.map, debug id bbec1976-56ca-8030-d5b6-071d73e65e79)
+07:38:23.747     ~/chunks/ssr/app_merchants_page_tsx_19ca4c7f._.js (sourcemap at app_merchants_page_tsx_19ca4c7f._.js.map, debug id 31afe7fc-0439-075e-b32a-c1d34391a5d8)
+07:38:23.748     ~/chunks/ssr/app_merchants_register_page_tsx_abd04eb6._.js (sourcemap at app_merchants_register_page_tsx_abd04eb6._.js.map, debug id d213e494-1a27-f10f-f1eb-10f940e7b097)
+07:38:23.748     ~/chunks/ssr/app_merchants_submission-success_page_tsx_1d72510a._.js (sourcemap at app_merchants_submission-success_page_tsx_1d72510a._.js.map, debug id 0bb62279-44e6-4234-9827-e73bf5b527ac)
+07:38:23.748     ~/chunks/ssr/app_not-found_tsx_339d4b53._.js (sourcemap at app_not-found_tsx_339d4b53._.js.map, debug id 0dfdd0b9-e282-4033-c9b7-c3b017a532c0)
+07:38:23.748     ~/chunks/ssr/app_page_tsx_55b2e5ee._.js (sourcemap at app_page_tsx_55b2e5ee._.js.map, debug id 6e5f11ff-2b67-fc6f-f5b2-3b922cf47602)
+07:38:23.748     ~/chunks/ssr/app_programs_bodaboda_page_tsx_0b61682a._.js (sourcemap at app_programs_bodaboda_page_tsx_0b61682a._.js.map, debug id 6ed4e9f0-40ce-1f4d-25f7-6bffd2bd0fe8)
+07:38:23.748     ~/chunks/ssr/app_programs_merchants_page_tsx_8c3a93af._.js (sourcemap at app_programs_merchants_page_tsx_8c3a93af._.js.map, debug id 7c11832c-22f2-82a8-d71c-8254482dc7c6)
+07:38:23.748     ~/chunks/ssr/app_programs_upcycling_page_tsx_2fc1a847._.js (sourcemap at app_programs_upcycling_page_tsx_2fc1a847._.js.map, debug id 7fa39900-fa86-2ff2-a826-6a9b8ec9b0a6)
+07:38:23.749     ~/chunks/ssr/app_programs_waste-management_page_tsx_be3f96f7._.js (sourcemap at app_programs_waste-management_page_tsx_be3f96f7._.js.map, debug id efb59f11-88ec-9a2c-48ce-a72fb6de6784)
+07:38:23.749     ~/chunks/ssr/app_register_page_tsx_32211add._.js (sourcemap at app_register_page_tsx_32211add._.js.map, debug id 20d832fc-824c-24e9-bad9-2a0abf4fd09f)
+07:38:23.749     ~/chunks/ssr/app_verifier_verify_[id]_page_tsx_fb743579._.js (sourcemap at app_verifier_verify_%5Bid%5D_page_tsx_fb743579._.js.map, debug id d1a1071e-259e-8597-b834-ead1bd4d08c7)
+07:38:23.749     ~/chunks/ssr/components_FAQ_tsx_60ec56d4._.js (sourcemap at components_FAQ_tsx_60ec56d4._.js.map, debug id 2cdff189-0fe9-26e6-8ba3-a64d301135a9)
+07:38:23.749     ~/chunks/ssr/components_FediCommunity_tsx_24a487ce._.js (sourcemap at components_FediCommunity_tsx_24a487ce._.js.map, debug id cd9b4c7d-87c5-3a7b-52ee-848968ee6f5e)
+07:38:23.750     ~/chunks/ssr/components_ImpactStats_tsx_db1dec4b._.js (sourcemap at components_ImpactStats_tsx_db1dec4b._.js.map, debug id e1aaa1df-94ae-33d4-3cdf-7ff88bf96ecc)
+07:38:23.750     ~/chunks/ssr/components_NewsSection_tsx_3087a930._.js (sourcemap at components_NewsSection_tsx_3087a930._.js.map, debug id 89333bf4-19e8-3e88-81cf-b627d7552633)
+07:38:23.750     ~/chunks/ssr/components_PartnerLogos_tsx_25ef08eb._.js (sourcemap at components_PartnerLogos_tsx_25ef08eb._.js.map, debug id 7990e76e-df43-1040-1355-a1914c794a86)
+07:38:23.750     ~/chunks/ssr/components_WhyKibera_tsx_0a1f25d1._.js (sourcemap at components_WhyKibera_tsx_0a1f25d1._.js.map, debug id 3e0117ea-218c-87b0-eae8-13a174609192)
+07:38:23.750     ~/chunks/ssr/lib_merchants-data_ts_efc9c141._.js (sourcemap at lib_merchants-data_ts_efc9c141._.js.map, debug id c9feaae1-4e21-efc0-4715-1f38c8f05942)
+07:38:23.750     ~/chunks/ssr/node_modules_47843793._.js (sourcemap at node_modules_47843793._.js.map, debug id f061cae0-8a1d-ab06-414f-d17728ea8f63)
+07:38:23.751     ~/chunks/ssr/node_modules_5363a9de._.js (sourcemap at node_modules_5363a9de._.js.map, debug id de826ed6-8063-81f7-4093-8f5abd0f35c2)
+07:38:23.751     ~/chunks/ssr/node_modules_date-fns_format_mjs_df7eb26c._.js (sourcemap at node_modules_date-fns_format_mjs_df7eb26c._.js.map, debug id b8de81be-8c67-add0-79a9-0ce8b37d5558)
+07:38:23.751     ~/chunks/ssr/node_modules_e4b3e74a._.js (sourcemap at node_modules_e4b3e74a._.js.map, debug id af2a762c-9e88-699e-dc56-7f74b49ff621)
+07:38:23.751     ~/chunks/ssr/node_modules_eee573be._.js (sourcemap at node_modules_eee573be._.js.map, debug id 16836ef9-bf5e-a131-c64d-b0c4bd0a910d)
+07:38:23.751     ~/chunks/ssr/node_modules_framer-motion_dist_es_render_components_motion_proxy_mjs_b72b0714._.js (sourcemap at node_modules_framer-motion_dist_es_render_components_motion_proxy_mjs_b72b0714._.js.map, debug id e2a15e74-d3a3-2b9c-3fcd-791f787059af)
+07:38:23.751     ~/chunks/ssr/node_modules_next_60966932._.js (sourcemap at node_modules_next_60966932._.js.map, debug id 639ad78a-6857-9b8f-ef9a-ee89d90f1be7)
+07:38:23.752     ~/chunks/ssr/node_modules_next_c567c0cf._.js (sourcemap at node_modules_next_c567c0cf._.js.map, debug id 1bf0a3aa-16e3-7aeb-cafe-1a92df86ae81)
+07:38:23.752     ~/chunks/ssr/node_modules_next_dist_08570d7f._.js (sourcemap at node_modules_next_dist_08570d7f._.js.map, debug id 167070fb-07e8-6929-ea85-f317407c3ec3)
+07:38:23.753     ~/chunks/ssr/node_modules_next_dist_1cd595fe._.js (sourcemap at node_modules_next_dist_1cd595fe._.js.map, debug id d4a7f47f-6607-df5a-cf5e-21429eb90e17)
+07:38:23.753     ~/chunks/ssr/node_modules_next_dist_5154788a._.js (sourcemap at node_modules_next_dist_5154788a._.js.map, debug id a1071737-d5c5-89a0-9b4a-bdb3b8f60881)
+07:38:23.753     ~/chunks/ssr/node_modules_next_dist_6842f855._.js (sourcemap at node_modules_next_dist_6842f855._.js.map, debug id 514dc856-f5d8-9a8d-ab82-6278f602f9c2)
+07:38:23.753     ~/chunks/ssr/node_modules_next_dist_client_components_2fffaa3a._.js (sourcemap at node_modules_next_dist_client_components_2fffaa3a._.js.map, debug id fcfe1bfb-227d-ee12-54f3-5530ea7565ce)
+07:38:23.760     ~/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_ece394eb.js (sourcemap at node_modules_next_dist_client_components_builtin_global-error_ece394eb.js.map, debug id a81abd67-64d5-d737-8a0d-cfda9482d156)
+07:38:23.760     ~/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_15817684.js (sourcemap at node_modules_next_dist_client_components_builtin_unauthorized_15817684.js.map, debug id 340cea89-51a8-5dd6-8d4d-8184fba615a7)
+07:38:23.761     ~/chunks/ssr/node_modules_next_dist_esm_3fe9760a._.js (sourcemap at node_modules_next_dist_esm_3fe9760a._.js.map, debug id c14ec513-4edf-2b7f-71bb-b65e6b60dedf)
+07:38:23.761     ~/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_9b7cc8db.js (sourcemap at node_modules_next_dist_esm_build_templates_app-page_9b7cc8db.js.map, debug id 63052646-eac3-a812-c866-079cdfacc7a9)
+07:38:23.761     ~/chunks/ssr/node_modules_react-icons_fa_index_mjs_02f2a295._.js (sourcemap at node_modules_react-icons_fa_index_mjs_02f2a295._.js.map, debug id cda9780d-a743-d5cd-f155-a6648115d248)
+07:38:23.761     ~/chunks/ssr/node_modules_react-icons_fi_index_mjs_2a053622._.js (sourcemap at node_modules_react-icons_fi_index_mjs_2a053622._.js.map, debug id e03390ac-acdc-a31c-0e40-d0bd6308bc9c)
+07:38:23.761     ~/chunks/ssr/node_modules_react-icons_gi_index_mjs_636a1e76._.js (sourcemap at node_modules_react-icons_gi_index_mjs_636a1e76._.js.map, debug id 169254b2-ca6f-7f5d-89e5-0e68e89ace7c)
+07:38:23.762     ~/chunks/ssr/node_modules_react-icons_md_index_mjs_d051d1fd._.js (sourcemap at node_modules_react-icons_md_index_mjs_d051d1fd._.js.map, debug id ba202ee7-b56e-80a3-7829-fddf4f66ea20)
+07:38:23.762     ~/chunks/ssr/node_modules_react-icons_si_index_mjs_c5cd2440._.js (sourcemap at node_modules_react-icons_si_index_mjs_c5cd2440._.js.map, debug id e8146f98-c06e-f38b-09f9-e61300ce35c7)
+07:38:23.762     ~/interception-route-rewrite-manifest.js (no sourcemap found)
+07:38:23.762       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/interception-route-rewrite-manifest.js)
+07:38:23.762     ~/middleware-build-manifest.js (no sourcemap found)
+07:38:23.762       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/middleware-build-manifest.js)
+07:38:23.763     ~/middleware.js (sourcemap at middleware.js.map)
+07:38:23.763     ~/next-font-manifest.js (no sourcemap found)
+07:38:23.763       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/next-font-manifest.js)
+07:38:23.763     ~/server-reference-manifest.js (no sourcemap found)
+07:38:23.763       - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/server-reference-manifest.js)
+07:38:23.763   Source Maps
+07:38:23.764     ~/app/_global-error/page.js.map
+07:38:23.764     ~/app/_not-found/page.js.map
+07:38:23.764     ~/app/about/page.js.map
+07:38:23.764     ~/app/admin/dashboard/page.js.map
+07:38:23.764     ~/app/admin/forgot-password/page.js.map
+07:38:23.765     ~/app/admin/login/page.js.map
+07:38:23.765     ~/app/admin/merchants/manage/page.js.map
+07:38:23.765     ~/app/admin/merchants/page.js.map
+07:38:23.765     ~/app/admin/profile/page.js.map
+07:38:23.765     ~/app/admin/reset-password/page.js.map
+07:38:23.765     ~/app/admin/settings/page.js.map
+07:38:23.766     ~/app/admin/submissions/page.js.map
+07:38:23.766     ~/app/api/admin/auth/request-reset/route.js.map
+07:38:23.766     ~/app/api/admin/auth/reset-password/route.js.map
+07:38:23.769     ~/app/api/admin/dashboard/route.js.map
+07:38:23.770     ~/app/api/admin/merchants/[id]/route.js.map
+07:38:23.770     ~/app/api/admin/merchants/list/route.js.map
+07:38:23.770     ~/app/api/admin/merchants/route.js.map
+07:38:23.770     ~/app/api/admin/submissions/approve/route.js.map
+07:38:23.770     ~/app/api/admin/submissions/reject/route.js.map
+07:38:23.771     ~/app/api/admin/submissions/route.js.map
+07:38:23.771     ~/app/api/auth/[...nextauth]/route.js.map
+07:38:23.771     ~/app/api/auth/osm/callback/route.js.map
+07:38:23.771     ~/app/api/check-env/route.js.map
+07:38:23.771     ~/app/api/donations/[invoiceId]/payment-methods/route.js.map
+07:38:23.772     ~/app/api/donations/create/route.js.map
+07:38:23.772     ~/app/api/donations/send-receipt/route.js.map
+07:38:23.772     ~/app/api/donations/stats/route.js.map
+07:38:23.772     ~/app/api/donations/status/route.js.map
+07:38:23.772     ~/app/api/donors/route.js.map
+07:38:23.772     ~/app/api/merchants/edit/[id]/route.js.map
+07:38:23.773     ~/app/api/merchants/invoice/route.js.map
+07:38:23.773     ~/app/api/merchants/submit/route.js.map
+07:38:23.773     ~/app/api/quantum-verify/approve/route.js.map
+07:38:23.773     ~/app/api/quantum-verify/publish/route.js.map
+07:38:23.773     ~/app/api/quantum-verify/reject/route.js.map
+07:38:23.774     ~/app/api/quantum-verify/submissions/route.js.map
+07:38:23.774     ~/app/api/test-btcpay/route.js.map
+07:38:23.774     ~/app/api/test-email/route.js.map
+07:38:23.774     ~/app/api/test-env/route.js.map
+07:38:23.774     ~/app/api/test-merchant-email/route.js.map
+07:38:23.774     ~/app/api/test-sentry/route.js.map
+07:38:23.775     ~/app/api/verifier/history/route.js.map
+07:38:23.775     ~/app/api/verifier/nearby-submissions/route.js.map
+07:38:23.775     ~/app/api/verifier/stats/route.js.map
+07:38:23.775     ~/app/api/verifier/submission/[id]/route.js.map
+07:38:23.775     ~/app/api/verifier/submit-verification/route.js.map
+07:38:23.775     ~/app/contact/page.js.map
+07:38:23.776     ~/app/donate/page.js.map
+07:38:23.776     ~/app/fedi/page.js.map
+07:38:23.776     ~/app/icon.png/route.js.map
+07:38:23.776     ~/app/maps/page.js.map
+07:38:23.776     ~/app/merchants/[slug]/page.js.map
+07:38:23.777     ~/app/merchants/edit/[id]/page.js.map
+07:38:23.777     ~/app/merchants/page.js.map
+07:38:23.777     ~/app/merchants/register/page.js.map
+07:38:23.777     ~/app/merchants/submission-success/page.js.map
+07:38:23.777     ~/app/merchants/success/page.js.map
+07:38:23.777     ~/app/offline/page.js.map
+07:38:23.778     ~/app/page.js.map
+07:38:23.778     ~/app/programs/bodaboda/page.js.map
+07:38:23.778     ~/app/programs/merchants/page.js.map
+07:38:23.778     ~/app/programs/upcycling/page.js.map
+07:38:23.778     ~/app/programs/waste-management/page.js.map
+07:38:23.779     ~/app/register/page.js.map
+07:38:23.779     ~/app/robots.txt/route.js.map
+07:38:23.780     ~/app/sitemap.xml/route.js.map
+07:38:23.780     ~/app/verifier/dashboard/page.js.map
+07:38:23.782     ~/app/verifier/history/page.js.map
+07:38:23.782     ~/app/verifier/verify/[id]/page.js.map
+07:38:23.782     ~/chunks/0bf35_build_esm_detectors_platform_node_machine-id_getMachineId-linux_6b4e949a.js.map (debug id 7abf6668-0581-2f20-e8d4-3bc0398b85f4)
+07:38:23.782     ~/chunks/0bf35_build_esm_detectors_platform_node_machine-id_getMachineId-unsupported_c81aba5d.js.map (debug id cf9027d0-f1c3-0ebf-94b9-aa7a411a8357)
+07:38:23.783     ~/chunks/[externals]_node:crypto_c20cce38._.js.map (debug id af8542cc-c606-758d-4664-0f1131d54b55)
+07:38:23.783     ~/chunks/[externals]_node:inspector_7a4283c6._.js.map (debug id bbb7096f-41e0-233c-11dd-d03d0fc428b4)
+07:38:23.783     ~/chunks/[root-of-the-server]__0bddd269._.js.map (debug id 675b7e11-2010-ffe3-76e1-3014cc50dc16)
+07:38:23.783     ~/chunks/[root-of-the-server]__0cdc4fc0._.js.map (debug id af3db2e7-0ed9-f58d-6bb1-44f082cca01a)
+07:38:23.783     ~/chunks/[root-of-the-server]__0dafc2f3._.js.map (debug id 69b722d2-408a-817d-f150-7b9f4db74540)
+07:38:23.783     ~/chunks/[root-of-the-server]__0fe8fe72._.js.map (debug id 7f23587b-1e60-6144-4303-df210606b64c)
+07:38:23.784     ~/chunks/[root-of-the-server]__18421380._.js.map (debug id f9c2f05d-1b14-4493-8cc1-62955a3bb009)
+07:38:23.784     ~/chunks/[root-of-the-server]__1d32bac1._.js.map (debug id 2930548b-3cb0-bdd3-9a97-11fae0596308)
+07:38:23.784     ~/chunks/[root-of-the-server]__23d5e086._.js.map (debug id e398d073-837f-4818-0665-037137141548)
+07:38:23.784     ~/chunks/[root-of-the-server]__25e428ce._.js.map (debug id a4961ddf-17c6-8d20-4799-f9bade5b532f)
+07:38:23.784     ~/chunks/[root-of-the-server]__34d4d111._.js.map (debug id c8630af0-78fc-86b8-da75-d7738b9ed4e8)
+07:38:23.785     ~/chunks/[root-of-the-server]__34e8ab4f._.js.map (debug id 171d58eb-2bf5-8e63-b698-ed3bdfb90272)
+07:38:23.785     ~/chunks/[root-of-the-server]__37712219._.js.map (debug id 2b60f4eb-8351-f6e6-ef0d-20fe2f7810aa)
+07:38:23.785     ~/chunks/[root-of-the-server]__3d3c6359._.js.map (debug id 4089d93c-7891-19c3-d1f2-44ceb560b79b)
+07:38:23.785     ~/chunks/[root-of-the-server]__3e28257f._.js.map (debug id b546de3d-3be0-f87f-c5f8-760ec7c3c3b9)
+07:38:23.785     ~/chunks/[root-of-the-server]__3e815d2c._.js.map (debug id fc1ab084-5aeb-9599-9e43-817fc56d8ed8)
+07:38:23.785     ~/chunks/[root-of-the-server]__549f74dc._.js.map (debug id f39da37c-7464-5aeb-4bc5-d55a5209803e)
+07:38:23.786     ~/chunks/[root-of-the-server]__563078fc._.js.map (debug id a410c2c8-7833-d82a-62d1-96ac7a6c61cf)
+07:38:23.786     ~/chunks/[root-of-the-server]__568e323b._.js.map (debug id 365051cf-1231-8fb2-be7c-cb471639acf1)
+07:38:23.786     ~/chunks/[root-of-the-server]__6234bf4c._.js.map (debug id 1e7950e3-64b7-50a0-f5c4-9ec8347c3d5c)
+07:38:23.786     ~/chunks/[root-of-the-server]__74e0f5d4._.js.map (debug id 1ea5834e-4964-11be-d247-dba103af742d)
+07:38:23.786     ~/chunks/[root-of-the-server]__76e7cd51._.js.map (debug id 3ce6b522-ecde-8355-9dca-52df59861727)
+07:38:23.787     ~/chunks/[root-of-the-server]__7a93ba04._.js.map (debug id 2f4fd029-a8de-1817-65d4-17ac934dbca6)
+07:38:23.787     ~/chunks/[root-of-the-server]__7e9bb5b1._.js.map (debug id 77422868-22ba-a9c2-9e24-3d5661c5c5ac)
+07:38:23.787     ~/chunks/[root-of-the-server]__7f49abfa._.js.map (debug id 58d1bbd6-465e-dfc9-44e5-a9c057beefc7)
+07:38:23.787     ~/chunks/[root-of-the-server]__7f9a02fc._.js.map (debug id 683f21fa-e0cc-283d-2cbd-f43f628fd834)
+07:38:23.787     ~/chunks/[root-of-the-server]__87a1a916._.js.map (debug id 441fe729-5a8c-667e-1851-95a2ac4c6d32)
+07:38:23.787     ~/chunks/[root-of-the-server]__8a7b7a73._.js.map (debug id eb64141a-365a-e7d8-9b80-23b11c112364)
+07:38:23.788     ~/chunks/[root-of-the-server]__9d4a27ad._.js.map (debug id 74a34049-5f67-240a-0438-381bd1c06ff1)
+07:38:23.788     ~/chunks/[root-of-the-server]__9d530167._.js.map (debug id 425df79c-4e2b-4caf-335d-72fef4a9ce62)
+07:38:23.788     ~/chunks/[root-of-the-server]__a609e475._.js.map (debug id 2da6afd3-1014-6ff2-4fa1-138504ad4af0)
+07:38:23.788     ~/chunks/[root-of-the-server]__b0bd14bb._.js.map (debug id 234ad6c3-012d-93a0-d04c-9415e327ca37)
+07:38:23.788     ~/chunks/[root-of-the-server]__b0e5ed83._.js.map (debug id 0fad9883-54b8-d07a-3ba8-356faf763def)
+07:38:23.789     ~/chunks/[root-of-the-server]__b8921356._.js.map (debug id 3b05a8d3-1596-11d4-9fc7-65c80543326b)
+07:38:23.789     ~/chunks/[root-of-the-server]__ba0ca042._.js.map (debug id 2d7d6b3e-72cc-5afe-9f82-1a39805e2b59)
+07:38:23.789     ~/chunks/[root-of-the-server]__befe4a75._.js.map (debug id aa57076c-65bb-9ece-d0ec-cfde946aac50)
+07:38:23.789     ~/chunks/[root-of-the-server]__c03a2c23._.js.map (debug id 1a358f3f-0175-b429-defe-546f9ec177e9)
+07:38:23.789     ~/chunks/[root-of-the-server]__c2536f33._.js.map (debug id f45d5b1e-8f42-26c4-4cae-010a97e09bc0)
+07:38:23.790     ~/chunks/[root-of-the-server]__c5d5e009._.js.map (debug id 6c84c454-479b-c447-0383-5cb2c5d2f0a1)
+07:38:23.790     ~/chunks/[root-of-the-server]__cb7da9d4._.js.map (debug id 040f7e19-3bbf-abe5-74d8-3269588ebbc8)
+07:38:23.790     ~/chunks/[root-of-the-server]__d3b2baea._.js.map (debug id 48685286-c61d-43e9-351f-1d4a082e0d33)
+07:38:23.790     ~/chunks/[root-of-the-server]__da76da3b._.js.map (debug id f0d04506-2268-bff8-99c7-189f503025e9)
+07:38:23.790     ~/chunks/[root-of-the-server]__dc33a92e._.js.map (debug id d870407d-6166-aa27-8538-ba32949eeecf)
+07:38:23.791     ~/chunks/[root-of-the-server]__dcc7468d._.js.map (debug id 3c8f8adc-6de0-3b05-72f6-78dd0dfae181)
+07:38:23.791     ~/chunks/[root-of-the-server]__e59dc875._.js.map (debug id 26a8f3c9-bb81-e102-d688-9645d2cad37c)
+07:38:23.791     ~/chunks/[root-of-the-server]__e78d78ce._.js.map (debug id deb00303-a997-24f9-68a5-5b142c22cab2)
+07:38:23.791     ~/chunks/[root-of-the-server]__eac693ab._.js.map (debug id ca372969-cf2f-5f5a-5e82-8d487c2ac5f6)
+07:38:23.791     ~/chunks/[root-of-the-server]__f876316a._.js.map (debug id 304e12b9-1a17-f6d9-c8de-27b04207f3b6)
+07:38:23.791     ~/chunks/[turbopack]_runtime.js.map
+07:38:23.792     ~/chunks/_d656e617._.js.map (debug id 2553b498-0ddd-4710-5b05-6f1388cf8873)
+07:38:23.792     ~/chunks/_next-internal_server_app_api_admin_auth_request-reset_route_actions_b5caea23.js.map (debug id 577fb15c-4585-b901-ae75-60b12771dae8)
+07:38:23.792     ~/chunks/_next-internal_server_app_api_admin_auth_reset-password_route_actions_f3f210d4.js.map (debug id de325adb-ead6-0b6f-f003-f93dd897dba5)
+07:38:23.792     ~/chunks/_next-internal_server_app_api_admin_dashboard_route_actions_bbe806ca.js.map (debug id f68d3546-b01c-e74f-870a-5b566e884218)
+07:38:23.792     ~/chunks/_next-internal_server_app_api_admin_merchants_[id]_route_actions_cd74495d.js.map (debug id ea2209b1-c752-eee9-6e28-30df04ced639)
+07:38:23.792     ~/chunks/_next-internal_server_app_api_admin_merchants_list_route_actions_935b2e7c.js.map (debug id dcea521b-d404-065f-719e-e4754aa1d322)
+07:38:23.793     ~/chunks/_next-internal_server_app_api_admin_merchants_route_actions_2ff06989.js.map (debug id 37a69972-cd30-da0b-ddb3-dfd26452c758)
+07:38:23.793     ~/chunks/_next-internal_server_app_api_admin_submissions_approve_route_actions_392431ec.js.map (debug id c2d5f931-26b0-71cb-de42-b2a2cf97c243)
+07:38:23.793     ~/chunks/_next-internal_server_app_api_admin_submissions_reject_route_actions_69af83a7.js.map (debug id 9fa41a85-6eca-af13-a2b8-ff140876d639)
+07:38:23.793     ~/chunks/_next-internal_server_app_api_admin_submissions_route_actions_b0e2d595.js.map (debug id 547637b4-9742-a70c-41d5-7ebb627ce599)
+07:38:23.799     ~/chunks/_next-internal_server_app_api_auth_[___nextauth]_route_actions_1c865db8.js.map (debug id afb61b18-df3b-75ab-b813-bb39e99e2b11)
+07:38:23.800     ~/chunks/_next-internal_server_app_api_auth_osm_callback_route_actions_46ce7711.js.map (debug id d51ae18b-c90a-9959-06ab-753cd84f3476)
+07:38:23.800     ~/chunks/_next-internal_server_app_api_check-env_route_actions_5c62667e.js.map (debug id 52ede2df-5052-893d-818e-5d5f6d6951f9)
+07:38:23.800     ~/chunks/_next-internal_server_app_api_donations_create_route_actions_70ec5b09.js.map (debug id e01a47fa-7cb2-a424-5b82-5c4c1ad115b9)
+07:38:23.800     ~/chunks/_next-internal_server_app_api_donations_send-receipt_route_actions_61fe3489.js.map (debug id 50b7094f-1fbb-76d6-fe63-d6e4c8cb310d)
+07:38:23.800     ~/chunks/_next-internal_server_app_api_donations_stats_route_actions_945555fa.js.map (debug id 421cec96-cc45-e9c9-fd1c-f7e1e720ff21)
+07:38:23.801     ~/chunks/_next-internal_server_app_api_donations_status_route_actions_7b8f8ed3.js.map (debug id 1664e7aa-171f-0a61-6707-8b426558fc23)
+07:38:23.801     ~/chunks/_next-internal_server_app_api_donors_route_actions_c73b838a.js.map (debug id f8c0313d-f352-80fe-4502-ce2036ecb936)
+07:38:23.801     ~/chunks/_next-internal_server_app_api_merchants_edit_[id]_route_actions_974b15c7.js.map (debug id f70fd7e0-459e-460f-6850-6092b8a903e5)
+07:38:23.801     ~/chunks/_next-internal_server_app_api_merchants_invoice_route_actions_b379f9ea.js.map (debug id 1159fbef-bbbd-8e86-79b6-d83e187f5b46)
+07:38:23.801     ~/chunks/_next-internal_server_app_api_merchants_submit_route_actions_18ac5419.js.map (debug id decc0966-095f-aaae-bfc7-0a0ae03e09c4)
+07:38:23.802     ~/chunks/_next-internal_server_app_api_quantum-verify_approve_route_actions_b5b6a646.js.map (debug id 876b3a1b-9009-1b32-84fc-c7f1a98775d3)
+07:38:23.802     ~/chunks/_next-internal_server_app_api_quantum-verify_publish_route_actions_747606c2.js.map (debug id b17b5fc5-a338-0d80-3842-b4070104fb04)
+07:38:23.802     ~/chunks/_next-internal_server_app_api_quantum-verify_reject_route_actions_d336c338.js.map (debug id a53d7e33-300a-6392-ac0a-8476b2115668)
+07:38:23.802     ~/chunks/_next-internal_server_app_api_quantum-verify_submissions_route_actions_709b9700.js.map (debug id 83722c9c-44bf-5a6e-d4c7-98cbc8c5e1a3)
+07:38:23.802     ~/chunks/_next-internal_server_app_api_test-btcpay_route_actions_60bf5866.js.map (debug id eeb42548-6f4a-61a1-a2d9-50f6063aab93)
+07:38:23.802     ~/chunks/_next-internal_server_app_api_test-email_route_actions_b773a4a6.js.map (debug id 13b467c0-8c00-9599-9456-eecfb1b4f179)
+07:38:23.803     ~/chunks/_next-internal_server_app_api_test-env_route_actions_ca614177.js.map (debug id 44cdb0e9-1512-a185-adfc-f25249907389)
+07:38:23.803     ~/chunks/_next-internal_server_app_api_test-merchant-email_route_actions_3da01f09.js.map (debug id 34afe4e7-a0b3-14c7-241b-48ea6738eac7)
+07:38:23.803     ~/chunks/_next-internal_server_app_api_test-sentry_route_actions_b9e7d235.js.map (debug id 311727b4-4119-ec10-6c67-9d074b0d7007)
+07:38:23.803     ~/chunks/_next-internal_server_app_api_verifier_history_route_actions_12a050fa.js.map (debug id 4f39655c-9c2a-38d2-72b1-a9a5abeb0b20)
+07:38:23.803     ~/chunks/_next-internal_server_app_api_verifier_nearby-submissions_route_actions_27a4a3c1.js.map (debug id 8086b137-3436-18fa-2260-ce41eb206121)
+07:38:23.803     ~/chunks/_next-internal_server_app_api_verifier_stats_route_actions_85c950fc.js.map (debug id dac1b66e-0e46-7e0a-58d1-729cb48dddae)
+07:38:23.804     ~/chunks/_next-internal_server_app_api_verifier_submission_[id]_route_actions_b1d79369.js.map (debug id 5309724a-155d-0c0a-587f-fb9f9f22cedd)
+07:38:23.804     ~/chunks/_next-internal_server_app_icon_png_route_actions_fa3562e2.js.map (debug id 2899835f-555e-28c0-0a9d-0b6f9ab9745c)
+07:38:23.804     ~/chunks/_next-internal_server_app_robots_txt_route_actions_9118e90f.js.map (debug id 51931146-9fb3-cd98-e540-15c252cb6341)
+07:38:23.804     ~/chunks/_next-internal_server_app_sitemap_xml_route_actions_12658ace.js.map (debug id 5dd89965-00d8-7136-d953-7babf28b444b)
+07:38:23.804     ~/chunks/a9bf9_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_3c882e41._.js.map (debug id 650e853c-6ec6-dcad-24fa-87036df57e35)
+07:38:23.804     ~/chunks/a9bf9_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_559309af._.js.map (debug id 3110ccfc-8b5f-74f3-fe35-9fb6e9b98a1f)
+07:38:23.805     ~/chunks/a9bf9_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_5fd8c034._.js.map (debug id 7faafb3d-0d53-efa1-74f7-ad098335c32e)
+07:38:23.805     ~/chunks/ce889_server_app_api_donations_[invoiceId]_payment-methods_route_actions_dc760a8e.js.map (debug id 2bc85be5-d1c3-6bc3-b1cb-23cfe9d61c64)
+07:38:23.805     ~/chunks/ce889_server_app_api_verifier_submit-verification_route_actions_f94c7cc6.js.map (debug id b2f078a3-391b-ae76-42d6-238988872bae)
+07:38:23.805     ~/chunks/lib_rate-limit_ts_b57afc9a._.js.map (debug id 4829706c-adcc-dfe1-eb5a-55ecc195ea65)
+07:38:23.805     ~/chunks/node_modules_bcryptjs_68d01eb0._.js.map (debug id 8305eb2b-0187-7ffc-efe4-9a952a02ef1a)
+07:38:23.806     ~/chunks/node_modules_c6b60bbb._.js.map (debug id eb5d23ae-0bc2-3260-33b0-27cab6ef8a7c)
+07:38:23.806     ~/chunks/node_modules_ecf37db8._.js.map (debug id 16c508ad-f6db-64ac-a146-6c67c90b5e52)
+07:38:23.806     ~/chunks/node_modules_next_dist_esm_build_templates_app-route_07412ca1.js.map (debug id 25406089-3249-f147-425f-c9dee7090b5f)
+07:38:23.806     ~/chunks/node_modules_next_dist_esm_build_templates_app-route_5b95058d.js.map (debug id f07bd1a8-0935-025d-58a4-ea1d74c92249)
+07:38:23.806     ~/chunks/node_modules_next_dist_esm_build_templates_app-route_64175717.js.map (debug id fd896a74-4bed-cb03-169e-6fbc37791715)
+07:38:23.806     ~/chunks/node_modules_next_dist_esm_build_templates_app-route_e07c56a9.js.map (debug id 4746a85c-de69-487d-edd7-ef69eaf49344)
+07:38:23.806     ~/chunks/node_modules_next_f2da0d3e._.js.map (debug id 7c173aa3-e63b-e149-10e8-1f7b4638fb7f)
+07:38:23.807     ~/chunks/ssr/0bf35_build_esm_detectors_platform_node_machine-id_getMachineId-linux_4784470b.js.map (debug id 8a434f0b-6376-3615-0e18-5a4830f3e7b7)
+07:38:23.807     ~/chunks/ssr/0bf35_build_esm_detectors_platform_node_machine-id_getMachineId-unsupported_715e656b.js.map (debug id 6c29bf3f-d8be-2af0-e500-d4c470873809)
+07:38:23.807     ~/chunks/ssr/[externals]_node:inspector_7a4283c6._.js.map (debug id 5f41589b-d010-1718-2c15-d0250c8535f0)
+07:38:23.807     ~/chunks/ssr/[root-of-the-server]__02b29e7b._.js.map (debug id 0e40f8ae-ce2a-f9cb-0297-a4a690927a58)
+07:38:23.807     ~/chunks/ssr/[root-of-the-server]__04ee6ac6._.js.map (debug id bda0ab6f-7564-5dd6-e7ad-a8bf16747033)
+07:38:23.807     ~/chunks/ssr/[root-of-the-server]__07c18362._.js.map (debug id 15849115-4805-e5a8-3e7b-5e8723aaf1c1)
+07:38:23.808     ~/chunks/ssr/[root-of-the-server]__0ab33ac5._.js.map (debug id 3ea011fa-e4bc-f1ab-1c5a-706677ec42e6)
+07:38:23.808     ~/chunks/ssr/[root-of-the-server]__0bbe6963._.js.map (debug id eecd6537-64c5-9a0c-01b0-356ed0c9e7e2)
+07:38:23.808     ~/chunks/ssr/[root-of-the-server]__1d381d1f._.js.map (debug id ca2bf51b-fe61-9591-977d-ad7bd90fa23c)
+07:38:23.808     ~/chunks/ssr/[root-of-the-server]__2bead3f5._.js.map (debug id 8687a2fd-f6fe-c68a-a088-ad3a090c965d)
+07:38:23.810     ~/chunks/ssr/[root-of-the-server]__2d75bc51._.js.map (debug id d4888e82-467c-bae2-0cf8-1523bab43650)
+07:38:23.810     ~/chunks/ssr/[root-of-the-server]__2eebbe0f._.js.map (debug id d70aad10-861f-2b60-cd0a-a49d8b3bce0e)
+07:38:23.810     ~/chunks/ssr/[root-of-the-server]__3bc7ad0a._.js.map (debug id 02a73abd-2554-96fb-4890-b62c988bbeb0)
+07:38:23.810     ~/chunks/ssr/[root-of-the-server]__425f84be._.js.map (debug id 17accff5-be84-5599-9a57-3626c9064cd8)
+07:38:23.810     ~/chunks/ssr/[root-of-the-server]__4afc1147._.js.map (debug id e9b86e64-726a-2131-e1d6-aa30788b3c6b)
+07:38:23.811     ~/chunks/ssr/[root-of-the-server]__4f788405._.js.map (debug id 62b754ac-6aca-243d-fe49-07ae173675fc)
+07:38:23.811     ~/chunks/ssr/[root-of-the-server]__5220a6fd._.js.map (debug id 45226847-d989-8393-1b63-612616674afe)
+07:38:23.811     ~/chunks/ssr/[root-of-the-server]__571b3576._.js.map (debug id d8d06a06-7033-a15e-d722-53add824ac31)
+07:38:23.811     ~/chunks/ssr/[root-of-the-server]__5ad79845._.js.map (debug id eda87111-7099-8a33-37b9-57d12db71340)
+07:38:23.811     ~/chunks/ssr/[root-of-the-server]__5e47ba41._.js.map (debug id df10957f-a9eb-70ac-ef3f-bdd5861f6d8d)
+07:38:23.811     ~/chunks/ssr/[root-of-the-server]__64167884._.js.map (debug id d96d9438-7b51-0041-feb7-833f4861f0c6)
+07:38:23.812     ~/chunks/ssr/[root-of-the-server]__64c737de._.js.map (debug id 64f762c6-0ad4-fa0e-3fa7-138646124821)
+07:38:23.812     ~/chunks/ssr/[root-of-the-server]__692c0a58._.js.map (debug id 5dd0cc9f-15b3-f5ce-1437-8d0ee14789ae)
+07:38:23.812     ~/chunks/ssr/[root-of-the-server]__77b2356b._.js.map (debug id eb956293-9c3e-b162-bcb1-e937587f5b64)
+07:38:23.812     ~/chunks/ssr/[root-of-the-server]__81c7322d._.js.map (debug id d9cc917a-d7b9-4771-a675-5d16ca87a2bb)
+07:38:23.812     ~/chunks/ssr/[root-of-the-server]__88a12a92._.js.map (debug id ff2a2e46-f506-c125-fc12-dec8756ce352)
+07:38:23.812     ~/chunks/ssr/[root-of-the-server]__8ab95f0d._.js.map (debug id 9f9640cf-d691-5ff3-f9cb-0420e3af4e25)
+07:38:23.813     ~/chunks/ssr/[root-of-the-server]__90e6065d._.js.map (debug id b160f0f1-0e29-b61e-ee7d-098487245c6e)
+07:38:23.813     ~/chunks/ssr/[root-of-the-server]__a24c24ce._.js.map (debug id 90e45c00-cf0b-9666-c8ae-3fa938b0cda5)
+07:38:23.813     ~/chunks/ssr/[root-of-the-server]__a457c799._.js.map (debug id 159a1d7b-8e58-52a6-526c-cfef9c9bb3b4)
+07:38:23.813     ~/chunks/ssr/[root-of-the-server]__aefd40bd._.js.map (debug id 24b7444d-3c1b-85c9-6931-19486d51c940)
+07:38:23.813     ~/chunks/ssr/[root-of-the-server]__b3045641._.js.map (debug id ee2333a2-fff3-9bc1-082c-09a98382b989)
+07:38:23.813     ~/chunks/ssr/[root-of-the-server]__b7e62280._.js.map (debug id 1bd58d76-b110-36d1-d70f-79c7afc35aac)
+07:38:23.814     ~/chunks/ssr/[root-of-the-server]__c53236a6._.js.map (debug id 7a33208a-e7ad-8d8b-76c8-2b79bbd15ab9)
+07:38:23.814     ~/chunks/ssr/[root-of-the-server]__c6e7a7f4._.js.map (debug id 882d4321-cf62-398d-5e09-6ce3abf619f8)
+07:38:23.814     ~/chunks/ssr/[root-of-the-server]__ce7c97a1._.js.map (debug id 877ff760-3dd0-dbd0-4289-3274060fafb7)
+07:38:23.814     ~/chunks/ssr/[root-of-the-server]__cfdce4e9._.js.map (debug id f709768b-2ba0-1761-0960-7db2f086ecc1)
+07:38:23.814     ~/chunks/ssr/[root-of-the-server]__d9260960._.js.map (debug id cb42cb3c-5f47-9a16-3978-31c1ed40f485)
+07:38:23.814     ~/chunks/ssr/[root-of-the-server]__db6249bd._.js.map (debug id 0ed15ece-bb3e-8a52-ce6e-150eb01f7650)
+07:38:23.815     ~/chunks/ssr/[root-of-the-server]__e1cc5545._.js.map (debug id 06b52f4c-33cf-81bf-8f05-2f954d238d27)
+07:38:23.815     ~/chunks/ssr/[root-of-the-server]__e2e52c6e._.js.map (debug id 95f9ae2b-6bb7-b540-8aae-9bf60a3579a1)
+07:38:23.815     ~/chunks/ssr/[root-of-the-server]__eee55e54._.js.map (debug id aef1356d-f1bb-b060-d3c3-4a0242a3bf0e)
+07:38:23.815     ~/chunks/ssr/[root-of-the-server]__f827141b._.js.map (debug id 5f1217d7-3dce-572c-430b-377bb3336e15)
+07:38:23.815     ~/chunks/ssr/[root-of-the-server]__fdcc95cb._.js.map (debug id 87dba978-b1e8-eff7-094d-85fa7174fc40)
+07:38:23.815     ~/chunks/ssr/[turbopack]_runtime.js.map
+07:38:23.816     ~/chunks/ssr/_01ebacef._.js.map (debug id 80050c5b-7e94-fa39-50d3-c6976dc6b74d)
+07:38:23.816     ~/chunks/ssr/_089a7fb8._.js.map (debug id cd12c6d8-a1dd-d3a7-8aea-d5748d090252)
+07:38:23.816     ~/chunks/ssr/_154902d0._.js.map (debug id f5d64c32-fcd6-c4ca-fa95-b14fabec6f2a)
+07:38:23.816     ~/chunks/ssr/_1e1c11a3._.js.map (debug id 4ae47a8d-063a-9c40-e128-be6c26469626)
+07:38:23.816     ~/chunks/ssr/_1ebe86c5._.js.map (debug id 4e5a5547-c846-e602-bbf2-cb93fd1a3fab)
+07:38:23.816     ~/chunks/ssr/_21ec4b45._.js.map (debug id 25933ca0-b131-2732-ef1e-e3e200bfc18c)
+07:38:23.817     ~/chunks/ssr/_232ec68f._.js.map (debug id c006f0d6-36cb-34b9-b5b3-53c14472f052)
+07:38:23.817     ~/chunks/ssr/_25e2d92c._.js.map (debug id 370cf8aa-aae6-a93a-517a-de4717d7cc20)
+07:38:23.817     ~/chunks/ssr/_2ce7c914._.js.map (debug id abde60bc-490c-8c0e-fc4c-2186967fc6c4)
+07:38:23.817     ~/chunks/ssr/_2f47eeb3._.js.map (debug id 9601fe39-d51b-e0a7-29dd-d8422890da07)
+07:38:23.817     ~/chunks/ssr/_3128e612._.js.map (debug id d518798f-2ff8-60a3-c149-8884289885d7)
+07:38:23.817     ~/chunks/ssr/_37d1238f._.js.map (debug id 3c39a756-7577-8068-0a0c-714454b61096)
+07:38:23.817     ~/chunks/ssr/_3ad4ce1b._.js.map (debug id 7698d1ad-3780-2eb3-de20-3372911cf8df)
+07:38:23.818     ~/chunks/ssr/_449002b4._.js.map (debug id 36714a16-c53a-4d85-3202-19f09efc9cf5)
+07:38:23.818     ~/chunks/ssr/_449df4ed._.js.map (debug id b1980981-254c-f535-e354-1705daed75da)
+07:38:23.818     ~/chunks/ssr/_49193159._.js.map (debug id 66e723d5-244d-877f-ef93-04f48f95a01c)
+07:38:23.818     ~/chunks/ssr/_50a144fc._.js.map (debug id 7e28146c-71a7-e91a-e2de-53e4e1fd5e46)
+07:38:23.819     ~/chunks/ssr/_5c6070d6._.js.map (debug id 6c4471de-5581-162b-7f0c-719b15e3c93a)
+07:38:23.819     ~/chunks/ssr/_5d7a3564._.js.map (debug id 5d69d51c-68b4-95bd-99bd-8caa992b262d)
+07:38:23.820     ~/chunks/ssr/_5de35b32._.js.map (debug id 6a7e4e0e-33cb-1520-c7ba-729b1f072aaa)
+07:38:23.820     ~/chunks/ssr/_5ec4c8ee._.js.map (debug id 881e1e2e-f61d-1387-dcc0-04233a9b2b9e)
+07:38:23.820     ~/chunks/ssr/_5fa056aa._.js.map (debug id 94b7d5c5-0d4d-a3f0-3214-05715531b4d6)
+07:38:23.820     ~/chunks/ssr/_5ffd0450._.js.map (debug id c52acc57-c0f6-0e5d-6314-d3426f62c801)
+07:38:23.820     ~/chunks/ssr/_677a2a5c._.js.map (debug id ca1603b9-30e2-b5d3-cee4-07241c8a820a)
+07:38:23.821     ~/chunks/ssr/_694ff555._.js.map (debug id 8cc19cdb-982b-fcc3-c405-7543b10f1a06)
+07:38:23.821     ~/chunks/ssr/_6b453964._.js.map (debug id 0bdb4204-680e-1383-884f-9ae549479ace)
+07:38:23.821     ~/chunks/ssr/_6fa18673._.js.map (debug id 65bc6549-b83e-ffc5-e320-e43242b5dd15)
+07:38:23.821     ~/chunks/ssr/_76b39280._.js.map (debug id a41863a4-7ae6-93ad-b04b-623264fc3818)
+07:38:23.821     ~/chunks/ssr/_77625e87._.js.map (debug id 4520ee3e-b602-9b7e-d659-8cea2524e4ea)
+07:38:23.821     ~/chunks/ssr/_7acff888._.js.map (debug id a5861ee9-b1bf-e043-c36e-7418bcd5eab0)
+07:38:23.821     ~/chunks/ssr/_7ff0c2e1._.js.map (debug id 581b8960-7a65-6925-955b-ba99182b179c)
+07:38:23.822     ~/chunks/ssr/_823ed050._.js.map (debug id 6c80e29b-ea28-10fc-2072-d9c0abb60d80)
+07:38:23.822     ~/chunks/ssr/_84752583._.js.map (debug id b2764ca0-91ed-65ca-31c1-98d2ec32e564)
+07:38:23.822     ~/chunks/ssr/_855cd46b._.js.map (debug id 5caded32-3005-2660-935a-1636e1a9a26f)
+07:38:23.822     ~/chunks/ssr/_92b05052._.js.map (debug id df3c1f4d-5696-3e81-4e44-e2c15acb4722)
+07:38:23.822     ~/chunks/ssr/_a16842f8._.js.map (debug id 1c3b6c21-7cc9-1d69-bc0a-c579e0620e2f)
+07:38:23.823     ~/chunks/ssr/_a79bf1e1._.js.map (debug id 645a58c3-b372-29b6-3f09-a0ffd35ebeaf)
+07:38:23.823     ~/chunks/ssr/_b3afcc72._.js.map (debug id 46f3f796-f6a0-9787-bece-bc43f12a72ab)
+07:38:23.823     ~/chunks/ssr/_b647af05._.js.map (debug id eb64b78d-7997-b602-64cd-bda56b54abf6)
+07:38:23.823     ~/chunks/ssr/_b7267ab9._.js.map (debug id e1ebb1d1-970c-51ed-ec52-fd6eb2798ff9)
+07:38:23.823     ~/chunks/ssr/_ba96bdce._.js.map (debug id 44b65dd2-0b87-d117-1e64-b5ca68958988)
+07:38:23.823     ~/chunks/ssr/_c4bd2687._.js.map (debug id b7fb6877-9605-9da6-0240-d933334b4fb8)
+07:38:23.824     ~/chunks/ssr/_c6cc163e._.js.map (debug id 90db22fe-454d-fdc1-7e0a-92e00677d647)
+07:38:23.824     ~/chunks/ssr/_d1ac8fed._.js.map (debug id 6188e11b-7976-e98d-cf19-62dd43ea8239)
+07:38:23.824     ~/chunks/ssr/_d27553b8._.js.map (debug id 9bdfcd9b-19a7-65a4-c9cc-982ee6b93e89)
+07:38:23.824     ~/chunks/ssr/_d3056a62._.js.map (debug id 27557406-e15d-cc66-08a1-b917dbec4622)
+07:38:23.824     ~/chunks/ssr/_d5527ab4._.js.map (debug id 98d50f10-f94e-98bb-db4f-29cb4383251f)
+07:38:23.824     ~/chunks/ssr/_d587dc2c._.js.map (debug id 6a62ceb2-007a-a456-bcee-2940218b1f5f)
+07:38:23.825     ~/chunks/ssr/_d70b375b._.js.map (debug id 99afa0fc-03ff-d1ce-9fd1-39a16128c441)
+07:38:23.825     ~/chunks/ssr/_e88e579f._.js.map (debug id 2bd41496-1d1e-149c-c087-a6ce04043ae6)
+07:38:23.825     ~/chunks/ssr/_e91c1e0f._.js.map (debug id 47c33f78-96ce-de53-035f-411b1dc7a5f2)
+07:38:23.825     ~/chunks/ssr/_f09cd050._.js.map (debug id 812cfaf8-2248-ded7-cd4c-93ca33bd432f)
+07:38:23.825     ~/chunks/ssr/_f0ec696b._.js.map (debug id 9aad929e-8165-2e84-84d8-d69b1d9c5084)
+07:38:23.825     ~/chunks/ssr/_f64c7ce6._.js.map (debug id 2d41fc15-99f8-06d9-d8be-3bcb95ad7688)
+07:38:23.826     ~/chunks/ssr/_next-internal_server_app__global-error_page_actions_75761787.js.map (debug id 8b14a72b-d518-1c2b-3fa2-47cdf74323ad)
+07:38:23.826     ~/chunks/ssr/_next-internal_server_app__not-found_page_actions_554ec2bf.js.map (debug id 6449725e-fc81-0773-3853-ac691e723025)
+07:38:23.826     ~/chunks/ssr/_next-internal_server_app_about_page_actions_6fff35e4.js.map (debug id e3a3f007-d609-4cb3-74bd-7c2cf7407d71)
+07:38:23.826     ~/chunks/ssr/_next-internal_server_app_admin_dashboard_page_actions_b058c280.js.map (debug id a0aaa441-9780-b801-0426-30406995538c)
+07:38:23.826     ~/chunks/ssr/_next-internal_server_app_admin_forgot-password_page_actions_90892c45.js.map (debug id 133ac60f-dcbf-ce44-f99e-02640d91c8d1)
+07:38:23.827     ~/chunks/ssr/_next-internal_server_app_admin_login_page_actions_0700d525.js.map (debug id e1c72320-1c00-d620-6ba4-dc7e381ba2e7)
+07:38:23.827     ~/chunks/ssr/_next-internal_server_app_admin_merchants_manage_page_actions_d8add244.js.map (debug id f9a795f4-f222-e829-a128-c637000f25a6)
+07:38:23.827     ~/chunks/ssr/_next-internal_server_app_admin_merchants_page_actions_abfd4b75.js.map (debug id 6f04d2e1-3521-eeff-72a0-2e95bcce8cc4)
+07:38:23.827     ~/chunks/ssr/_next-internal_server_app_admin_profile_page_actions_f43720f6.js.map (debug id e5b4cd4c-31da-9171-9e9b-3e3ba697cc18)
+07:38:23.827     ~/chunks/ssr/_next-internal_server_app_admin_reset-password_page_actions_cbefad1e.js.map (debug id 42d02959-de29-4c89-afb0-d88a7c6ba52f)
+07:38:23.828     ~/chunks/ssr/_next-internal_server_app_admin_settings_page_actions_d95b6266.js.map (debug id 31899119-e2be-d1e0-a21f-52f4f66e58ca)
+07:38:23.828     ~/chunks/ssr/_next-internal_server_app_admin_submissions_page_actions_c584b705.js.map (debug id ec694ae8-1208-9cc7-24f3-ad14d62bf457)
+07:38:23.828     ~/chunks/ssr/_next-internal_server_app_contact_page_actions_44e32ac3.js.map (debug id 10c5b4ab-fd31-a918-55c2-31a00d15a571)
+07:38:23.828     ~/chunks/ssr/_next-internal_server_app_donate_page_actions_539061cf.js.map (debug id 3fe30547-f7e6-82ee-8f07-e6fc75ec2dec)
+07:38:23.828     ~/chunks/ssr/_next-internal_server_app_fedi_page_actions_4f834cc6.js.map (debug id 8ed4d13d-14b8-d6da-f040-5af1164d244a)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_maps_page_actions_53e28af7.js.map (debug id 6c24547e-5cf0-2a00-6de8-2e4690a4736f)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_merchants_[slug]_page_actions_2ea40a0f.js.map (debug id ad5acb31-1be9-52c4-3fab-b062393dda1d)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_merchants_edit_[id]_page_actions_d0ee194d.js.map (debug id 2e508032-5af0-888c-0fca-e3027a62f6ce)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_merchants_page_actions_bbd3ddd2.js.map (debug id 70d381a6-922f-6474-8726-71306402df79)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_merchants_register_page_actions_fec502d5.js.map (debug id 222d7cf6-b01e-1da8-a4d3-5cb171f1a9b1)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_merchants_submission-success_page_actions_8c0d4a9c.js.map (debug id 732b9c71-38d3-02b0-65c2-a73ec7053859)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_merchants_success_page_actions_c64cfe34.js.map (debug id 9a895aa6-2c96-9f8f-e35c-d90132a00775)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_offline_page_actions_6f2efa6f.js.map (debug id b165bd1b-b791-4c16-fcaf-46adbe0147d9)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_page_actions_39d4fc33.js.map (debug id 1d2df1ad-733c-35c8-e52b-2194ceecf45c)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_programs_bodaboda_page_actions_0ae4c663.js.map (debug id f61d30ae-496a-2f75-9dc8-9ab7bfe321d2)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_programs_merchants_page_actions_a82fda2a.js.map (debug id 38feca08-0a47-bbb4-fdfc-746ac9c06d16)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_programs_upcycling_page_actions_20dae62e.js.map (debug id d605a4ae-5192-aeb9-b508-55cc309cce93)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_programs_waste-management_page_actions_8c4ae069.js.map (debug id 56d3f3c2-3c16-9cc9-9a22-635e31f32ff3)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_register_page_actions_cf89a161.js.map (debug id 2696567c-4463-3093-e2ae-d9e4d745874a)
+07:38:23.834     ~/chunks/ssr/_next-internal_server_app_verifier_dashboard_page_actions_b8f6c8d5.js.map (debug id d385cb1b-a068-16ac-701a-3c09cda75a7c)
+07:38:23.837     ~/chunks/ssr/_next-internal_server_app_verifier_history_page_actions_3ee541d0.js.map (debug id cd8681ec-be7e-b5ae-8256-6ac463c8a9a1)
+07:38:23.837     ~/chunks/ssr/_next-internal_server_app_verifier_verify_[id]_page_actions_d9952376.js.map (debug id 626aa56d-8b07-d12e-497f-4c0c40e20abf)
+07:38:23.837     ~/chunks/ssr/a9bf9_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_0dd1d6f3._.js.map (debug id d1583bfd-f709-c59d-18b8-aea5c0d75795)
+07:38:23.838     ~/chunks/ssr/a9bf9_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_49941087._.js.map (debug id 14bf2d33-adfc-aa51-1828-53a5dcc1d52b)
+07:38:23.838     ~/chunks/ssr/a9bf9_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_673d4da5._.js.map (debug id 25062897-c56e-11ea-8aa1-282137ef221d)
+07:38:23.838     ~/chunks/ssr/app_about_page_tsx_bc4cb8b8._.js.map (debug id 93fc6687-f944-2643-1020-b5e3ed53c5b6)
+07:38:23.838     ~/chunks/ssr/app_admin_layout_tsx_dd3cf12f._.js.map (debug id 294f404e-f8df-a184-75b7-3fe0b58dcaa3)
+07:38:23.838     ~/chunks/ssr/app_admin_submissions_page_tsx_37fced50._.js.map (debug id fe42df77-73c2-8b15-464c-4f619eaebf95)
+07:38:23.838     ~/chunks/ssr/app_contact_page_tsx_92a0d050._.js.map (debug id d76b58aa-d3ba-1758-c8d6-869d53710b5f)
+07:38:23.838     ~/chunks/ssr/app_e744e06a._.js.map (debug id b91b8e78-7e5a-a761-4e97-33f37c4593b0)
+07:38:23.838     ~/chunks/ssr/app_fedi_page_tsx_f3d1ab8b._.js.map (debug id b19e54e5-9922-7f88-a4be-0038403718d7)
+07:38:23.839     ~/chunks/ssr/app_maps_page_tsx_336416df._.js.map (debug id bbec1976-56ca-8030-d5b6-071d73e65e79)
+07:38:23.839     ~/chunks/ssr/app_merchants_page_tsx_19ca4c7f._.js.map (debug id 31afe7fc-0439-075e-b32a-c1d34391a5d8)
+07:38:23.839     ~/chunks/ssr/app_merchants_register_page_tsx_abd04eb6._.js.map (debug id d213e494-1a27-f10f-f1eb-10f940e7b097)
+07:38:23.839     ~/chunks/ssr/app_merchants_submission-success_page_tsx_1d72510a._.js.map (debug id 0bb62279-44e6-4234-9827-e73bf5b527ac)
+07:38:23.839     ~/chunks/ssr/app_not-found_tsx_339d4b53._.js.map (debug id 0dfdd0b9-e282-4033-c9b7-c3b017a532c0)
+07:38:23.840     ~/chunks/ssr/app_page_tsx_55b2e5ee._.js.map (debug id 6e5f11ff-2b67-fc6f-f5b2-3b922cf47602)
+07:38:23.840     ~/chunks/ssr/app_programs_bodaboda_page_tsx_0b61682a._.js.map (debug id 6ed4e9f0-40ce-1f4d-25f7-6bffd2bd0fe8)
+07:38:23.840     ~/chunks/ssr/app_programs_merchants_page_tsx_8c3a93af._.js.map (debug id 7c11832c-22f2-82a8-d71c-8254482dc7c6)
+07:38:23.840     ~/chunks/ssr/app_programs_upcycling_page_tsx_2fc1a847._.js.map (debug id 7fa39900-fa86-2ff2-a826-6a9b8ec9b0a6)
+07:38:23.840     ~/chunks/ssr/app_programs_waste-management_page_tsx_be3f96f7._.js.map (debug id efb59f11-88ec-9a2c-48ce-a72fb6de6784)
+07:38:23.840     ~/chunks/ssr/app_register_page_tsx_32211add._.js.map (debug id 20d832fc-824c-24e9-bad9-2a0abf4fd09f)
+07:38:23.840     ~/chunks/ssr/app_verifier_verify_[id]_page_tsx_fb743579._.js.map (debug id d1a1071e-259e-8597-b834-ead1bd4d08c7)
+07:38:23.840     ~/chunks/ssr/components_FAQ_tsx_60ec56d4._.js.map (debug id 2cdff189-0fe9-26e6-8ba3-a64d301135a9)
+07:38:23.841     ~/chunks/ssr/components_FediCommunity_tsx_24a487ce._.js.map (debug id cd9b4c7d-87c5-3a7b-52ee-848968ee6f5e)
+07:38:23.841     ~/chunks/ssr/components_ImpactStats_tsx_db1dec4b._.js.map (debug id e1aaa1df-94ae-33d4-3cdf-7ff88bf96ecc)
+07:38:23.841     ~/chunks/ssr/components_NewsSection_tsx_3087a930._.js.map (debug id 89333bf4-19e8-3e88-81cf-b627d7552633)
+07:38:23.841     ~/chunks/ssr/components_PartnerLogos_tsx_25ef08eb._.js.map (debug id 7990e76e-df43-1040-1355-a1914c794a86)
+07:38:23.841     ~/chunks/ssr/components_WhyKibera_tsx_0a1f25d1._.js.map (debug id 3e0117ea-218c-87b0-eae8-13a174609192)
+07:38:23.841     ~/chunks/ssr/lib_merchants-data_ts_efc9c141._.js.map (debug id c9feaae1-4e21-efc0-4715-1f38c8f05942)
+07:38:23.841     ~/chunks/ssr/node_modules_47843793._.js.map (debug id f061cae0-8a1d-ab06-414f-d17728ea8f63)
+07:38:23.842     ~/chunks/ssr/node_modules_5363a9de._.js.map (debug id de826ed6-8063-81f7-4093-8f5abd0f35c2)
+07:38:23.842     ~/chunks/ssr/node_modules_date-fns_format_mjs_df7eb26c._.js.map (debug id b8de81be-8c67-add0-79a9-0ce8b37d5558)
+07:38:23.842     ~/chunks/ssr/node_modules_e4b3e74a._.js.map (debug id af2a762c-9e88-699e-dc56-7f74b49ff621)
+07:38:23.842     ~/chunks/ssr/node_modules_eee573be._.js.map (debug id 16836ef9-bf5e-a131-c64d-b0c4bd0a910d)
+07:38:23.842     ~/chunks/ssr/node_modules_framer-motion_dist_es_render_components_motion_proxy_mjs_b72b0714._.js.map (debug id e2a15e74-d3a3-2b9c-3fcd-791f787059af)
+07:38:23.842     ~/chunks/ssr/node_modules_next_60966932._.js.map (debug id 639ad78a-6857-9b8f-ef9a-ee89d90f1be7)
+07:38:23.842     ~/chunks/ssr/node_modules_next_c567c0cf._.js.map (debug id 1bf0a3aa-16e3-7aeb-cafe-1a92df86ae81)
+07:38:23.843     ~/chunks/ssr/node_modules_next_dist_08570d7f._.js.map (debug id 167070fb-07e8-6929-ea85-f317407c3ec3)
+07:38:23.843     ~/chunks/ssr/node_modules_next_dist_1cd595fe._.js.map (debug id d4a7f47f-6607-df5a-cf5e-21429eb90e17)
+07:38:23.843     ~/chunks/ssr/node_modules_next_dist_5154788a._.js.map (debug id a1071737-d5c5-89a0-9b4a-bdb3b8f60881)
+07:38:23.843     ~/chunks/ssr/node_modules_next_dist_6842f855._.js.map (debug id 514dc856-f5d8-9a8d-ab82-6278f602f9c2)
+07:38:23.843     ~/chunks/ssr/node_modules_next_dist_client_components_2fffaa3a._.js.map (debug id fcfe1bfb-227d-ee12-54f3-5530ea7565ce)
+07:38:23.843     ~/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_ece394eb.js.map (debug id a81abd67-64d5-d737-8a0d-cfda9482d156)
+07:38:23.843     ~/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_15817684.js.map (debug id 340cea89-51a8-5dd6-8d4d-8184fba615a7)
+07:38:23.844     ~/chunks/ssr/node_modules_next_dist_esm_3fe9760a._.js.map (debug id c14ec513-4edf-2b7f-71bb-b65e6b60dedf)
+07:38:23.844     ~/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_9b7cc8db.js.map (debug id 63052646-eac3-a812-c866-079cdfacc7a9)
+07:38:23.844     ~/chunks/ssr/node_modules_react-icons_fa_index_mjs_02f2a295._.js.map (debug id cda9780d-a743-d5cd-f155-a6648115d248)
+07:38:23.844     ~/chunks/ssr/node_modules_react-icons_fi_index_mjs_2a053622._.js.map (debug id e03390ac-acdc-a31c-0e40-d0bd6308bc9c)
+07:38:23.844     ~/chunks/ssr/node_modules_react-icons_gi_index_mjs_636a1e76._.js.map (debug id 169254b2-ca6f-7f5d-89e5-0e68e89ace7c)
+07:38:23.844     ~/chunks/ssr/node_modules_react-icons_md_index_mjs_d051d1fd._.js.map (debug id ba202ee7-b56e-80a3-7829-fddf4f66ea20)
+07:38:23.844     ~/chunks/ssr/node_modules_react-icons_si_index_mjs_c5cd2440._.js.map (debug id e8146f98-c06e-f38b-09f9-e61300ce35c7)
+07:38:23.844     ~/middleware.js.map
+07:38:23.845 [@sentry/nextjs - After Production Compile] Info: Successfully uploaded source maps to Sentry
+07:38:23.845  ✓ Completed runAfterProductionCompile in 8959ms
+07:38:23.845    Running TypeScript ...
+07:38:35.527    Collecting page data ...
+07:38:36.826    Generating static pages (0/61) ...
+07:38:37.750    Generating static pages (15/61)
+07:38:38.451    Generating static pages (30/61)
+07:38:38.791    Generating static pages (45/61)
+07:38:39.172  ✓ Generating static pages (61/61) in 2.3s
+07:38:39.195    Finalizing page optimization ...
+07:38:39.208
+07:38:39.211 Route (app)                                     Revalidate  Expire
+07:38:39.212 ┌ ○ /
+07:38:39.212 ├ ○ /_not-found
+07:38:39.212 ├ ○ /about
+07:38:39.213 ├ ○ /admin/dashboard
+07:38:39.213 ├ ○ /admin/forgot-password
+07:38:39.213 ├ ○ /admin/login
+07:38:39.213 ├ ○ /admin/merchants
+07:38:39.213 ├ ○ /admin/merchants/manage
+07:38:39.213 ├ ○ /admin/profile
+07:38:39.214 ├ ○ /admin/reset-password
+07:38:39.214 ├ ○ /admin/settings
+07:38:39.214 ├ ○ /admin/submissions
+07:38:39.214 ├ ƒ /api/admin/auth/request-reset
+07:38:39.214 ├ ƒ /api/admin/auth/reset-password
+07:38:39.214 ├ ƒ /api/admin/dashboard
+07:38:39.214 ├ ƒ /api/admin/merchants
+07:38:39.214 ├ ƒ /api/admin/merchants/[id]
+07:38:39.214 ├ ƒ /api/admin/merchants/list
+07:38:39.214 ├ ƒ /api/admin/submissions
+07:38:39.215 ├ ƒ /api/admin/submissions/approve
+07:38:39.215 ├ ƒ /api/admin/submissions/reject
+07:38:39.215 ├ ƒ /api/auth/[...nextauth]
+07:38:39.215 ├ ƒ /api/auth/osm/callback
+07:38:39.215 ├ ƒ /api/check-env
+07:38:39.215 ├ ƒ /api/donations/[invoiceId]/payment-methods
+07:38:39.215 ├ ƒ /api/donations/create
+07:38:39.215 ├ ƒ /api/donations/send-receipt
+07:38:39.215 ├ ○ /api/donations/stats                               30s      1y
+07:38:39.216 ├ ƒ /api/donations/status
+07:38:39.216 ├ ƒ /api/donors
+07:38:39.216 ├ ƒ /api/merchants/edit/[id]
+07:38:39.216 ├ ƒ /api/merchants/invoice
+07:38:39.216 ├ ƒ /api/merchants/submit
+07:38:39.216 ├ ƒ /api/quantum-verify/approve
+07:38:39.216 ├ ƒ /api/quantum-verify/publish
+07:38:39.216 ├ ƒ /api/quantum-verify/reject
+07:38:39.216 ├ ƒ /api/quantum-verify/submissions
+07:38:39.217 ├ ƒ /api/test-btcpay
+07:38:39.217 ├ ƒ /api/test-email
+07:38:39.217 ├ ƒ /api/test-env
+07:38:39.217 ├ ƒ /api/test-merchant-email
+07:38:39.217 ├ ƒ /api/test-sentry
+07:38:39.217 ├ ƒ /api/verifier/history
+07:38:39.217 ├ ƒ /api/verifier/nearby-submissions
+07:38:39.217 ├ ƒ /api/verifier/stats
+07:38:39.218 ├ ƒ /api/verifier/submission/[id]
+07:38:39.218 ├ ƒ /api/verifier/submit-verification
+07:38:39.218 ├ ○ /contact
+07:38:39.218 ├ ○ /donate
+07:38:39.218 ├ ○ /fedi
+07:38:39.218 ├ ○ /icon.png
+07:38:39.218 ├ ○ /maps
+07:38:39.218 ├ ○ /merchants
+07:38:39.218 ├ ƒ /merchants/[slug]
+07:38:39.218 ├ ƒ /merchants/edit/[id]
+07:38:39.219 ├ ○ /merchants/register
+07:38:39.219 ├ ○ /merchants/submission-success
+07:38:39.219 ├ ○ /merchants/success
+07:38:39.219 ├ ○ /offline
+07:38:39.219 ├ ○ /programs/bodaboda
+07:38:39.219 ├ ○ /programs/merchants
+07:38:39.219 ├ ○ /programs/upcycling
+07:38:39.219 ├ ○ /programs/waste-management
+07:38:39.219 ├ ○ /register
+07:38:39.219 ├ ○ /robots.txt
+07:38:39.222 ├ ○ /sitemap.xml
+07:38:39.222 ├ ○ /verifier/dashboard
+07:38:39.222 ├ ○ /verifier/history
+07:38:39.222 └ ƒ /verifier/verify/[id]
+07:38:39.223
+07:38:39.223
+07:38:39.225 ○  (Static)   prerendered as static content
+07:38:39.225 ƒ  (Dynamic)  server-rendered on demand
+07:38:39.226
+07:38:39.713 Traced Next.js server files in: 74.093ms
+07:38:43.227 Created all serverless functions in: 3.511s
+07:38:43.256 Collected static files (public/, static/, .next/static): 13.818ms
+07:38:43.972 Build Completed in /vercel/output [1m]
+07:38:44.386 Deploying outputs...
