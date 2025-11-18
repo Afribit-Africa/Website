@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { 
-  FiArrowLeft, 
-  FiMapPin, 
-  FiPhone, 
-  FiMail, 
+import {
+  FiArrowLeft,
+  FiMapPin,
+  FiPhone,
+  FiMail,
   FiMap,
   FiList,
   FiExternalLink,
@@ -59,7 +59,7 @@ export default function MerchantPage() {
           <div className="text-center max-w-2xl mx-auto">
             <h1 className="font-heading text-5xl md:text-6xl font-bold text-white mb-6">Merchant Not Found</h1>
             <p className="text-gray-400 text-lg mb-8">The merchant you're looking for doesn't exist.</p>
-            <Link 
+            <Link
               href="/maps"
               className="btn btn-primary btn-lg"
             >
@@ -123,7 +123,7 @@ export default function MerchantPage() {
     <div className="min-h-screen bg-dark pt-8 md:pt-32 pb-24 md:pb-20">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         {/* Back Button */}
-        <Link 
+        <Link
           href="/maps"
           className="inline-flex items-center gap-2 text-gray-400 hover:text-bitcoin transition-all mb-8 font-semibold"
         >
@@ -152,13 +152,13 @@ export default function MerchantPage() {
                     {categoryInfo.name}
                   </span>
                 </div>
-                
+
                 <div className="flex gap-2">
                   <button
                     onClick={() => setViewMode('details')}
                     className={`p-3 rounded-xl transition-all ${
-                      viewMode === 'details' 
-                        ? 'bg-bitcoin text-black' 
+                      viewMode === 'details'
+                        ? 'bg-bitcoin text-black'
                         : 'bg-black/50 text-gray-400 hover:text-white border border-gray-800'
                     }`}
                   >
@@ -167,8 +167,8 @@ export default function MerchantPage() {
                   <button
                     onClick={() => setViewMode('map')}
                     className={`p-3 rounded-xl transition-all ${
-                      viewMode === 'map' 
-                        ? 'bg-bitcoin text-black' 
+                      viewMode === 'map'
+                        ? 'bg-bitcoin text-black'
                         : 'bg-black/50 text-gray-400 hover:text-white border border-gray-800'
                     }`}
                   >
@@ -190,9 +190,9 @@ export default function MerchantPage() {
                       </div>
                       <span className="text-gray-200">{merchant.location}</span>
                     </div>
-                    
+
                     {merchant.phoneNumber && (
-                      <a 
+                      <a
                         href={`tel:+254${merchant.phoneNumber}`}
                         className="flex items-center gap-4 p-4 rounded-xl bg-black/30 border border-white/5 hover:border-bitcoin/30 transition-all group"
                       >
@@ -202,9 +202,9 @@ export default function MerchantPage() {
                         <span className="text-gray-200 group-hover:text-bitcoin transition-colors font-numbers">+254 {merchant.phoneNumber}</span>
                       </a>
                     )}
-                    
+
                     {merchant.email && (
-                      <a 
+                      <a
                         href={`mailto:${merchant.email}`}
                         className="flex items-center gap-4 p-4 rounded-xl bg-black/30 border border-white/5 hover:border-bitcoin/30 transition-all group"
                       >
@@ -214,7 +214,7 @@ export default function MerchantPage() {
                         <span className="text-gray-200 group-hover:text-bitcoin transition-colors">{merchant.email}</span>
                       </a>
                     )}
-                    
+
                     {merchant.lightningAddress && (
                       <div className="flex items-center gap-4 p-4 rounded-xl bg-black/30 border border-white/5">
                         <div className="w-10 h-10 rounded-lg bg-bitcoin/10 border border-bitcoin/20 flex items-center justify-center shrink-0">
@@ -226,7 +226,7 @@ export default function MerchantPage() {
                         </div>
                       </div>
                     )}
-                    
+
                     <div className="flex items-center gap-4 p-4 rounded-xl bg-black/30 border border-white/5">
                       <div className="w-10 h-10 rounded-lg bg-bitcoin/10 border border-bitcoin/20 flex items-center justify-center shrink-0">
                         <SiBitcoin className="w-5 h-5 text-bitcoin" />

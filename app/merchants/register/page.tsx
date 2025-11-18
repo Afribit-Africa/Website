@@ -483,15 +483,24 @@ export default function MerchantRegisterPage() {
                 <p className="text-xs md:text-sm text-gray-300 leading-relaxed mb-4">
                   Share your Lightning address so customers and donors can easily send you Bitcoin payments.
                 </p>
-                <Input
-                  label="Your Lightning Address"
-                  type="text"
-                  value={formData.lightningAddress}
-                  onChange={(e) => updateField('lightningAddress', e.target.value)}
-                  placeholder="yourname@blink.sv or you@getalby.com"
-                  helper="Looks like an email - get one from wallets below"
-                  icon={<Zap className="w-5 h-5" />}
-                />
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-white">
+                    Your Lightning Address
+                  </label>
+                  <div className="relative">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70">
+                      <Zap className="w-5 h-5" />
+                    </div>
+                    <input
+                      type="text"
+                      value={formData.lightningAddress}
+                      onChange={(e) => updateField('lightningAddress', e.target.value)}
+                      placeholder="yourname@blink.sv or you@getalby.com"
+                      className="w-full px-4 py-3 pl-12 text-base md:text-sm bg-white/5 border-2 border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-bitcoin focus:ring-2 focus:ring-bitcoin/30 hover:border-white/20 hover:bg-white/8 transition-all duration-200 touch-manipulation min-h-[48px] md:min-h-[44px]"
+                    />
+                  </div>
+                  <p className="text-xs text-gray-400 leading-relaxed">Looks like an email - get one from wallets below</p>
+                </div>
               </div>
 
               <div className="bg-white/5 border border-white/10 rounded-lg p-4">

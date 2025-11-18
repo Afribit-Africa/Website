@@ -135,7 +135,7 @@ export async function proxy(request: NextRequest) {
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
 
   // Permissions Policy (allow geolocation for verifier and merchant registration pages)
-  const allowGeolocation = request.nextUrl.pathname.startsWith('/verifier') || 
+  const allowGeolocation = request.nextUrl.pathname.startsWith('/verifier') ||
                           request.nextUrl.pathname.startsWith('/merchants/register') ||
                           request.nextUrl.pathname.startsWith('/register');
   response.headers.set(

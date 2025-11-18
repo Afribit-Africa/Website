@@ -110,10 +110,10 @@ export async function POST(request: NextRequest) {
     );
 
     // Log admin activity
-    const activityDetails = adminOverride 
-      ? `Admin Override: ${notes || 'Approved without verifier verification'}` 
+    const activityDetails = adminOverride
+      ? `Admin Override: ${notes || 'Approved without verifier verification'}`
       : notes || 'No notes provided';
-    
+
     await executeQuery(
       `INSERT INTO admin_activity_log (id, merchant_submission_id, admin_email, action, details, created_at)
        VALUES (?, ?, ?, 'approved', ?, NOW())`,
