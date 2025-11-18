@@ -215,11 +215,26 @@ export default function MerchantPage() {
                       </a>
                     )}
                     
+                    {merchant.lightningAddress && (
+                      <div className="flex items-center gap-4 p-4 rounded-xl bg-black/30 border border-white/5">
+                        <div className="w-10 h-10 rounded-lg bg-bitcoin/10 border border-bitcoin/20 flex items-center justify-center shrink-0">
+                          <SiBitcoin className="w-5 h-5 text-bitcoin" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-xs text-gray-500 mb-1">Lightning Address</div>
+                          <span className="text-gray-200 font-mono text-sm">{merchant.lightningAddress}</span>
+                        </div>
+                      </div>
+                    )}
+                    
                     <div className="flex items-center gap-4 p-4 rounded-xl bg-black/30 border border-white/5">
                       <div className="w-10 h-10 rounded-lg bg-bitcoin/10 border border-bitcoin/20 flex items-center justify-center shrink-0">
                         <SiBitcoin className="w-5 h-5 text-bitcoin" />
                       </div>
-                      <span className="text-gray-200 font-mono text-sm truncate">{merchant.blinkAddress}</span>
+                      <div className="flex-1">
+                        <div className="text-xs text-gray-500 mb-1">Blink Address</div>
+                        <span className="text-gray-200 font-mono text-sm truncate">{merchant.blinkAddress}</span>
+                      </div>
                     </div>
                   </div>
 

@@ -6,6 +6,7 @@ export interface Merchant {
   phoneNumber: string;
   location: string;
   blinkAddress: string;
+  lightningAddress?: string;
   btcMapUrl?: string;
   btcMapNodeId?: string;
   latitude?: number;
