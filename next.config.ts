@@ -2,9 +2,6 @@ import type { NextConfig } from "next";
 import { withSentryConfig } from "@sentry/nextjs";
 
 const nextConfig: NextConfig = {
-  // Output configuration
-  output: 'standalone',
-
   // Performance optimizations
   compress: true,
 
