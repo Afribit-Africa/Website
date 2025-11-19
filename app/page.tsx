@@ -5,6 +5,7 @@ import { BitcoinValuesMarquee } from "@/components/BitcoinValuesMarquee";
 import { GSAPAnimations } from "@/components/GSAPAnimations";
 import { Skeleton } from "@/components/Skeleton";
 import Link from "next/link";
+import { Globe } from "lucide-react";
 
 // Lazy load heavy components
 const DonationStats = dynamic(() => import("@/components/DonationStats").then(mod => ({ default: mod.DonationStats })), {
@@ -379,7 +380,7 @@ export default function HomePage() {
             {/* Goal 2 */}
             <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-bitcoin/50 transition-all duration-300 group">
               <div className="w-12 h-12 bg-bitcoin/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-bitcoin/30 transition-colors">
-                <span className="text-2xl">🌍</span>
+                <Globe className="w-6 h-6 text-bitcoin" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Strengthen Waste Management</h3>
               <p className="text-gray-300 leading-relaxed">

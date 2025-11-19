@@ -30,7 +30,7 @@ export default function FediCommunity() {
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Join Our <span className="text-gradient bg-gradient-to-r from-purple-400 to-pink-400">Community</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-300">
+          <p className="text-sm md:text-base text-gray-300">
             Connect with us on Fedi—a secure, privacy-focused Bitcoin wallet with community features
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function FediCommunity() {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Bitcoin Payments</h3>
-                <p className="text-gray-400">
+                <p className="text-xs md:text-sm text-gray-400">
                   Send Bitcoin donations instantly through Lightning Network with private, secure transactions
                 </p>
               </div>
@@ -57,7 +57,7 @@ export default function FediCommunity() {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Community Chat</h3>
-                <p className="text-gray-400">
+                <p className="text-xs md:text-sm text-gray-400">
                   Join conversations with team members and supporters in our private community space
                 </p>
               </div>
@@ -69,7 +69,7 @@ export default function FediCommunity() {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Real-time Updates</h3>
-                <p className="text-gray-400">
+                <p className="text-xs md:text-sm text-gray-400">
                   Get instant notifications about programs, events, and impact stories from Kibera
                 </p>
               </div>
@@ -81,7 +81,7 @@ export default function FediCommunity() {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Privacy & Security</h3>
-                <p className="text-gray-400">
+                <p className="text-xs md:text-sm text-gray-400">
                   Self-custodial wallet with end-to-end encryption—your keys, your Bitcoin
                 </p>
               </div>

@@ -214,8 +214,8 @@ export function Header() {
 
       {/* Mobile Navigation - Bottom Bar + Hamburger Menu */}
       <div className="md:hidden">
-        {/* Mobile Bottom Navigation Bar */}
-        <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-black/95 backdrop-blur-lg pb-safe">
+        {/* Mobile Bottom Navigation Bar - Floating Rounded */}
+        <nav className="fixed bottom-4 left-4 right-4 z-50 border-2 border-white/10 bg-black/95 backdrop-blur-lg rounded-3xl shadow-2xl shadow-black/50">
           <div className="flex items-center justify-around py-3 px-2">
             <Link
               href="/"

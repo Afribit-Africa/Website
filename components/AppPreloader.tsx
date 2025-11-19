@@ -9,9 +9,9 @@ export default function AppPreloader() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Simulate loading with smooth progress
-    const duration = 2000; // 2 seconds total
-    const steps = 50; // Number of updates
+    // Animate progress smoothly
+    const duration = 1500; // Base animation duration
+    const steps = 50;
     const increment = 100 / steps;
     const interval = duration / steps;
 
@@ -23,15 +23,26 @@ export default function AppPreloader() {
 
       if (newProgress >= 100) {
         clearInterval(progressInterval);
-        // Hide preloader after bar fills
-        setTimeout(() => {
-          setLoading(false);
-        }, 400);
       }
     }, interval);
 
+    // Wait for actual page load
+    const handlePageLoad = () => {
+      // Ensure progress reaches 100% first
+      setTimeout(() => {
+        setLoading(false);
+      }, duration + 300);
+    };
+
+    if (document.readyState === 'complete') {
+      handlePageLoad();
+    } else {
+      window.addEventListener('load', handlePageLoad);
+    }
+
     return () => {
       clearInterval(progressInterval);
+      window.removeEventListener('load', handlePageLoad);
     };
   }, []);
 
