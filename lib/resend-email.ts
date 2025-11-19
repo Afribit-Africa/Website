@@ -18,7 +18,7 @@ export async function sendDonationReceipt(data: DonationReceiptData) {
 
   logger.info('Preparing donation receipt email for:', donorEmail);
 
-  // Use verified domain: updates.afribit.africa
+  // Use verified domain: afribit.africa
   const fromEmail = 'receipts@updates.afribit.africa';
   const fromName = 'Afribit Africa';
 
@@ -207,7 +207,7 @@ Questions? Contact us at info@afribit.africa
   try {
     logger.debug('Attempting to send email via Resend');
 
-    // Use verified domain: updates.afribit.africa
+    // Use verified domain: afribit.africa
     const fromEmail = 'Afribit Africa <receipts@updates.afribit.africa>';
 
     logger.debug('Sending from:', fromEmail);
@@ -308,7 +308,7 @@ export async function sendWelcomeEmail(donorName: string, donorEmail: string) {
   `;
 
   try {
-    // Use verified domain: updates.afribit.africa
+    // Use verified domain: afribit.africa
     const fromEmail = 'Afribit Africa <hello@updates.afribit.africa>';
 
     const result = await resend.emails.send({

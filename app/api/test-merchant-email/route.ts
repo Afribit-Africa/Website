@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
       message: isConfigured ? 'Email system is configured' : 'Email system is not configured',
       config: {
         hasResendKey: !!process.env.RESEND_API_KEY,
-        fromEmail: 'merchants@updates.afribit.africa',
+        fromEmail: 'merchants@afribit.africa',
       }
     });
   }
