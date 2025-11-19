@@ -130,8 +130,8 @@ export default function DonatePage() {
           amount,
           tier: selectedTier?.id,
           donationType,
-          donorName: donationType === 'named' ? donorName : undefined,
-          donorEmail: donationType === 'named' ? donorEmail : undefined,
+          name: donationType === 'named' ? donorName : '',
+          email: donationType === 'named' ? donorEmail : '',
         }),
       });
 

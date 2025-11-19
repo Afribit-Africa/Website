@@ -91,7 +91,7 @@ export default function FediCommunity() {
             <div className="pt-4">
               <Link
                 href="/fedi"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-3 rounded-xl font-semibold text-base transition-all shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40"
               >
                 Join Community on Fedi
                 <FiArrowRight className="w-5 h-5" />

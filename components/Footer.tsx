@@ -177,9 +177,24 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-400 text-center md:text-left">
-              © {new Date().getFullYear()} Afribit Africa. All Rights Reserved.
-            </p>
+            <div className="flex flex-col items-center md:items-start gap-3">
+              <p className="text-sm text-gray-400 text-center md:text-left">
+                © {new Date().getFullYear()} Afribit Africa. All Rights Reserved.
+              </p>
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs text-gray-500">
+                <Link href="/legal/privacy" className="hover:text-bitcoin transition-colors">
+                  Privacy Policy
+                </Link>
+                <span className="text-gray-700">•</span>
+                <Link href="/legal/terms" className="hover:text-bitcoin transition-colors">
+                  Terms of Service
+                </Link>
+                <span className="text-gray-700">•</span>
+                <Link href="/legal/cookies" className="hover:text-bitcoin transition-colors">
+                  Cookie Policy
+                </Link>
+              </div>
+            </div>
             <p className="text-sm text-center md:text-right">
               Empowering Communities <span className="text-bitcoin font-medium">Through Bitcoin</span>
             </p>

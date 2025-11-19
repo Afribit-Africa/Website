@@ -200,7 +200,11 @@ export default function RegisterPage() {
         }
         setErrorModal({ isOpen: true, message });
       },
-      { timeout: 10000, maximumAge: 0 }
+      {
+        enableHighAccuracy: true,
+        timeout: 15000,
+        maximumAge: 0
+      }
     );
   };
 
@@ -434,8 +438,8 @@ export default function RegisterPage() {
                       type="text"
                       value={formData.lightningAddress}
                       onChange={(e) => updateField('lightningAddress', e.target.value)}
-                      placeholder="yourname@blink.sv or you@getalby.com"
-                      className="w-full px-4 py-3 pl-12 text-base md:text-sm bg-white/5 border-2 border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-bitcoin focus:ring-2 focus:ring-bitcoin/30 hover:border-white/20 hover:bg-white/8 transition-all duration-200 touch-manipulation min-h-[48px] md:min-h-[44px]"
+                      placeholder="yourname@blink.sv"
+                      className="w-full px-4 py-3 pl-12 text-sm md:text-base bg-white/5 border-2 border-white/10 rounded-lg text-white placeholder-gray-500 placeholder:text-xs md:placeholder:text-sm focus:outline-none focus:border-bitcoin focus:ring-2 focus:ring-bitcoin/30 hover:border-white/20 hover:bg-white/8 transition-all duration-200 touch-manipulation min-h-[48px] md:min-h-[44px]"
                     />
                   </div>
                   <p className="text-xs text-gray-400 leading-relaxed">Looks like an email - get one from wallets below</p>
