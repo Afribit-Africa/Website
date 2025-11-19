@@ -108,7 +108,7 @@ export function FloatingAudioPlayer() {
 
   return (
     <>
-      <audio ref={audioRef} src="/Media/Videos/Afribit Explanation.mp4" />
+      <audio ref={audioRef} src="/Media/Videos/Afribit%20Explanation.mp4" />
 
       {/* Dynamic Island Style - Mobile Only */}
       <div className="md:hidden fixed top-2 left-1/2 -translate-x-1/2 z-60">

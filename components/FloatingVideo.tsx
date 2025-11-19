@@ -74,7 +74,7 @@ export function FloatingVideo() {
               onPause={() => setIsPlaying(false)}
               controls
             >
-              <source src="/Media/Videos/Afribit Explanation.mp4" type="video/mp4" />
+              <source src="/Media/Videos/Afribit%20Explanation.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
