@@ -70,7 +70,7 @@ export default function AppPreloader() {
               <h2 className="text-2xl font-bold font-heading text-white mb-6">
                 Afribit Kibera
               </h2>
-              
+
               {/* Loading Bar */}
               <div className="w-64 h-1.5 bg-white/10 rounded-full overflow-hidden mx-auto relative">
                 <motion.div
@@ -79,7 +79,7 @@ export default function AppPreloader() {
                   className="h-full bg-white rounded-full shadow-lg shadow-white/30"
                 />
               </div>
-              
+
               {/* Progress Percentage */}
               <div className="mt-3 text-white text-sm font-mono">
                 {Math.round(progress)}%

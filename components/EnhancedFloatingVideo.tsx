@@ -9,13 +9,15 @@ export function EnhancedFloatingVideo() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Video sequence: Yeti videos first, then Afribit Explanation
   const videos = [
-    { url: '/Media/Videos/Yeti%20video.mp4', title: 'Yeti on Afribit' },
-    { url: '/Media/Videos/Yeti%20fun%20video%20of%20Afribit.mp4', title: 'Yeti Fun Video' },
-    { url: '/Media/Videos/Afribit%20Explanation.mp4', title: 'Afribit Explanation' }
+    { url: '/Media/Videos/Yeti video.mp4', title: 'Yeti on Afribit' },
+    { url: '/Media/Videos/Yeti fun video of Afribit.mp4', title: 'Yeti Fun Video' },
+    { url: '/Media/Videos/Afribit Explanation.mp4', title: 'Afribit Explanation' }
   ];
 
   useEffect(() => {
@@ -92,10 +94,55 @@ export function EnhancedFloatingVideo() {
               onEnded={handleVideoEnd}
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
+              onLoadStart={() => setIsLoading(true)}
+              onCanPlay={() => {
+                setIsLoading(false);
+                setHasError(false);
+              }}
+              onError={() => {
+                setIsLoading(false);
+                setHasError(true);
+                console.error(`Failed to load video: ${videos[currentVideoIndex].url}`);
+              }}
               className="w-full h-full object-cover"
             >
               <source src={videos[currentVideoIndex].url} type="video/mp4" />
             </video>
+
+            {/* Loading Indicator */}
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+                <div className="text-center">
+                  <div className="w-12 h-12 border-4 border-bitcoin/30 border-t-bitcoin rounded-full animate-spin mx-auto mb-3" />
+                  <p className="text-white text-sm">Loading video...</p>
+                </div>
+              </div>
+            )}
+
+            {/* Error Message */}
+            {hasError && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+                <div className="text-center px-4">
+                  <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <FiX className="w-6 h-6 text-red-400" />
+                  </div>
+                  <p className="text-white text-sm font-medium mb-2">Video failed to load</p>
+                  <p className="text-gray-400 text-xs mb-3">Please check your connection</p>
+                  <button
+                    onClick={() => {
+                      setHasError(false);
+                      setIsLoading(true);
+                      if (videoRef.current) {
+                        videoRef.current.load();
+                      }
+                    }}
+                    className="text-bitcoin text-sm hover:underline"
+                  >
+                    Try again
+                  </button>
+                </div>
+              </div>
+            )}
 
             {/* Video Controls Overlay */}
             <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
