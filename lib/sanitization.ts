@@ -1,9 +1,41 @@
 /**
  * Input Sanitization Utilities
  * Prevents XSS attacks by sanitizing user inputs
+ * Server-safe version for API routes
  */
 
-import DOMPurify from 'isomorphic-dompurify';
+// Use DOMPurify only in browser environment
+const isBrowser = typeof window !== 'undefined';
+let DOMPurify: any = null;
+
+if (isBrowser) {
+  // Only import DOMPurify in browser
+  import('isomorphic-dompurify').then(module => {
+    DOMPurify = module.default;
+  });
+}
+
+/**
+ * Server-safe HTML sanitization without DOM
+ * Removes all HTML tags and dangerous characters
+ */
+function sanitizeHtmlServer(dirty: string): string {
+  if (!dirty || typeof dirty !== 'string') return '';
+  
+  // Remove all HTML tags
+  let clean = dirty.replace(/<[^>]*>/g, '');
+  
+  // Encode special characters
+  clean = clean
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+    .replace(/\//g, '&#x2F;');
+  
+  return clean.trim();
+}
 
 /**
  * Sanitize HTML content to prevent XSS attacks
@@ -11,6 +43,11 @@ import DOMPurify from 'isomorphic-dompurify';
  */
 export function sanitizeHtml(dirty: string): string {
   if (!dirty || typeof dirty !== 'string') return '';
+
+  // Use server-safe sanitization on server
+  if (!isBrowser || !DOMPurify) {
+    return sanitizeHtmlServer(dirty);
+  }
 
   return DOMPurify.sanitize(dirty, {
     ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'p', 'br'],
@@ -25,6 +62,11 @@ export function sanitizeHtml(dirty: string): string {
  */
 export function sanitizeText(input: string): string {
   if (!input || typeof input !== 'string') return '';
+
+  // Use server-safe sanitization on server
+  if (!isBrowser || !DOMPurify) {
+    return sanitizeHtmlServer(input);
+  }
 
   return DOMPurify.sanitize(input, {
     ALLOWED_TAGS: [],
