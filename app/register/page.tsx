@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
-import { Check } from 'lucide-react';
+import { Check, Zap, Bitcoin } from 'lucide-react';
 import { Input } from '@/components/ui/Input';
 import { Select } from '@/components/ui/Select';
 import { Checkbox } from '@/components/ui/Checkbox';
@@ -51,6 +51,7 @@ export default function RegisterPage() {
     address: '',
     phone: '',
     website: '',
+    lightningAddress: '',
     paymentOnchain: false,
     paymentLightning: false,
     paymentLightningContactless: false,
@@ -412,38 +413,59 @@ export default function RegisterPage() {
                 />
               </div>
 
-              <div className="bg-bitcoin/10 border border-bitcoin/30 rounded-lg p-4">
-                <h3 className="font-medium text-bitcoin mb-2 flex items-center gap-2">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                  </svg>
+              {/* Lightning Address - Prominent */}
+              <div className="bg-bitcoin/10 border-2 border-bitcoin/40 rounded-lg p-5">
+                <h3 className="font-semibold text-bitcoin mb-2 flex items-center gap-2 text-base md:text-lg">
+                  <Zap className="w-6 h-6 flex-shrink-0" />
+                  Lightning Address
+                </h3>
+                <p className="text-xs md:text-sm text-gray-300 leading-relaxed mb-4">
+                  Share your Lightning address so customers and donors can easily send you Bitcoin payments.
+                </p>
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-white">
+                    Your Lightning Address
+                  </label>
+                  <div className="relative">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70">
+                      <Zap className="w-5 h-5" />
+                    </div>
+                    <input
+                      type="text"
+                      value={formData.lightningAddress}
+                      onChange={(e) => updateField('lightningAddress', e.target.value)}
+                      placeholder="yourname@blink.sv or you@getalby.com"
+                      className="w-full px-4 py-3 pl-12 text-base md:text-sm bg-white/5 border-2 border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-bitcoin focus:ring-2 focus:ring-bitcoin/30 hover:border-white/20 hover:bg-white/8 transition-all duration-200 touch-manipulation min-h-[48px] md:min-h-[44px]"
+                    />
+                  </div>
+                  <p className="text-xs text-gray-400 leading-relaxed">Looks like an email - get one from wallets below</p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+                <h3 className="font-medium text-white mb-3 flex items-center gap-2 text-sm md:text-base">
+                  <Bitcoin className="w-5 h-5 flex-shrink-0" />
                   Need a Bitcoin Wallet?
                 </h3>
-                <p className="text-sm text-gray-300 mb-3">
-                  We recommend these trusted wallets for accepting Bitcoin payments:
+                <p className="text-xs md:text-sm text-gray-300 leading-relaxed mb-3">
+                  Get a Lightning address from these recommended wallets:
                 </p>
-                <ul className="text-sm text-gray-300 space-y-2">
+                <ul className="space-y-2 text-xs md:text-sm text-gray-300">
                   <li className="flex items-start gap-2">
-                    <span className="text-bitcoin mt-0.5">•</span>
-                    <span>
-                      <a href="https://blink.sv" target="_blank" rel="noopener noreferrer" className="text-bitcoin hover:underline font-medium">Blink</a> - Fast Lightning payments, perfect for merchants
-                    </span>
+                    <Zap className="w-4 h-4 text-bitcoin flex-shrink-0 mt-0.5" />
+                    <span><a href="https://blink.sv" target="_blank" rel="noopener noreferrer" className="text-bitcoin font-semibold underline">Blink</a> - Easy Lightning wallet with instant payments (yourname@blink.sv)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-bitcoin mt-0.5">•</span>
-                    <span>
-                      <a href="https://www.fedi.xyz" target="_blank" rel="noopener noreferrer" className="text-bitcoin hover:underline font-medium">Fedi</a> - Community-powered Bitcoin wallet
-                    </span>
+                    <Zap className="w-4 h-4 text-bitcoin flex-shrink-0 mt-0.5" />
+                    <span><a href="https://www.fedi.xyz" target="_blank" rel="noopener noreferrer" className="text-bitcoin font-semibold underline">Fedi</a> - Community-powered Bitcoin wallet</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-bitcoin mt-0.5">•</span>
-                    <span>
-                      <a href="https://muun.com" target="_blank" rel="noopener noreferrer" className="text-bitcoin hover:underline font-medium">Muun</a> - Simple, secure Bitcoin wallet
-                    </span>
+                    <Zap className="w-4 h-4 text-bitcoin flex-shrink-0 mt-0.5" />
+                    <span><a href="https://muun.com" target="_blank" rel="noopener noreferrer" className="text-bitcoin font-semibold underline">Muun</a> - Lightning & on-chain in one app</span>
                   </li>
                 </ul>
                 <p className="text-xs text-gray-400 mt-3">
-                  Need help setting up? <a href="mailto:info@afribit.africa" className="text-bitcoin hover:underline">Contact us</a>
+                  Need help? <a href="mailto:info@afribit.africa" className="text-bitcoin underline">Contact us</a> for wallet setup assistance.
                 </p>
               </div>
 
