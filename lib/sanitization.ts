@@ -21,10 +21,10 @@ if (isBrowser) {
  */
 function sanitizeHtmlServer(dirty: string): string {
   if (!dirty || typeof dirty !== 'string') return '';
-  
+
   // Remove all HTML tags
   let clean = dirty.replace(/<[^>]*>/g, '');
-  
+
   // Encode special characters
   clean = clean
     .replace(/&/g, '&amp;')
@@ -33,7 +33,7 @@ function sanitizeHtmlServer(dirty: string): string {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#x27;')
     .replace(/\//g, '&#x2F;');
-  
+
   return clean.trim();
 }
 

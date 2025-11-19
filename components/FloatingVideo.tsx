@@ -37,7 +37,7 @@ export function FloatingVideo() {
   if (!isVisible) return null;
 
   return (
-    <div 
+    <div
       className={`fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 transition-all duration-500 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
       }`}
@@ -46,7 +46,7 @@ export function FloatingVideo() {
       <div className="relative bg-linear-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-bitcoin/30 rounded-2xl p-2 md:p-3 shadow-2xl overflow-hidden">
         {/* Animated Glow Effect */}
         <div className="absolute inset-0 bg-bitcoin/5 rounded-2xl animate-pulse" />
-        
+
         <div className="relative z-10">
           {/* Header */}
           <div className="flex items-center justify-between mb-2 px-2">
@@ -80,7 +80,7 @@ export function FloatingVideo() {
 
             {/* Play Overlay */}
             {!isPlaying && (
-              <div 
+              <div
                 className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer"
                 onClick={togglePlay}
               >
