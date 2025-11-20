@@ -7,9 +7,9 @@ async function testAdminQueries() {
     conn = await mysql.createConnection(
       'mysql://mdawidah_afribit:G5H1t_cAsvIA@mdawidahomestay.com:3306/mdawidah_afribit'
     );
-    
+
     console.log('✓ Connected to database\n');
-    
+
     // Test 1: Admin Dashboard Stats Query
     console.log('Testing: Admin Dashboard Stats...');
     try {
@@ -30,7 +30,7 @@ async function testAdminQueries() {
     } catch (error) {
       console.error('  ✗ Dashboard stats query failed:', error.message);
     }
-    
+
     // Test 2: Submissions List Query (with status filter)
     console.log('\nTesting: Submissions List (pending)...');
     try {
@@ -62,7 +62,7 @@ async function testAdminQueries() {
     } catch (error) {
       console.error('  ✗ Submissions query failed:', error.message);
     }
-    
+
     // Test 3: Merchants List Query
     console.log('\nTesting: Merchants List (all merchants)...');
     try {
@@ -82,7 +82,7 @@ async function testAdminQueries() {
     } catch (error) {
       console.error('  ✗ Merchants list query failed:', error.message);
     }
-    
+
     // Test 4: Published Merchants Query
     console.log('\nTesting: Published Merchants...');
     try {
@@ -108,7 +108,7 @@ async function testAdminQueries() {
     } catch (error) {
       console.error('  ✗ Published merchants query failed:', error.message);
     }
-    
+
     // Test 5: Recent Submissions Query
     console.log('\nTesting: Recent Submissions...');
     try {
@@ -122,9 +122,9 @@ async function testAdminQueries() {
     } catch (error) {
       console.error('  ✗ Recent submissions query failed:', error.message);
     }
-    
+
     console.log('\n✓ All admin API queries tested successfully!');
-    
+
   } catch (error) {
     console.error('Connection error:', error.message);
   } finally {

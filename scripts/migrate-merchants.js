@@ -103,14 +103,14 @@ async function migrateMerchantsToDatabase() {
     conn = await mysql.createConnection(
       'mysql://mdawidah_afribit:G5H1t_cAsvIA@mdawidahomestay.com:3306/mdawidah_afribit'
     );
-    
+
     console.log('✓ Connected to database\n');
     console.log(`Found ${merchantDirectory.length} merchants to migrate\n`);
-    
+
     let inserted = 0;
     let skipped = 0;
     let updated = 0;
-    
+
     for (const merchant of merchantDirectory) {
       try {
         // Check if merchant already exists by business name
@@ -118,21 +118,21 @@ async function migrateMerchantsToDatabase() {
           'SELECT id FROM merchant_submissions WHERE business_name = ?',
           [merchant.businessName]
         );
-        
+
         if (existing.length > 0) {
           console.log(`  ⊙ Skipping: ${merchant.businessName} (already exists)`);
           skipped++;
           continue;
         }
-        
+
         // Generate UUID
         const id = randomUUID();
         const editToken = randomUUID().replace(/-/g, '');
-        
+
         // Determine category_key and category_value
         let categoryKey = 'amenity';
         let categoryValue = 'other';
-        
+
         switch (merchant.category) {
           case 'restaurant':
             categoryKey = 'amenity';
@@ -170,7 +170,7 @@ async function migrateMerchantsToDatabase() {
             categoryKey = 'amenity';
             categoryValue = 'other';
         }
-        
+
         // Insert merchant with status 'published' since these are verified legacy merchants
         await conn.query(
           `INSERT INTO merchant_submissions (
@@ -206,28 +206,28 @@ async function migrateMerchantsToDatabase() {
             true, // is_early_adopter - all legacy merchants are early adopters
           ]
         );
-        
+
         console.log(`  ✓ Migrated: ${merchant.businessName}`);
         inserted++;
-        
+
       } catch (error) {
         console.error(`  ✗ Error migrating ${merchant.businessName}:`, error.message);
       }
     }
-    
+
     console.log(`\n=== Migration Summary ===`);
     console.log(`  Inserted: ${inserted}`);
     console.log(`  Skipped:  ${skipped}`);
     console.log(`  Total:    ${merchantDirectory.length}`);
-    
+
     // Assign adopter numbers to early adopters
     console.log('\nAssigning adopter numbers...');
     const [earlyAdopters] = await conn.query(
-      `SELECT id FROM merchant_submissions 
-       WHERE is_early_adopter = true AND adopter_number IS NULL 
+      `SELECT id FROM merchant_submissions
+       WHERE is_early_adopter = true AND adopter_number IS NULL
        ORDER BY submitted_at ASC`
     );
-    
+
     for (let i = 0; i < earlyAdopters.length; i++) {
       await conn.query(
         'UPDATE merchant_submissions SET adopter_number = ? WHERE id = ?',
@@ -235,9 +235,9 @@ async function migrateMerchantsToDatabase() {
       );
     }
     console.log(`  ✓ Assigned adopter numbers to ${earlyAdopters.length} merchants`);
-    
+
     console.log('\n✓ Migration completed successfully!');
-    
+
   } catch (error) {
     console.error('Migration error:', error);
   } finally {
