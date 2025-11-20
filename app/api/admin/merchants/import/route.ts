@@ -63,7 +63,7 @@ export async function GET(request: NextRequest) {
         <body>
           <h1>🏪 Merchant Import Tool</h1>
           <p>Import legacy hardcoded merchants into the database for CRUD operations.</p>
-          
+
           <div class="stats">
             <div class="stat">
               <span>Total merchants in database:</span>
@@ -104,7 +104,7 @@ export async function GET(request: NextRequest) {
             async function runImport() {
               const btn = document.getElementById('importBtn');
               const result = document.getElementById('result');
-              
+
               btn.disabled = true;
               btn.textContent = 'Importing...';
               result.style.display = 'none';
@@ -232,9 +232,15 @@ export async function POST(request: NextRequest) {
         }
 
         // Use default Kibera coordinates if merchant doesn't have specific coordinates
+        // Add small random offset to avoid unique constraint collision
         // Kibera center: -1.3133, 36.7897
-        const latitude = merchant.latitude ?? -1.3133;
-        const longitude = merchant.longitude ?? 36.7897;
+        // Offset range: ±0.001 degrees (~100 meters)
+        const baseLatitude = merchant.latitude ?? -1.3133;
+        const baseLongitude = merchant.longitude ?? 36.7897;
+        
+        // If using default coords, add random offset to prevent duplicate location constraint
+        const latitude = merchant.latitude ?? (baseLatitude + (Math.random() * 0.002 - 0.001));
+        const longitude = merchant.longitude ?? (baseLongitude + (Math.random() * 0.002 - 0.001));
 
         // Insert merchant
         await executeQuery(
