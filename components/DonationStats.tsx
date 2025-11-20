@@ -62,7 +62,7 @@ export function DonationStats() {
         setStats(data.stats);
       }
     } catch (error) {
-      console.error('Failed to fetch donation stats:', error);
+      // Failed to fetch donation stats
     } finally {
       setLoading(false);
     }

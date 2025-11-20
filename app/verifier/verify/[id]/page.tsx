@@ -83,7 +83,7 @@ export default function VerifyMerchant() {
 
       setUserLocation(location);
     } catch (error) {
-      console.error('Geolocation error:', error);
+      // Geolocation error
     }
   };
 
@@ -99,7 +99,6 @@ export default function VerifyMerchant() {
         router.push('/verifier/dashboard');
       }
     } catch (error) {
-      console.error('Error fetching submission:', error);
       alert('Failed to load submission');
       router.push('/verifier/dashboard');
     } finally {
@@ -211,7 +210,6 @@ export default function VerifyMerchant() {
         alert(data.message || 'Failed to submit verification');
       }
     } catch (error) {
-      console.error('Error submitting verification:', error);
       alert('Failed to submit verification');
     } finally {
       setIsSubmitting(false);

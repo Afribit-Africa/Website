@@ -85,7 +85,7 @@ export default function MapsPage() {
           setMerchants(data.merchants);
         }
       } catch (error) {
-        console.error('Error fetching merchants:', error);
+        // Error fetching merchants
       } finally {
         setIsLoading(false);
       }

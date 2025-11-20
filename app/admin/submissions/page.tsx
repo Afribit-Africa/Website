@@ -79,7 +79,6 @@ export default function SubmissionsPage() {
         toast.error('Failed to load submissions');
       }
     } catch (error) {
-      console.error('Error fetching submissions:', error);
       toast.error('Network error. Please try again.');
     } finally {
       setIsLoading(false);
@@ -112,7 +111,6 @@ export default function SubmissionsPage() {
         toast.error(data.error || 'Failed to approve submission');
       }
     } catch (error) {
-      console.error('Error approving:', error);
       toast.error('An error occurred');
     } finally {
       setIsProcessing(false);
@@ -148,7 +146,6 @@ export default function SubmissionsPage() {
         toast.error(data.error || 'Failed to reject submission');
       }
     } catch (error) {
-      console.error('Error rejecting:', error);
       toast.error('An error occurred');
     } finally {
       setIsProcessing(false);

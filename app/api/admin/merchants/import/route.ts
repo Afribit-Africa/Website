@@ -237,7 +237,7 @@ export async function POST(request: NextRequest) {
         // Offset range: ±0.001 degrees (~100 meters)
         const baseLatitude = merchant.latitude ?? -1.3133;
         const baseLongitude = merchant.longitude ?? 36.7897;
-        
+
         // If using default coords, add random offset to prevent duplicate location constraint
         const latitude = merchant.latitude ?? (baseLatitude + (Math.random() * 0.002 - 0.001));
         const longitude = merchant.longitude ?? (baseLongitude + (Math.random() * 0.002 - 0.001));

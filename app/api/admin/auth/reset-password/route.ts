@@ -63,14 +63,11 @@ export async function POST(request: NextRequest) {
       [passwordHash, user.id]
     );
 
-    console.log('Password reset successful for:', user.email);
-
     return NextResponse.json({
       success: true,
       message: 'Password has been reset successfully. You can now login with your new password.',
     });
   } catch (error: any) {
-    console.error('Password reset error:', error);
     return NextResponse.json(
       { success: false, error: 'Failed to reset password' },
       { status: 500 }

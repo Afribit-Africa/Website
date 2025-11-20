@@ -67,9 +67,7 @@ export async function POST(request: NextRequest) {
         submissionId,
         submission.edit_token
       );
-      console.log('✅ Rejection email sent successfully');
     } catch (emailError) {
-      console.error('❌ Failed to send rejection email:', emailError);
       // Don't fail the request if email fails
     }
 
@@ -78,7 +76,6 @@ export async function POST(request: NextRequest) {
       message: 'Submission rejected successfully',
     });
   } catch (error) {
-    console.error('Reject API error:', error);
     return NextResponse.json(
       { success: false, error: 'Internal server error' },
       { status: 500 }

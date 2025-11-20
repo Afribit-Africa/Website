@@ -176,7 +176,6 @@ export default function DonatePage() {
           }
           retries--;
         } catch (error) {
-          console.error(error);
           retries--;
           if (retries > 0) {
             await new Promise(resolve => setTimeout(resolve, 2000));
@@ -202,7 +201,6 @@ export default function DonatePage() {
       setQrCodeDataUrl(qrUrl);
       setStep('payment');
     } catch (err: any) {
-      console.error(error);
       setError(err.message || 'Failed to create payment. Please try again.');
       setStep('details');
       setLightningInvoice('');
@@ -273,10 +271,9 @@ export default function DonatePage() {
 
                   if (!response.ok) {
                     const errorData = await response.json();
-                    console.error('Receipt email error:', errorData);
+                    // Receipt email error
                   }
                 } catch (emailError) {
-                  console.error(error);
                   // Don't block success flow if email fails
                 }
               }, 2000); // Wait 2 seconds for DB to be fully updated
@@ -288,7 +285,7 @@ export default function DonatePage() {
           }
         }
       } catch (error) {
-        console.error(error);
+        // Payment status polling error
       }
     }, 3000); // Poll every 3 seconds
 

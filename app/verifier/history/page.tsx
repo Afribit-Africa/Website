@@ -52,7 +52,7 @@ export default function VerifierHistory() {
         setHistory(data.history);
       }
     } catch (error) {
-      console.error('Error fetching history:', error);
+      // Error fetching history
     } finally {
       setIsLoading(false);
     }

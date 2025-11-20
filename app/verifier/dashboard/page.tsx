@@ -124,7 +124,6 @@ export default function VerifierDashboard() {
       setLocationError(null);
       await fetchNearbySubmissions(location.lat, location.lng);
     } catch (error: any) {
-      console.error('Geolocation error:', error);
       setShowLocationModal(false);
       setLocationPermission('denied');
 
@@ -158,7 +157,6 @@ export default function VerifierDashboard() {
         setLocationError(data.message || 'Failed to fetch nearby submissions');
       }
     } catch (error) {
-      console.error('Error fetching nearby submissions:', error);
       setLocationError('Failed to load nearby submissions');
     } finally {
       setIsLoading(false);
@@ -174,7 +172,7 @@ export default function VerifierDashboard() {
         setStats(data.stats);
       }
     } catch (error) {
-      console.error('Error fetching verifier stats:', error);
+      // Error fetching verifier stats
     }
   };
 

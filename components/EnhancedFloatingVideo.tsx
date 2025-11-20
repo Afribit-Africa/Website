@@ -102,7 +102,6 @@ export function EnhancedFloatingVideo() {
               onError={() => {
                 setIsLoading(false);
                 setHasError(true);
-                console.error(`Failed to load video: ${videos[currentVideoIndex].url}`);
               }}
               className="w-full h-full object-cover"
             >

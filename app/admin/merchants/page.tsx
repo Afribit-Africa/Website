@@ -39,7 +39,7 @@ export default function MerchantsPage() {
         setMerchants(data.merchants);
       }
     } catch (error) {
-      console.error('Error fetching merchants:', error);
+      // Error fetching merchants
     } finally {
       setIsLoading(false);
     }

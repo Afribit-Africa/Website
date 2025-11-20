@@ -55,7 +55,7 @@ export default function AdminDashboardPage() {
         setRecentSubmissions(data.recentSubmissions || []);
       }
     } catch (error) {
-      console.error('Error fetching dashboard data:', error);
+      // Error fetching dashboard data
     } finally {
       setIsLoading(false);
     }
