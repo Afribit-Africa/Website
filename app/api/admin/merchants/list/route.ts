@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
         payment_onchain, payment_lightning, payment_lightning_contactless,
         contact_name, contact_email, contact_relationship,
         status, osm_node_id, is_early_adopter, adopter_number,
-        submitted_at, approved_at, published_at
+        submitted_at, verified_at, published_at
       FROM merchant_submissions
       ORDER BY submitted_at DESC`,
       []
