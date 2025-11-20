@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import {
@@ -23,7 +23,27 @@ import {
 } from 'react-icons/fi';
 import { MdRestaurant } from 'react-icons/md';
 import { SiBitcoin } from 'react-icons/si';
-import { MERCHANTS, CATEGORY_INFO, getCategories, getMerchantsByCategory } from '@/lib/merchants-data';
+import { CATEGORY_INFO } from '@/lib/merchants-data';
+
+interface Merchant {
+  id: string;
+  businessName: string;
+  ownerName: string;
+  email: string;
+  phoneNumber: string;
+  location: string;
+  blinkAddress: string;
+  lightningAddress?: string;
+  btcMapUrl?: string;
+  btcMapNodeId?: string;
+  latitude?: number;
+  longitude?: number;
+  slug: string;
+  category?: string;
+  description?: string;
+  isEarlyAdopter?: boolean;
+  adopterNumber?: number;
+}
 
 // Category icon mapping
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
@@ -49,15 +69,38 @@ const MerchantsMap = dynamic(() => import('@/components/MerchantsMap'), {
 });
 
 export default function MapsPage() {
+  const [merchants, setMerchants] = useState<Merchant[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [viewMode, setViewMode] = useState<'list' | 'map'>('list');
 
-  const categories = useMemo(() => getCategories(), []);
+  // Fetch merchants from API
+  useEffect(() => {
+    async function fetchMerchants() {
+      try {
+        const response = await fetch('/api/merchants');
+        const data = await response.json();
+        if (data.success) {
+          setMerchants(data.merchants);
+        }
+      } catch (error) {
+        console.error('Error fetching merchants:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchMerchants();
+  }, []);
+
+  const categories = useMemo(() => {
+    const cats = new Set(merchants.map(m => m.category).filter((c): c is string => c !== undefined));
+    return Array.from(cats).sort();
+  }, [merchants]);
 
   // Filter merchants based on search and category
   const filteredMerchants = useMemo(() => {
-    let filtered = MERCHANTS;
+    let filtered = merchants;
 
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(m => m.category === selectedCategory);
@@ -74,7 +117,12 @@ export default function MapsPage() {
     }
 
     return filtered;
-  }, [searchQuery, selectedCategory]);
+  }, [merchants, searchQuery, selectedCategory]);
+
+  // Helper function to get merchants by category
+  const getMerchantsByCategory = (category: string) => {
+    return merchants.filter(m => m.category === category);
+  };
 
   // Group merchants by category
   const merchantsByCategory = useMemo(() => {
@@ -100,18 +148,22 @@ export default function MapsPage() {
             Bitcoin <span className="text-gradient">Merchant Directory</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Discover {MERCHANTS.length} Bitcoin-accepting businesses in Kibera. Support local entrepreneurs by donating directly via Lightning Network.
+            {isLoading ? 'Loading...' : `Discover ${merchants.length} Bitcoin-accepting businesses in Kibera. Support local entrepreneurs by donating directly via Lightning Network.`}
           </p>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-3 gap-3 md:gap-6 mb-12 md:mb-16">
           <div className="glass-card text-center p-4 md:p-6">
-            <div className="text-2xl md:text-4xl lg:text-5xl font-bold text-gradient font-numbers mb-1 md:mb-2">{MERCHANTS.length}</div>
+            <div className="text-2xl md:text-4xl lg:text-5xl font-bold text-gradient font-numbers mb-1 md:mb-2">
+              {isLoading ? '...' : merchants.length}
+            </div>
             <div className="text-gray-400 text-[10px] md:text-sm lg:text-base">Total Merchants</div>
           </div>
           <div className="glass-card text-center p-4 md:p-6">
-            <div className="text-2xl md:text-4xl lg:text-5xl font-bold text-gradient font-numbers mb-1 md:mb-2">{categories.length}</div>
+            <div className="text-2xl md:text-4xl lg:text-5xl font-bold text-gradient font-numbers mb-1 md:mb-2">
+              {isLoading ? '...' : categories.length}
+            </div>
             <div className="text-gray-400 text-[10px] md:text-sm lg:text-base">Categories</div>
           </div>
           <div className="glass-card text-center p-4 md:p-6">
