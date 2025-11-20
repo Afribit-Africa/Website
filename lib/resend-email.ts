@@ -358,7 +358,7 @@ export async function sendMerchantSubmissionConfirmation(
   editToken: string
 ) {
   const editUrl = generateEditUrl(submissionId, editToken);
-  const logoUrl = `${SITE_URL}/Media/Logo/afribit-logo.png`;
+  const logoUrl = `${SITE_URL}/Media/Logo/Full%20logo%20png%20transparent.png`;
 
   const emailHtml = `
 <!DOCTYPE html>
@@ -377,7 +377,7 @@ export async function sendMerchantSubmissionConfirmation(
           <!-- Logo & Header -->
           <tr>
             <td style="background: linear-gradient(135deg, #F7931A 0%, #ff8c00 100%); padding: 40px 30px; text-align: center;">
-              <img src="${logoUrl}" alt="Afribit Africa" style="width: 80px; height: 80px; margin-bottom: 20px;" />
+              <img src="${logoUrl}" alt="Afribit Africa" width="200" height="auto" style="display: block; margin: 0 auto 20px auto; max-width: 200px; height: auto;" />
               <h1 style="margin: 0; color: #000000; font-size: 32px; font-weight: bold;">Submission Received</h1>
               <p style="margin: 10px 0 0 0; color: #000000; font-size: 16px; font-weight: 500;">Thank you for joining the Afribit Merchant Directory</p>
             </td>
@@ -494,7 +494,7 @@ export async function sendMerchantApprovalEmail(
   merchantEmail: string,
   businessName: string
 ) {
-  const logoUrl = `${SITE_URL}/Media/Logo/afribit-logo.png`;
+  const logoUrl = `${SITE_URL}/Media/Logo/Full%20logo%20png%20transparent.png`;
 
   const emailHtml = `
 <!DOCTYPE html>
@@ -513,7 +513,7 @@ export async function sendMerchantApprovalEmail(
           <!-- Logo & Header -->
           <tr>
             <td style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); padding: 40px 30px; text-align: center;">
-              <img src="${logoUrl}" alt="Afribit Africa" style="width: 80px; height: 80px; margin-bottom: 20px;" />
+              <img src="${logoUrl}" alt="Afribit Africa" width="200" height="auto" style="display: block; margin: 0 auto 20px auto; max-width: 200px; height: auto;" />
               <h1 style="margin: 0; color: #ffffff; font-size: 32px; font-weight: bold;">Congratulations!</h1>
               <p style="margin: 10px 0 0 0; color: #ffffff; font-size: 16px; font-weight: 500;">Your business is now approved</p>
             </td>
@@ -612,7 +612,7 @@ export async function sendMerchantRejectionEmail(
   editToken: string
 ) {
   const editUrl = generateEditUrl(submissionId, editToken);
-  const logoUrl = `${SITE_URL}/Media/Logo/afribit-logo.png`;
+  const logoUrl = `${SITE_URL}/Media/Logo/Full%20logo%20png%20transparent.png`;
 
   const emailHtml = `
 <!DOCTYPE html>
