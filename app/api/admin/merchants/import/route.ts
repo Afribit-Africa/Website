@@ -231,6 +231,11 @@ export async function POST(request: NextRequest) {
             categoryValue = 'other';
         }
 
+        // Use default Kibera coordinates if merchant doesn't have specific coordinates
+        // Kibera center: -1.3133, 36.7897
+        const latitude = merchant.latitude ?? -1.3133;
+        const longitude = merchant.longitude ?? 36.7897;
+
         // Insert merchant
         await executeQuery(
           `INSERT INTO merchant_submissions (
@@ -247,8 +252,8 @@ export async function POST(request: NextRequest) {
             categoryKey,
             categoryValue,
             merchant.description || `${merchant.businessName} in ${merchant.location}`,
-            merchant.latitude || null,
-            merchant.longitude || null,
+            latitude,
+            longitude,
             merchant.location,
             merchant.phoneNumber || null,
             merchant.btcMapUrl || null,
