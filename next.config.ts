@@ -35,8 +35,8 @@ const nextConfig: NextConfig = {
             value: 'max-age=63072000; includeSubDomains; preload'
           },
           {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'self' https://novyrix.com https://*.novyrix.com"
           },
           {
             key: 'X-Content-Type-Options',
