@@ -22,7 +22,7 @@ async function addVerifier() {
     if (existing && existing.length > 0) {
       console.log('✅ User already exists:', email);
       console.log('   Current role:', existing[0].role);
-      
+
       // Update role to verifier if needed
       if (existing[0].role !== 'verifier') {
         await executeQuery(

@@ -201,7 +201,7 @@ export default function RegisterPage() {
     try {
       if ('permissions' in navigator) {
         const permissionStatus = await (navigator as any).permissions.query({ name: 'geolocation' });
-        
+
         if (permissionStatus.state === 'denied') {
           if (isMobile) {
             if (isIOS) {
@@ -239,7 +239,7 @@ export default function RegisterPage() {
       (position) => {
         updateField('latitude', position.coords.latitude);
         updateField('longitude', position.coords.longitude);
-        
+
         // Show success feedback on mobile
         if (isMobile) {
           setErrorModal({

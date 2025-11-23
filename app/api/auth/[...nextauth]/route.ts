@@ -24,6 +24,11 @@ const ALLOWED_ADMIN_EMAILS = [
   'info@afribit.africa',
 ];
 
+// Allowed verifier emails for Google OAuth
+const ALLOWED_VERIFIER_EMAILS = [
+  'goldenheartcbo@gmail.com',
+];
+
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
@@ -91,32 +96,38 @@ export const authOptions: NextAuthOptions = {
       if (account?.provider === 'google') {
         const email = user.email?.toLowerCase();
 
-        if (!email || !ALLOWED_ADMIN_EMAILS.includes(email)) {
+        const isAdmin = email && ALLOWED_ADMIN_EMAILS.includes(email);
+        const isVerifier = email && ALLOWED_VERIFIER_EMAILS.includes(email);
+
+        if (!email || (!isAdmin && !isVerifier)) {
           logger.warn('Unauthorized Google login attempt:', email);
           return false; // Deny access
         }
 
+        // Determine role based on email list
+        const role = isAdmin ? 'admin' : 'verifier';
+
         try {
-          // Check if admin user exists in database
+          // Check if user exists in database
           const users = await executeQuery<AdminUser[]>(
             'SELECT * FROM admin_users WHERE email = ?',
             [email]
           );
 
-          // If user doesn't exist, create them with admin role
-          // If user exists, just update last login (preserve their existing role)
+          // If user doesn't exist, create them with appropriate role
+          // If user exists, update last login and ensure role matches
           if (!users || users.length === 0) {
             const { randomUUID } = await import('crypto');
             await executeQuery(
               `INSERT INTO admin_users (id, email, name, role, password_hash, is_active, last_login_at)
-               VALUES (?, ?, ?, 'admin', 'GOOGLE_OAUTH', true, NOW())`,
-              [randomUUID(), email, user.name || email.split('@')[0]]
+               VALUES (?, ?, ?, ?, 'GOOGLE_OAUTH', true, NOW())`,
+              [randomUUID(), email, user.name || email.split('@')[0], role]
             );
           } else {
-            // Update last login but preserve existing role
+            // Update last login and role (in case email moved between lists)
             await executeQuery(
-              'UPDATE admin_users SET last_login_at = NOW() WHERE email = ?',
-              [email]
+              'UPDATE admin_users SET last_login_at = NOW(), role = ? WHERE email = ?',
+              [role, email]
             );
           }
         } catch (error) {
