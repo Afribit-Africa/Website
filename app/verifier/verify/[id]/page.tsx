@@ -67,12 +67,21 @@ export default function VerifyMerchant() {
   const getUserLocation = async () => {
     if (!navigator.geolocation) return;
 
+    // Check HTTPS requirement
+    if (window.location.protocol !== 'https:' && window.location.hostname !== 'localhost') {
+      return;
+    }
+
+    // Detect mobile devices
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
     try {
       const position = await new Promise<GeolocationPosition>((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject, {
-          enableHighAccuracy: true,
-          timeout: 10000,
-          maximumAge: 0,
+          enableHighAccuracy: isMobile,
+          timeout: isIOS ? 25000 : 10000,
+          maximumAge: isMobile ? 5000 : 0,
         });
       });
 
@@ -83,7 +92,7 @@ export default function VerifyMerchant() {
 
       setUserLocation(location);
     } catch (error) {
-      // Geolocation error
+      // Geolocation error - silently fail for this optional feature
     }
   };
 

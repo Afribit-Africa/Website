@@ -184,6 +184,26 @@ export default function RegisterPage() {
       return;
     }
 
+    // Check if we're on HTTPS (required for geolocation on mobile)
+    if (window.location.protocol !== 'https:' && window.location.hostname !== 'localhost') {
+      setErrorModal({
+        isOpen: true,
+        message: 'Location access requires a secure connection (HTTPS). Please use the secure version of this site.',
+      });
+      return;
+    }
+
+    // Detect mobile devices
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    // Use different options for mobile vs desktop
+    const geoOptions = {
+      enableHighAccuracy: isMobile, // More accurate on mobile
+      timeout: isIOS ? 25000 : 15000, // iOS needs more time
+      maximumAge: isMobile ? 5000 : 0 // Allow cached position on mobile
+    };
+
     navigator.geolocation.getCurrentPosition(
       (position) => {
         updateField('latitude', position.coords.latitude);
@@ -191,20 +211,28 @@ export default function RegisterPage() {
       },
       (error) => {
         let message = 'Could not get your location. ';
+        
         if (error.code === error.PERMISSION_DENIED) {
-          message += 'Please enable location permissions in your browser settings.';
+          if (isMobile) {
+            if (isIOS) {
+              message += 'On iOS: Go to Settings > Safari > Location Services, and allow location access for this website.';
+            } else {
+              message += 'On Android: Tap the lock icon in your browser\'s address bar and allow location access.';
+            }
+          } else {
+            message += 'Please enable location permissions in your browser settings.';
+          }
         } else if (error.code === error.POSITION_UNAVAILABLE) {
-          message += 'Location information is unavailable.';
+          message += 'Location information is unavailable. Make sure location services are enabled on your device.';
+        } else if (error.code === error.TIMEOUT) {
+          message += 'Request timed out. Please ensure you have a good GPS signal and try again.';
         } else {
-          message += 'Request timed out. Please try again.';
+          message += 'An unknown error occurred. Please try again.';
         }
+        
         setErrorModal({ isOpen: true, message });
       },
-      {
-        enableHighAccuracy: true,
-        timeout: 15000,
-        maximumAge: 0
-      }
+      geoOptions
     );
   };
 

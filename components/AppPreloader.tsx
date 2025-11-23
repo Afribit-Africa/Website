@@ -9,6 +9,19 @@ export default function AppPreloader() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Prevent scrolling when preloader is active
+    if (loading) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.height = '100vh';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    }
+
     // Animate progress smoothly
     const duration = 1500; // Base animation duration
     const steps = 50;
@@ -44,7 +57,7 @@ export default function AppPreloader() {
       clearInterval(progressInterval);
       window.removeEventListener('load', handlePageLoad);
     };
-  }, []);
+  }, [loading]);
 
   return (
     <AnimatePresence mode="wait">
@@ -53,7 +66,8 @@ export default function AppPreloader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
-          className="fixed inset-0 z-9999 bg-black flex items-center justify-center"
+          className="fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden"
+          style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, width: '100vw', height: '100vh' }}
         >
           <div className="text-center">
             {/* Bitcoin Icon - Static */}

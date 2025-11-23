@@ -102,14 +102,27 @@ export default function VerifierDashboard() {
       return;
     }
 
+    // Check HTTPS requirement
+    if (window.location.protocol !== 'https:' && window.location.hostname !== 'localhost') {
+      setLocationError('Location access requires a secure connection (HTTPS)');
+      setLocationPermission('denied');
+      setShowLocationModal(false);
+      setIsLoading(false);
+      return;
+    }
+
     setIsLoading(true);
+
+    // Detect mobile devices
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
     try {
       const position = await new Promise<GeolocationPosition>((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject, {
-          enableHighAccuracy: true,
-          timeout: 10000,
-          maximumAge: 0,
+          enableHighAccuracy: isMobile,
+          timeout: isIOS ? 25000 : 10000,
+          maximumAge: isMobile ? 5000 : 0,
         });
       });
 
@@ -127,14 +140,22 @@ export default function VerifierDashboard() {
       setShowLocationModal(false);
       setLocationPermission('denied');
 
-      // Handle different error types
+      // Handle different error types with mobile-specific messages
       if (error && typeof error === 'object' && 'code' in error) {
         if (error.code === 1) {
-          setLocationError('Location access denied. Please enable location permissions in your browser settings.');
+          if (isMobile) {
+            if (isIOS) {
+              setLocationError('Location access denied. Go to Settings > Safari > Location Services, and allow location access.');
+            } else {
+              setLocationError('Location access denied. Tap the lock icon in your browser\'s address bar and allow location access.');
+            }
+          } else {
+            setLocationError('Location access denied. Please enable location permissions in your browser settings.');
+          }
         } else if (error.code === 2) {
-          setLocationError('Location unavailable. Please check your device settings.');
+          setLocationError('Location unavailable. Please check your device settings and ensure location services are enabled.');
         } else if (error.code === 3) {
-          setLocationError('Location request timed out. Please try again.');
+          setLocationError('Location request timed out. Please ensure you have a good GPS signal and try again.');
         } else {
           setLocationError('Unable to get your location. Please try again.');
         }
