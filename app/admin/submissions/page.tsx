@@ -21,6 +21,7 @@ import {
   Zap,
   Bitcoin,
   Wifi,
+  Trash2,
 } from 'lucide-react';
 import { format } from 'date-fns';
 import toast, { Toaster } from 'react-hot-toast';
@@ -59,6 +60,7 @@ export default function SubmissionsPage() {
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [showApproveModal, setShowApproveModal] = useState(false);
   const [showRejectModal, setShowRejectModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [actionNotes, setActionNotes] = useState('');
   const [rejectionReason, setRejectionReason] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
@@ -144,6 +146,32 @@ export default function SubmissionsPage() {
         fetchSubmissions();
       } else {
         toast.error(data.error || 'Failed to reject submission');
+      }
+    } catch (error) {
+      toast.error('An error occurred');
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  const handleDelete = async () => {
+    if (!selectedSubmission) return;
+
+    setIsProcessing(true);
+    try {
+      const response = await fetch(`/api/admin/merchants/${selectedSubmission.id}`, {
+        method: 'DELETE',
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success('Submission deleted successfully!');
+        setShowDeleteModal(false);
+        setSelectedSubmission(null);
+        fetchSubmissions();
+      } else {
+        toast.error(data.error || 'Failed to delete submission');
       }
     } catch (error) {
       toast.error('An error occurred');
@@ -353,6 +381,16 @@ export default function SubmissionsPage() {
                               </button>
                             </>
                           )}
+                          <button
+                            onClick={() => {
+                              setSelectedSubmission(submission);
+                              setShowDeleteModal(true);
+                            }}
+                            className="p-2 text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-lg transition-colors"
+                            title="Delete"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -552,6 +590,64 @@ export default function SubmissionsPage() {
                   disabled={isProcessing}
                 >
                   Reject
+                </Button>
+              </div>
+            </CardBody>
+          </Card>
+        </div>
+      )}
+
+      {/* Delete Modal */}
+      {showDeleteModal && selectedSubmission && (
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <Card className="max-w-md w-full">
+            <CardHeader>
+              <h2 className="text-xl font-semibold text-white flex items-center gap-2">
+                <Trash2 className="w-5 h-5 text-red-400" />
+                Delete Submission
+              </h2>
+            </CardHeader>
+            <CardBody className="space-y-4">
+              <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+                <p className="text-red-400 text-sm font-medium mb-2">⚠️ Warning: This action cannot be undone</p>
+                <p className="text-gray-300 text-sm">
+                  Are you sure you want to permanently delete <strong className="text-white">{selectedSubmission.businessName}</strong>?
+                </p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-3 space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Business:</span>
+                  <span className="text-white font-medium">{selectedSubmission.businessName}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Status:</span>
+                  <span>{getStatusBadge(selectedSubmission.status)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Contact:</span>
+                  <span className="text-white">{selectedSubmission.contactEmail}</span>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <Button
+                  variant="secondary"
+                  onClick={() => {
+                    setShowDeleteModal(false);
+                    setSelectedSubmission(null);
+                  }}
+                  className="flex-1"
+                  disabled={isProcessing}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  variant="primary"
+                  onClick={handleDelete}
+                  className="flex-1 bg-red-500 hover:bg-red-600"
+                  loading={isProcessing}
+                  disabled={isProcessing}
+                >
+                  Delete Permanently
                 </Button>
               </div>
             </CardBody>
