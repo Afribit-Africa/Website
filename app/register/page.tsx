@@ -175,7 +175,7 @@ export default function RegisterPage() {
     updateField('longitude', lng);
   };
 
-  const getCurrentLocation = () => {
+  const getCurrentLocation = async () => {
     if (!navigator.geolocation) {
       setErrorModal({
         isOpen: true,
@@ -197,8 +197,39 @@ export default function RegisterPage() {
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
+    // Try to check permission state first (not supported on all browsers)
+    try {
+      if ('permissions' in navigator) {
+        const permissionStatus = await (navigator as any).permissions.query({ name: 'geolocation' });
+        
+        if (permissionStatus.state === 'denied') {
+          if (isMobile) {
+            if (isIOS) {
+              setErrorModal({
+                isOpen: true,
+                message: 'Location access is denied. Please go to Settings > Safari > Location Services, and allow location access for this website.',
+              });
+            } else {
+              setErrorModal({
+                isOpen: true,
+                message: 'Location access is denied. Please tap the lock icon in your browser\'s address bar and allow location access.',
+              });
+            }
+          } else {
+            setErrorModal({
+              isOpen: true,
+              message: 'Location access is denied. Please enable location permissions in your browser settings.',
+            });
+          }
+          return;
+        }
+      }
+    } catch (e) {
+      // Permissions API not supported, continue with geolocation request
+    }
+
     // Use different options for mobile vs desktop
-    const geoOptions = {
+    const geoOptions: PositionOptions = {
       enableHighAccuracy: isMobile, // More accurate on mobile
       timeout: isIOS ? 25000 : 15000, // iOS needs more time
       maximumAge: isMobile ? 5000 : 0 // Allow cached position on mobile
@@ -208,10 +239,18 @@ export default function RegisterPage() {
       (position) => {
         updateField('latitude', position.coords.latitude);
         updateField('longitude', position.coords.longitude);
+        
+        // Show success feedback on mobile
+        if (isMobile) {
+          setErrorModal({
+            isOpen: true,
+            message: `✓ Location obtained successfully! Latitude: ${position.coords.latitude.toFixed(6)}, Longitude: ${position.coords.longitude.toFixed(6)}`,
+          });
+        }
       },
       (error) => {
         let message = 'Could not get your location. ';
-        
+
         if (error.code === error.PERMISSION_DENIED) {
           if (isMobile) {
             if (isIOS) {
@@ -229,7 +268,7 @@ export default function RegisterPage() {
         } else {
           message += 'An unknown error occurred. Please try again.';
         }
-        
+
         setErrorModal({ isOpen: true, message });
       },
       geoOptions
