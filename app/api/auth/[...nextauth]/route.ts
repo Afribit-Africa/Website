@@ -27,6 +27,8 @@ const ALLOWED_ADMIN_EMAILS = [
 // Allowed verifier emails for Google OAuth
 const ALLOWED_VERIFIER_EMAILS = [
   'goldenheartcbo@gmail.com',
+  'cyrusmbeki@gmail.com',
+  'ondiekibrian9@gmail.com',
 ];
 
 export const authOptions: NextAuthOptions = {
