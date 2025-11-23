@@ -52,7 +52,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Permissions-Policy',
-            value: 'geolocation=(self)'
+            value: 'geolocation=*'
           },
         ],
       },
