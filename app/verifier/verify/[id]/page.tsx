@@ -67,20 +67,33 @@ export default function VerifyMerchant() {
   const getUserLocation = async () => {
     if (!navigator.geolocation) return;
 
-    // Check HTTPS requirement
     if (window.location.protocol !== 'https:' && window.location.hostname !== 'localhost') {
       return;
     }
 
-    // Detect mobile devices
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isAndroid = /Android/i.test(navigator.userAgent);
+
+    // Check permission state first
+    if ('permissions' in navigator) {
+      try {
+        const result = await navigator.permissions.query({ name: 'geolocation' as PermissionName });
+        
+        if (result.state === 'denied') {
+          // Don't attempt if already denied
+          return;
+        }
+      } catch (error) {
+        // Permissions API error, continue with direct request
+      }
+    }
 
     try {
       const position = await new Promise<GeolocationPosition>((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject, {
-          enableHighAccuracy: isMobile,
-          timeout: isIOS ? 25000 : 10000,
+          enableHighAccuracy: true,
+          timeout: isIOS ? 30000 : (isAndroid ? 15000 : 10000),
           maximumAge: isMobile ? 5000 : 0,
         });
       });
@@ -241,50 +254,50 @@ export default function VerifyMerchant() {
     <div className="min-h-screen bg-[#0A0A0A] py-4 px-3 md:py-8 md:px-6 lg:px-8 pb-20 md:pb-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="mb-6 md:mb-8">
+        <div className="mb-4 md:mb-6">
           <button
             onClick={() => router.back()}
-            className="text-gray-400 hover:text-white mb-3 md:mb-4 flex items-center gap-2 transition-colors text-sm md:text-base"
+            className="text-gray-400 hover:text-white mb-2 md:mb-3 flex items-center gap-1.5 md:gap-2 transition-colors text-xs md:text-sm"
           >
             ← Back to Dashboard
           </button>
-          <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">Verify Merchant</h1>
-          <p className="text-sm md:text-base text-gray-400">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1.5 md:mb-2">Verify Merchant</h1>
+          <p className="text-xs md:text-sm text-gray-400">
             Complete on-ground verification for this business
           </p>
         </div>
 
         {/* Business Info Card */}
-        <Card className="bg-[#1A1A1A] border-white/10 mb-6">
+        <Card className="bg-[#1A1A1A] border-white/10 mb-4 md:mb-6">
           <CardHeader>
-            <h2 className="text-xl font-bold text-white flex items-center gap-2">
-              <Store className="w-5 h-5 text-bitcoin" />
+            <h2 className="text-base md:text-xl font-bold text-white flex items-center gap-2">
+              <Store className="w-4 h-4 md:w-5 md:h-5 text-bitcoin" />
               Business Information
             </h2>
           </CardHeader>
           <CardBody>
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               <div>
-                <label className="text-sm text-gray-400">Business Name</label>
-                <p className="text-lg font-semibold text-white">{submission.businessName}</p>
+                <label className="text-xs md:text-sm text-gray-400">Business Name</label>
+                <p className="text-base md:text-lg font-semibold text-white">{submission.businessName}</p>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
                 <div>
-                  <label className="text-sm text-gray-400">Category</label>
-                  <p className="text-white">{submission.category}</p>
+                  <label className="text-xs md:text-sm text-gray-400">Category</label>
+                  <p className="text-sm md:text-base text-white">{submission.category}</p>
                 </div>
                 <div>
-                  <label className="text-sm text-gray-400">Location</label>
-                  <p className="text-white">{submission.location}</p>
+                  <label className="text-xs md:text-sm text-gray-400">Location</label>
+                  <p className="text-sm md:text-base text-white">{submission.location}</p>
                 </div>
               </div>
               <div>
-                <label className="text-sm text-gray-400">Payment Methods</label>
-                <div className="flex gap-2 mt-1">
+                <label className="text-xs md:text-sm text-gray-400">Payment Methods</label>
+                <div className="flex flex-wrap gap-1.5 md:gap-2 mt-1">
                   {submission.paymentMethods.map((method) => (
                     <span
                       key={method}
-                      className="px-3 py-1 bg-bitcoin/20 text-bitcoin text-sm rounded-full"
+                      className="px-2 py-0.5 md:px-3 md:py-1 bg-bitcoin/20 text-bitcoin text-xs md:text-sm rounded-full"
                     >
                       {method}
                     </span>
@@ -292,8 +305,8 @@ export default function VerifyMerchant() {
                 </div>
               </div>
               {distance !== null && (
-                <div className="flex items-center gap-2 text-bitcoin">
-                  <Navigation className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 md:gap-2 text-bitcoin text-xs md:text-sm">
+                  <Navigation className="w-3.5 h-3.5 md:w-4 md:h-4" />
                   <span className="font-medium">
                     {distance < 1000 ? `${distance}m` : `${(distance / 1000).toFixed(1)}km`} from your location
                   </span>
@@ -305,40 +318,40 @@ export default function VerifyMerchant() {
 
         {/* Verification Form */}
         <form onSubmit={handleSubmit}>
-          <Card className="bg-[#1A1A1A] border-white/10 mb-6">
+          <Card className="bg-[#1A1A1A] border-white/10 mb-4 md:mb-6">
             <CardHeader>
-              <h2 className="text-xl font-bold text-white">Verification Checklist</h2>
+              <h2 className="text-base md:text-xl font-bold text-white">Verification Checklist</h2>
             </CardHeader>
             <CardBody>
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 {/* Business Exists */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-xs md:text-sm font-medium text-gray-300 mb-2">
                     Does the business exist at this location? *
                   </label>
-                  <div className="flex gap-3">
+                  <div className="flex gap-2 md:gap-3">
                     <button
                       type="button"
                       onClick={() => setBusinessExists(true)}
-                      className={`flex-1 py-2.5 rounded-lg border-2 transition-all text-sm font-medium ${
+                      className={`flex-1 py-2 md:py-2.5 rounded-lg border-2 transition-all text-xs md:text-sm font-medium ${
                         businessExists === true
                           ? 'border-green-500 bg-green-500/20 text-green-400'
                           : 'border-white/10 bg-white/5 text-gray-400 hover:border-white/20'
                       }`}
                     >
-                      <CheckCircle className="w-4 h-4 mx-auto mb-1" />
+                      <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 mx-auto mb-0.5 md:mb-1" />
                       <span>Yes</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setBusinessExists(false)}
-                      className={`flex-1 py-2.5 rounded-lg border-2 transition-all text-sm font-medium ${
+                      className={`flex-1 py-2 md:py-2.5 rounded-lg border-2 transition-all text-xs md:text-sm font-medium ${
                         businessExists === false
                           ? 'border-red-500 bg-red-500/20 text-red-400'
                           : 'border-white/10 bg-white/5 text-gray-400 hover:border-white/20'
                       }`}
                     >
-                      <XCircle className="w-4 h-4 mx-auto mb-1" />
+                      <XCircle className="w-3.5 h-3.5 md:w-4 md:h-4 mx-auto mb-0.5 md:mb-1" />
                       <span>No</span>
                     </button>
                   </div>
@@ -346,46 +359,46 @@ export default function VerifyMerchant() {
 
                 {/* Business Name Matches */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-xs md:text-sm font-medium text-gray-300 mb-2">
                     Does the business name match? *
                   </label>
-                  <div className="flex gap-3">
+                  <div className="flex gap-2 md:gap-3">
                     <button
                       type="button"
                       onClick={() => {
                         setBusinessNameMatches(true);
                         setCorrectedName('');
                       }}
-                      className={`flex-1 py-2.5 rounded-lg border-2 transition-all text-sm font-medium ${
+                      className={`flex-1 py-2 md:py-2.5 rounded-lg border-2 transition-all text-xs md:text-sm font-medium ${
                         businessNameMatches === true
                           ? 'border-green-500 bg-green-500/20 text-green-400'
                           : 'border-white/10 bg-white/5 text-gray-400 hover:border-white/20'
                       }`}
                     >
-                      <CheckCircle className="w-4 h-4 mx-auto mb-1" />
+                      <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 mx-auto mb-0.5 md:mb-1" />
                       <span>Yes</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setBusinessNameMatches(false)}
-                      className={`flex-1 py-2.5 rounded-lg border-2 transition-all text-sm font-medium ${
+                      className={`flex-1 py-2 md:py-2.5 rounded-lg border-2 transition-all text-xs md:text-sm font-medium ${
                         businessNameMatches === false
                           ? 'border-yellow-500 bg-yellow-500/20 text-yellow-400'
                           : 'border-white/10 bg-white/5 text-gray-400 hover:border-white/20'
                       }`}
                     >
-                      <AlertCircle className="w-4 h-4 mx-auto mb-1" />
-                      <span className="text-xs md:text-sm">Different Name</span>
+                      <AlertCircle className="w-3.5 h-3.5 md:w-4 md:h-4 mx-auto mb-0.5 md:mb-1" />
+                      <span>Different</span>
                     </button>
                   </div>
                   {businessNameMatches === false && (
-                    <div className="mt-3">
+                    <div className="mt-2 md:mt-3">
                       <input
                         type="text"
                         value={correctedName}
                         onChange={(e) => setCorrectedName(e.target.value)}
                         placeholder="Enter the actual business name"
-                        className="w-full px-4 py-2 bg-[#0A0A0A] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:border-bitcoin focus:outline-none"
+                        className="w-full px-3 py-2 md:px-4 md:py-2 bg-[#0A0A0A] border border-white/10 rounded-lg text-white text-xs md:text-sm placeholder-gray-500 focus:border-bitcoin focus:outline-none"
                       />
                     </div>
                   )}
@@ -393,14 +406,14 @@ export default function VerifyMerchant() {
 
                 {/* Business Operating */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-xs md:text-sm font-medium text-gray-300 mb-2">
                     Business Operating Status *
                   </label>
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-3 gap-1.5 md:gap-2">
                     <button
                       type="button"
                       onClick={() => setBusinessOperating('open')}
-                      className={`py-2.5 rounded-lg border-2 transition-all text-sm font-medium ${
+                      className={`py-2 md:py-2.5 rounded-lg border-2 transition-all text-xs md:text-sm font-medium ${
                         businessOperating === 'open'
                           ? 'border-green-500 bg-green-500/20 text-green-400'
                           : 'border-white/10 bg-white/5 text-gray-400 hover:border-white/20'
@@ -411,18 +424,19 @@ export default function VerifyMerchant() {
                     <button
                       type="button"
                       onClick={() => setBusinessOperating('temporarily_closed')}
-                      className={`py-2.5 rounded-lg border-2 transition-all text-xs md:text-sm font-medium ${
+                      className={`py-2 md:py-2.5 rounded-lg border-2 transition-all text-xs md:text-sm font-medium ${
                         businessOperating === 'temporarily_closed'
                           ? 'border-yellow-500 bg-yellow-500/20 text-yellow-400'
                           : 'border-white/10 bg-white/5 text-gray-400 hover:border-white/20'
                       }`}
                     >
-                      Temp. Closed
+                      <span className="hidden sm:inline">Temp. Closed</span>
+                      <span className="sm:hidden">Temp</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setBusinessOperating('closed')}
-                      className={`py-2.5 rounded-lg border-2 transition-all text-sm font-medium ${
+                      className={`py-2 md:py-2.5 rounded-lg border-2 transition-all text-xs md:text-sm font-medium ${
                         businessOperating === 'closed'
                           ? 'border-red-500 bg-red-500/20 text-red-400'
                           : 'border-white/10 bg-white/5 text-gray-400 hover:border-white/20'
@@ -435,23 +449,23 @@ export default function VerifyMerchant() {
 
                 {/* Payment Methods Verified */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Which payment methods did you verify? (Check all that apply)
+                  <label className="block text-xs md:text-sm font-medium text-gray-300 mb-2">
+                    Which payment methods did you verify?
                   </label>
                   <div className="space-y-2">
                     {submission.paymentMethods.map((method) => (
                       <label
                         key={method}
-                        className="flex items-center gap-3 p-3 rounded-lg bg-[#0A0A0A] border border-white/10 hover:border-bitcoin/30 cursor-pointer transition-colors"
+                        className="flex items-center gap-2 md:gap-3 p-2.5 md:p-3 rounded-lg bg-[#0A0A0A] border border-white/10 hover:border-bitcoin/30 cursor-pointer transition-colors"
                       >
                         <input
                           type="checkbox"
                           checked={paymentMethodsVerified.includes(method)}
                           onChange={() => handlePaymentMethodToggle(method)}
-                          className="w-5 h-5 rounded border-gray-600 text-bitcoin focus:ring-bitcoin focus:ring-offset-0"
+                          className="w-4 h-4 md:w-5 md:h-5 rounded border-gray-600 text-bitcoin focus:ring-bitcoin focus:ring-offset-0"
                         />
-                        <Bitcoin className="w-5 h-5 text-bitcoin" />
-                        <span className="text-white">{method}</span>
+                        <Bitcoin className="w-4 h-4 md:w-5 md:h-5 text-bitcoin" />
+                        <span className="text-white text-xs md:text-sm">{method}</span>
                       </label>
                     ))}
                   </div>
@@ -459,10 +473,10 @@ export default function VerifyMerchant() {
 
                 {/* Photo Upload */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Upload Photos (Required - at least 1 photo) *
+                  <label className="block text-xs md:text-sm font-medium text-gray-300 mb-2">
+                    Upload Photos (At least 1 photo required) *
                   </label>
-                  <div className="border-2 border-dashed border-white/10 rounded-lg p-6 text-center hover:border-bitcoin/30 transition-colors">
+                  <div className="border-2 border-dashed border-white/10 rounded-lg p-4 md:p-6 text-center hover:border-bitcoin/30 transition-colors">
                     <input
                       type="file"
                       multiple
@@ -472,30 +486,30 @@ export default function VerifyMerchant() {
                       id="photo-upload"
                     />
                     <label htmlFor="photo-upload" className="cursor-pointer">
-                      <Camera className="w-12 h-12 text-gray-500 mx-auto mb-3" />
-                      <p className="text-white font-medium mb-1">
-                        Click to upload photos
+                      <Camera className="w-10 h-10 md:w-12 md:h-12 text-gray-500 mx-auto mb-2 md:mb-3" />
+                      <p className="text-white font-medium mb-1 text-xs md:text-sm">
+                        Tap to upload photos
                       </p>
-                      <p className="text-gray-400 text-sm">
-                        Maximum 5 photos (JPG, PNG)
+                      <p className="text-gray-400 text-xs">
+                        Max 5 photos (JPG, PNG)
                       </p>
                     </label>
                   </div>
                   {photos.length > 0 && (
-                    <div className="grid grid-cols-3 gap-4 mt-4">
+                    <div className="grid grid-cols-3 gap-2 md:gap-4 mt-3 md:mt-4">
                       {photos.map((photo, index) => (
                         <div key={index} className="relative">
                           <img
                             src={URL.createObjectURL(photo)}
                             alt={`Photo ${index + 1}`}
-                            className="w-full h-24 object-cover rounded-lg"
+                            className="w-full h-20 md:h-24 object-cover rounded-lg"
                           />
                           <button
                             type="button"
                             onClick={() => removePhoto(index)}
-                            className="absolute top-1 right-1 p-1 bg-red-500 rounded-full hover:bg-red-600 transition-colors"
+                            className="absolute top-0.5 right-0.5 md:top-1 md:right-1 p-0.5 md:p-1 bg-red-500 rounded-full hover:bg-red-600 transition-colors"
                           >
-                            <XCircle className="w-4 h-4 text-white" />
+                            <XCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
                           </button>
                         </div>
                       ))}
@@ -505,40 +519,40 @@ export default function VerifyMerchant() {
 
                 {/* Verifier Notes */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-xs md:text-sm font-medium text-gray-300 mb-2">
                     Additional Notes (Optional)
                   </label>
                   <textarea
                     value={verifierNotes}
                     onChange={(e) => setVerifierNotes(e.target.value)}
-                    rows={4}
-                    placeholder="Add any additional observations or notes about the business..."
-                    className="w-full px-4 py-2 bg-[#0A0A0A] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:border-bitcoin focus:outline-none resize-none"
+                    rows={3}
+                    placeholder="Add any additional observations..."
+                    className="w-full px-3 py-2 md:px-4 md:py-2 bg-[#0A0A0A] border border-white/10 rounded-lg text-white text-xs md:text-sm placeholder-gray-500 focus:border-bitcoin focus:outline-none resize-none"
                   />
                 </div>
 
                 {/* Verification Result */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-3">
+                  <label className="block text-xs md:text-sm font-medium text-gray-300 mb-2 md:mb-3">
                     Final Verification Decision *
                   </label>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-2 md:gap-3">
                     <button
                       type="button"
                       onClick={() => setVerificationResult('verified')}
-                      className={`py-3 rounded-lg border-2 transition-all ${
+                      className={`py-2.5 md:py-3 rounded-lg border-2 transition-all ${
                         verificationResult === 'verified'
                           ? 'border-green-500 bg-green-500/20'
                           : 'border-white/10 bg-white/5 hover:border-white/20'
                       }`}
                     >
                       <CheckCircle
-                        className={`w-6 h-6 mx-auto mb-1.5 ${
+                        className={`w-5 h-5 md:w-6 md:h-6 mx-auto mb-1 md:mb-1.5 ${
                           verificationResult === 'verified' ? 'text-green-400' : 'text-gray-400'
                         }`}
                       />
                       <p
-                        className={`font-semibold text-sm ${
+                        className={`font-semibold text-xs md:text-sm ${
                           verificationResult === 'verified' ? 'text-green-400' : 'text-gray-400'
                         }`}
                       >
@@ -551,19 +565,19 @@ export default function VerifyMerchant() {
                     <button
                       type="button"
                       onClick={() => setVerificationResult('not_verified')}
-                      className={`py-3 rounded-lg border-2 transition-all ${
+                      className={`py-2.5 md:py-3 rounded-lg border-2 transition-all ${
                         verificationResult === 'not_verified'
                           ? 'border-red-500 bg-red-500/20'
                           : 'border-white/10 bg-white/5 hover:border-white/20'
                       }`}
                     >
                       <XCircle
-                        className={`w-6 h-6 mx-auto mb-1.5 ${
+                        className={`w-5 h-5 md:w-6 md:h-6 mx-auto mb-1 md:mb-1.5 ${
                           verificationResult === 'not_verified' ? 'text-red-400' : 'text-gray-400'
                         }`}
                       />
                       <p
-                        className={`font-semibold text-sm ${
+                        className={`font-semibold text-xs md:text-sm ${
                           verificationResult === 'not_verified' ? 'text-red-400' : 'text-gray-400'
                         }`}
                       >
@@ -580,11 +594,11 @@ export default function VerifyMerchant() {
           </Card>
 
           {/* Submit Button */}
-          <div className="flex gap-4">
+          <div className="flex gap-2 md:gap-4">
             <button
               type="button"
               onClick={() => router.back()}
-              className="flex-1 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-lg font-medium transition-colors"
+              className="flex-1 px-4 py-2 md:px-6 md:py-3 bg-white/5 hover:bg-white/10 text-white rounded-lg text-sm md:text-base font-medium transition-colors"
               disabled={isSubmitting}
             >
               Cancel
@@ -592,15 +606,19 @@ export default function VerifyMerchant() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 px-6 py-3 bg-bitcoin hover:bg-bitcoin/90 text-white rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 px-4 py-2 md:px-6 md:py-3 bg-bitcoin hover:bg-bitcoin/90 text-white rounded-lg text-sm md:text-base font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center gap-2">
                   <Spinner size="sm" />
-                  Submitting...
+                  <span className="hidden sm:inline">Submitting...</span>
+                  <span className="sm:hidden">Sending...</span>
                 </span>
               ) : (
-                'Submit Verification'
+                <>
+                  <span className="hidden sm:inline">Submit Verification</span>
+                  <span className="sm:hidden">Submit</span>
+                </>
               )}
             </button>
           </div>
