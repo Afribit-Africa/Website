@@ -12,6 +12,11 @@ import {
   CheckCircle,
   AlertCircle,
   RefreshCw,
+  Lock,
+  Satellite,
+  Clock,
+  XCircle,
+  Settings,
 } from 'lucide-react';
 
 interface NearbySubmission {
@@ -66,9 +71,9 @@ export default function VerifierDashboard() {
     if ('permissions' in navigator) {
       try {
         const result = await navigator.permissions.query({ name: 'geolocation' as PermissionName });
-        
+
         setPermissionState(result.state);
-        
+
         // Listen for permission changes
         result.addEventListener('change', () => {
           setPermissionState(result.state);
@@ -133,27 +138,27 @@ export default function VerifierDashboard() {
           // Permission denied
           setPermissionState('denied');
           if (isIOS) {
-            setLocationError('📍 Location access denied. To enable:\n1. Open Settings\n2. Scroll to Safari/Chrome\n3. Tap Location\n4. Select "While Using the App"');
+            setLocationError('Location access denied. To enable:\n1. Open Settings\n2. Scroll to Safari/Chrome\n3. Tap Location\n4. Select "While Using the App"');
           } else if (isAndroid) {
             if (isChrome) {
-              setLocationError('📍 Location access denied. Tap the lock icon 🔒 in the address bar above and enable Location.');
+              setLocationError('Location access denied. Tap the lock icon in the address bar above and enable Location.');
             } else if (isFirefox) {
-              setLocationError('📍 Location access denied. Tap the menu (⋮), then Site Permissions, and enable Location.');
+              setLocationError('Location access denied. Tap the menu, then Site Permissions, and enable Location.');
             } else {
-              setLocationError('📍 Location access denied. Check your browser settings and enable location for this site.');
+              setLocationError('Location access denied. Check your browser settings and enable location for this site.');
             }
           } else {
-            setLocationError('📍 Location access denied. Click the lock icon in your browser\'s address bar and enable location permissions.');
+            setLocationError('Location access denied. Click the lock icon in your browser\'s address bar and enable location permissions.');
           }
         } else if (error.code === 2) {
-          setLocationError('📡 Location unavailable. Make sure:\n• Location services are ON in your device settings\n• You have a GPS signal (try moving outdoors)\n• Your device\'s location is working properly');
+          setLocationError('Location unavailable. Make sure:\n• Location services are ON in your device settings\n• You have a GPS signal (try moving outdoors)\n• Your device\'s location is working properly');
         } else if (error.code === 3) {
-          setLocationError('⏱️ Location request timed out. Please ensure you have a good GPS signal and try again.');
+          setLocationError('Location request timed out. Please ensure you have a good GPS signal and try again.');
         } else {
-          setLocationError('❌ Unable to get your location. Please try again.');
+          setLocationError('Unable to get your location. Please try again.');
         }
       } else {
-        setLocationError('🔒 Location access is blocked. Please check your browser and device settings.');
+        setLocationError('Location access is blocked. Please check your browser and device settings.');
       }
       setIsLoading(false);
     }

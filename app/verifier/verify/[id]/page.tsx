@@ -79,7 +79,7 @@ export default function VerifyMerchant() {
     if ('permissions' in navigator) {
       try {
         const result = await navigator.permissions.query({ name: 'geolocation' as PermissionName });
-        
+
         if (result.state === 'denied') {
           // Don't attempt if already denied
           return;
