@@ -19,7 +19,6 @@ const ALLOWED_ADMIN_EMAILS = [
   'admin@afribit.co.ke',
   'team@afribit.co.ke',
   'edmundspira@gmail.com',
-  'spiraedmunds@gmail.com',
   'rmdawida@gmail.com',
   'info@afribit.africa',
 ];
@@ -29,6 +28,7 @@ const ALLOWED_VERIFIER_EMAILS = [
   'goldenheartcbo@gmail.com',
   'cyrusmbeki@gmail.com',
   'ondiekibrian9@gmail.com',
+  'spiraedmunds@gmail.com',
 ];
 
 export const authOptions: NextAuthOptions = {
