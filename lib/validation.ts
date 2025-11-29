@@ -8,14 +8,14 @@ export const createDonationSchema = z.object({
     .max(1000000, 'Maximum donation is $1,000,000'),
   tier: z.enum([
     'custom',
-    'friend', 
-    'business', 
-    'education', 
-    'equipment', 
-    'upcycle', 
+    'friend',
+    'business',
+    'education',
+    'equipment',
+    'upcycle',
     'waste',
-    'supporter', 
-    'advocate', 
+    'supporter',
+    'advocate',
     'champion'
   ], {
     message: 'Invalid donation tier'

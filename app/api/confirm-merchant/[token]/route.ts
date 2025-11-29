@@ -27,7 +27,7 @@ export async function GET(
     }
 
     // Find edit request by token
-    const editRequests = await query<any[]>(
+    const editRequests = await executeQuery<any[]>(
       `SELECT
         id,
         merchant_id,
@@ -80,7 +80,7 @@ export async function GET(
     }
 
     // Update status to merchant_confirmed
-    await query(
+    await executeQuery(
       `UPDATE merchant_edit_requests
       SET
         status = 'merchant_confirmed',
