@@ -134,10 +134,11 @@ export async function middleware(request: NextRequest) {
   // Referrer Policy
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
 
-  // Permissions Policy (allow geolocation for verifier and merchant registration pages)
+  // Permissions Policy (allow geolocation for verifier, merchant, and admin pages)
   const allowGeolocation = request.nextUrl.pathname.startsWith('/verifier') ||
-                          request.nextUrl.pathname.startsWith('/merchants/register') ||
-                          request.nextUrl.pathname.startsWith('/register');
+                          request.nextUrl.pathname.startsWith('/merchants') ||
+                          request.nextUrl.pathname.startsWith('/register') ||
+                          request.nextUrl.pathname.startsWith('/admin');
   response.headers.set(
     'Permissions-Policy',
     allowGeolocation
