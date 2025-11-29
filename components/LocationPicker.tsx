@@ -185,28 +185,34 @@ export default function LocationPicker({
     <div className="space-y-4">
       {/* GPS Modal */}
       {showGPSModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999] p-4">
-          <div className="bg-white rounded-lg max-w-md w-full p-6">
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[9999] p-4">
+          <div className="bg-gradient-to-br from-gray-900 to-black border border-white/10 rounded-2xl max-w-md w-full p-6 shadow-2xl">
             <div className="flex items-start gap-4 mb-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                <AlertTriangle className="w-6 h-6 text-red-600" />
+              <div className="flex-shrink-0 w-12 h-12 bg-bitcoin/20 rounded-full flex items-center justify-center border border-bitcoin/30">
+                <AlertTriangle className="w-6 h-6 text-bitcoin" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="text-lg font-bold text-white mb-2 font-heading">
                   Important: Location Accuracy
                 </h3>
-                <p className="text-sm text-gray-700 mb-3">
-                  To ensure accurate coordinates for <strong>{businessName}</strong>, you <strong>MUST be physically present at your business premises</strong> when using this feature.
+                <p className="text-sm text-gray-300 mb-3 leading-relaxed">
+                  To ensure accurate coordinates for <strong className="text-bitcoin">{businessName}</strong>, you <strong className="text-white">MUST be physically present at your business premises</strong> when using this feature.
                 </p>
-                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 mb-3">
-                  <p className="text-sm text-yellow-800">
-                    <strong>Why this matters:</strong> Your business location will be published on Bitcoin Maps and OpenStreetMap. Incorrect coordinates will make it difficult for customers to find you.
+                <div className="bg-bitcoin/10 border-l-4 border-bitcoin p-3 mb-3 rounded-r">
+                  <p className="text-sm text-gray-200">
+                    <strong className="text-bitcoin">Why this matters:</strong> Your business location will be published on Bitcoin Maps and OpenStreetMap. Incorrect coordinates will make it difficult for customers to find you.
                   </p>
                 </div>
-                <div className="text-sm text-gray-600 space-y-1">
-                  <p>✓ Stand inside or directly outside your business</p>
-                  <p>✓ Ensure GPS/location services are enabled</p>
-                  <p>✓ Wait for accurate signal (usually 5-30 seconds)</p>
+                <div className="text-sm text-gray-400 space-y-1.5">
+                  <p className="flex items-center gap-2">
+                    <span className="text-bitcoin">✓</span> Stand inside or directly outside your business
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <span className="text-bitcoin">✓</span> Ensure GPS/location services are enabled
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <span className="text-bitcoin">✓</span> Wait for accurate signal (usually 5-30 seconds)
+                  </p>
                 </div>
               </div>
             </div>
@@ -214,13 +220,13 @@ export default function LocationPicker({
             <div className="flex gap-3 mt-6">
               <button
                 onClick={() => setShowGPSModal(false)}
-                className="flex-1 px-4 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex-1 px-4 py-3 bg-white/5 border border-white/10 text-gray-300 rounded-lg hover:bg-white/10 hover:border-white/20 transition-all duration-200"
               >
                 Cancel
               </button>
               <button
                 onClick={confirmUseGPS}
-                className="flex-1 px-4 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
+                className="flex-1 px-4 py-3 bg-gradient-to-r from-bitcoin to-orange-600 text-white rounded-lg hover:from-bitcoin/90 hover:to-orange-600/90 transition-all duration-200 font-medium shadow-lg shadow-bitcoin/20"
               >
                 I'm at my business - Continue
               </button>
@@ -284,9 +290,9 @@ export default function LocationPicker({
       )}
 
       {/* Map Instructions */}
-      <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3">
-        <p className="text-sm text-blue-300 font-body">
-          <strong className="text-blue-400">How to use:</strong> Click the blue "Use My Current Location" button while at your business,
+      <div className="bg-bitcoin/10 border border-bitcoin/30 rounded-lg p-3">
+        <p className="text-sm text-gray-300 font-body">
+          <strong className="text-bitcoin">How to use:</strong> Click the "Use My Current Location" button while at your business,
           or drag the green marker on the map to your exact location. You can also click anywhere on the map to place the marker.
         </p>
       </div>
@@ -326,15 +332,15 @@ export default function LocationPicker({
 
       {/* Coordinates Display */}
       <div className="grid grid-cols-2 gap-4">
-        <div className="bg-gray-50 rounded-lg p-3">
-          <p className="text-xs text-gray-600 mb-1">Original Location</p>
-          <p className="text-sm font-mono">
+        <div className="bg-white/5 border border-white/10 rounded-lg p-3">
+          <p className="text-xs text-gray-400 mb-1">Original Location</p>
+          <p className="text-sm font-mono text-white">
             {initialLat.toFixed(6)}, {initialLng.toFixed(6)}
           </p>
         </div>
-        <div className="bg-green-50 rounded-lg p-3">
-          <p className="text-xs text-gray-600 mb-1">New Location</p>
-          <p className="text-sm font-mono">
+        <div className="bg-bitcoin/10 border border-bitcoin/50 rounded-lg p-3">
+          <p className="text-xs text-gray-400 mb-1">New Location</p>
+          <p className="text-sm font-mono text-bitcoin font-semibold">
             {position[0].toFixed(6)}, {position[1].toFixed(6)}
           </p>
         </div>
@@ -342,19 +348,19 @@ export default function LocationPicker({
 
       {/* Distance Info */}
       {distance > 10 && (
-        <div className={`border-l-4 p-3 ${
+        <div className={`border-l-4 p-3 rounded ${
           distance > 5000
-            ? 'bg-red-50 border-red-500'
+            ? 'bg-red-500/10 border-red-500'
             : distance > 1000
-            ? 'bg-yellow-50 border-yellow-400'
-            : 'bg-blue-50 border-blue-400'
+            ? 'bg-yellow-500/10 border-yellow-400'
+            : 'bg-bitcoin/10 border-bitcoin'
         }`}>
-          <p className="text-sm font-medium">
-            Distance from original location: <strong>{Math.round(distance)}m</strong>
+          <p className="text-sm font-medium text-white">
+            Distance from original location: <strong className="text-bitcoin">{Math.round(distance)}m</strong>
             {distance > 1000 && ` (${(distance / 1000).toFixed(2)}km)`}
           </p>
           {distance > 5000 && (
-            <p className="text-sm text-red-700 mt-1">
+            <p className="text-sm text-red-400 mt-1">
               ⚠️ <strong>Warning:</strong> This is a significant distance. Please verify that your new location is correct.
             </p>
           )}
@@ -362,9 +368,9 @@ export default function LocationPicker({
       )}
 
       {/* Map Legend */}
-      <div className="bg-gray-50 rounded-lg p-3 border border-gray-200">
-        <p className="text-xs font-semibold text-gray-700 mb-2">Map Legend:</p>
-        <div className="space-y-1 text-xs text-gray-600">
+      <div className="bg-white/5 border border-white/10 rounded-lg p-3">
+        <p className="text-xs font-semibold text-white mb-2">Map Legend:</p>
+        <div className="space-y-1 text-xs text-gray-300">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
             <span>Red marker = Original location (before correction)</span>
