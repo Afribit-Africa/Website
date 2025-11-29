@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   FiHome, FiMapPin, FiMail, FiHelpCircle, FiInfo,
   FiBookOpen, FiShoppingBag, FiMap, FiUserPlus,
-  FiUsers, FiDollarSign, FiChevronDown, FiMenu, FiX
+  FiUsers, FiDollarSign, FiChevronDown, FiMenu, FiX, FiEdit
 } from 'react-icons/fi';
 import { SiBitcoin } from 'react-icons/si';
 import { LayoutDashboard } from 'lucide-react';
@@ -22,6 +22,7 @@ export function Header() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [pendingCount, setPendingCount] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +41,28 @@ export function Header() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
+
+  // Fetch pending edit requests count for admin
+  useEffect(() => {
+    if (session && (session.user as any)?.role === 'admin') {
+      const fetchPendingCount = async () => {
+        try {
+          const res = await fetch('/api/admin/edit-requests/stats');
+          const data = await res.json();
+          if (data.success) {
+            setPendingCount(data.data.pending || 0);
+          }
+        } catch (error) {
+          console.error('Failed to fetch pending count:', error);
+        }
+      };
+
+      fetchPendingCount();
+      // Refresh every 30 seconds
+      const interval = setInterval(fetchPendingCount, 30000);
+      return () => clearInterval(interval);
+    }
+  }, [session]);
 
   const isActiveGroup = (paths: string[]) =>
     paths.some(path => pathname.startsWith(path) || pathname === path);
@@ -85,7 +108,7 @@ export function Header() {
     <>
       {/* Desktop Floating Header with Mega Menu */}
       <header
-        className={`hidden md:block fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl transition-all duration-300 ${
+        className={`hidden md:block fixed top-16 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl transition-all duration-300 ${
           visible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
         }`}
       >
@@ -161,19 +184,71 @@ export function Header() {
                 </div>
               ))}
 
-              {/* Direct Links */}
+              {/* Admin Section */}
               {session ? (
-                <Link
-                  href="/admin/dashboard"
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all ${
-                    pathname.startsWith('/admin')
-                      ? 'text-bitcoin bg-bitcoin/10'
-                      : 'text-gray-300 hover:text-bitcoin hover:bg-white/5'
-                  }`}
+                <div
+                  className="relative"
+                  onMouseEnter={() => setActiveDropdown('admin')}
+                  onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <LayoutDashboard className="w-4 h-4" />
-                  Dashboard
-                </Link>
+                  <button
+                    className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all ${
+                      pathname.startsWith('/admin')
+                        ? 'text-bitcoin bg-bitcoin/10'
+                        : 'text-gray-300 hover:text-bitcoin hover:bg-white/5'
+                    }`}
+                  >
+                    <LayoutDashboard className="w-4 h-4" />
+                    Admin
+                    <FiChevronDown className={`w-3.5 h-3.5 transition-transform ${
+                      activeDropdown === 'admin' ? 'rotate-180' : ''
+                    }`} />
+                    {pendingCount > 0 && (
+                      <span className="ml-1 bg-[#F7931A] text-black text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                        {pendingCount}
+                      </span>
+                    )}
+                  </button>
+
+                  {/* Admin Dropdown */}
+                  {activeDropdown === 'admin' && (
+                    <div
+                      className="absolute top-full left-0 mt-0.5 w-56 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200"
+                      onMouseEnter={() => setActiveDropdown('admin')}
+                      onMouseLeave={() => setActiveDropdown(null)}
+                    >
+                      <Link
+                        href="/admin/dashboard"
+                        className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
+                          pathname === '/admin/dashboard'
+                            ? 'text-bitcoin bg-bitcoin/10'
+                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                        }`}
+                      >
+                        <LayoutDashboard className="w-4 h-4" />
+                        <span>Dashboard</span>
+                      </Link>
+                      <Link
+                        href="/admin/edit-requests"
+                        className={`flex items-center justify-between gap-3 px-4 py-3 text-sm transition-colors ${
+                          pathname.startsWith('/admin/edit-requests')
+                            ? 'text-bitcoin bg-bitcoin/10'
+                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                        }`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <FiEdit className="w-4 h-4" />
+                          <span>Edit Requests</span>
+                        </div>
+                        {pendingCount > 0 && (
+                          <span className="bg-[#F7931A] text-black text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                            {pendingCount}
+                          </span>
+                        )}
+                      </Link>
+                    </div>
+                  )}
+                </div>
               ) : (
                 <Link
                   href="/admin/login"
@@ -356,7 +431,7 @@ export function Header() {
                     </motion.div>
                   ))}
 
-                  {/* Additional Links */}
+                  {/* Admin Section */}
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -364,18 +439,48 @@ export function Header() {
                     className="border-t border-white/10 pt-6 space-y-1"
                   >
                     {session ? (
-                      <Link
-                        href="/admin/dashboard"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-all ${
-                          pathname.startsWith('/admin')
-                            ? 'text-bitcoin bg-bitcoin/10'
-                            : 'text-gray-300 hover:text-white hover:bg-white/5'
-                        }`}
-                      >
-                        <LayoutDashboard className="w-5 h-5" />
-                        <span className="font-medium">Dashboard</span>
-                      </Link>
+                      <>
+                        <div className="flex items-center gap-2 px-3 mb-2">
+                          <LayoutDashboard className="w-4 h-4 text-gray-500" />
+                          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Admin</span>
+                          {pendingCount > 0 && (
+                            <span className="ml-auto bg-[#F7931A] text-black text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                              {pendingCount}
+                            </span>
+                          )}
+                        </div>
+                        <Link
+                          href="/admin/dashboard"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-all ${
+                            pathname === '/admin/dashboard'
+                              ? 'text-bitcoin bg-bitcoin/10'
+                              : 'text-gray-300 hover:text-white hover:bg-white/5'
+                          }`}
+                        >
+                          <LayoutDashboard className="w-5 h-5" />
+                          <span className="font-medium">Dashboard</span>
+                        </Link>
+                        <Link
+                          href="/admin/edit-requests"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={`flex items-center justify-between gap-3 px-3 py-3 rounded-lg transition-all ${
+                            pathname.startsWith('/admin/edit-requests')
+                              ? 'text-bitcoin bg-bitcoin/10'
+                              : 'text-gray-300 hover:text-white hover:bg-white/5'
+                          }`}
+                        >
+                          <div className="flex items-center gap-3">
+                            <FiEdit className="w-5 h-5" />
+                            <span className="font-medium">Edit Requests</span>
+                          </div>
+                          {pendingCount > 0 && (
+                            <span className="bg-[#F7931A] text-black text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                              {pendingCount}
+                            </span>
+                          )}
+                        </Link>
+                      </>
                     ) : (
                       <Link
                         href="/admin/login"
@@ -400,3 +505,5 @@ export function Header() {
     </>
   );
 }
+
+export default Header;

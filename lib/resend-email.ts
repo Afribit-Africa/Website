@@ -1098,3 +1098,33 @@ export async function sendMerchantPublishedEmail(data: {
     throw error;
   }
 }
+
+/**
+ * Generic email sending function
+ */
+export async function sendEmail(data: {
+  to: string | string[];
+  subject: string;
+  html: string;
+  from?: string;
+  replyTo?: string;
+}) {
+  const fromEmail = data.from || 'notifications@updates.afribit.africa';
+  const replyToEmail = data.replyTo || 'info@afribit.africa';
+
+  try {
+    const result = await resend.emails.send({
+      from: `Afribit Africa <${fromEmail}>`,
+      to: Array.isArray(data.to) ? data.to : [data.to],
+      subject: data.subject,
+      html: data.html,
+      replyTo: replyToEmail
+    });
+
+    logger.info('Email sent successfully:', result.data?.id || 'unknown');
+    return result;
+  } catch (error) {
+    logger.error('Failed to send email:', error);
+    throw error;
+  }
+}

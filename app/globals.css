@@ -112,12 +112,29 @@
     }
   }
 
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
   .animate-island-expand {
     animation: island-expand 0.3s ease-out;
   }
 
   .animate-pulse-slow {
     animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .group:hover .pause-marquee {
+    animation-play-state: paused;
   }
 }
 
