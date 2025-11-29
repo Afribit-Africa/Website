@@ -7,7 +7,7 @@ import { sendMerchantConfirmationEmail } from '@/lib/email-templates/merchant-co
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -18,6 +18,7 @@ export async function POST(
       );
     }
 
+    const { id } = await context.params;
     const body = await request.json();
     const adminNotes = body.adminNotes || '';
 
@@ -27,7 +28,7 @@ export async function POST(
        FROM merchant_edit_requests mer
        LEFT JOIN merchant_submissions ms ON mer.merchant_id = ms.id
        WHERE mer.id = ? AND mer.status = 'pending'`,
-      [params.id]
+      [id]
     );
 
     if (editRequests.length === 0) {
@@ -53,7 +54,7 @@ export async function POST(
         reviewed_by = ?,
         admin_notes = ?
       WHERE id = ?`,
-      [hash, expiresAt, adminUserId, adminNotes, params.id]
+      [hash, expiresAt, adminUserId, adminNotes, id]
     );
 
     // Build changes object for email template
@@ -120,7 +121,7 @@ export async function POST(
         changes
       });
 
-      console.log(`✅ Confirmation email sent to ${editRequest.submitter_email} for edit request #${params.id}`);
+      console.log(`✅ Confirmation email sent to ${editRequest.submitter_email} for edit request #${id}`);
     } catch (emailError) {
       console.error('❌ Failed to send confirmation email:', emailError);
       // Roll back approval if email fails
@@ -132,7 +133,7 @@ export async function POST(
           reviewed_at = NULL,
           reviewed_by = NULL
         WHERE id = ?`,
-        [params.id]
+        [id]
       );
 
       return NextResponse.json(
@@ -149,7 +150,7 @@ export async function POST(
       success: true,
       message: 'Edit request approved. Confirmation email sent to merchant.',
       data: {
-        editRequestId: params.id,
+        editRequestId: id,
         merchantEmail: editRequest.submitter_email,
         expiresAt: expiresAt.toISOString(),
         status: 'approved'

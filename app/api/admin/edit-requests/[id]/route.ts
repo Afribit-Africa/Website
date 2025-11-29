@@ -5,7 +5,7 @@ import { executeQuery } from '@/lib/db';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -15,6 +15,8 @@ export async function GET(
         { status: 401 }
       );
     }
+
+    const { id } = await context.params;
 
     const editRequests = await executeQuery<any[]>(
       `SELECT
@@ -34,7 +36,7 @@ export async function GET(
       LEFT JOIN merchant_submissions ms ON mer.merchant_id = ms.id
       LEFT JOIN admin_users au ON mer.reviewed_by = au.id
       WHERE mer.id = ?`,
-      [params.id]
+      [id]
     );
 
     if (editRequests.length === 0) {
@@ -122,7 +124,7 @@ export async function GET(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -133,9 +135,11 @@ export async function DELETE(
       );
     }
 
+    const { id } = await context.params;
+
     await executeQuery(
       `DELETE FROM merchant_edit_requests WHERE id = ?`,
-      [params.id]
+      [id]
     );
 
     return NextResponse.json({

@@ -6,7 +6,7 @@ import { sendEditRejectedEmail } from '@/lib/email-templates/edit-rejected';
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -17,6 +17,7 @@ export async function POST(
       );
     }
 
+    const { id } = await context.params;
     const body = await request.json();
     const rejectionReason = body.rejectionReason || '';
     const adminNotes = body.adminNotes || '';
@@ -34,7 +35,7 @@ export async function POST(
        FROM merchant_edit_requests mer
        LEFT JOIN merchant_submissions ms ON mer.merchant_id = ms.id
        WHERE mer.id = ? AND mer.status = 'pending'`,
-      [params.id]
+      [id]
     );
 
     if (editRequests.length === 0) {
@@ -55,7 +56,7 @@ export async function POST(
         reviewed_by = ?,
         admin_notes = ?
       WHERE id = ?`,
-      [adminUserId, `${rejectionReason}\n\n${adminNotes}`.trim(), params.id]
+      [adminUserId, `${rejectionReason}\n\n${adminNotes}`.trim(), id]
     );
 
     // Send rejection email using template
@@ -71,7 +72,7 @@ export async function POST(
         })
       });
 
-      console.log(`✅ Rejection email sent to ${editRequest.submitter_email} for edit request #${params.id}`);
+      console.log(`✅ Rejection email sent to ${editRequest.submitter_email} for edit request #${id}`);
     } catch (emailError) {
       console.error('❌ Failed to send rejection email:', emailError);
     }
@@ -80,7 +81,7 @@ export async function POST(
       success: true,
       message: 'Edit request rejected and merchant notified',
       data: {
-        editRequestId: params.id,
+        editRequestId: id,
         merchantId: editRequest.merchant_id,
         rejectionReason
       }
