@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { FiArrowRight, FiArrowLeft, FiCheck, FiCopy, FiZap, FiAlertCircle } from 'react-icons/fi';
 import { SiBitcoin } from 'react-icons/si';
 import QRCode from 'qrcode';
@@ -108,6 +109,8 @@ export default function DonatePage() {
   const handleTierSelect = (tier: typeof DONATION_TIERS[0]) => {
     setSelectedTier(tier);
     setStep('details');
+    // Smooth scroll to top to show details section
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleContinueToPayment = async () => {
@@ -339,11 +342,25 @@ export default function DonatePage() {
                     aria-label={`Select ${tier.title} donation tier${tier.isCustom ? '' : ` for $${tier.amount}`}`}
                   >
                     {/* Image Container - Fixed Aspect Ratio */}
-                    <div className="relative w-full aspect-[4/3] overflow-hidden">
-                      <img
+                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-900">
+                      <Image
                         src={tier.image}
                         alt={tier.title}
-                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        quality={85}
+                        placeholder="blur"
+                        blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMTExIi8+PC9zdmc+"
+                        onError={(e) => {
+                          // Fallback to colored gradient on error
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          if (target.parentElement) {
+                            target.parentElement.style.background = `linear-gradient(135deg, ${tier.bgGradient.replace('from-', '').replace('to-', '').split(' ')[0]} 0%, ${tier.bgGradient.replace('from-', '').replace('to-', '').split(' ')[1]} 100%)`;
+                          }
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
@@ -407,11 +424,18 @@ export default function DonatePage() {
 
                 {/* Selected Tier Summary with Image */}
                 <div className="mb-6 overflow-hidden rounded-xl border border-white/10">
-                  <div className="relative h-32 md:h-40">
-                    <img
+                  <div className="relative h-32 md:h-40 bg-gray-900">
+                    <Image
                       src={selectedTier.image}
                       alt={selectedTier.title}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 800px"
+                      className="object-cover"
+                      loading="eager"
+                      quality={90}
+                      priority
+                      placeholder="blur"
+                      blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjE2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMTExIi8+PC9zdmc+"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black via-black/70 to-black/30" />
                     <div className="absolute bottom-3 left-4 right-4">
@@ -469,14 +493,21 @@ export default function DonatePage() {
 
                 {/* Donation Type Selection */}
                 <div className="mb-6">
-                  <label className="block text-sm font-semibold text-white uppercase tracking-wide mb-4">
+                  <label className="block text-sm font-semibold text-white uppercase tracking-wide mb-4 flex items-center gap-2">
                     Choose Donation Type
+                    <div className="group relative">
+                      <FiAlertCircle className="w-4 h-4 text-gray-400 cursor-help" />
+                      <div className="absolute left-0 top-6 hidden group-hover:block w-64 p-3 bg-black/95 border border-white/20 rounded-lg text-xs text-gray-300 normal-case font-normal z-10 shadow-xl">
+                        <strong className="text-bitcoin block mb-1">Anonymous:</strong> Quick donation, no sign-up needed<br/>
+                        <strong className="text-bitcoin block mb-1 mt-2">Get Perks:</strong> Receive rewards and impact updates
+                      </div>
+                    </div>
                   </label>
                   <div className="grid grid-cols-2 gap-4">
                     <button
                       type="button"
                       onClick={() => setDonationType('anonymous')}
-                      className={`group p-5 rounded-xl border-2 transition-all relative overflow-hidden ${
+                      className={`group p-6 rounded-xl border-2 transition-all relative overflow-hidden ${
                         donationType === 'anonymous'
                           ? 'bg-bitcoin/20 border-bitcoin text-white shadow-lg shadow-bitcoin/20'
                           : 'bg-white/5 border-white/20 text-gray-300 hover:border-white/40 hover:bg-white/10'
@@ -484,16 +515,23 @@ export default function DonatePage() {
                       aria-pressed={donationType === 'anonymous'}
                       aria-label="Choose anonymous donation (no email required)"
                     >
-                      <div className="flex items-center gap-2 mb-2">
-                        {donationType === 'anonymous' && <FiCheck className="w-5 h-5 text-bitcoin" />}
-                        <div className="font-bold text-base">Anonymous</div>
+                      <div className="flex flex-col items-center gap-3">
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                          donationType === 'anonymous' ? 'bg-bitcoin/30' : 'bg-white/10'
+                        }`}>
+                          <FiZap className="w-6 h-6" />
+                        </div>
+                        {donationType === 'anonymous' && (
+                          <FiCheck className="w-5 h-5 text-bitcoin absolute top-3 right-3" />
+                        )}
+                        <div className="font-bold text-lg">Anonymous</div>
+                        <div className="text-xs text-gray-400">No signup</div>
                       </div>
-                      <div className="text-xs leading-relaxed">Quick donation with no signup needed</div>
                     </button>
                     <button
                       type="button"
                       onClick={() => setDonationType('named')}
-                      className={`group p-5 rounded-xl border-2 transition-all relative overflow-hidden ${
+                      className={`group p-6 rounded-xl border-2 transition-all relative overflow-hidden ${
                         donationType === 'named'
                           ? 'bg-bitcoin/20 border-bitcoin text-white shadow-lg shadow-bitcoin/20'
                           : 'bg-white/5 border-white/20 text-gray-300 hover:border-white/40 hover:bg-white/10'
@@ -501,11 +539,18 @@ export default function DonatePage() {
                       aria-pressed={donationType === 'named'}
                       aria-label="Choose named donation (receive perks and updates)"
                     >
-                      <div className="flex items-center gap-2 mb-2">
-                        {donationType === 'named' && <FiCheck className="w-5 h-5 text-bitcoin" />}
-                        <div className="font-bold text-base">Get Perks</div>
+                      <div className="flex flex-col items-center gap-3">
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                          donationType === 'named' ? 'bg-bitcoin/30' : 'bg-white/10'
+                        }`}>
+                          <SiBitcoin className="w-6 h-6" />
+                        </div>
+                        {donationType === 'named' && (
+                          <FiCheck className="w-5 h-5 text-bitcoin absolute top-3 right-3" />
+                        )}
+                        <div className="font-bold text-lg">Get Perks</div>
+                        <div className="text-xs text-gray-400">Rewards & updates</div>
                       </div>
-                      <div className="text-xs leading-relaxed">Receive rewards and impact updates</div>
                     </button>
                   </div>
                 </div>

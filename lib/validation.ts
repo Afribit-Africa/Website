@@ -6,7 +6,18 @@ export const createDonationSchema = z.object({
     .positive('Amount must be positive')
     .min(1, 'Minimum donation is $1')
     .max(1000000, 'Maximum donation is $1,000,000'),
-  tier: z.enum(['supporter', 'advocate', 'champion', 'friend', 'business', 'education', 'custom'], {
+  tier: z.enum([
+    'custom',
+    'friend', 
+    'business', 
+    'education', 
+    'equipment', 
+    'upcycle', 
+    'waste',
+    'supporter', 
+    'advocate', 
+    'champion'
+  ], {
     message: 'Invalid donation tier'
   }),
   donationType: z.enum(['anonymous', 'named'], {
