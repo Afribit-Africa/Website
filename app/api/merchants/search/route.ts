@@ -72,8 +72,8 @@ export async function GET(request: NextRequest) {
         businessName: m.business_name,
         category: m.category,
         address: m.address,
-        latitude: parseFloat(m.latitude),
-        longitude: parseFloat(m.longitude),
+        latitude: m.latitude && !isNaN(parseFloat(m.latitude)) ? parseFloat(m.latitude) : null,
+        longitude: m.longitude && !isNaN(parseFloat(m.longitude)) ? parseFloat(m.longitude) : null,
         phone: m.phone,
         adopterNumber: m.adopter_number,
         confirmed: false, // Column doesn't exist yet, will be added via migration
