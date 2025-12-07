@@ -29,6 +29,8 @@ const ALLOWED_VERIFIER_EMAILS = [
   'cyrusmbeki@gmail.com',
   'ondiekibrian9@gmail.com',
   'spiraedmunds@gmail.com',
+  'muchasamuel01@gmail.com',
+  'mitchjuma44@gmail.com',
 ];
 
 export const authOptions: NextAuthOptions = {
