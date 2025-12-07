@@ -34,11 +34,11 @@ async function cleanupMerchantsWithoutLocation() {
     console.log('═══════════════════════════════════════════════════════════\n');
 
     // Delete merchants without location data
-    const result = await executeQuery(
+    const result = await executeQuery<any>(
       'DELETE FROM merchant_submissions WHERE osm_node_id IS NULL'
     );
 
-    console.log(`✅ Successfully deleted ${result.affectedRows} merchants\n`);
+    console.log(`✅ Successfully deleted ${(result as any).affectedRows || 0} merchants\n`);
 
     // Get final statistics
     const finalStats = await executeQuery<any[]>(

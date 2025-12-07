@@ -140,7 +140,7 @@ export async function middleware(request: NextRequest) {
                           pathname.startsWith('/merchants') ||
                           pathname.startsWith('/register') ||
                           pathname.startsWith('/admin');
-  
+
   // Use modern Permissions-Policy syntax
   response.headers.set(
     'Permissions-Policy',
