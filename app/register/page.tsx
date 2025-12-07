@@ -228,25 +228,24 @@ export default function RegisterPage() {
       // Permissions API not supported, continue with geolocation request
     }
 
-    // Use different options for mobile vs desktop
+    // Use optimal GPS settings for best accuracy
     const geoOptions: PositionOptions = {
-      enableHighAccuracy: isMobile, // More accurate on mobile
-      timeout: isIOS ? 25000 : 15000, // iOS needs more time
-      maximumAge: isMobile ? 5000 : 0 // Allow cached position on mobile
+      enableHighAccuracy: true, // Always use high accuracy
+      timeout: 30000, // 30 seconds for good GPS lock
+      maximumAge: 0 // Always get fresh reading for registration
     };
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        const accuracy = position.coords.accuracy;
         updateField('latitude', position.coords.latitude);
         updateField('longitude', position.coords.longitude);
 
-        // Show success feedback on mobile
-        if (isMobile) {
-          setErrorModal({
-            isOpen: true,
-            message: `✓ Location obtained successfully! Latitude: ${position.coords.latitude.toFixed(6)}, Longitude: ${position.coords.longitude.toFixed(6)}`,
-          });
-        }
+        // Show success feedback with accuracy info
+        setSuccessModal({
+          isOpen: true,
+          message: `Location obtained successfully!\n\nLatitude: ${position.coords.latitude.toFixed(6)}\nLongitude: ${position.coords.longitude.toFixed(6)}\nAccuracy: ±${accuracy.toFixed(0)}m\n\n${accuracy > 20 ? '⚠️ For better accuracy, try again outdoors with clear sky view.' : '✓ Good GPS signal!'}`,
+        });
       },
       (error) => {
         let message = 'Could not get your location. ';

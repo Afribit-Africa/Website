@@ -125,16 +125,22 @@ export default function LocationPicker({
       return;
     }
 
+    // Optimal settings for precise GPS location
     const options: PositionOptions = {
-      enableHighAccuracy: true,
-      timeout: 30000, // 30 seconds
-      maximumAge: 0 // No cache
+      enableHighAccuracy: true, // Use GPS for best accuracy
+      timeout: 30000, // 30 seconds to get good signal
+      maximumAge: 0 // Always get fresh reading
     };
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude, accuracy: posAccuracy } = position.coords;
         const newPos: [number, number] = [latitude, longitude];
+
+        // Warn if accuracy is poor
+        if (posAccuracy > 50) {
+          setGpsError(`Location accuracy is ±${posAccuracy.toFixed(0)}m. For better accuracy, move outdoors with clear sky view and try again.`);
+        }
 
         setPosition(newPos);
         setAccuracy(posAccuracy);
