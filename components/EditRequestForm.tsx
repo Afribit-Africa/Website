@@ -5,6 +5,7 @@ import { Check, AlertTriangle, Loader2, ArrowLeft, ArrowRight } from 'lucide-rea
 import dynamic from 'next/dynamic';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
+import { CATEGORY_INFO } from '@/lib/merchants-data';
 
 const LocationPicker = dynamic(() => import('@/components/LocationPicker'), {
   ssr: false,
@@ -81,7 +82,7 @@ export default function EditRequestForm({ merchant, onSuccess, onCancel }: EditR
     usedCurrentLocation: false,
   });
 
-  const totalSteps = 5;
+  const totalSteps = 6; // Increased from 5 to include category selection
 
   const handleInputChange = (field: keyof FormData, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -272,6 +273,39 @@ export default function EditRequestForm({ merchant, onSuccess, onCancel }: EditR
         {step === 2 && (
           <div>
             <h3 className="text-2xl font-bold font-heading text-white mb-6">
+              Select Business Category
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {Object.entries(CATEGORY_INFO).map(([key, { name, color }]) => (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => handleInputChange('category', key)}
+                  className={`p-4 rounded-xl border-2 transition-all duration-200 text-left ${
+                    formData.category === key
+                      ? 'border-bitcoin bg-bitcoin/10 shadow-lg shadow-bitcoin/20'
+                      : 'border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/10'
+                  }`}
+                >
+                  <div className={`inline-flex px-3 py-1 rounded-full text-sm font-medium ${color}`}>
+                    {name}
+                  </div>
+                </button>
+              ))}
+            </div>
+            {formData.category !== merchant.category && (
+              <div className="mt-4 bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded-r-lg">
+                <p className="text-sm text-yellow-300">
+                  <strong>Changed from:</strong> {CATEGORY_INFO[merchant.category]?.name || merchant.category}
+                </p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {step === 3 && (
+          <div>
+            <h3 className="text-2xl font-bold font-heading text-white mb-6">
               Confirm Business Name
             </h3>
             <Input
@@ -291,7 +325,7 @@ export default function EditRequestForm({ merchant, onSuccess, onCancel }: EditR
           </div>
         )}
 
-        {step === 3 && (
+        {step === 4 && (
           <div>
             <h3 className="text-2xl font-bold font-heading text-white mb-6">
               Confirm Blink Address
@@ -322,7 +356,7 @@ export default function EditRequestForm({ merchant, onSuccess, onCancel }: EditR
           </div>
         )}
 
-        {step === 4 && (
+        {step === 5 && (
           <div>
             <h3 className="text-2xl font-bold font-heading text-white mb-6">
               Confirm Business Location
@@ -391,7 +425,7 @@ export default function EditRequestForm({ merchant, onSuccess, onCancel }: EditR
           </div>
         )}
 
-        {step === 5 && (
+        {step === 6 && (
           <div>
             <h3 className="text-2xl font-bold font-heading text-white mb-6">
               Your Contact Information
@@ -448,6 +482,11 @@ export default function EditRequestForm({ merchant, onSuccess, onCancel }: EditR
                 {formData.businessName !== merchant.businessName && (
                   <div className="text-gray-300">
                     <span className="font-medium text-bitcoin">Business Name:</span> {merchant.businessName} → {formData.businessName}
+                  </div>
+                )}
+                {formData.category !== merchant.category && (
+                  <div className="text-gray-300">
+                    <span className="font-medium text-bitcoin">Category:</span> {CATEGORY_INFO[merchant.category]?.name || merchant.category} → {CATEGORY_INFO[formData.category]?.name || formData.category}
                   </div>
                 )}
                 {formData.blinkAddress !== merchant.blinkAddress && (
