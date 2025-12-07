@@ -9,6 +9,7 @@ import { Select } from '@/components/ui/Select';
 import { Checkbox } from '@/components/ui/Checkbox';
 import { Button } from '@/components/ui/Button';
 import { ErrorModal } from '@/components/ui/ErrorModal';
+import GPSPrecisionDialog from '@/components/GPSPrecisionDialog';
 
 // Dynamically import map to avoid SSR issues
 const LocationMap = dynamic(() => import('@/components/LocationMap'), { ssr: false });
@@ -36,6 +37,7 @@ export default function RegisterPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorModal, setErrorModal] = useState({ isOpen: false, message: '' });
+  const [showGPSPrecisionDialog, setShowGPSPrecisionDialog] = useState(false);
 
   // Bot Protection
   const [honeypot, setHoneypot] = useState('');
@@ -175,7 +177,7 @@ export default function RegisterPage() {
     updateField('longitude', lng);
   };
 
-  const getCurrentLocation = async () => {
+  const getCurrentLocation = () => {
     if (!navigator.geolocation) {
       setErrorModal({
         isOpen: true,
@@ -193,85 +195,19 @@ export default function RegisterPage() {
       return;
     }
 
-    // Detect mobile devices
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    // Open GPS precision dialog
+    setShowGPSPrecisionDialog(true);
+  };
 
-    // Try to check permission state first (not supported on all browsers)
-    try {
-      if ('permissions' in navigator) {
-        const permissionStatus = await (navigator as any).permissions.query({ name: 'geolocation' });
+  const handleGPSLocationCapture = (latitude: number, longitude: number, accuracy: number) => {
+    updateField('latitude', latitude);
+    updateField('longitude', longitude);
 
-        if (permissionStatus.state === 'denied') {
-          if (isMobile) {
-            if (isIOS) {
-              setErrorModal({
-                isOpen: true,
-                message: 'Location access is denied. Please go to Settings > Safari > Location Services, and allow location access for this website.',
-              });
-            } else {
-              setErrorModal({
-                isOpen: true,
-                message: 'Location access is denied. Please tap the lock icon in your browser\'s address bar and allow location access.',
-              });
-            }
-          } else {
-            setErrorModal({
-              isOpen: true,
-              message: 'Location access is denied. Please enable location permissions in your browser settings.',
-            });
-          }
-          return;
-        }
-      }
-    } catch (e) {
-      // Permissions API not supported, continue with geolocation request
-    }
-
-    // Use optimal GPS settings for best accuracy
-    const geoOptions: PositionOptions = {
-      enableHighAccuracy: true, // Always use high accuracy
-      timeout: 30000, // 30 seconds for good GPS lock
-      maximumAge: 0 // Always get fresh reading for registration
-    };
-
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const accuracy = position.coords.accuracy;
-        updateField('latitude', position.coords.latitude);
-        updateField('longitude', position.coords.longitude);
-
-        // Show success feedback with accuracy info
-        setErrorModal({
-          isOpen: true,
-          message: `✅ Location obtained successfully!\n\nLatitude: ${position.coords.latitude.toFixed(6)}\nLongitude: ${position.coords.longitude.toFixed(6)}\nAccuracy: ±${accuracy.toFixed(0)}m\n\n${accuracy > 20 ? '⚠️ For better accuracy, try again outdoors with clear sky view.' : '✓ Good GPS signal!'}`,
-        });
-      },
-      (error) => {
-        let message = 'Could not get your location. ';
-
-        if (error.code === error.PERMISSION_DENIED) {
-          if (isMobile) {
-            if (isIOS) {
-              message += 'On iOS: Go to Settings > Safari > Location Services, and allow location access for this website.';
-            } else {
-              message += 'On Android: Tap the lock icon in your browser\'s address bar and allow location access.';
-            }
-          } else {
-            message += 'Please enable location permissions in your browser settings.';
-          }
-        } else if (error.code === error.POSITION_UNAVAILABLE) {
-          message += 'Location information is unavailable. Make sure location services are enabled on your device.';
-        } else if (error.code === error.TIMEOUT) {
-          message += 'Request timed out. Please ensure you have a good GPS signal and try again.';
-        } else {
-          message += 'An unknown error occurred. Please try again.';
-        }
-
-        setErrorModal({ isOpen: true, message });
-      },
-      geoOptions
-    );
+    // Show success message
+    setErrorModal({
+      isOpen: true,
+      message: `✅ High-precision location captured!\n\nLatitude: ${latitude.toFixed(6)}\nLongitude: ${longitude.toFixed(6)}\nAccuracy: ±${Math.round(accuracy)}m\n\n${accuracy <= 10 ? '🎯 Excellent GPS accuracy!' : accuracy <= 20 ? '✓ Good GPS accuracy!' : '⚠️ Fair accuracy - consider recapturing outdoors for better precision.'}`,
+    });
   };
 
   const handleSubmit = async () => {
@@ -677,6 +613,16 @@ export default function RegisterPage() {
         isOpen={errorModal.isOpen}
         onClose={() => setErrorModal({ isOpen: false, message: '' })}
         message={errorModal.message}
+      />
+
+      {/* GPS Precision Dialog */}
+      <GPSPrecisionDialog
+        isOpen={showGPSPrecisionDialog}
+        onClose={() => setShowGPSPrecisionDialog(false)}
+        onLocationCapture={handleGPSLocationCapture}
+        targetAccuracy={10}
+        warningAccuracy={50}
+        businessName={formData.businessName || 'Your Business'}
       />
     </div>
   );

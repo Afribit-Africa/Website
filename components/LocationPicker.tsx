@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaf
 import { Navigation, Loader2, AlertTriangle, MapPin } from 'lucide-react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import GPSPrecisionDialog from './GPSPrecisionDialog';
 
 // Fix for default marker icons in react-leaflet
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -100,9 +101,7 @@ export default function LocationPicker({
   onLocationChange,
 }: LocationPickerProps) {
   const [position, setPosition] = useState<[number, number]>([currentLat, currentLng]);
-  const [showGPSModal, setShowGPSModal] = useState(false);
-  const [gpsLoading, setGpsLoading] = useState(false);
-  const [gpsError, setGpsError] = useState('');
+  const [showGPSPrecisionDialog, setShowGPSPrecisionDialog] = useState(false);
   const [accuracy, setAccuracy] = useState<number | undefined>();
 
   useEffect(() => {
@@ -110,63 +109,14 @@ export default function LocationPicker({
   }, [currentLat, currentLng]);
 
   const handleUseCurrentLocation = () => {
-    setShowGPSModal(true);
-    setGpsError('');
+    setShowGPSPrecisionDialog(true);
   };
 
-  const confirmUseGPS = () => {
-    setShowGPSModal(false);
-    setGpsLoading(true);
-    setGpsError('');
-
-    if (!navigator.geolocation) {
-      setGpsError('Geolocation is not supported by your browser');
-      setGpsLoading(false);
-      return;
-    }
-
-    // Optimal settings for precise GPS location
-    const options: PositionOptions = {
-      enableHighAccuracy: true, // Use GPS for best accuracy
-      timeout: 30000, // 30 seconds to get good signal
-      maximumAge: 0 // Always get fresh reading
-    };
-
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude, accuracy: posAccuracy } = position.coords;
-        const newPos: [number, number] = [latitude, longitude];
-
-        // Warn if accuracy is poor
-        if (posAccuracy > 50) {
-          setGpsError(`Location accuracy is ±${posAccuracy.toFixed(0)}m. For better accuracy, move outdoors with clear sky view and try again.`);
-        }
-
-        setPosition(newPos);
-        setAccuracy(posAccuracy);
-        onLocationChange(latitude, longitude, true, posAccuracy);
-        setGpsLoading(false);
-      },
-      (error) => {
-        let errorMessage = 'Failed to get your location';
-
-        switch (error.code) {
-          case error.PERMISSION_DENIED:
-            errorMessage = 'Location permission denied. Please enable location access in your browser settings.';
-            break;
-          case error.POSITION_UNAVAILABLE:
-            errorMessage = 'Location information unavailable. Please check your device settings.';
-            break;
-          case error.TIMEOUT:
-            errorMessage = 'Location request timed out. Please try again.';
-            break;
-        }
-
-        setGpsError(errorMessage);
-        setGpsLoading(false);
-      },
-      options
-    );
+  const handleGPSLocationCapture = (latitude: number, longitude: number, accuracy: number) => {
+    const newPos: [number, number] = [latitude, longitude];
+    setPosition(newPos);
+    setAccuracy(accuracy);
+    onLocationChange(latitude, longitude, true, accuracy);
   };
 
   const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number): number => {
@@ -189,99 +139,14 @@ export default function LocationPicker({
 
   return (
     <div className="space-y-4">
-      {/* GPS Modal */}
-      {showGPSModal && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-[9999] p-4 sm:p-6">
-          <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 border border-white/20 rounded-xl max-w-lg w-full shadow-2xl overflow-hidden">
-            {/* Header */}
-            <div className="bg-bitcoin/10 border-b border-white/10 px-4 sm:px-5 py-3 sm:py-4">
-              <div className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 bg-bitcoin/20 rounded-lg flex items-center justify-center border border-bitcoin/40">
-                  <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-bitcoin" />
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-white font-heading">
-                  Important: Location Accuracy
-                </h3>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="px-4 sm:px-5 py-4 sm:py-5 space-y-3 sm:space-y-4">
-              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-                To ensure accurate coordinates for <span className="text-bitcoin font-semibold">{businessName}</span>, you <span className="text-white font-semibold">MUST be physically present at your business premises</span> when using this feature.
-              </p>
-
-              <div className="bg-bitcoin/10 border-l-3 border-bitcoin p-2.5 sm:p-3 rounded-r">
-                <p className="text-xs sm:text-sm text-gray-200 leading-relaxed">
-                  <span className="text-bitcoin font-semibold">Why this matters:</span> Your business location will be published on Bitcoin Maps and OpenStreetMap. Incorrect coordinates will make it difficult for customers to find you.
-                </p>
-              </div>
-
-              <div className="text-xs sm:text-sm text-gray-400 space-y-1.5 sm:space-y-2">
-                <p className="flex items-start gap-2">
-                  <span className="text-bitcoin text-sm sm:text-base flex-shrink-0">✓</span>
-                  <span>Stand inside or directly outside your business</span>
-                </p>
-                <p className="flex items-start gap-2">
-                  <span className="text-bitcoin text-sm sm:text-base flex-shrink-0">✓</span>
-                  <span>Ensure GPS/location services are enabled</span>
-                </p>
-                <p className="flex items-start gap-2">
-                  <span className="text-bitcoin text-sm sm:text-base flex-shrink-0">✓</span>
-                  <span>Wait for accurate signal (usually 5-30 seconds)</span>
-                </p>
-              </div>
-            </div>
-
-            {/* Actions */}
-            <div className="bg-white/5 border-t border-white/10 px-4 sm:px-5 py-3 sm:py-4">
-              <div className="flex flex-col-reverse sm:flex-row gap-2 sm:gap-3">
-                <button
-                  onClick={() => setShowGPSModal(false)}
-                  className="flex-1 px-3 py-2 sm:py-2.5 text-sm sm:text-base bg-white/5 border border-white/20 text-gray-300 rounded-lg hover:bg-white/10 hover:border-white/30 transition-all duration-200 font-medium"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={confirmUseGPS}
-                  className="flex-1 px-3 py-2 sm:py-2.5 text-sm sm:text-base bg-bitcoin text-white rounded-lg hover:bg-bitcoin/90 transition-all duration-200 font-semibold shadow-lg shadow-bitcoin/20"
-                >
-                  I'm at my business
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* GPS Error */}
-      {gpsError && (
-        <div className="bg-red-50 border-l-4 border-red-500 p-4">
-          <div className="flex items-start gap-3">
-            <AlertTriangle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-            <div className="text-sm text-red-700">{gpsError}</div>
-          </div>
-        </div>
-      )}
-
       {/* GPS Button */}
       <div className="flex gap-3">
         <button
           onClick={handleUseCurrentLocation}
-          disabled={gpsLoading}
-          className="flex-1 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2 font-medium"
+          className="flex-1 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 font-medium"
         >
-          {gpsLoading ? (
-            <>
-              <Loader2 className="w-5 h-5 animate-spin" />
-              Getting your location...
-            </>
-          ) : (
-            <>
-              <Navigation className="w-5 h-5" />
-              Use My Current Location
-            </>
-          )}
+          <Navigation className="w-5 h-5" />
+          Use My Current Location
         </button>
       </div>
 
@@ -400,6 +265,16 @@ export default function LocationPicker({
           </div>
         </div>
       </div>
+
+      {/* GPS Precision Dialog */}
+      <GPSPrecisionDialog
+        isOpen={showGPSPrecisionDialog}
+        onClose={() => setShowGPSPrecisionDialog(false)}
+        onLocationCapture={handleGPSLocationCapture}
+        targetAccuracy={10}
+        warningAccuracy={50}
+        businessName={businessName}
+      />
     </div>
   );
 }
