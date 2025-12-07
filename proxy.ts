@@ -103,10 +103,13 @@ export default async function proxy(request: NextRequest) {
     }
   }
 
-  // Apply rate limiting to API routes and donation page
-  if (request.nextUrl.pathname.startsWith('/api/') ||
-      request.nextUrl.pathname.startsWith('/donate')) {
+  // Apply rate limiting to API routes and donation page, but exclude auth endpoints
+  const isAuthEndpoint = request.nextUrl.pathname.startsWith('/api/auth/');
+  const shouldRateLimit = (request.nextUrl.pathname.startsWith('/api/') ||
+                           request.nextUrl.pathname.startsWith('/donate')) &&
+                           !isAuthEndpoint;
 
+  if (shouldRateLimit) {
     const allowed = await rateLimit(ip);
     if (!allowed) {
       return new NextResponse(
