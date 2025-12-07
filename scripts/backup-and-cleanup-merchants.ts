@@ -19,17 +19,20 @@ interface Merchant {
 }
 
 interface Submission {
-  id: number;
+  id: string;
   business_name: string;
-  category: string;
+  category_key: string;
+  category_value: string;
   address: string;
   latitude: string;
   longitude: string;
   phone: string;
-  blink_address: string;
-  submitter_email: string;
+  lightning_address: string;
+  contact_email: string;
+  contact_name: string;
   status: string;
-  created_at: Date;
+  verification_status: string;
+  submitted_at: Date;
 }
 
 async function main() {
@@ -56,9 +59,9 @@ async function main() {
   console.log('📋 Step 2: Fetching submissions by edmundspira@gmail.com...');
   const submissions = await executeQuery<Submission[]>(
     `SELECT * FROM merchant_submissions 
-     WHERE submitter_email = 'edmundspira@gmail.com' 
+     WHERE contact_email = 'edmundspira@gmail.com' 
      AND status = 'pending'
-     ORDER BY created_at DESC`
+     ORDER BY submitted_at DESC`
   );
 
   console.log(`Found ${submissions.length} submissions by edmundspira@gmail.com\n`);
@@ -163,16 +166,16 @@ async function main() {
         differences.push(`Name: "${match.merchant.business_name}" → "${match.submission.business_name}"`);
       }
       
-      if (match.submission.category !== match.merchant.category) {
-        differences.push(`Category: "${match.merchant.category}" → "${match.submission.category}"`);
+      if (match.submission.category_value !== match.merchant.category) {
+        differences.push(`Category: "${match.merchant.category}" → "${match.submission.category_value}"`);
       }
       
       if (match.submission.phone !== match.merchant.phone) {
         differences.push(`Phone: "${match.merchant.phone}" → "${match.submission.phone}"`);
       }
       
-      if (match.submission.blink_address !== match.merchant.blink_address) {
-        differences.push(`Blink: "${match.merchant.blink_address || 'none'}" → "${match.submission.blink_address || 'none'}"`);
+      if (match.submission.lightning_address !== match.merchant.blink_address) {
+        differences.push(`Lightning: "${match.merchant.blink_address || 'none'}" → "${match.submission.lightning_address || 'none'}"`);
       }
 
       if (match.submission.latitude && match.submission.longitude) {
