@@ -1,6 +1,6 @@
 import { executeQuery } from './db';
 import { logger } from './logger';
-import type { Donor, DonorStats } from './types/database';
+import type { Donor, DonorStats } from './types';
 
 export interface DonorInfo {
   invoiceId: string;

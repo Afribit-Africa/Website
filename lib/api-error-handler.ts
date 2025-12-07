@@ -39,7 +39,7 @@ export interface ErrorResponse {
 
 /**
  * Handle API errors and return standardized NextResponse
- * 
+ *
  * @param error - Error object (APIError, Error, or unknown)
  * @param context - Optional context for logging (e.g., route name)
  * @returns NextResponse with error details
@@ -89,7 +89,7 @@ export function handleAPIError(error: unknown, context?: string): NextResponse<E
 
 /**
  * Assert that a condition is true, throw APIError if not
- * 
+ *
  * @param condition - Condition to assert
  * @param error - APIError to throw if condition is false
  */

@@ -1,20 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { getDbPool } from '@/lib/db';
 import { logger } from '@/lib/logger';
 import { calculateDistance } from '@/lib/utils/distance';
+import { requireVerifier } from '@/lib/auth-guards';
+import { handleAPIError } from '@/lib/api-error-handler';
 
 export async function GET(request: NextRequest) {
   try {
     // Check authentication
-    const session = await getServerSession(authOptions);
-    if (!session?.user?.email) {
-      return NextResponse.json(
-        { success: false, message: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
+    await requireVerifier();
 
     const pool = getDbPool();
 

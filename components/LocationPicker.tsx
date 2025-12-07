@@ -5,8 +5,13 @@ import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaf
 import { Navigation, Loader2, AlertTriangle, MapPin } from 'lucide-react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import GPSPrecisionDialog from './GPSPrecisionDialog';
+import dynamic from 'next/dynamic';
 import { calculateDistance } from '@/lib/utils/distance';
+
+const GPSPrecisionDialog = dynamic(() => import('./GPSPrecisionDialog'), {
+  ssr: false,
+  loading: () => null,
+});
 
 // Fix for default marker icons in react-leaflet
 delete (L.Icon.Default.prototype as any)._getIconUrl;

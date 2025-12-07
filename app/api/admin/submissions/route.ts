@@ -1,20 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { executeQuery } from '@/lib/db';
+import { requireAdmin } from '@/lib/auth-guards';
+import { handleAPIError } from '@/lib/api-error-handler';
 import { logger } from '@/lib/logger';
 
 export async function GET(request: NextRequest) {
   try {
     // Check authentication
-    const session = await getServerSession(authOptions);
-
-    if (!session) {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
+    await requireAdmin();
 
     // Get status filter from query params
     const searchParams = request.nextUrl.searchParams;
@@ -69,10 +62,6 @@ export async function GET(request: NextRequest) {
       submissions: formattedSubmissions,
     });
   } catch (error) {
-    logger.error('Submissions API error:', error);
-    return NextResponse.json(
-      { success: false, error: 'Internal server error' },
-      { status: 500 }
-    );
+    return handleAPIError(error, 'Admin Submissions');
   }
 }

@@ -1,22 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { executeQuery } from '@/lib/db';
 import { generateTokenWithExpiry } from '@/lib/utils/token-generator';
 import { sendMerchantConfirmationEmail } from '@/lib/email-templates/merchant-confirmation';
+import { requireAdmin } from '@/lib/auth-guards';
+import { handleAPIError } from '@/lib/api-error-handler';
 
 export async function POST(
   request: NextRequest,
   context: { params: Promise<{ id: string }> }
 ) {
   try {
-    const session = await getServerSession(authOptions);
-    if (!session?.user || (session.user as any).role !== 'admin') {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
+    const user = await requireAdmin();
 
     const { id } = await context.params;
     const body = await request.json();
@@ -39,7 +33,7 @@ export async function POST(
     }
 
     const editRequest = editRequests[0];
-    const adminUserId = (session.user as any).id;
+    const adminUserId = user.id;
 
     // Generate confirmation token (two-step approval workflow)
     const { token, hash, expiresAt } = generateTokenWithExpiry(7); // 7 days expiry

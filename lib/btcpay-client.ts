@@ -92,16 +92,14 @@ export async function createInvoice(params: CreateInvoiceParams): Promise<Invoic
         },
       }),
     });
-  } catch (fetchError: any) {
-    logger.error('BTCPay fetch error:', {
-      message: fetchError.message,
-      cause: fetchError.cause,
-      type: fetchError.constructor.name,
-    });
-    throw new Error(`Network error connecting to BTCPay Server: ${fetchError.message}`);
-  }
-
-  logger.debug('BTCPay response status:', response.status);
+    } catch (fetchError) {
+      const errorMessage = fetchError instanceof Error ? fetchError.message : 'Unknown error';
+      logger.error('BTCPay fetch error:', {
+        message: errorMessage,
+        type: fetchError?.constructor?.name || 'Unknown',
+      });
+      throw new Error(`Network error connecting to BTCPay Server: ${errorMessage}`);
+    }  logger.debug('BTCPay response status:', response.status);
 
   if (!response.ok) {
     const error = await response.text();
@@ -227,7 +225,7 @@ export async function getCrowdfundStats() {
     }
 
     const invoices = await response.json();
-    const totalRaised = invoices.reduce((sum: number, inv: any) => {
+    const totalRaised = (invoices as Array<{ amount?: string }>).reduce((sum: number, inv) => {
       return sum + parseFloat(inv.amount || '0');
     }, 0);
 

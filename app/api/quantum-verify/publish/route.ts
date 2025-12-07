@@ -77,19 +77,21 @@ export async function POST(request: NextRequest) {
       const result = await publishMerchantToOSM(submission);
       nodeId = result.nodeId;
       changesetId = result.changesetId;
-    } catch (osmError: any) {
+    } catch (osmError) {
       logger.error('OSM publish error:', osmError);
+
+      const errorMessage = osmError instanceof Error ? osmError.message : 'Unknown error';
 
       // Log failed publish attempt
       const activityId = crypto.randomUUID();
       await executeQuery(
         `INSERT INTO admin_activity_log (id, merchant_submission_id, admin_email, action, details)
          VALUES (?, ?, ?, 'publish_failed', ?)`,
-        [activityId, submissionId, adminEmail, osmError.message]
+        [activityId, submissionId, adminEmail, errorMessage]
       );
 
       return NextResponse.json(
-        { success: false, error: `Failed to publish to OSM: ${osmError.message}` },
+        { success: false, error: `Failed to publish to OSM: ${errorMessage}` },
         { status: 500 }
       );
     }

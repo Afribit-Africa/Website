@@ -163,16 +163,16 @@ export async function POST(request: NextRequest) {
           logger.error('Failed to send published email:', emailError);
         }
 
-      } catch (osmError: any) {
+      } catch (osmError) {
         logger.error('❌ Failed to auto-publish to OSM:', osmError);
-        publishError = osmError.message;
+        publishError = osmError instanceof Error ? osmError.message : 'Unknown error';
 
         // Log failed publish attempt
         const failActivityId = crypto.randomUUID();
         await executeQuery(
           `INSERT INTO admin_activity_log (id, merchant_submission_id, admin_email, action, details)
            VALUES (?, ?, ?, 'publish_failed', ?)`,
-          [failActivityId, submissionId, adminEmail, osmError.message]
+          [failActivityId, submissionId, adminEmail, publishError]
         );
       }
     } else {

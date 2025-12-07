@@ -8,7 +8,8 @@
 'use client';
 
 import { useState } from 'react';
-import { X, XCircle, AlertTriangle } from 'lucide-react';
+import { XCircle, AlertTriangle } from 'lucide-react';
+import BaseAdminModal from './BaseAdminModal';
 
 interface RejectModalProps {
   isOpen: boolean;
@@ -26,61 +27,35 @@ export default function RejectModal({
   merchantEmail
 }: RejectModalProps) {
   const [reason, setReason] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  if (!isOpen) return null;
 
   const isReasonValid = reason.trim().length >= 20;
   const remainingChars = 20 - reason.trim().length;
 
-  const handleConfirm = async () => {
-    if (!isReasonValid) {
-      setError('Rejection reason must be at least 20 characters');
-      return;
-    }
-
-    setIsLoading(true);
-    setError(null);
-
-    try {
-      await onConfirm(reason.trim());
-      setReason('');
-      onClose();
-    } catch (err: any) {
-      setError(err.message || 'Failed to reject edit request');
-      setIsLoading(false);
-    }
+  const handleConfirmWithReason = async () => {
+    await onConfirm(reason.trim());
+    setReason(''); // Reset form after success
   };
 
   const handleClose = () => {
-    if (!isLoading) {
-      setReason('');
-      setError(null);
-      onClose();
-    }
+    setReason('');
+    onClose();
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
-      <div className="bg-[#0a0a0a] border border-white/10 rounded-xl shadow-2xl max-w-lg w-full mx-4 overflow-hidden">
-        {/* Header */}
-        <div className="bg-gradient-to-r from-red-500/20 to-red-500/10 border-b border-white/10 px-6 py-4 flex items-center justify-between">
-          <h3 className="text-xl font-bold font-heading text-white flex items-center gap-2">
-            <XCircle className="w-5 h-5 text-red-400" />
-            Reject Edit Request
-          </h3>
-          <button
-            onClick={handleClose}
-            disabled={isLoading}
-            className="text-gray-400 hover:text-white transition-colors disabled:opacity-50"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
-
-        {/* Content */}
-        <div className="p-6 space-y-4">
+    <BaseAdminModal
+      isOpen={isOpen}
+      onClose={handleClose}
+      onConfirm={handleConfirmWithReason}
+      title="Reject Edit Request"
+      icon={XCircle}
+      colorTheme="red"
+      confirmText="Reject Request"
+      confirmIcon={XCircle}
+      loadingText="Rejecting..."
+      disableConfirm={!isReasonValid}
+    >
+      {({ isLoading, setError }) => (
+        <>
           <div className="bg-white/5 border border-white/10 rounded-lg p-4">
             <p className="text-sm text-gray-300 font-body mb-2">
               <strong className="text-white">Business:</strong> {businessName}
@@ -133,12 +108,6 @@ export default function RejectModal({
             </div>
           </div>
 
-          {error && (
-            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
-              <p className="text-sm text-red-300 font-body">{error}</p>
-            </div>
-          )}
-
           <div className="bg-white/5 rounded-lg p-4">
             <p className="text-sm text-gray-400 font-body">
               <strong className="text-white">What happens next:</strong>
@@ -158,36 +127,8 @@ export default function RejectModal({
               </li>
             </ul>
           </div>
-        </div>
-
-        {/* Actions */}
-        <div className="bg-white/5 border-t border-white/10 px-6 py-4 flex gap-3 justify-end">
-          <button
-            onClick={handleClose}
-            disabled={isLoading}
-            className="px-5 py-2.5 rounded-lg font-semibold font-heading text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={handleConfirm}
-            disabled={isLoading || !isReasonValid}
-            className="px-5 py-2.5 rounded-lg font-semibold font-heading bg-gradient-to-r from-red-500 to-red-600 text-white hover:shadow-lg hover:shadow-red-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-          >
-            {isLoading ? (
-              <>
-                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                Rejecting...
-              </>
-            ) : (
-              <>
-                <XCircle className="w-4 h-4" />
-                Reject Request
-              </>
-            )}
-          </button>
-        </div>
-      </div>
-    </div>
+        </>
+      )}
+    </BaseAdminModal>
   );
 }

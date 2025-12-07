@@ -52,6 +52,25 @@ export interface DonationStats {
   }>;
 }
 
+// Database row types (snake_case matching DB columns)
+export interface Donor {
+  id: number;
+  invoice_id: string;
+  name: string | null;
+  email: string | null;
+  amount: number;
+  tier: string;
+  donation_type: 'anonymous' | 'named';
+  created_at: Date;
+}
+
+export interface DonorStats {
+  total_donations: number;
+  total_amount: number;
+  named_donations: number;
+  anonymous_donations: number;
+}
+
 // ============================================================================
 // MERCHANT TYPES
 // ============================================================================

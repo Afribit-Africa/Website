@@ -1,20 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { getDbPool } from '@/lib/db';
 import { logger } from '@/lib/logger';
+import { requireVerifier } from '@/lib/auth-guards';
+import { handleAPIError } from '@/lib/api-error-handler';
 
 export async function GET(request: NextRequest) {
   try {
-    // Check authentication
-    const session = await getServerSession(authOptions);
-    if (!session?.user?.email) {
-      return NextResponse.json(
-        { success: false, message: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
-
+    const user = await requireVerifier();
     const pool = getDbPool();
 
     // Get verifier stats
@@ -26,7 +18,7 @@ export async function GET(request: NextRequest) {
         (SELECT COUNT(*) FROM merchant_submissions WHERE verification_status = 'pending_verification') as pendingCount
       FROM merchant_submissions
       WHERE verified_by_verifier_email = ?`,
-      [session.user.email]
+      [user.email]
     );
 
     const stats = (statsRows as any[])[0];

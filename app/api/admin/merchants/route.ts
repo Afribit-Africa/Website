@@ -1,23 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { executeQuery } from '@/lib/db';
 import { logger } from '@/lib/logger';
+import { requireAdmin } from '@/lib/auth-guards';
+import { handleAPIError } from '@/lib/api-error-handler';
 
 // Force dynamic rendering for this route
 export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
   try {
-    // Check authentication
-    const session = await getServerSession(authOptions);
-
-    if (!session) {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
+    await requireAdmin();
 
     // Fetch published merchants
     const merchants = await executeQuery<any[]>(
@@ -51,10 +43,6 @@ export async function GET(request: NextRequest) {
       merchants: formattedMerchants,
     });
   } catch (error) {
-    logger.error('Merchants API error:', error);
-    return NextResponse.json(
-      { success: false, error: 'Internal server error' },
-      { status: 500 }
-    );
+    return handleAPIError(error, 'Admin Merchants');
   }
 }

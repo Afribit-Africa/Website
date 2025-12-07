@@ -9,10 +9,13 @@ import { Select } from '@/components/ui/Select';
 import { Checkbox } from '@/components/ui/Checkbox';
 import { Button } from '@/components/ui/Button';
 import { ErrorModal } from '@/components/ui/ErrorModal';
-import GPSPrecisionDialog from '@/components/GPSPrecisionDialog';
 
-// Dynamically import map to avoid SSR issues
+// Dynamically import map and GPS dialog to avoid SSR issues and reduce initial bundle
 const LocationMap = dynamic(() => import('@/components/LocationMap'), { ssr: false });
+const GPSPrecisionDialog = dynamic(() => import('@/components/GPSPrecisionDialog'), {
+  ssr: false,
+  loading: () => null,
+});
 
 const BUSINESS_TYPES = [
   { value: '', label: 'Select business type...' },

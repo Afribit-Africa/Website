@@ -1,30 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { executeQuery } from '@/lib/db';
 import { logger } from '@/lib/logger';
 import { merchants as MERCHANTS } from '@/lib/merchants-data';
 import { randomUUID } from 'crypto';
+import { requireAdmin } from '@/lib/auth-guards';
+import { handleAPIError } from '@/lib/api-error-handler';
 
 // GET handler - Shows import status and provides UI to trigger import
 export async function GET(request: NextRequest) {
   try {
     // Check authentication
-    const session = await getServerSession(authOptions);
-
-    if (!session) {
-      return new NextResponse(
-        `<!DOCTYPE html>
-        <html>
-          <head><title>Unauthorized</title></head>
-          <body style="font-family: system-ui; padding: 2rem; max-width: 600px; margin: 0 auto;">
-            <h1>🔒 Unauthorized</h1>
-            <p>Please <a href="/admin/login">log in</a> to access the merchant import tool.</p>
-          </body>
-        </html>`,
-        { status: 401, headers: { 'Content-Type': 'text/html' } }
-      );
-    }
+    await requireAdmin();
 
     // Check current merchant count in database
     const [stats] = await executeQuery<any[]>(
@@ -157,16 +143,9 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     // Check authentication
-    const session = await getServerSession(authOptions);
+    const user = await requireAdmin();
 
-    if (!session) {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
-
-    logger.info(`Admin ${session.user?.email} initiating merchant import...`);
+    logger.info(`Admin ${user.email} initiating merchant import...`);
 
     let inserted = 0;
     let skipped = 0;
@@ -281,9 +260,10 @@ export async function POST(request: NextRequest) {
         );
 
         inserted++;
-      } catch (error: any) {
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error';
         logger.error(`Error importing ${merchant.businessName}:`, error);
-        errors.push(`${merchant.businessName}: ${error.message}`);
+        errors.push(`${merchant.businessName}: ${errorMessage}`);
       }
     }
 

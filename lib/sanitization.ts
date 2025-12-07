@@ -4,9 +4,47 @@
  * Server-safe version for API routes
  */
 
+import type { MerchantSubmission } from './types';
+
+interface ContactFormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+interface RawMerchantData {
+  businessName?: string;
+  category?: string;
+  description?: string;
+  address?: string;
+  phoneNumber?: string;
+  phone?: string;
+  website?: string;
+  contactName?: string;
+  contactEmail?: string;
+  additionalInfo?: string;
+  latitude?: number | string;
+  longitude?: number | string;
+  paymentOnchain?: boolean;
+  paymentLightning?: boolean;
+  paymentLightningContactless?: boolean;
+}
+
+interface RawContactData {
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
+}
+
+interface DOMPurifyInstance {
+  sanitize: (dirty: string, config?: any) => string;
+}
+
 // Use DOMPurify only in browser environment
 const isBrowser = typeof window !== 'undefined';
-let DOMPurify: any = null;
+let DOMPurify: DOMPurifyInstance | null = null;
 
 if (isBrowser) {
   // Only import DOMPurify in browser
@@ -107,6 +145,12 @@ export function sanitizeUrl(url: string): string {
     return '';
   }
 
+  // Use server-safe sanitization on server or if DOMPurify not loaded
+  if (!isBrowser || !DOMPurify) {
+    // Basic URL sanitization without DOMPurify
+    return sanitized.replace(/[<>"']/g, '');
+  }
+
   // Use DOMPurify to sanitize the URL
   return DOMPurify.sanitize(sanitized, { ALLOWED_URI_REGEXP: /^https?:/ });
 }
@@ -132,31 +176,27 @@ export function sanitizePhone(phone: string): string {
  * Sanitize merchant submission data
  * Comprehensive sanitization for merchant registration
  */
-export function sanitizeMerchantSubmission(data: any): any {
+export function sanitizeMerchantSubmission(data: RawMerchantData): Partial<MerchantSubmission> {
   return {
     businessName: sanitizeText(data.businessName || ''),
-    category: sanitizeText(data.category || ''),
-    description: sanitizeHtml(data.description || ''),
+    categoryValue: sanitizeText(data.category || ''),
     address: sanitizeText(data.address || ''),
     phoneNumber: sanitizePhone(data.phoneNumber || data.phone || ''),
-    website: data.website ? sanitizeUrl(data.website) : '',
-    contactName: sanitizeText(data.contactName || ''),
     contactEmail: sanitizeEmail(data.contactEmail || ''),
     additionalInfo: sanitizeText(data.additionalInfo || ''),
     // Numeric fields - ensure they're valid numbers
-    latitude: parseFloat(data.latitude) || 0,
-    longitude: parseFloat(data.longitude) || 0,
+    latitude: parseFloat(data.latitude as string) || 0,
+    longitude: parseFloat(data.longitude as string) || 0,
     // Boolean fields
     paymentOnchain: Boolean(data.paymentOnchain),
     paymentLightning: Boolean(data.paymentLightning),
-    paymentLightningContactless: Boolean(data.paymentLightningContactless),
   };
 }
 
 /**
  * Sanitize contact form data
  */
-export function sanitizeContactForm(data: any): any {
+export function sanitizeContactForm(data: RawContactData): ContactFormData {
   return {
     name: sanitizeText(data.name || ''),
     email: sanitizeEmail(data.email || ''),

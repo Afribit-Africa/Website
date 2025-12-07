@@ -1,22 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { getDbPool } from '@/lib/db';
 import { writeFile, mkdir } from 'fs/promises';
 import { join } from 'path';
 import { logger } from '@/lib/logger';
 import { sendMerchantVerificationRejectionEmail } from '@/lib/resend-email';
+import { requireVerifier } from '@/lib/auth-guards';
+import { handleAPIError } from '@/lib/api-error-handler';
 
 export async function POST(request: NextRequest) {
   try {
     // Check authentication
-    const session = await getServerSession(authOptions);
-    if (!session?.user?.email) {
-      return NextResponse.json(
-        { success: false, message: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
+    const user = await requireVerifier();
 
     const pool = getDbPool();
 
@@ -63,7 +57,7 @@ export async function POST(request: NextRequest) {
     // Get verifier user info
     const [verifierRows] = await pool.execute(
       'SELECT id FROM admin_users WHERE email = ? AND role = ?',
-      [session.user.email, 'verifier']
+      [user.email, 'verifier']
     );
 
     const verifier = (verifierRows as any[])[0];
@@ -95,7 +89,7 @@ export async function POST(request: NextRequest) {
       [
         verificationResult, // 'verified' or 'not_verified'
         verifier.id,
-        session.user.email,
+        user.email,
         verifierNotes,
         verifierLatitude,
         verifierLongitude,

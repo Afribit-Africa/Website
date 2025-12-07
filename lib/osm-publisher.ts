@@ -81,11 +81,12 @@ export async function publishToOSM(merchant: MerchantData): Promise<OSMPublishRe
       changesetId: changesetId.toString()
     };
 
-  } catch (error: any) {
-    logger.error('❌ OSM publishing failed:', error.message);
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    logger.error('❌ OSM publishing failed:', errorMessage);
     return {
       success: false,
-      error: error.message
+      error: errorMessage
     };
   }
 }

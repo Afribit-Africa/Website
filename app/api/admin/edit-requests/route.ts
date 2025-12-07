@@ -1,18 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { executeQuery } from '@/lib/db';
+import { requireAdmin } from '@/lib/auth-guards';
+import { handleAPIError } from '@/lib/api-error-handler';
 
 export async function GET(request: NextRequest) {
   try {
-    // Check authentication
-    const session = await getServerSession(authOptions);
-    if (!session?.user || (session.user as any).role !== 'admin') {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
+    await requireAdmin();
 
     const searchParams = request.nextUrl.searchParams;
     const status = searchParams.get('status') || 'all';

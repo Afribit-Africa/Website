@@ -39,7 +39,7 @@ export async function GET() {
     const message = error instanceof Error ? error.message : 'Unknown error';
     const errorType = error instanceof Error ? error.constructor.name : 'Unknown';
     const cause = error instanceof Error ? error.cause : undefined;
-    
+
     logger.error('Connection test failed:', message);
     return NextResponse.json({
       success: false,

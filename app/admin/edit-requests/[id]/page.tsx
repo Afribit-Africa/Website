@@ -6,9 +6,11 @@ import { useRouter, useParams } from 'next/navigation';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { calculateDistance } from '@/lib/utils/distance';
-import ApproveModal from '@/components/admin/ApproveModal';
-import ApplyChangesModal from '@/components/admin/ApplyChangesModal';
-import RejectModal from '@/components/admin/RejectModal';
+
+// Dynamic imports for modals and map to reduce initial bundle size
+const ApproveModal = dynamic(() => import('@/components/admin/ApproveModal'), { ssr: false });
+const ApplyChangesModal = dynamic(() => import('@/components/admin/ApplyChangesModal'), { ssr: false });
+const RejectModal = dynamic(() => import('@/components/admin/RejectModal'), { ssr: false });
 
 // Dynamic import for map component to avoid SSR issues
 const MapWithMarkers = dynamic(() => import('@/components/admin/DualMapView'), {

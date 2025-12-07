@@ -29,7 +29,7 @@ export interface VerifierUser extends AuthenticatedUser {
 /**
  * Require authenticated admin user
  * Throws APIError if not authenticated or not admin
- * 
+ *
  * @returns Authenticated admin user
  * @throws {APIError} 401 if not authenticated or not admin
  */
@@ -53,7 +53,7 @@ export async function requireAdmin(): Promise<AdminUser> {
 /**
  * Require authenticated verifier user (admin or verifier role)
  * Throws APIError if not authenticated or not authorized
- * 
+ *
  * @returns Authenticated verifier user
  * @throws {APIError} 401 if not authenticated or not authorized
  */
@@ -67,7 +67,7 @@ export async function requireVerifier(): Promise<VerifierUser> {
   // Cast user to include role property
   const user = session.user as AuthenticatedUser;
   const allowedRoles = ['admin', 'verifier'];
-  
+
   if (!allowedRoles.includes(user.role)) {
     throw APIErrors.Forbidden('Verifier access required');
   }
@@ -78,7 +78,7 @@ export async function requireVerifier(): Promise<VerifierUser> {
 /**
  * Get current authenticated user (optional)
  * Returns null if not authenticated
- * 
+ *
  * @returns Authenticated user or null
  */
 export async function getCurrentUser(): Promise<AuthenticatedUser | null> {
@@ -88,7 +88,7 @@ export async function getCurrentUser(): Promise<AuthenticatedUser | null> {
 
 /**
  * Check if user is authenticated
- * 
+ *
  * @returns true if authenticated, false otherwise
  */
 export async function isAuthenticated(): Promise<boolean> {
@@ -98,7 +98,7 @@ export async function isAuthenticated(): Promise<boolean> {
 
 /**
  * Check if current user has admin role
- * 
+ *
  * @returns true if admin, false otherwise
  */
 export async function isAdmin(): Promise<boolean> {
@@ -109,7 +109,7 @@ export async function isAdmin(): Promise<boolean> {
 
 /**
  * Check if current user has verifier role (admin or verifier)
- * 
+ *
  * @returns true if verifier, false otherwise
  */
 export async function isVerifier(): Promise<boolean> {

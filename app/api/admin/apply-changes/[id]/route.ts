@@ -13,10 +13,10 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth/next';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { executeQuery } from '@/lib/db';
 import { sendChangesAppliedEmail } from '@/lib/email-templates/changes-applied';
+import { requireAdmin } from '@/lib/auth-guards';
+import { handleAPIError } from '@/lib/api-error-handler';
 
 export async function POST(
   request: NextRequest,
@@ -24,14 +24,7 @@ export async function POST(
 ) {
   try {
     // Verify admin authentication
-    const session = await getServerSession(authOptions);
-
-    if (!session?.user || (session.user as any).role !== 'admin') {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized - Admin access required' },
-        { status: 401 }
-      );
-    }
+    const user = await requireAdmin();
 
     const { id } = await context.params;
 
@@ -132,7 +125,7 @@ export async function POST(
         reviewed_by = ?,
         admin_notes = CONCAT(COALESCE(admin_notes, ''), '\n\nChanges applied to database and OSM at ', NOW())
       WHERE id = ?`,
-      [(session.user as any).id, id]
+      [user.id, id]
     );
 
     console.log(`✅ Edit request #${id} marked as applied`);
