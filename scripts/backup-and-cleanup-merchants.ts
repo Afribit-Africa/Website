@@ -51,15 +51,15 @@ async function main() {
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
   const backupFile = path.join(backupDir, `merchants_backup_${timestamp}.json`);
-  
+
   fs.writeFileSync(backupFile, JSON.stringify(merchants, null, 2));
   console.log(`✅ Backed up ${merchants.length} merchants to: ${backupFile}\n`);
 
   // 2. Get submissions by edmundspira@gmail.com
   console.log('📋 Step 2: Fetching submissions by edmundspira@gmail.com...');
   const submissions = await executeQuery<Submission[]>(
-    `SELECT * FROM merchant_submissions 
-     WHERE contact_email = 'edmundspira@gmail.com' 
+    `SELECT * FROM merchant_submissions
+     WHERE contact_email = 'edmundspira@gmail.com'
      AND status = 'pending'
      ORDER BY submitted_at DESC`
   );
@@ -77,9 +77,9 @@ async function main() {
 
   for (const submission of submissions) {
     console.log(`\n📍 Checking: ${submission.business_name}`);
-    
+
     // Check exact name match
-    let merchant = merchants.find(m => 
+    let merchant = merchants.find(m =>
       m.business_name.toLowerCase().trim() === submission.business_name.toLowerCase().trim()
     );
 
@@ -92,7 +92,7 @@ async function main() {
     // Check fuzzy name match (remove special chars, spaces)
     const normalizedSubmission = submission.business_name.toLowerCase()
       .replace(/[^a-z0-9]/g, '');
-    
+
     merchant = merchants.find(m => {
       const normalizedMerchant = m.business_name.toLowerCase()
         .replace(/[^a-z0-9]/g, '');
@@ -114,9 +114,9 @@ async function main() {
         if (m.latitude && m.longitude) {
           const mLat = parseFloat(m.latitude);
           const mLng = parseFloat(m.longitude);
-          
+
           const distance = calculateDistance(subLat, subLng, mLat, mLng);
-          
+
           if (distance < 50) {
             matches.push({ submission, merchant: m, matchType: 'location' });
             console.log(`   ✓ Location match found: ${m.business_name} (${distance.toFixed(0)}m away)`);
@@ -156,30 +156,30 @@ async function main() {
   // 5. Show differences for matches
   if (exactMatches.length > 0 || fuzzyMatches.length > 0 || locationMatches.length > 0) {
     console.log('\n🔄 DIFFERENCES FOUND:\n');
-    
+
     for (const match of [...exactMatches, ...fuzzyMatches, ...locationMatches]) {
       if (!match.merchant) continue;
-      
+
       const differences: string[] = [];
-      
+
       if (match.submission.business_name !== match.merchant.business_name) {
         differences.push(`Name: "${match.merchant.business_name}" → "${match.submission.business_name}"`);
       }
-      
+
       if (match.submission.category_value !== match.merchant.category) {
         differences.push(`Category: "${match.merchant.category}" → "${match.submission.category_value}"`);
       }
-      
+
       if (match.submission.phone !== match.merchant.phone) {
         differences.push(`Phone: "${match.merchant.phone}" → "${match.submission.phone}"`);
       }
-      
+
       if (match.submission.lightning_address !== match.merchant.blink_address) {
         differences.push(`Lightning: "${match.merchant.blink_address || 'none'}" → "${match.submission.lightning_address || 'none'}"`);
       }
 
       if (match.submission.latitude && match.submission.longitude) {
-        const oldDist = match.merchant.latitude && match.merchant.longitude 
+        const oldDist = match.merchant.latitude && match.merchant.longitude
           ? calculateDistance(
               parseFloat(match.merchant.latitude),
               parseFloat(match.merchant.longitude),
@@ -187,7 +187,7 @@ async function main() {
               parseFloat(match.submission.longitude)
             )
           : null;
-        
+
         if (oldDist && oldDist > 5) {
           differences.push(`Location: Moved ${oldDist.toFixed(0)}m`);
         }

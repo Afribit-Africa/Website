@@ -26,9 +26,9 @@ async function main() {
 
   // 3. Get merchants with BTCMap that are NOT in the matched list (preserve these)
   const allMerchants = await executeQuery<any[]>(
-    `SELECT id, business_name, osm_node_id 
-     FROM merchant_submissions 
-     WHERE status = "published" 
+    `SELECT id, business_name, osm_node_id
+     FROM merchant_submissions
+     WHERE status = "published"
      AND osm_node_id IS NOT NULL`
   );
 
@@ -43,13 +43,13 @@ async function main() {
 
   // 4. Archive old matched merchants (change status to 'archived')
   console.log('\n🗄️  Archiving old merchant data...');
-  
+
   if (matchedMerchantIds.length > 0) {
     const placeholders = matchedMerchantIds.map(() => '?').join(',');
     await executeQuery(
-      `UPDATE merchant_submissions 
-       SET status = 'archived', 
-           last_edited_at = NOW() 
+      `UPDATE merchant_submissions
+       SET status = 'archived',
+           last_edited_at = NOW()
        WHERE id IN (${placeholders})`,
       matchedMerchantIds
     );
@@ -58,7 +58,7 @@ async function main() {
 
   // 5. Publish the 20 new verified submissions
   console.log('\n📤 Publishing your 20 verified submissions...');
-  
+
   const submissionIds = matches.map(m => m.submission.id);
   const updatePromises = [];
 
@@ -74,7 +74,7 @@ async function main() {
     const adopterNumber = oldMerchant?.adopter_number || null;
 
     const updateQuery = executeQuery(
-      `UPDATE merchant_submissions 
+      `UPDATE merchant_submissions
        SET status = 'published',
            verification_status = 'verified',
            verified_by_email = 'edmundspira@gmail.com',
@@ -101,7 +101,7 @@ async function main() {
   console.log('═══════════════════════════════════════════════════\n');
 
   const stats = await executeQuery<any[]>(
-    `SELECT 
+    `SELECT
       COUNT(*) as total,
       SUM(CASE WHEN status = 'published' THEN 1 ELSE 0 END) as published,
       SUM(CASE WHEN status = 'archived' THEN 1 ELSE 0 END) as archived,
@@ -127,9 +127,9 @@ async function main() {
 
   // 8. List all published merchants
   const published = await executeQuery<any[]>(
-    `SELECT business_name, category_value, lightning_address, osm_node_id 
-     FROM merchant_submissions 
-     WHERE status = 'published' 
+    `SELECT business_name, category_value, lightning_address, osm_node_id
+     FROM merchant_submissions
+     WHERE status = 'published'
      ORDER BY business_name`
   );
 
@@ -149,23 +149,23 @@ async function main() {
   // 9. Recommendations for BTCMap updates
   console.log('\n💡 RECOMMENDATIONS FOR BTCMAP:');
   console.log('═══════════════════════════════════════════════════\n');
-  
+
   const needsBtcmapUpdate = matches.filter(m => m.merchant?.osm_node_id);
-  
+
   if (needsBtcmapUpdate.length > 0) {
     console.log('⚠️  These merchants have BTCMap entries that may need updating:');
     console.log('    (business names or coordinates have changed)\n');
-    
+
     for (const match of needsBtcmapUpdate) {
       const oldName = match.merchant.business_name;
       const newName = match.submission.business_name;
       const osmId = match.merchant.osm_node_id;
-      
+
       if (oldName !== newName) {
         console.log(`   • OSM ${osmId}: "${oldName}" → "${newName}"`);
       }
     }
-    
+
     console.log('\n   Options:');
     console.log('   1. Use OSM API to update these nodes (requires OSM account)');
     console.log('   2. Delete from BTCMap and re-add with correct info');

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="Afribit Africa Merchant Directory v2.0">
+  <node lat="-1.31643220" lon="36.77607260">
+    <tag k="name" v="Galaxxy Toilet"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Galaxxy Toilet is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: galaxxytoilet@blink.sc. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:7d1bdd1b-7790-4384-9c74-21038d2e300d"/>
+    <tag k="operator" v="Galaxxy"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="7d1bdd1b-7790-4384-9c74-21038d2e300d"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="galaxxytoilet@blink.sc"/>
+    <tag k="contact:lightning" v="galaxxytoilet@blink.sc"/>
+  </node>
+</osm>

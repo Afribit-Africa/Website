@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, AlertCircle } from 'lucide-react';
+import { X, AlertCircle, CheckCircle } from 'lucide-react';
 import { Button } from './Button';
 
 interface ErrorModalProps {
@@ -12,10 +12,18 @@ interface ErrorModalProps {
 export const ErrorModal: React.FC<ErrorModalProps> = ({
   isOpen,
   onClose,
-  title = 'Error',
+  title,
   message,
 }) => {
   if (!isOpen) return null;
+
+  // Detect if this is a success message
+  const isSuccess = message.startsWith('✅');
+  const defaultTitle = isSuccess ? 'Success' : 'Error';
+  const displayTitle = title || defaultTitle;
+  const iconBgColor = isSuccess ? 'bg-green-500/20' : 'bg-red-500/20';
+  const iconColor = isSuccess ? 'text-green-500' : 'text-red-500';
+  const Icon = isSuccess ? CheckCircle : AlertCircle;
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-island-expand" onClick={onClose}>
@@ -29,15 +37,15 @@ export const ErrorModal: React.FC<ErrorModalProps> = ({
         </button>
 
         {/* Icon */}
-        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-red-500/20 mb-4">
-          <AlertCircle className="w-6 h-6 text-red-500" />
+        <div className={`flex items-center justify-center w-12 h-12 rounded-full ${iconBgColor} mb-4`}>
+          <Icon className={`w-6 h-6 ${iconColor}`} />
         </div>
 
         {/* Content */}
         <h3 className="text-xl font-heading font-bold text-white mb-2">
-          {title}
+          {displayTitle}
         </h3>
-        <p className="text-gray-300 mb-6 leading-relaxed">
+        <p className="text-gray-300 mb-6 leading-relaxed whitespace-pre-line">
           {message}
         </p>
 

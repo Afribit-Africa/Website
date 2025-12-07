@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { executeQuery } from '@/lib/db';
 import { logger } from '@/lib/logger';
-import { MERCHANTS } from '@/lib/merchants-data';
+import { merchants as MERCHANTS } from '@/lib/merchants-data';
 import { randomUUID } from 'crypto';
 
 // GET handler - Shows import status and provides UI to trigger import

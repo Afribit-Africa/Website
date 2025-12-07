@@ -1,3 +1,10 @@
+/**
+ * Merchant Data - Auto-generated from database
+ * Last updated: 2025-12-07T15:33:18.221Z
+ * 
+ * DO NOT EDIT MANUALLY - Run: npx tsx scripts/sync-merchants-to-data-file.ts
+ */
+
 export interface Merchant {
   id: string;
   businessName: string;
@@ -14,676 +21,371 @@ export interface Merchant {
   slug: string;
   category?: string;
   description?: string;
+  website?: string;
 }
 
-// Parsed from Afribit Merchant Directory CSV
-const merchantDirectory = [
+export const merchants: Merchant[] = [
   {
-    businessName: "3 West Collection",
-    ownerName: "Billy",
-    email: "bildadouma578@gmail.com",
-    phoneNumber: "110924413",
-    location: "Soweto",
-    blinkAddress: "threewestcollection@blink.sv"
-  },
-  {
-    businessName: "Shine Magicians",
-    ownerName: "Gundo",
-    email: "gundokevin386@gmail.com",
-    phoneNumber: "790274104",
-    location: "Soweto 3 West",
-    blinkAddress: "livegreatshinemagician@blink.sv"
-  },
-  {
-    businessName: "MUANZO MPYA ORGANISATION",
-    ownerName: "Eunice",
-    email: "muanzompyaorg@gmail.com",
-    phoneNumber: "254792261682",
-    location: "ST CHRISTINE'S, KIBERA",
-    blinkAddress: "muanzompya@blink.sv"
-  },
-  {
-    businessName: "For People Forever LTD",
-    ownerName: "Lipapi",
-    email: "dennisochiengotolo@gmail.com",
-    phoneNumber: "742857375",
-    location: "Raila Village, Nairobi, Kenya",
-    blinkAddress: "forpeopleforever01@blink.sv"
-  },
-  {
-    businessName: "Usafi Boys Initiative",
-    ownerName: "Abelo",
-    email: "N/A",
-    phoneNumber: "254711430664",
-    location: "Kibera",
-    blinkAddress: "usafiboysinitiative@blink.sv"
-  },
-  {
-    businessName: "BIG BROTHER CAR WASH",
-    ownerName: "Johnteh",
-    email: "johnomomndi541@gmail.com",
-    phoneNumber: "254792261682",
-    location: "Kibera",
-    blinkAddress: "bigbrothercarwash@blink.sv"
-  },
-  {
-    businessName: "Damiano Fast Foods",
-    ownerName: "Damiano",
-    email: "magakdamiano0@gmail.com",
-    phoneNumber: "111835388",
-    location: "3 West",
-    blinkAddress: "damiano@blink.sv"
-  },
-  {
-    businessName: "Kevin Entertainment Square",
-    ownerName: "Kevin",
-    email: "N/A",
+    id: "0d1922ee-4859-4811-92f5-e48f995b4c15",
+    businessName: "3 West Butchery",
+    ownerName: "Three West Butchery",
+    email: "edmundspira@gmail.com",
     phoneNumber: "",
-    location: "Kibera",
-    blinkAddress: "kevinnakali147@blink.sv"
+    location: "Soweto",
+    blinkAddress: "threewestbutchery@blink.sv",
+    lightningAddress: "threewestbutchery@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359667002",
+    btcMapNodeId: "13359667002",
+    latitude: -1.31633758,
+    longitude: 36.77619238,
+    slug: "3-west-butchery",
+    category: "shop",
+    description: "Butchery"
   },
   {
-    businessName: "BLACK AND WHITE (aka Kibra BTC Shop)",
-    ownerName: "Steph",
-    email: "N/A",
-    phoneNumber: "254701930675",
-    location: "Raila Village, Kibera",
-    blinkAddress: "kibrabtcshop@blink.sv"
+    id: "98f43051-1247-473e-9adc-1d12f0823511",
+    businessName: "3 West Collection",
+    ownerName: "3 West Collection",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "threewestcollection@blink.sv",
+    lightningAddress: "threewestcollection@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359669301",
+    btcMapNodeId: "13359669301",
+    latitude: -1.31627558,
+    longitude: 36.77618154,
+    slug: "3-west-collection",
+    category: "convenience",
+    description: "Shop"
   },
   {
-    businessName: "3WEST BUTCHERY",
-    ownerName: "Newson Onyonyi",
-    email: "Newsononyoni5@gmail.com",
-    phoneNumber: "720778480",
-    location: "Soweto Academy",
-    blinkAddress: "threewestbutchery@blink.sv"
+    id: "11df6cca-62b1-4829-b2bb-26c505718b13",
+    businessName: "3 West Hotel",
+    ownerName: "Three West Hotel",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "threewesthotel@blink.sv",
+    lightningAddress: "threewesthotel@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359666902",
+    btcMapNodeId: "13359666902",
+    latitude: -1.31621917,
+    longitude: 36.77600587,
+    slug: "3-west-hotel",
+    category: "restaurant",
+    description: "Hotel"
   },
   {
-    businessName: "Swahili Dishes",
-    ownerName: "Ramadhan",
-    email: "N/A",
-    phoneNumber: "254723513933",
-    location: "Kibera",
-    blinkAddress: "swahilidishes@blink.sv"
+    id: "6b5b8db2-dde6-4aa7-9d38-1c5825ed0690",
+    businessName: "Abebo Vegez",
+    ownerName: "Abebo Vegez",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "abebovegez@blink.sv",
+    lightningAddress: "abebovegez@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359667003",
+    btcMapNodeId: "13359667003",
+    latitude: -1.31660532,
+    longitude: 36.77692112,
+    slug: "abebo-vegez",
+    category: "shop",
+    description: "Groceries"
   },
   {
-    businessName: "Livegreat Foundation (Yummy Tummy Goodies)",
-    ownerName: "Lucy",
-    email: "N/A",
-    phoneNumber: "254707313583",
-    location: "Kibera, Nairobi, Kenya",
-    blinkAddress: "livegreat@blink.sv"
+    id: "40072b3f-3907-43b4-bf0b-9c4200dff8e2",
+    businessName: "AC Gas Suppliers",
+    ownerName: "AC Gas Supplier",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "acgassuppliers@blink.sv",
+    lightningAddress: "acgassuppliers@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359669701",
+    btcMapNodeId: "13359669701",
+    latitude: -1.31634024,
+    longitude: 36.77637254,
+    slug: "ac-gas-suppliers",
+    category: "shop",
+    description: "Gas supplier"
   },
   {
-    businessName: "Kera Transport",
-    ownerName: "Bonface Kera",
-    email: "N/A",
-    phoneNumber: "743647214",
-    location: "Kibera, Nairobi, Kenya",
-    blinkAddress: "bonfacekera@blink.sv"
+    id: "7ab08d95-31d3-4438-a9c4-0a64e2da9330",
+    businessName: "Black and White Fries Corner",
+    ownerName: "Black And White",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "btckiberashop@blink.sv",
+    lightningAddress: "btckiberashop@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359667004",
+    btcMapNodeId: "13359667004",
+    latitude: -1.31666223,
+    longitude: 36.77702793,
+    slug: "black-and-white-fries-corner",
+    category: "restaurant",
+    description: "Fries"
   },
   {
-    businessName: "ABEBO VEGEZ",
-    ownerName: "Abebo",
-    email: "N/A",
-    phoneNumber: "254114981320",
-    location: "Raila Village, Kibera",
-    blinkAddress: "abebovegez@blink.sv"
+    id: "e5ea4ee2-1e5d-4abe-86ac-8f21d3f14735",
+    businessName: "Bridgeway Shop",
+    ownerName: "Neema",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "bridgwayshop@blink.sv",
+    lightningAddress: "bridgwayshop@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359666903",
+    btcMapNodeId: "13359666903",
+    latitude: -1.31626980,
+    longitude: 36.77615142,
+    slug: "bridgeway-shop",
+    category: "shop",
+    description: "Retail"
   },
   {
-    businessName: "Krezzy Kicks",
-    ownerName: "Fred",
-    email: "N/A",
-    phoneNumber: "254743710053",
-    location: "Kibera",
-    blinkAddress: "krezzykicks@blink.sv"
+    id: "630ca3d5-b199-4734-937e-801e02f973b5",
+    businessName: "Candy’s Collection Hub",
+    ownerName: "Candies Collection",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "candiescollection@blink.sv",
+    lightningAddress: "candiescollection@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359666904",
+    btcMapNodeId: "13359666904",
+    latitude: -1.31636608,
+    longitude: 36.77625364,
+    slug: "candy-s-collection-hub",
+    category: "shop",
+    description: "Collection Hub"
   },
   {
-    businessName: "Delivery (BodaBoda)",
-    ownerName: "Reuben Chweya",
-    email: "chweyareuben26@gmail.com",
-    phoneNumber: "254702124757",
-    location: "Kibera, Nairobi, Kenya",
-    blinkAddress: "chweyareuben@blink.sv"
+    id: "68cfb1b4-ebd3-4aed-894b-170b4746916a",
+    businessName: "Caronaliak",
+    ownerName: "Caronaliak",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "caronaliak@blink.sv",
+    lightningAddress: "caronaliak@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359670001",
+    btcMapNodeId: "13359670001",
+    latitude: -1.31619117,
+    longitude: 36.77605353,
+    slug: "caronaliak",
+    category: "service",
+    description: "Toilet"
   },
   {
-    businessName: "Kevin DS arena",
-    ownerName: "Kevin Bwire",
-    email: "N/A",
-    phoneNumber: "727625229",
-    location: "Soweto Raila",
-    blinkAddress: "kevinbwire@blink.sv"
+    id: "7d1bdd1b-7790-4384-9c74-21038d2e300d",
+    businessName: "Galaxxy Toilet",
+    ownerName: "Galaxxy",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "galaxxy-toilet@blink.sv",
+    lightningAddress: "galaxxytoilet@blink.sc",
+    btcMapUrl: "https://btcmap.org/map#node=13359666905",
+    btcMapNodeId: "13359666905",
+    latitude: -1.31643220,
+    longitude: 36.77607260,
+    slug: "galaxxy-toilet",
+    category: "service",
+    description: "Toilet"
   },
   {
-    businessName: "Bodaboda (Nyabuto Kennedy)",
-    ownerName: "Nyabuto Kennedy",
-    email: "N/A",
-    phoneNumber: "740334108",
-    location: "Kibera",
-    blinkAddress: "nyabutokennedy@blink.sv"
-  },
-  {
-    businessName: "Jewelry Arts",
-    ownerName: "Elite Arts",
-    email: "N/A",
-    phoneNumber: "254724645488",
-    location: "Kibera",
-    blinkAddress: "jeweryarts@blink.sv"
-  },
-  {
-    businessName: "Nyale Nuts",
-    ownerName: "Nyale",
-    email: "N/A",
-    phoneNumber: "254769624169",
-    location: "Kibera",
-    blinkAddress: "nyalenuts@blink.sv"
-  },
-  {
-    businessName: "Kunta Natural Products",
-    ownerName: "Kunta",
-    email: "–",
-    phoneNumber: "707313583",
-    location: "Kibera",
-    blinkAddress: "kunta@blink.sv"
-  },
-  {
-    businessName: "Vincent Boda Boda",
-    ownerName: "Vincent",
-    email: "–",
-    phoneNumber: "794684831",
-    location: "Kibera",
-    blinkAddress: "vinchez655@blink.sv"
-  },
-  {
-    businessName: "Habil Print & Photo Hub",
-    ownerName: "Habil Otieno",
-    email: "–",
-    phoneNumber: "711430664",
-    location: "Kibera",
-    blinkAddress: "habilotieno254@blink.sv"
-  },
-  {
+    id: "76cf086b-3c58-497c-b81b-4699a5dc4f7a",
     businessName: "Goreti Greens Shop",
     ownerName: "Goreti",
-    email: "–",
-    phoneNumber: "112300810",
-    location: "Kibera",
-    blinkAddress: "goretigreensshop@blink.sv"
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "goreti-greens-shop@blink.sv",
+    lightningAddress: "",
+    btcMapUrl: "https://btcmap.org/map#node=13359669302",
+    btcMapNodeId: "13359669302",
+    latitude: -1.31668538,
+    longitude: 36.77670478,
+    slug: "goreti-greens-shop",
+    category: "shop",
+    description: "Groceries"
   },
   {
-    businessName: "Mama Clear Grocery",
+    id: "3796f036-b7d8-417a-ba5d-843f5a9e9348",
+    businessName: "Krezzy Kicks",
+    ownerName: "Krezzy",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "krezzykicks@blink.sv",
+    lightningAddress: "krezzykicks@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359670101",
+    btcMapNodeId: "13359670101",
+    latitude: -1.31690775,
+    longitude: 36.77801993,
+    slug: "krezzy-kicks",
+    category: "clothing",
+    description: "Clothing store"
+  },
+  {
+    id: "d69a52cc-c346-40e3-b258-245f5e7b7e08",
+    businessName: "Mama Clear",
     ownerName: "Mama Clear",
-    email: "–",
-    phoneNumber: "115190012",
-    location: "Kibera",
-    blinkAddress: "mamacleargroserys@blink.sv"
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "mamacleargroserys@blink.sv",
+    lightningAddress: "mamacleargroserys@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359666906",
+    btcMapNodeId: "13359666906",
+    latitude: -1.31652164,
+    longitude: 36.77662121,
+    slug: "mama-clear",
+    category: "shop",
+    description: "Groceries"
   },
   {
-    businessName: "Kanana Boda Boda",
-    ownerName: "Kanana",
-    email: "–",
-    phoneNumber: "712795448",
-    location: "Kibera",
-    blinkAddress: "kanana@blink.sv"
+    id: "8eff6bff-97ac-4876-8fb1-0eb0d3f7feb5",
+    businessName: "Mama Eddy Salon",
+    ownerName: "Mama Eddy",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "mamaeddysalon@blink.sv",
+    lightningAddress: "mamaeddysalon@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359667005",
+    btcMapNodeId: "13359667005",
+    latitude: -1.31632995,
+    longitude: 36.77623493,
+    slug: "mama-eddy-salon",
+    category: "salon",
+    description: "Salon"
   },
   {
-    businessName: "Golden Heart Youth Group",
-    ownerName: "Francis",
-    email: "goldenheart@gmail.com",
-    phoneNumber: "792486809",
-    location: "Lang'ata, Nairobi",
-    blinkAddress: "goldenheartorg@blink.sv"
+    id: "fa4b8434-514f-42a1-8fc0-a15adb7be664",
+    businessName: "Mama Nonny Shop",
+    ownerName: "Noony",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "noony@blink.sv",
+    lightningAddress: "noony@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359670201",
+    btcMapNodeId: "13359670201",
+    latitude: -1.31620916,
+    longitude: 36.77637951,
+    slug: "mama-nonny-shop",
+    category: "shop",
+    description: "Retail shop"
   },
   {
-    businessName: "Venla Very Retail Shop",
-    ownerName: "–",
-    email: "–",
-    phoneNumber: "748271296",
-    location: "Kibera",
-    blinkAddress: "venlaveryretailshop@blink.sv"
+    id: "1bed6f3d-c9a3-4673-961c-c13f4c230e64",
+    businessName: "Shibe",
+    ownerName: "Shibe Posho mill",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "shibe@blink.sv",
+    lightningAddress: "shibe@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359670102",
+    btcMapNodeId: "13359670102",
+    latitude: -1.31595972,
+    longitude: 36.77574743,
+    slug: "shibe",
+    category: "service",
+    description: "Posho mill"
   },
   {
-    businessName: "Night Salon",
-    ownerName: "Night",
-    email: "–",
-    phoneNumber: "769734739",
-    location: "Kibera",
-    blinkAddress: "nightsalon@blink.sv"
+    id: "2c1c24ff-5ee8-400c-8dde-0102abfe4d57",
+    businessName: "Sokoni Mboga",
+    ownerName: "Sokoni Mboga",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "sokonimboga@blink.sv",
+    lightningAddress: "sokonimboga@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359669303",
+    btcMapNodeId: "13359669303",
+    latitude: -1.31632844,
+    longitude: 36.77611796,
+    slug: "sokoni-mboga",
+    category: "shop",
+    description: "Mama mboga"
   },
   {
-    businessName: "Mama Eddy's Salon",
-    ownerName: "–",
-    email: "–",
-    phoneNumber: "728913790",
-    location: "Kibera",
-    blinkAddress: "mamaeddysalon@blink.sv"
+    id: "f721f066-f3a4-4e0c-a9ba-e8c16ea018ef",
+    businessName: "Soweto Car Wash",
+    ownerName: "Big brother car wash",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "sowetocarwash@blink.sv",
+    lightningAddress: "sowetocarwash@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359666202",
+    btcMapNodeId: "13359666202",
+    latitude: -1.31622376,
+    longitude: 36.77598940,
+    slug: "soweto-car-wash",
+    category: "service",
+    description: "Big brother Car wash"
   },
   {
-    businessName: "Obado Agure BodaBoda",
-    ownerName: "Obado Agure",
-    email: "obadiasparta@gmail.com",
-    phoneNumber: "799713037",
-    location: "Kibera, Langata",
-    blinkAddress: "obadoagure@blink.sv"
+    id: "c33d35b0-1caf-4119-88ab-ed7f04b2120e",
+    businessName: "Venlavery Retail Shop",
+    ownerName: "Venlavery",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "venlaveryretailshop@blink.sv",
+    lightningAddress: "venlaveryretailshop@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359670301",
+    btcMapNodeId: "13359670301",
+    latitude: -1.31644540,
+    longitude: 36.77663509,
+    slug: "venlavery-retail-shop",
+    category: "shop",
+    description: "Groceries"
   },
   {
-    businessName: "Mlosho BodaBoda",
-    ownerName: "–",
-    email: "–",
-    phoneNumber: "795731796",
-    location: "Kibera",
-    blinkAddress: "mlosho@blink.sv"
-  },
-  {
-    businessName: "Mama Noony Mini Shop",
-    ownerName: "Caroline Sagwe",
-    email: "Sagwecaroline93@gmail.com",
-    phoneNumber: "727317087",
-    location: "Soweto Academy, Kibera",
-    blinkAddress: "noony@blink.sv"
-  },
-  {
-    businessName: "Unique Barber Shop",
-    ownerName: "Mariusi",
-    email: "–",
-    phoneNumber: "714369290",
-    location: "Langata, Nairobi",
-    blinkAddress: "mariusitangishaka131@blink.sv"
-  },
-  {
-    businessName: "Joseph Public Washroom",
-    ownerName: "Joseph Odhiambo",
-    email: "–",
-    phoneNumber: "254742991962",
-    location: "Soweto Academy, Kibera",
-    blinkAddress: "josephodhiambo@blink.sv"
-  },
-  {
-    businessName: "Sammy Ouma BodaBoda",
-    ownerName: "Sammy Ouma",
-    email: "–",
-    phoneNumber: "792576718",
-    location: "Kibera",
-    blinkAddress: "sammyouma@blink.sv"
-  },
-  {
-    businessName: "Caro Public Washroom (Biogas)",
-    ownerName: "Caron Aliak",
-    email: "–",
-    phoneNumber: "795352038",
-    location: "Kibera",
-    blinkAddress: "caronaliak@blink.sv"
-  },
-  {
-    businessName: "Bridgeway Shop",
-    ownerName: "–",
-    email: "–",
-    phoneNumber: "728507893",
-    location: "Kibera",
-    blinkAddress: "bridgewayshop@blink.sv"
-  },
-  {
-    businessName: "Kera BodaBoda",
-    ownerName: "Bonface Kera",
-    email: "–",
-    phoneNumber: "743647214",
-    location: "Kibera, Nairobi",
-    blinkAddress: "keraboda@blink.sv"
-  },
-  {
-    businessName: "OneTouch BodaBoda",
-    ownerName: "–",
-    email: "–",
-    phoneNumber: "–",
-    location: "Kibera",
-    blinkAddress: "onetouch@blink.sv"
+    id: "74b0e0dd-0c26-44a8-8ff4-4693d099bcdf",
+    businessName: "Yummy Tummy",
+    ownerName: "Yummy Tummy",
+    email: "edmundspira@gmail.com",
+    phoneNumber: "",
+    location: "Soweto",
+    blinkAddress: "livegreat@blink.sv",
+    lightningAddress: "livegreat@blink.sv",
+    btcMapUrl: "https://btcmap.org/map#node=13359669702",
+    btcMapNodeId: "13359669702",
+    latitude: -1.31628775,
+    longitude: 36.77618011,
+    slug: "yummy-tummy",
+    category: "shop",
+    description: "Nut Shop"
   }
 ];
 
-// BTCMap links mapping
-// BTCMap links with coordinates fetched from OpenStreetMap API
-const btcMapLinks: Record<string, { url: string; latitude: number; longitude: number }> = {
-  'MUANZO MPYA ORGANISATION': {
-    url: 'https://btcmap.org/merchant/node:12300475666',
-    latitude: -1.3154688,
-    longitude: 36.7753889
-  },
-  'BLACK AND WHITE': {
-    url: 'https://btcmap.org/merchant/node:12300467146',
-    latitude: -1.3153178,
-    longitude: 36.7753389
-  },
-  'JOSEPH PUBLIC WASHROOM': {
-    url: 'https://btcmap.org/merchant/node:12300462657',
-    latitude: -1.3153938,
-    longitude: 36.7753496
-  },
-  'KHEEZONIX FASHIONS AND STYLES': {
-    url: 'https://btcmap.org/merchant/node:12300462658',
-    latitude: -1.3153553,
-    longitude: 36.7753935
-  },
-  'BIOGAS PUBLIC WASHROOMS': {
-    url: 'https://btcmap.org/merchant/node:12300462655',
-    latitude: -1.3154473,
-    longitude: 36.7753734
-  },
-  'ABUKI DISTRIBUTORS': {
-    url: 'https://btcmap.org/merchant/node:12300462656',
-    latitude: -1.3153899,
-    longitude: 36.7753604
-  },
-  'Yummytummygoodies': {
-    url: 'https://btcmap.org/merchant/node:12167701319',
-    latitude: -1.3162669,
-    longitude: 36.7758709
-  },
-  '3WEST BUTCHERY': {
-    url: 'https://btcmap.org/merchant/node:12300469780',
-    latitude: -1.3162886,
-    longitude: 36.7761446
-  },
-  'Kibera the Largest slum tour': {
-    url: 'https://btcmap.org/merchant/node:12300469783',
-    latitude: -1.3163203,
-    longitude: 36.776195
-  },
-  'Evalyncafeterian': {
-    url: 'https://btcmap.org/merchant/node:12700628232',
-    latitude: -1.31638,
-    longitude: 36.77609
-  },
-  'ABEBO VEGEZ': {
-    url: 'https://btcmap.org/merchant/node:12300439008',
-    latitude: -1.316352,
-    longitude: 36.7761673
-  },
-  'MAMA NONNY SHOP': {
-    url: 'https://btcmap.org/merchant/node:12300462946',
-    latitude: -1.3162781,
-    longitude: 36.7761248
-  },
-  'Domiano Fast foods': {
-    url: 'https://btcmap.org/merchant/node:12700702059',
-    latitude: -1.31657,
-    longitude: 36.77625
-  },
-  'Wamboya': {
-    url: 'https://btcmap.org/merchant/node:12700702058',
-    latitude: -1.3165775,
-    longitude: 36.7764178
-  },
-  'ACGassuppliers': {
-    url: 'https://btcmap.org/merchant/node:12700702057',
-    latitude: -1.3165775,
-    longitude: 36.7764531
-  },
-  'GalaxyToilets': {
-    url: 'https://btcmap.org/merchant/node:12700702056',
-    latitude: -1.31664,
-    longitude: 36.77622
-  },
-  'Mama Clinton Groceries': {
-    url: 'https://btcmap.org/merchant/node:12700702055',
-    latitude: -1.31673,
-    longitude: 36.77701
-  },
-  'Fred Collections': {
-    url: 'https://btcmap.org/merchant/node:12700702054',
-    latitude: -1.31725,
-    longitude: 36.77808
-  },
-  'Arca Tech Services': {
-    url: 'https://btcmap.org/merchant/node:12300515181',
-    latitude: -1.3262898,
-    longitude: 36.7744848
-  },
-  'Maji safi': {
-    url: 'https://btcmap.org/merchant/node:12300469782',
-    latitude: -1.3163061,
-    longitude: 36.7761773
-  },
-  'WERE TOURS': {
-    url: 'https://btcmap.org/merchant/node:12300462913',
-    latitude: -1.31544,
-    longitude: 36.7753815
-  },
-  'WILSON ASWETO': {
-    url: 'https://btcmap.org/merchant/node:12300443594',
-    latitude: -1.3165382,
-    longitude: 36.7762789
-  },
-  'ELIJAH DRAXLER': {
-    url: 'https://btcmap.org/merchant/node:12300443592',
-    latitude: -1.3165359,
-    longitude: 36.7762768
-  },
-  'MOSESO RIDES': {
-    url: 'https://btcmap.org/merchant/node:12300433274',
-    latitude: -1.316536,
-    longitude: 36.7762784
-  },
-  'CHARLIE RIDER': {
-    url: 'https://btcmap.org/merchant/node:12300433273',
-    latitude: -1.3165361,
-    longitude: 36.7762838
-  },
-  'BIG BROTHER CAR WASH': {
-    url: 'https://btcmap.org/merchant/node:12300417204',
-    latitude: -1.3175001,
-    longitude: 36.7780995
-  },
-  'Unique Barber Shop': {
-    url: 'https://btcmap.org/merchant/node:12254721499',
-    latitude: -1.323549,
-    longitude: 36.780057
-  },
-  'Shiko\'s Ferments': {
-    url: 'https://btcmap.org/merchant/node:12281745878',
-    latitude: -1.3262918,
-    longitude: 36.7745343
-  },
-  'Kosmos Solutions LTD': {
-    url: 'https://btcmap.org/merchant/node:12281743822',
-    latitude: -1.3262854,
-    longitude: 36.774496
-  },
-  'Outdoor Kids Kenya': {
-    url: 'https://btcmap.org/merchant/node:12281727715',
-    latitude: -1.3262825,
-    longitude: 36.7745143
-  },
-  'Njema Safaris': {
-    url: 'https://btcmap.org/merchant/node:12280177485',
-    latitude: -1.3262967,
-    longitude: 36.7744685
-  },
-  'Greencard Mtaani': {
-    url: 'https://btcmap.org/merchant/node:12255259652',
-    latitude: -1.317556,
-    longitude: 36.800528
-  },
-  'RonnieFund': {
-    url: 'https://btcmap.org/merchant/node:12280168473',
-    latitude: -1.326282,
-    longitude: 36.7744761
-  },
-  'Obadia Nyaenda': {
-    url: 'https://btcmap.org/merchant/node:12254733210',
-    latitude: -1.316536,
-    longitude: 36.776282
-  },
-  'Kera Transport': {
-    url: 'https://btcmap.org/merchant/node:12254728433',
-    latitude: -1.316536,
-    longitude: 36.776281
-  },
-  'Felix': {
-    url: 'https://btcmap.org/merchant/node:12254728431',
-    latitude: -1.316536,
-    longitude: 36.77628
-  },
-  'Mama Design': {
-    url: 'https://btcmap.org/merchant/node:12254678587',
-    latitude: -1.3172348,
-    longitude: 36.7770329
-  },
-  'Calisto Enterprise': {
-    url: 'https://btcmap.org/merchant/node:12253101509',
-    latitude: -1.3175962,
-    longitude: 36.7781406
-  },
-  'Kevo DS Station': {
-    url: 'https://btcmap.org/merchant/node:12254686388',
-    latitude: -1.3168,
-    longitude: 36.778401
-  },
-  'For People Forever LTD': {
-    url: 'https://btcmap.org/merchant/node:12254728432',
-    latitude: -1.3175197,
-    longitude: 36.7744085
-  },
-  'Fishpoint Eateries': {
-    url: 'https://btcmap.org/merchant/node:12254752062',
-    latitude: -1.308111,
-    longitude: 36.782139
-  },
-  'Spira': {
-    url: 'https://btcmap.org/merchant/node:12168076295',
-    latitude: -1.326304,
-    longitude: 36.7744835
-  },
-  'Dess Gaming': {
-    url: 'https://btcmap.org/merchant/node:12165688182',
-    latitude: -1.2836066,
-    longitude: 36.873254
-  }
-};
-
-// Helper function to create slug from business name
-function createSlug(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-}
-
-// Helper function to categorize merchants
-function categorizeByBusiness(name: string): string {
-  const lowerName = name.toLowerCase();
-
-  if (lowerName.includes('food') || lowerName.includes('dishes') || lowerName.includes('cafeteria') || lowerName.includes('eateries')) {
-    return 'restaurant';
-  }
-  if (lowerName.includes('boda') || lowerName.includes('transport') || lowerName.includes('delivery') || lowerName.includes('rides')) {
-    return 'transport';
-  }
-  if (lowerName.includes('salon') || lowerName.includes('barber')) {
-    return 'beauty';
-  }
-  if (lowerName.includes('shop') || lowerName.includes('collection') || lowerName.includes('butchery') || lowerName.includes('grocery')) {
-    return 'shop';
-  }
-  if (lowerName.includes('washroom') || lowerName.includes('wash')) {
-    return 'service';
-  }
-  if (lowerName.includes('tour') || lowerName.includes('safari')) {
-    return 'tourism';
-  }
-  if (lowerName.includes('print') || lowerName.includes('tech')) {
-    return 'tech';
-  }
-  if (lowerName.includes('foundation') || lowerName.includes('initiative') || lowerName.includes('organisation') || lowerName.includes('youth group')) {
-    return 'nonprofit';
-  }
-
-  return 'other';
-}
-
-// Merge data and create full merchant objects
-export const MERCHANTS: Merchant[] = merchantDirectory.map((merchant, index) => {
-  const slug = createSlug(merchant.businessName);
-  const category = categorizeByBusiness(merchant.businessName);
-
-  // Try to match with BTCMap links (case-insensitive and flexible matching)
-  let btcMapUrl: string | undefined;
-  let latitude: number | undefined;
-  let longitude: number | undefined;
-
-  const btcMapData = btcMapLinks[merchant.businessName];
-  if (btcMapData) {
-    btcMapUrl = btcMapData.url;
-    latitude = btcMapData.latitude;
-    longitude = btcMapData.longitude;
-  } else {
-    // Try variations
-    const variations = [
-      merchant.businessName.toUpperCase(),
-      merchant.businessName.toLowerCase(),
-      merchant.businessName
-    ];
-
-    for (const variation of variations) {
-      if (btcMapLinks[variation]) {
-        const data = btcMapLinks[variation];
-        btcMapUrl = data.url;
-        latitude = data.latitude;
-        longitude = data.longitude;
-        break;
-      }
-    }
-  }
-
-  const btcMapNodeId = btcMapUrl ? btcMapUrl.split(':')[1] : undefined;
-
-  return {
-    id: `merchant-${index + 1}`,
-    businessName: merchant.businessName,
-    ownerName: merchant.ownerName,
-    email: merchant.email === 'N/A' || merchant.email === '–' ? '' : merchant.email,
-    phoneNumber: merchant.phoneNumber === '–' ? '' : merchant.phoneNumber,
-    location: merchant.location,
-    blinkAddress: merchant.blinkAddress,
-    btcMapUrl,
-    btcMapNodeId,
-    latitude,
-    longitude,
-    slug,
-    category,
-    description: `${merchant.businessName} is a Bitcoin-accepting business in ${merchant.location}, operated by ${merchant.ownerName}.`
-  };
-});
-
-// Helper function to get merchant by slug
-export function getMerchantBySlug(slug: string): Merchant | undefined {
-  return MERCHANTS.find(m => m.slug === slug);
-}
-
-// Helper function to get merchant by Blink address
-export function getMerchantByBlinkAddress(blinkAddress: string): Merchant | undefined {
-  return MERCHANTS.find(m => m.blinkAddress === blinkAddress);
-}
-
-// Helper function to get merchants by category
-export function getMerchantsByCategory(category: string): Merchant[] {
-  return MERCHANTS.filter(m => m.category === category);
-}
-
-// Get all unique categories
-export function getCategories(): string[] {
-  const categories = new Set(MERCHANTS.map(m => m.category).filter((c): c is string => c !== undefined));
-  return Array.from(categories).sort();
-}
-
-// Category display names and icons
 export const CATEGORY_INFO: Record<string, { name: string; color: string }> = {
-  restaurant: { name: 'Food & Dining', color: 'bg-orange-500/10 text-orange-400 border-orange-500/20' },
-  transport: { name: 'Transport', color: 'bg-blue-500/10 text-blue-400 border-blue-500/20' },
-  beauty: { name: 'Beauty & Personal Care', color: 'bg-pink-500/10 text-pink-400 border-pink-500/20' },
-  shop: { name: 'Retail & Shopping', color: 'bg-purple-500/10 text-purple-400 border-purple-500/20' },
-  service: { name: 'Services', color: 'bg-green-500/10 text-green-400 border-green-500/20' },
-  tourism: { name: 'Tourism & Tours', color: 'bg-teal-500/10 text-teal-400 border-teal-500/20' },
-  tech: { name: 'Technology', color: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' },
-  nonprofit: { name: 'Non-Profit & Community', color: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20' },
+  restaurant: { name: 'Restaurant', color: 'bg-orange-500/10 text-orange-400 border-orange-500/20' },
+  shop: { name: 'Shop', color: 'bg-blue-500/10 text-blue-400 border-blue-500/20' },
+  salon: { name: 'Salon', color: 'bg-pink-500/10 text-pink-400 border-pink-500/20' },
+  service: { name: 'Service', color: 'bg-green-500/10 text-green-400 border-green-500/20' },
+  clothing: { name: 'Clothing', color: 'bg-purple-500/10 text-purple-400 border-purple-500/20' },
+  convenience: { name: 'Convenience', color: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20' },
   other: { name: 'Other', color: 'bg-gray-500/10 text-gray-400 border-gray-500/20' }
 };
+
+// Helper functions
+export function getMerchantBySlug(slug: string): Merchant | undefined {
+  return merchants.find(m => m.slug === slug);
+}
+
+export function getMerchantsByCategory(category: string): Merchant[] {
+  return merchants.filter(m => m.category === category);
+}
+
+export function getAllMerchants(): Merchant[] {
+  return merchants;
+}

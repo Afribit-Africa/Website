@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="Afribit Africa Merchant Directory v2.0">
+  <node lat="-1.31633758" lon="36.77619238">
+    <tag k="name" v="3 West Butchery"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="3 West Butchery is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: threewestbutchery@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:0d1922ee-4859-4811-92f5-e48f995b4c15"/>
+    <tag k="operator" v="Three West Butchery"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="0d1922ee-4859-4811-92f5-e48f995b4c15"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="threewestbutchery@blink.sv"/>
+    <tag k="contact:lightning" v="threewestbutchery@blink.sv"/>
+  </node>
+  <node lat="-1.31627558" lon="36.77618154">
+    <tag k="name" v="3 West Collection"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="3 West Collection is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: threewestcollection@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:98f43051-1247-473e-9adc-1d12f0823511"/>
+    <tag k="operator" v="3 West Collection"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="98f43051-1247-473e-9adc-1d12f0823511"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="threewestcollection@blink.sv"/>
+    <tag k="contact:lightning" v="threewestcollection@blink.sv"/>
+  </node>
+  <node lat="-1.31621917" lon="36.77600587">
+    <tag k="name" v="3 West Hotel"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="3 West Hotel is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: threewesthotel@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:11df6cca-62b1-4829-b2bb-26c505718b13"/>
+    <tag k="operator" v="Three West Hotel"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="11df6cca-62b1-4829-b2bb-26c505718b13"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="threewesthotel@blink.sv"/>
+    <tag k="contact:lightning" v="threewesthotel@blink.sv"/>
+  </node>
+  <node lat="-1.31660532" lon="36.77692112">
+    <tag k="name" v="Abebo Vegez"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Abebo Vegez is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: abebovegez@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:6b5b8db2-dde6-4aa7-9d38-1c5825ed0690"/>
+    <tag k="operator" v="Abebo Vegez"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="6b5b8db2-dde6-4aa7-9d38-1c5825ed0690"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="abebovegez@blink.sv"/>
+    <tag k="contact:lightning" v="abebovegez@blink.sv"/>
+  </node>
+  <node lat="-1.31634024" lon="36.77637254">
+    <tag k="name" v="AC Gas Suppliers"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="AC Gas Suppliers is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: acgassuppliers@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:40072b3f-3907-43b4-bf0b-9c4200dff8e2"/>
+    <tag k="operator" v="AC Gas Supplier"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="40072b3f-3907-43b4-bf0b-9c4200dff8e2"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="acgassuppliers@blink.sv"/>
+    <tag k="contact:lightning" v="acgassuppliers@blink.sv"/>
+  </node>
+  <node lat="-1.31666223" lon="36.77702793">
+    <tag k="name" v="Black and White Fries Corner"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Black and White Fries Corner is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: btckiberashop@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:7ab08d95-31d3-4438-a9c4-0a64e2da9330"/>
+    <tag k="operator" v="Black And White"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="7ab08d95-31d3-4438-a9c4-0a64e2da9330"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="btckiberashop@blink.sv"/>
+    <tag k="contact:lightning" v="btckiberashop@blink.sv"/>
+  </node>
+  <node lat="-1.31626980" lon="36.77615142">
+    <tag k="name" v="Bridgeway Shop"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Bridgeway Shop is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: bridgwayshop@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:e5ea4ee2-1e5d-4abe-86ac-8f21d3f14735"/>
+    <tag k="operator" v="Neema"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="e5ea4ee2-1e5d-4abe-86ac-8f21d3f14735"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="bridgwayshop@blink.sv"/>
+    <tag k="contact:lightning" v="bridgwayshop@blink.sv"/>
+  </node>
+  <node lat="-1.31636608" lon="36.77625364">
+    <tag k="name" v="Candy’s Collection Hub"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Candy’s Collection Hub is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: candiescollection@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:630ca3d5-b199-4734-937e-801e02f973b5"/>
+    <tag k="operator" v="Candies Collection"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="630ca3d5-b199-4734-937e-801e02f973b5"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="candiescollection@blink.sv"/>
+    <tag k="contact:lightning" v="candiescollection@blink.sv"/>
+  </node>
+  <node lat="-1.31619117" lon="36.77605353">
+    <tag k="name" v="Caronaliak"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Caronaliak is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: caronaliak@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:68cfb1b4-ebd3-4aed-894b-170b4746916a"/>
+    <tag k="operator" v="Caronaliak"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="68cfb1b4-ebd3-4aed-894b-170b4746916a"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="caronaliak@blink.sv"/>
+    <tag k="contact:lightning" v="caronaliak@blink.sv"/>
+  </node>
+  <node lat="-1.31643220" lon="36.77607260">
+    <tag k="name" v="Galaxxy Toilet"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Galaxxy Toilet is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: galaxxytoilet@blink.sc. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:7d1bdd1b-7790-4384-9c74-21038d2e300d"/>
+    <tag k="operator" v="Galaxxy"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="7d1bdd1b-7790-4384-9c74-21038d2e300d"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="galaxxytoilet@blink.sc"/>
+    <tag k="contact:lightning" v="galaxxytoilet@blink.sc"/>
+  </node>
+  <node lat="-1.31668538" lon="36.77670478">
+    <tag k="name" v="Goreti Greens Shop"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Goreti Greens Shop is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:76cf086b-3c58-497c-b81b-4699a5dc4f7a"/>
+    <tag k="operator" v="Goreti"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="76cf086b-3c58-497c-b81b-4699a5dc4f7a"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+  </node>
+  <node lat="-1.31690775" lon="36.77801993">
+    <tag k="name" v="Krezzy Kicks"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Krezzy Kicks is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: krezzykicks@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:3796f036-b7d8-417a-ba5d-843f5a9e9348"/>
+    <tag k="operator" v="Krezzy"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="3796f036-b7d8-417a-ba5d-843f5a9e9348"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="krezzykicks@blink.sv"/>
+    <tag k="contact:lightning" v="krezzykicks@blink.sv"/>
+  </node>
+  <node lat="-1.31652164" lon="36.77662121">
+    <tag k="name" v="Mama Clear"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Mama Clear is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: mamacleargroserys@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:d69a52cc-c346-40e3-b258-245f5e7b7e08"/>
+    <tag k="operator" v="Mama Clear"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="d69a52cc-c346-40e3-b258-245f5e7b7e08"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="mamacleargroserys@blink.sv"/>
+    <tag k="contact:lightning" v="mamacleargroserys@blink.sv"/>
+  </node>
+  <node lat="-1.31632995" lon="36.77623493">
+    <tag k="name" v="Mama Eddy Salon"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Mama Eddy Salon is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: mamaeddysalon@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:8eff6bff-97ac-4876-8fb1-0eb0d3f7feb5"/>
+    <tag k="operator" v="Mama Eddy"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="8eff6bff-97ac-4876-8fb1-0eb0d3f7feb5"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="mamaeddysalon@blink.sv"/>
+    <tag k="contact:lightning" v="mamaeddysalon@blink.sv"/>
+  </node>
+  <node lat="-1.31620916" lon="36.77637951">
+    <tag k="name" v="Mama Nonny Shop"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Mama Nonny Shop is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: noony@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:fa4b8434-514f-42a1-8fc0-a15adb7be664"/>
+    <tag k="operator" v="Noony"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="fa4b8434-514f-42a1-8fc0-a15adb7be664"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="noony@blink.sv"/>
+    <tag k="contact:lightning" v="noony@blink.sv"/>
+  </node>
+  <node lat="-1.31595972" lon="36.77574743">
+    <tag k="name" v="Shibe"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Shibe is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: shibe@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:1bed6f3d-c9a3-4673-961c-c13f4c230e64"/>
+    <tag k="operator" v="Shibe Posho mill"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="1bed6f3d-c9a3-4673-961c-c13f4c230e64"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="shibe@blink.sv"/>
+    <tag k="contact:lightning" v="shibe@blink.sv"/>
+  </node>
+  <node lat="-1.31632844" lon="36.77611796">
+    <tag k="name" v="Sokoni Mboga"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Sokoni Mboga is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: sokonimboga@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:2c1c24ff-5ee8-400c-8dde-0102abfe4d57"/>
+    <tag k="operator" v="Sokoni Mboga"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="2c1c24ff-5ee8-400c-8dde-0102abfe4d57"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="sokonimboga@blink.sv"/>
+    <tag k="contact:lightning" v="sokonimboga@blink.sv"/>
+  </node>
+  <node lat="-1.31622376" lon="36.77598940">
+    <tag k="name" v="Soweto Car Wash"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Soweto Car Wash is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: sowetocarwash@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:f721f066-f3a4-4e0c-a9ba-e8c16ea018ef"/>
+    <tag k="operator" v="Big brother car wash"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="f721f066-f3a4-4e0c-a9ba-e8c16ea018ef"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="sowetocarwash@blink.sv"/>
+    <tag k="contact:lightning" v="sowetocarwash@blink.sv"/>
+  </node>
+  <node lat="-1.31644540" lon="36.77663509">
+    <tag k="name" v="Venlavery Retail Shop"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Venlavery Retail Shop is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: venlaveryretailshop@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:c33d35b0-1caf-4119-88ab-ed7f04b2120e"/>
+    <tag k="operator" v="Venlavery"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="c33d35b0-1caf-4119-88ab-ed7f04b2120e"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="venlaveryretailshop@blink.sv"/>
+    <tag k="contact:lightning" v="venlaveryretailshop@blink.sv"/>
+  </node>
+  <node lat="-1.31628775" lon="36.77618011">
+    <tag k="name" v="Yummy Tummy"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="Yummy Tummy is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: livegreat@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:74b0e0dd-0c26-44a8-8ff4-4693d099bcdf"/>
+    <tag k="operator" v="Yummy Tummy"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="74b0e0dd-0c26-44a8-8ff4-4693d099bcdf"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="livegreat@blink.sv"/>
+    <tag k="contact:lightning" v="livegreat@blink.sv"/>
+  </node>
+</osm>

@@ -151,6 +151,9 @@ async function createNode(
   merchant: MerchantData
 ): Promise<number> {
   // Build BTCMap-compliant tags
+  const today = new Date().toISOString().split('T')[0];
+  const surveyDate = merchant.verifiedAt.split('T')[0];
+
   const tags: Record<string, string> = {
     // Required: Bitcoin acceptance
     'currency:XBT': 'yes',
@@ -161,8 +164,12 @@ async function createNode(
     'payment:lightning_contactless': merchant.paymentLightningContactless ? 'yes' : 'no',
 
     // Verification dates (BTCMap requirement)
-    'survey:date': merchant.verifiedAt.split('T')[0], // Physical verification date (YYYY-MM-DD)
-    'check_date:currency:XBT': new Date().toISOString().split('T')[0], // Data verification date
+    'survey:date': surveyDate, // Physical verification date (YYYY-MM-DD)
+    'check_date:currency:XBT': today, // Bitcoin tags verified today
+    'check_date': today, // All tags verified today
+
+    // Source attribution (BTCMap requirement)
+    'source': 'survey',
 
     // Business information
     'name': merchant.businessName,

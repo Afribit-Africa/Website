@@ -1,5 +1,4 @@
 import { executeQuery } from '../lib/db';
-import fetch from 'node-fetch';
 
 interface Merchant {
   id: string;
@@ -26,38 +25,33 @@ interface Merchant {
 const OSM_API_URL = process.env.OSM_API_URL || 'https://master.apis.dev.openstreetmap.org/api/0.6';
 const OSM_ACCESS_TOKEN = process.env.OSM_ACCESS_TOKEN;
 
-// Generate detailed description for each merchant
+// Generate detailed description for each merchant (max 255 chars for OSM)
 function generateMerchantDescription(merchant: Merchant): string {
   const categoryDescriptions: Record<string, string> = {
-    'restaurant': 'a local eatery serving fresh meals',
-    'shop': 'a retail shop offering various goods',
-    'salon': 'a beauty and grooming salon',
-    'service': 'a service provider',
-    'clothing': 'a fashion and clothing store',
-    'convenience': 'a convenience store',
+    'restaurant': 'restaurant',
+    'shop': 'shop',
+    'salon': 'salon',
+    'service': 'service',
+    'clothing': 'clothing store',
+    'convenience': 'convenience store',
   };
 
-  const baseDesc = categoryDescriptions[merchant.category_key] || 'a local business';
-  
-  let description = `${merchant.business_name} is ${baseDesc} located in Kibera, Nairobi. `;
-  
-  // Add payment info
-  const payments: string[] = [];
-  if (merchant.payment_lightning) payments.push('Bitcoin Lightning Network');
-  if (merchant.payment_onchain) payments.push('Bitcoin on-chain');
-  
-  if (payments.length > 0) {
-    description += `This business accepts ${payments.join(' and ')} payments. `;
+  const type = categoryDescriptions[merchant.category_key] || 'business';
+
+  // Keep it under 255 chars - OSM limit
+  let description = `${merchant.business_name} in Kibera accepts Bitcoin`;
+
+  if (merchant.payment_lightning) description += ' Lightning';
+  if (merchant.payment_lightning && merchant.payment_onchain) description += ' &';
+  if (merchant.payment_onchain) description += ' on-chain';
+
+  description += '. Verified by Afribit Africa.';
+
+  // Ensure under 255 chars
+  if (description.length > 255) {
+    description = description.substring(0, 252) + '...';
   }
-  
-  if (merchant.lightning_address) {
-    description += `Lightning payments: ${merchant.lightning_address}. `;
-  }
-  
-  // Add Afribit branding
-  description += 'Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. ';
-  description += 'Part of the Afribit Kibera Merchant Directory.';
-  
+
   return description;
 }
 
@@ -73,7 +67,10 @@ function getOSMTags(merchant: Merchant): Record<string, string> {
   };
 
   const osmCategory = categoryMapping[merchant.category_key] || { shop: 'general' };
-  
+
+  // Get today's date in ISO format for BTCMap verification tags
+  const today = new Date().toISOString().split('T')[0];
+
   const tags: Record<string, string> = {
     name: merchant.business_name,
     ...osmCategory,
@@ -84,12 +81,17 @@ function getOSMTags(merchant: Merchant): Record<string, string> {
     description: generateMerchantDescription(merchant),
     'contact:phone': merchant.phone || '',
     'contact:email': merchant.contact_email,
-    'payment:bitcoin': 'yes',
+    // BTCMap required tags
+    'currency:XBT': 'yes',
     'payment:lightning': merchant.payment_lightning ? 'yes' : 'no',
     'payment:onchain': merchant.payment_onchain ? 'yes' : 'no',
     'payment:lightning_contactless': merchant.payment_lightning_contactless ? 'yes' : 'no',
-    'currency:XBT': 'yes',
-    source: 'Afribit Africa Merchant Directory',
+    // BTCMap verification tags
+    'survey:date': today, // Physically verified by Afribit team
+    'check_date:currency:XBT': today, // Bitcoin tags verified today
+    'check_date': today, // All tags verified today
+    // Source information
+    source: 'survey', // Physical on-site verification
     'source:ref': `afribit:${merchant.id}`,
     'operator': merchant.contact_name,
     'operator:type': 'private',
@@ -97,7 +99,7 @@ function getOSMTags(merchant: Merchant): Record<string, string> {
     'afribit:verified': 'yes',
     'afribit:directory': 'kibera',
     'afribit:merchant_id': merchant.id,
-    'afribit:registration_date': new Date().toISOString().split('T')[0],
+    'afribit:registration_date': today,
   };
 
   // Add lightning address if available
@@ -132,8 +134,8 @@ async function createChangeset(comment: string): Promise<string> {
 <osm>
   <changeset>
     <tag k="created_by" v="Afribit Africa Merchant Directory v2.0"/>
-    <tag k="comment" v="${comment}"/>
-    <tag k="source" v="GPS survey by Afribit Africa field team"/>
+    <tag k="comment" v="${comment} #btcmap"/>
+    <tag k="source" v="GPS survey by Afribit Africa field team - physically verified"/>
     <tag k="locale" v="en"/>
   </changeset>
 </osm>`;
@@ -176,7 +178,7 @@ async function createOSMNode(
   changesetId: string
 ): Promise<string> {
   const tags = getOSMTags(merchant);
-  
+
   // Build node XML
   let nodeXML = `<?xml version="1.0" encoding="UTF-8"?>
 <osm>
@@ -227,8 +229,8 @@ async function main() {
 
   // Get the 20 verified merchants submitted by edmundspira@gmail.com
   const merchants = await executeQuery<Merchant[]>(
-    `SELECT * FROM merchant_submissions 
-     WHERE contact_email = 'edmundspira@gmail.com' 
+    `SELECT * FROM merchant_submissions
+     WHERE contact_email = 'edmundspira@gmail.com'
      AND status = 'published'
      AND verification_status = 'verified'
      ORDER BY business_name`
@@ -287,7 +289,7 @@ async function main() {
 
       // Update database with new OSM node ID
       await executeQuery(
-        `UPDATE merchant_submissions 
+        `UPDATE merchant_submissions
          SET osm_node_id = ?,
              osm_changeset_id = ?,
              btcmap_synced = 1,
@@ -357,4 +359,12 @@ async function main() {
   console.log('4. Update .env.local: OSM_API_URL="https://api.openstreetmap.org/api/0.6"\n');
 }
 
-main().catch(console.error);
+// Export for use in other scripts
+export async function publishVerifiedMerchants() {
+  return main();
+}
+
+// Run directly if this is the main module
+if (require.main === module) {
+  main().catch(console.error);
+}

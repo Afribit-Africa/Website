@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="Afribit Africa Merchant Directory v2.0">
+  <node lat="-1.31634024" lon="36.77637254">
+    <tag k="name" v="AC Gas Suppliers"/>
+    <tag k="shop" v="general"/>
+    <tag k="addr:full" v="Soweto"/>
+    <tag k="addr:city" v="Nairobi"/>
+    <tag k="addr:suburb" v="Kibera"/>
+    <tag k="addr:country" v="KE"/>
+    <tag k="description" v="AC Gas Suppliers is a local business located in Kibera, Nairobi. This business accepts Bitcoin Lightning Network and Bitcoin on-chain payments. Lightning payments: acgassuppliers@blink.sv. Verified and registered through Afribit Africa - empowering Kibera businesses with Bitcoin. Part of the Afribit Kibera Merchant Directory."/>
+    <tag k="contact:email" v="edmundspira@gmail.com"/>
+    <tag k="payment:bitcoin" v="yes"/>
+    <tag k="payment:lightning" v="yes"/>
+    <tag k="payment:onchain" v="yes"/>
+    <tag k="payment:lightning_contactless" v="no"/>
+    <tag k="currency:XBT" v="yes"/>
+    <tag k="source" v="Afribit Africa Merchant Directory"/>
+    <tag k="source:ref" v="afribit:40072b3f-3907-43b4-bf0b-9c4200dff8e2"/>
+    <tag k="operator" v="AC Gas Supplier"/>
+    <tag k="operator:type" v="private"/>
+    <tag k="afribit:verified" v="yes"/>
+    <tag k="afribit:directory" v="kibera"/>
+    <tag k="afribit:merchant_id" v="40072b3f-3907-43b4-bf0b-9c4200dff8e2"/>
+    <tag k="afribit:registration_date" v="2025-12-07"/>
+    <tag k="payment:lightning:address" v="acgassuppliers@blink.sv"/>
+    <tag k="contact:lightning" v="acgassuppliers@blink.sv"/>
+  </node>
+</osm>

@@ -242,9 +242,9 @@ export default function RegisterPage() {
         updateField('longitude', position.coords.longitude);
 
         // Show success feedback with accuracy info
-        setSuccessModal({
+        setErrorModal({
           isOpen: true,
-          message: `Location obtained successfully!\n\nLatitude: ${position.coords.latitude.toFixed(6)}\nLongitude: ${position.coords.longitude.toFixed(6)}\nAccuracy: ±${accuracy.toFixed(0)}m\n\n${accuracy > 20 ? '⚠️ For better accuracy, try again outdoors with clear sky view.' : '✓ Good GPS signal!'}`,
+          message: `✅ Location obtained successfully!\n\nLatitude: ${position.coords.latitude.toFixed(6)}\nLongitude: ${position.coords.longitude.toFixed(6)}\nAccuracy: ±${accuracy.toFixed(0)}m\n\n${accuracy > 20 ? '⚠️ For better accuracy, try again outdoors with clear sky view.' : '✓ Good GPS signal!'}`,
         });
       },
       (error) => {
