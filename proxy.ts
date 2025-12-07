@@ -61,7 +61,7 @@ async function rateLimit(identifier: string): Promise<boolean> {
   return inMemoryRateLimit(identifier);
 }
 
-export async function middleware(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
   // Get client IP
   const ip = request.headers.get('x-forwarded-for') ?? request.headers.get('x-real-ip') ?? 'unknown';
 
