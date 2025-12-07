@@ -258,25 +258,29 @@ export default function MerchantPage() {
               ) : (
                 /* Map View */
                 <div className="space-y-4">
-                  <div className="h-[500px] rounded-xl overflow-hidden border border-white/10">
-                    {merchant.btcMapNodeId ? (
+                  <div className="h-[500px] rounded-xl overflow-hidden border border-white/10 bg-gray-900">
+                    {merchant.latitude && merchant.longitude ? (
                       <iframe
-                        src={`https://btcmap.org/map?lat=-1.3133&long=36.7828#${merchant.btcMapNodeId}`}
-                        className="w-full h-full border-0"
-                        title={`${merchant.businessName} on BTCMap`}
-                      />
-                    ) : (
-                      <iframe
-                        src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(merchant.location + ', Nairobi, Kenya')}`}
+                        src={`https://www.openstreetmap.org/export/embed.html?bbox=${merchant.longitude - 0.005},${merchant.latitude - 0.005},${merchant.longitude + 0.005},${merchant.latitude + 0.005}&layer=mapnik&marker=${merchant.latitude},${merchant.longitude}`}
                         className="w-full h-full border-0"
                         title={`${merchant.businessName} location`}
                       />
+                    ) : (
+                      <div className="w-full h-full flex flex-col items-center justify-center p-8">
+                        <FiMapPin className="w-16 h-16 text-gray-600 mb-4" />
+                        <p className="text-gray-400 text-center">
+                          GPS coordinates not available for this merchant
+                        </p>
+                        <p className="text-gray-500 text-sm text-center mt-2">
+                          Location: {merchant.location}
+                        </p>
+                      </div>
                     )}
                   </div>
                   <p className="text-xs text-gray-500 text-center">
                     Map data © <a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-400">OpenStreetMap</a> contributors
                     {merchant.btcMapUrl && (
-                      <> · Enhanced by <a href="https://btcmap.org" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-400">BTCMap</a></>
+                      <> · <a href={merchant.btcMapUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-400">View on BTCMap</a></>
                     )}
                   </p>
                 </div>

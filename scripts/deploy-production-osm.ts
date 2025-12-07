@@ -84,13 +84,13 @@ async function deleteOSMNode(nodeId: string, changesetId: string): Promise<boole
     const xmlText = await getResponse.text();
     const versionMatch = xmlText.match(/version="(\d+)"/);
     const version = versionMatch ? versionMatch[1] : '1';
-    
+
     // Extract lat/lon from XML
     const latMatch = xmlText.match(/lat="([^"]+)"/);
     const lonMatch = xmlText.match(/lon="([^"]+)"/);
     const lat = latMatch ? latMatch[1] : '';
     const lon = lonMatch ? lonMatch[1] : '';
-    
+
     if (!lat || !lon) {
       throw new Error('Could not extract coordinates from node');
     }

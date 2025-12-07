@@ -35,7 +35,7 @@ async function syncMerchantsToDataFile() {
 
   // Get all published merchants with OSM nodes
   const merchants = await executeQuery<DBMerchant[]>(
-    `SELECT 
+    `SELECT
       id,
       business_name,
       contact_name,
@@ -59,10 +59,10 @@ async function syncMerchantsToDataFile() {
   // Generate TypeScript merchant data
   const merchantsCode = merchants.map(m => {
     const slug = slugify(m.business_name);
-    const blinkAddress = m.lightning_address?.includes('@blink.sv') 
-      ? m.lightning_address 
+    const blinkAddress = m.lightning_address?.includes('@blink.sv')
+      ? m.lightning_address
       : `${slug}@blink.sv`;
-    
+
     return `  {
     id: "${m.id}",
     businessName: "${m.business_name}",
@@ -85,7 +85,7 @@ async function syncMerchantsToDataFile() {
   const fileContent = `/**
  * Merchant Data - Auto-generated from database
  * Last updated: ${new Date().toISOString()}
- * 
+ *
  * DO NOT EDIT MANUALLY - Run: npx tsx scripts/sync-merchants-to-data-file.ts
  */
 
