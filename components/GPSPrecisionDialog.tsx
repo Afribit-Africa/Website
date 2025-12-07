@@ -351,7 +351,7 @@ export default function GPSPrecisionDialog({
                   <div className="text-sm text-yellow-100">
                     <p className="font-semibold mb-1">Taking longer than expected</p>
                     <p className="text-yellow-200/80">
-                      This may indicate GPS hardware issues or poor signal conditions. 
+                      This may indicate GPS hardware issues or poor signal conditions.
                       You can manually capture the current best reading if needed.
                     </p>
                   </div>

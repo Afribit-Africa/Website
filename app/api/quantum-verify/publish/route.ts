@@ -154,8 +154,9 @@ export async function POST(request: NextRequest) {
       note: 'Merchant will appear on BTCMap within 10-20 minutes'
     });
 
-  } catch (error: any) {
-    logger.error('Error publishing merchant:', error);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Internal server error';
+    logger.error('Error publishing merchant:', message);
     return NextResponse.json(
       { success: false, error: 'Internal server error' },
       { status: 500 }

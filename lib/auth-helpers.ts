@@ -43,11 +43,15 @@ export async function updateAdminPassword(
   );
 }
 
+interface AdminPasswordRow {
+  password_hash: string;
+}
+
 export async function verifyAdminPassword(
   email: string,
   password: string
 ): Promise<boolean> {
-  const users = await executeQuery<any[]>(
+  const users = await executeQuery<AdminPasswordRow[]>(
     'SELECT password_hash FROM admin_users WHERE email = ? AND is_active = true',
     [email]
   );

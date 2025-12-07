@@ -70,12 +70,13 @@ export async function GET(request: NextRequest) {
       result: result
     });
 
-  } catch (error: any) {
-    logger.error('Test email error:', error);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to send test email';
+    logger.error('Test email error:', message);
     return NextResponse.json({
       success: false,
-      error: error.message || 'Failed to send test email',
-      details: error
+      error: message,
+      details: error instanceof Error ? error.stack : String(error)
     }, { status: 500 });
   }
 }

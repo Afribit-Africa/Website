@@ -97,14 +97,15 @@ export async function GET(
 
     return NextResponse.redirect(successUrl);
 
-  } catch (error: any) {
-    console.error('❌ Merchant confirmation error:', error);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    console.error('❌ Merchant confirmation error:', message);
 
     return NextResponse.json(
       {
         success: false,
         error: 'Failed to confirm edit request',
-        details: error.message
+        details: message
       },
       { status: 500 }
     );

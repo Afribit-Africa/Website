@@ -35,14 +35,18 @@ export async function GET() {
       canConnect: true,
       preview: data.substring(0, 200),
     });
-  } catch (error: any) {
-    logger.error('Connection test failed:', error);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    const errorType = error instanceof Error ? error.constructor.name : 'Unknown';
+    const cause = error instanceof Error ? error.cause : undefined;
+    
+    logger.error('Connection test failed:', message);
     return NextResponse.json({
       success: false,
       canConnect: false,
-      error: error.message,
-      errorType: error.constructor.name,
-      cause: error.cause,
+      error: message,
+      errorType,
+      cause,
     });
   }
 }

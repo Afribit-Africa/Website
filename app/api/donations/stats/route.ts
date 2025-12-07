@@ -13,10 +13,11 @@ export async function GET(request: NextRequest) {
       success: true,
       stats,
     });
-  } catch (error: any) {
-    logger.error('Error fetching donation stats:', error);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch stats';
+    logger.error('Error fetching donation stats:', message);
     return NextResponse.json(
-      { error: error.message || 'Failed to fetch stats' },
+      { error: message },
       { status: 500 }
     );
   }

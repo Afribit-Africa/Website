@@ -12,10 +12,11 @@ export async function GET(
     const paymentMethods = await getInvoicePaymentMethods(invoiceId);
 
     return NextResponse.json(paymentMethods);
-  } catch (error: any) {
-    logger.error('Error fetching payment methods:', error);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to fetch payment methods';
+    logger.error('Error fetching payment methods:', message);
     return NextResponse.json(
-      { error: error.message || 'Failed to fetch payment methods' },
+      { error: message },
       { status: 500 }
     );
   }

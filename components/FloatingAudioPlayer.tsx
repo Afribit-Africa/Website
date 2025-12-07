@@ -111,7 +111,7 @@ export function FloatingAudioPlayer() {
       <audio ref={audioRef} src="/Media/Videos/Afribit%20Explanation.mp4" />
 
       {/* Dynamic Island Style - Mobile Only */}
-      <div className="md:hidden fixed top-2 left-1/2 -translate-x-1/2 z-60">
+      <div className="md:hidden fixed top-2 left-1/2 -translate-x-1/2 z-[60]">
         <div className="relative">
           <div
             className={`backdrop-blur-md bg-white/10 border border-white/30 flex items-center transition-all duration-500 ease-out relative shadow-lg ${

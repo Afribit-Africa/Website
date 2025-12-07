@@ -205,15 +205,18 @@ export async function POST(request: NextRequest) {
       message: 'Submission received successfully! Check your email for the edit link.',
     });
 
-  } catch (error: any) {
+  } catch (error) {
     logger.error('Error submitting merchant:', error);
 
-    // Handle duplicate location error
-    if (error.code === 'ER_DUP_ENTRY' && error.message.includes('unique_location')) {
-      return NextResponse.json(
-        { success: false, error: 'A merchant already exists at this location' },
-        { status: 400 }
-      );
+    // Handle duplicate location error (MySQL specific)
+    if (error && typeof error === 'object' && 'code' in error && 'message' in error) {
+      const dbError = error as { code: string; message: string };
+      if (dbError.code === 'ER_DUP_ENTRY' && dbError.message.includes('unique_location')) {
+        return NextResponse.json(
+          { success: false, error: 'A merchant already exists at this location' },
+          { status: 400 }
+        );
+      }
     }
 
     return NextResponse.json(

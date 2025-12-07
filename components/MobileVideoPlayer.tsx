@@ -106,7 +106,7 @@ export function MobileVideoPlayer() {
 
       {/* Video Lightbox */}
       {showLightbox && (
-        <div className="md:hidden fixed inset-0 z-100 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
+        <div className="md:hidden fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
           <div className="w-full max-w-2xl">
             {/* Close Button */}
             <button

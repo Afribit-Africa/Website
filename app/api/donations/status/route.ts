@@ -20,10 +20,11 @@ export async function GET(request: NextRequest) {
       success: true,
       invoice,
     });
-  } catch (error: any) {
-    logger.error('Error fetching invoice status:', error);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to check payment status';
+    logger.error('Error checking invoice status:', message);
     return NextResponse.json(
-      { error: error.message || 'Failed to fetch invoice status' },
+      { error: message },
       { status: 500 }
     );
   }

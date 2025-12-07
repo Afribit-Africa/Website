@@ -2,6 +2,7 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { executeQuery } from '@/lib/db';
+import { logger } from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
   try {
@@ -67,7 +68,9 @@ export async function POST(request: NextRequest) {
       success: true,
       message: 'Password has been reset successfully. You can now login with your new password.',
     });
-  } catch (error: any) {
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to reset password';
+    logger.error('Password reset error:', message);
     return NextResponse.json(
       { success: false, error: 'Failed to reset password' },
       { status: 500 }

@@ -172,14 +172,15 @@ export async function POST(
       }
     });
 
-  } catch (error: any) {
-    console.error('❌ Apply changes error:', error);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    console.error('❌ Apply changes error:', message);
 
     return NextResponse.json(
       {
         success: false,
         error: 'Failed to apply changes',
-        details: error.message
+        details: message
       },
       { status: 500 }
     );

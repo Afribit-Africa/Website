@@ -9,7 +9,6 @@ import PageTransition from "@/components/PageTransition";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import NextAuthProvider from "@/components/NextAuthProvider";
 import ConditionalLayout from "@/components/ConditionalLayout";
-import EarlyAdopterBanner from "@/components/EarlyAdopterBanner";
 
 // Body text - clean and readable
 const inter = Inter({
@@ -104,7 +103,6 @@ export default function RootLayout({
       <body className="font-sans antialiased" suppressHydrationWarning>
         <NextAuthProvider>
           <ErrorBoundary>
-            <EarlyAdopterBanner />
             <AppPreloader />
             <ConditionalLayout>
               {children}

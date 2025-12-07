@@ -132,9 +132,11 @@ export default function VerifierDashboard() {
       setUserLocation(location);
       setPermissionState('granted');
       await fetchNearbySubmissions(location.lat, location.lng);
-    } catch (error: any) {
+    } catch (error) {
+      // Handle GeolocationPositionError
       if (error && typeof error === 'object' && 'code' in error) {
-        if (error.code === 1) {
+        const geoError = error as GeolocationPositionError;
+        if (geoError.code === 1) {
           // Permission denied
           setPermissionState('denied');
           if (isIOS) {
