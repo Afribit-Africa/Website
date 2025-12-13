@@ -25,6 +25,7 @@ export function getDbPool(): mysql.Pool {
         queueLimit: 0,
         enableKeepAlive: true,
         keepAliveInitialDelay: 0,
+        connectTimeout: 60000, // 60 seconds - increased for remote connections
       });
 
       // Monitor connection events
