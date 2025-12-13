@@ -34,8 +34,8 @@ export default function MaintenanceBanner() {
             {' '}
             We're migrating to improved infrastructure. Some services may be temporarily unavailable.
             {' '}
-            <Link 
-              href="/maintenance" 
+            <Link
+              href="/maintenance"
               className="inline-flex items-center gap-1 text-orange-600 hover:text-orange-700 font-medium underline decoration-orange-300 hover:decoration-orange-500 transition-colors"
             >
               Learn more

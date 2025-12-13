@@ -6,25 +6,25 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   const startTime = Date.now();
-  
+
   try {
     console.log('🔍 Testing database connection from Vercel...');
     console.log('DATABASE_URL exists:', !!process.env.DATABASE_URL);
-    
+
     // Test 1: Simple query
     const result = await executeQuery('SELECT 1 as test, NOW() as server_time');
     const duration = Date.now() - startTime;
-    
+
     console.log('✅ Database connected successfully');
     console.log('Response time:', duration, 'ms');
-    
+
     // Test 2: Check merchant table
     const tableCheck = await executeQuery(`
-      SELECT COUNT(*) as count 
-      FROM merchant_submissions 
+      SELECT COUNT(*) as count
+      FROM merchant_submissions
       WHERE status = 'published'
     `);
-    
+
     return NextResponse.json({
       success: true,
       message: 'Database connection successful',
@@ -34,19 +34,19 @@ export async function GET() {
       server_region: process.env.VERCEL_REGION || 'unknown',
       timestamp: new Date().toISOString()
     });
-    
+
   } catch (error) {
     const duration = Date.now() - startTime;
     console.error('❌ Database connection failed');
     console.error('Error:', error);
-    
+
     const errorDetails = error instanceof Error ? {
       message: error.message,
       name: error.name,
       code: (error as any).code,
       errno: (error as any).errno,
     } : String(error);
-    
+
     return NextResponse.json({
       success: false,
       error: 'Database connection failed',
