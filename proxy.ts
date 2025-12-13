@@ -145,10 +145,12 @@ export default async function proxy(request: NextRequest) {
                           pathname.startsWith('/admin');
 
   // Use modern Permissions-Policy syntax
+  // Note: Using * allows all users to access geolocation on these pages (required for production)
+  // (self) would only allow same-origin, but we need to allow all users' devices
   response.headers.set(
     'Permissions-Policy',
     allowGeolocation
-      ? 'camera=(), microphone=(), geolocation=*'
+      ? 'camera=(self), microphone=(), geolocation=*'
       : 'camera=(), microphone=(), geolocation=()'
   );
 

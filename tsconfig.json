@@ -45,6 +45,14 @@
     "jest.config.ts",
     "jest.setup.ts",
     "coverage",
-    "scripts/**/*.ts"
+    "scripts/**/*.ts",
+    "check-*.ts",
+    "fix-*.ts",
+    "get-*.ts",
+    "test-*.ts",
+    "register-*.ts",
+    "restore-*.ts",
+    "delete-*.ts",
+    "publish-*.ts"
   ]
 }

@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { executeQuery } from '../lib/db';
 
 interface Merchant {
@@ -22,7 +23,7 @@ interface Merchant {
 }
 
 // OSM API Configuration
-const OSM_API_URL = process.env.OSM_API_URL || 'https://master.apis.dev.openstreetmap.org/api/0.6';
+const OSM_API_URL = process.env.OSM_API_URL || 'https://api.openstreetmap.org/api/0.6';
 const OSM_ACCESS_TOKEN = process.env.OSM_ACCESS_TOKEN;
 
 // Generate detailed description for each merchant (max 255 chars for OSM)

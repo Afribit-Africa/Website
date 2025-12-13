@@ -208,6 +208,15 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     logger.error('Error submitting merchant:', error);
 
+    // Log detailed error information for debugging
+    if (error instanceof Error) {
+      logger.error('Error details:', {
+        message: error.message,
+        stack: error.stack,
+        name: error.name
+      });
+    }
+
     // Handle duplicate location error (MySQL specific)
     if (error && typeof error === 'object' && 'code' in error && 'message' in error) {
       const dbError = error as { code: string; message: string };
@@ -217,10 +226,23 @@ export async function POST(request: NextRequest) {
           { status: 400 }
         );
       }
+
+      // Return database-specific errors in development
+      if (process.env.NODE_ENV === 'development') {
+        return NextResponse.json(
+          { success: false, error: `Database error: ${dbError.message}`, code: dbError.code },
+          { status: 500 }
+        );
+      }
     }
 
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      {
+        success: false,
+        error: process.env.NODE_ENV === 'development'
+          ? `Internal server error: ${error instanceof Error ? error.message : String(error)}`
+          : 'Internal server error. Please try again later.'
+      },
       { status: 500 }
     );
   }
