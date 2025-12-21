@@ -35,8 +35,7 @@ export function getDbPool(): NeonSQL {
 
 /**
  * Execute a database query with error handling
- * Converts MySQL-style ? placeholders to PostgreSQL $1, $2, etc.
- * Manually constructs template literal parts for Neon driver
+ * Converts MySQL-style ? placeholders to properly formatted template for Neon
  */
 export async function executeQuery<T>(
   query: string,
@@ -44,21 +43,20 @@ export async function executeQuery<T>(
 ): Promise<T> {
   try {
     const sql = getDbPool();
-
-    // Convert MySQL ? placeholders to PostgreSQL $1, $2, etc.
-    let pgQuery = query;
-    let paramIndex = 0;
-    pgQuery = pgQuery.replace(/\?/g, () => `$${++paramIndex}`);
-
-    // Manually construct template literal parts for Neon
-    // Split query into parts and insert parameters
     const queryParams = params || [];
+
+    // Split query by ? placeholders to create template parts
+    const parts = query.split('?');
     
-    // Create a template strings array-like object
-    const strings = [pgQuery] as any;
-    strings.raw = [pgQuery];
+    if (parts.length - 1 !== queryParams.length) {
+      throw new Error(`Parameter count mismatch: query has ${parts.length - 1} placeholders but ${queryParams.length} parameters provided`);
+    }
+
+    // Construct proper template strings array for Neon
+    const strings = parts as any;
+    strings.raw = [...parts];
     
-    // Call sql with the constructed template and spread parameters
+    // Call Neon's sql template literal with split parts and params
     const results = await sql(strings, ...queryParams);
     return results as T;
   } catch (error) {
