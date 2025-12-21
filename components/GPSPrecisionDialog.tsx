@@ -417,13 +417,13 @@ export default function GPSPrecisionDialog({
               <div className="flex gap-3 pt-2">
                 <button
                   onClick={handleClose}
-                  className="flex-1 px-4 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors font-medium"
+                  className="flex-1 px-4 py-3 bg-white/10 text-white border-2 border-white/20 rounded-lg hover:bg-white/15 hover:border-white/30 transition-colors font-medium"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={() => setIsCollecting(true)}
-                  className="flex-1 px-4 py-3 bg-bitcoin text-black rounded-lg hover:bg-bitcoin-light transition-colors font-bold flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-3 bg-bitcoin text-black rounded-lg hover:bg-bitcoin-light transition-colors font-bold flex items-center justify-center gap-2 shadow-lg"
                 >
                   <Navigation className="w-4 h-4" />
                   Yes, Start GPS
@@ -565,14 +565,14 @@ export default function GPSPrecisionDialog({
               <div className="flex gap-3 pt-2">
                 <button
                   onClick={handleClose}
-                  className="flex-1 px-4 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors font-medium"
+                  className="flex-1 px-4 py-3 bg-white/10 text-white border-2 border-white/20 rounded-lg hover:bg-white/15 hover:border-white/30 transition-colors font-medium"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleCapture}
                   disabled={!canCapture || autoCapturing}
-                  className="flex-1 px-4 py-3 bg-bitcoin text-black rounded-lg hover:bg-bitcoin-light disabled:bg-gray-600 disabled:text-gray-400 transition-colors font-bold flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-3 bg-bitcoin text-black rounded-lg hover:bg-bitcoin-light disabled:bg-white/10 disabled:text-white/40 disabled:border-2 disabled:border-white/10 transition-colors font-bold flex items-center justify-center gap-2 shadow-lg"
                 >
                   <MapPin className="w-4 h-4" />
                   {autoCapturing ? 'Capturing...' :
@@ -597,7 +597,7 @@ export default function GPSPrecisionDialog({
               <div className="flex gap-3">
                 <button
                   onClick={handleClose}
-                  className="flex-1 px-4 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors font-medium"
+                  className="flex-1 px-4 py-3 bg-white/10 text-white border-2 border-white/20 rounded-lg hover:bg-white/15 hover:border-white/30 transition-colors font-medium"
                 >
                   Close
                 </button>
@@ -606,7 +606,7 @@ export default function GPSPrecisionDialog({
                     setError(null);
                     setIsCollecting(true);
                   }}
-                  className="flex-1 px-4 py-3 bg-bitcoin text-black rounded-lg hover:bg-bitcoin-light transition-colors font-bold"
+                  className="flex-1 px-4 py-3 bg-bitcoin text-black rounded-lg hover:bg-bitcoin-light transition-colors font-bold shadow-lg"
                 >
                   Try Again
                 </button>

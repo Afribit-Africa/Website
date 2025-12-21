@@ -12,7 +12,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const baseStyles = 'inline-flex items-center justify-center gap-2 font-medium rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 touch-manipulation';
 
     const variants = {
-      primary: 'bg-bitcoin hover:bg-bitcoin-dark text-white shadow-lg shadow-bitcoin/20 hover:shadow-bitcoin/30 font-semibold',
+      primary: 'bg-bitcoin hover:bg-bitcoin-dark text-black shadow-lg shadow-bitcoin/20 hover:shadow-bitcoin/30 font-semibold',
       secondary: 'bg-white/10 hover:bg-white/15 text-white border-2 border-white/20 hover:border-white/30 hover:shadow-lg',
       ghost: 'bg-transparent hover:bg-white/10 text-white hover:text-white border-2 border-transparent hover:border-white/10',
     };
