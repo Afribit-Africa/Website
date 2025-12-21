@@ -35,6 +35,7 @@ export function getDbPool(): NeonSQL {
 /**
  * Execute a database query with error handling
  * Converts MySQL-style ? placeholders to PostgreSQL $1, $2, etc.
+ * Manually constructs template literal parts for Neon driver
  */
 export async function executeQuery<T>(
   query: string,
@@ -48,12 +49,16 @@ export async function executeQuery<T>(
     let paramIndex = 0;
     pgQuery = pgQuery.replace(/\?/g, () => `$${++paramIndex}`);
 
-    // Convert MySQL-specific syntax to PostgreSQL
-    // NOW() works in both, no change needed
-    // Convert LIMIT with offset syntax if needed
-
-    // Use sql.query() for parameterized queries
-    const results = await sql.query(pgQuery, params || []);
+    // Manually construct template literal parts for Neon
+    // Split query into parts and insert parameters
+    const queryParams = params || [];
+    
+    // Create a template strings array-like object
+    const strings = [pgQuery] as any;
+    strings.raw = [pgQuery];
+    
+    // Call sql with the constructed template and spread parameters
+    const results = await sql(strings, ...queryParams);
     return results as T;
   } catch (error) {
     logger.error('Database query error:', { query, params, error });
