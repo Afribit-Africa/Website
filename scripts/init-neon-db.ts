@@ -11,11 +11,11 @@ import * as path from 'path';
 // Load environment variables
 dotenv.config({ path: '.env.local' });
 
-async function initializeDatabase() {
-  const databaseUrl = process.env.DATABASE_URL;
+async function initDatabase() {
+  const databaseUrl = process.env.afribit_DATABASE_URL || process.env.DATABASE_URL;
 
   if (!databaseUrl) {
-    console.error('❌ DATABASE_URL environment variable is not set');
+    console.error('❌ DATABASE_URL or afribit_DATABASE_URL environment variable is not set');
     process.exit(1);
   }
 
@@ -114,4 +114,4 @@ function splitSQLStatements(sql: string): string[] {
   return statements.filter(s => s.length > 0);
 }
 
-initializeDatabase();
+initDatabase();

@@ -12,10 +12,11 @@ let sql: NeonSQL | null = null;
  */
 export function getDbPool(): NeonSQL {
   if (!sql) {
-    const databaseUrl = process.env.DATABASE_URL;
+    // Check for Vercel-prefixed variable first, then fall back to unprefixed
+    const databaseUrl = process.env.afribit_DATABASE_URL || process.env.DATABASE_URL;
 
     if (!databaseUrl) {
-      const error = new Error('DATABASE_URL environment variable is not set');
+      const error = new Error('DATABASE_URL or afribit_DATABASE_URL environment variable is not set');
       logger.error('Database configuration error:', error);
       throw error;
     }

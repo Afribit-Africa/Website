@@ -9,7 +9,7 @@ export async function GET() {
 
   try {
     console.log('🔍 Testing Neon PostgreSQL connection...');
-    console.log('DATABASE_URL exists:', !!process.env.DATABASE_URL);
+    console.log('DATABASE_URL exists:', !!(process.env.afribit_DATABASE_URL || process.env.DATABASE_URL));
 
     // Test 1: Simple query
     const result = await executeQuery<any[]>('SELECT 1 as test, NOW() as server_time');
