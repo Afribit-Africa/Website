@@ -351,8 +351,8 @@ export default function GPSPrecisionDialog({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-bitcoin/30 rounded-2xl shadow-2xl max-w-md w-full overflow-hidden">
+    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center p-4">
+      <div className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-bitcoin/30 rounded-2xl shadow-2xl max-w-md w-full overflow-hidden relative z-[10000]">
         {/* Header */}
         <div className="bg-bitcoin/10 border-b border-bitcoin/30 px-6 py-4">
           <div className="flex items-center justify-between">

@@ -144,15 +144,13 @@ export default async function proxy(request: NextRequest) {
                           pathname.startsWith('/register') ||
                           pathname.startsWith('/admin');
 
-  // Use modern Permissions-Policy syntax
-  // Note: Using * allows all users to access geolocation on these pages (required for production)
-  // (self) would only allow same-origin, but we need to allow all users' devices
-  response.headers.set(
-    'Permissions-Policy',
-    allowGeolocation
-      ? 'camera=(self), microphone=(), geolocation=*'
-      : 'camera=(), microphone=(), geolocation=()'
-  );
+  // Permissions Policy - Allow geolocation on pages that need location access
+  // Using * to allow geolocation for all users (required for production use)
+  if (allowGeolocation) {
+    response.headers.set('Permissions-Policy', 'geolocation=*, camera=(self), microphone=()');
+  } else {
+    response.headers.set('Permissions-Policy', 'geolocation=(), camera=(), microphone=()');
+  }
 
   return response;
 }
