@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { executeQuery } from '@/lib/db';
-import { writeFile, mkdir } from 'fs/promises';
-import { join } from 'path';
+import { put } from '@vercel/blob';
 import { logger } from '@/lib/logger';
 import { sendMerchantVerificationRejectionEmail } from '@/lib/resend-email';
 import { requireVerifier } from '@/lib/auth-guards';
@@ -35,14 +34,19 @@ export async function POST(request: NextRequest) {
     // Option 2: Store as base64 in database (not recommended for large files)
     // For now, we'll skip local file storage and note that photos need external storage
 
-    // Process uploaded photos - get file info for logging
+    // Process uploaded photos - upload to Vercel Blob
     for (let i = 0; i < 5; i++) {
       const photo = formData.get(`photo_${i}`) as File | null;
       if (photo) {
-        // For now, just note the photo was received
-        // In production, upload to Vercel Blob, Cloudinary, or S3
-        logger.info(`Photo ${i} received: ${photo.name}, size: ${photo.size}`);
-        photoUrls.push(`photo_${i}_${Date.now()}`);
+        // Read the file as ArrayBuffer
+        const arrayBuffer = await photo.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+        // Use a unique filename per submission
+        const ext = photo.name.split('.').pop() || 'jpg';
+        const blobName = `verifications/${submissionId}/${Date.now()}_${i}.${ext}`;
+        // Upload to Vercel Blob
+        const { url } = await put(blobName, buffer, { access: 'public', contentType: photo.type });
+        photoUrls.push(url);
       }
     }
 

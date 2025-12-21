@@ -25,52 +25,52 @@ CREATE INDEX IF NOT EXISTS idx_admin_users_role ON admin_users(role);
 -- =============================================
 CREATE TABLE IF NOT EXISTS merchant_submissions (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    
+
     -- Business Information
     business_name VARCHAR(255) NOT NULL,
     category_key VARCHAR(100),
     category_value VARCHAR(255),
     description TEXT,
-    
+
     -- Location
     latitude DECIMAL(10, 8) NOT NULL,
     longitude DECIMAL(11, 8) NOT NULL,
     address TEXT,
-    
+
     -- Contact Information
     phone VARCHAR(50),
     website VARCHAR(255),
     opening_hours VARCHAR(255),
-    
+
     -- Social Media
     social_twitter VARCHAR(255),
     social_facebook VARCHAR(255),
     social_instagram VARCHAR(255),
-    
+
     -- Bitcoin Payment Methods
     payment_onchain BOOLEAN DEFAULT false,
     payment_lightning BOOLEAN DEFAULT false,
     payment_lightning_contactless BOOLEAN DEFAULT false,
     lightning_address VARCHAR(255),
-    
+
     -- Submitter Contact
     contact_name VARCHAR(255) NOT NULL,
     contact_email VARCHAR(255) NOT NULL,
     contact_relationship VARCHAR(100),
-    
+
     -- Evidence and Tokens
     evidence_urls JSONB,
     edit_token VARCHAR(255),
-    
+
     -- Status and Workflow
     status VARCHAR(50) DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'rejected', 'published', 'verified')),
     is_early_adopter BOOLEAN DEFAULT false,
     adopter_number INTEGER,
-    
+
     -- OSM Integration
     osm_node_id BIGINT,
     osm_published_at TIMESTAMP,
-    
+
     -- Verification Fields
     verification_status VARCHAR(50) CHECK (verification_status IN ('pending', 'verified', 'not_verified', 'needs_reverification')),
     verifier_id UUID REFERENCES admin_users(id),
@@ -85,11 +85,11 @@ CREATE TABLE IF NOT EXISTS merchant_submissions (
     business_exists BOOLEAN,
     payment_methods_verified JSONB,
     business_operating VARCHAR(50),
-    
+
     -- BTCMap Integration
     btcmap_id VARCHAR(255),
     btcmap_url VARCHAR(255),
-    
+
     -- Timestamps
     submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     approved_at TIMESTAMP,
@@ -108,12 +108,12 @@ CREATE INDEX IF NOT EXISTS idx_merchant_submissions_early_adopter ON merchant_su
 CREATE TABLE IF NOT EXISTS merchant_edit_requests (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     merchant_id UUID REFERENCES merchant_submissions(id) ON DELETE CASCADE,
-    
+
     -- Submitter Information
     submitter_name VARCHAR(255) NOT NULL,
     submitter_email VARCHAR(255) NOT NULL,
     submitter_phone VARCHAR(50),
-    
+
     -- Old Values
     business_name_old VARCHAR(255),
     blink_address_old VARCHAR(255),
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS merchant_edit_requests (
     address_old TEXT,
     phone_old VARCHAR(50),
     category_old VARCHAR(255),
-    
+
     -- New Values
     business_name_new VARCHAR(255),
     blink_address_new VARCHAR(255),
@@ -133,26 +133,26 @@ CREATE TABLE IF NOT EXISTS merchant_edit_requests (
     address_new TEXT,
     phone_new VARCHAR(50),
     category_new VARCHAR(255),
-    
+
     -- Edit Details
     reason_for_edit TEXT NOT NULL,
     used_current_location BOOLEAN DEFAULT false,
     location_accuracy DECIMAL(10, 2),
     distance_from_original DECIMAL(10, 2),
-    
+
     -- OSM Reference
     osm_node_id BIGINT,
-    
+
     -- Status and Review
     status VARCHAR(50) DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'rejected', 'applied')),
     reviewed_by UUID REFERENCES admin_users(id),
     reviewed_at TIMESTAMP,
     admin_notes TEXT,
-    
+
     -- Email Confirmation
     confirmation_token VARCHAR(255),
     confirmed_at TIMESTAMP,
-    
+
     -- Timestamps
     submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
