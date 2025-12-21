@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -16,7 +16,7 @@ import { LayoutDashboard } from 'lucide-react';
 
 export function Header() {
   const pathname = usePathname();
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -24,50 +24,64 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [pendingCount, setPendingCount] = useState(0);
 
+  // Memoize scroll handler to prevent recreation
+  const handleScroll = useCallback(() => {
+    const currentScrollY = window.scrollY;
+    setScrolled(currentScrollY > 50);
+
+    // Show/hide based on scroll direction
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      setVisible(false);
+      setActiveDropdown(null); // Close dropdowns when hiding
+    } else {
+      setVisible(true);
+    }
+    setLastScrollY(currentScrollY);
+  }, [lastScrollY]);
+
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrolled(currentScrollY > 50);
-
-      // Show/hide based on scroll direction
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setVisible(false);
-      } else {
-        setVisible(true);
-      }
-      setLastScrollY(currentScrollY);
-    };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [handleScroll]);
 
   // Fetch pending edit requests count for admin
   useEffect(() => {
-    if (session && (session.user as any)?.role === 'admin') {
+    if (status === 'authenticated' && session && (session.user as any)?.role === 'admin') {
       const fetchPendingCount = async () => {
         try {
           const res = await fetch('/api/admin/edit-requests/stats');
+          if (!res.ok) throw new Error('Failed to fetch stats');
+          
           const data = await res.json();
           if (data.success) {
             setPendingCount(data.data.pending || 0);
           }
         } catch (error) {
           console.error('Failed to fetch pending count:', error);
+          setPendingCount(0);
         }
       };
 
       fetchPendingCount();
-      // Refresh every 30 seconds
-      const interval = setInterval(fetchPendingCount, 30000);
+      // Refresh every 60 seconds (reduced from 30s to lower server load)
+      const interval = setInterval(fetchPendingCount, 60000);
       return () => clearInterval(interval);
     }
-  }, [session]);
+  }, [status, session]);
 
-  const isActiveGroup = (paths: string[]) =>
-    paths.some(path => pathname.startsWith(path) || pathname === path);
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setActiveDropdown(null);
+  }, [pathname]);
 
-  const menuGroups = [
+  const isActiveGroup = useCallback((paths: string[]) =>
+    paths.some(path => pathname.startsWith(path) || pathname === path),
+    [pathname]
+  );
+
+  // Memoize menu groups to prevent recreation
+  const menuGroups = useMemo(() => [
     {
       label: 'About',
       icon: FiInfo,
@@ -102,7 +116,7 @@ export function Header() {
         { label: 'Fedi Community', path: '/fedi', icon: FiHelpCircle },
       ]
     },
-  ];
+  ], []);
 
   return (
     <>
