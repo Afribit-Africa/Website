@@ -15,23 +15,33 @@ export interface DonorInfo {
 export async function initDonorsTable() {
   const createTableQuery = `
     CREATE TABLE IF NOT EXISTS donors (
-      id INT AUTO_INCREMENT PRIMARY KEY,
+      id SERIAL PRIMARY KEY,
       invoice_id VARCHAR(255) UNIQUE NOT NULL,
       name VARCHAR(255),
       email VARCHAR(255),
       amount DECIMAL(10, 2) NOT NULL,
       tier VARCHAR(50) NOT NULL,
-      donation_type ENUM('anonymous', 'named') NOT NULL,
-      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-      INDEX idx_invoice_id (invoice_id),
-      INDEX idx_email (email),
-      INDEX idx_created_at (created_at),
-      INDEX idx_donation_type (donation_type)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+      donation_type VARCHAR(20) NOT NULL CHECK (donation_type IN ('anonymous', 'named')),
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+  `;
+
+  const createIndexesQuery = `
+    CREATE INDEX IF NOT EXISTS idx_donors_invoice_id ON donors(invoice_id);
+    CREATE INDEX IF NOT EXISTS idx_donors_email ON donors(email);
+    CREATE INDEX IF NOT EXISTS idx_donors_created_at ON donors(created_at);
+    CREATE INDEX IF NOT EXISTS idx_donors_donation_type ON donors(donation_type);
   `;
 
   try {
     await executeQuery(createTableQuery);
+    // Create indexes separately to avoid issues
+    try {
+      await executeQuery(createIndexesQuery);
+    } catch (indexError) {
+      // Indexes might already exist, that's fine
+      logger.debug('Index creation skipped (may already exist)');
+    }
     logger.info('Donors table initialized successfully');
   } catch (error) {
     logger.error('Failed to initialize donors table:', error);
@@ -42,15 +52,16 @@ export async function initDonorsTable() {
 export async function saveDonorInfo(donorInfo: DonorInfo) {
   const { invoiceId, name, email, amount, tier, donationType } = donorInfo;
 
+  // PostgreSQL UPSERT syntax using ON CONFLICT
   const query = `
     INSERT INTO donors (invoice_id, name, email, amount, tier, donation_type)
-    VALUES (?, ?, ?, ?, ?, ?)
-    ON DUPLICATE KEY UPDATE
-      name = VALUES(name),
-      email = VALUES(email),
-      amount = VALUES(amount),
-      tier = VALUES(tier),
-      donation_type = VALUES(donation_type)
+    VALUES ($1, $2, $3, $4, $5, $6)
+    ON CONFLICT (invoice_id) DO UPDATE SET
+      name = EXCLUDED.name,
+      email = EXCLUDED.email,
+      amount = EXCLUDED.amount,
+      tier = EXCLUDED.tier,
+      donation_type = EXCLUDED.donation_type
   `;
 
   try {
@@ -70,7 +81,7 @@ export async function saveDonorInfo(donorInfo: DonorInfo) {
 }
 
 export async function getDonorByInvoiceId(invoiceId: string): Promise<Donor | null> {
-  const query = `SELECT * FROM donors WHERE invoice_id = ?`;
+  const query = `SELECT * FROM donors WHERE invoice_id = $1`;
 
   try {
     const results = await executeQuery<Donor[]>(query, [invoiceId]);

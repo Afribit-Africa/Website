@@ -1,14 +1,17 @@
-import mysql from 'mysql2/promise';
+import { neon } from '@neondatabase/serverless';
 import { logger } from './logger';
 
-let pool: mysql.Pool | null = null;
+// Type for the neon SQL template function
+type NeonSQL = ReturnType<typeof neon>;
+
+let sql: NeonSQL | null = null;
 
 /**
- * Get or create database connection pool
- * Includes error handling and logging
+ * Get or create Neon database connection
+ * Uses the @neondatabase/serverless driver for optimal Vercel performance
  */
-export function getDbPool(): mysql.Pool {
-  if (!pool) {
+export function getDbPool(): NeonSQL {
+  if (!sql) {
     const databaseUrl = process.env.DATABASE_URL;
 
     if (!databaseUrl) {
@@ -18,41 +21,39 @@ export function getDbPool(): mysql.Pool {
     }
 
     try {
-      pool = mysql.createPool({
-        uri: databaseUrl,
-        waitForConnections: true,
-        connectionLimit: 10,
-        queueLimit: 0,
-        enableKeepAlive: true,
-        keepAliveInitialDelay: 0,
-        connectTimeout: 60000, // 60 seconds - increased for remote connections
-      });
-
-      // Monitor connection events
-      pool.on('connection', () => {
-        logger.debug('New database connection established');
-      });
-
-      logger.info('Database connection pool created');
+      sql = neon(databaseUrl);
+      logger.info('Neon database connection created');
     } catch (error) {
-      logger.error('Failed to create database pool:', error);
+      logger.error('Failed to create Neon database connection:', error);
       throw error;
     }
   }
 
-  return pool;
+  return sql;
 }
 
 /**
  * Execute a database query with error handling
+ * Converts MySQL-style ? placeholders to PostgreSQL $1, $2, etc.
  */
 export async function executeQuery<T>(
   query: string,
   params?: any[]
 ): Promise<T> {
   try {
-    const connection = getDbPool();
-    const [results] = await connection.execute(query, params);
+    const sql = getDbPool();
+
+    // Convert MySQL ? placeholders to PostgreSQL $1, $2, etc.
+    let pgQuery = query;
+    let paramIndex = 0;
+    pgQuery = pgQuery.replace(/\?/g, () => `$${++paramIndex}`);
+
+    // Convert MySQL-specific syntax to PostgreSQL
+    // NOW() works in both, no change needed
+    // Convert LIMIT with offset syntax if needed
+
+    // Use sql.query() for parameterized queries
+    const results = await sql.query(pgQuery, params || []);
     return results as T;
   } catch (error) {
     logger.error('Database query error:', { query, params, error });
@@ -61,31 +62,46 @@ export async function executeQuery<T>(
 }
 
 /**
+ * Execute a database query that returns a single row
+ */
+export async function executeQuerySingle<T>(
+  query: string,
+  params?: any[]
+): Promise<T | null> {
+  const results = await executeQuery<T[]>(query, params);
+  return results[0] || null;
+}
+
+/**
  * Execute a database transaction
- * Automatically commits on success, rolls back on error
+ * Note: For Neon serverless, we use the SQL template literal syntax
  */
 export async function executeTransaction<T>(
-  callback: (connection: mysql.PoolConnection) => Promise<T>
+  callback: (connection: NeonSQL) => Promise<T>
 ): Promise<T> {
-  const pool = getDbPool();
-  const connection = await pool.getConnection();
+  const sql = getDbPool();
 
   try {
-    await connection.beginTransaction();
+    // Start transaction
+    await sql`BEGIN`;
     logger.debug('Transaction started');
 
-    const result = await callback(connection);
+    const result = await callback(sql);
 
-    await connection.commit();
+    // Commit transaction
+    await sql`COMMIT`;
     logger.debug('Transaction committed');
 
     return result;
   } catch (error) {
-    await connection.rollback();
+    // Rollback on error
+    try {
+      await sql`ROLLBACK`;
+    } catch {
+      // Ignore rollback errors
+    }
     logger.error('Transaction rolled back due to error:', error);
     throw error;
-  } finally {
-    connection.release();
   }
 }
 
@@ -94,8 +110,8 @@ export async function executeTransaction<T>(
  */
 export async function testConnection(): Promise<boolean> {
   try {
-    const pool = getDbPool();
-    await pool.query('SELECT 1');
+    const sql = getDbPool();
+    await sql`SELECT 1`;
     logger.info('Database connection test successful');
     return true;
   } catch (error) {
@@ -105,18 +121,10 @@ export async function testConnection(): Promise<boolean> {
 }
 
 /**
- * Close database connection pool
- * Should be called on application shutdown
+ * Close database connection
+ * Note: Neon serverless connections are stateless, no explicit close needed
  */
 export async function closePool(): Promise<void> {
-  if (pool) {
-    try {
-      await pool.end();
-      pool = null;
-      logger.info('Database connection pool closed');
-    } catch (error) {
-      logger.error('Error closing database pool:', error);
-      throw error;
-    }
-  }
+  sql = null;
+  logger.info('Database connection reference cleared');
 }

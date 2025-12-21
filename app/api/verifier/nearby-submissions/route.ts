@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getDbPool } from '@/lib/db';
+import { executeQuery } from '@/lib/db';
 import { logger } from '@/lib/logger';
 import { calculateDistance } from '@/lib/utils/distance';
 import { requireVerifier } from '@/lib/auth-guards';
@@ -9,8 +9,6 @@ export async function GET(request: NextRequest) {
   try {
     // Check authentication
     await requireVerifier();
-
-    const pool = getDbPool();
 
     // Get query parameters
     const searchParams = request.nextUrl.searchParams;
@@ -26,27 +24,24 @@ export async function GET(request: NextRequest) {
     }
 
     // Fetch pending submissions
-    const [rows] = await pool.execute(
+    const submissions = await executeQuery<any[]>(
       `SELECT
         id,
-        business_name as businessName,
+        business_name as "businessName",
         address,
         latitude,
         longitude,
-        payment_onchain as paymentOnchain,
-        payment_lightning as paymentLightning,
-        payment_lightning_contactless as paymentLightningContactless,
-        submitted_at as submittedAt,
-        verification_status as verificationStatus
+        payment_onchain as "paymentOnchain",
+        payment_lightning as "paymentLightning",
+        payment_lightning_contactless as "paymentLightningContactless",
+        submitted_at as "submittedAt",
+        verification_status as "verificationStatus"
       FROM merchant_submissions
       WHERE verification_status = 'pending_verification'
         AND latitude IS NOT NULL
         AND longitude IS NOT NULL
-      ORDER BY submitted_at DESC`,
-      []
+      ORDER BY submitted_at DESC`
     );
-
-    const submissions = rows as any[];
 
     // Calculate distances and filter by radius
     const submissionsWithDistance = submissions

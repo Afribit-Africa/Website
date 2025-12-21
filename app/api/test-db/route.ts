@@ -8,30 +8,40 @@ export async function GET() {
   const startTime = Date.now();
 
   try {
-    console.log('🔍 Testing database connection from Vercel...');
+    console.log('🔍 Testing Neon PostgreSQL connection...');
     console.log('DATABASE_URL exists:', !!process.env.DATABASE_URL);
 
     // Test 1: Simple query
-    const result = await executeQuery('SELECT 1 as test, NOW() as server_time');
+    const result = await executeQuery<any[]>('SELECT 1 as test, NOW() as server_time');
     const duration = Date.now() - startTime;
 
     console.log('✅ Database connected successfully');
     console.log('Response time:', duration, 'ms');
 
     // Test 2: Check merchant table
-    const tableCheck = await executeQuery(`
+    const tableCheck = await executeQuery<any[]>(`
       SELECT COUNT(*) as count
       FROM merchant_submissions
       WHERE status = 'published'
     `);
 
+    // Test 3: Check all tables exist
+    const tables = await executeQuery<any[]>(`
+      SELECT table_name 
+      FROM information_schema.tables 
+      WHERE table_schema = 'public' 
+      ORDER BY table_name
+    `);
+
     return NextResponse.json({
       success: true,
-      message: 'Database connection successful',
+      message: 'Neon PostgreSQL connection successful',
+      database: 'Neon PostgreSQL',
       duration: `${duration}ms`,
-      test_query: result,
-      published_merchants: tableCheck,
-      server_region: process.env.VERCEL_REGION || 'unknown',
+      test_query: result[0],
+      published_merchants: tableCheck[0]?.count || 0,
+      tables: tables.map((t: any) => t.table_name),
+      server_region: process.env.VERCEL_REGION || 'local',
       timestamp: new Date().toISOString()
     });
 
@@ -44,7 +54,6 @@ export async function GET() {
       message: error.message,
       name: error.name,
       code: (error as any).code,
-      errno: (error as any).errno,
     } : String(error);
 
     return NextResponse.json({
@@ -52,17 +61,8 @@ export async function GET() {
       error: 'Database connection failed',
       details: errorDetails,
       duration: `${duration}ms`,
-      server_region: process.env.VERCEL_REGION || 'unknown',
+      server_region: process.env.VERCEL_REGION || 'local',
       timestamp: new Date().toISOString(),
-      troubleshooting: {
-        message: 'Connection timeout - database server may be blocking Vercel IPs',
-        actions: [
-          'Check cPanel Remote MySQL settings',
-          'Whitelist Vercel IPs: 76.76.21.0/24 and 76.223.0.0/20',
-          'Verify port 3306 is open',
-          'Check if database accepts remote connections'
-        ]
-      }
     }, { status: 500 });
   }
 }

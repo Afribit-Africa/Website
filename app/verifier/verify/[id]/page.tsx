@@ -179,10 +179,8 @@ export default function VerifyMerchant() {
       return;
     }
 
-    if (photos.length === 0) {
-      alert('Please upload at least one photo of the business');
-      return;
-    }
+    // Photos are optional for now while we set up cloud storage
+    // Will be made required once Vercel Blob or similar is configured
 
     setIsSubmitting(true);
 

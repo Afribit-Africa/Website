@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getDbPool } from '@/lib/db';
+import { executeQuery } from '@/lib/db';
 import { logger } from '@/lib/logger';
 import { requireVerifier } from '@/lib/auth-guards';
 import { handleAPIError } from '@/lib/api-error-handler';
@@ -12,31 +12,27 @@ export async function GET(
     // Check authentication
     await requireVerifier();
 
-    const pool = getDbPool();
-
     const { id: submissionId } = await params;
 
     // Fetch submission details
-    const [rows] = await pool.execute(
+    const submissions = await executeQuery<any[]>(
       `SELECT
         id,
-        business_name as businessName,
+        business_name as "businessName",
         category_value as category,
         address as location,
         latitude,
         longitude,
-        payment_onchain as paymentOnchain,
-        payment_lightning as paymentLightning,
-        payment_lightning_contactless as paymentLightningContactless,
-        contact_email as contactEmail,
-        submitted_at as submittedAt,
-        verification_status as verificationStatus
+        payment_onchain as "paymentOnchain",
+        payment_lightning as "paymentLightning",
+        payment_lightning_contactless as "paymentLightningContactless",
+        contact_email as "contactEmail",
+        submitted_at as "submittedAt",
+        verification_status as "verificationStatus"
       FROM merchant_submissions
-      WHERE id = ? AND verification_status = 'pending_verification'`,
+      WHERE id = $1 AND verification_status = 'pending_verification'`,
       [submissionId]
     );
-
-    const submissions = rows as any[];
 
     if (submissions.length === 0) {
       return NextResponse.json(

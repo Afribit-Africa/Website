@@ -1,7 +1,14 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import { MapPin, Navigation, CheckCircle, AlertTriangle, Satellite, Clock, X } from 'lucide-react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { MapPin, Navigation, CheckCircle, AlertTriangle, Satellite, Clock, X, Target, BarChart3 } from 'lucide-react';
+
+interface GPSReading {
+  latitude: number;
+  longitude: number;
+  accuracy: number;
+  timestamp: number;
+}
 
 interface GPSPrecisionDialogProps {
   isOpen: boolean;
@@ -10,6 +17,102 @@ interface GPSPrecisionDialogProps {
   targetAccuracy?: number; // Auto-capture when accuracy reaches this value (default: 10m)
   warningAccuracy?: number; // Show warning when accuracy is worse than this (default: 50m)
   businessName?: string;
+  minReadings?: number; // Minimum readings before allowing capture (ODK-style)
+}
+
+/**
+ * Calculate weighted average of GPS coordinates using ODK methodology
+ * Readings with better accuracy get more weight
+ */
+function calculateWeightedAverage(readings: GPSReading[]): {
+  latitude: number;
+  longitude: number;
+  accuracy: number;
+  standardDeviation: number;
+} {
+  if (readings.length === 0) {
+    return { latitude: 0, longitude: 0, accuracy: Infinity, standardDeviation: Infinity };
+  }
+
+  if (readings.length === 1) {
+    return {
+      latitude: readings[0].latitude,
+      longitude: readings[0].longitude,
+      accuracy: readings[0].accuracy,
+      standardDeviation: 0,
+    };
+  }
+
+  // Calculate weights inversely proportional to accuracy (lower accuracy = higher weight)
+  // Using 1/accuracy^2 to heavily favor accurate readings (ODK methodology)
+  const weights = readings.map(r => 1 / (r.accuracy * r.accuracy));
+  const totalWeight = weights.reduce((sum, w) => sum + w, 0);
+
+  // Calculate weighted average
+  let weightedLat = 0;
+  let weightedLng = 0;
+  let weightedAcc = 0;
+
+  readings.forEach((reading, i) => {
+    const normalizedWeight = weights[i] / totalWeight;
+    weightedLat += reading.latitude * normalizedWeight;
+    weightedLng += reading.longitude * normalizedWeight;
+    weightedAcc += reading.accuracy * normalizedWeight;
+  });
+
+  // Calculate standard deviation of distances from the weighted mean
+  // This gives us an idea of how stable the readings are
+  const distances = readings.map(r => {
+    const latDiff = (r.latitude - weightedLat) * 111320; // Convert to meters (approx)
+    const lngDiff = (r.longitude - weightedLng) * 111320 * Math.cos(weightedLat * Math.PI / 180);
+    return Math.sqrt(latDiff * latDiff + lngDiff * lngDiff);
+  });
+
+  const meanDistance = distances.reduce((sum, d) => sum + d, 0) / distances.length;
+  const squaredDiffs = distances.map(d => (d - meanDistance) ** 2);
+  const standardDeviation = Math.sqrt(squaredDiffs.reduce((sum, d) => sum + d, 0) / distances.length);
+
+  return {
+    latitude: weightedLat,
+    longitude: weightedLng,
+    accuracy: weightedAcc,
+    standardDeviation,
+  };
+}
+
+/**
+ * Filter outlier readings using IQR method
+ * Removes readings that are statistical outliers
+ */
+function filterOutliers(readings: GPSReading[]): GPSReading[] {
+  if (readings.length < 4) return readings;
+
+  // Calculate median position
+  const sortedLats = [...readings].sort((a, b) => a.latitude - b.latitude);
+  const sortedLngs = [...readings].sort((a, b) => a.longitude - b.longitude);
+
+  const midIndex = Math.floor(readings.length / 2);
+  const medianLat = sortedLats[midIndex].latitude;
+  const medianLng = sortedLngs[midIndex].longitude;
+
+  // Calculate distances from median
+  const distances = readings.map(r => {
+    const latDiff = (r.latitude - medianLat) * 111320;
+    const lngDiff = (r.longitude - medianLng) * 111320 * Math.cos(medianLat * Math.PI / 180);
+    return Math.sqrt(latDiff * latDiff + lngDiff * lngDiff);
+  });
+
+  // Calculate IQR
+  const sortedDistances = [...distances].sort((a, b) => a - b);
+  const q1Index = Math.floor(sortedDistances.length * 0.25);
+  const q3Index = Math.floor(sortedDistances.length * 0.75);
+  const q1 = sortedDistances[q1Index];
+  const q3 = sortedDistances[q3Index];
+  const iqr = q3 - q1;
+  const upperBound = q3 + 1.5 * iqr;
+
+  // Filter out outliers (readings too far from median)
+  return readings.filter((r, i) => distances[i] <= upperBound || distances[i] < r.accuracy * 2);
 }
 
 export default function GPSPrecisionDialog({
@@ -18,21 +121,64 @@ export default function GPSPrecisionDialog({
   onLocationCapture,
   targetAccuracy = 10,
   warningAccuracy = 50,
-  businessName
+  businessName,
+  minReadings = 5, // ODK typically requires minimum 5 readings
 }: GPSPrecisionDialogProps) {
   const [isCollecting, setIsCollecting] = useState(false);
   const [currentAccuracy, setCurrentAccuracy] = useState<number | null>(null);
-  const [bestAccuracy, setBestAccuracy] = useState<number | null>(null);
-  const [bestPosition, setBestPosition] = useState<{ latitude: number; longitude: number } | null>(null);
+  const [readings, setReadings] = useState<GPSReading[]>([]);
+  const [averagedPosition, setAveragedPosition] = useState<{
+    latitude: number;
+    longitude: number;
+    accuracy: number;
+    standardDeviation: number;
+  } | null>(null);
   const [satelliteCount, setSatelliteCount] = useState<number | null>(null);
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [autoCapturing, setAutoCapturing] = useState(false);
+  const [stabilityScore, setStabilityScore] = useState<number>(0);
 
   const watchIdRef = useRef<number | null>(null);
   const startTimeRef = useRef<number>(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const accuracyHistory = useRef<number[]>([]);
+  const lastUpdateRef = useRef<number>(0);
+
+  // Calculate if readings are stable enough for accurate capture
+  const isStable = useCallback(() => {
+    if (readings.length < minReadings) return false;
+    if (!averagedPosition) return false;
+
+    // Check if standard deviation is low (readings are consistent)
+    // And averaged accuracy is good
+    return averagedPosition.standardDeviation < 15 && averagedPosition.accuracy < warningAccuracy;
+  }, [readings.length, minReadings, averagedPosition, warningAccuracy]);
+
+  // Update averaged position whenever readings change
+  useEffect(() => {
+    if (readings.length > 0) {
+      const filtered = filterOutliers(readings);
+      const averaged = calculateWeightedAverage(filtered);
+      setAveragedPosition(averaged);
+
+      // Calculate stability score (0-100)
+      const readingScore = Math.min(readings.length / minReadings, 1) * 30;
+      const accuracyScore = Math.max(0, (warningAccuracy - averaged.accuracy) / warningAccuracy) * 40;
+      const stabilityValue = Math.max(0, (20 - averaged.standardDeviation) / 20) * 30;
+      setStabilityScore(Math.round(readingScore + accuracyScore + stabilityValue));
+
+      // Auto-capture when conditions are met
+      if (readings.length >= minReadings &&
+          averaged.accuracy <= targetAccuracy &&
+          averaged.standardDeviation < 10 &&
+          !autoCapturing) {
+        setAutoCapturing(true);
+        setTimeout(() => {
+          handleCapture();
+        }, 500);
+      }
+    }
+  }, [readings, minReadings, targetAccuracy, warningAccuracy, autoCapturing]);
 
   useEffect(() => {
     if (isOpen && isCollecting) {
@@ -51,8 +197,9 @@ export default function GPSPrecisionDialog({
     }
 
     setError(null);
+    setReadings([]);
+    setAveragedPosition(null);
     startTimeRef.current = Date.now();
-    accuracyHistory.current = [];
 
     // Start timer
     timerRef.current = setInterval(() => {
@@ -63,34 +210,38 @@ export default function GPSPrecisionDialog({
     const options: PositionOptions = {
       enableHighAccuracy: true,
       maximumAge: 0,
-      timeout: Infinity // Keep trying
+      timeout: 30000
     };
 
     watchIdRef.current = navigator.geolocation.watchPosition(
       (position) => {
         const { latitude, longitude, accuracy } = position.coords;
+        const now = Date.now();
 
         setCurrentAccuracy(accuracy);
-        accuracyHistory.current.push(accuracy);
 
-        // Estimate satellite count from accuracy (rough approximation)
-        // Better accuracy generally means more satellites
-        const estimatedSatellites = accuracy < 10 ? 8 : accuracy < 20 ? 6 : accuracy < 30 ? 4 : 3;
-        setSatelliteCount(estimatedSatellites);
+        // Throttle readings to prevent too many updates
+        // Collect a reading every 500ms minimum
+        if (now - lastUpdateRef.current >= 500) {
+          lastUpdateRef.current = now;
 
-        // Update best position if this is more accurate
-        if (bestAccuracy === null || accuracy < bestAccuracy) {
-          setBestAccuracy(accuracy);
-          setBestPosition({ latitude, longitude });
+          const newReading: GPSReading = {
+            latitude,
+            longitude,
+            accuracy,
+            timestamp: now,
+          };
 
-          // Auto-capture if target accuracy is reached
-          if (accuracy <= targetAccuracy && !autoCapturing) {
-            setAutoCapturing(true);
-            setTimeout(() => {
-              handleCapture(latitude, longitude, accuracy);
-            }, 500);
-          }
+          setReadings(prev => {
+            // Keep last 20 readings (sliding window for better averaging)
+            const updated = [...prev, newReading].slice(-20);
+            return updated;
+          });
         }
+
+        // Estimate satellite count from accuracy
+        const estimatedSatellites = accuracy < 5 ? 10 : accuracy < 10 ? 8 : accuracy < 20 ? 6 : accuracy < 30 ? 4 : 3;
+        setSatelliteCount(estimatedSatellites);
       },
       (error) => {
         let errorMessage = 'Failed to get GPS location';
@@ -126,13 +277,13 @@ export default function GPSPrecisionDialog({
     }
   };
 
-  const handleCapture = (lat?: number, lng?: number, acc?: number) => {
-    const latitude = lat || bestPosition?.latitude;
-    const longitude = lng || bestPosition?.longitude;
-    const accuracy = acc || bestAccuracy;
-
-    if (latitude && longitude && accuracy !== null) {
-      onLocationCapture(latitude, longitude, accuracy);
+  const handleCapture = () => {
+    if (averagedPosition && averagedPosition.accuracy !== Infinity) {
+      onLocationCapture(
+        averagedPosition.latitude,
+        averagedPosition.longitude,
+        averagedPosition.accuracy
+      );
       handleClose();
     }
   };
@@ -141,12 +292,13 @@ export default function GPSPrecisionDialog({
     stopGPSCollection();
     setIsCollecting(false);
     setCurrentAccuracy(null);
-    setBestAccuracy(null);
-    setBestPosition(null);
+    setReadings([]);
+    setAveragedPosition(null);
     setSatelliteCount(null);
     setTimeElapsed(0);
     setError(null);
     setAutoCapturing(false);
+    setStabilityScore(0);
     onClose();
   };
 
@@ -170,7 +322,9 @@ export default function GPSPrecisionDialog({
         label: 'Excellent',
         color: 'text-green-400',
         bgColor: 'bg-green-500/20',
-        suggestion: 'Great accuracy! Capturing automatically...'
+        suggestion: readings.length < minReadings
+          ? `Collecting readings (${readings.length}/${minReadings})...`
+          : 'Great accuracy! Ready to capture.'
       };
     }
 
@@ -191,10 +345,8 @@ export default function GPSPrecisionDialog({
     };
   };
 
-  const quality = getAccuracyQuality(currentAccuracy);
-  const progress = currentAccuracy
-    ? Math.max(0, Math.min(100, ((warningAccuracy - currentAccuracy) / warningAccuracy) * 100))
-    : 0;
+  const quality = getAccuracyQuality(averagedPosition?.accuracy ?? currentAccuracy);
+  const canCapture = readings.length >= minReadings && averagedPosition && averagedPosition.accuracy !== Infinity;
 
   if (!isOpen) return null;
 
@@ -283,76 +435,127 @@ export default function GPSPrecisionDialog({
           {/* Collection in Progress */}
           {isCollecting && !error && (
             <div className="space-y-5">
-              {/* Current Accuracy Display */}
+              {/* ODK-Style Readings Counter */}
+              <div className="flex items-center justify-between bg-black/30 rounded-lg p-3 border border-white/10">
+                <div className="flex items-center gap-2">
+                  <BarChart3 className="w-5 h-5 text-bitcoin" />
+                  <span className="text-sm font-semibold text-white">Readings Collected</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className={`text-lg font-bold ${readings.length >= minReadings ? 'text-green-400' : 'text-bitcoin'}`}>
+                    {readings.length}
+                  </span>
+                  <span className="text-sm text-gray-400">/ {minReadings} min</span>
+                </div>
+              </div>
+
+              {/* Averaged Position Display */}
               <div className={`${quality.bgColor} border-2 ${quality.bgColor.replace('/20', '/40')} rounded-xl p-4`}>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-gray-300">Current Accuracy</span>
+                  <span className="text-sm font-semibold text-gray-300">Averaged Accuracy</span>
                   <span className={`text-xs font-bold ${quality.color}`}>{quality.label}</span>
                 </div>
                 <div className="text-4xl font-bold text-white mb-2">
-                  {currentAccuracy !== null ? `±${Math.round(currentAccuracy)}m` : 'Searching...'}
+                  {averagedPosition && averagedPosition.accuracy !== Infinity
+                    ? `±${Math.round(averagedPosition.accuracy)}m`
+                    : 'Calculating...'}
                 </div>
                 <p className={`text-sm ${quality.color}`}>{quality.suggestion}</p>
               </div>
 
-              {/* Progress Bar */}
+              {/* Stability Indicator */}
               <div className="space-y-2">
                 <div className="flex items-center justify-between text-xs text-gray-400">
-                  <span>Progress to target ({targetAccuracy}m)</span>
-                  <span>{Math.round(progress)}%</span>
+                  <span className="flex items-center gap-1">
+                    <Target className="w-3 h-3" />
+                    Stability Score
+                  </span>
+                  <span>{stabilityScore}%</span>
                 </div>
                 <div className="h-3 bg-gray-700 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-bitcoin to-green-500 transition-all duration-500"
-                    style={{ width: `${progress}%` }}
+                    className={`h-full transition-all duration-500 ${
+                      stabilityScore > 70 ? 'bg-gradient-to-r from-green-500 to-emerald-400' :
+                      stabilityScore > 40 ? 'bg-gradient-to-r from-bitcoin to-yellow-400' :
+                      'bg-gradient-to-r from-red-500 to-orange-400'
+                    }`}
+                    style={{ width: `${stabilityScore}%` }}
                   />
                 </div>
+                <p className="text-xs text-gray-500 text-center">
+                  {stabilityScore < 40 ? 'Stay still and wait for more readings...' :
+                   stabilityScore < 70 ? 'Position stabilizing...' :
+                   'Position stable! Ready to capture.'}
+                </p>
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-3 gap-3">
                 <div className="bg-black/30 rounded-lg p-3 border border-white/10">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Clock className="w-4 h-4 text-bitcoin" />
-                    <span className="text-xs text-gray-400">Time Elapsed</span>
+                  <div className="flex items-center gap-1 mb-1">
+                    <Clock className="w-3 h-3 text-bitcoin" />
+                    <span className="text-xs text-gray-400">Time</span>
                   </div>
-                  <div className="text-xl font-bold text-white">{timeElapsed}s</div>
+                  <div className="text-lg font-bold text-white">{timeElapsed}s</div>
                 </div>
 
                 <div className="bg-black/30 rounded-lg p-3 border border-white/10">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Satellite className="w-4 h-4 text-bitcoin" />
-                    <span className="text-xs text-gray-400">Satellites</span>
+                  <div className="flex items-center gap-1 mb-1">
+                    <Satellite className="w-3 h-3 text-bitcoin" />
+                    <span className="text-xs text-gray-400">Sats</span>
                   </div>
-                  <div className="text-xl font-bold text-white">
+                  <div className="text-lg font-bold text-white">
                     {satelliteCount !== null ? `~${satelliteCount}` : '--'}
+                  </div>
+                </div>
+
+                <div className="bg-black/30 rounded-lg p-3 border border-white/10">
+                  <div className="flex items-center gap-1 mb-1">
+                    <MapPin className="w-3 h-3 text-bitcoin" />
+                    <span className="text-xs text-gray-400">Current</span>
+                  </div>
+                  <div className="text-lg font-bold text-white">
+                    {currentAccuracy !== null ? `±${Math.round(currentAccuracy)}m` : '--'}
                   </div>
                 </div>
               </div>
 
-              {/* Best Accuracy Info */}
-              {bestAccuracy !== null && (
-                <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+              {/* Standard Deviation Info */}
+              {averagedPosition && readings.length >= 3 && (
+                <div className={`${
+                  averagedPosition.standardDeviation < 10 ? 'bg-green-500/10 border-green-500/30' :
+                  averagedPosition.standardDeviation < 20 ? 'bg-yellow-500/10 border-yellow-500/30' :
+                  'bg-red-500/10 border-red-500/30'
+                } border rounded-lg p-3`}>
                   <div className="flex items-center gap-2 mb-1">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span className="text-sm font-semibold text-green-400">Best Reading</span>
+                    <Target className={`w-4 h-4 ${
+                      averagedPosition.standardDeviation < 10 ? 'text-green-400' :
+                      averagedPosition.standardDeviation < 20 ? 'text-yellow-400' :
+                      'text-red-400'
+                    }`} />
+                    <span className="text-sm font-semibold text-white">Position Consistency</span>
                   </div>
-                  <div className="text-2xl font-bold text-white">±{Math.round(bestAccuracy)}m</div>
-                  <p className="text-xs text-green-300 mt-1">
-                    Will auto-capture at ±{targetAccuracy}m or you can manually capture now
+                  <div className="text-lg font-bold text-white">
+                    σ = {averagedPosition.standardDeviation.toFixed(1)}m
+                  </div>
+                  <p className="text-xs text-gray-400 mt-1">
+                    {averagedPosition.standardDeviation < 10
+                      ? 'Readings are highly consistent'
+                      : averagedPosition.standardDeviation < 20
+                      ? 'Readings are moderately consistent'
+                      : 'Readings are varying - stay still'}
                   </p>
                 </div>
               )}
 
               {/* Warning for long wait times */}
-              {timeElapsed > 120 && currentAccuracy && currentAccuracy > targetAccuracy && (
+              {timeElapsed > 120 && averagedPosition && averagedPosition.accuracy > targetAccuracy && (
                 <div className="flex items-start gap-3 p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
                   <AlertTriangle className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
                   <div className="text-sm text-yellow-100">
                     <p className="font-semibold mb-1">Taking longer than expected</p>
                     <p className="text-yellow-200/80">
-                      This may indicate GPS hardware issues or poor signal conditions.
-                      You can manually capture the current best reading if needed.
+                      Try moving to a more open area. You can manually capture the current averaged position if needed.
                     </p>
                   </div>
                 </div>
@@ -367,12 +570,14 @@ export default function GPSPrecisionDialog({
                   Cancel
                 </button>
                 <button
-                  onClick={() => handleCapture()}
-                  disabled={!bestPosition || autoCapturing}
+                  onClick={handleCapture}
+                  disabled={!canCapture || autoCapturing}
                   className="flex-1 px-4 py-3 bg-bitcoin text-black rounded-lg hover:bg-bitcoin-light disabled:bg-gray-600 disabled:text-gray-400 transition-colors font-bold flex items-center justify-center gap-2"
                 >
                   <MapPin className="w-4 h-4" />
-                  {autoCapturing ? 'Capturing...' : 'Capture Now'}
+                  {autoCapturing ? 'Capturing...' :
+                   !canCapture ? `Wait (${readings.length}/${minReadings})` :
+                   'Capture Now'}
                 </button>
               </div>
             </div>
