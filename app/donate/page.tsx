@@ -146,7 +146,29 @@ export default function DonatePage() {
 
       setInvoiceData(data.invoice);
 
-      // Fetch payment methods with retry logic
+      // Handle different invoice types
+      let finalInvoice = null;
+      
+      // If it's a Blink invoice, use the paymentRequest directly
+      if (data.invoice.paymentRequest) {
+        finalInvoice = data.invoice.paymentRequest;
+        setLightningInvoice(finalInvoice);
+        
+        // Generate QR code
+        const qrUrl = await QRCode.toDataURL(finalInvoice, {
+          width: 300,
+          margin: 2,
+          color: {
+            dark: '#000000',
+            light: '#FFFFFF'
+          }
+        });
+        setQrCodeDataUrl(qrUrl);
+        setStep('payment');
+        return;
+      }
+
+      // For BTCPay invoices, fetch payment methods with retry logic
       let paymentMethodsData = null;
       let lightningInvoice = null;
       let retries = 3;
@@ -242,9 +264,14 @@ export default function DonatePage() {
     return () => clearInterval(interval);
   }, [step, paymentStatus]);
 
-  // Payment Status Polling Effect
+  // Payment Status Polling Effect (only for BTCPay invoices)
   useEffect(() => {
     if (step !== 'payment' || !invoiceData?.id || paymentStatus !== 'pending') return;
+    
+    // Skip polling for Blink invoices (they use paymentRequest)
+    if (invoiceData?.provider === 'blink' || invoiceData?.paymentRequest) {
+      return;
+    }
 
     const pollInterval = setInterval(async () => {
       try {

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createInvoice } from '@/lib/btcpay-client';
+import { createDonationInvoice } from '@/lib/payment-client';
 import { handleAPIError, validateInput, APIError, withRetry } from '@/lib/api-helpers';
 import { saveDonorInfo, initDonorsTable } from '@/lib/donor-db';
 import { rateLimit, rateLimitConfigs, RateLimitError } from '@/lib/rate-limit';
@@ -34,9 +34,9 @@ export async function POST(request: NextRequest) {
 
     const { amount, tier, donationType, name, email } = validation.data;
 
-    // Create invoice with retry logic
+    // Create invoice with retry logic using unified payment client
     const invoice = await withRetry(async () => {
-      return await createInvoice({
+      return await createDonationInvoice({
         amount: amount,
         currency: 'USD',
         buyerEmail: donationType === 'named' ? email : undefined,
