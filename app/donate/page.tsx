@@ -147,7 +147,7 @@ export default function DonatePage() {
       setInvoiceData(data.invoice);
 
       // Handle different invoice types
-      let finalInvoice = null;
+      let finalInvoice: string;
       
       // If it's a Blink invoice, use the paymentRequest directly
       if (data.invoice.paymentRequest) {
@@ -209,7 +209,7 @@ export default function DonatePage() {
       }
 
       // Use Lightning invoice if found, otherwise use checkout link
-      const finalInvoice = lightningInvoice || data.invoice.checkoutLink;
+      finalInvoice = lightningInvoice || data.invoice.checkoutLink;
       const invoiceType = lightningInvoice ? 'Lightning' : 'Checkout Link';
 
       setLightningInvoice(finalInvoice);
