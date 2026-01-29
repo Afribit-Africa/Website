@@ -99,10 +99,50 @@ Should return a JSON array of invoices (or empty array `[]` if no invoices exist
 
 ### Verify Environment Variables in Production
 
-Create a test endpoint (or check logs) to verify environment variables are being loaded:
-- Check that `process.env.BTCPAY_HOST` equals `https://pay.afribit.africa`
-- Check that `process.env.BTCPAY_STORE_ID` is not empty
-- Check that `process.env.BTCPAY_API_KEY` is not empty (don't log the actual value!)
+**Use the diagnostic endpoint:**
+
+Visit `/api/config/check` on your deployed site to see the current configuration status:
+```
+https://your-site.com/api/config/check
+```
+
+This will show you:
+- Which environment variables are set (without revealing actual values)
+- Whether BTCPay is properly configured
+- Whether Blink is configured
+- Recommendations for fixing configuration issues
+
+**Example response:**
+```json
+{
+  "success": true,
+  "status": {
+    "btcpayReady": false,
+    "blinkReady": true,
+    "anyPaymentReady": true,
+    "primaryProvider": "blink"
+  },
+  "config": {
+    "btcpay": {
+      "host": "https://pay.afribit.africa",
+      "hasHost": true,
+      "hasStoreId": false,
+      "hasApiKey": false,
+      "storeIdLength": 0,
+      "apiKeyLength": 0
+    },
+    "blink": {
+      "hasUsername": true,
+      "username": "mua..."
+    }
+  },
+  "message": "Blink is configured (BTCPay not set)",
+  "recommendations": [
+    "Set BTCPAY_STORE_ID environment variable (get from BTCPay dashboard)",
+    "Set BTCPAY_API_KEY environment variable (create in BTCPay Store Settings)"
+  ]
+}
+```
 
 ## Current Status
 
