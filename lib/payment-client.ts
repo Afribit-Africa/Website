@@ -30,7 +30,7 @@ function isBTCPayConfigured(): boolean {
 
 /**
  * Get Blink donation username from environment
- * Falls back to a demo Blink address if not configured
+ * Falls back to Afribit's official Blink address if not configured
  */
 function getBlinkDonationUsername(): string | null {
   // Try environment variable first
@@ -39,10 +39,9 @@ function getBlinkDonationUsername(): string | null {
     return envUsername;
   }
   
-  // For demo/testing purposes, use a known merchant address
-  // In production, this should be set via environment variable
-  const fallbackUsername = 'muanzompya'; // Demo fallback
-  logger.warn('Using fallback Blink username. Please set BLINK_DONATION_USERNAME environment variable.');
+  // Fallback to Afribit's official Blink address: afribit@blink.sv
+  const fallbackUsername = 'afribit';
+  logger.info('Using Afribit official Blink address: afribit@blink.sv');
   
   return fallbackUsername;
 }

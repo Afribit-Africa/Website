@@ -67,15 +67,17 @@ You need to set these environment variables in your deployment platform:
 
 ### Temporary Fallback: Use Blink
 
-While you're configuring BTCPay, the system will automatically fall back to Blink Lightning Network if you set:
+The system will automatically fall back to Blink Lightning Network (afribit@blink.sv) if BTCPay fails. 
+
+To explicitly set the Blink username as an environment variable:
 
 ```bash
-BLINK_DONATION_USERNAME=your-blink-username
+BLINK_DONATION_USERNAME=afribit
 ```
 
-(The part before @blink.sv, e.g., if your address is `afribit@blink.sv`, use `afribit`)
+**Note**: If this variable is not set, the system will automatically use 'afribit' (afribit@blink.sv) as the fallback.
 
-This allows donations to work immediately while you configure BTCPay properly.
+This ensures donations always work via Lightning Network even if BTCPay has issues.
 
 ## Testing the Fix
 

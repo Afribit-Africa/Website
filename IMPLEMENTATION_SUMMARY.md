@@ -72,26 +72,25 @@ curl https://afribit.africa/api/config/check
 
 ## Required Actions
 
-### For Immediate Fix (Option 1 - BTCPay):
-1. Log in to https://pay.afribit.africa/
-2. Get Store ID from dashboard
-3. Create API key with invoice permissions
-4. Set environment variables in deployment platform:
-   ```
-   BTCPAY_HOST=https://pay.afribit.africa
-   BTCPAY_STORE_ID=<your-store-id>
-   BTCPAY_API_KEY=<your-api-key>
-   ```
-5. Redeploy application
-6. Verify at `/api/config/check`
+### BTCPay Configuration (Already Set in Vercel):
+The following environment variables are configured:
+```
+BTCPAY_HOST=https://pay.afribit.africa
+BTCPAY_STORE_ID=DSVtab28GMx3qYVw4FkkZr1vzjEZ6fFmhgc6SQNtYcxg
+BTCPAY_API_KEY=852c4c7e2b03b90bdb88a1fdd2711a7ff9904929
+```
 
-### For Immediate Fix (Option 2 - Blink Fallback):
-1. Set environment variable:
-   ```
-   BLINK_DONATION_USERNAME=<your-blink-username>
-   ```
-2. Redeploy application
-3. Donations will work via Lightning Network immediately
+**Status**: ✅ Configured and ready
+
+### Blink Fallback (Built-in):
+The system automatically uses Afribit's official Blink address: **afribit@blink.sv**
+
+Optionally, you can set:
+```
+BLINK_DONATION_USERNAME=afribit
+```
+
+**Status**: ✅ Hardcoded as fallback, no configuration needed
 
 ## Testing
 
