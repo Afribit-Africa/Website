@@ -20,6 +20,8 @@ model User {
   role          UserRole  @default(VIEWER)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
+  verifiedMerchants Merchant[] @relation("MerchantLastVerifiedBy")
+  merchantVerificationChecks MerchantVerificationCheck[] @relation("UserMerchantVerificationChecks")
   
   @@map("users")
 }
@@ -245,9 +247,28 @@ model Merchant {
   primaryTestimonialId String? @unique
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
+  osmNodeId          String?
+  osmUrl             String?  @db.Text
+  osmChangesetId     String?
+  osmSourceRef       String?
+  openStatus         MerchantOpenStatus @default(UNKNOWN)
+  bitcoinStatus      MerchantBitcoinStatus @default(UNKNOWN)
+  paymentLightningEnabled Boolean?
+  paymentOnchainEnabled Boolean?
+  paymentLightningContactlessEnabled Boolean?
+  openingHours       String?  @db.Text
+  lastVerifiedAt     DateTime?
+  lastSurveyedAt     DateTime?
+  lastVerificationMethod MerchantVerificationMethod?
+  lastVerifiedById   String?
+  lastVerifiedByName String?
+  verificationNotes  String?  @db.Text
+  btcmapUrl          String?  @db.Text
   program            Program? @relation("ProgramMerchants", fields: [programId], references: [id], onDelete: SetNull)
   testimonials       Testimonial[] @relation("MerchantTestimonials")
   primaryTestimonial Testimonial? @relation("MerchantPrimaryTestimonial", fields: [primaryTestimonialId], references: [id], onDelete: SetNull)
+  lastVerifiedBy     User?    @relation("MerchantLastVerifiedBy", fields: [lastVerifiedById], references: [id], onDelete: SetNull)
+  verificationChecks MerchantVerificationCheck[]
 
   @@map("merchants")
   @@index([status])
@@ -255,6 +276,7 @@ model Merchant {
   @@index([featured])
   @@index([programId])
   @@index([city])
+  @@index([lastVerifiedById])
 }
 
 enum MerchantStatus {
@@ -262,6 +284,68 @@ enum MerchantStatus {
   ACTIVE
   INACTIVE
   ARCHIVED
+}
+
+enum MerchantOpenStatus {
+  UNKNOWN
+  OPEN
+  CLOSED
+  MOVED
+  TEMPORARILY_CLOSED
+}
+
+enum MerchantBitcoinStatus {
+  UNKNOWN
+  ACCEPTS
+  DOES_NOT_ACCEPT
+}
+
+enum MerchantVerificationMethod {
+  ONSITE_SURVEY
+  PHONE
+  EMAIL
+  WEBSITE
+  SOCIAL_MEDIA
+  COMMUNITY_REPORT
+  OSM_SYNC
+  CSV_IMPORT
+  OTHER
+}
+
+model MerchantVerificationCheck {
+  id                                  String   @id @default(uuid())
+  merchantId                          String
+  checkedAt                           DateTime
+  surveyDate                          DateTime?
+  verificationMethod                  MerchantVerificationMethod
+  checkedByUserId                     String?
+  checkedByName                       String?
+  openStatus                          MerchantOpenStatus
+  bitcoinStatus                       MerchantBitcoinStatus
+  paymentLightningEnabled             Boolean?
+  paymentOnchainEnabled               Boolean?
+  paymentLightningContactlessEnabled  Boolean?
+  correctName                         Boolean?
+  correctPhone                        Boolean?
+  correctAddress                      Boolean?
+  correctCategory                     Boolean?
+  openingHours                        String?  @db.Text
+  notes                               String?  @db.Text
+  osmNodeId                           String?
+  osmUrl                              String?  @db.Text
+  osmChangesetId                      String?
+  osmVersion                          Int?
+  osmTimestamp                        DateTime?
+  rawOSMTags                          Json?
+  sourceRef                           String?
+  createdAt                           DateTime @default(now())
+  merchant                            Merchant @relation(fields: [merchantId], references: [id], onDelete: Cascade)
+  checkedByUser                       User?    @relation("UserMerchantVerificationChecks", fields: [checkedByUserId], references: [id], onDelete: SetNull)
+
+  @@map("merchant_verification_checks")
+  @@index([merchantId])
+  @@index([checkedByUserId])
+  @@index([checkedAt])
 }
 
 // Statistics tracking

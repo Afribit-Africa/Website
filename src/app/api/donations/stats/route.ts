@@ -2,8 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { getStoreStats } from '@/lib/btcpay';
 
-// Cache for 60 seconds to avoid hammering BTCPay on every page load
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {

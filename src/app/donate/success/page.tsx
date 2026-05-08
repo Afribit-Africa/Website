@@ -5,6 +5,8 @@ import { Container } from '@/components/layout/container'
 import { Button } from '@/components/ui/button'
 import { generateMetadata } from '@/lib/metadata'
 
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = generateMetadata({
   title: 'Donation Submitted',
   description: 'Thank you for supporting Afribit. Your donation invoice has been submitted through BTCPay checkout.',
