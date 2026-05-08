@@ -1,0 +1,485 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --bitcoin: #f7931a;
+  --bitcoin-dark: #d97908;
+  --bitcoin-light: #ffb45c;
+  --panafrican-red: #c1121f;
+  --panafrican-green: #008751;
+  --panafrican-gold: #f2a900;
+
+  --bg-base: #070807;
+  --bg-soft: #0d0f0d;
+  --bg-surface: #121512;
+  --bg-elevated: #191d19;
+  --bg-muted: #202620;
+
+  --text-base: #f4f5f0;
+  --text-soft: #c5c8bd;
+  --text-muted: #8d9386;
+  --text-faint: #5f665b;
+
+  --border-soft: rgba(244, 245, 240, 0.08);
+  --border-strong: rgba(244, 245, 240, 0.16);
+  --border-accent: rgba(247, 147, 26, 0.32);
+
+  --radius: 0.5rem;
+  --shadow-card: 0 18px 48px rgba(0, 0, 0, 0.28);
+
+  --background: 120 7% 3%;
+  --foreground: 70 20% 95%;
+  --card: 120 8% 8%;
+  --card-foreground: 70 20% 95%;
+  --popover: 120 8% 8%;
+  --popover-foreground: 70 20% 95%;
+  --primary: 32 93% 54%;
+  --primary-foreground: 120 8% 4%;
+  --secondary: 120 8% 12%;
+  --secondary-foreground: 70 20% 95%;
+  --muted: 120 8% 12%;
+  --muted-foreground: 84 8% 57%;
+  --accent: 32 93% 54%;
+  --accent-foreground: 120 8% 4%;
+  --destructive: 356 84% 41%;
+  --destructive-foreground: 70 20% 95%;
+  --border: 84 8% 18%;
+  --input: 84 8% 18%;
+  --ring: 32 93% 54%;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-bitcoin: var(--bitcoin);
+  --color-bitcoin-dark: var(--bitcoin-dark);
+  --color-bitcoin-light: var(--bitcoin-light);
+  --color-red: var(--panafrican-red);
+  --color-bg-base: var(--bg-base);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-muted: var(--bg-muted);
+  --color-panafrican-red: var(--panafrican-red);
+  --color-panafrican-green: var(--panafrican-green);
+  --color-panafrican-gold: var(--panafrican-gold);
+
+  --color-green: var(--panafrican-green);
+  --font-sans: var(--font-body), "DM Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: var(--font-space-grotesk), "Space Grotesk", var(--font-body), "DM Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  background: var(--bg-base);
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(247, 147, 26, 0.09), transparent 34rem),
+    radial-gradient(circle at top right, rgba(0, 135, 81, 0.08), transparent 32rem),
+    var(--bg-base);
+  color: var(--text-base);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  min-height: 70vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a,
+[role="button"] {
+  -webkit-tap-highlight-color: rgba(247, 147, 26, 0.22);
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--text-base);
+  font-family: var(--font-display);
+  font-weight: 750;
+  line-height: 1.08;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--bitcoin);
+  color: #070807;
+}
+
+:focus-visible {
+  outline: 2px solid var(--bitcoin);
+  outline-offset: 3px;
+}
+
+input,
+textarea,
+select {
+  font-size: 16px;
+}
+
+section {
+  position: relative;
+}
+
+.section {
+  padding-block: 3.75rem;
+}
+
+.section-md {
+  padding-block: 3rem;
+}
+
+.section-tight {
+  padding-block: 2.5rem;
+}
+
+.section-lg {
+  padding-block: 4.75rem;
+}
+
+.section-spacious {
+  padding-block: 5.5rem;
+}
+
+.section-hero {
+  padding-block: 6.5rem 4.75rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.surface {
+  border: 1px solid var(--border-soft);
+  background: color-mix(in srgb, var(--bg-surface) 92%, transparent);
+}
+
+.surface-elevated {
+  border: 1px solid var(--border-soft);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-card);
+}
+
+.section-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(247, 147, 26, 0.13), transparent 24rem),
+    radial-gradient(circle at 90% 12%, rgba(0, 135, 81, 0.11), transparent 22rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
+    var(--bg-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.section-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black, transparent 72%);
+  opacity: 0.45;
+}
+
+.section-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.interactive-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(520px circle at var(--mouse-x, 50%) var(--mouse-y, 0%), rgba(247,147,26,0.12), transparent 42%);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.interactive-card:hover::after {
+  opacity: 1;
+}
+
+.accent-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(247, 147, 26, 0.52), rgba(0, 135, 81, 0.36), transparent);
+}
+
+.text-gradient-brand {
+  background: linear-gradient(90deg, var(--bitcoin), var(--panafrican-gold), #48d18d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Dark gradient button — inspired by design inspo */
+.btn-dark {
+  background: radial-gradient(ellipse at bottom, rgba(55, 65, 72, 1) 0%, rgba(11, 18, 22, 1) 45%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+.btn-dark::before {
+  content: "";
+  width: 60%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 1), transparent);
+  opacity: 0.15;
+  transition: opacity 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+.btn-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18), 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+.btn-dark:hover::before {
+  opacity: 0.9;
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(244, 245, 240, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Fine grid lines */
+.bg-grid-lines {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Subtle noise texture via SVG data URI */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* Bitcoin glow radial — used as ::before on sections */
+.glow-bitcoin {
+  position: relative;
+}
+.glow-bitcoin::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(247,147,26,0.12), transparent 70%);
+  z-index: 0;
+}
+.glow-bitcoin > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Green glow — panafrican */
+.glow-green {
+  position: relative;
+}
+.glow-green::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(0,135,81,0.10), transparent 70%);
+  z-index: 0;
+}
+.glow-green > * {
+  position: relative;
+  z-index: 1;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.animate-brand-marquee {
+  animation: brand-marquee 34s linear infinite;
+}
+
+.animate-brand-marquee-slow {
+  animation: brand-marquee 46s linear infinite;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+@keyframes brand-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #42483f;
+  border: 2px solid var(--bg-soft);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bitcoin-dark);
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: 5rem;
+  }
+
+  .section-md {
+    padding-block: 4rem;
+  }
+
+  .section-tight {
+    padding-block: 3rem;
+  }
+
+  .section-lg {
+    padding-block: 6rem;
+  }
+
+  .section-spacious {
+    padding-block: 7rem;
+  }
+
+  .section-hero {
+    padding-block: 8rem 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

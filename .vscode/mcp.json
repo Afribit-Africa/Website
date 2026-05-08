@@ -1,0 +1,29 @@
+{
+  "servers": {
+    "chunkhound": {
+      "type": "stdio",
+      "command": "D:\\claw\\.venv\\Scripts\\chunkhound.exe",
+      "args": [
+        "mcp",
+        "--no-embeddings",
+        "--db",
+        "D:\\afribit\\.chunkhound\\chunks.duckdb",
+        "D:\\afribit"
+      ]
+    },
+    "shadcn-ui": {
+      "type": "stdio",
+      "command": "cmd.exe",
+      "args": ["/d", "/s", "/c", "npx.cmd", "-y", "shadcn@latest", "mcp"]
+    },
+    "aceternity-ui": {
+      "type": "stdio",
+      "command": "cmd.exe",
+      "args": ["/d", "/s", "/c", "npx.cmd", "-y", "aceternityui-mcp"]
+    },
+    "figma": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
+    }
+  }
+}

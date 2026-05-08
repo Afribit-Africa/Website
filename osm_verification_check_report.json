@@ -1,0 +1,584 @@
+{
+  "mode": "apply",
+  "report": [
+    {
+      "merchantId": "0d1922ee-4859-4811-92f5-e48f995b4c15",
+      "slug": "3-west-butchery",
+      "name": "3 West Butchery",
+      "nodeId": "13359667002",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:0d1922ee-4859-4811-92f5-e48f995b4c15",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "98f43051-1247-473e-9adc-1d12f0823511",
+      "slug": "3-west-collection",
+      "name": "3 West Collection",
+      "nodeId": "13359669301",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:98f43051-1247-473e-9adc-1d12f0823511",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "11df6cca-62b1-4829-b2bb-26c505718b13",
+      "slug": "3-west-hotel",
+      "name": "3 West Hotel",
+      "nodeId": "13359666902",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:11df6cca-62b1-4829-b2bb-26c505718b13",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "40072b3f-3907-43b4-bf0b-9c4200dff8e2",
+      "slug": "ac-gas-suppliers",
+      "name": "AC Gas Suppliers",
+      "nodeId": "13359669701",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:40072b3f-3907-43b4-bf0b-9c4200dff8e2",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "b5241e5e-56b2-4829-93f8-d7096ec94709",
+      "slug": "acgassuppliers",
+      "name": "ACGassuppliers",
+      "nodeId": "12700702057",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "6b5b8db2-dde6-4aa7-9d38-1c5825ed0690",
+      "slug": "abebo-vegez",
+      "name": "Abebo Vegez",
+      "nodeId": "13359667003",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:6b5b8db2-dde6-4aa7-9d38-1c5825ed0690",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "7ab08d95-31d3-4438-a9c4-0a64e2da9330",
+      "slug": "black-and-white-fries-corner",
+      "name": "Black and White Fries Corner",
+      "nodeId": "13359667004",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:7ab08d95-31d3-4438-a9c4-0a64e2da9330",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "1ecb72a9-5f26-41b3-b662-239264b09e17",
+      "slug": "bridgeway-mini-shop",
+      "name": "Bridgeway Mini Shop",
+      "nodeId": "9003534561",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "e5ea4ee2-1e5d-4abe-86ac-8f21d3f14735",
+      "slug": "bridgeway-shop",
+      "name": "Bridgeway Shop",
+      "nodeId": "13359666903",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:e5ea4ee2-1e5d-4abe-86ac-8f21d3f14735",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "missing",
+      "slug": "missing",
+      "name": "Candy's Collection Hub",
+      "nodeId": "13782490401",
+      "status": "missing",
+      "sourceRef": null,
+      "fresh": false,
+      "issues": [
+        "missing_database_merchant"
+      ],
+      "openStatus": "UNKNOWN",
+      "bitcoinStatus": "UNKNOWN",
+      "checkDate": null
+    },
+    {
+      "merchantId": "68cfb1b4-ebd3-4aed-894b-170b4746916a",
+      "slug": "caronaliak",
+      "name": "Caronaliak",
+      "nodeId": "13359670001",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:68cfb1b4-ebd3-4aed-894b-170b4746916a",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "ae63b2c6-d845-49e9-b523-599965170665",
+      "slug": "damaris-11",
+      "name": "Damaris 11",
+      "nodeId": "13003772864",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "adfb5a68-7ed2-4a96-b5cd-2a37c18b73df",
+      "slug": "doctor-furniture",
+      "name": "Doctor Furniture",
+      "nodeId": "13433204102",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "20cd5958-33e2-4683-866c-19e987bcab52",
+      "slug": "fred-collections",
+      "name": "Fred Collections",
+      "nodeId": "12700702054",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "8a76408e-8466-474e-adcd-14e0472836e1",
+      "slug": "fridah-fresh-produce",
+      "name": "Fridah",
+      "nodeId": "13782490501",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "7d1bdd1b-7790-4384-9c74-21038d2e300d",
+      "slug": "galaxxy-toilet",
+      "name": "Galaxxy Toilet",
+      "nodeId": "13359666905",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:7d1bdd1b-7790-4384-9c74-21038d2e300d",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "19757502-8446-4741-8f80-fce87aea328f",
+      "slug": "golden-heart-youth-group",
+      "name": "Golden Heart Youth Group",
+      "nodeId": "13003848008",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "76cf086b-3c58-497c-b81b-4699a5dc4f7a",
+      "slug": "goreti-greens-shop",
+      "name": "Goreti Greens Shop",
+      "nodeId": "13359669302",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:76cf086b-3c58-497c-b81b-4699a5dc4f7a",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "83185d3a-fc8c-404f-a485-74d9b4109d81",
+      "slug": "grace-mama-mboga",
+      "name": "Grace",
+      "nodeId": "13782490701",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "1dcf64c0-ac06-4fc2-9a07-da81c0d3b944",
+      "slug": "kings-shop",
+      "name": "Kings Shop",
+      "nodeId": "13003772863",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "3796f036-b7d8-417a-ba5d-843f5a9e9348",
+      "slug": "krezzy-kicks",
+      "name": "Krezzy Kicks",
+      "nodeId": "13359670101",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:3796f036-b7d8-417a-ba5d-843f5a9e9348",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "a2a877b7-01ce-42c8-895f-dc59aea77120",
+      "slug": "maji-safi",
+      "name": "Maji safi",
+      "nodeId": "12300469782",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "cad29aba-2047-46bc-83a1-62212c72e7b7",
+      "slug": "malegah-shop",
+      "name": "Malegah Shop",
+      "nodeId": "13483095801",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "d69a52cc-c346-40e3-b258-245f5e7b7e08",
+      "slug": "mama-clear",
+      "name": "Mama Clear",
+      "nodeId": "13359666906",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:d69a52cc-c346-40e3-b258-245f5e7b7e08",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "8fa90514-be37-44ee-b959-be988b12d69c",
+      "slug": "mama-clinton-groceries",
+      "name": "Mama Clinton Groceries",
+      "nodeId": "12700702055",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "6b4aeb06-f0b8-4e07-82eb-53553207917a",
+      "slug": "mama-eddy-salon",
+      "name": "Mama Eddy Salon",
+      "nodeId": "13003772865",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "10c2c7a3-63c6-44d4-ac13-8d5c1ce4826d",
+      "slug": "mama-maureen",
+      "name": "Mama Maureen",
+      "nodeId": "12700702058",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "fa4b8434-514f-42a1-8fc0-a15adb7be664",
+      "slug": "mama-nonny-shop",
+      "name": "Mama Nonny Shop",
+      "nodeId": "13359670201",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:fa4b8434-514f-42a1-8fc0-a15adb7be664",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "510054b8-ce46-46d0-b877-a0b9bd5464e6",
+      "slug": "mama-stacy",
+      "name": "Mama Stacy",
+      "nodeId": "13433204001",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "83b961da-5af7-47b7-a105-f4cc8f349c2b",
+      "slug": "mercy-waste-services",
+      "name": "Mercy",
+      "nodeId": "13782490801",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "06496651-bcd2-43c8-a299-2bdfbfdf0baf",
+      "slug": "nifah",
+      "name": "Nifah",
+      "nodeId": "13433204101",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "75166687-b344-46c5-84f3-ae64a4e5ff0d",
+      "slug": "night-salon-1",
+      "name": "Night Salon",
+      "nodeId": "13003772862",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "bebfc46d-387d-4a6b-a387-bd4544d74663",
+      "slug": "ruth-shop",
+      "name": "Ruth Shop",
+      "nodeId": "13363001701",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "1bed6f3d-c9a3-4673-961c-c13f4c230e64",
+      "slug": "shibe",
+      "name": "Shibe",
+      "nodeId": "13359670102",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:1bed6f3d-c9a3-4673-961c-c13f4c230e64",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "cf8c23bc-4614-4981-b143-e1e5982d150b",
+      "slug": "shine-magicians",
+      "name": "Shine Magicians",
+      "nodeId": "13003848007",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "2c1c24ff-5ee8-400c-8dde-0102abfe4d57",
+      "slug": "sokoni-mboga",
+      "name": "Sokoni Mboga",
+      "nodeId": "13359669303",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:2c1c24ff-5ee8-400c-8dde-0102abfe4d57",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "f721f066-f3a4-4e0c-a9ba-e8c16ea018ef",
+      "slug": "soweto-car-wash",
+      "name": "Soweto Car Wash",
+      "nodeId": "13359666202",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:f721f066-f3a4-4e0c-a9ba-e8c16ea018ef",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "b04e8af8-0b69-48c4-86ab-c4a747e81eeb",
+      "slug": "vela-transporters",
+      "name": "Vela Transporters",
+      "nodeId": "12300462945",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "c33d35b0-1caf-4119-88ab-ed7f04b2120e",
+      "slug": "venlavery-retail-shop",
+      "name": "Venlavery Retail Shop",
+      "nodeId": "13359670301",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:c33d35b0-1caf-4119-88ab-ed7f04b2120e",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "9c982eba-0a10-4d4c-93d0-ad7dd5bb44bc",
+      "slug": "wilson-asweto",
+      "name": "WILSON ASWETO",
+      "nodeId": "12300443593",
+      "status": "ACTIVE",
+      "sourceRef": null,
+      "fresh": true,
+      "issues": [
+        "source_ref_mismatch"
+      ],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    },
+    {
+      "merchantId": "74b0e0dd-0c26-44a8-8ff4-4693d099bcdf",
+      "slug": "yummy-tummy",
+      "name": "Yummy Tummy",
+      "nodeId": "13359669702",
+      "status": "ACTIVE",
+      "sourceRef": "afribit:74b0e0dd-0c26-44a8-8ff4-4693d099bcdf",
+      "fresh": true,
+      "issues": [],
+      "openStatus": "OPEN",
+      "bitcoinStatus": "ACCEPTS",
+      "checkDate": "2026-04-30"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+    "chat.mcp.serverSampling": {
+        "afribit/.vscode/mcp.json: ui9000": {
+            "allowedModels": [
+                "copilot/auto",
+                "copilotcli/claude-sonnet-4.6"
+            ]
+        }
+    }
+}
