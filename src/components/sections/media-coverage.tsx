@@ -37,16 +37,16 @@ const VIDEOS = [
 
 export function MediaCoverage() {
   return (
-    <section className="py-20 bg-bg-surface/50">
+    <section className="section bg-bg-surface/50">
       <Container>
-        <div className="mb-12 text-center">
-          <Badge variant="secondary" className="mb-4">
+        <div className="section-intro">
+          <Badge variant="secondary">
             Media
           </Badge>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-3">
+          <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
             Watch Our Story
           </h2>
-          <p className="text-muted-foreground">
+          <p className="content-copy text-muted-foreground">
             Follow the movement on the ground in Kibera.
           </p>
         </div>

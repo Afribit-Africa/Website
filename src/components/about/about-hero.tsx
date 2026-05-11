@@ -9,13 +9,13 @@ export function AboutHero() {
       </div>
 
       <Container>
-        <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-bitcoin/10 border border-bitcoin/20 mb-7">
+        <div className="content-shell">
+          <div className="inline-flex items-center gap-2 rounded-full border border-bitcoin/20 bg-bitcoin/10 px-4 py-1.5">
             <span className="size-1.5 rounded-full bg-bitcoin animate-pulse" />
             <span className="text-sm font-medium text-bitcoin">Our Story</span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 leading-[1.08]">
+          <h1 className="font-display text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Built in Kibera.{' '}
             <span className="text-bitcoin relative inline-block">
               Powered by Bitcoin.
@@ -23,7 +23,7 @@ export function AboutHero() {
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed text-balance">
+          <p className="content-copy-narrow text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
             Afribit is a grassroots organisation in Kibera, East Africa&apos;s largest informal
             settlement. We build real financial access through Bitcoin education, merchant
             networks, and the Lightning Network.

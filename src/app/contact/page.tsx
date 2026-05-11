@@ -39,14 +39,6 @@ const CONTACT_FAQS = [
 export default function ContactPage() {
   return (
     <>
-      {/* Skip to content link for screen readers */}
-      <a 
-        href="#contact-form" 
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-bitcoin focus:text-white focus:rounded-lg"
-      >
-        Skip to contact form
-      </a>
-      
       {/* Hero Section */}
       <ContactHero />
 
@@ -56,12 +48,12 @@ export default function ContactPage() {
       {/* Contact Form Section */}
       <section id="contact-form" className="section-lg">
         <Container>
-          <div className="max-w-4xl mx-auto">
-            <div className="mx-auto mb-12 flex max-w-2xl flex-col items-center text-center">
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mx-auto w-full max-w-4xl">
+            <div className="section-intro">
+              <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
                 Send Us a Message
               </h2>
-              <p className="max-w-2xl text-center text-lg text-muted-foreground">
+              <p className="content-copy-narrow text-lg text-muted-foreground">
                 Fill out the form below and we&apos;ll get back to you as soon as possible.
               </p>
             </div>
@@ -73,12 +65,12 @@ export default function ContactPage() {
       {/* FAQ Section */}
       <section className="section">
         <Container>
-          <div className="max-w-4xl mx-auto">
-            <div className="mx-auto mb-12 flex max-w-2xl flex-col items-center text-center">
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mx-auto w-full max-w-4xl">
+            <div className="section-intro">
+              <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
                 Frequently Asked Questions
               </h2>
-              <p className="max-w-2xl text-center text-lg text-muted-foreground">
+              <p className="content-copy-narrow text-lg text-muted-foreground">
                 Quick answers to common questions about contacting us.
               </p>
             </div>
@@ -108,24 +100,26 @@ export default function ContactPage() {
               ))}
             </div>
 
-            <div className="text-center mt-12 pt-8 border-t border-border-soft">
-              <div className="inline-flex items-center gap-3 mb-4">
+            <div className="mt-12 border-t border-border-soft pt-8 text-center">
+              <div className="mb-4 inline-flex items-center gap-3">
                 <Users className="size-5 text-bitcoin" aria-hidden="true" />
                 <span className="text-sm font-medium text-bitcoin">STILL HAVE QUESTIONS?</span>
               </div>
-              <h3 className="font-display text-2xl font-bold text-foreground mb-4">
+              <h3 className="font-display text-2xl font-bold text-foreground">
                 Need more specific help?
               </h3>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
                 Our team is ready to assist you with any questions about Bitcoin adoption,
                 partnership opportunities, or our programs across Africa.
               </p>
-              <Button asChild size="lg">
+              <div className="mt-6">
+                <Button asChild size="lg">
                 <a href="mailto:connect@afribit.africa">
                   Email Afribit
                   <Zap className="size-4 ml-2" aria-hidden="true" />
                 </a>
-              </Button>
+                </Button>
+              </div>
             </div>
           </div>
         </Container>

@@ -13,9 +13,9 @@ export function ContactHero() {
       </div>
 
       <Container>
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+        <div className="content-shell content-shell-wide max-w-4xl">
           {/* Badge */}
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center">
             <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-bitcoin/10 border border-bitcoin/20">
               <span className="size-2 rounded-full bg-bitcoin animate-pulse" />
               <span className="text-sm font-medium text-bitcoin">Get In Touch</span>
@@ -23,7 +23,7 @@ export function ContactHero() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-foreground mb-4 sm:mb-6 leading-[1.1] sm:leading-[1.08]">
+          <h1 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-4xl sm:leading-[1.08] lg:text-5xl xl:text-6xl">
             Connect With{' '}
             <span className="text-bitcoin relative inline-block">
               Afribit Africa
@@ -32,13 +32,13 @@ export function ContactHero() {
           </h1>
 
           {/* Sub-headline */}
-          <p className="mb-6 max-w-2xl text-center text-base leading-relaxed text-muted-foreground sm:mb-8 sm:text-lg lg:mb-10 lg:text-xl">
+          <p className="content-copy-narrow text-base leading-relaxed text-muted-foreground sm:text-lg lg:text-xl">
             Have questions about our Bitcoin initiatives, partnerships, or programs? 
             Reach out to our team—we&apos;re here to help empower African communities through financial freedom.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+          <div className="content-actions">
             <Button asChild size="lg" className="w-full sm:w-auto min-h-[44px] px-6 py-3">
               <a href="#contact-form">
                 Send a Message

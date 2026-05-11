@@ -115,13 +115,12 @@ export default function ContactChannels({
   return (
     <section className="section">
       <Container>
-        <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="mx-auto mb-12 flex max-w-2xl flex-col items-center text-center">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
+        <div className="section-intro">
+          <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
             {title}
           </h2>
-          <p className="max-w-2xl text-center text-lg text-muted-foreground">
+          <p className="content-copy-narrow text-lg text-muted-foreground">
             {description}
           </p>
         </div>
@@ -173,7 +172,6 @@ export default function ContactChannels({
               </div>
             </CardSpotlight>
           ))}
-        </div>
         </div>
       </Container>
     </section>

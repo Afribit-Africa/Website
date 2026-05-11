@@ -10,9 +10,7 @@ import { CardSpotlight } from '@/components/ui/card-spotlight'
 import { generateMetadata } from '@/lib/metadata'
 import { donationFaqs, donationTiers } from '@/lib/donation-tiers'
 import { getStoreStats } from '@/lib/btcpay'
-
-const CROWDFUND_URL =
-  'https://pay.afribit.africa/apps/2xYtsTMHMqYv6qozQ8j9zjP66FiR/crowdfund'
+import { CROWDFUND_URL } from '@/lib/donation-policy'
 
 export const metadata: Metadata = generateMetadata({
   title: 'Donate',

@@ -44,12 +44,12 @@ export function Testimonials() {
   const t = TESTIMONIALS[index]
 
   return (
-    <section className="py-20 bg-bg-surface/50">
+    <section className="section bg-bg-surface/50">
       <Container>
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="mb-8">
-            <Quote className="size-10 text-bitcoin/30 mx-auto mb-6" />
-            <blockquote className="font-display text-xl sm:text-2xl font-medium text-foreground leading-relaxed mb-6">
+        <div className="content-shell text-center">
+          <div className="flex flex-col items-center gap-6">
+            <Quote className="mx-auto size-10 text-bitcoin/30" />
+            <blockquote className="font-display text-xl font-medium leading-relaxed text-foreground sm:text-2xl">
               &ldquo;{t.quote}&rdquo;
             </blockquote>
             <div>

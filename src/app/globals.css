@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --maintenance-banner-height: 0px;
   --bitcoin: #f7931a;
   --bitcoin-dark: #d97908;
   --bitcoin-light: #ffb45c;
@@ -123,6 +124,7 @@ html {
 }
 
 body {
+  padding-top: var(--maintenance-banner-height);
   min-height: 100vh;
   max-width: 100vw;
   overflow-x: hidden;
@@ -139,6 +141,12 @@ body {
 
 main {
   min-height: 70vh;
+}
+
+@media (max-width: 1023px) {
+  html {
+    scroll-padding-top: calc(5.5rem + var(--maintenance-banner-height));
+  }
 }
 
 a {
@@ -279,13 +287,57 @@ section {
 }
 
 .section-intro {
+  width: 100%;
   max-width: 42rem;
   margin-inline: auto;
   margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
   text-align: center;
+}
+
+.section-intro > * {
+  margin: 0;
+}
+
+.content-shell {
+  width: 100%;
+  max-width: 42rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.content-shell-wide {
+  max-width: 52rem;
+}
+
+.content-copy {
+  width: 100%;
+  max-width: 42rem;
+}
+
+.content-copy-narrow {
+  width: 100%;
+  max-width: 36rem;
+}
+
+.content-actions {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.content-actions > * {
+  flex: 0 0 auto;
 }
 
 .interactive-card {
@@ -477,6 +529,14 @@ section {
 
   .section-hero {
     padding-block: 8rem 6rem;
+  }
+
+  .content-shell {
+    gap: 1.75rem;
+  }
+
+  .content-actions {
+    gap: 1.25rem;
   }
 }
 

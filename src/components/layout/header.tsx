@@ -122,11 +122,12 @@ export function Header() {
     <>
       <header
         className={cn(
-          'fixed top-0 inset-x-0 z-50 transition-all duration-300',
+          'fixed inset-x-0 z-50 transition-all duration-300',
           scrolled
             ? 'bg-bg-base/90 backdrop-blur-xl border-b border-white/8 shadow-[0_1px_0_0_rgba(255,255,255,0.04)]'
             : 'bg-transparent'
         )}
+        style={{ top: 'var(--maintenance-banner-height, 0px)' }}
       >
         <Container>
           <div className="flex h-16 items-center justify-between gap-6">

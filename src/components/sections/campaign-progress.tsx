@@ -49,7 +49,7 @@ export async function CampaignProgress() {
   }).format(GOAL)
 
   return (
-    <section className="py-20">
+    <section className="section">
       <Container>
         <div className="max-w-3xl mx-auto">
           {/* CometCard #1 — Campaign Progress */}

@@ -15,7 +15,7 @@ function PartnerCard({ name, logo }: { name: string; logo: string }) {
   return (
     <figure
       className={cn(
-        'relative flex h-32 w-44 cursor-pointer items-center justify-center rounded-2xl border p-6',
+        'relative flex h-24 w-[min(11rem,40vw)] cursor-pointer items-center justify-center rounded-2xl border p-4 sm:h-28 sm:w-40 sm:p-5 xl:h-32 xl:w-44 xl:p-6',
         'border-white/[.08] bg-white/[.04] hover:bg-white/[.09]',
         'transition-all duration-300 shrink-0',
       )}
@@ -25,7 +25,7 @@ function PartnerCard({ name, logo }: { name: string; logo: string }) {
         alt={name}
         width={130}
         height={52}
-        className="max-h-11 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+        className="max-h-9 w-auto object-contain grayscale opacity-60 transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:max-h-10 xl:max-h-11"
       />
     </figure>
   )
@@ -39,9 +39,9 @@ const col4 = [...PARTNERS, ...PARTNERS].slice(3, 8)
 
 export function Partners() {
   return (
-    <section className="py-20 border-y border-white/8 overflow-hidden">
+    <section className="section overflow-hidden border-y border-white/8">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 gap-12 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-20 xl:items-center">
 
           {/* Left — CTA text */}
           <div className="flex flex-col gap-6">
@@ -80,7 +80,18 @@ export function Partners() {
           </div>
 
           {/* Right — 3D marquee */}
-          <div className="relative h-[480px] overflow-hidden [perspective:600px]">
+          <div className="xl:hidden">
+            <div className="space-y-4">
+              <Marquee pauseOnHover repeat={5} className="[--duration:26s] [--gap:0.9rem]">
+                {PARTNERS.map((partner) => <PartnerCard key={`${partner.name}-mobile-a`} {...partner} />)}
+              </Marquee>
+              <Marquee reverse pauseOnHover repeat={5} className="[--duration:30s] [--gap:0.9rem]">
+                {PARTNERS.map((partner) => <PartnerCard key={`${partner.name}-mobile-b`} {...partner} />)}
+              </Marquee>
+            </div>
+          </div>
+
+          <div className="relative hidden h-[480px] overflow-hidden [perspective:600px] xl:block">
             <div
               className="flex flex-row items-center gap-4 h-full"
               style={{

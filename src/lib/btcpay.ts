@@ -1,5 +1,6 @@
 import { OpenAPI, InvoicesService } from 'btcpay-greenfield-node-client'
 import crypto from 'crypto'
+import { normalizeDonationAmount, type DonationCurrency } from '@/lib/donation-policy'
 
 // BTCPay Server configuration
 const BTCPAY_HOST = process.env.BTCPAY_HOST || 'https://btcpay.afribit.africa'
@@ -17,7 +18,7 @@ if (BTCPAY_API_KEY) {
 
 export interface CreateInvoiceParams {
   amount: number
-  currency?: string
+  currency?: DonationCurrency
   buyerEmail?: string
   buyerName?: string
   orderId?: string
@@ -53,11 +54,14 @@ export async function createInvoice(params: CreateInvoiceParams): Promise<Invoic
   }
 
   try {
+    const currency = params.currency || 'USD'
+    const amount = normalizeDonationAmount(params.amount, currency)
+
     const invoice = await InvoicesService.invoicesCreateInvoice({
       storeId: BTCPAY_STORE_ID,
       requestBody: {
-        amount: params.amount.toString(),
-        currency: params.currency || 'USD',
+        amount: amount.toString(),
+        currency,
         metadata: {
           buyerEmail: params.buyerEmail,
           buyerName: params.buyerName,
@@ -67,7 +71,6 @@ export async function createInvoice(params: CreateInvoiceParams): Promise<Invoic
         checkout: {
           redirectURL: params.redirectUrl || `${process.env.NEXT_PUBLIC_SITE_URL}/donate/success`,
           redirectAutomatically: false,
-          paymentMethods: ['BTC'],
         },
       },
     })

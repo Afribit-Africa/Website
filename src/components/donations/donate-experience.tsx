@@ -13,6 +13,16 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import type { DonationTier } from '@/lib/donation-tiers'
+import {
+  CROWDFUND_URL,
+  DONATION_INPUT_PLACEHOLDERS,
+  DONATION_INPUT_STEPS,
+  getDonationAmountHelperText,
+  getDonationMinimumMessage,
+  isBelowDonationMinimum,
+  normalizeDonationAmount,
+  type DonationCurrency,
+} from '@/lib/donation-policy'
 
 interface DonateExperienceProps {
   tiers: DonationTier[]
@@ -20,8 +30,11 @@ interface DonateExperienceProps {
 
 export function DonateExperience({ tiers }: DonateExperienceProps) {
   const [selectedTierId, setSelectedTierId] = useState(tiers[0]?.id ?? '')
-  const [amount, setAmount] = useState<number | ''>(tiers[0]?.defaultAmount ?? '')
-  const [currency, setCurrency] = useState('USD')
+  const [currency, setCurrency] = useState<DonationCurrency>('USD')
+  const [amountByCurrency, setAmountByCurrency] = useState<Record<DonationCurrency, number | ''>>({
+    USD: tiers[0]?.defaultAmount ?? '',
+    BTC: '',
+  })
   const [donorName, setDonorName] = useState('')
   const [donorEmail, setDonorEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -30,6 +43,7 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
   const [isPending, startTransition] = useTransition()
 
   const selectedTier = tiers.find((tier) => tier.id === selectedTierId) ?? tiers[0]
+  const amount = amountByCurrency[currency]
 
   const fieldClassName =
     'w-full rounded-2xl border border-white/10 bg-black/25 px-4 text-foreground outline-none transition-all duration-300 placeholder:text-white/28 hover:border-white/20 focus:border-bitcoin/70 focus:bg-black/35'
@@ -39,8 +53,32 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
 
   const selectTier = (tier: DonationTier) => {
     setSelectedTierId(tier.id)
-    setAmount(tier.defaultAmount ?? '')
+    setAmountByCurrency((currentAmounts) => ({
+      ...currentAmounts,
+      USD: tier.defaultAmount ?? '',
+    }))
     setError(null)
+  }
+
+  const handleCurrencyChange = (nextCurrency: string) => {
+    const donationCurrency = nextCurrency as DonationCurrency
+
+    setCurrency(donationCurrency)
+    setError(null)
+
+    if (donationCurrency === 'USD' && amountByCurrency.USD === '' && selectedTier.defaultAmount) {
+      setAmountByCurrency((currentAmounts) => ({
+        ...currentAmounts,
+        USD: selectedTier.defaultAmount ?? currentAmounts.USD,
+      }))
+    }
+  }
+
+  const updateAmount = (nextAmount: number | '') => {
+    setAmountByCurrency((currentAmounts) => ({
+      ...currentAmounts,
+      [currency]: nextAmount,
+    }))
   }
 
   const handleSubmit = () => {
@@ -49,6 +87,13 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
 
       if (amount === '' || Number(amount) <= 0) {
         setError('Enter a donation amount before continuing.')
+        return
+      }
+
+      const normalizedAmount = normalizeDonationAmount(Number(amount), currency)
+
+      if (isBelowDonationMinimum(normalizedAmount, currency)) {
+        setError(`${getDonationMinimumMessage(currency)} You can also donate through the Afribit crowdfund.`)
         return
       }
 
@@ -63,7 +108,7 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            amount: Number(amount),
+            amount: normalizedAmount,
             currency,
             donorName: isAnonymous ? undefined : donorName || undefined,
             donorEmail: isAnonymous ? undefined : donorEmail || undefined,
@@ -76,7 +121,8 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
         const payload = await response.json()
 
         if (!response.ok || !payload?.success || !payload?.data?.checkoutLink) {
-          setError(payload?.error || payload?.message || 'Unable to start the donation checkout.')
+          const errorMessage = payload?.message || payload?.error || 'Unable to start the donation checkout.'
+          setError(payload?.crowdfundUrl ? `${errorMessage} Use the Afribit crowdfund if you prefer.` : errorMessage)
           return
         }
 
@@ -171,13 +217,14 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
                 <div className="grid grid-cols-[1fr_auto] gap-3">
                   <input
                     type="number"
-                    min="1"
+                    min={currency === 'BTC' ? '0.00000001' : '1'}
+                    step={DONATION_INPUT_STEPS[currency]}
                     value={amount}
-                    onChange={(event) => setAmount(event.target.value === '' ? '' : Number(event.target.value))}
+                    onChange={(event) => updateAmount(event.target.value === '' ? '' : Number(event.target.value))}
                     className={`${fieldClassName} h-12`}
-                    placeholder="Enter amount"
+                    placeholder={DONATION_INPUT_PLACEHOLDERS[currency]}
                   />
-                  <Select value={currency} onValueChange={setCurrency}>
+                  <Select value={currency} onValueChange={handleCurrencyChange}>
                     <SelectTrigger
                       aria-label="Donation currency"
                       className="h-12 min-w-[108px] rounded-2xl border-bitcoin/55 bg-black/35 px-4 text-base font-semibold text-foreground shadow-none hover:border-bitcoin focus-visible:ring-bitcoin/30"
@@ -200,6 +247,9 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
                     </SelectContent>
                   </Select>
                 </div>
+                <span className="text-sm leading-6 text-muted-foreground">
+                  {getDonationAmountHelperText(currency)}
+                </span>
               </label>
             </div>
 
@@ -292,6 +342,11 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
             {error ? (
               <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
                 {error}
+                <div className="mt-2">
+                  <a href={CROWDFUND_URL} target="_blank" rel="noreferrer" className="font-semibold text-bitcoin hover:underline">
+                    Open the Afribit crowdfund instead
+                  </a>
+                </div>
               </div>
             ) : null}
 
