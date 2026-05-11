@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma';
 
 // Validation schema for donation request
 const donationSchema = z.object({
-  amount: z.number().positive().min(1, 'Minimum donation is $1'),
+  amount: z.number().positive().min(5, 'Minimum donation is $5'),
   currency: z.enum(['USD', 'BTC']).default('USD'),
   donorName: z.string().min(2, 'Name must be at least 2 characters').optional(),
   donorEmail: z.string().email('Invalid email address').optional(),
@@ -123,11 +123,30 @@ export async function POST(request: NextRequest) {
     }
 
     // Handle other errors
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+    const isBelowMinimum =
+      errorMessage.toLowerCase().includes('below accepted value') ||
+      errorMessage.toLowerCase().includes('below minimum')
+
+    if (isBelowMinimum) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Amount below minimum',
+          message:
+            'Your donation amount is below the minimum accepted by our payment processor. Please use the crowdfund link to donate any amount.',
+          crowdfundUrl:
+            'https://pay.afribit.africa/apps/2xYtsTMHMqYv6qozQ8j9zjP66FiR/crowdfund',
+        },
+        { status: 422 }
+      )
+    }
+
     return NextResponse.json(
       {
         success: false,
         error: 'Failed to create donation invoice',
-        message: error instanceof Error ? error.message : 'Unknown error',
+        message: errorMessage,
       },
       { status: 500 }
     );

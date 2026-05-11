@@ -1,0 +1,394 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=e2] [cursor=pointer]
+      - link "Accessibility help" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-KE
+      - link "Accessibility feedback" [ref=e4] [cursor=pointer]
+  - generic [ref=e9]:
+    - search [ref=e10]:
+      - generic [ref=e12]:
+        - link "Go to Google Home" [ref=e14] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQPAgJ
+          - img [ref=e15]
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - combobox "Search" [ref=e26]: Kenya VASP bill 2026 virtual asset service provider Kenya VASP bill 2026 virtual asset service provider
+            - generic [ref=e27]:
+              - button "Clear" [ref=e29] [cursor=pointer]:
+                - img [ref=e31]
+              - generic [ref=e34]:
+                - button "Search by voice" [ref=e35] [cursor=pointer]:
+                  - img [ref=e36]
+                - button "Search by image" [ref=e38] [cursor=pointer]:
+                  - img [ref=e39]
+          - button "Search" [ref=e41] [cursor=pointer]:
+            - img [ref=e44]
+    - generic [ref=e46]:
+      - button "Settings" [ref=e48] [cursor=pointer]:
+        - img [ref=e51]
+      - generic [ref=e54]:
+        - button "Google apps" [ref=e56] [cursor=pointer]:
+          - img [ref=e57]
+        - link "Sign in" [ref=e61] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/search%3Fq%3DKenya%2520VASP%2520bill%25202026%2520virtual%2520asset%2520service%2520provider%26sei%3DlRICaqesN4uUseMPu8njuA8&ec=futura_srp_og_si_72236_p
+  - generic [ref=e63]:
+    - navigation [ref=e69]:
+      - generic [ref=e75]:
+        - list [ref=e76]:
+          - listitem [ref=e77]:
+            - link "AI Mode" [ref=e80] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sca_esv=43a6c5a008a39361&udm=50&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKp0UJuhqwKhR0QUhF54-6jIf5FTMC_zgepHBqt1YxkrDfvl9OYBKmpqCV117-r-vaKlf5KmEi5D8HzJ4cwoqDcfw_6IbrVWQpk8YbcMUX6FGfSARWmUXNfTnjaZhG7_PoDQFyV80FtJbD4kvW527aFnfLpQhN47mLedMQfuWUZrmspeXb1USpmnkna-uaZRLEImsUKCg&aep=1&ntc=1&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ2J8OegQIERAD
+              - generic [ref=e83]: AI Mode
+          - listitem [ref=e84]:
+            - link "All" [disabled] [ref=e85]:
+              - generic [ref=e87]: All
+          - listitem [ref=e88]:
+            - link "News" [ref=e89] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&q=Kenya+VASP+bill+2026+virtual+asset+service+provider&tbm=nws&source=lnms&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKp0UJuhqwKhR0QUhF54-6jIf5FTMC_zgepHBqt1YxkrDfvl9OYBKmpqCV117-r-vaKlf5KmEi5D8HzJ4cwoqDcfw_6IbrVWQpk8YbcMUX6FGfSARWmUXNfTnjaZhG7_PoDQFyV80FtJbD4kvW527aFnfLpQhN47mLedMQfuWUZrmspeXb1USpmnkna-uaZRLEImsUKCg&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ0pQJegQIFxAB
+              - generic [ref=e91]: News
+          - listitem [ref=e92]:
+            - link "Images" [ref=e93] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKp0UJuhqwKhR0QUhF54-6jIf5FTMC_zgepHBqt1YxkrDfvl9OYBKmpqCV117-r-vaKlf5KmEi5D8HzJ4cwoqDcfw_6IbrVWQpk8YbcMUX6FGfSARWmUXNfTnjaZhG7_PoDQFyV80FtJbD4kvW527aFnfLpQhN47mLedMQfuWUZrmspeXb1USpmnkna-uaZRLEImsUKCg&q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQtKgLegQIFhAB
+              - generic [ref=e95]: Images
+          - listitem [ref=e96]:
+            - link "Forums" [ref=e97] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=18&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKp0UJuhqwKhR0QUhF54-6jIf5FTMC_zgepHBqt1YxkrDfvl9OYBKmpqCV117-r-vaKlf5KmEi5D8HzJ4cwoqDcfw_6IbrVWQpk8YbcMUX6FGfSARWmUXNfTnjaZhG7_PoDQFyV80FtJbD4kvW527aFnfLpQhN47mLedMQfuWUZrmspeXb1USpmnkna-uaZRLEImsUKCg&q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQs6gLegQIFRAB
+              - generic [ref=e99]: Forums
+          - listitem [ref=e100]:
+            - link "Videos" [ref=e101] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=7&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKp0UJuhqwKhR0QUhF54-6jIf5FTMC_zgepHBqt1YxkrDfvl9OYBKmpqCV117-r-vaKlf5KmEi5D8HzJ4cwoqDcfw_6IbrVWQpk8YbcMUX6FGfSARWmUXNfTnjaZhG7_PoDQFyV80FtJbD4kvW527aFnfLpQhN47mLedMQfuWUZrmspeXb1USpmnkna-uaZRLEImsUKCg&q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQtKgLegQIFBAB
+              - generic [ref=e103]: Videos
+          - listitem [ref=e104]:
+            - link "Short videos" [ref=e105] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=39&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKp0UJuhqwKhR0QUhF54-6jIf5FTMC_zgepHBqt1YxkrDfvl9OYBKmpqCV117-r-vaKlf5KmEi5D8HzJ4cwoqDcfw_6IbrVWQpk8YbcMUX6FGfSARWmUXNfTnjaZhG7_PoDQFyV80FtJbD4kvW527aFnfLpQhN47mLedMQfuWUZrmspeXb1USpmnkna-uaZRLEImsUKCg&q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQs6gLegQIExAB
+              - generic [ref=e107]: Short videos
+          - listitem [ref=e108]:
+            - button "More filters" [ref=e109] [cursor=pointer]:
+              - generic "More filters" [ref=e110]:
+                - generic [ref=e111]:
+                  - generic [ref=e112]: More
+                  - img [ref=e114]
+        - button "Tools" [ref=e117] [cursor=pointer]:
+          - generic [ref=e119]:
+            - generic [ref=e120]: Tools
+            - img [ref=e122]
+    - heading "Search Results" [level=1] [ref=e124]
+    - generic [ref=e129]:
+      - generic [ref=e148]:
+        - heading "Thinking" [level=2] [ref=e152]:
+          - generic [ref=e153]: Thinking
+        - progressbar [ref=e154]
+      - main [ref=e156]:
+        - generic [ref=e160]:
+          - generic [ref=e163]:
+            - heading "Web results" [level=2] [ref=e164]
+            - generic [ref=e165]:
+              - generic [ref=e168]:
+                - link "Draft Virtual Asset Service Providers Regulations, 2026 The National Treasury https://www.treasury.go.ke › sites › files › Notices" [ref=e170] [cursor=pointer]:
+                  - /url: https://www.treasury.go.ke/sites/default/files/Notices/Draft%20Virtual%20Asset%20Service%20Providers%20Regulations%2C%202026-%20Clean%20copy.pdf
+                  - heading "Draft Virtual Asset Service Providers Regulations, 2026" [level=3] [ref=e171]
+                  - generic [ref=e176]:
+                    - generic [ref=e178]: The National Treasury
+                    - generic [ref=e180]: https://www.treasury.go.ke › sites › files › Notices
+                - generic [ref=e181]:
+                  - generic:
+                    - generic: PDF
+                - button "About this result" [ref=e182] [cursor=pointer]:
+                  - img [ref=e185]
+              - generic [ref=e187]:
+                - generic [ref=e188]:
+                  - generic [ref=e189]:
+                    - text: (1) These Regulations shall apply to persons offering
+                    - emphasis [ref=e190]: virtual asset services
+                    - text: in or from
+                    - emphasis [ref=e191]: Kenya
+                    - text: . ... ▫ Overview of the proposed
+                    - emphasis [ref=e192]: VASP
+                    - text: business. ▫ Vision and ...
+                  - link "Read more" [ref=e193] [cursor=pointer]:
+                    - /url: https://www.treasury.go.ke/sites/default/files/Notices/Draft%20Virtual%20Asset%20Service%20Providers%20Regulations%2C%202026-%20Clean%20copy.pdf#:~:text=(1)%20These%20Regulations%20shall%20apply,services%20in%20or%20from%20Kenya.&text=%E2%96%AA%20Overview%20of%20the%20proposed,%E2%96%AA%20Vision%20and%20mission%20statement
+                - generic [ref=e194]: 150 pages
+          - generic [ref=e198]:
+            - generic [ref=e201]:
+              - link "National Treasury Unveils Draft VASP Regulations 2026 www.rba.go.ke https://www.rba.go.ke › Latest News" [ref=e203] [cursor=pointer]:
+                - /url: https://www.rba.go.ke/kenya-moves-to-regulate-crypto-national-treasury-unveils-draft-vasp-regulations-2026/
+                - heading "National Treasury Unveils Draft VASP Regulations 2026" [level=3] [ref=e204]
+                - generic [ref=e209]:
+                  - generic [ref=e211]: www.rba.go.ke
+                  - generic [ref=e213]: https://www.rba.go.ke › Latest News
+              - button "About this result" [ref=e214] [cursor=pointer]:
+                - img [ref=e217]
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - text: The new regulations are designed to operationalize the
+                - emphasis [ref=e222]: Virtual Asset Service Providers
+                - text: Act, 2025. The core objective is to create a robust legal framework for:.
+              - link "Read more" [ref=e223] [cursor=pointer]:
+                - /url: https://www.rba.go.ke/kenya-moves-to-regulate-crypto-national-treasury-unveils-draft-vasp-regulations-2026/#:~:text=The%20new%20regulations%20are%20designed,a%20robust%20legal%20framework%20for%3A
+            - generic [ref=e225]:
+              - text: "Missing: bill ‎| Show results with:"
+              - link "bill" [ref=e226] [cursor=pointer]:
+                - /url: /search?sca_esv=43a6c5a008a39361&q=Kenya+VASP+%22bill%22+2026+virtual+asset+service+provider&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ5t4CegQIKBAB
+          - generic [ref=e230]:
+            - generic [ref=e233]:
+              - link "Invitation for Comments from the Public on the Draft Virtual ... Central Bank of Kenya https://www.centralbank.go.ke › 2026/03/18 › public-n..." [ref=e235] [cursor=pointer]:
+                - /url: https://www.centralbank.go.ke/2026/03/18/public-notice-invitation-for-comments-from-the-public-on-the-draft-virtual-asset-service-providers-regulations-2026/
+                - heading "Invitation for Comments from the Public on the Draft Virtual ..." [level=3] [ref=e236]
+                - generic [ref=e241]:
+                  - generic [ref=e243]: Central Bank of Kenya
+                  - generic [ref=e245]: https://www.centralbank.go.ke › 2026/03/18 › public-n...
+              - button "About this result" [ref=e246] [cursor=pointer]:
+                - img [ref=e249]
+            - generic [ref=e252]:
+              - generic [ref=e253]: 18 Mar 2026 —
+              - generic [ref=e254]:
+                - text: Public Notice – Invitation for Comments from the Public on the
+                - emphasis [ref=e255]: Draft Virtual Asset Service Providers Regulations, 2026
+                - text: . General. The National ...
+              - link "Read more" [ref=e256] [cursor=pointer]:
+                - /url: https://www.centralbank.go.ke/2026/03/18/public-notice-invitation-for-comments-from-the-public-on-the-draft-virtual-asset-service-providers-regulations-2026/#:~:text=Public%20Notice%20%E2%80%93%20Invitation%20for,The%20National
+          - generic [ref=e260]:
+            - generic [ref=e263]:
+              - link "Virtual Asset Service Providers Regulations, 2026 The National Treasury https://www.treasury.go.ke › node" [ref=e265] [cursor=pointer]:
+                - /url: https://www.treasury.go.ke/node/1417
+                - heading "Virtual Asset Service Providers Regulations, 2026" [level=3] [ref=e266]
+                - generic [ref=e271]:
+                  - generic [ref=e273]: The National Treasury
+                  - generic [ref=e275]: https://www.treasury.go.ke › node
+              - button "About this result" [ref=e276] [cursor=pointer]:
+                - img [ref=e279]
+            - generic [ref=e282]:
+              - generic [ref=e283]: 18 Mar 2026 —
+              - generic [ref=e284]:
+                - emphasis [ref=e285]: Public Notice- Virtual Asset Service Providers Regulations, 2026
+                - text: ; Public Notice (104.04 KB) ; Regulatory Impact Statement on VASP Regulations ( ...
+              - link "Read more" [ref=e286] [cursor=pointer]:
+                - /url: https://www.treasury.go.ke/node/1417#:~:text=Public%20Notice%2D%20Virtual%20Asset%20Service,Providers%20Regulations%2C%202026&text=Public%20Notice%20(104.04%20KB)&text=Regulatory%20Impact%20Statement%20on%20VASP,Regulations%20(268.95%20KB)
+          - generic [ref=e290]:
+            - generic [ref=e293]:
+              - 'link "Kenya: A step forward in the regulation of virtual assets as ... Bowmans https://bowmanslaw.com › insights › kenya-a-step-forwa..." [ref=e295] [cursor=pointer]':
+                - /url: https://bowmanslaw.com/insights/kenya-a-step-forward-in-the-regulation-of-virtual-assets-as-the-national-treasury-issues-the-draft-virtual-asset-service-providers-regulations-2026/
+                - 'heading "Kenya: A step forward in the regulation of virtual assets as ..." [level=3] [ref=e296]'
+                - generic [ref=e298]:
+                  - img [ref=e302]
+                  - generic [ref=e304]:
+                    - generic [ref=e306]: Bowmans
+                    - generic [ref=e308]: https://bowmanslaw.com › insights › kenya-a-step-forwa...
+              - button "About this result" [ref=e309] [cursor=pointer]:
+                - img [ref=e312]
+            - generic [ref=e315]:
+              - generic [ref=e316]:
+                - text: The National Treasury has released the
+                - emphasis [ref=e317]: draft Virtual Asset Service Providers Regulations, 2026
+                - text: ", marking a major step toward a comprehensive licensing and ..."
+              - link "Read more" [ref=e318] [cursor=pointer]:
+                - /url: https://bowmanslaw.com/insights/kenya-a-step-forward-in-the-regulation-of-virtual-assets-as-the-national-treasury-issues-the-draft-virtual-asset-service-providers-regulations-2026/#:~:text=The%20National%20Treasury%20has%20released,under%20the%20VASP%20Act%2C%202025.
+            - generic [ref=e320]:
+              - text: "Missing: bill ‎| Show results with:"
+              - link "bill" [ref=e321] [cursor=pointer]:
+                - /url: /search?sca_esv=43a6c5a008a39361&q=Kenya+VASP+%22bill%22+2026+virtual+asset+service+provider&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ5t4CegQIJhAB
+          - generic [ref=e325]:
+            - generic [ref=e328]:
+              - link "VIRTUAL ASSETS Kenya moves closer to regulating ... X · KeTreasury 180+ likes · 1 month ago" [ref=e330] [cursor=pointer]:
+                - /url: https://x.com/KeTreasury/status/2042901391119679562
+                - heading "VIRTUAL ASSETS Kenya moves closer to regulating ..." [level=3] [ref=e331]
+                - generic [ref=e336]:
+                  - generic [ref=e338]: X · KeTreasury
+                  - generic [ref=e340]: 180+ likes · 1 month ago
+              - button "About this result" [ref=e341] [cursor=pointer]:
+                - img [ref=e344]
+            - generic [ref=e347]:
+              - generic [ref=e348]:
+                - emphasis [ref=e349]: Kenya moves closer to regulating virtual assets
+                - text: as public participation on the Draft Virtual Asset Service Providers (VASP) Regulations, 2026 ...
+              - link "Read more" [ref=e350] [cursor=pointer]:
+                - /url: https://x.com/KeTreasury/status/2042901391119679562#:~:text=Kenya%20moves%20closer%20to%20regulating,Providers%20(VASP)%20Regulations%2C%202026%20concludes.
+            - generic [ref=e352]:
+              - text: "Missing: bill ‎| Show results with:"
+              - link "bill" [ref=e353] [cursor=pointer]:
+                - /url: /search?sca_esv=43a6c5a008a39361&q=Kenya+VASP+%22bill%22+2026+virtual+asset+service+provider&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ5t4CegQIQhAB
+          - generic [ref=e357]:
+            - generic [ref=e360]:
+              - link "Treasury launches public participation on virtual asset ... Kenya News Agency https://www.kenyanews.go.ke › Counties" [ref=e362] [cursor=pointer]:
+                - /url: https://www.kenyanews.go.ke/treasury-launches-public-participation-on-virtual-asset-service-providers-regulations/
+                - heading "Treasury launches public participation on virtual asset ..." [level=3] [ref=e363]
+                - generic [ref=e368]:
+                  - generic [ref=e370]: Kenya News Agency
+                  - generic [ref=e372]: https://www.kenyanews.go.ke › Counties
+              - button "About this result" [ref=e373] [cursor=pointer]:
+                - img [ref=e376]
+            - generic [ref=e379]:
+              - generic [ref=e380]: 1 Apr 2026 —
+              - generic [ref=e381]:
+                - text: The National Treasury has launched nationwide public participation on the draft
+                - emphasis [ref=e382]: Virtual Asset Service Providers
+                - text: (VASPs) Regulations,
+                - emphasis [ref=e383]: "2026"
+                - text: ", ..."
+              - link "Read more" [ref=e384] [cursor=pointer]:
+                - /url: https://www.kenyanews.go.ke/treasury-launches-public-participation-on-virtual-asset-service-providers-regulations/#:~:text=The%20National%20Treasury%20has%20launched,Service%20Providers%20(VASPs)%20Regulations%2C%202026%2C
+          - generic [ref=e388]:
+            - generic [ref=e391]:
+              - link "Regulatory Impact Statement on VASP Regulations - 2026 The National Treasury https://www.treasury.go.ke › sites › default › files" [ref=e393] [cursor=pointer]:
+                - /url: https://www.treasury.go.ke/sites/default/files/Latest%20updates/Regulatory%20Impact%20Statement%20on%20VASP%20Regulations%20-%202026%20-%20PP.pdf
+                - heading "Regulatory Impact Statement on VASP Regulations - 2026" [level=3] [ref=e394]
+                - generic [ref=e399]:
+                  - generic [ref=e401]: The National Treasury
+                  - generic [ref=e403]: https://www.treasury.go.ke › sites › default › files
+              - generic [ref=e404]:
+                - generic:
+                  - generic: PDF
+              - button "About this result" [ref=e405] [cursor=pointer]:
+                - img [ref=e408]
+            - generic [ref=e410]:
+              - generic [ref=e411]:
+                - generic [ref=e412]:
+                  - text: The primary objective of the
+                  - emphasis [ref=e413]: Virtual Asset Service Providers
+                  - text: Regulations,
+                  - emphasis [ref=e414]: "2026"
+                  - text: ", is to operationalize the"
+                  - emphasis [ref=e415]: Virtual Asset Service Providers
+                  - text: Act, 2025, to create a ...
+                - link "Read more" [ref=e416] [cursor=pointer]:
+                  - /url: https://www.treasury.go.ke/sites/default/files/Latest%20updates/Regulatory%20Impact%20Statement%20on%20VASP%20Regulations%20-%202026%20-%20PP.pdf#:~:text=The%20primary%20objective%20of%20the,create%20a%20safe%2C%20transparent%2C%20and
+              - generic [ref=e417]: 13 pages
+          - generic [ref=e421]:
+            - generic [ref=e424]:
+              - link "Public participation on the Draft Virtual Asset Service ... Facebook · The National Treasury and Economic Planning 10+ reactions · 1 month ago" [ref=e426] [cursor=pointer]:
+                - /url: https://www.facebook.com/thenationaltreasuryandeconomicplanning/posts/public-participation-on-the-draft-virtual-asset-service-providers-regulations-20/1259517076311617/
+                - heading "Public participation on the Draft Virtual Asset Service ..." [level=3] [ref=e427]
+                - generic [ref=e432]:
+                  - generic [ref=e434]: Facebook · The National Treasury and Economic Planning
+                  - generic [ref=e436]: 10+ reactions · 1 month ago
+              - button "About this result" [ref=e437] [cursor=pointer]:
+                - img [ref=e440]
+            - generic [ref=e443]:
+              - generic [ref=e444]:
+                - text: Public participation on the
+                - emphasis [ref=e445]: Draft
+                - text: Virtual Asset Service Providers Regulations, 2026 continued today in Kisumu County, bringing together ...
+              - link "Read more" [ref=e446] [cursor=pointer]:
+                - /url: https://www.facebook.com/thenationaltreasuryandeconomicplanning/posts/public-participation-on-the-draft-virtual-asset-service-providers-regulations-20/1259517076311617/#:~:text=Public%20participation%20on%20the%20Draft,Kisumu%2C%20Kericho%2C%20Siaya%20and%20Nandi.
+          - generic [ref=e450]:
+            - generic [ref=e453]:
+              - link "On Kenya's draft Virtual Asset Service Providers Regulations Njogu and Associates Advocates https://njoguassociates.com › on-kenyas-draft-virtual-as..." [ref=e455] [cursor=pointer]:
+                - /url: https://njoguassociates.com/on-kenyas-draft-virtual-asset-service-providers-regulations-calibration-within-an-existing-financial-system/
+                - heading "On Kenya's draft Virtual Asset Service Providers Regulations" [level=3] [ref=e456]
+                - generic [ref=e461]:
+                  - generic [ref=e463]: Njogu and Associates Advocates
+                  - generic [ref=e465]: https://njoguassociates.com › on-kenyas-draft-virtual-as...
+              - button "About this result" [ref=e466] [cursor=pointer]:
+                - img [ref=e469]
+            - generic [ref=e472]:
+              - generic [ref=e473]: 10 Apr 2026 —
+              - generic [ref=e474]:
+                - text: We have submitted our comments to Parliament on the
+                - emphasis [ref=e475]: Draft Virtual Asset Service Providers Regulations, 2026
+                - text: ", made pursuant to the Virtual ..."
+              - link "Read more" [ref=e476] [cursor=pointer]:
+                - /url: https://njoguassociates.com/on-kenyas-draft-virtual-asset-service-providers-regulations-calibration-within-an-existing-financial-system/#:~:text=We%20have%20submitted%20our%20comments,Asset%20Service%20Providers%20Act%202025.
+        - generic [ref=e478]:
+          - generic [ref=e483]:
+            - heading "People also search for" [level=2] [ref=e485]
+            - generic [ref=e487]:
+              - generic [ref=e488]:
+                - link "Kenya vasp bill 2026 virtual asset service provider pdf download" [ref=e492] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=Kenya+vasp+bill+2026+virtual+asset+service+provider+pdf+download&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ1QJ6BAgrEAE
+                  - generic [ref=e493]:
+                    - generic [ref=e498]: Kenya vasp bill 2026 virtual asset service provider pdf download
+                    - img [ref=e502]
+                - link "Kenya vasp bill 2026 virtual asset service provider pdf" [ref=e507] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=Kenya+vasp+bill+2026+virtual+asset+service+provider+pdf&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ1QJ6BAgyEAE
+                  - generic [ref=e508]:
+                    - generic [ref=e513]: Kenya vasp bill 2026 virtual asset service provider pdf
+                    - img [ref=e517]
+                - link "Kenya vasp bill 2026 virtual asset service provider download" [ref=e522] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=Kenya+vasp+bill+2026+virtual+asset+service+provider+download&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ1QJ6BAgxEAE
+                  - generic [ref=e523]:
+                    - generic [ref=e528]: Kenya vasp bill 2026 virtual asset service provider download
+                    - img [ref=e532]
+                - link "Draft Virtual Asset Service Providers REGULATIONS, 2026" [ref=e537] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=Draft+Virtual+Asset+Service+Providers+REGULATIONS,+2026&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ1QJ6BAgwEAE
+                  - generic [ref=e538]:
+                    - generic [ref=e543]: Draft Virtual Asset Service Providers REGULATIONS, 2026
+                    - img [ref=e547]
+              - generic [ref=e549]:
+                - link "VASP Act Kenya" [ref=e553] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=VASP+Act+Kenya&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ1QJ6BAgvEAE
+                  - generic [ref=e554]:
+                    - generic [ref=e559]: VASP Act Kenya
+                    - img [ref=e563]
+                - link "VASP regulations" [ref=e568] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=VASP+regulations&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ1QJ6BAgsEAE
+                  - generic [ref=e569]:
+                    - generic [ref=e574]: VASP regulations
+                    - img [ref=e578]
+                - link "Virtual assets Service Providers Act, 2025" [ref=e583] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=Virtual+assets+Service+Providers+Act,+2025&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ1QJ6BAgtEAE
+                  - generic [ref=e584]:
+                    - generic [ref=e589]: Virtual assets Service Providers Act, 2025
+                    - img [ref=e593]
+                - link "VASP license Kenya" [ref=e598] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=VASP+license+Kenya&sa=X&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ1QJ6BAguEAE
+                  - generic [ref=e599]:
+                    - generic [ref=e604]: VASP license Kenya
+                    - img [ref=e608]
+          - navigation [ref=e610]:
+            - heading "Page navigation" [level=1] [ref=e611]
+            - text: "1"
+            - link "Page 2" [ref=e614] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sca_esv=43a6c5a008a39361&ei=lhICaoi2I96MseMPxIvm2QI&start=10&sa=N&sstk=Af77f_fc3P2Nv6n7Nz0T955LsuxYON1UnIfGjTTPW73jzqcMtcyTEosQMu5Xq_AJzcuuqNOE2wEXTbnKvTgP_gw8268LN6pQ50llNA&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ8tMDegQIKRAE
+              - text: "2"
+            - link "Page 3" [ref=e616] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sca_esv=43a6c5a008a39361&ei=lhICaoi2I96MseMPxIvm2QI&start=20&sa=N&sstk=Af77f_fc3P2Nv6n7Nz0T955LsuxYON1UnIfGjTTPW73jzqcMtcyTEosQMu5Xq_AJzcuuqNOE2wEXTbnKvTgP_gw8268LN6pQ50llNA&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ8tMDegQIKRAG
+              - text: "3"
+            - link "Page 4" [ref=e618] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sca_esv=43a6c5a008a39361&ei=lhICaoi2I96MseMPxIvm2QI&start=30&sa=N&sstk=Af77f_fc3P2Nv6n7Nz0T955LsuxYON1UnIfGjTTPW73jzqcMtcyTEosQMu5Xq_AJzcuuqNOE2wEXTbnKvTgP_gw8268LN6pQ50llNA&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ8tMDegQIKRAI
+              - text: "4"
+            - link "Page 5" [ref=e620] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sca_esv=43a6c5a008a39361&ei=lhICaoi2I96MseMPxIvm2QI&start=40&sa=N&sstk=Af77f_fc3P2Nv6n7Nz0T955LsuxYON1UnIfGjTTPW73jzqcMtcyTEosQMu5Xq_AJzcuuqNOE2wEXTbnKvTgP_gw8268LN6pQ50llNA&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ8tMDegQIKRAK
+              - text: "5"
+            - link "Page 6" [ref=e622] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sca_esv=43a6c5a008a39361&ei=lhICaoi2I96MseMPxIvm2QI&start=50&sa=N&sstk=Af77f_fc3P2Nv6n7Nz0T955LsuxYON1UnIfGjTTPW73jzqcMtcyTEosQMu5Xq_AJzcuuqNOE2wEXTbnKvTgP_gw8268LN6pQ50llNA&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ8tMDegQIKRAM
+              - text: "6"
+            - link "Page 7" [ref=e624] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sca_esv=43a6c5a008a39361&ei=lhICaoi2I96MseMPxIvm2QI&start=60&sa=N&sstk=Af77f_fc3P2Nv6n7Nz0T955LsuxYON1UnIfGjTTPW73jzqcMtcyTEosQMu5Xq_AJzcuuqNOE2wEXTbnKvTgP_gw8268LN6pQ50llNA&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ8tMDegQIKRAO
+              - text: "7"
+            - link "Page 8" [ref=e626] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sca_esv=43a6c5a008a39361&ei=lhICaoi2I96MseMPxIvm2QI&start=70&sa=N&sstk=Af77f_fc3P2Nv6n7Nz0T955LsuxYON1UnIfGjTTPW73jzqcMtcyTEosQMu5Xq_AJzcuuqNOE2wEXTbnKvTgP_gw8268LN6pQ50llNA&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ8tMDegQIKRAQ
+              - text: "8"
+            - link "Page 9" [ref=e628] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sca_esv=43a6c5a008a39361&ei=lhICaoi2I96MseMPxIvm2QI&start=80&sa=N&sstk=Af77f_fc3P2Nv6n7Nz0T955LsuxYON1UnIfGjTTPW73jzqcMtcyTEosQMu5Xq_AJzcuuqNOE2wEXTbnKvTgP_gw8268LN6pQ50llNA&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ8tMDegQIKRAS
+              - text: "9"
+            - link "Page 10" [ref=e630] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sca_esv=43a6c5a008a39361&ei=lhICaoi2I96MseMPxIvm2QI&start=90&sa=N&sstk=Af77f_fc3P2Nv6n7Nz0T955LsuxYON1UnIfGjTTPW73jzqcMtcyTEosQMu5Xq_AJzcuuqNOE2wEXTbnKvTgP_gw8268LN6pQ50llNA&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ8tMDegQIKRAU
+              - text: "10"
+            - heading "Next" [level=2] [ref=e632]:
+              - link "Next" [ref=e633] [cursor=pointer]:
+                - /url: /search?q=Kenya+VASP+bill+2026+virtual+asset+service+provider&sca_esv=43a6c5a008a39361&ei=lhICaoi2I96MseMPxIvm2QI&start=10&sa=N&sstk=Af77f_fc3P2Nv6n7Nz0T955LsuxYON1UnIfGjTTPW73jzqcMtcyTEosQMu5Xq_AJzcuuqNOE2wEXTbnKvTgP_gw8268LN6pQ50llNA&ved=2ahUKEwiI2YiB4rGUAxVeRmwGHcSFOSsQ8NMDegQIKRAW
+                - generic [ref=e635]: Next
+        - navigation
+    - contentinfo [ref=e636]:
+      - heading "Footer links" [level=1] [ref=e637]
+      - generic [ref=e641]:
+        - generic [ref=e643]:
+          - text: Kenya
+          - generic [ref=e645]:
+            - button "Kuwinda, Nairobi - From your IP address" [ref=e647] [cursor=pointer]:
+              - generic [ref=e648]: Kuwinda, Nairobi
+              - generic [ref=e650]:
+                - text: "-"
+                - generic [ref=e651]: From your IP address
+            - text: "-"
+            - button "Update location" [ref=e653] [cursor=pointer]: Update location
+        - generic [ref=e656]:
+          - link "Help" [ref=e657] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=en-KE&fg=1
+          - link "Send feedback" [ref=e658] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacy" [ref=e659] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=en-KE&fg=1
+          - link "Terms" [ref=e660] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=en-KE&fg=1

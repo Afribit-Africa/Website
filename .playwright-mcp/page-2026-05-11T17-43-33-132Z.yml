@@ -1,0 +1,213 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Afribit Afribit" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Afribit" [ref=e6]
+        - generic [ref=e7]: Afribit
+      - navigation [ref=e8]:
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: /about
+        - link "Programs" [ref=e10] [cursor=pointer]:
+          - /url: /programs
+        - link "Merchant Map" [ref=e11] [cursor=pointer]:
+          - /url: /merchants
+        - link "Community" [ref=e12] [cursor=pointer]:
+          - /url: /community
+        - link "Contact" [ref=e13] [cursor=pointer]:
+          - /url: /contact
+      - link "Fuel BCE ₿" [ref=e15] [cursor=pointer]:
+        - /url: /donate
+  - main [ref=e16]:
+    - generic [ref=e20]:
+      - link "Back to programs" [ref=e22] [cursor=pointer]:
+        - /url: /programs
+        - img [ref=e23]
+        - text: Back to programs
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: Active
+          - heading "Boda-Boda \"Ride to Freedom\"" [level=1] [ref=e28]
+          - paragraph [ref=e29]: Boda-boda riders are central to Nairobi transport, but many operate without licensing, insurance, or proper equipment. Afribit provides Bitcoin education, savings guidance, and compliance support so riders can formalize their work and build long-term financial stability on their own terms.
+          - generic [ref=e30]:
+            - generic [ref=e31]:
+              - paragraph [ref=e32]: "10"
+              - paragraph [ref=e33]: Riders in program
+            - generic [ref=e34]:
+              - paragraph [ref=e35]: 100%
+              - paragraph [ref=e36]: Licensed and insured
+            - generic [ref=e37]:
+              - paragraph [ref=e38]: 100%
+              - paragraph [ref=e39]: Bitcoin wallets active
+          - generic [ref=e40]:
+            - link "Donate to This Program" [ref=e41] [cursor=pointer]:
+              - /url: https://www.afribit.africa/donate?program=bodaboda
+              - text: Donate to This Program
+              - img [ref=e42]
+            - link "Talk to the Team" [ref=e46] [cursor=pointer]:
+              - /url: /contact
+        - generic [ref=e48]:
+          - img "A boda-boda rider participating in Bitcoin onboarding." [ref=e49]
+          - generic [ref=e51]:
+            - paragraph [ref=e52]: Circular resilience in practice
+            - paragraph [ref=e53]: The Boda-Boda "Ride to Freedom" program trains riders in Bitcoin, helps them earn and save sats, and provides compliance guidance so they can secure licensing and insurance using their own funds.
+    - generic [ref=e57]:
+      - img [ref=e59]
+      - generic [ref=e62]:
+        - paragraph [ref=e63]: “Through Afribit, I completed my driving classes and set up my first Bitcoin wallet. I can save sats toward my licensing fees and still spend within the circular economy, supporting other riders and helping the whole community grow.”
+        - paragraph [ref=e64]: Brian
+        - paragraph [ref=e65]: Boda-boda rider and Bitcoin advocate
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - paragraph [ref=e69]: Compliance costs
+        - heading "Knowing the costs is the first step to planning your path to legal operation." [level=2] [ref=e70]
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - paragraph [ref=e73]: KES 5,000 - 15,000
+          - heading "Licenses & permits" [level=3] [ref=e74]
+          - paragraph [ref=e75]: Operator licensing, PSV permits, and business registration fees riders need to save toward.
+        - generic [ref=e76]:
+          - paragraph [ref=e77]: KES 8,000 - 20,000
+          - heading "Insurance & inspection" [level=3] [ref=e78]
+          - paragraph [ref=e79]: Annual insurance, inspection fees, and compliance costs tied to legal operation.
+        - generic [ref=e80]:
+          - paragraph [ref=e81]: KES 3,000 - 10,000
+          - heading "Safety equipment" [level=3] [ref=e82]
+          - paragraph [ref=e83]: Helmets, reflective jackets, locks, and core protective gear.
+        - generic [ref=e84]:
+          - paragraph [ref=e85]: KES 10,000 - 50,000
+          - heading "Motorcycle improvements" [level=3] [ref=e86]
+          - paragraph [ref=e87]: Repairs, maintenance, and savings milestones toward eventual motorcycle ownership.
+    - generic [ref=e89]:
+      - generic [ref=e90]:
+        - paragraph [ref=e91]: Rider journey
+        - heading "A five-step path from first wallet to full compliance." [level=2] [ref=e92]
+      - generic [ref=e93]:
+        - generic [ref=e94]:
+          - generic [ref=e95]: "1"
+          - heading "Join & Learn" [level=3] [ref=e96]
+          - paragraph [ref=e97]: Attend a Bitcoin education session, understand how Lightning wallets work, and learn how Bitcoin can fund your compliance costs.
+        - generic [ref=e98]:
+          - generic [ref=e99]: "2"
+          - heading "Wallet Setup" [level=3] [ref=e100]
+          - paragraph [ref=e101]: Set up a self-custody Lightning wallet. Receive your first sats. Own your money from day one.
+        - generic [ref=e102]:
+          - generic [ref=e103]: "3"
+          - heading "Compliance Planning" [level=3] [ref=e104]
+          - paragraph [ref=e105]: Work with the Afribit team to map out your exact licensing, insurance, and gear costs. Set a realistic savings target.
+        - generic [ref=e106]:
+          - generic [ref=e107]: "4"
+          - heading "Earn & Save" [level=3] [ref=e108]
+          - paragraph [ref=e109]: Earn sats through the circular economy — merchant spending, program participation, and referrals. Stack toward your compliance goal.
+        - generic [ref=e110]:
+          - generic [ref=e111]: "5"
+          - heading "Ride to Freedom" [level=3] [ref=e112]
+          - paragraph [ref=e113]: Once your savings cover compliance costs, get fully licensed and insured. Keep growing with Bitcoin from a position of legal freedom.
+    - generic [ref=e115]:
+      - generic [ref=e116]:
+        - paragraph [ref=e117]: Program goals
+        - heading "The program aims to formalize more riders and build real financial independence." [level=2] [ref=e118]
+      - generic [ref=e119]:
+        - generic [ref=e120]:
+          - heading "40 Riders by 2026" [level=3] [ref=e121]
+          - paragraph [ref=e122]: Scale the program to a much larger cohort of compliant, Bitcoin-literate riders across Kibera.
+        - generic [ref=e123]:
+          - heading "Motorcycle Savings Program" [level=3] [ref=e124]
+          - paragraph [ref=e125]: Help riders build Bitcoin savings milestones toward eventually owning their motorcycles outright — no rental dependence.
+        - generic [ref=e126]:
+          - heading "Ride-Hailing Integration" [level=3] [ref=e127]
+          - paragraph [ref=e128]: Help compliant riders access premium earnings through local and international platforms.
+        - generic [ref=e129]:
+          - heading "Long-Term Wealth Building" [level=3] [ref=e130]
+          - paragraph [ref=e131]: Combine compliance support with longer-term Bitcoin savings education for real financial independence.
+    - generic [ref=e134]:
+      - generic [ref=e135]:
+        - generic [ref=e136]:
+          - paragraph [ref=e137]: Support this work
+          - heading "Empower Boda-Boda Riders" [level=2] [ref=e138]
+          - paragraph [ref=e139]: Your donation funds Bitcoin education, rider training, and compliance guidance so Kibera's motorcycle operators can secure their own licensing, insurance, and future — on their own terms.
+        - generic [ref=e140]:
+          - paragraph [ref=e141]: Why this matters
+          - paragraph [ref=e142]: Afribit programs work because they connect real livelihoods to repeatable Bitcoin use. Funding helps keep training, tools, and field execution close to the community.
+      - generic [ref=e143]:
+        - link "Donate to This Program" [ref=e144] [cursor=pointer]:
+          - /url: https://www.afribit.africa/donate?program=bodaboda
+          - text: Donate to This Program
+          - img [ref=e145]
+        - link "Explore all programs" [ref=e149] [cursor=pointer]:
+          - /url: /programs
+          - text: Explore all programs
+          - img [ref=e150]
+  - contentinfo [ref=e152]:
+    - generic [ref=e153]:
+      - generic [ref=e154]:
+        - generic [ref=e155]:
+          - link "Afribit Afribit" [ref=e156] [cursor=pointer]:
+            - /url: /
+            - img "Afribit" [ref=e157]
+            - generic [ref=e158]: Afribit
+          - paragraph [ref=e159]: Building circular Bitcoin economies in Kibera, Nairobi — one transaction at a time.
+          - generic [ref=e160]:
+            - link "X (Twitter)" [ref=e161] [cursor=pointer]:
+              - /url: https://x.com/afribitkibera
+              - img [ref=e162]
+            - link "Instagram" [ref=e164] [cursor=pointer]:
+              - /url: https://www.instagram.com/afribit_africa/
+              - img [ref=e165]
+            - link "YouTube" [ref=e168] [cursor=pointer]:
+              - /url: https://youtube.com/@afribitafrica
+              - img [ref=e169]
+        - generic [ref=e172]:
+          - heading "Quick Links" [level=3] [ref=e173]
+          - list [ref=e174]:
+            - listitem [ref=e175]:
+              - link "About Afribit" [ref=e176] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e177]:
+              - link "Merchant Program" [ref=e178] [cursor=pointer]:
+                - /url: /programs/merchants
+            - listitem [ref=e179]:
+              - link "Merchant Map" [ref=e180] [cursor=pointer]:
+                - /url: https://www.afribit.africa/maps
+            - listitem [ref=e181]:
+              - link "Donate" [ref=e182] [cursor=pointer]:
+                - /url: /donate
+            - listitem [ref=e183]:
+              - link "Contact" [ref=e184] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e185]:
+          - heading "Community" [level=3] [ref=e186]
+          - list [ref=e187]:
+            - listitem [ref=e188]:
+              - link "Join Community" [ref=e189] [cursor=pointer]:
+                - /url: /community
+            - listitem [ref=e190]:
+              - link "BTC Map" [ref=e191] [cursor=pointer]:
+                - /url: https://btcmap.org/community/afribit-kibera
+            - listitem [ref=e192]:
+              - link "Geyser Fund" [ref=e193] [cursor=pointer]:
+                - /url: https://staging.geyser.fund/project/afribitkibera
+        - generic [ref=e194]:
+          - heading "Resources" [level=3] [ref=e195]
+          - list [ref=e196]:
+            - listitem [ref=e197]:
+              - link "Privacy Policy" [ref=e198] [cursor=pointer]:
+                - /url: /legal/privacy
+            - listitem [ref=e199]:
+              - link "Terms of Use" [ref=e200] [cursor=pointer]:
+                - /url: /legal/terms
+            - listitem [ref=e201]:
+              - link "Cookie Policy" [ref=e202] [cursor=pointer]:
+                - /url: /legal/cookies
+            - listitem [ref=e203]:
+              - link "Bitcoin Confederation" [ref=e204] [cursor=pointer]:
+                - /url: https://bitcoinconfederation.org/hub/afribit-kibera/
+      - generic [ref=e205]:
+        - paragraph [ref=e206]: © 2026 Afribit Africa. All rights reserved.
+        - paragraph [ref=e207]:
+          - text: Built with
+          - img [ref=e208]
+          - text: in Nairobi
+          - link [ref=e210] [cursor=pointer]:
+            - /url: https://bitcoin.org
+            - img [ref=e211]

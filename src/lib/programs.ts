@@ -171,7 +171,7 @@ export const programs: ProgramContent[] = [
     supportDescription:
       'Your donation helps Afribit onboard more local businesses, provide merchant training, and maintain the payment infrastructure that keeps a circular Bitcoin economy alive in Kibera.',
     donationLabel: 'Donate to This Program',
-    donationHref: 'https://www.afribit.africa/donate?program=merchants',
+    donationHref: '/donate?program=merchants',
     secondaryCtaLabel: 'View Merchant Directory',
     secondaryCtaHref: 'https://www.afribit.africa/maps',
     quote: {
@@ -304,7 +304,7 @@ export const programs: ProgramContent[] = [
     supportDescription:
       'Your donation funds training, equipment, materials, and market support so women in Kibera can build sustainable businesses while reducing waste.',
     donationLabel: 'Donate to This Program',
-    donationHref: 'https://www.afribit.africa/donate?program=upcycling',
+    donationHref: '/donate?program=upcycling',
     secondaryCtaLabel: 'Partner With Afribit',
     secondaryCtaHref: '/contact',
     quote: {
@@ -451,7 +451,7 @@ export const programs: ProgramContent[] = [
     supportDescription:
       'Your donation funds Bitcoin rewards for waste collectors, equipment for collection centers, and expansion into new areas so the program can scale with the community.',
     donationLabel: 'Donate to This Program',
-    donationHref: 'https://www.afribit.africa/donate?program=waste-management',
+    donationHref: '/donate?program=waste-management',
     secondaryCtaLabel: 'Partner With Us',
     secondaryCtaHref: '/contact',
     quote: {
@@ -464,37 +464,37 @@ export const programs: ProgramContent[] = [
     slug: 'bodaboda',
     title: 'Boda-Boda "Ride to Freedom"',
     shortTitle: 'Boda-Boda',
-    summary: 'Providing motorcycle riders with Bitcoin microloans for compliance, safety, and financial independence.',
+    summary: 'Helping motorcycle riders achieve full compliance through Bitcoin education, savings support, and community guidance.',
     description:
-      'The Boda-Boda "Ride to Freedom" program uses Bitcoin-based microloans to help riders secure licensing, insurance, safety gear, and business upgrades so they can operate legally and build long-term stability.',
+      'The Boda-Boda "Ride to Freedom" program trains riders in Bitcoin, helps them earn and save sats, and provides compliance guidance so they can secure licensing and insurance using their own funds.',
     statusLabel: 'Active',
     icon: Bike,
     iconClassName: 'text-amber-400',
     iconBackgroundClassName: 'bg-amber-400/10',
     imageSrc: '/Images/Motorbike bitcoin onboarding.jpg',
     imageAlt: 'A boda-boda rider participating in Bitcoin onboarding.',
-    impactValue: '95%',
-    impactLabel: 'Repayment rate across current loan recipients.',
-    supportLabel: 'Licensing, insurance, safety gear, and rider growth capital.',
+    impactValue: '100%',
+    impactLabel: 'of program riders now licensed and fully insured.',
+    supportLabel: 'Licensing guidance, insurance support, safety training, and Bitcoin education.',
     heroTitle: 'Boda-Boda "Ride to Freedom"',
     heroDescription:
-      'Boda-boda riders are central to Nairobi transport, but many operate without the licensing, insurance, or equipment required for safe and legal work. Afribit uses flexible Bitcoin microloans to help riders formalize their businesses and move toward stronger incomes and eventual ownership.',
+      'Boda-boda riders are central to Nairobi transport, but many operate without licensing, insurance, or proper equipment. Afribit provides Bitcoin education, savings guidance, and compliance support so riders can formalize their work and build long-term financial stability on their own terms.',
     heroMetrics: [
-      { value: '10', label: 'Active loan recipients' },
-      { value: '95%', label: 'Repayment rate' },
+      { value: '10', label: 'Riders in program' },
       { value: '100%', label: 'Licensed and insured' },
+      { value: '100%', label: 'Bitcoin wallets active' },
     ],
     sections: [
       {
         id: 'coverage',
-        eyebrow: 'Loan coverage',
-        title: 'Loans remove the barriers that keep riders stuck in informal risk.',
+        eyebrow: 'Compliance costs',
+        title: 'Knowing the costs is the first step to planning your path to legal operation.',
         variant: 'metrics',
         items: [
           {
             value: 'KES 5,000 - 15,000',
             title: 'Licenses & permits',
-            description: 'Support for operator licensing, PSV permits, and business registration fees.',
+            description: 'Operator licensing, PSV permits, and business registration fees riders need to save toward.',
           },
           {
             value: 'KES 8,000 - 20,000',
@@ -509,102 +509,79 @@ export const programs: ProgramContent[] = [
           {
             value: 'KES 10,000 - 50,000',
             title: 'Motorcycle improvements',
-            description: 'Repairs, maintenance, and steps toward eventual motorcycle ownership.',
+            description: 'Repairs, maintenance, and savings milestones toward eventual motorcycle ownership.',
           },
         ],
       },
       {
         id: 'process',
-        eyebrow: 'Application process',
-        title: 'The rider journey is structured, practical, and flexible to real income cycles.',
+        eyebrow: 'Rider journey',
+        title: 'A five-step path from first wallet to full compliance.',
         variant: 'steps',
         items: [
           {
-            title: 'Application & Verification',
-            description: 'Riders submit basic information, explain their need, and complete light-touch identity and business checks.',
+            title: 'Join & Learn',
+            description: 'Attend a Bitcoin education session, understand how Lightning wallets work, and learn how Bitcoin can fund your compliance costs.',
           },
           {
-            title: 'Bitcoin Education',
-            description: 'Every participant learns wallet setup, sending and receiving, and Lightning fundamentals before disbursement.',
+            title: 'Wallet Setup',
+            description: 'Set up a self-custody Lightning wallet. Receive your first sats. Own your money from day one.',
           },
           {
-            title: 'Loan Approval & Disbursement',
-            description: 'Approved riders receive Bitcoin loans directly and can convert for fees or spend within the ecosystem.',
+            title: 'Compliance Planning',
+            description: 'Work with the Afribit team to map out your exact licensing, insurance, and gear costs. Set a realistic savings target.',
           },
           {
-            title: 'Flexible Repayment',
-            description: 'Repayments adapt to real transport income so busy weeks and slow weeks are handled differently.',
+            title: 'Earn & Save',
+            description: 'Earn sats through the circular economy — merchant spending, program participation, and referrals. Stack toward your compliance goal.',
           },
           {
-            title: 'Graduation & Growth',
-            description: 'Successful repayment opens access to future opportunities, including larger growth or ownership-focused loans.',
-          },
-        ],
-      },
-      {
-        id: 'terms',
-        eyebrow: 'Loan terms',
-        title: 'The model is designed to be lower-friction than traditional microfinance.',
-        variant: 'metrics',
-        items: [
-          {
-            value: '5-8% annual interest',
-            title: 'Affordable lending',
-            description: 'Rates stay well below what many riders would face elsewhere.',
-          },
-          {
-            value: '3-12 months',
-            title: 'Flexible repayment horizon',
-            description: 'Loan length adjusts to size, purpose, and the rider\'s cash-flow reality.',
-          },
-          {
-            value: '0 collateral',
-            title: 'Trust-based structure',
-            description: 'No hard collateral requirement, backed by community trust and real engagement.',
+            title: 'Ride to Freedom',
+            description: 'Once your savings cover compliance costs, get fully licensed and insured. Keep growing with Bitcoin from a position of legal freedom.',
           },
         ],
       },
       {
         id: 'goals',
         eyebrow: 'Program goals',
-        title: 'The program aims to formalize more riders and widen the path to ownership.',
+        title: 'The program aims to formalize more riders and build real financial independence.',
         variant: 'cards',
         items: [
           {
             title: '40 Riders by 2026',
-            description: 'Expand from the current cohort to a much larger pool of compliant, active riders.',
+            description: 'Scale the program to a much larger cohort of compliant, Bitcoin-literate riders across Kibera.',
           },
           {
-            title: 'Motorcycle Ownership Program',
-            description: 'Create purchase-focused loans that help riders move beyond daily rental dependence.',
+            title: 'Motorcycle Savings Program',
+            description: 'Help riders build Bitcoin savings milestones toward eventually owning their motorcycles outright — no rental dependence.',
           },
           {
             title: 'Ride-Hailing Integration',
             description: 'Help compliant riders access premium earnings through local and international platforms.',
           },
           {
-            title: 'Savings & Investment Education',
-            description: 'Pair lending with longer-term wealth and Bitcoin savings guidance.',
+            title: 'Long-Term Wealth Building',
+            description: 'Combine compliance support with longer-term Bitcoin savings education for real financial independence.',
           },
         ],
       },
     ],
     supportTitle: 'Empower Boda-Boda Riders',
     supportDescription:
-      'Your donation provides life-changing microloans to motorcycle riders, helping them achieve legal compliance, financial security, and a path toward ownership.',
+      'Your donation funds Bitcoin education, rider training, and compliance guidance so Kibera\'s motorcycle operators can secure their own licensing, insurance, and future — on their own terms.',
     donationLabel: 'Donate to This Program',
-    donationHref: 'https://www.afribit.africa/donate?program=bodaboda',
+    donationHref: '/donate?program=bodaboda',
     secondaryCtaLabel: 'Talk to the Team',
     secondaryCtaHref: '/contact',
     quote: {
-      text: 'Through Afribit, I was able to complete my driving classes. The repayment in sats is very affordable. I can now convert my sats, save some, and spend some within the circular economy, supporting other riders and helping the whole community grow.',
+      text: 'Through Afribit, I completed my driving classes and set up my first Bitcoin wallet. I can save sats toward my licensing fees and still spend within the circular economy, supporting other riders and helping the whole community grow.',
       name: 'Brian',
       role: 'Boda-boda rider and Bitcoin advocate',
     },
   },
 ]
 
-export const generalDonateHref = 'https://www.afribit.africa/donate'
+export const generalDonateHref = '/donate'
 
 export function getProgramBySlug(slug: string) {
   return programs.find((program) => program.slug === slug)

@@ -282,9 +282,7 @@ export function MerchantDirectoryClient({ merchants }: MerchantDirectoryClientPr
                 <ExternalLink className="size-4 text-bitcoin" />
               </a>
               <Link
-                href="https://www.afribit.africa/register"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/register"
                 className="inline-flex items-center justify-between rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-foreground transition-colors hover:border-bitcoin/40"
               >
                 Register your business

@@ -7,7 +7,7 @@ import { Container } from '@/components/layout/container'
 const TESTIMONIALS = [
   {
     quote:
-      'Through Afribit, I was able to complete my driving classes. The repayment in sats is very affordable. I can now convert my sats, save some, and spend some within the circular economy — supporting other riders and helping the whole community grow.',
+      'Through Afribit, I completed my driving classes and set up my first Bitcoin wallet. I can save sats toward my licensing fees and still spend within the circular economy — supporting other riders and helping the whole community grow.',
     name: 'Brian',
     role: 'Boda-Boda Rider, Bitcoin Advocate',
   },

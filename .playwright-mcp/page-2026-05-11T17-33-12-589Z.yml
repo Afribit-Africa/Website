@@ -1,0 +1,389 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=e2] [cursor=pointer]
+      - link "Accessibility help" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-KE
+      - link "Accessibility feedback" [ref=e4] [cursor=pointer]
+  - generic [ref=e9]:
+    - search [ref=e10]:
+      - generic [ref=e12]:
+        - link "Go to Google Home" [ref=e14] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0QPAgJ
+          - img [ref=e15]
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - combobox "Search" [ref=e26]: Kenya VASP regulations 2026 exclusions NOT VASP educational activities Kenya VASP regulations 2026 exclusions NOT VASP educational activities
+            - generic [ref=e27]:
+              - button "Clear" [ref=e29] [cursor=pointer]:
+                - img [ref=e31]
+              - generic [ref=e34]:
+                - button "Search by voice" [ref=e35] [cursor=pointer]:
+                  - img [ref=e36]
+                - button "Search by image" [ref=e38] [cursor=pointer]:
+                  - img [ref=e39]
+          - button "Search" [ref=e41] [cursor=pointer]:
+            - img [ref=e44]
+    - generic [ref=e46]:
+      - button "Settings" [ref=e48] [cursor=pointer]:
+        - img [ref=e51]
+      - generic [ref=e54]:
+        - button "Google apps" [ref=e56] [cursor=pointer]:
+          - img [ref=e57]
+        - link "Sign in" [ref=e61] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/search%3Fq%3DKenya%2520VASP%2520regulations%25202026%2520exclusions%2520NOT%2520VASP%2520educational%2520activities&ec=futura_srp_og_si_72236_p
+  - generic [ref=e63]:
+    - navigation [ref=e69]:
+      - generic [ref=e75]:
+        - list [ref=e76]:
+          - listitem [ref=e77]:
+            - link "AI Mode" [ref=e80] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sca_esv=43a6c5a008a39361&udm=50&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpfml-924-fU71zBBqkF67cJhTzUzoM6AQTcskj5BuNvXYz-ZaZVIHQWppy4t9FLmEo6JRKWttvGV-M4KbrPwF3zYmzv8kLTcIQsbkCIiFAmcj7sELY3VGYvLy-T1Mt0j5m7V2jUyaG-9Ff8kJyLjHdPVRRTuGpO63CcxPbGhnM0QJNYBNtfjGXcesskt7HKjnQlhAag&aep=1&ntc=1&sa=X&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q2J8OegQIEBAD
+              - generic [ref=e83]: AI Mode
+          - listitem [ref=e84]:
+            - link "All" [disabled] [ref=e85]:
+              - generic [ref=e87]: All
+          - listitem [ref=e88]:
+            - link "News" [ref=e89] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&tbm=nws&source=lnms&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpfml-924-fU71zBBqkF67cJhTzUzoM6AQTcskj5BuNvXYz-ZaZVIHQWppy4t9FLmEo6JRKWttvGV-M4KbrPwF3zYmzv8kLTcIQsbkCIiFAmcj7sELY3VGYvLy-T1Mt0j5m7V2jUyaG-9Ff8kJyLjHdPVRRTuGpO63CcxPbGhnM0QJNYBNtfjGXcesskt7HKjnQlhAag&sa=X&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q0pQJegQIFhAB
+              - generic [ref=e91]: News
+          - listitem [ref=e92]:
+            - link "Short videos" [ref=e93] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=39&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpfml-924-fU71zBBqkF67cJhTzUzoM6AQTcskj5BuNvXYz-ZaZVIHQWppy4t9FLmEo6JRKWttvGV-M4KbrPwF3zYmzv8kLTcIQsbkCIiFAmcj7sELY3VGYvLy-T1Mt0j5m7V2jUyaG-9Ff8kJyLjHdPVRRTuGpO63CcxPbGhnM0QJNYBNtfjGXcesskt7HKjnQlhAag&q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sa=X&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Qs6gLegQIFxAB
+              - generic [ref=e95]: Short videos
+          - listitem [ref=e96]:
+            - link "Forums" [ref=e97] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=18&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpfml-924-fU71zBBqkF67cJhTzUzoM6AQTcskj5BuNvXYz-ZaZVIHQWppy4t9FLmEo6JRKWttvGV-M4KbrPwF3zYmzv8kLTcIQsbkCIiFAmcj7sELY3VGYvLy-T1Mt0j5m7V2jUyaG-9Ff8kJyLjHdPVRRTuGpO63CcxPbGhnM0QJNYBNtfjGXcesskt7HKjnQlhAag&q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sa=X&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Qs6gLegQIFBAB
+              - generic [ref=e99]: Forums
+          - listitem [ref=e100]:
+            - link "Images" [ref=e101] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpfml-924-fU71zBBqkF67cJhTzUzoM6AQTcskj5BuNvXYz-ZaZVIHQWppy4t9FLmEo6JRKWttvGV-M4KbrPwF3zYmzv8kLTcIQsbkCIiFAmcj7sELY3VGYvLy-T1Mt0j5m7V2jUyaG-9Ff8kJyLjHdPVRRTuGpO63CcxPbGhnM0QJNYBNtfjGXcesskt7HKjnQlhAag&q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sa=X&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0QtKgLegQIFRAB
+              - generic [ref=e103]: Images
+          - listitem [ref=e104]:
+            - link "Videos" [ref=e105] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=7&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpfml-924-fU71zBBqkF67cJhTzUzoM6AQTcskj5BuNvXYz-ZaZVIHQWppy4t9FLmEo6JRKWttvGV-M4KbrPwF3zYmzv8kLTcIQsbkCIiFAmcj7sELY3VGYvLy-T1Mt0j5m7V2jUyaG-9Ff8kJyLjHdPVRRTuGpO63CcxPbGhnM0QJNYBNtfjGXcesskt7HKjnQlhAag&q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sa=X&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0QtKgLegQIExAB
+              - generic [ref=e107]: Videos
+          - listitem [ref=e108]:
+            - button "More filters" [ref=e109] [cursor=pointer]:
+              - generic "More filters" [ref=e110]:
+                - generic [ref=e111]:
+                  - generic [ref=e112]: More
+                  - img [ref=e114]
+        - button "Tools" [ref=e117] [cursor=pointer]:
+          - generic [ref=e119]:
+            - generic [ref=e120]: Tools
+            - img [ref=e122]
+    - heading "Search Results" [level=1] [ref=e124]
+    - generic [ref=e129]:
+      - generic [ref=e148]:
+        - heading "Thinking" [level=2] [ref=e152]:
+          - generic [ref=e153]: Thinking
+        - progressbar [ref=e154]
+      - main [ref=e156]:
+        - generic [ref=e160]:
+          - generic [ref=e163]:
+            - heading "Web results" [level=2] [ref=e164]
+            - generic [ref=e165]:
+              - generic [ref=e168]:
+                - link "Regulatory Impact Statement on VASP Regulations - 2026 The National Treasury https://www.treasury.go.ke › sites › default › files" [ref=e170] [cursor=pointer]:
+                  - /url: https://www.treasury.go.ke/sites/default/files/Latest%20updates/Regulatory%20Impact%20Statement%20on%20VASP%20Regulations%20-%202026%20-%20PP.pdf
+                  - heading "Regulatory Impact Statement on VASP Regulations - 2026" [level=3] [ref=e171]
+                  - generic [ref=e176]:
+                    - generic [ref=e178]: The National Treasury
+                    - generic [ref=e180]: https://www.treasury.go.ke › sites › default › files
+                - generic [ref=e181]:
+                  - generic:
+                    - generic: PDF
+                - button "About this result" [ref=e182] [cursor=pointer]:
+                  - img [ref=e185]
+              - generic [ref=e187]:
+                - generic [ref=e188]:
+                  - generic [ref=e189]:
+                    - text: This RIS assesses the impact of implementation of the Virtual Asset Service Providers
+                    - emphasis [ref=e190]: Regulations
+                    - text: ",."
+                    - emphasis [ref=e191]: "2026"
+                    - text: ", whose object is to operationalize the"
+                    - emphasis [ref=e192]: provisions
+                    - text: of ...
+                  - link "Read more" [ref=e193] [cursor=pointer]:
+                    - /url: https://www.treasury.go.ke/sites/default/files/Latest%20updates/Regulatory%20Impact%20Statement%20on%20VASP%20Regulations%20-%202026%20-%20PP.pdf#:~:text=This%20RIS%20assesses%20the%20impact,Virtual%20Asset%20Service%20Providers%20Act
+                - generic [ref=e194]: 13 pages
+          - generic [ref=e198]:
+            - generic [ref=e201]:
+              - link "National Treasury Unveils Draft VASP Regulations 2026 www.rba.go.ke https://www.rba.go.ke › Latest News" [ref=e203] [cursor=pointer]:
+                - /url: https://www.rba.go.ke/kenya-moves-to-regulate-crypto-national-treasury-unveils-draft-vasp-regulations-2026/
+                - heading "National Treasury Unveils Draft VASP Regulations 2026" [level=3] [ref=e204]
+                - generic [ref=e209]:
+                  - generic [ref=e211]: www.rba.go.ke
+                  - generic [ref=e213]: https://www.rba.go.ke › Latest News
+              - button "About this result" [ref=e214] [cursor=pointer]:
+                - img [ref=e217]
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - text: The National Treasury has officially released the draft Virtual Asset Service Providers (
+                - emphasis [ref=e222]: VASP
+                - text: )
+                - emphasis [ref=e223]: Regulations
+                - text: ","
+                - emphasis [ref=e224]: "2026"
+                - text: ", marking a significant step toward formalizing ..."
+              - link "Read more" [ref=e225] [cursor=pointer]:
+                - /url: https://www.rba.go.ke/kenya-moves-to-regulate-crypto-national-treasury-unveils-draft-vasp-regulations-2026/#:~:text=The%20National%20Treasury%20has%20officially,crypto%20and%20digital%20asset%20industry.
+          - generic [ref=e229]:
+            - generic [ref=e232]:
+              - link "Kenya Draft VASP Regulations 2026 Draw Industry ... BingX https://bingx.com › news › post › kenya-draft-vasp-regul..." [ref=e234] [cursor=pointer]:
+                - /url: https://bingx.com/en/news/post/kenya-draft-vasp-regulations-draw-industry-warning-over-startup-exclusion
+                - heading "Kenya Draft VASP Regulations 2026 Draw Industry ..." [level=3] [ref=e235]
+                - generic [ref=e240]:
+                  - generic [ref=e242]: BingX
+                  - generic [ref=e244]: https://bingx.com › news › post › kenya-draft-vasp-regul...
+              - button "About this result" [ref=e245] [cursor=pointer]:
+                - img [ref=e248]
+            - generic [ref=e251]:
+              - generic [ref=e252]: 11 Apr 2026 —
+              - generic [ref=e253]:
+                - text: The Draft Virtual Asset Service Providers (
+                - emphasis [ref=e254]: VASP
+                - text: )
+                - emphasis [ref=e255]: Regulations 2026
+                - text: ", prepared by the National Treasury, set out licensing conditions for exchanges ..."
+              - link "Read more" [ref=e256] [cursor=pointer]:
+                - /url: https://bingx.com/en/news/post/kenya-draft-vasp-regulations-draw-industry-warning-over-startup-exclusion#:~:text=The%20Draft%20Virtual%20Asset%20Service,wallet%20providers%2C%20and%20stablecoin%20issuers.
+          - generic [ref=e260]:
+            - generic [ref=e263]:
+              - 'link "VASP license preparations guide: Q&A Njogu and Associates Advocates https://njoguassociates.com › vasp-license-preparations-..." [ref=e265] [cursor=pointer]':
+                - /url: https://njoguassociates.com/vasp-license-preparations-guide-qa/
+                - 'heading "VASP license preparations guide: Q&A" [level=3] [ref=e266]'
+                - generic [ref=e271]:
+                  - generic [ref=e273]: Njogu and Associates Advocates
+                  - generic [ref=e275]: https://njoguassociates.com › vasp-license-preparations-...
+              - button "About this result" [ref=e276] [cursor=pointer]:
+                - img [ref=e279]
+            - generic [ref=e282]:
+              - generic [ref=e283]: 19 Dec 2025 —
+              - generic [ref=e284]:
+                - text: "Q: What is the primary function of the"
+                - emphasis [ref=e285]: VASP
+                - text: "Act? A: It provides the legal framework for the licensing,"
+                - emphasis [ref=e286]: regulation
+                - text: ", and supervision of Virtual ..."
+              - link "Read more" [ref=e287] [cursor=pointer]:
+                - /url: https://njoguassociates.com/vasp-license-preparations-guide-qa/#:~:text=Q%3A%20What%20is%20the%20primary,regulation%2C%20and%20supervision%20of%20Virtual
+          - generic [ref=e291]:
+            - generic [ref=e294]:
+              - link "Draft Virtual Asset Service Providers Regulations, 2026 The National Treasury https://www.treasury.go.ke › sites › files › Notices" [ref=e296] [cursor=pointer]:
+                - /url: https://www.treasury.go.ke/sites/default/files/Notices/Draft%20Virtual%20Asset%20Service%20Providers%20Regulations%2C%202026-%20Clean%20copy.pdf
+                - heading "Draft Virtual Asset Service Providers Regulations, 2026" [level=3] [ref=e297]
+                - generic [ref=e302]:
+                  - generic [ref=e304]: The National Treasury
+                  - generic [ref=e306]: https://www.treasury.go.ke › sites › files › Notices
+              - generic [ref=e307]:
+                - generic:
+                  - generic: PDF
+              - button "About this result" [ref=e308] [cursor=pointer]:
+                - img [ref=e311]
+            - generic [ref=e313]:
+              - generic [ref=e314]:
+                - generic [ref=e315]:
+                  - text: (2) For purposes of subregulation (1), a person is deemed to be operating “in or from
+                  - emphasis [ref=e316]: Kenya
+                  - text: ” where that person derives an economic benefit or income from
+                  - emphasis [ref=e317]: Kenya
+                  - text: .
+                - link "Read more" [ref=e318] [cursor=pointer]:
+                  - /url: https://www.treasury.go.ke/sites/default/files/Notices/Draft%20Virtual%20Asset%20Service%20Providers%20Regulations%2C%202026-%20Clean%20copy.pdf#:~:text=(2)%20For%20purposes%20of%20subregulation,benefit%20or%20income%20from%20Kenya
+              - generic [ref=e319]: 150 pages
+          - generic [ref=e323]:
+            - generic [ref=e326]:
+              - 'link "Kenya: A step forward in the regulation of virtual assets as ... Bowmans https://bowmanslaw.com › insights › kenya-a-step-forwa..." [ref=e328] [cursor=pointer]':
+                - /url: https://bowmanslaw.com/insights/kenya-a-step-forward-in-the-regulation-of-virtual-assets-as-the-national-treasury-issues-the-draft-virtual-asset-service-providers-regulations-2026/
+                - 'heading "Kenya: A step forward in the regulation of virtual assets as ..." [level=3] [ref=e329]'
+                - generic [ref=e331]:
+                  - img [ref=e335]
+                  - generic [ref=e337]:
+                    - generic [ref=e339]: Bowmans
+                    - generic [ref=e341]: https://bowmanslaw.com › insights › kenya-a-step-forwa...
+              - button "About this result" [ref=e342] [cursor=pointer]:
+                - img [ref=e345]
+            - generic [ref=e348]:
+              - generic [ref=e349]:
+                - text: The National Treasury has released the draft Virtual Asset Service Providers
+                - emphasis [ref=e350]: Regulations
+                - text: ","
+                - emphasis [ref=e351]: "2026"
+                - text: ", marking a major step toward a comprehensive licensing and ..."
+              - link "Read more" [ref=e352] [cursor=pointer]:
+                - /url: https://bowmanslaw.com/insights/kenya-a-step-forward-in-the-regulation-of-virtual-assets-as-the-national-treasury-issues-the-draft-virtual-asset-service-providers-regulations-2026/#:~:text=The%20National%20Treasury%20has%20released,under%20the%20VASP%20Act%2C%202025.
+          - generic [ref=e356]:
+            - generic [ref=e359]:
+              - link "Kenya Releases Draft VASP Regulations for Public ... LinkedIn · Ali Hussein Kassim 10+ reactions · 1 month ago" [ref=e361] [cursor=pointer]:
+                - /url: https://www.linkedin.com/posts/alihkassim_%F0%9D%97%99%F0%9D%97%9C%F0%9D%97%A1%F0%9D%97%A7%F0%9D%97%98%F0%9D%97%96%F0%9D%97%9B-%F0%9D%97%95%F0%9D%97%A5%F0%9D%97%98%F0%9D%97%94%F0%9D%97%9E%F0%9D%97%99%F0%9D%97%94%F0%9D%97%A6%F0%9D%97%A7-%F0%9D%97%95%F0%9D%97%A5%F0%9D%97%9C%F0%9D%97%98%F0%9D%97%99%F0%9D%97%9C%F0%9D%97%A1%F0%9D%97%9A-activity-7439907060940460032-uoKO
+                - heading "Kenya Releases Draft VASP Regulations for Public ..." [level=3] [ref=e362]
+                - generic [ref=e367]:
+                  - generic [ref=e369]: LinkedIn · Ali Hussein Kassim
+                  - generic [ref=e371]: 10+ reactions · 1 month ago
+              - button "About this result" [ref=e372] [cursor=pointer]:
+                - img [ref=e375]
+            - generic [ref=e378]:
+              - generic [ref=e379]:
+                - text: AAPK has submitted its formal response to
+                - emphasis [ref=e380]: Kenya's
+                - text: Draft Virtual Asset Service Providers
+                - emphasis [ref=e381]: Regulations
+                - text: ","
+                - emphasis [ref=e382]: "2026"
+                - text: and we pulled
+                - emphasis [ref=e383]: "no"
+                - text: punches.
+                - emphasis [ref=e384]: Kenya
+                - text: is on ...
+              - link "Read more" [ref=e385] [cursor=pointer]:
+                - /url: https://www.linkedin.com/posts/alihkassim_%F0%9D%97%99%F0%9D%97%9C%F0%9D%97%A1%F0%9D%97%A7%F0%9D%97%98%F0%9D%97%96%F0%9D%97%9B-%F0%9D%97%95%F0%9D%97%A5%F0%9D%97%98%F0%9D%97%94%F0%9D%97%9E%F0%9D%97%99%F0%9D%97%94%F0%9D%97%A6%F0%9D%97%A7-%F0%9D%97%95%F0%9D%97%A5%F0%9D%97%9C%F0%9D%97%98%F0%9D%97%99%F0%9D%97%9C%F0%9D%97%A1%F0%9D%97%9A-activity-7439907060940460032-uoKO#:~:text=AAPK%20has%20submitted%20its%20formal,on%20the%20FATF%20grey%20list.
+          - generic [ref=e389]:
+            - generic [ref=e392]:
+              - 'link "Draft VASP Regulations, 2026: What Crypto and Digital ... Manwa OH Advocates LLP https://manwaadvocates.com › Blog" [ref=e394] [cursor=pointer]':
+                - /url: https://manwaadvocates.com/draft-vasp-regulations-2026-what-crypto-and-digital-asset-businesses-must-prepared/
+                - 'heading "Draft VASP Regulations, 2026: What Crypto and Digital ..." [level=3] [ref=e395]'
+                - generic [ref=e400]:
+                  - generic [ref=e402]: Manwa OH Advocates LLP
+                  - generic [ref=e404]: https://manwaadvocates.com › Blog
+              - button "About this result" [ref=e405] [cursor=pointer]:
+                - img [ref=e408]
+            - generic [ref=e411]:
+              - generic [ref=e412]: 15 Apr 2026 —
+              - generic [ref=e413]:
+                - emphasis [ref=e414]: Kenya's
+                - text: Draft
+                - emphasis [ref=e415]: VASP Regulations 2026
+                - text: introduce licensing, AML compliance, and consumer protection
+                - emphasis [ref=e416]: rules
+                - text: for crypto and digital asset ...
+          - generic [ref=e420]:
+            - generic [ref=e423]:
+              - link "Kenya concludes public participation on draft Virtual Asset ... Facebook · Bizna Kenya 10+ reactions · 4 weeks ago" [ref=e425] [cursor=pointer]:
+                - /url: https://www.facebook.com/biznake/posts/kenya-concludes-public-participation-on-draft-virtual-asset-service-providers-va/1367054648787456/
+                - heading "Kenya concludes public participation on draft Virtual Asset ..." [level=3] [ref=e426]
+                - generic [ref=e431]:
+                  - generic [ref=e433]: Facebook · Bizna Kenya
+                  - generic [ref=e435]: 10+ reactions · 4 weeks ago
+              - button "About this result" [ref=e436] [cursor=pointer]:
+                - img [ref=e439]
+            - generic [ref=e442]:
+              - generic [ref=e443]:
+                - emphasis [ref=e444]: Kenya
+                - text: concludes public participation on draft Virtual Asset Service Providers (
+                - emphasis [ref=e445]: VASP
+                - text: )
+                - emphasis [ref=e446]: Regulations 2026
+                - text: ", moving step closer to full crypto ..."
+              - link "Read more" [ref=e447] [cursor=pointer]:
+                - /url: https://www.facebook.com/biznake/posts/kenya-concludes-public-participation-on-draft-virtual-asset-service-providers-va/1367054648787456/#:~:text=Kenya%20concludes%20public%20participation%20on,to%20full%20crypto%20licensing%20framework.
+          - generic [ref=e451]:
+            - generic [ref=e454]:
+              - 'link "Kenya''s VASP Draft 2026: The Virtual Assets Chamber''s ... The Kenyan Wallstreet https://kenyanwallstreet.com › kenya-virtual-assets-cha..." [ref=e456] [cursor=pointer]':
+                - /url: https://kenyanwallstreet.com/kenya-virtual-assets-chamber-2026
+                - 'heading "Kenya''s VASP Draft 2026: The Virtual Assets Chamber''s ..." [level=3] [ref=e457]'
+                - generic [ref=e462]:
+                  - generic [ref=e464]: The Kenyan Wallstreet
+                  - generic [ref=e466]: https://kenyanwallstreet.com › kenya-virtual-assets-cha...
+              - button "About this result" [ref=e467] [cursor=pointer]:
+                - img [ref=e470]
+            - generic [ref=e473]:
+              - generic [ref=e474]:
+                - text: The release of the draft Virtual Asset Service Provider (
+                - emphasis [ref=e475]: VASP
+                - text: )
+                - emphasis [ref=e476]: Regulations 2026
+                - text: marks a departure from purely fiscal interest toward a comprehensive oversight ...
+              - link "Read more" [ref=e477] [cursor=pointer]:
+                - /url: https://kenyanwallstreet.com/kenya-virtual-assets-chamber-2026#:~:text=The%20release%20of%20the%20draft,toward%20a%20comprehensive%20oversight%20regime.
+            - generic [ref=e479]: "Missing: NOT ‎activities"
+        - generic [ref=e481]:
+          - generic [ref=e486]:
+            - heading "People also search for" [level=2] [ref=e488]
+            - generic [ref=e490]:
+              - generic [ref=e491]:
+                - link "Draft Virtual Asset Service Providers REGULATIONS, 2026" [ref=e495] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=Draft+Virtual+Asset+Service+Providers+REGULATIONS,+2026&sa=X&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q1QJ6BAgxEAE
+                  - generic [ref=e496]:
+                    - generic [ref=e501]: Draft Virtual Asset Service Providers REGULATIONS, 2026
+                    - img [ref=e505]
+                - link "VASP Act Kenya" [ref=e510] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=VASP+Act+Kenya&sa=X&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q1QJ6BAg7EAE
+                  - generic [ref=e511]:
+                    - generic [ref=e516]: VASP Act Kenya
+                    - img [ref=e520]
+                - link "VASP license Kenya" [ref=e525] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=VASP+license+Kenya&sa=X&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q1QJ6BAg5EAE
+                  - generic [ref=e526]:
+                    - generic [ref=e531]: VASP license Kenya
+                    - img [ref=e535]
+              - generic [ref=e537]:
+                - link "Virtual asset Act" [ref=e541] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=Virtual+asset+Act&sa=X&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q1QJ6BAgzEAE
+                  - generic [ref=e542]:
+                    - generic [ref=e547]: Virtual asset Act
+                    - img [ref=e551]
+                - link "Virtual assets Service Providers Act, 2025" [ref=e556] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=Virtual+assets+Service+Providers+Act,+2025&sa=X&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q1QJ6BAgyEAE
+                  - generic [ref=e557]:
+                    - generic [ref=e562]: Virtual assets Service Providers Act, 2025
+                    - img [ref=e566]
+          - navigation [ref=e568]:
+            - heading "Page navigation" [level=1] [ref=e569]
+            - text: "1"
+            - link "Page 2" [ref=e572] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sca_esv=43a6c5a008a39361&ei=1xICat_XFqqQnesPsvzG6AM&start=10&sa=N&sstk=Af77f_d_A6-zObYpfY5ALu-UiGiW7mu5ST7ZQGfIE-IOfzeE7-fnixNr8JEPP6bQq13RTMaNT_CDWms_f78XCcItI7RzbEYF0gY5ew&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q8tMDegQIQxAE
+              - text: "2"
+            - link "Page 3" [ref=e574] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sca_esv=43a6c5a008a39361&ei=1xICat_XFqqQnesPsvzG6AM&start=20&sa=N&sstk=Af77f_d_A6-zObYpfY5ALu-UiGiW7mu5ST7ZQGfIE-IOfzeE7-fnixNr8JEPP6bQq13RTMaNT_CDWms_f78XCcItI7RzbEYF0gY5ew&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q8tMDegQIQxAG
+              - text: "3"
+            - link "Page 4" [ref=e576] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sca_esv=43a6c5a008a39361&ei=1xICat_XFqqQnesPsvzG6AM&start=30&sa=N&sstk=Af77f_d_A6-zObYpfY5ALu-UiGiW7mu5ST7ZQGfIE-IOfzeE7-fnixNr8JEPP6bQq13RTMaNT_CDWms_f78XCcItI7RzbEYF0gY5ew&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q8tMDegQIQxAI
+              - text: "4"
+            - link "Page 5" [ref=e578] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sca_esv=43a6c5a008a39361&ei=1xICat_XFqqQnesPsvzG6AM&start=40&sa=N&sstk=Af77f_d_A6-zObYpfY5ALu-UiGiW7mu5ST7ZQGfIE-IOfzeE7-fnixNr8JEPP6bQq13RTMaNT_CDWms_f78XCcItI7RzbEYF0gY5ew&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q8tMDegQIQxAK
+              - text: "5"
+            - link "Page 6" [ref=e580] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sca_esv=43a6c5a008a39361&ei=1xICat_XFqqQnesPsvzG6AM&start=50&sa=N&sstk=Af77f_d_A6-zObYpfY5ALu-UiGiW7mu5ST7ZQGfIE-IOfzeE7-fnixNr8JEPP6bQq13RTMaNT_CDWms_f78XCcItI7RzbEYF0gY5ew&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q8tMDegQIQxAM
+              - text: "6"
+            - link "Page 7" [ref=e582] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sca_esv=43a6c5a008a39361&ei=1xICat_XFqqQnesPsvzG6AM&start=60&sa=N&sstk=Af77f_d_A6-zObYpfY5ALu-UiGiW7mu5ST7ZQGfIE-IOfzeE7-fnixNr8JEPP6bQq13RTMaNT_CDWms_f78XCcItI7RzbEYF0gY5ew&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q8tMDegQIQxAO
+              - text: "7"
+            - link "Page 8" [ref=e584] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sca_esv=43a6c5a008a39361&ei=1xICat_XFqqQnesPsvzG6AM&start=70&sa=N&sstk=Af77f_d_A6-zObYpfY5ALu-UiGiW7mu5ST7ZQGfIE-IOfzeE7-fnixNr8JEPP6bQq13RTMaNT_CDWms_f78XCcItI7RzbEYF0gY5ew&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q8tMDegQIQxAQ
+              - text: "8"
+            - link "Page 9" [ref=e586] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sca_esv=43a6c5a008a39361&ei=1xICat_XFqqQnesPsvzG6AM&start=80&sa=N&sstk=Af77f_d_A6-zObYpfY5ALu-UiGiW7mu5ST7ZQGfIE-IOfzeE7-fnixNr8JEPP6bQq13RTMaNT_CDWms_f78XCcItI7RzbEYF0gY5ew&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q8tMDegQIQxAS
+              - text: "9"
+            - link "Page 10" [ref=e588] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sca_esv=43a6c5a008a39361&ei=1xICat_XFqqQnesPsvzG6AM&start=90&sa=N&sstk=Af77f_d_A6-zObYpfY5ALu-UiGiW7mu5ST7ZQGfIE-IOfzeE7-fnixNr8JEPP6bQq13RTMaNT_CDWms_f78XCcItI7RzbEYF0gY5ew&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q8tMDegQIQxAU
+              - text: "10"
+            - heading "Next" [level=2] [ref=e590]:
+              - link "Next" [ref=e591] [cursor=pointer]:
+                - /url: /search?q=Kenya+VASP+regulations+2026+exclusions+NOT+VASP+educational+activities&sca_esv=43a6c5a008a39361&ei=1xICat_XFqqQnesPsvzG6AM&start=10&sa=N&sstk=Af77f_d_A6-zObYpfY5ALu-UiGiW7mu5ST7ZQGfIE-IOfzeE7-fnixNr8JEPP6bQq13RTMaNT_CDWms_f78XCcItI7RzbEYF0gY5ew&ved=2ahUKEwifn_uf4rGUAxUqSGcHHTK-ET0Q8NMDegQIQxAW
+                - generic [ref=e593]: Next
+        - navigation
+    - contentinfo [ref=e594]:
+      - heading "Footer links" [level=1] [ref=e595]
+      - generic [ref=e599]:
+        - generic [ref=e601]:
+          - text: Kenya
+          - generic [ref=e603]:
+            - button "Kuwinda, Nairobi - Based on your past activity" [ref=e605] [cursor=pointer]:
+              - generic [ref=e606]: Kuwinda, Nairobi
+              - generic [ref=e608]:
+                - text: "-"
+                - generic [ref=e609]: Based on your past activity
+            - text: "-"
+            - button "Update location" [ref=e611] [cursor=pointer]: Update location
+        - generic [ref=e614]:
+          - link "Help" [ref=e615] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=en-KE&fg=1
+          - link "Send feedback" [ref=e616] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacy" [ref=e617] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=en-KE&fg=1
+          - link "Terms" [ref=e618] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=en-KE&fg=1

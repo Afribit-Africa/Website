@@ -46,7 +46,7 @@ export function ContactHero() {
               </a>
             </Button>
               <Button asChild size="lg" variant="outline" className="w-full sm:w-auto min-h-[44px] px-6 py-3">
-                <Link href="https://www.afribit.africa/about" target="_blank" rel="noreferrer">
+                <Link href="/about">
                 Learn About Us
                 <ArrowRight className="size-4 ml-2" aria-hidden="true" />
               </Link>

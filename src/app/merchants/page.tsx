@@ -66,7 +66,7 @@ export default async function MerchantsPage() {
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="xl">
-                  <a href="https://www.afribit.africa/register" target="_blank" rel="noreferrer">
+                  <a href="/register">
                     Register your business
                   </a>
                 </Button>
@@ -174,7 +174,7 @@ export default async function MerchantsPage() {
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg">
-                  <a href="https://www.afribit.africa/register" target="_blank" rel="noreferrer">
+                  <a href="/register">
                     Register your business
                     <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </a>

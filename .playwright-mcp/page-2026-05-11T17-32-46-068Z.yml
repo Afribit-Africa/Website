@@ -1,0 +1,274 @@
+- generic [active] [ref=e1]:
+  - region "We value your privacy" [ref=e2]:
+    - generic [ref=e4]:
+      - heading "We value your privacy" [level=1] [ref=e5]
+      - generic [ref=e6]:
+        - paragraph [ref=e8]: We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.
+        - generic [ref=e9]:
+          - button "Customize" [ref=e10] [cursor=pointer]
+          - button "Reject All" [ref=e11] [cursor=pointer]
+          - button "Accept All" [ref=e12] [cursor=pointer]
+  - link "Skip to content" [ref=e13] [cursor=pointer]:
+    - /url: "#jupiterx-main"
+  - generic [ref=e14]:
+    - banner [ref=e15]:
+      - banner [ref=e16]:
+        - generic [ref=e18]:
+          - link [ref=e23] [cursor=pointer]:
+            - /url: /
+            - img [ref=e24]
+          - generic [ref=e29]:
+            - text:  
+            - navigation "Main nav" [ref=e30]:
+              - list [ref=e31]:
+                - listitem [ref=e32]:
+                  - button "ABOUT US" [ref=e33] [cursor=pointer]:
+                    - link "ABOUT US" [ref=e34]:
+                      - /url: https://bowmanslaw.com/about-us/
+                      - generic [ref=e36]: ABOUT US
+                    - generic [ref=e38]: 
+                - listitem [ref=e39]:
+                  - link "OUR PEOPLE" [ref=e41] [cursor=pointer]:
+                    - /url: /our-people/
+                    - generic [ref=e43]: OUR PEOPLE
+                - listitem [ref=e44]:
+                  - button "EXPERTISE" [ref=e45] [cursor=pointer]:
+                    - link "EXPERTISE" [ref=e46]:
+                      - /url: https://bowmanslaw.com/expertise/
+                      - generic [ref=e48]: EXPERTISE
+                    - generic [ref=e50]: 
+                - listitem [ref=e51]:
+                  - button "INSIGHTS" [ref=e52] [cursor=pointer]:
+                    - link "INSIGHTS" [ref=e53]:
+                      - /url: https://bowmanslaw.com/insights-landing/
+                      - generic [ref=e55]: INSIGHTS
+                    - generic [ref=e57]: 
+                - listitem [ref=e58]:
+                  - button "CAREERS" [ref=e59] [cursor=pointer]:
+                    - link "CAREERS" [ref=e60]:
+                      - /url: https://bowmanslaw.com/careers/
+                      - generic [ref=e62]: CAREERS
+                    - generic [ref=e64]: 
+                - listitem [ref=e65]:
+                  - link "CONTACT US" [ref=e67] [cursor=pointer]:
+                    - /url: https://bowmanslaw.com/contact-us/
+                    - generic [ref=e69]: CONTACT US
+          - search [ref=e74]:
+            - generic [ref=e77] [cursor=pointer]: 
+          - generic [ref=e79]:
+            - link "Linkedin" [ref=e84] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/23515?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A23515%2Cidx%3A2-3-4%2CtarId%3A1472662130592%2Ctas%3Abowmans
+              - generic [ref=e85]: Linkedin
+              - generic [ref=e86]: 
+            - link [ref=e89] [cursor=pointer]:
+              - /url: https://twitter.com/Bowmans_Law
+        - text:   
+    - main [ref=e90]:
+      - generic [ref=e91]:
+        - generic [ref=e103]:
+          - 'heading "Kenya: A step forward in the regulation of virtual assets as the National Treasury issues the draft Virtual Asset Service Providers Regulations, 2026" [level=1] [ref=e106]'
+          - generic [ref=e114]:
+            - generic [ref=e116]: 26 March 2026
+            - generic [ref=e119]: "- 4 Minute Read"
+            - paragraph [ref=e122]:
+              - text: "|"
+              - link "TMT" [ref=e123] [cursor=pointer]:
+                - /url: https://bowmanslaw.com/sector/technology-media-and-telecommunications/
+              - text: "|"
+              - link "Fintech" [ref=e124] [cursor=pointer]:
+                - /url: https://bowmanslaw.com/service/fintech/
+              - text: ","
+              - link "Financial Services Regulatory" [ref=e125] [cursor=pointer]:
+                - /url: https://bowmanslaw.com/service/financial-services-regulatory/
+          - link "Download Article" [ref=e133] [cursor=pointer]:
+            - /url: https://bowmanslaw.com/wp-admin/admin-ajax.php?action=generate_acf_pdf_insight&post_id=108175&nonce=a9781b180e
+            - button "Download Article" [ref=e134]:
+              - generic [ref=e135]: 
+              - text: Download Article
+        - generic [ref=e139]:
+          - generic [ref=e141]:
+            - paragraph [ref=e144]:
+              - link "Home" [ref=e145] [cursor=pointer]:
+                - /url: https://bowmanslaw.com/
+              - text: ">"
+              - link "Insights" [ref=e146] [cursor=pointer]:
+                - /url: https://bowmanslaw.com/insights-landing/
+            - generic [ref=e154]:
+              - heading "Overview" [level=2] [ref=e155]
+              - list [ref=e156]:
+                - listitem [ref=e157]: The National Treasury has released the draft Virtual Asset Service Providers Regulations, 2026, marking a major step toward a comprehensive licensing and regulatory framework for virtual assets under the VASP Act, 2025.
+                - listitem [ref=e158]: The draft Regulations introduce detailed licensing requirements, including business plans, governance assessments, capital and liquidity thresholds, shareholding limits, and robust policies on AML/CFT, risk management, cybersecurity, and complaints handling.
+                - listitem [ref=e159]: They also set standards for market conduct, consumer protection, advertising, and mandatory reporting of material incidents such as cybersecurity breaches.
+                - listitem [ref=e160]: With public consultation open until 10 April 2026 and finalisation expected thereafter, businesses operating in or entering Kenya’s virtual asset sector are encouraged to prepare by strengthening internal governance, compliance frameworks, and capital readiness.
+            - generic [ref=e162]:
+              - paragraph [ref=e163]:
+                - text: On 17 March 2026, the National Treasury through a Multi-Agency Task Force and in consultation with the Central Bank of Kenya (
+                - strong [ref=e164]: CBK
+                - text: ) and Capital Markets Authority (
+                - strong [ref=e165]: CMA
+                - text: ) published and circulated a public notice inviting members of the public to submit their comments, inputs or memoranda on the draft Virtual Asset Service Providers Regulations, 2026 (
+                - strong [ref=e166]: draft Regulations
+                - text: ). The draft Regulations are issued pursuant to the Virtual Asset Service Providers Act, 2025 (
+                - strong [ref=e167]: Act
+                - text: ) (Act No. 20 of 2025) to operationalise the Act whose objective is to provide a framework for licensing and regulation of virtual assets.
+              - paragraph [ref=e168]:
+                - text: The draft Regulations are therefore still subject to finalisation, and we anticipate that a comprehensive licensing regime for virtual assets in Kenya will follow once they are enacted. This article should be read together with our previous insights of
+                - link "April 2025" [ref=e169] [cursor=pointer]:
+                  - /url: https://bowmanslaw.com/insights/kenya-the-virtual-asset-service-providers-bill-2025-advancing-trust-and-innovation-in-virtual-assets/
+                - text: and
+                - link "October 2025" [ref=e170] [cursor=pointer]:
+                  - /url: https://bowmanslaw.com/insights/kenya-major-regulatory-and-licensing-reforms-in-the-evolving-virtual-asset-space/
+                - text: in which we summarised the key requirements of the Act itself.
+              - paragraph [ref=e171]: In this news article, we provide a high-level overview of the draft Regulations with a particular focus on its key legal and commercial requirements, as well as the practical steps businesses can take to proactively prepare for compliance. Please see the high-level overview below.
+              - list [ref=e172]:
+                - listitem [ref=e173]:
+                  - strong [ref=e174]: Licence applications
+                  - text: ": An application for a licence must be made in the prescribed form (set out in the Second Schedule) and is accompanied by an extensive suite of documentation, including: personal details of directors (qualifications, experience), the senior officers, significant shareholders and beneficial owners; a detailed business plan; fit and proper assessment forms; proof of source of funds; operational policies (covering risk management, Anti-Money Laundering, Combating the Financing of Terrorism, and Countering Proliferation Financing (AML/CFT/CPF), cybersecurity and complaints management), evidence of paid-up and liquid capital; and audited financial statements for the preceding three years (or opening financial statements where applicable). An applicant must also demonstrate adequate human and technology resources and pay the applicable application and licence fees (relevant to the class of virtual assets intended to be traded) as set out in the First Schedule to the draft Regulations."
+                - listitem [ref=e175]:
+                  - strong [ref=e176]: Fit and proper requirements
+                  - text: ": Fit and proper requirements are generally covered under section 18 of the Act. The detailed prescribed forms (set out in the Fourth Schedule) must be completed by each relevant person, covering their personal information, educational and professional qualifications, employment history, past and present business activities, and any history of insolvency, regulatory sanctions, criminal convictions (including for fraud or theft), disqualification from directorship, or dismissal from a position of trust. Each applicant must provide at least three professional referees of good standing and a current credit rating report from a credit reference bureau. For significant shareholders, a sworn declaration that investment funds are not derived from proceeds of crime is also required."
+                - listitem [ref=e177]:
+                  - strong [ref=e178]: "Capital, shareholding and liquidity requirements:"
+                  - text: The draft Regulations (set out in Part XI and the Fifth Schedule) prescribe significant minimum capital and liquidity thresholds, which vary depending on the category of
+                  - generic [ref=e179]:
+                    - text: virtual asset service providers (
+                    - strong [ref=e180]: VASPs
+                    - text: ).
+                  - text: A licensee must hold the requisite paid-up capital for each licensed activity separately where it holds more than one licence, and core capital must always remain unencumbered. Regarding shareholding, the draft Regulations prohibit any single person from controlling or being beneficially entitled to more than 33.3% of the issued share capital, voting rights, or board appointments in a virtual asset exchange, stable coin issuer, or wallet provider unless that person is a corporate entity with sufficiently diverse ultimate beneficial ownership. Shareholding and ownership changes must be made after obtaining approval from the relevant regulatory authority upon payment of a fee set out in the First Schedule.
+                - listitem [ref=e181]:
+                  - strong [ref=e182]: Other requirements
+                  - text: – the draft Regulations also provide for notification to regulators of any material events including cybersecurity incidents. They also provide for prohibited market conduct which includes insider trading and market manipulation. To safeguard consumers, licensees are required to put in place complaint procedures and establish customer care systems. Advertisements of virtual assets are also to be regulated.
+              - heading "Looking ahead" [level=2] [ref=e183]
+              - paragraph [ref=e184]:
+                - text: The draft Regulations have been published and circulated for public participation, with submissions due to the National Treasury by
+                - strong [ref=e185]: 10 April 2026
+                - text: . The draft Regulations are therefore still subject to further amendments and discussions after close of the public participation stage. Thereafter, the draft Regulations will be amended by the Multi-Agency Task Force in consultation with the CBK and CMA pending finalisation by the National Treasury and Cabinet Secretary. As such, we expect the licensing of VASPs in Kenya to commence as soon as the draft Regulations are officially in place.
+              - paragraph [ref=e186]
+          - generic [ref=e188]:
+            - generic [ref=e190]:
+              - heading "Authors" [level=2] [ref=e191]
+              - list [ref=e192]:
+                - listitem [ref=e193]:
+                  - link [ref=e196] [cursor=pointer]:
+                    - /url: https://bowmanslaw.com/lawyer/dominic-indokhomi/
+                  - generic [ref=e197]:
+                    - heading "Dominic Indokhomi" [level=3] [ref=e198]:
+                      - link "Dominic Indokhomi" [ref=e199] [cursor=pointer]:
+                        - /url: https://bowmanslaw.com/lawyer/dominic-indokhomi/
+                    - paragraph [ref=e200]: Partner
+                - listitem [ref=e201]:
+                  - link [ref=e204] [cursor=pointer]:
+                    - /url: https://bowmanslaw.com/lawyer/daniel-mwathe/
+                  - generic [ref=e205]:
+                    - heading "Daniel Mwathe" [level=3] [ref=e206]:
+                      - link "Daniel Mwathe" [ref=e207] [cursor=pointer]:
+                        - /url: https://bowmanslaw.com/lawyer/daniel-mwathe/
+                    - paragraph [ref=e208]: Partner
+                - listitem [ref=e209]:
+                  - link [ref=e212] [cursor=pointer]:
+                    - /url: https://bowmanslaw.com/lawyer/richard-odongo/
+                  - generic [ref=e213]:
+                    - heading "Richard Odongo" [level=3] [ref=e214]:
+                      - link "Richard Odongo" [ref=e215] [cursor=pointer]:
+                        - /url: https://bowmanslaw.com/lawyer/richard-odongo/
+                    - paragraph [ref=e216]: Senior Associate
+            - generic [ref=e220]:
+              - heading "Never miss a story" [level=3] [ref=e223]
+              - paragraph [ref=e226]:
+                - text: Stay updated about
+                - generic [ref=e227]: Bowmans
+                - text: news as it happens
+              - link "Subscribe" [ref=e231] [cursor=pointer]:
+                - /url: https://communications.bowmanslaw.com/REACTION/Home/RSForm?RSID=UKVriSD4ewMVQ4K0ZeX83IvuxN2b11uz_zTYvp4OJ3k
+                - generic [ref=e233]: Subscribe
+            - generic [ref=e239]:
+              - heading "Most Popular Insights" [level=2] [ref=e240]
+              - list [ref=e241]:
+                - listitem [ref=e242]:
+                  - 'link "South Africa: ECA Amendment Bill – Spectrum sharing and more – By Daniel Pretorius, Claire Franklyn, Bradley Dunbar, Monday May 11, 2026" [ref=e243] [cursor=pointer]':
+                    - /url: https://bowmanslaw.com/insights/south-africa-eca-amendment-bill-spectrum-sharing-and-more/
+                - listitem [ref=e244]:
+                  - 'link "South Africa: Can security increase after an arrested ship has sailed? The SCA says yes – By Lana Stockton, Kimberleigh Saamlaal, Monday May 11, 2026" [ref=e245] [cursor=pointer]':
+                    - /url: https://bowmanslaw.com/insights/south-africa-can-security-increase-after-an-arrested-ship-has-sailed-the-sca-says-yes/
+                - listitem [ref=e246]:
+                  - 'link "JAW 2026: Takeaways from the Bowmans Plenary Session – Leveraging opportunities in times of uncertainty – By Clement Mkiva, Gerhard Rudolph, Brian Mambosho, Jonathan Barnes, John Kawana, Akshav Mossuddee, Monday May 11, 2026" [ref=e247] [cursor=pointer]':
+                    - /url: https://bowmanslaw.com/insights/jaw-2026-takeaways-from-bowmans-plenary-session-leveraging-opportunities-in-times-of-uncertainty/
+        - generic [ref=e258]:
+          - heading "YOU ALSO MIGHT BE INTERESTED IN" [level=2] [ref=e259]
+          - generic [ref=e260]:
+            - generic [ref=e261]:
+              - 'heading "Kenya: From grey to green? VASP Act and the road out of FATF’s watchlist" [level=3] [ref=e262]':
+                - 'link "Kenya: From grey to green? VASP Act and the road out of FATF’s watchlist" [ref=e263] [cursor=pointer]':
+                  - /url: https://bowmanslaw.com/insights/kenya-from-grey-to-green-vasp-act-and-the-road-out-of-fatfs-watchlist/
+              - text: 16 April 2026
+              - generic [ref=e264]: – The Virtual Asset Service Providers Act, 2025 represents a significant step in aligning Kenya’s virtual asset regulatory framework with FATF Recommendation 15.
+              - generic [ref=e265]: BY John Syekei, Cynthia Amutete and Stephanie Mulului
+            - generic [ref=e266]:
+              - 'heading "Kenya: A step forward in the regulation of virtual assets as the National Treasury issues the draft Virtual Asset Service Providers Regulations, 2026" [level=3] [ref=e267]':
+                - 'link "Kenya: A step forward in the regulation of virtual assets as the National Treasury issues the draft Virtual Asset Service Providers Regulations, 2026" [ref=e268] [cursor=pointer]':
+                  - /url: https://bowmanslaw.com/insights/kenya-a-step-forward-in-the-regulation-of-virtual-assets-as-the-national-treasury-issues-the-draft-virtual-asset-service-providers-regulations-2026/
+              - text: 26 March 2026
+              - generic [ref=e269]: – On 17 March 2026, the National Treasury through a Multi-Agency Task Force and in consultation with the Central Bank of Kenya (CBK) and Capital Markets Authority (CMA) published and circulated a public notice inviting membe…
+              - generic [ref=e270]: BY Dominic Indokhomi, Daniel Mwathe and Richard Odongo
+            - generic [ref=e271]:
+              - 'heading "Kenya: Major regulatory and licensing reforms in the evolving virtual asset space" [level=3] [ref=e272]':
+                - 'link "Kenya: Major regulatory and licensing reforms in the evolving virtual asset space" [ref=e273] [cursor=pointer]':
+                  - /url: https://bowmanslaw.com/insights/kenya-major-regulatory-and-licensing-reforms-in-the-evolving-virtual-asset-space/
+              - text: 22 October 2025
+              - generic [ref=e274]: – The VASPs Act 2025 was passed by the Kenyan Parliament on 7 October 2025 and assented to by the President on 15 October 2025.
+              - generic [ref=e275]: BY Daniel Mwathe, Dominic Indokhomi, Cynthia Amutete and Richard Odongo
+    - contentinfo [ref=e276]:
+      - contentinfo [ref=e277]:
+        - generic [ref=e281]:
+          - generic [ref=e283]:
+            - generic [ref=e285]:
+              - paragraph [ref=e288]: LEARN MORE
+              - paragraph [ref=e290]:
+                - link "ABOUT US" [ref=e291] [cursor=pointer]:
+                  - /url: /about-us
+              - paragraph [ref=e293]:
+                - link "OUR PEOPLE" [ref=e294] [cursor=pointer]:
+                  - /url: /our-people
+              - paragraph [ref=e296]:
+                - link "EXPERTISE" [ref=e297] [cursor=pointer]:
+                  - /url: /expertise
+              - paragraph [ref=e299]:
+                - link "INSIGHTS" [ref=e300] [cursor=pointer]:
+                  - /url: /insights-landing
+              - paragraph [ref=e302]:
+                - link "CAREERS" [ref=e303] [cursor=pointer]:
+                  - /url: /careers/
+              - paragraph [ref=e306]:
+                - link "CONTACT US" [ref=e307] [cursor=pointer]:
+                  - /url: /contact-us
+            - generic [ref=e309]:
+              - paragraph [ref=e312]: LEGAL
+              - paragraph [ref=e314]:
+                - link "LEGAL NOTICES" [ref=e315] [cursor=pointer]:
+                  - /url: /legal-notices
+              - paragraph [ref=e317]:
+                - link "TIP-OFFS HOTLINE" [ref=e318] [cursor=pointer]:
+                  - /url: /tip-offs-hotline
+              - text:  
+            - generic [ref=e320]:
+              - paragraph [ref=e323]: GET IN TOUCH
+              - link "Linkedin" [ref=e328] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/23515?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A23515%2Cidx%3A2-3-4%2CtarId%3A1472662130592%2Ctas%3Abowmans
+                - generic [ref=e329]: Linkedin
+                - generic [ref=e330]: 
+              - link [ref=e333] [cursor=pointer]:
+                - /url: https://twitter.com/Bowmans_Law
+              - paragraph [ref=e340]:
+                - link "CONTACT US" [ref=e341] [cursor=pointer]:
+                  - /url: /contact-us
+              - link [ref=e345] [cursor=pointer]:
+                - /url: /contact-us
+                - generic [ref=e346]: 
+          - paragraph [ref=e353]: COPYRIGHT © 2026 BOWMANS
+          - generic [ref=e355] [cursor=pointer]:
+            - text: 
+            - list [ref=e356]:
+              - listitem [ref=e357]: Find a lawyer
+            - text: 
+    - button "Scroll to top" [ref=e360] [cursor=pointer]: 
+  - generic [ref=e361]: desktop

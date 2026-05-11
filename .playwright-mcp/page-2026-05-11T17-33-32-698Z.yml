@@ -1,0 +1,166 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=e2] [cursor=pointer]
+      - link "Accessibility help" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-KE
+      - link "Accessibility feedback" [ref=e4] [cursor=pointer]
+  - generic [ref=e9]:
+    - search [ref=e10]:
+      - generic [ref=e12]:
+        - link "Go to Google Home" [ref=e14] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwilpMmp4rGUAxXwVmwGHSFNHsQQPAgJ
+          - img [ref=e15]
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - combobox "Search" [ref=e26]: "\"Kenya VASP\" \"not regulated\" software developers education protocol \"Kenya VASP\" \"not regulated\" software developers education protocol"
+            - generic [ref=e27]:
+              - button "Clear" [ref=e29] [cursor=pointer]:
+                - img [ref=e31]
+              - generic [ref=e34]:
+                - button "Search by voice" [ref=e35] [cursor=pointer]:
+                  - img [ref=e36]
+                - button "Search by image" [ref=e38] [cursor=pointer]:
+                  - img [ref=e39]
+          - button "Search" [ref=e41] [cursor=pointer]:
+            - img [ref=e44]
+    - generic [ref=e46]:
+      - button "Settings" [ref=e48] [cursor=pointer]:
+        - img [ref=e51]
+      - generic [ref=e54]:
+        - button "Google apps" [ref=e56] [cursor=pointer]:
+          - img [ref=e57]
+        - link "Sign in" [ref=e61] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/search%3Fq%3D%2522Kenya%2520VASP%2522%2520%2522not%2520regulated%2522%2520software%2520developers%2520education%2520protocol&ec=futura_srp_og_si_72236_p
+  - generic [ref=e63]:
+    - navigation [ref=e69]:
+      - generic [ref=e75]:
+        - list [ref=e76]:
+          - listitem [ref=e77]:
+            - link "AI Mode" [ref=e80] [cursor=pointer]:
+              - /url: /search?q=%22Kenya+VASP%22+%22not+regulated%22+software+developers+education+protocol&sca_esv=43a6c5a008a39361&udm=50&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpmAsnXCN5UBx17opt8eaTX831KXQgHodZqPs0p66UIH67w5GLAxoykhH3TzlDFmUxQ3nzL2UWmMyJZMgLAS1X6xm0ij8Hb6DtSQkqyhL9maRgaE4-T6b7I31ljzodUl2-5FT4-53Ept20Mj2CGVszQWA5F7dBcRrezYBwVylrajteZnDuWrLHYPQwrt0TWPOLxM-1tA&aep=1&ntc=1&sa=X&ved=2ahUKEwilpMmp4rGUAxXwVmwGHSFNHsQQ2J8OegQIEhAD
+              - generic [ref=e83]: AI Mode
+          - listitem [ref=e84]:
+            - link "All" [disabled] [ref=e85]:
+              - generic [ref=e87]: All
+          - listitem [ref=e88]:
+            - link "Videos" [ref=e89] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=7&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpmAsnXCN5UBx17opt8eaTX831KXQgHodZqPs0p66UIH67w5GLAxoykhH3TzlDFmUxQ3nzL2UWmMyJZMgLAS1X6xm0ij8Hb6DtSQkqyhL9maRgaE4-T6b7I31ljzodUl2-5FT4-53Ept20Mj2CGVszQWA5F7dBcRrezYBwVylrajteZnDuWrLHYPQwrt0TWPOLxM-1tA&q=%22Kenya+VASP%22+%22not+regulated%22+software+developers+education+protocol&sa=X&ved=2ahUKEwilpMmp4rGUAxXwVmwGHSFNHsQQtKgLegQIGBAB
+              - generic [ref=e91]: Videos
+          - listitem [ref=e92]:
+            - link "News" [ref=e93] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&q=%22Kenya+VASP%22+%22not+regulated%22+software+developers+education+protocol&tbm=nws&source=lnms&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpmAsnXCN5UBx17opt8eaTX831KXQgHodZqPs0p66UIH67w5GLAxoykhH3TzlDFmUxQ3nzL2UWmMyJZMgLAS1X6xm0ij8Hb6DtSQkqyhL9maRgaE4-T6b7I31ljzodUl2-5FT4-53Ept20Mj2CGVszQWA5F7dBcRrezYBwVylrajteZnDuWrLHYPQwrt0TWPOLxM-1tA&sa=X&ved=2ahUKEwilpMmp4rGUAxXwVmwGHSFNHsQQ0pQJegQIFxAB
+              - generic [ref=e95]: News
+          - listitem [ref=e96]:
+            - link "Images" [ref=e97] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpmAsnXCN5UBx17opt8eaTX831KXQgHodZqPs0p66UIH67w5GLAxoykhH3TzlDFmUxQ3nzL2UWmMyJZMgLAS1X6xm0ij8Hb6DtSQkqyhL9maRgaE4-T6b7I31ljzodUl2-5FT4-53Ept20Mj2CGVszQWA5F7dBcRrezYBwVylrajteZnDuWrLHYPQwrt0TWPOLxM-1tA&q=%22Kenya+VASP%22+%22not+regulated%22+software+developers+education+protocol&sa=X&ved=2ahUKEwilpMmp4rGUAxXwVmwGHSFNHsQQtKgLegQIFhAB
+              - generic [ref=e99]: Images
+          - listitem [ref=e100]:
+            - link "Forums" [ref=e101] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=18&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpmAsnXCN5UBx17opt8eaTX831KXQgHodZqPs0p66UIH67w5GLAxoykhH3TzlDFmUxQ3nzL2UWmMyJZMgLAS1X6xm0ij8Hb6DtSQkqyhL9maRgaE4-T6b7I31ljzodUl2-5FT4-53Ept20Mj2CGVszQWA5F7dBcRrezYBwVylrajteZnDuWrLHYPQwrt0TWPOLxM-1tA&q=%22Kenya+VASP%22+%22not+regulated%22+software+developers+education+protocol&sa=X&ved=2ahUKEwilpMmp4rGUAxXwVmwGHSFNHsQQs6gLegQIFRAB
+              - generic [ref=e103]: Forums
+          - listitem [ref=e104]:
+            - link "Short videos" [ref=e105] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=39&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpmAsnXCN5UBx17opt8eaTX831KXQgHodZqPs0p66UIH67w5GLAxoykhH3TzlDFmUxQ3nzL2UWmMyJZMgLAS1X6xm0ij8Hb6DtSQkqyhL9maRgaE4-T6b7I31ljzodUl2-5FT4-53Ept20Mj2CGVszQWA5F7dBcRrezYBwVylrajteZnDuWrLHYPQwrt0TWPOLxM-1tA&q=%22Kenya+VASP%22+%22not+regulated%22+software+developers+education+protocol&sa=X&ved=2ahUKEwilpMmp4rGUAxXwVmwGHSFNHsQQs6gLegQIFBAB
+              - generic [ref=e107]: Short videos
+          - listitem [ref=e108]:
+            - button "More filters" [ref=e109] [cursor=pointer]:
+              - generic "More filters" [ref=e110]:
+                - generic [ref=e111]:
+                  - generic [ref=e112]: More
+                  - img [ref=e114]
+        - button "Tools" [ref=e117] [cursor=pointer]:
+          - generic [ref=e119]:
+            - generic [ref=e120]: Tools
+            - img [ref=e122]
+    - heading "Search Results" [level=1] [ref=e124]
+    - generic [ref=e129]:
+      - generic [ref=e148]:
+        - heading "Thinking" [level=2] [ref=e152]:
+          - generic [ref=e153]: Thinking
+        - progressbar [ref=e154]
+      - main [ref=e156]:
+        - generic [ref=e160]:
+          - generic [ref=e163]:
+            - heading "Web results" [level=2] [ref=e164]
+            - generic [ref=e165]:
+              - generic [ref=e168]:
+                - link "Kenya VASP Act 2025 - Virtual Asset Compliance Guide vaspkenya.com https://vaspkenya.com › ... › Bill Text › FAQ" [ref=e170] [cursor=pointer]:
+                  - /url: https://vaspkenya.com/
+                  - heading "Kenya VASP Act 2025 - Virtual Asset Compliance Guide" [level=3] [ref=e171]
+                  - generic [ref=e176]:
+                    - generic [ref=e178]: vaspkenya.com
+                    - generic [ref=e180]: https://vaspkenya.com › ... › Bill Text › FAQ
+                - button "About this result" [ref=e181] [cursor=pointer]:
+                  - img [ref=e184]
+              - generic [ref=e187]:
+                - generic [ref=e188]:
+                  - text: Non-fungible tokens are
+                  - emphasis [ref=e189]: NOT regulated
+                  - text: under this Act if they are ... Qualified legal professionals specializing in financial
+                  - emphasis [ref=e190]: regulation
+                  - text: .
+                  - emphasis [ref=e191]: Kenya VASP
+                  - text: Guide.
+                - link "Read more" [ref=e192] [cursor=pointer]:
+                  - /url: https://vaspkenya.com/#:~:text=Non%2Dfungible%20tokens%20are%20NOT%20regulated,or%20any%20other%20financial%20purposes.&text=%E2%80%A2%20Qualified%20legal%20professionals%20specializing,Kenya%20VASP%20Guide
+          - generic [ref=e197]:
+            - heading "People also ask" [level=2] [ref=e199]
+            - generic [ref=e200]:
+              - button "What is the VASP regulation in Kenya?" [ref=e206] [cursor=pointer]:
+                - generic [ref=e208]: What is the VASP regulation in Kenya?
+                - img [ref=e211]
+              - button "What is vasp regulation?" [ref=e220] [cursor=pointer]:
+                - generic [ref=e222]: What is vasp regulation?
+                - img [ref=e225]
+              - button "Who issues a vasp license?" [ref=e234] [cursor=pointer]:
+                - generic [ref=e236]: Who issues a vasp license?
+                - img [ref=e239]
+              - button "Who regulates fintechs in Kenya?" [ref=e248] [cursor=pointer]:
+                - generic [ref=e250]: Who regulates fintechs in Kenya?
+                - img [ref=e253]
+          - generic [ref=e258]:
+            - heading "Web results" [level=2] [ref=e259]
+            - generic [ref=e260]:
+              - generic [ref=e263]:
+                - link "Algorand Foundation Sees $250k USDC Spend in 2025 LinkedIn · Umoh Joshua 30+ reactions · 3 months ago" [ref=e265] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/posts/joshuaumoh_over-250000-in-usdc-spent-via-pera-card-activity-7424738597041225730-Taqx
+                  - heading "Algorand Foundation Sees $250k USDC Spend in 2025" [level=3] [ref=e266]
+                  - generic [ref=e271]:
+                    - generic [ref=e273]: LinkedIn · Umoh Joshua
+                    - generic [ref=e275]: 30+ reactions · 3 months ago
+                - button "About this result" [ref=e276] [cursor=pointer]:
+                  - img [ref=e279]
+              - generic [ref=e282]:
+                - generic [ref=e283]:
+                  - text: It was a productive and inspiring day, one that will work to ensure the success of
+                  - emphasis [ref=e284]: Kenya's VASP
+                  - text: framework. We were honored to be a part of the ...
+                - link "Read more" [ref=e285] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/posts/joshuaumoh_over-250000-in-usdc-spent-via-pera-card-activity-7424738597041225730-Taqx#:~:text=It%20was%20a%20productive%20and,a%20part%20of%20the%20proceedings.
+        - generic:
+          - generic:
+            - navigation
+        - navigation
+    - contentinfo [ref=e286]:
+      - heading "Footer links" [level=1] [ref=e287]
+      - generic [ref=e291]:
+        - generic [ref=e293]:
+          - text: Kenya
+          - generic [ref=e295]:
+            - button "Kuwinda, Nairobi - From your IP address" [ref=e297] [cursor=pointer]:
+              - generic [ref=e298]: Kuwinda, Nairobi
+              - generic [ref=e300]:
+                - text: "-"
+                - generic [ref=e301]: From your IP address
+            - text: "-"
+            - button "Update location" [ref=e303] [cursor=pointer]: Update location
+        - generic [ref=e306]:
+          - link "Help" [ref=e307] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=en-KE&fg=1
+          - link "Send feedback" [ref=e308] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacy" [ref=e309] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=en-KE&fg=1
+          - link "Terms" [ref=e310] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=en-KE&fg=1

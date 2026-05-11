@@ -1,0 +1,830 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Afribit Afribit" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Afribit" [ref=e6]
+        - generic [ref=e7]: Afribit
+      - navigation [ref=e8]:
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: /about
+        - link "Programs" [ref=e10] [cursor=pointer]:
+          - /url: /programs
+        - link "Merchant Map" [ref=e11] [cursor=pointer]:
+          - /url: /merchants
+        - link "Community" [ref=e12] [cursor=pointer]:
+          - /url: /community
+        - link "Contact" [ref=e13] [cursor=pointer]:
+          - /url: /contact
+      - link "Fuel BCE ₿" [ref=e15] [cursor=pointer]:
+        - /url: /donate
+  - main [ref=e16]:
+    - generic [ref=e22]:
+      - generic [ref=e24]: Bitcoin Circular Economy — Kibera, Nairobi
+      - heading "Empowering African Communities Through Bitcoin" [level=1] [ref=e26]:
+        - text: Empowering African
+        - generic [ref=e27]: Communities
+        - text: Through Bitcoin
+      - paragraph [ref=e29]: Afribit is building a self-sustaining Bitcoin circular economy in Kibera — connecting merchants, households, and programs through the Lightning Network.
+      - generic [ref=e30]:
+        - link "Fuel the Movement" [ref=e31] [cursor=pointer]:
+          - /url: /donate
+          - generic [ref=e32]: Fuel the Movement
+          - img [ref=e33]
+        - link "Learn Our Story" [ref=e35] [cursor=pointer]:
+          - /url: https://www.afribit.africa/about
+          - img [ref=e36]
+          - generic [ref=e38]: Learn Our Story
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - img [ref=e43]
+          - generic [ref=e46]: Permissionless
+        - generic [ref=e47]:
+          - img [ref=e48]
+          - generic [ref=e50]: Immutable
+        - generic [ref=e51]:
+          - img [ref=e52]
+          - generic [ref=e55]: Borderless
+        - generic [ref=e56]:
+          - img [ref=e57]
+          - generic [ref=e59]: Secure
+        - generic [ref=e60]:
+          - img [ref=e61]
+          - generic [ref=e64]: Transparent
+        - generic [ref=e65]:
+          - img [ref=e66]
+          - generic [ref=e71]: Decentralized
+        - generic [ref=e72]:
+          - img [ref=e73]
+          - generic [ref=e76]: Censorship-Resistant
+        - generic [ref=e77]:
+          - img [ref=e78]
+          - generic [ref=e80]: Sovereign
+        - generic [ref=e81]:
+          - img [ref=e82]
+          - generic [ref=e87]: Inclusive
+        - generic [ref=e88]:
+          - img [ref=e89]
+          - generic [ref=e93]: Open-Source
+      - generic [ref=e94]:
+        - generic [ref=e95]:
+          - img [ref=e96]
+          - generic [ref=e99]: Permissionless
+        - generic [ref=e100]:
+          - img [ref=e101]
+          - generic [ref=e103]: Immutable
+        - generic [ref=e104]:
+          - img [ref=e105]
+          - generic [ref=e108]: Borderless
+        - generic [ref=e109]:
+          - img [ref=e110]
+          - generic [ref=e112]: Secure
+        - generic [ref=e113]:
+          - img [ref=e114]
+          - generic [ref=e117]: Transparent
+        - generic [ref=e118]:
+          - img [ref=e119]
+          - generic [ref=e124]: Decentralized
+        - generic [ref=e125]:
+          - img [ref=e126]
+          - generic [ref=e129]: Censorship-Resistant
+        - generic [ref=e130]:
+          - img [ref=e131]
+          - generic [ref=e133]: Sovereign
+        - generic [ref=e134]:
+          - img [ref=e135]
+          - generic [ref=e140]: Inclusive
+        - generic [ref=e141]:
+          - img [ref=e142]
+          - generic [ref=e146]: Open-Source
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - img [ref=e149]
+          - generic [ref=e152]: Permissionless
+        - generic [ref=e153]:
+          - img [ref=e154]
+          - generic [ref=e156]: Immutable
+        - generic [ref=e157]:
+          - img [ref=e158]
+          - generic [ref=e161]: Borderless
+        - generic [ref=e162]:
+          - img [ref=e163]
+          - generic [ref=e165]: Secure
+        - generic [ref=e166]:
+          - img [ref=e167]
+          - generic [ref=e170]: Transparent
+        - generic [ref=e171]:
+          - img [ref=e172]
+          - generic [ref=e177]: Decentralized
+        - generic [ref=e178]:
+          - img [ref=e179]
+          - generic [ref=e182]: Censorship-Resistant
+        - generic [ref=e183]:
+          - img [ref=e184]
+          - generic [ref=e186]: Sovereign
+        - generic [ref=e187]:
+          - img [ref=e188]
+          - generic [ref=e193]: Inclusive
+        - generic [ref=e194]:
+          - img [ref=e195]
+          - generic [ref=e199]: Open-Source
+    - generic [ref=e203]:
+      - generic [ref=e204]:
+        - generic [ref=e205]:
+          - generic [ref=e206]: Live Campaign
+          - heading "Bitcoin Circular Economy Fund" [level=2] [ref=e207]
+          - paragraph [ref=e208]: Every satoshi fuels merchants, training, and infrastructure in Kibera.
+        - generic [ref=e209]:
+          - generic [ref=e210]: $2,870
+          - generic [ref=e211]: raised of $100K goal
+      - generic [ref=e215]:
+        - generic [ref=e216]: 2.9% funded
+        - generic [ref=e217]: 78 contributors
+      - link "Contribute Now" [ref=e218] [cursor=pointer]:
+        - /url: /donate
+        - text: Contribute Now
+        - img [ref=e219]
+    - generic [ref=e222]:
+      - generic [ref=e223]:
+        - paragraph [ref=e224]: By the numbers
+        - heading "Impact at a Glance" [level=2] [ref=e225]
+        - paragraph [ref=e226]: Real numbers from on-the-ground activity in Kibera's growing Bitcoin economy.
+      - generic [ref=e227]:
+        - generic [ref=e228]:
+          - img [ref=e230]
+          - generic [ref=e232]:
+            - generic [ref=e233]: 6,000+
+            - generic [ref=e234]: Bitcoin Transactions
+            - generic [ref=e235]: Lightning-fast payments in Kibera
+        - generic [ref=e236]:
+          - img [ref=e238]
+          - generic [ref=e243]:
+            - generic [ref=e244]: 600+
+            - generic [ref=e245]: People Trained
+            - generic [ref=e246]: Community members Bitcoin-literate
+        - generic [ref=e247]:
+          - img [ref=e249]
+          - generic [ref=e254]:
+            - generic [ref=e255]: 40+
+            - generic [ref=e256]: Boda-Boda Riders
+            - generic [ref=e257]: Accepting Bitcoin for rides
+        - generic [ref=e258]:
+          - img [ref=e260]
+          - generic [ref=e264]:
+            - generic [ref=e265]: 40+
+            - generic [ref=e266]: Active Merchants
+            - generic [ref=e267]: Shops accepting Bitcoin payments
+    - generic [ref=e269]:
+      - generic [ref=e270]:
+        - paragraph [ref=e271]: Community
+        - heading "Real People, Real Progress" [level=2] [ref=e272]
+        - paragraph [ref=e273]: Behind every transaction is a Kibera resident building a better future through Bitcoin.
+      - generic [ref=e274]:
+        - generic [ref=e275]:
+          - img "Mama Mboga" [ref=e276]
+          - generic [ref=e278]:
+            - generic [ref=e279]: Market Vendor
+            - paragraph [ref=e280]: “Bitcoin helps me save without losing value to inflation.”
+        - generic [ref=e281]:
+          - img "Boda-Boda Rider" [ref=e282]
+          - generic [ref=e284]:
+            - generic [ref=e285]: Transport Entrepreneur
+            - paragraph [ref=e286]: “My customers pay instantly — no cash, no change problems.”
+        - generic [ref=e287]:
+          - img "Community Member" [ref=e288]
+          - generic [ref=e290]:
+            - generic [ref=e291]: Bitcoin Adopter
+            - paragraph [ref=e292]: “I learned to scan a Lightning invoice in one afternoon.”
+        - generic [ref=e293]:
+          - img "Waste Program" [ref=e294]
+          - generic [ref=e296]:
+            - generic [ref=e297]: Circular Economy
+            - paragraph [ref=e298]: “Clean the community, earn Bitcoin — it is real change.”
+    - generic [ref=e301]:
+      - generic [ref=e302]:
+        - img "Aerial view of Kibera" [ref=e303]
+        - generic [ref=e306]: Kibera, Nairobi — Africa's largest urban informal settlement
+      - generic [ref=e307]:
+        - heading "Why Start in Kibera?" [level=2] [ref=e308]
+        - paragraph [ref=e309]: Kibera is home to over 250,000 people — many unbanked, many running informal businesses with no access to digital finance. Bitcoin changes that.
+        - generic [ref=e310]:
+          - generic [ref=e311]:
+            - heading "The Challenge" [level=3] [ref=e312]
+            - list [ref=e313]:
+              - listitem [ref=e314]: Limited access to traditional banking
+              - listitem [ref=e316]: Currency inflation eroding savings
+              - listitem [ref=e318]: Cash-only economy limiting growth
+              - listitem [ref=e320]: Financial exclusion of informal workers
+          - generic [ref=e322]:
+            - heading "Our Approach" [level=3] [ref=e323]
+            - list [ref=e324]:
+              - listitem [ref=e325]:
+                - img [ref=e326]
+                - text: Lightning Network for instant micro-payments
+              - listitem [ref=e329]:
+                - img [ref=e330]
+                - text: Peer-to-peer Bitcoin training programs
+              - listitem [ref=e333]:
+                - img [ref=e334]
+                - text: Circular merchant network in Kibera
+              - listitem [ref=e337]:
+                - img [ref=e338]
+                - text: Waste-to-Bitcoin incentive programs
+    - generic [ref=e342]:
+      - generic [ref=e343]:
+        - generic [ref=e344]: Our Programs
+        - heading "Circular Resilience Programs" [level=2] [ref=e345]
+        - paragraph [ref=e346]: Four pillars driving Bitcoin adoption from the ground up in Kibera's informal economy.
+      - generic [ref=e347]:
+        - link "Micro-Merchants & Traders Active The Micro-Merchants & Traders program works directly with local business owners across Kibera to integrate Bitcoin as a practical payment method, backed by onboarding, point-of-sale support, and ongoing field mentorship. Explore program" [ref=e348] [cursor=pointer]:
+          - /url: /programs/merchants
+          - generic [ref=e349]:
+            - img [ref=e351]
+            - generic [ref=e355]:
+              - heading "Micro-Merchants & Traders" [level=3] [ref=e356]
+              - generic [ref=e357]: Active
+            - paragraph [ref=e358]: The Micro-Merchants & Traders program works directly with local business owners across Kibera to integrate Bitcoin as a practical payment method, backed by onboarding, point-of-sale support, and ongoing field mentorship.
+            - generic [ref=e359]:
+              - text: Explore program
+              - img [ref=e360]
+        - link "Women's Upcycling Collective Active The Women's Upcycling Collective combines craftsmanship training, material access, and Bitcoin commerce so women in Kibera can build sustainable businesses from discarded materials. Explore program" [ref=e362] [cursor=pointer]:
+          - /url: /programs/upcycling
+          - generic [ref=e363]:
+            - img [ref=e365]
+            - generic [ref=e368]:
+              - heading "Women's Upcycling Collective" [level=3] [ref=e369]
+              - generic [ref=e370]: Active
+            - paragraph [ref=e371]: The Women's Upcycling Collective combines craftsmanship training, material access, and Bitcoin commerce so women in Kibera can build sustainable businesses from discarded materials.
+            - generic [ref=e372]:
+              - text: Explore program
+              - img [ref=e373]
+        - link "Waste Incentives Program Expanding The Waste Incentives Program uses Bitcoin rewards to turn cleanup work into income, motivating youth and community members to collect, sort, and route waste toward recycling, upcycling, or safe disposal. Explore program" [ref=e375] [cursor=pointer]:
+          - /url: /programs/waste-management
+          - generic [ref=e376]:
+            - img [ref=e378]
+            - generic [ref=e385]:
+              - heading "Waste Incentives Program" [level=3] [ref=e386]
+              - generic [ref=e387]: Expanding
+            - paragraph [ref=e388]: The Waste Incentives Program uses Bitcoin rewards to turn cleanup work into income, motivating youth and community members to collect, sort, and route waste toward recycling, upcycling, or safe disposal.
+            - generic [ref=e389]:
+              - text: Explore program
+              - img [ref=e390]
+        - link "Boda-Boda \"Ride to Freedom\" Active The Boda-Boda \"Ride to Freedom\" program trains riders in Bitcoin, helps them earn and save sats, and provides compliance guidance so they can secure licensing and insurance using their own funds. Explore program" [ref=e392] [cursor=pointer]:
+          - /url: /programs/bodaboda
+          - generic [ref=e393]:
+            - img [ref=e395]
+            - generic [ref=e400]:
+              - heading "Boda-Boda \"Ride to Freedom\"" [level=3] [ref=e401]
+              - generic [ref=e402]: Active
+            - paragraph [ref=e403]: The Boda-Boda "Ride to Freedom" program trains riders in Bitcoin, helps them earn and save sats, and provides compliance guidance so they can secure licensing and insurance using their own funds.
+            - generic [ref=e404]:
+              - text: Explore program
+              - img [ref=e405]
+      - link "View all programs" [ref=e408] [cursor=pointer]:
+        - /url: /programs
+        - text: View all programs
+        - img [ref=e409]
+    - generic [ref=e413]:
+      - generic [ref=e414]:
+        - img [ref=e415]
+        - blockquote [ref=e418]: “Through Afribit, I completed my driving classes and set up my first Bitcoin wallet. I can save sats toward my licensing fees and still spend within the circular economy — supporting other riders and helping the whole community grow.”
+        - generic [ref=e419]:
+          - generic [ref=e420]: Brian
+          - generic [ref=e421]: Boda-Boda Rider, Bitcoin Advocate
+      - generic [ref=e422]:
+        - button "Previous" [ref=e423]:
+          - img [ref=e424]
+        - generic [ref=e426]:
+          - button "Go to testimonial 1" [ref=e427]
+          - button "Go to testimonial 2" [ref=e428]
+          - button "Go to testimonial 3" [ref=e429]
+          - button "Go to testimonial 4" [ref=e430]
+          - button "Go to testimonial 5" [ref=e431]
+        - button "Next" [ref=e432]:
+          - img [ref=e433]
+    - generic [ref=e437]:
+      - generic [ref=e438]:
+        - paragraph [ref=e439]: Trusted partners & supporters
+        - heading "Backed by organisations who believe in a Bitcoin future for Africa" [level=2] [ref=e440]
+        - paragraph [ref=e441]: From global Bitcoin foundations to grassroots organisations, our partners bring funding, training, and infrastructure that makes the Kibera circular economy possible.
+        - list [ref=e442]:
+          - listitem [ref=e443]: Direct funding & grant support
+          - listitem [ref=e445]: Technical infrastructure & tools
+          - listitem [ref=e447]: Curriculum design & training resources
+          - listitem [ref=e449]: Community events & media exposure
+        - paragraph [ref=e451]:
+          - text: Interested in partnering?
+          - link "Reach out to us" [ref=e452] [cursor=pointer]:
+            - /url: mailto:connect@afribit.africa
+      - generic [ref=e454]:
+        - generic [ref=e455]:
+          - generic [ref=e456]:
+            - figure [ref=e457] [cursor=pointer]:
+              - img "FBCE Global" [ref=e895]
+            - figure [ref=e458] [cursor=pointer]:
+              - img "Geyser" [ref=e896]
+            - figure [ref=e459] [cursor=pointer]:
+              - img "Rottweil" [ref=e897]
+            - figure [ref=e460] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e898]
+            - figure [ref=e461] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e899]
+          - generic [ref=e462]:
+            - figure [ref=e463] [cursor=pointer]:
+              - img "FBCE Global" [ref=e900]
+            - figure [ref=e464] [cursor=pointer]:
+              - img "Geyser" [ref=e901]
+            - figure [ref=e465] [cursor=pointer]:
+              - img "Rottweil" [ref=e902]
+            - figure [ref=e466] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e903]
+            - figure [ref=e467] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e904]
+          - generic [ref=e468]:
+            - figure [ref=e469] [cursor=pointer]:
+              - img "FBCE Global" [ref=e905]
+            - figure [ref=e470] [cursor=pointer]:
+              - img "Geyser" [ref=e906]
+            - figure [ref=e471] [cursor=pointer]:
+              - img "Rottweil" [ref=e907]
+            - figure [ref=e472] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e908]
+            - figure [ref=e473] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e909]
+          - generic [ref=e474]:
+            - figure [ref=e475] [cursor=pointer]:
+              - img "FBCE Global" [ref=e910]
+            - figure [ref=e476] [cursor=pointer]:
+              - img "Geyser" [ref=e911]
+            - figure [ref=e477] [cursor=pointer]:
+              - img "Rottweil" [ref=e912]
+            - figure [ref=e478] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e913]
+            - figure [ref=e479] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e914]
+          - generic [ref=e480]:
+            - figure [ref=e481] [cursor=pointer]:
+              - img "FBCE Global" [ref=e915]
+            - figure [ref=e482] [cursor=pointer]:
+              - img "Geyser" [ref=e916]
+            - figure [ref=e483] [cursor=pointer]:
+              - img "Rottweil" [ref=e917]
+            - figure [ref=e484] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e918]
+            - figure [ref=e485] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e919]
+          - generic [ref=e486]:
+            - figure [ref=e487] [cursor=pointer]:
+              - img "FBCE Global" [ref=e920]
+            - figure [ref=e488] [cursor=pointer]:
+              - img "Geyser" [ref=e921]
+            - figure [ref=e489] [cursor=pointer]:
+              - img "Rottweil" [ref=e922]
+            - figure [ref=e490] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e923]
+            - figure [ref=e491] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e924]
+        - generic [ref=e492]:
+          - generic [ref=e493]:
+            - figure [ref=e494] [cursor=pointer]:
+              - img "Geyser" [ref=e925]
+            - figure [ref=e495] [cursor=pointer]:
+              - img "Rottweil" [ref=e926]
+            - figure [ref=e496] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e927]
+            - figure [ref=e497] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e928]
+            - figure [ref=e498] [cursor=pointer]:
+              - img "FBCE Global" [ref=e929]
+          - generic [ref=e499]:
+            - figure [ref=e500] [cursor=pointer]:
+              - img "Geyser" [ref=e930]
+            - figure [ref=e501] [cursor=pointer]:
+              - img "Rottweil" [ref=e931]
+            - figure [ref=e502] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e932]
+            - figure [ref=e503] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e933]
+            - figure [ref=e504] [cursor=pointer]:
+              - img "FBCE Global" [ref=e934]
+          - generic [ref=e505]:
+            - figure [ref=e506] [cursor=pointer]:
+              - img "Geyser" [ref=e935]
+            - figure [ref=e507] [cursor=pointer]:
+              - img "Rottweil" [ref=e936]
+            - figure [ref=e508] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e937]
+            - figure [ref=e509] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e938]
+            - figure [ref=e510] [cursor=pointer]:
+              - img "FBCE Global" [ref=e939]
+          - generic [ref=e511]:
+            - figure [ref=e512] [cursor=pointer]:
+              - img "Geyser" [ref=e940]
+            - figure [ref=e513] [cursor=pointer]:
+              - img "Rottweil" [ref=e941]
+            - figure [ref=e514] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e942]
+            - figure [ref=e515] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e943]
+            - figure [ref=e516] [cursor=pointer]:
+              - img "FBCE Global" [ref=e944]
+          - generic [ref=e517]:
+            - figure [ref=e518] [cursor=pointer]:
+              - img "Geyser" [ref=e945]
+            - figure [ref=e519] [cursor=pointer]:
+              - img "Rottweil" [ref=e946]
+            - figure [ref=e520] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e947]
+            - figure [ref=e521] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e948]
+            - figure [ref=e522] [cursor=pointer]:
+              - img "FBCE Global" [ref=e949]
+          - generic [ref=e523]:
+            - figure [ref=e524] [cursor=pointer]:
+              - img "Geyser" [ref=e950]
+            - figure [ref=e525] [cursor=pointer]:
+              - img "Rottweil" [ref=e951]
+            - figure [ref=e526] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e952]
+            - figure [ref=e527] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e953]
+            - figure [ref=e528] [cursor=pointer]:
+              - img "FBCE Global" [ref=e954]
+        - generic [ref=e529]:
+          - generic [ref=e530]:
+            - figure [ref=e531] [cursor=pointer]:
+              - img "Rottweil" [ref=e955]
+            - figure [ref=e532] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e956]
+            - figure [ref=e533] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e957]
+            - figure [ref=e534] [cursor=pointer]:
+              - img "FBCE Global" [ref=e958]
+            - figure [ref=e535] [cursor=pointer]:
+              - img "Geyser" [ref=e959]
+          - generic [ref=e536]:
+            - figure [ref=e537] [cursor=pointer]:
+              - img "Rottweil" [ref=e960]
+            - figure [ref=e538] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e961]
+            - figure [ref=e539] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e962]
+            - figure [ref=e540] [cursor=pointer]:
+              - img "FBCE Global" [ref=e963]
+            - figure [ref=e541] [cursor=pointer]:
+              - img "Geyser" [ref=e964]
+          - generic [ref=e542]:
+            - figure [ref=e543] [cursor=pointer]:
+              - img "Rottweil" [ref=e965]
+            - figure [ref=e544] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e966]
+            - figure [ref=e545] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e967]
+            - figure [ref=e546] [cursor=pointer]:
+              - img "FBCE Global" [ref=e968]
+            - figure [ref=e547] [cursor=pointer]:
+              - img "Geyser" [ref=e969]
+          - generic [ref=e548]:
+            - figure [ref=e549] [cursor=pointer]:
+              - img "Rottweil" [ref=e970]
+            - figure [ref=e550] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e971]
+            - figure [ref=e551] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e972]
+            - figure [ref=e552] [cursor=pointer]:
+              - img "FBCE Global" [ref=e973]
+            - figure [ref=e553] [cursor=pointer]:
+              - img "Geyser" [ref=e974]
+          - generic [ref=e554]:
+            - figure [ref=e555] [cursor=pointer]:
+              - img "Rottweil" [ref=e975]
+            - figure [ref=e556] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e976]
+            - figure [ref=e557] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e977]
+            - figure [ref=e558] [cursor=pointer]:
+              - img "FBCE Global" [ref=e978]
+            - figure [ref=e559] [cursor=pointer]:
+              - img "Geyser" [ref=e979]
+          - generic [ref=e560]:
+            - figure [ref=e561] [cursor=pointer]:
+              - img "Rottweil" [ref=e980]
+            - figure [ref=e562] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e981]
+            - figure [ref=e563] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e982]
+            - figure [ref=e564] [cursor=pointer]:
+              - img "FBCE Global" [ref=e983]
+            - figure [ref=e565] [cursor=pointer]:
+              - img "Geyser" [ref=e984]
+        - generic [ref=e566]:
+          - generic [ref=e567]:
+            - figure [ref=e568] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e985]
+            - figure [ref=e569] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e986]
+            - figure [ref=e570] [cursor=pointer]:
+              - img "FBCE Global" [ref=e987]
+            - figure [ref=e571] [cursor=pointer]:
+              - img "Geyser" [ref=e988]
+            - figure [ref=e572] [cursor=pointer]:
+              - img "Rottweil" [ref=e989]
+          - generic [ref=e573]:
+            - figure [ref=e574] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e990]
+            - figure [ref=e575] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e991]
+            - figure [ref=e576] [cursor=pointer]:
+              - img "FBCE Global" [ref=e992]
+            - figure [ref=e577] [cursor=pointer]:
+              - img "Geyser" [ref=e993]
+            - figure [ref=e578] [cursor=pointer]:
+              - img "Rottweil" [ref=e994]
+          - generic [ref=e579]:
+            - figure [ref=e580] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e995]
+            - figure [ref=e581] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e996]
+            - figure [ref=e582] [cursor=pointer]:
+              - img "FBCE Global" [ref=e997]
+            - figure [ref=e583] [cursor=pointer]:
+              - img "Geyser" [ref=e998]
+            - figure [ref=e584] [cursor=pointer]:
+              - img "Rottweil" [ref=e999]
+          - generic [ref=e585]:
+            - figure [ref=e586] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e1000]
+            - figure [ref=e587] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e1001]
+            - figure [ref=e588] [cursor=pointer]:
+              - img "FBCE Global" [ref=e1002]
+            - figure [ref=e589] [cursor=pointer]:
+              - img "Geyser" [ref=e1003]
+            - figure [ref=e590] [cursor=pointer]:
+              - img "Rottweil" [ref=e1004]
+          - generic [ref=e591]:
+            - figure [ref=e592] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e1005]
+            - figure [ref=e593] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e1006]
+            - figure [ref=e594] [cursor=pointer]:
+              - img "FBCE Global" [ref=e1007]
+            - figure [ref=e595] [cursor=pointer]:
+              - img "Geyser" [ref=e1008]
+            - figure [ref=e596] [cursor=pointer]:
+              - img "Rottweil" [ref=e1009]
+          - generic [ref=e597]:
+            - figure [ref=e598] [cursor=pointer]:
+              - img "Bitcoin Conference" [ref=e1010]
+            - figure [ref=e599] [cursor=pointer]:
+              - img "Crack The Orange" [ref=e1011]
+            - figure [ref=e600] [cursor=pointer]:
+              - img "FBCE Global" [ref=e1012]
+            - figure [ref=e601] [cursor=pointer]:
+              - img "Geyser" [ref=e1013]
+            - figure [ref=e602] [cursor=pointer]:
+              - img "Rottweil" [ref=e1014]
+    - generic [ref=e605]:
+      - generic [ref=e606]:
+        - generic [ref=e607]: Community Hub
+        - heading "Join the Kibera Bitcoin Community on Fedi" [level=2] [ref=e608]
+        - paragraph [ref=e609]: Connect with Kibera's Bitcoin community using Fedi — a federated, censorship-resistant platform that combines secure messaging with Lightning Network payments. No phone number required.
+        - generic [ref=e610]:
+          - generic [ref=e611]:
+            - img [ref=e613]
+            - generic [ref=e615]:
+              - generic [ref=e616]: Censorship-Resistant
+              - generic [ref=e617]: No one can block your messages or transactions
+          - generic [ref=e618]:
+            - img [ref=e620]
+            - generic [ref=e622]:
+              - generic [ref=e623]: Lightning Integrated
+              - generic [ref=e624]: Send sats directly in community chat
+          - generic [ref=e625]:
+            - img [ref=e627]
+            - generic [ref=e629]:
+              - generic [ref=e630]: Private & Local
+              - generic [ref=e631]: Community-controlled, not corporate servers
+          - generic [ref=e632]:
+            - img [ref=e634]
+            - generic [ref=e637]:
+              - generic [ref=e638]: Offline-Capable
+              - generic [ref=e639]: Works even with limited connectivity
+        - link "Join Community on Fedi" [ref=e640] [cursor=pointer]:
+          - /url: /community
+      - generic [ref=e642]:
+        - generic [ref=e643]: Scan to join
+        - img "Afribit community QR code" [ref=e645]
+        - paragraph [ref=e646]: Scan with Fedi app to join the Kibera Bitcoin community
+    - generic [ref=e648]:
+      - generic [ref=e649]:
+        - generic [ref=e650]: Media
+        - heading "Watch Our Story" [level=2] [ref=e651]
+        - paragraph [ref=e652]: Follow the movement on the ground in Kibera.
+      - generic [ref=e653]:
+        - link "In Kibera, roadside vegetable stands are accepting an unconventional form of payment BBC News In Kibera, roadside vegetable stands are accepting an unconventional form of payment" [ref=e654] [cursor=pointer]:
+          - /url: https://youtube.com/watch?v=rPVoaYFiIDg
+          - generic [ref=e655]:
+            - img "In Kibera, roadside vegetable stands are accepting an unconventional form of payment" [ref=e656]
+            - img [ref=e659]
+          - generic [ref=e661]:
+            - paragraph [ref=e662]: BBC News
+            - paragraph [ref=e663]: In Kibera, roadside vegetable stands are accepting an unconventional form of payment
+        - link "Bitcoin adoption in Africa's largest informal settlement AP News Bitcoin adoption in Africa's largest informal settlement" [ref=e664] [cursor=pointer]:
+          - /url: https://youtube.com/watch?v=RBUj98JhpWY
+          - generic [ref=e665]:
+            - img "Bitcoin adoption in Africa's largest informal settlement" [ref=e666]
+            - img [ref=e669]
+          - generic [ref=e671]:
+            - paragraph [ref=e672]: AP News
+            - paragraph [ref=e673]: Bitcoin adoption in Africa's largest informal settlement
+        - link "Could cryptocurrency help Africa's biggest slum? ABC News Could cryptocurrency help Africa's biggest slum?" [ref=e674] [cursor=pointer]:
+          - /url: https://youtube.com/watch?v=0Ov1vgy8Gag
+          - generic [ref=e675]:
+            - img "Could cryptocurrency help Africa's biggest slum?" [ref=e676]
+            - img [ref=e679]
+          - generic [ref=e681]:
+            - paragraph [ref=e682]: ABC News
+            - paragraph [ref=e683]: Could cryptocurrency help Africa's biggest slum?
+        - link "Bitcoin circular economy transforming lives in Kibera Firstpost Bitcoin circular economy transforming lives in Kibera" [ref=e684] [cursor=pointer]:
+          - /url: https://youtube.com/watch?v=l4mUySspn1E
+          - generic [ref=e685]:
+            - img "Bitcoin circular economy transforming lives in Kibera" [ref=e686]
+            - img [ref=e689]
+          - generic [ref=e691]:
+            - paragraph [ref=e692]: Firstpost
+            - paragraph [ref=e693]: Bitcoin circular economy transforming lives in Kibera
+        - link "Financial inclusion through Bitcoin in Kenya Associated Press Financial inclusion through Bitcoin in Kenya" [ref=e694] [cursor=pointer]:
+          - /url: https://youtube.com/watch?v=oqREM62cAqk
+          - generic [ref=e695]:
+            - img "Financial inclusion through Bitcoin in Kenya" [ref=e696]
+            - img [ref=e699]
+          - generic [ref=e701]:
+            - paragraph [ref=e702]: Associated Press
+            - paragraph [ref=e703]: Financial inclusion through Bitcoin in Kenya
+        - link "I spent a day using Bitcoin as money in Africa Joe Nakamoto I spent a day using Bitcoin as money in Africa" [ref=e704] [cursor=pointer]:
+          - /url: https://youtube.com/watch?v=LRSQSkiil0M
+          - generic [ref=e705]:
+            - img "I spent a day using Bitcoin as money in Africa" [ref=e706]
+            - img [ref=e709]
+          - generic [ref=e711]:
+            - paragraph [ref=e712]: Joe Nakamoto
+            - paragraph [ref=e713]: I spent a day using Bitcoin as money in Africa
+    - generic [ref=e716]:
+      - generic [ref=e717]:
+        - generic [ref=e718]: FAQ
+        - heading "Frequently Asked Questions" [level=2] [ref=e719]
+      - generic [ref=e720]:
+        - generic [ref=e721]:
+          - heading "What is Afribit and what do you do?" [level=3] [ref=e722]:
+            - button "What is Afribit and what do you do?" [expanded] [active] [ref=e723]:
+              - text: What is Afribit and what do you do?
+              - img [ref=e724]
+          - region "What is Afribit and what do you do?" [ref=e1015]:
+            - generic [ref=e1016]: Afribit is a grassroots organisation building a Bitcoin circular economy in Kibera, one of Africa's largest informal settlements. We leverage Bitcoin to create financial inclusion, environmental stewardship, and community resilience through education, waste management, rider compliance support, and merchant onboarding.
+        - heading "Why Bitcoin? Why not use mobile money or cash?" [level=3] [ref=e727]:
+          - button "Why Bitcoin? Why not use mobile money or cash?" [ref=e728]:
+            - text: Why Bitcoin? Why not use mobile money or cash?
+            - img [ref=e729]
+        - heading "How do residents earn Bitcoin?" [level=3] [ref=e732]:
+          - button "How do residents earn Bitcoin?" [ref=e733]:
+            - text: How do residents earn Bitcoin?
+            - img [ref=e734]
+        - heading "How does the Bitcoin circular economy actually work?" [level=3] [ref=e737]:
+          - button "How does the Bitcoin circular economy actually work?" [ref=e738]:
+            - text: How does the Bitcoin circular economy actually work?
+            - img [ref=e739]
+        - heading "What programmes can I support with my donation?" [level=3] [ref=e742]:
+          - button "What programmes can I support with my donation?" [ref=e743]:
+            - text: What programmes can I support with my donation?
+            - img [ref=e744]
+        - heading "Can I donate in Bitcoin?" [level=3] [ref=e747]:
+          - button "Can I donate in Bitcoin?" [ref=e748]:
+            - text: Can I donate in Bitcoin?
+            - img [ref=e749]
+        - heading "How transparent is Afribit with donations?" [level=3] [ref=e752]:
+          - button "How transparent is Afribit with donations?" [ref=e753]:
+            - text: How transparent is Afribit with donations?
+            - img [ref=e754]
+        - heading "How can I get involved beyond donating?" [level=3] [ref=e757]:
+          - button "How can I get involved beyond donating?" [ref=e758]:
+            - text: How can I get involved beyond donating?
+            - img [ref=e759]
+    - generic [ref=e762]:
+      - generic [ref=e763]:
+        - generic [ref=e764]: 2026 Roadmap
+        - heading "Strategic Goals" [level=2] [ref=e765]
+        - paragraph [ref=e766]: Where we are going — and how every donation gets us closer.
+      - generic [ref=e767]:
+        - generic [ref=e768]:
+          - generic [ref=e769]:
+            - img [ref=e771]
+            - generic [ref=e775]: "2026"
+          - heading "Reach 200 Active Merchants" [level=3] [ref=e776]
+          - paragraph [ref=e777]: Onboard 200 Kibera businesses with Lightning POS and 6-month retention support.
+        - generic [ref=e778]:
+          - generic [ref=e779]:
+            - img [ref=e781]
+            - generic [ref=e784]: "2026"
+          - heading "$100K Campaign Goal" [level=3] [ref=e785]
+          - paragraph [ref=e786]: Raise $100,000 to fund full-year operations across all four programs.
+        - generic [ref=e787]:
+          - generic [ref=e788]:
+            - img [ref=e790]
+            - generic [ref=e795]: "2026"
+          - heading "Train 500 Community Members" [level=3] [ref=e796]
+          - paragraph [ref=e797]: Deliver Bitcoin literacy training to 500 residents in Swahili and Sheng.
+        - generic [ref=e798]:
+          - generic [ref=e799]:
+            - img [ref=e801]
+            - generic [ref=e804]: "2026"
+          - heading "Expand Waste Program Citywide" [level=3] [ref=e805]
+          - paragraph [ref=e806]: Scale the waste-to-Bitcoin program beyond Kibera to three additional Nairobi districts.
+        - generic [ref=e807]:
+          - generic [ref=e808]:
+            - img [ref=e810]
+            - generic [ref=e815]: "2026"
+          - heading "Replicate in 2 New Cities" [level=3] [ref=e816]
+          - paragraph [ref=e817]: Document and open-source the Afribit playbook for replication in Lagos and Kampala.
+      - link "Help Us Hit These Goals" [ref=e819] [cursor=pointer]:
+        - /url: /donate
+        - text: Help Us Hit These Goals
+        - img [ref=e820]
+  - contentinfo [ref=e822]:
+    - generic [ref=e823]:
+      - generic [ref=e824]:
+        - generic [ref=e825]:
+          - link "Afribit Afribit" [ref=e826] [cursor=pointer]:
+            - /url: /
+            - img "Afribit" [ref=e827]
+            - generic [ref=e828]: Afribit
+          - paragraph [ref=e829]: Building circular Bitcoin economies in Kibera, Nairobi — one transaction at a time.
+          - generic [ref=e830]:
+            - link "X (Twitter)" [ref=e831] [cursor=pointer]:
+              - /url: https://x.com/afribitkibera
+              - img [ref=e832]
+            - link "Instagram" [ref=e834] [cursor=pointer]:
+              - /url: https://www.instagram.com/afribit_africa/
+              - img [ref=e835]
+            - link "YouTube" [ref=e838] [cursor=pointer]:
+              - /url: https://youtube.com/@afribitafrica
+              - img [ref=e839]
+        - generic [ref=e842]:
+          - heading "Quick Links" [level=3] [ref=e843]
+          - list [ref=e844]:
+            - listitem [ref=e845]:
+              - link "About Afribit" [ref=e846] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e847]:
+              - link "Merchant Program" [ref=e848] [cursor=pointer]:
+                - /url: /programs/merchants
+            - listitem [ref=e849]:
+              - link "Merchant Map" [ref=e850] [cursor=pointer]:
+                - /url: https://www.afribit.africa/maps
+            - listitem [ref=e851]:
+              - link "Donate" [ref=e852] [cursor=pointer]:
+                - /url: /donate
+            - listitem [ref=e853]:
+              - link "Contact" [ref=e854] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e855]:
+          - heading "Community" [level=3] [ref=e856]
+          - list [ref=e857]:
+            - listitem [ref=e858]:
+              - link "Join Community" [ref=e859] [cursor=pointer]:
+                - /url: /community
+            - listitem [ref=e860]:
+              - link "BTC Map" [ref=e861] [cursor=pointer]:
+                - /url: https://btcmap.org/community/afribit-kibera
+            - listitem [ref=e862]:
+              - link "Geyser Fund" [ref=e863] [cursor=pointer]:
+                - /url: https://staging.geyser.fund/project/afribitkibera
+        - generic [ref=e864]:
+          - heading "Resources" [level=3] [ref=e865]
+          - list [ref=e866]:
+            - listitem [ref=e867]:
+              - link "Privacy Policy" [ref=e868] [cursor=pointer]:
+                - /url: /legal/privacy
+            - listitem [ref=e869]:
+              - link "Terms of Use" [ref=e870] [cursor=pointer]:
+                - /url: /legal/terms
+            - listitem [ref=e871]:
+              - link "Cookie Policy" [ref=e872] [cursor=pointer]:
+                - /url: /legal/cookies
+            - listitem [ref=e873]:
+              - link "Bitcoin Confederation" [ref=e874] [cursor=pointer]:
+                - /url: https://bitcoinconfederation.org/hub/afribit-kibera/
+      - generic [ref=e875]:
+        - paragraph [ref=e876]: © 2026 Afribit Africa. All rights reserved.
+        - paragraph [ref=e877]:
+          - text: Built with
+          - img [ref=e878]
+          - text: in Nairobi
+          - link [ref=e880] [cursor=pointer]:
+            - /url: https://bitcoin.org
+            - img [ref=e881]
+  - button "Open Next.js Dev Tools" [ref=e890] [cursor=pointer]:
+    - img [ref=e891]
+  - alert [ref=e894]

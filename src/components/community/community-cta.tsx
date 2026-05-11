@@ -14,7 +14,7 @@ export function CommunityCTA() {
             Be Part of{' '}
             <span className="text-gradient-brand">Bitcoin Kibera</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-lg mx-auto mb-10 leading-relaxed text-balance">
+          <p className="text-lg text-muted-foreground max-w-lg mx-auto mb-12 leading-relaxed text-center">
             Every member strengthens the circular economy. Show up, learn, spend Bitcoin, and
             help your neighbours do the same.
           </p>

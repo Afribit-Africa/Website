@@ -10,7 +10,7 @@ import {
 const FAQ_ITEMS = [
   {
     q: 'What is Afribit and what do you do?',
-    a: 'Afribit is a grassroots organisation building a Bitcoin circular economy in Kibera, one of Africa\'s largest informal settlements. We leverage Bitcoin to create financial inclusion, environmental stewardship, and community resilience through education, waste management, micro-loans, and merchant onboarding.',
+    a: 'Afribit is a grassroots organisation building a Bitcoin circular economy in Kibera, one of Africa\'s largest informal settlements. We leverage Bitcoin to create financial inclusion, environmental stewardship, and community resilience through education, waste management, rider compliance support, and merchant onboarding.',
   },
   {
     q: 'Why Bitcoin? Why not use mobile money or cash?',
@@ -26,7 +26,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What programmes can I support with my donation?',
-    a: 'Five key initiatives: Bitcoin Education (training 500 community ambassadors), Boda-Boda Compliance (licensing and training riders), Waste Management Expansion (Bitcoin-incentivised recycling), Upcycling & Women\'s Empowerment (sponsoring micro-entrepreneurs), and Business Accelerator (micro-loans for local enterprises).',
+    a: 'Five key initiatives: Bitcoin Education (training 500 community ambassadors), Boda-Boda Compliance (licensing and training riders), Waste Management Expansion (Bitcoin-incentivised recycling), Upcycling & Women\'s Empowerment (sponsoring micro-entrepreneurs), and Business Accelerator (multisig savings and enterprise support).',
   },
   {
     q: 'Can I donate in Bitcoin?',

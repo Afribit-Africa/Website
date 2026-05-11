@@ -1,0 +1,373 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=e2] [cursor=pointer]
+      - link "Accessibility help" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-KE
+      - link "Accessibility feedback" [ref=e4] [cursor=pointer]
+  - generic [ref=e9]:
+    - search [ref=e10]:
+      - generic [ref=e12]:
+        - link "Go to Google Home" [ref=e14] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwiGqcKk4rGUAxV7aHADHRruJokQPAgJ
+          - img [ref=e15]
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - combobox "Search" [ref=e26]: Kenya VASP penalties unregistered fines sanctions 2026 Kenya VASP penalties unregistered fines sanctions 2026
+            - generic [ref=e27]:
+              - button "Clear" [ref=e29] [cursor=pointer]:
+                - img [ref=e31]
+              - generic [ref=e34]:
+                - button "Search by voice" [ref=e35] [cursor=pointer]:
+                  - img [ref=e36]
+                - button "Search by image" [ref=e38] [cursor=pointer]:
+                  - img [ref=e39]
+          - button "Search" [ref=e41] [cursor=pointer]:
+            - img [ref=e44]
+    - generic [ref=e46]:
+      - button "Settings" [ref=e48] [cursor=pointer]:
+        - img [ref=e51]
+      - generic [ref=e54]:
+        - button "Google apps" [ref=e56] [cursor=pointer]:
+          - img [ref=e57]
+        - link "Sign in" [ref=e61] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/search%3Fq%3DKenya%2520VASP%2520penalties%2520unregistered%2520fines%2520sanctions%25202026&ec=futura_srp_og_si_72236_p
+  - generic [ref=e63]:
+    - navigation [ref=e69]:
+      - generic [ref=e75]:
+        - list [ref=e76]:
+          - listitem [ref=e77]:
+            - link "AI Mode" [ref=e80] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sca_esv=43a6c5a008a39361&udm=50&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKp0UJuhqwKhR0QUhF54-6jIdn6RClOOQgS8fqsvFV9lzQRzrMvR4suE3FXHeUs72nFR_cdXEg3CkG27TeS-c0vOxxDnRBjME-YJcwZaBSrtudoO06AB9VfBw-QDztggNdoCdeReFJljw-fcHf7359RTLd1gHhvGOBrbUUyho4N_h3B91aKaGCuL0Py7CT1C1QnAP4CBQ&aep=1&ntc=1&sa=X&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ2J8OegQIEhAD
+              - generic [ref=e83]: AI Mode
+          - listitem [ref=e84]:
+            - link "All" [disabled] [ref=e85]:
+              - generic [ref=e87]: All
+          - listitem [ref=e88]:
+            - link "News" [ref=e89] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&tbm=nws&source=lnms&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKp0UJuhqwKhR0QUhF54-6jIdn6RClOOQgS8fqsvFV9lzQRzrMvR4suE3FXHeUs72nFR_cdXEg3CkG27TeS-c0vOxxDnRBjME-YJcwZaBSrtudoO06AB9VfBw-QDztggNdoCdeReFJljw-fcHf7359RTLd1gHhvGOBrbUUyho4N_h3B91aKaGCuL0Py7CT1C1QnAP4CBQ&sa=X&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ0pQJegQIFRAB
+              - generic [ref=e91]: News
+          - listitem [ref=e92]:
+            - link "Videos" [ref=e93] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=7&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKp0UJuhqwKhR0QUhF54-6jIdn6RClOOQgS8fqsvFV9lzQRzrMvR4suE3FXHeUs72nFR_cdXEg3CkG27TeS-c0vOxxDnRBjME-YJcwZaBSrtudoO06AB9VfBw-QDztggNdoCdeReFJljw-fcHf7359RTLd1gHhvGOBrbUUyho4N_h3B91aKaGCuL0Py7CT1C1QnAP4CBQ&q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sa=X&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQtKgLegQIFxAB
+              - generic [ref=e95]: Videos
+          - listitem [ref=e96]:
+            - link "Forums" [ref=e97] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=18&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKp0UJuhqwKhR0QUhF54-6jIdn6RClOOQgS8fqsvFV9lzQRzrMvR4suE3FXHeUs72nFR_cdXEg3CkG27TeS-c0vOxxDnRBjME-YJcwZaBSrtudoO06AB9VfBw-QDztggNdoCdeReFJljw-fcHf7359RTLd1gHhvGOBrbUUyho4N_h3B91aKaGCuL0Py7CT1C1QnAP4CBQ&q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sa=X&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQs6gLegQIFhAB
+              - generic [ref=e99]: Forums
+          - listitem [ref=e100]:
+            - link "Images" [ref=e101] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKp0UJuhqwKhR0QUhF54-6jIdn6RClOOQgS8fqsvFV9lzQRzrMvR4suE3FXHeUs72nFR_cdXEg3CkG27TeS-c0vOxxDnRBjME-YJcwZaBSrtudoO06AB9VfBw-QDztggNdoCdeReFJljw-fcHf7359RTLd1gHhvGOBrbUUyho4N_h3B91aKaGCuL0Py7CT1C1QnAP4CBQ&q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sa=X&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQtKgLegQIGBAB
+              - generic [ref=e103]: Images
+          - listitem [ref=e104]:
+            - link "Short videos" [ref=e105] [cursor=pointer]:
+              - /url: /search?sca_esv=43a6c5a008a39361&udm=39&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKp0UJuhqwKhR0QUhF54-6jIdn6RClOOQgS8fqsvFV9lzQRzrMvR4suE3FXHeUs72nFR_cdXEg3CkG27TeS-c0vOxxDnRBjME-YJcwZaBSrtudoO06AB9VfBw-QDztggNdoCdeReFJljw-fcHf7359RTLd1gHhvGOBrbUUyho4N_h3B91aKaGCuL0Py7CT1C1QnAP4CBQ&q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sa=X&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQs6gLegQIFBAB
+              - generic [ref=e107]: Short videos
+          - listitem [ref=e108]:
+            - button "More filters" [ref=e109] [cursor=pointer]:
+              - generic "More filters" [ref=e110]:
+                - generic [ref=e111]:
+                  - generic [ref=e112]: More
+                  - img [ref=e114]
+        - button "Tools" [ref=e117] [cursor=pointer]:
+          - generic [ref=e119]:
+            - generic [ref=e120]: Tools
+            - img [ref=e122]
+    - heading "Search Results" [level=1] [ref=e124]
+    - generic [ref=e129]:
+      - generic [ref=e148]:
+        - heading "Thinking" [level=2] [ref=e152]:
+          - generic [ref=e153]: Thinking
+        - progressbar [ref=e154]
+      - main [ref=e156]:
+        - generic [ref=e160]:
+          - generic [ref=e163]:
+            - heading "Web results" [level=2] [ref=e164]
+            - generic [ref=e165]:
+              - generic [ref=e168]:
+                - link "Draft Virtual Asset Service Providers Regulations, 2026 The National Treasury https://www.treasury.go.ke › sites › files › Notices" [ref=e170] [cursor=pointer]:
+                  - /url: https://www.treasury.go.ke/sites/default/files/Notices/Draft%20Virtual%20Asset%20Service%20Providers%20Regulations%2C%202026-%20Clean%20copy.pdf
+                  - heading "Draft Virtual Asset Service Providers Regulations, 2026" [level=3] [ref=e171]
+                  - generic [ref=e176]:
+                    - generic [ref=e178]: The National Treasury
+                    - generic [ref=e180]: https://www.treasury.go.ke › sites › files › Notices
+                - generic [ref=e181]:
+                  - generic:
+                    - generic: PDF
+                - button "About this result" [ref=e182] [cursor=pointer]:
+                  - img [ref=e185]
+              - generic [ref=e187]:
+                - generic [ref=e188]:
+                  - generic [ref=e189]:
+                    - text: (1) These Regulations shall apply to persons offering virtual asset services in or from
+                    - emphasis [ref=e190]: Kenya
+                    - text: . (2) For purposes of subregulation (1), a person is deemed to be ...
+                  - link "Read more" [ref=e191] [cursor=pointer]:
+                    - /url: https://www.treasury.go.ke/sites/default/files/Notices/Draft%20Virtual%20Asset%20Service%20Providers%20Regulations%2C%202026-%20Clean%20copy.pdf#:~:text=(1)%20These%20Regulations%20shall%20apply,or%20from%20Kenya%E2%80%9D%20where%20that
+                - generic [ref=e192]: 150 pages
+              - generic [ref=e194]:
+                - text: "Missing: unregistered ‎| Show results with:"
+                - link "unregistered" [ref=e195] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=Kenya+VASP+penalties+%22unregistered%22+fines+sanctions+2026&sa=X&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ5t4CegQIHRAB
+          - generic [ref=e199]:
+            - generic [ref=e202]:
+              - link "Kenya Crypto Stakeholders Challenge $77K Fines in ... Gate.com https://www.gate.com › News › Insights" [ref=e204] [cursor=pointer]:
+                - /url: https://www.gate.com/news/detail/kenya-crypto-stakeholders-challenge-77k-fines-in-vasp-bill-20368560
+                - heading "Kenya Crypto Stakeholders Challenge $77K Fines in ..." [level=3] [ref=e205]
+                - generic [ref=e210]:
+                  - generic [ref=e212]: Gate.com
+                  - generic [ref=e214]: https://www.gate.com › News › Insights
+              - button "About this result" [ref=e215] [cursor=pointer]:
+                - img [ref=e218]
+            - generic [ref=e221]:
+              - generic [ref=e222]: 16 Apr 2026 —
+              - generic [ref=e223]:
+                - text: What are the proposed penalties? According to the bill,
+                - emphasis [ref=e224]: fines reach up to Sh10 million ($77,303) per infraction
+                - text: ", coupled with potential prison ..."
+              - link "Read more" [ref=e225] [cursor=pointer]:
+                - /url: https://www.gate.com/news/detail/kenya-crypto-stakeholders-challenge-77k-fines-in-vasp-bill-20368560#:~:text=What%20are%20the%20proposed%20penalties%3F,of%20up%20to%20five%20years.
+          - generic [ref=e229]:
+            - generic [ref=e232]:
+              - link "Crypto startups in Kenya face $23000 fines for ad rule ... TechCabal https://techcabal.com › 2026/03/31 › kenya-crypto-adv..." [ref=e234] [cursor=pointer]:
+                - /url: https://techcabal.com/2026/03/31/kenya-crypto-advertising-rules/
+                - heading "Crypto startups in Kenya face $23000 fines for ad rule ..." [level=3] [ref=e235]
+                - generic [ref=e240]:
+                  - generic [ref=e242]: TechCabal
+                  - generic [ref=e244]: https://techcabal.com › 2026/03/31 › kenya-crypto-adv...
+              - button "About this result" [ref=e245] [cursor=pointer]:
+                - img [ref=e248]
+            - generic [ref=e251]:
+              - generic [ref=e252]: 31 Mar 2026 —
+              - generic [ref=e253]:
+                - text: Violations of core advertising rules could lead to
+                - emphasis [ref=e254]: fines
+                - text: of up to KES 3 million ($23,000) or one year in prison, or both. Misleading promotions, ...
+              - link "Read more" [ref=e255] [cursor=pointer]:
+                - /url: https://techcabal.com/2026/03/31/kenya-crypto-advertising-rules/#:~:text=Violations%20of%20core%20advertising%20rules,prison%2C%20or%20both.%20Misleading%20promotions%2C
+            - generic [ref=e257]: "Missing: unregistered ‎sanctions"
+          - generic [ref=e261]:
+            - generic [ref=e264]:
+              - 'link "Kenya''s New Virtual Asset Laws: What the 2026 ... The Kenyan Wallstreet https://kenyanwallstreet.com › kenyas-new-virtual-asset..." [ref=e266] [cursor=pointer]':
+                - /url: https://kenyanwallstreet.com/kenyas-new-virtual-asset-laws-what-the-2026-regulation-means-for-crypto-exchanges-and-investors
+                - 'heading "Kenya''s New Virtual Asset Laws: What the 2026 ..." [level=3] [ref=e267]'
+                - generic [ref=e272]:
+                  - generic [ref=e274]: The Kenyan Wallstreet
+                  - generic [ref=e276]: https://kenyanwallstreet.com › kenyas-new-virtual-asset...
+              - button "About this result" [ref=e277] [cursor=pointer]:
+                - img [ref=e280]
+            - generic [ref=e283]:
+              - text: The law, called the Virtual Asset Service Providers Act, 2025, has now been in effect for six months and has already changed how the local market operates, ...
+              - link "Read more" [ref=e284] [cursor=pointer]:
+                - /url: https://kenyanwallstreet.com/kenyas-new-virtual-asset-laws-what-the-2026-regulation-means-for-crypto-exchanges-and-investors#:~:text=The%20law%2C%20called%20the%20Virtual,causing%20trading%20volume%20to%20surge.
+          - generic [ref=e288]:
+            - generic [ref=e291]:
+              - link "Regulatory Impact Statement on VASP Regulations - 2026 The National Treasury https://www.treasury.go.ke › sites › default › files" [ref=e293] [cursor=pointer]:
+                - /url: https://www.treasury.go.ke/sites/default/files/Latest%20updates/Regulatory%20Impact%20Statement%20on%20VASP%20Regulations%20-%202026%20-%20PP.pdf
+                - heading "Regulatory Impact Statement on VASP Regulations - 2026" [level=3] [ref=e294]
+                - generic [ref=e299]:
+                  - generic [ref=e301]: The National Treasury
+                  - generic [ref=e303]: https://www.treasury.go.ke › sites › default › files
+              - generic [ref=e304]:
+                - generic:
+                  - generic: PDF
+              - button "About this result" [ref=e305] [cursor=pointer]:
+                - img [ref=e308]
+            - generic [ref=e310]:
+              - generic [ref=e311]:
+                - generic [ref=e312]:
+                  - text: This RIS assesses the impact of implementation of the Virtual Asset Service Providers Regulations,.
+                  - emphasis [ref=e313]: "2026"
+                  - text: ", whose object is to operationalize the provisions of ..."
+                - link "Read more" [ref=e314] [cursor=pointer]:
+                  - /url: https://www.treasury.go.ke/sites/default/files/Latest%20updates/Regulatory%20Impact%20Statement%20on%20VASP%20Regulations%20-%202026%20-%20PP.pdf#:~:text=This%20RIS%20assesses%20the%20impact,Virtual%20Asset%20Service%20Providers%20Act
+              - generic [ref=e315]: 13 pages
+            - generic [ref=e317]: "Missing: penalties ‎unregistered ‎fines"
+          - generic [ref=e321]:
+            - generic [ref=e324]:
+              - link "Kenya concludes public participation on draft Virtual Asset ... Facebook · Bizna Kenya 10+ reactions · 4 weeks ago" [ref=e326] [cursor=pointer]:
+                - /url: https://www.facebook.com/biznake/posts/kenya-concludes-public-participation-on-draft-virtual-asset-service-providers-va/1367054648787456/
+                - heading "Kenya concludes public participation on draft Virtual Asset ..." [level=3] [ref=e327]
+                - generic [ref=e332]:
+                  - generic [ref=e334]: Facebook · Bizna Kenya
+                  - generic [ref=e336]: 10+ reactions · 4 weeks ago
+              - button "About this result" [ref=e337] [cursor=pointer]:
+                - img [ref=e340]
+            - generic [ref=e343]:
+              - generic [ref=e344]:
+                - text: Failure to do this, as well as giving false disclosures to the regulator, one risks a
+                - emphasis [ref=e345]: fine
+                - text: of up to Ksh.30 million and up to 10 years ...
+              - link "Read more" [ref=e346] [cursor=pointer]:
+                - /url: https://www.facebook.com/biznake/posts/kenya-concludes-public-participation-on-draft-virtual-asset-service-providers-va/1367054648787456/#:~:text=Failure%20to%20do%20this%2C%20as,up%20to%2010%20years%20imprisonment.
+            - generic [ref=e348]: "Missing: unregistered ‎sanctions"
+          - generic [ref=e352]:
+            - generic [ref=e355]:
+              - link "THE NATIONAL TREASURY Central Bank of Kenya https://www.centralbank.go.ke › press_releases" [ref=e357] [cursor=pointer]:
+                - /url: https://www.centralbank.go.ke/uploads/press_releases/370172616_Public%20Notice%20-%20Draft%20Virtual%20Asset%20Service%20Providers%20Regulations%202026.pdf
+                - heading "THE NATIONAL TREASURY" [level=3] [ref=e358]
+                - generic [ref=e363]:
+                  - generic [ref=e365]: Central Bank of Kenya
+                  - generic [ref=e367]: https://www.centralbank.go.ke › press_releases
+              - generic [ref=e368]:
+                - generic:
+                  - generic: PDF
+              - button "About this result" [ref=e369] [cursor=pointer]:
+                - img [ref=e372]
+            - generic [ref=e374]:
+              - generic [ref=e375]:
+                - generic [ref=e376]: 30 Mar 2026 —
+                - generic [ref=e377]:
+                  - emphasis [ref=e378]: "2026"
+                  - text: and Regulatory Impact Statement (RIS). The Regulations are issued pursuant to the Virtual Asset Service. Providers Act, 2025 (Act No. 20 ...
+                - link "Read more" [ref=e379] [cursor=pointer]:
+                  - /url: https://www.centralbank.go.ke/uploads/press_releases/370172616_Public%20Notice%20-%20Draft%20Virtual%20Asset%20Service%20Providers%20Regulations%202026.pdf#:~:text=2026%20and%20Regulatory%20Impact%20Statement,to%20provide%20for%20the%20legal
+              - generic [ref=e380]: 1 page
+          - generic [ref=e384]:
+            - generic [ref=e387]:
+              - link "Treasury launches public participation on virtual asset ... Kenya News Agency https://www.kenyanews.go.ke › Counties" [ref=e389] [cursor=pointer]:
+                - /url: https://www.kenyanews.go.ke/treasury-launches-public-participation-on-virtual-asset-service-providers-regulations/
+                - heading "Treasury launches public participation on virtual asset ..." [level=3] [ref=e390]
+                - generic [ref=e395]:
+                  - generic [ref=e397]: Kenya News Agency
+                  - generic [ref=e399]: https://www.kenyanews.go.ke › Counties
+              - button "About this result" [ref=e400] [cursor=pointer]:
+                - img [ref=e403]
+            - generic [ref=e406]:
+              - generic [ref=e407]: 1 Apr 2026 —
+              - generic [ref=e408]:
+                - text: The National Treasury has launched nationwide public participation on the draft Virtual Asset Service Providers (VASPs) Regulations,
+                - emphasis [ref=e409]: "2026"
+                - text: ", ..."
+              - link "Read more" [ref=e410] [cursor=pointer]:
+                - /url: https://www.kenyanews.go.ke/treasury-launches-public-participation-on-virtual-asset-service-providers-regulations/#:~:text=The%20National%20Treasury%20has%20launched,Service%20Providers%20(VASPs)%20Regulations%2C%202026%2C
+          - generic [ref=e414]:
+            - generic [ref=e417]:
+              - link "National Treasury Unveils Draft VASP Regulations 2026 www.rba.go.ke https://www.rba.go.ke › Latest News" [ref=e419] [cursor=pointer]:
+                - /url: https://www.rba.go.ke/kenya-moves-to-regulate-crypto-national-treasury-unveils-draft-vasp-regulations-2026/
+                - heading "National Treasury Unveils Draft VASP Regulations 2026" [level=3] [ref=e420]
+                - generic [ref=e425]:
+                  - generic [ref=e427]: www.rba.go.ke
+                  - generic [ref=e429]: https://www.rba.go.ke › Latest News
+              - button "About this result" [ref=e430] [cursor=pointer]:
+                - img [ref=e433]
+            - generic [ref=e436]:
+              - generic [ref=e437]:
+                - text: The National Treasury has officially released the draft Virtual Asset Service Providers (
+                - emphasis [ref=e438]: VASP
+                - text: ) Regulations,
+                - emphasis [ref=e439]: "2026"
+                - text: ", marking a significant step toward formalizing ..."
+              - link "Read more" [ref=e440] [cursor=pointer]:
+                - /url: https://www.rba.go.ke/kenya-moves-to-regulate-crypto-national-treasury-unveils-draft-vasp-regulations-2026/#:~:text=The%20National%20Treasury%20has%20officially,crypto%20and%20digital%20asset%20industry.
+            - generic [ref=e442]: "Missing: penalties ‎unregistered ‎fines ‎sanctions"
+          - generic [ref=e446]:
+            - generic [ref=e449]:
+              - 'link "Kenya''s New VASP Law: A No-BS Legal Guide For ... Bitcoin Magazine https://bitcoinmagazine.com › LEGAL" [ref=e451] [cursor=pointer]':
+                - /url: https://bitcoinmagazine.com/legal/kenyas-new-vasp-law-a-no-bs-legal-guide-for-bitcoin-and-crypto-builders
+                - 'heading "Kenya''s New VASP Law: A No-BS Legal Guide For ..." [level=3] [ref=e452]'
+                - generic [ref=e457]:
+                  - generic [ref=e459]: Bitcoin Magazine
+                  - generic [ref=e461]: https://bitcoinmagazine.com › LEGAL
+              - button "About this result" [ref=e462] [cursor=pointer]:
+                - img [ref=e465]
+            - generic [ref=e468]:
+              - generic [ref=e469]: 16 Oct 2025 —
+              - generic [ref=e470]:
+                - text: That said,
+                - emphasis [ref=e471]: unlicensed
+                - text: businesses offering any Schedule activity can face enforcement,
+                - emphasis [ref=e472]: fines
+                - text: ", and criminal"
+                - emphasis [ref=e473]: penalties
+                - text: . The line between ...
+              - link "Read more" [ref=e474] [cursor=pointer]:
+                - /url: https://bitcoinmagazine.com/legal/kenyas-new-vasp-law-a-no-bs-legal-guide-for-bitcoin-and-crypto-builders#:~:text=That%20said%2C%20unlicensed%20businesses%20offering,criminal%20penalties.%20The%20line%20between
+        - generic [ref=e476]:
+          - generic [ref=e481]:
+            - heading "People also search for" [level=2] [ref=e483]
+            - generic [ref=e485]:
+              - generic [ref=e486]:
+                - link "Kenya vasp penalties unregistered fines sanctions 2026 pdf" [ref=e490] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=Kenya+vasp+penalties+unregistered+fines+sanctions+2026+pdf&sa=X&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ1QJ6BAghEAE
+                  - generic [ref=e491]:
+                    - generic [ref=e496]: Kenya vasp penalties unregistered fines sanctions 2026 pdf
+                    - img [ref=e500]
+                - link "Kenya vasp penalties unregistered fines sanctions 2026 form" [ref=e505] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=Kenya+vasp+penalties+unregistered+fines+sanctions+2026+form&sa=X&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ1QJ6BAgtEAE
+                  - generic [ref=e506]:
+                    - generic [ref=e511]: Kenya vasp penalties unregistered fines sanctions 2026 form
+                    - img [ref=e515]
+                - link "VASP Act Kenya" [ref=e520] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=VASP+Act+Kenya&sa=X&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ1QJ6BAgkEAE
+                  - generic [ref=e521]:
+                    - generic [ref=e526]: VASP Act Kenya
+                    - img [ref=e530]
+              - generic [ref=e532]:
+                - link "VASP license Kenya" [ref=e536] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=VASP+license+Kenya&sa=X&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ1QJ6BAgjEAE
+                  - generic [ref=e537]:
+                    - generic [ref=e542]: VASP license Kenya
+                    - img [ref=e546]
+                - link "Virtual asset Act" [ref=e551] [cursor=pointer]:
+                  - /url: /search?sca_esv=43a6c5a008a39361&q=Virtual+asset+Act&sa=X&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ1QJ6BAgiEAE
+                  - generic [ref=e552]:
+                    - generic [ref=e557]: Virtual asset Act
+                    - img [ref=e561]
+          - navigation [ref=e563]:
+            - heading "Page navigation" [level=1] [ref=e564]
+            - text: "1"
+            - link "Page 2" [ref=e567] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sca_esv=43a6c5a008a39361&ei=4BICaoa5OPvQwcsPmtybyQg&start=10&sa=N&sstk=Af77f_elcqVgNC8zORiuaS6P9y7hg0k6vo52L6UMsx7eSFWuEeWk-u5FmJlAAIsXJ-7SVQ56U861O12m_IzLZTcgyTomlCvLxduIOA&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ8tMDegQILhAE
+              - text: "2"
+            - link "Page 3" [ref=e569] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sca_esv=43a6c5a008a39361&ei=4BICaoa5OPvQwcsPmtybyQg&start=20&sa=N&sstk=Af77f_elcqVgNC8zORiuaS6P9y7hg0k6vo52L6UMsx7eSFWuEeWk-u5FmJlAAIsXJ-7SVQ56U861O12m_IzLZTcgyTomlCvLxduIOA&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ8tMDegQILhAG
+              - text: "3"
+            - link "Page 4" [ref=e571] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sca_esv=43a6c5a008a39361&ei=4BICaoa5OPvQwcsPmtybyQg&start=30&sa=N&sstk=Af77f_elcqVgNC8zORiuaS6P9y7hg0k6vo52L6UMsx7eSFWuEeWk-u5FmJlAAIsXJ-7SVQ56U861O12m_IzLZTcgyTomlCvLxduIOA&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ8tMDegQILhAI
+              - text: "4"
+            - link "Page 5" [ref=e573] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sca_esv=43a6c5a008a39361&ei=4BICaoa5OPvQwcsPmtybyQg&start=40&sa=N&sstk=Af77f_elcqVgNC8zORiuaS6P9y7hg0k6vo52L6UMsx7eSFWuEeWk-u5FmJlAAIsXJ-7SVQ56U861O12m_IzLZTcgyTomlCvLxduIOA&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ8tMDegQILhAK
+              - text: "5"
+            - link "Page 6" [ref=e575] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sca_esv=43a6c5a008a39361&ei=4BICaoa5OPvQwcsPmtybyQg&start=50&sa=N&sstk=Af77f_elcqVgNC8zORiuaS6P9y7hg0k6vo52L6UMsx7eSFWuEeWk-u5FmJlAAIsXJ-7SVQ56U861O12m_IzLZTcgyTomlCvLxduIOA&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ8tMDegQILhAM
+              - text: "6"
+            - link "Page 7" [ref=e577] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sca_esv=43a6c5a008a39361&ei=4BICaoa5OPvQwcsPmtybyQg&start=60&sa=N&sstk=Af77f_elcqVgNC8zORiuaS6P9y7hg0k6vo52L6UMsx7eSFWuEeWk-u5FmJlAAIsXJ-7SVQ56U861O12m_IzLZTcgyTomlCvLxduIOA&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ8tMDegQILhAO
+              - text: "7"
+            - link "Page 8" [ref=e579] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sca_esv=43a6c5a008a39361&ei=4BICaoa5OPvQwcsPmtybyQg&start=70&sa=N&sstk=Af77f_elcqVgNC8zORiuaS6P9y7hg0k6vo52L6UMsx7eSFWuEeWk-u5FmJlAAIsXJ-7SVQ56U861O12m_IzLZTcgyTomlCvLxduIOA&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ8tMDegQILhAQ
+              - text: "8"
+            - link "Page 9" [ref=e581] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sca_esv=43a6c5a008a39361&ei=4BICaoa5OPvQwcsPmtybyQg&start=80&sa=N&sstk=Af77f_elcqVgNC8zORiuaS6P9y7hg0k6vo52L6UMsx7eSFWuEeWk-u5FmJlAAIsXJ-7SVQ56U861O12m_IzLZTcgyTomlCvLxduIOA&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ8tMDegQILhAS
+              - text: "9"
+            - link "Page 10" [ref=e583] [cursor=pointer]:
+              - /url: /search?q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sca_esv=43a6c5a008a39361&ei=4BICaoa5OPvQwcsPmtybyQg&start=90&sa=N&sstk=Af77f_elcqVgNC8zORiuaS6P9y7hg0k6vo52L6UMsx7eSFWuEeWk-u5FmJlAAIsXJ-7SVQ56U861O12m_IzLZTcgyTomlCvLxduIOA&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ8tMDegQILhAU
+              - text: "10"
+            - heading "Next" [level=2] [ref=e585]:
+              - link "Next" [ref=e586] [cursor=pointer]:
+                - /url: /search?q=Kenya+VASP+penalties+unregistered+fines+sanctions+2026&sca_esv=43a6c5a008a39361&ei=4BICaoa5OPvQwcsPmtybyQg&start=10&sa=N&sstk=Af77f_elcqVgNC8zORiuaS6P9y7hg0k6vo52L6UMsx7eSFWuEeWk-u5FmJlAAIsXJ-7SVQ56U861O12m_IzLZTcgyTomlCvLxduIOA&ved=2ahUKEwiGqcKk4rGUAxV7aHADHRruJokQ8NMDegQILhAW
+                - generic [ref=e588]: Next
+        - navigation
+    - contentinfo [ref=e589]:
+      - heading "Footer links" [level=1] [ref=e590]
+      - generic [ref=e594]:
+        - generic [ref=e596]:
+          - text: Kenya
+          - generic [ref=e598]:
+            - button "Kuwinda, Nairobi - From your IP address" [ref=e600] [cursor=pointer]:
+              - generic [ref=e601]: Kuwinda, Nairobi
+              - generic [ref=e603]:
+                - text: "-"
+                - generic [ref=e604]: From your IP address
+            - text: "-"
+            - button "Update location" [ref=e606] [cursor=pointer]: Update location
+        - generic [ref=e609]:
+          - link "Help" [ref=e610] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=en-KE&fg=1
+          - link "Send feedback" [ref=e611] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacy" [ref=e612] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=en-KE&fg=1
+          - link "Terms" [ref=e613] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=en-KE&fg=1

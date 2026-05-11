@@ -35,7 +35,7 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
     'w-full rounded-2xl border border-white/10 bg-black/25 px-4 text-foreground outline-none transition-all duration-300 placeholder:text-white/28 hover:border-white/20 focus:border-bitcoin/70 focus:bg-black/35'
 
   const toggleButtonClassName =
-    'inline-flex min-h-11 items-center justify-center rounded-[0.95rem] px-4 py-2 text-sm font-semibold transition-all duration-300'
+    'inline-flex items-center justify-center rounded-[0.95rem] px-5 py-2 text-sm font-semibold transition-all duration-300'
 
   const selectTier = (tier: DonationTier) => {
     setSelectedTierId(tier.id)
@@ -76,6 +76,10 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
         const payload = await response.json()
 
         if (!response.ok || !payload?.success || !payload?.data?.checkoutLink) {
+          if (response.status === 422 && payload?.crowdfundUrl) {
+            window.location.href = payload.crowdfundUrl
+            return
+          }
           setError(payload?.error || payload?.message || 'Unable to start the donation checkout.')
           return
         }
@@ -247,7 +251,7 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
 
               <div className="rounded-2xl border border-white/8 bg-black/20 px-4 py-4 transition-colors hover:border-white/15">
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                  <div className="max-w-xl">
+                  <div className="lg:max-w-sm">
                     <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/50">
                       Recognition preference
                     </p>
@@ -256,7 +260,7 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
                     </p>
                   </div>
                   <div
-                    className="inline-flex w-full rounded-[1.2rem] border border-white/10 bg-black/35 p-1 lg:w-auto"
+                    className="inline-flex w-auto rounded-[1.2rem] border border-white/10 bg-black/35 p-1"
                     role="group"
                     aria-label="Donation visibility"
                   >
@@ -264,7 +268,7 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
                       type="button"
                       aria-pressed={!isAnonymous}
                       onClick={() => setIsAnonymous(false)}
-                      className={`${toggleButtonClassName} flex-1 lg:min-w-[156px] ${
+                      className={`${toggleButtonClassName} ${
                         !isAnonymous
                           ? 'bg-bitcoin text-black shadow-[0_10px_24px_rgba(247,147,26,0.28)]'
                           : 'text-white/72 hover:bg-white/6 hover:text-foreground'
@@ -276,7 +280,7 @@ export function DonateExperience({ tiers }: DonateExperienceProps) {
                       type="button"
                       aria-pressed={isAnonymous}
                       onClick={() => setIsAnonymous(true)}
-                      className={`${toggleButtonClassName} flex-1 lg:min-w-[156px] ${
+                      className={`${toggleButtonClassName} ${
                         isAnonymous
                           ? 'bg-white/12 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]'
                           : 'text-white/72 hover:bg-white/6 hover:text-foreground'
