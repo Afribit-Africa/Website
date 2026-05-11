@@ -59,7 +59,7 @@ export function HeroSection() {
               </Link>
             </Button>
               <Button asChild size="xl" variant="outline" className="w-full sm:w-auto">
-                <Link href="/about">
+                <Link href="https://www.afribit.africa/about" target="_blank" rel="noreferrer">
                 <Play className="size-4 transition-transform duration-300 group-hover:scale-125" />
                 <span>Learn Our Story</span>
               </Link>
