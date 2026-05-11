@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "Bitcoin education",
     "financial inclusion",
     "cryptocurrency",
-    "Uganda",
+    "Kenya",
     "Bitcoin adoption",
     "financial freedom",
     "blockchain",

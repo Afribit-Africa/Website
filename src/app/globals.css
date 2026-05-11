@@ -177,6 +177,13 @@ h6 {
 p {
   margin: 0;
   text-wrap: pretty;
+  text-align: inherit;
+}
+
+/* Non-layered: wins over @layer utilities — ensures paragraphs in centered
+   sections are actually centered, regardless of Tailwind v4 cascade layer ordering */
+.text-center p {
+  text-align: center;
 }
 
 ::selection {
@@ -269,6 +276,16 @@ section {
 .section-panel > * {
   position: relative;
   z-index: 1;
+}
+
+.section-intro {
+  max-width: 42rem;
+  margin-inline: auto;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .interactive-card {

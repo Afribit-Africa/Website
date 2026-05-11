@@ -10,14 +10,14 @@ const STATS = [
 
 export function ImpactStats() {
   return (
-    <section className="py-20 bg-dot-grid glow-bitcoin">
+    <section className="section bg-dot-grid glow-bitcoin">
       <Container>
-        <div className="mb-12 text-center">
+        <div className="section-intro">
           <p className="text-xs text-bitcoin uppercase tracking-widest font-semibold mb-3">By the numbers</p>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-3">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Impact at a Glance
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-xl">
             Real numbers from on-the-ground activity in Kibera&apos;s growing Bitcoin economy.
           </p>
         </div>

@@ -18,7 +18,7 @@ const APPROACH = [
 
 export function WhyKibera() {
   return (
-    <section className="py-24 bg-bg-surface/50">
+    <section className="section-spacious bg-bg-surface/50">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Image */}
@@ -43,7 +43,7 @@ export function WhyKibera() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-5">
               Why Start in Kibera?
             </h2>
-            <p className="text-muted-foreground mb-14 leading-relaxed text-base">
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Kibera is home to over 250,000 people — many unbanked, many running informal
               businesses with no access to digital finance. Bitcoin changes that.
             </p>

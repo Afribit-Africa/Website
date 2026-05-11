@@ -30,14 +30,14 @@ const PEOPLE = [
 
 export function RealPeople() {
   return (
-    <section className="py-20">
+    <section className="section">
       <Container>
-        <div className="mb-12 text-center">
+        <div className="section-intro">
           <p className="text-xs text-bitcoin uppercase tracking-widest font-semibold mb-3">Community</p>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-3">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Real People, Real Progress
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-xl">
             Behind every transaction is a Kibera resident building a better future through Bitcoin.
           </p>
         </div>

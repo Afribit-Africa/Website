@@ -44,14 +44,14 @@ const FAQ_ITEMS = [
 
 export function FAQ() {
   return (
-    <section className="py-20">
+    <section className="section">
       <Container>
         <div className="max-w-2xl mx-auto">
-          <div className="mb-12 text-center">
+          <div className="section-intro">
             <Badge variant="secondary" className="mb-4">
               FAQ
             </Badge>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-0">
               Frequently Asked Questions
             </h2>
           </div>

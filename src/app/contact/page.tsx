@@ -24,11 +24,11 @@ const CONTACT_FAQS = [
   },
   {
     question: 'Do you have offices in other African countries?',
-    answer: "We currently operate primarily from Uganda with partners across East Africa. We're expanding to other regions - reach out to discuss potential partnerships.",
+    answer: "We operate from Kibera, Nairobi, Kenya, with partners across East Africa. Reach out to discuss partnership opportunities in your region.",
   },
   {
     question: 'Can I visit your office in person?',
-    answer: 'Yes! We welcome visitors by appointment. Please contact us to schedule a visit to our Kampala office.',
+    answer: 'Yes! We welcome visitors by appointment. Contact us to schedule a visit to our Nairobi office in Kibera.',
   },
   {
     question: 'Do you offer Bitcoin education or workshops?',

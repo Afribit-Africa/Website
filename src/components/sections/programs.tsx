@@ -7,16 +7,16 @@ import { programs } from '@/lib/programs'
 
 export function Programs() {
   return (
-    <section className="py-20">
+    <section className="section">
       <Container>
-        <div className="mb-12 text-center">
+        <div className="section-intro">
           <Badge variant="secondary" className="mb-4">
             Our Programs
           </Badge>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-3">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Circular Resilience Programs
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-xl">
             Four pillars driving Bitcoin adoption from the ground up in Kibera&apos;s informal economy.
           </p>
         </div>

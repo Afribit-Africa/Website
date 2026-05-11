@@ -202,7 +202,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
                 aria-invalid={!!errors.phone}
                 aria-describedby={errors.phone ? 'phone-error' : undefined}
                 className="w-full px-4 py-3 rounded-lg bg-bg-surface border border-border-soft text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-bitcoin focus:border-transparent transition-colors"
-                placeholder="+256 700 123 456"
+                placeholder="+254 700 123 456"
                 disabled={isSubmitting}
               />
               {errors.phone && (

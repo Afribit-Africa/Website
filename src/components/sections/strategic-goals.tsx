@@ -40,16 +40,16 @@ const GOALS = [
 
 export function StrategicGoals() {
   return (
-    <section className="pt-20 pb-0 bg-grid-lines bg-bg-surface/50">
+    <section className="section-lg pb-0 bg-grid-lines bg-bg-surface/50">
       <Container>
-        <div className="mb-12 text-center">
+        <div className="section-intro">
           <Badge variant="default" className="mb-4">
             2026 Roadmap
           </Badge>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-3">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Strategic Goals
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-xl">
             Where we are going — and how every donation gets us closer.
           </p>
         </div>

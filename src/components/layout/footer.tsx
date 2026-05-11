@@ -15,15 +15,15 @@ const QUICK_LINKS = [
 ]
 
 const COMMUNITY_LINKS = [
-  { href: 'https://www.afribit.africa/fedi', label: 'Join Community', external: true },
+  { href: '/community', label: 'Join Community' },
   { href: 'https://btcmap.org/community/afribit-kibera', label: 'BTC Map', external: true },
   { href: 'https://staging.geyser.fund/project/afribitkibera', label: 'Geyser Fund', external: true },
 ]
 
 const RESOURCE_LINKS = [
-  { href: 'https://www.afribit.africa/legal/privacy', label: 'Privacy Policy', external: true },
-  { href: 'https://www.afribit.africa/legal/terms', label: 'Terms of Use', external: true },
-  { href: 'https://www.afribit.africa/legal/cookies', label: 'Cookie Policy', external: true },
+  { href: '/legal/privacy', label: 'Privacy Policy' },
+  { href: '/legal/terms', label: 'Terms of Use' },
+  { href: '/legal/cookies', label: 'Cookie Policy' },
   { href: 'https://bitcoinconfederation.org/hub/afribit-kibera/', label: 'Bitcoin Confederation', external: true },
 ]
 

@@ -33,7 +33,8 @@ export function generateMetadata({
     'Bitcoin education',
     'financial inclusion',
     'cryptocurrency',
-    'Uganda',
+    'Kenya',
+    'Nairobi',
     'Bitcoin adoption',
     'financial freedom',
     'blockchain',
@@ -97,8 +98,9 @@ export function getOrganizationSchema() {
     email: 'connect@afribit.africa',
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'Uganda',
-      addressRegion: 'Central Region',
+      addressCountry: 'Kenya',
+      addressRegion: 'Nairobi',
+      addressLocality: 'Kibera',
     },
     sameAs: [
       'https://twitter.com/AfribitAfrica',
@@ -199,7 +201,8 @@ export function getEventSchema(event: {
       name: event.location,
       address: {
         '@type': 'PostalAddress',
-        addressCountry: 'Uganda',
+        addressCountry: 'Kenya',
+        addressLocality: 'Kibera',
       },
     },
     organizer: {
