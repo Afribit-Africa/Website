@@ -75,7 +75,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7">
               {CONTACT_FAQS.map((faq, index) => (
                 <CardSpotlight
                   key={index}
@@ -100,25 +100,26 @@ export default function ContactPage() {
               ))}
             </div>
 
-            <div className="mt-12 border-t border-border-soft pt-8 text-center">
-              <div className="mb-4 inline-flex items-center gap-3">
+            <div className="mt-14 border-t border-border-soft pt-10">
+              <div className="content-shell content-shell-wide">
+                <div className="inline-flex items-center gap-3">
                 <Users className="size-5 text-bitcoin" aria-hidden="true" />
                 <span className="text-sm font-medium text-bitcoin">STILL HAVE QUESTIONS?</span>
-              </div>
-              <h3 className="font-display text-2xl font-bold text-foreground">
-                Need more specific help?
-              </h3>
-              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-                Our team is ready to assist you with any questions about Bitcoin adoption,
-                partnership opportunities, or our programs across Africa.
-              </p>
-              <div className="mt-6">
-                <Button asChild size="lg">
-                <a href="mailto:connect@afribit.africa">
-                  Email Afribit
-                  <Zap className="size-4 ml-2" aria-hidden="true" />
-                </a>
-                </Button>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground">
+                  Need more specific help?
+                </h3>
+                <p className="content-copy text-muted-foreground">
+                  Our team is ready to help with partnership opportunities, Bitcoin adoption questions, workshops, and community programs across Africa.
+                </p>
+                <div className="content-actions">
+                  <Button asChild size="lg">
+                    <a href="mailto:connect@afribit.africa">
+                      Email Afribit
+                      <Zap className="ml-2 size-4" aria-hidden="true" />
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

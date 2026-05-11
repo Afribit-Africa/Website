@@ -7,6 +7,7 @@ export interface DonationTier {
   recognition: string
   amountLabel: string
   defaultAmount?: number
+  isFixedAmount?: boolean
   goalLabel?: string
   imageSrc: string
   imageAlt: string
@@ -87,6 +88,7 @@ export const donationTiers: DonationTier[] = [
       'Specific pieces of equipment can be named in your honor for visible and lasting community impact.',
     amountLabel: '$90',
     defaultAmount: 90,
+    isFixedAmount: true,
     imageSrc: '/Images/People cleaning drainage.jpg',
     imageAlt: 'Community members cleaning drainage in Kibera.',
     accentClassName: 'from-amber-400/30 via-amber-400/10 to-transparent',
@@ -102,6 +104,7 @@ export const donationTiers: DonationTier[] = [
       'Donors receive a personal story and photo from the woman they helped empower, alongside website recognition.',
     amountLabel: '$190',
     defaultAmount: 190,
+    isFixedAmount: true,
     imageSrc: '/Images/Trezor Academy session pics/IMG-20250914-WA0155.jpg',
     imageAlt: 'Women participating in Afribit upcycling and empowerment work.',
     accentClassName: 'from-panafrican-green/35 via-bitcoin/10 to-transparent',

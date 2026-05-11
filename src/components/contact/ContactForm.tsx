@@ -28,6 +28,8 @@ export function ContactForm({ className = '' }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [submitMessage, setSubmitMessage] = useState('');
+  const fieldClassName =
+    'w-full rounded-2xl border border-border-soft bg-bg-surface/80 px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-bitcoin focus:border-transparent transition-colors';
 
   const {
     register,
@@ -93,14 +95,14 @@ export function ContactForm({ className = '' }: ContactFormProps) {
       <CardSpotlight
         radius={400}
         color="rgba(247,147,26,0.12)"
-        className="p-6 sm:p-8 section-panel"
+        className="section-panel p-5 sm:p-7 lg:p-8"
       >
         {/* Status Messages */}
         {submitStatus === 'success' && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-6 p-4 rounded-lg bg-gradient-to-r from-panafrican-green/10 to-bitcoin/10 border border-panafrican-green/30"
+            className="mb-8 rounded-2xl border border-panafrican-green/30 bg-gradient-to-r from-panafrican-green/10 to-bitcoin/10 p-4"
             role="status"
             aria-live="polite"
           >
@@ -120,7 +122,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-6 p-4 rounded-lg bg-red-500/10 border border-red-500/30"
+            className="mb-8 rounded-2xl border border-red-500/30 bg-red-500/10 p-4"
             role="status"
             aria-live="polite"
           >
@@ -136,11 +138,23 @@ export function ContactForm({ className = '' }: ContactFormProps) {
           </motion.div>
         )}
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" aria-label="Contact form">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <div className="mb-8 grid gap-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-bitcoin/90">
+            Start the conversation
+          </p>
+          <h3 className="font-display text-2xl font-bold text-foreground sm:text-3xl">
+            Tell us what you need from Afribit.
+          </h3>
+          <p className="max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
+            Use this form for partnerships, media requests, workshops, or direct community support inquiries. The more context you share, the faster we can help.
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8" aria-label="Contact form">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {/* Name Field */}
-            <div className="space-y-2">
-              <label htmlFor="name" className="block text-sm font-medium text-foreground">
+            <div className="space-y-2.5">
+              <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
                 Full Name *
               </label>
               <input
@@ -149,9 +163,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
                 {...register('name')}
                 aria-invalid={!!errors.name}
                 aria-describedby={errors.name ? 'name-error' : undefined}
-                className={`w-full px-4 py-3 rounded-lg bg-bg-surface border ${
-                  errors.name ? 'border-red-500' : 'border-border-soft'
-                } text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-bitcoin focus:border-transparent transition-colors`}
+                className={`${fieldClassName} ${errors.name ? 'border-red-500' : ''}`}
                 placeholder="John Doe"
                 disabled={isSubmitting}
               />
@@ -164,8 +176,8 @@ export function ContactForm({ className = '' }: ContactFormProps) {
             </div>
 
             {/* Email Field */}
-            <div className="space-y-2">
-              <label htmlFor="email" className="block text-sm font-medium text-foreground">
+            <div className="space-y-2.5">
+              <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
                 Email Address *
               </label>
               <input
@@ -174,9 +186,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
                 {...register('email')}
                 aria-invalid={!!errors.email}
                 aria-describedby={errors.email ? 'email-error' : undefined}
-                className={`w-full px-4 py-3 rounded-lg bg-bg-surface border ${
-                  errors.email ? 'border-red-500' : 'border-border-soft'
-                } text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-bitcoin focus:border-transparent transition-colors`}
+                className={`${fieldClassName} ${errors.email ? 'border-red-500' : ''}`}
                 placeholder="john@example.com"
                 disabled={isSubmitting}
               />
@@ -189,10 +199,10 @@ export function ContactForm({ className = '' }: ContactFormProps) {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {/* Phone Field */}
-            <div className="space-y-2">
-              <label htmlFor="phone" className="block text-sm font-medium text-foreground">
+            <div className="space-y-2.5">
+              <label htmlFor="phone" className="block text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
                 Phone Number (Optional)
               </label>
               <input
@@ -201,7 +211,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
                 {...register('phone')}
                 aria-invalid={!!errors.phone}
                 aria-describedby={errors.phone ? 'phone-error' : undefined}
-                className="w-full px-4 py-3 rounded-lg bg-bg-surface border border-border-soft text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-bitcoin focus:border-transparent transition-colors"
+                className={fieldClassName}
                 placeholder="+254 700 123 456"
                 disabled={isSubmitting}
               />
@@ -214,8 +224,8 @@ export function ContactForm({ className = '' }: ContactFormProps) {
             </div>
 
             {/* Subject Field */}
-            <div className="space-y-2">
-              <label htmlFor="subject" className="block text-sm font-medium text-foreground">
+            <div className="space-y-2.5">
+              <label htmlFor="subject" className="block text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
                 Subject (Optional)
               </label>
               <input
@@ -224,9 +234,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
                 {...register('subject')}
                 aria-invalid={!!errors.subject}
                 aria-describedby={errors.subject ? 'subject-error' : undefined}
-                className={`w-full px-4 py-3 rounded-lg bg-bg-surface border ${
-                  errors.subject ? 'border-red-500' : 'border-border-soft'
-                } text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-bitcoin focus:border-transparent transition-colors`}
+                className={`${fieldClassName} ${errors.subject ? 'border-red-500' : ''}`}
                 placeholder="General Inquiry"
                 disabled={isSubmitting}
               />
@@ -240,8 +248,8 @@ export function ContactForm({ className = '' }: ContactFormProps) {
           </div>
 
           {/* Message Field */}
-          <div className="space-y-2">
-            <label htmlFor="message" className="block text-sm font-medium text-foreground">
+          <div className="space-y-2.5">
+            <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
               Your Message *
             </label>
             <textarea
@@ -250,9 +258,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
               {...register('message')}
               aria-invalid={!!errors.message}
               aria-describedby={errors.message ? 'message-error' : undefined}
-              className={`w-full px-4 py-3 rounded-lg bg-bg-surface border ${
-                errors.message ? 'border-red-500' : 'border-border-soft'
-              } text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-bitcoin focus:border-transparent transition-colors resize-none`}
+              className={`${fieldClassName} min-h-40 resize-none ${errors.message ? 'border-red-500' : ''}`}
               placeholder="Tell us how we can help you..."
               disabled={isSubmitting}
             />
@@ -265,13 +271,17 @@ export function ContactForm({ className = '' }: ContactFormProps) {
           </div>
 
           {/* Submit Button & Privacy Note */}
-          <div className="pt-4">
+          <div className="rounded-[1.75rem] border border-white/8 bg-black/20 p-4 sm:p-5">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              <p className="max-w-2xl text-sm leading-7 text-muted-foreground">
+                By submitting this form, you agree to our privacy policy and consent to being contacted. We respect your privacy and will never share your information with third parties.
+              </p>
             <Button
               type="submit"
               size="lg"
               disabled={isSubmitting}
               aria-disabled={isSubmitting}
-              className="w-full sm:w-auto px-8 relative overflow-hidden group"
+                className="relative w-full overflow-hidden px-8 group sm:w-auto"
             >
               <span className="flex items-center justify-center gap-2">
                 {isSubmitting ? (
@@ -287,10 +297,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
                 )}
               </span>
             </Button>
-            <p className="text-sm text-muted-foreground mt-4 max-w-prose">
-              By submitting this form, you agree to our privacy policy and consent to being contacted.
-              We respect your privacy and will never share your information with third parties.
-            </p>
+            </div>
           </div>
         </form>
       </CardSpotlight>

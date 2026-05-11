@@ -6,7 +6,7 @@ export const DONATION_CURRENCIES = ['USD', 'BTC'] as const
 export type DonationCurrency = (typeof DONATION_CURRENCIES)[number]
 
 export const DONATION_MINIMUMS: Record<DonationCurrency, number> = {
-  USD: 5,
+  USD: 1,
   BTC: 0.00001,
 }
 

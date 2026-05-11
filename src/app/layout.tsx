@@ -3,7 +3,6 @@ import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { MaintenanceBanner } from "@/components/layout/maintenance-banner";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://afribit.africa';
 
@@ -101,7 +100,6 @@ export default function RootLayout({
         className="bg-background font-sans text-foreground antialiased"
         suppressHydrationWarning
       >
-        <MaintenanceBanner />
         <Header />
         <main>
           {children}

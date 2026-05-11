@@ -5,12 +5,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import {
   Menu, X, Compass, Layers, MapPin, Users, MessageSquare,
-  Twitter, Instagram, Youtube, ExternalLink, Bitcoin, ArrowRight,
+  Twitter, Instagram, Youtube, ExternalLink, ArrowRight,
 } from 'lucide-react'
 import { motion, AnimatePresence, type Variants } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Container } from './container'
 import { Button } from '@/components/ui/button'
+import { MaintenanceBanner } from './maintenance-banner'
 
 const DESKTOP_LINKS = [
   { href: '/about', label: 'About' },
@@ -122,85 +123,93 @@ export function Header() {
     <>
       <header
         className={cn(
-          'fixed inset-x-0 z-50 transition-all duration-300',
-          scrolled
-            ? 'bg-bg-base/90 backdrop-blur-xl border-b border-white/8 shadow-[0_1px_0_0_rgba(255,255,255,0.04)]'
-            : 'bg-transparent'
+          'fixed inset-x-0 top-0 z-50',
         )}
-        style={{ top: 'var(--maintenance-banner-height, 0px)' }}
       >
-        <Container>
-          <div className="flex h-16 items-center justify-between gap-6">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 shrink-0" onClick={close}>
-              <Image
-                src="/Logo/Full logo png transparent.png"
-                alt="Afribit"
-                width={32}
-                height={32}
-                className="size-8 object-contain"
-                priority
-              />
-              <span className="font-display text-lg font-semibold tracking-tight text-foreground">
-                Afribit
-              </span>
-            </Link>
-
-            {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-1">
-              {DESKTOP_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5"
-                >
-                  {link.label}
+        <div
+          className={cn(
+            'transition-all duration-300',
+          scrolled
+              ? 'bg-bg-base/90 backdrop-blur-xl shadow-[0_1px_0_0_rgba(255,255,255,0.04)]'
+              : 'bg-bg-base/72 backdrop-blur-lg'
+          )}
+        >
+          <MaintenanceBanner />
+          <div className="border-b border-white/8">
+            <Container>
+              <div className="flex h-16 items-center justify-between gap-6">
+                {/* Logo */}
+                <Link href="/" className="flex items-center gap-2.5 shrink-0" onClick={close}>
+                  <Image
+                    src="/Logo/Full logo png transparent.png"
+                    alt="Afribit"
+                    width={32}
+                    height={32}
+                    className="size-8 object-contain"
+                    priority
+                  />
+                  <span className="font-display text-lg font-semibold tracking-tight text-foreground">
+                    Afribit
+                  </span>
                 </Link>
-              ))}
-            </nav>
 
-            {/* Desktop CTA */}
-            <div className="hidden lg:flex items-center gap-3">
-              <Button asChild size="default">
-                <Link href="/donate">Fuel BCE ₿</Link>
-              </Button>
-            </div>
+                {/* Desktop nav */}
+                <nav className="hidden lg:flex items-center gap-1">
+                  {DESKTOP_LINKS.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
 
-            {/* Mobile toggle */}
-            <button
-              className="lg:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileOpen}
-            >
-              <AnimatePresence mode="wait" initial={false}>
-                {mobileOpen ? (
-                  <motion.span
-                    key="close"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.14 }}
-                    className="block"
-                  >
-                    <X className="size-5" />
-                  </motion.span>
-                ) : (
-                  <motion.span
-                    key="menu"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    transition={{ duration: 0.14 }}
-                    className="block"
-                  >
-                    <Menu className="size-5" />
-                  </motion.span>
-                )}
-              </AnimatePresence>
-            </button>
+                {/* Desktop CTA */}
+                <div className="hidden lg:flex items-center gap-3">
+                  <Button asChild size="default">
+                    <Link href="/donate">Fuel BCE ₿</Link>
+                  </Button>
+                </div>
+
+                {/* Mobile toggle */}
+                <button
+                  className="lg:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors"
+                  onClick={() => setMobileOpen(!mobileOpen)}
+                  aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+                  aria-expanded={mobileOpen}
+                >
+                  <AnimatePresence mode="wait" initial={false}>
+                    {mobileOpen ? (
+                      <motion.span
+                        key="close"
+                        initial={{ rotate: -90, opacity: 0 }}
+                        animate={{ rotate: 0, opacity: 1 }}
+                        exit={{ rotate: 90, opacity: 0 }}
+                        transition={{ duration: 0.14 }}
+                        className="block"
+                      >
+                        <X className="size-5" />
+                      </motion.span>
+                    ) : (
+                      <motion.span
+                        key="menu"
+                        initial={{ rotate: 90, opacity: 0 }}
+                        animate={{ rotate: 0, opacity: 1 }}
+                        exit={{ rotate: -90, opacity: 0 }}
+                        transition={{ duration: 0.14 }}
+                        className="block"
+                      >
+                        <Menu className="size-5" />
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                </button>
+              </div>
+            </Container>
           </div>
-        </Container>
+        </div>
       </header>
 
       {/* Mobile full-screen nav overlay */}
@@ -212,7 +221,7 @@ export function Header() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed inset-0 z-40 lg:hidden bg-bg-base/98 backdrop-blur-2xl flex flex-col overflow-y-auto"
+            className="fixed inset-0 z-[60] lg:hidden bg-bg-base/98 backdrop-blur-2xl flex flex-col overflow-y-auto"
           >
             {/* Top bar */}
             <div className="flex h-16 shrink-0 items-center justify-between px-5 border-b border-white/8">

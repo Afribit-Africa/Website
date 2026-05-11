@@ -20,7 +20,7 @@ export function WhyKibera() {
   return (
     <section className="section-spacious bg-bg-surface/50">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 xl:gap-16">
           {/* Image */}
           <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/8">
             <Image
@@ -39,21 +39,23 @@ export function WhyKibera() {
           </div>
 
           {/* Text */}
-          <div className="pt-2">
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-5">
-              Why Start in Kibera?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Kibera is home to over 250,000 people — many unbanked, many running informal
-              businesses with no access to digital finance. Bitcoin changes that.
-            </p>
+          <div className="flex flex-col gap-7 lg:pt-4">
+            <div className="flex max-w-2xl flex-col gap-4">
+              <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
+                Why Start in Kibera?
+              </h2>
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                Kibera is home to over 250,000 people, many unbanked and many running informal
+                businesses without access to reliable digital finance. Bitcoin changes that.
+              </p>
+            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:gap-10">
               <div>
-                <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mb-5 border-b border-white/8 pb-3">
+                <h3 className="mb-5 border-b border-white/8 pb-3 text-xs font-bold uppercase tracking-widest text-foreground">
                   The Challenge
                 </h3>
-                <ul className="space-y-4">
+                <ul className="space-y-5">
                   {CHALLENGES.map((c) => (
                     <li key={c} className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed">
                       <span className="size-2 rounded-full bg-panafrican-red mt-1.5 shrink-0" />
@@ -64,10 +66,10 @@ export function WhyKibera() {
               </div>
 
               <div>
-                <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mb-5 border-b border-white/8 pb-3">
+                <h3 className="mb-5 border-b border-white/8 pb-3 text-xs font-bold uppercase tracking-widest text-foreground">
                   Our Approach
                 </h3>
-                <ul className="space-y-4">
+                <ul className="space-y-5">
                   {APPROACH.map((a) => (
                     <li key={a} className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed">
                       <CheckCircle2 className="size-4 text-panafrican-green mt-0.5 shrink-0" />
