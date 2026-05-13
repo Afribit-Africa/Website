@@ -8,33 +8,33 @@ import { Button } from '@/components/ui/button'
 const GOALS = [
   {
     icon: Target,
-    year: '2026',
-    title: 'Reach 200 Active Merchants',
-    desc: 'Onboard 200 Kibera businesses with Lightning POS and 6-month retention support.',
+    tag: 'Social justice',
+    title: 'Challenge inequitable systems',
+    desc: 'We help shift access, power, and financial opportunity toward merchants, workers, and families too often excluded from formal systems.',
   },
   {
     icon: TrendingUp,
-    year: '2026',
-    title: '$100K Campaign Goal',
-    desc: 'Raise $100,000 to fund full-year operations across all four programs.',
+    tag: 'Resource strategy',
+    title: 'Mobilize every resource',
+    desc: 'Afribit turns time, talent, treasure, and trusted networks into coordinated action that moves faster and further than money alone.',
   },
   {
     icon: Users,
-    year: '2026',
-    title: 'Train 500 Community Members',
-    desc: 'Deliver Bitcoin literacy training to 500 residents in Swahili and Sheng.',
+    tag: 'Unrestricted giving',
+    title: 'Increase flexible support',
+    desc: 'We champion giving that is unrestricted enough to meet urgent needs, strengthen local leadership, and keep momentum alive across programs.',
   },
   {
     icon: Leaf,
-    year: '2026',
-    title: 'Expand Waste Program Citywide',
-    desc: 'Scale the waste-to-Bitcoin program beyond Kibera to three additional Nairobi districts.',
+    tag: 'Root causes',
+    title: 'Address causes, not just symptoms',
+    desc: 'Our work does more than relieve immediate pressure. It builds skills, systems, and relationships that reduce exclusion over time.',
   },
   {
     icon: Globe2,
-    year: '2026',
-    title: 'Replicate in 2 New Cities',
-    desc: 'Document and open-source the Afribit playbook for replication in Lagos and Kampala.',
+    tag: 'Collective outcomes',
+    title: 'Achieve more together',
+    desc: 'When communities, donors, builders, and partners move together, the outcomes grow and the work carries the joy of shared progress.',
   },
 ]
 
@@ -44,13 +44,13 @@ export function StrategicGoals() {
       <Container>
         <div className="section-intro">
           <Badge variant="default" className="mb-4">
-            2026 Roadmap
+            Strategic action
           </Badge>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Strategic Goals
+            How we move urgent change forward
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl">
-            Where we are going — and how every donation gets us closer.
+            We focus on justice, unrestricted support, root-cause solutions, and collective action that can unlock greater outcomes than any one actor can reach alone.
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export function StrategicGoals() {
                   <g.icon className="size-5 text-bitcoin" />
                 </div>
                 <Badge variant="secondary" className="text-[10px]">
-                  {g.year}
+                  {g.tag}
                 </Badge>
               </div>
               <h3 className="font-semibold text-foreground mb-2">{g.title}</h3>
@@ -75,7 +75,7 @@ export function StrategicGoals() {
         <div className="text-center">
           <Button asChild size="lg">
             <Link href="/donate">
-              Help Us Hit These Goals
+              Back This Strategy
               <ArrowRight className="size-4" />
             </Link>
           </Button>

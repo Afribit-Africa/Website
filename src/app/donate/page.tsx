@@ -15,7 +15,7 @@ import { CROWDFUND_URL } from '@/lib/donation-policy'
 export const metadata: Metadata = generateMetadata({
   title: 'Donate',
   description:
-    'Fuel the Bitcoin revolution in Kibera. Support merchant growth, education, cleanups, upcycling, and community resilience through Afribit’s Bitcoin-native donation flow.',
+    'Fuel strategic, urgent change in Kibera. Support social justice, unrestricted community-led action, and root-cause solutions through Afribit’s giving flow.',
   path: '/donate',
   keywords: [
     'donate Afribit',
@@ -30,21 +30,21 @@ const GOAL = 100_000
 
 const whyDonate = [
   {
-    title: 'Keep value circulating locally',
+    title: 'Challenge inequitable systems',
     description:
-      'Your gift helps sats move through real livelihoods in Kibera, from neighborhood trade and rider incomes to cleanup crews and women-led production.',
+      'Your support helps shift access, tools, and opportunity toward merchants, riders, women-led enterprise, and families often excluded from formal finance.',
     icon: Bitcoin,
   },
   {
-    title: 'Fund practical adoption',
+    title: 'Increase unrestricted giving',
     description:
-      'You are funding the tools, training, equipment, and hands-on support that turn first-time users into repeat participants in a working circular economy.',
+      'Flexible support lets Afribit respond where the work is most urgent, from merchant retention and training to equipment, cleanups, and community coordination.',
     icon: HandCoins,
   },
   {
-    title: 'Support verifiable infrastructure',
+    title: 'Multiply collective resources',
     description:
-      'Your contribution moves through a Bitcoin-native payment flow and supports work that can be followed through public ecosystem references and visible community outcomes.',
+      'Strategic giving works alongside time, talent, and trusted networks, making it possible to achieve more together and unlock the joy of shared progress.',
     icon: ShieldCheck,
   },
 ]
@@ -79,10 +79,10 @@ export default async function DonatePage() {
                 Donate
               </Badge>
               <h1 className="font-display text-4xl font-bold leading-tight text-foreground sm:text-5xl md:text-6xl">
-                Fuel the <span className="text-bitcoin">Bitcoin Revolution</span>
+                Fuel <span className="text-bitcoin">strategic change</span> in Kibera
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-                Your contribution powers financial freedom, environmental stewardship, and community resilience in Kibera.
+                Your gift helps challenge inequitable systems, advance social justice, and give community leaders flexible support to act where the need is most urgent.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -139,7 +139,7 @@ export default async function DonatePage() {
                     Live campaign momentum
                   </p>
                   <p className="mt-3 text-sm leading-7 text-white/82">
-                    Every contribution strengthens merchant growth, training, waste incentives, and community resilience already taking root across Kibera.
+                    Every contribution strengthens coordinated work already taking root across Kibera, from merchant growth and training to cleaner neighborhoods and stronger local leadership.
                   </p>
                 </div>
               </div>
@@ -155,10 +155,10 @@ export default async function DonatePage() {
               Why donate
             </p>
             <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
-              Give to a working circular economy, not a detached campaign promise.
+              Give to root-cause change, not short-term relief alone.
             </h2>
             <p className="mt-4 text-muted-foreground leading-8">
-              Afribit’s donation flow is tied to concrete work already happening in Kibera: onboarding merchants, equipping women-led enterprise, rewarding cleanup crews, and opening new financial paths for riders and families.
+              Afribit ties giving to concrete work already happening in Kibera while protecting the flexibility needed to respond where change is most urgent, strategic, and community-led.
             </p>
           </div>
 
@@ -202,29 +202,29 @@ export default async function DonatePage() {
                 Trust and transparency
               </p>
               <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
-                Give with confidence and follow the work beyond the checkout screen.
+                Give strategically and stay connected to the change.
               </h2>
               <p className="mt-4 text-muted-foreground leading-8">
-                Afribit uses a Bitcoin-native checkout flow so more of your support goes directly toward the work. Around that payment flow, you can follow community proof, partner references, and the public ecosystem that surrounds this mission in Kibera.
+                Afribit uses a Bitcoin-native checkout flow so more of your support reaches the work itself. Around that giving path, you can follow community proof, partner references, and the wider ecosystem shaping long-term change in Kibera.
               </p>
 
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-5">
                   <div className="flex items-center gap-3 text-bitcoin">
                     <BadgeCheck className="size-5" />
-                    <span className="text-sm font-semibold uppercase tracking-[0.18em]">Bitcoin-native payment</span>
+                    <span className="text-sm font-semibold uppercase tracking-[0.18em]">Flexible where needed</span>
                   </div>
                   <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                    Your donation goes through BTCPay Server, giving you a direct Bitcoin payment path without relying on a conventional payment processor.
+                    Your donation goes through BTCPay Server, and the support it unlocks can be directed where the work is most urgent instead of being trapped in narrow categories.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-5">
                   <div className="flex items-center gap-3 text-panafrican-green">
                     <ShieldCheck className="size-5" />
-                    <span className="text-sm font-semibold uppercase tracking-[0.18em]">Community accountability</span>
+                    <span className="text-sm font-semibold uppercase tracking-[0.18em]">Rooted in accountability</span>
                   </div>
                   <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                    BTC Map, Geyser, Bitcoin Confederation, and visible local program work offer real-world context for the ecosystem your contribution is helping to strengthen.
+                    BTC Map, Geyser, Bitcoin Confederation, and visible local program work help show how shared effort is addressing root causes and strengthening the wider ecosystem.
                   </p>
                 </div>
               </div>

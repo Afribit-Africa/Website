@@ -21,9 +21,8 @@ export function MissionVision() {
             </div>
             <h3 className="font-display text-xl font-bold text-foreground mb-4">Our Mission</h3>
             <p className="text-muted-foreground leading-relaxed">
-              To educate Kibera&apos;s communities about Bitcoin and the Lightning Network,
-              building a circular economy that creates real financial access for everyone
-              the banking system has chosen to ignore.
+              To challenge inequitable systems by using Bitcoin, learning, and local coordination
+              to move power, opportunity, and decision-making closer to Kibera communities.
             </p>
           </div>
 
@@ -35,9 +34,9 @@ export function MissionVision() {
             </div>
             <h3 className="font-display text-xl font-bold text-foreground mb-4">Our Vision</h3>
             <p className="text-muted-foreground leading-relaxed">
-              A self-sustaining Bitcoin circular economy across African informal settlements.
-              Every resident earns, saves, and spends in sound money. No bank. No paperwork.
-              No permission required.
+              A future where communities have the unrestricted support, trusted networks, and
+              collective joy needed to address root causes and build just local economies on their
+              own terms.
             </p>
           </div>
         </div>

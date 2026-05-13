@@ -16,11 +16,11 @@ import { StrategicGoals } from '@/components/sections/strategic-goals'
 export const metadata: Metadata = {
   title: 'Afribit Africa — Empowering Communities Through Bitcoin',
   description:
-    'Afribit is building a self-sustaining Bitcoin circular economy in Kibera, Nairobi — connecting 40+ merchants, 2000+ transactions, and 5 programs through the Lightning Network.',
+    'Afribit advances urgent, strategic change in Kibera by challenging inequitable systems, mobilizing collective resources, and supporting root-cause solutions through Bitcoin.',
   openGraph: {
     title: 'Afribit Africa — Bitcoin Circular Economy in Kibera',
     description:
-      'Empowering African communities through Bitcoin education, financial inclusion, and on-the-ground programs in Kibera, Nairobi.',
+      'Strategic, community-led change in Kibera through Bitcoin, social justice, and coordinated action across time, talent, treasure, and networks.',
   },
 }
 

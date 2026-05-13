@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://afribit.africa';
 const SITE_NAME = 'Afribit Africa';
-const SITE_DESCRIPTION = 'Empowering Africa through Bitcoin education, financial inclusion, and community development. Join us in bringing financial freedom to African communities.';
+const SITE_DESCRIPTION = 'Afribit advances urgent, strategic change through Bitcoin by challenging inequitable systems, mobilizing collective resources, and backing root-cause solutions led by communities.';
 
 export interface SEOConfig {
   title: string;
@@ -32,10 +32,13 @@ export function generateMetadata({
     'Africa',
     'Bitcoin education',
     'financial inclusion',
+    'social justice',
+    'strategic giving',
+    'unrestricted giving',
+    'root causes',
     'cryptocurrency',
     'Uganda',
     'Bitcoin adoption',
-    'financial freedom',
     'blockchain',
     'African development',
   ];

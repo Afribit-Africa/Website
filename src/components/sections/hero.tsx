@@ -29,27 +29,28 @@ export function HeroSection() {
           <div className="flex flex-col gap-7 md:gap-8">
             <Badge variant="default" className="w-fit gap-1.5 px-3 py-1 text-xs">
               <span className="size-1.5 rounded-full bg-bitcoin animate-pulse" />
-              Bitcoin Circular Economy — Kibera, Nairobi
+              Strategic change in Kibera, Nairobi
             </Badge>
 
             <h1 className="font-display text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl leading-[1.08]">
-              Empowering African{' '}
+              Advancing urgent{' '}
               <span className="text-bitcoin relative inline-block">
-                Communities
+                change
                 <span className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-bitcoin/30" />
               </span>{' '}
-              Through Bitcoin
+              through Bitcoin
             </h1>
 
             <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-              Afribit is building a self-sustaining Bitcoin circular economy in Kibera, connecting
-              merchants, households, and community programs through the Lightning Network.
+              Afribit challenges inequitable systems by directing time, talent, treasure, and trusted
+              networks toward community-led solutions that address root causes, advance social justice,
+              and unlock shared joy in Kibera.
             </p>
 
             <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <Button asChild size="xl" className="w-full sm:w-auto">
                 <Link href="/donate">
-                  <span>Fuel the Movement</span>
+                  <span>Fuel Strategic Change</span>
                   <ArrowRight className="size-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
