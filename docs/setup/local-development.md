@@ -24,6 +24,10 @@ Optional, depending on what you are testing:
 - `DATABASE_URL`
 - `NEXT_PUBLIC_SITE_URL`
 
+### SEO and search variables
+
+- `GOOGLE_SITE_VERIFICATION` for Google Search Console URL-prefix verification
+
 ### Donation flow variables
 
 - `BTCPAY_HOST`
@@ -81,3 +85,16 @@ npm run test-db
 - Donation testing requires a working BTCPay configuration.
 - Contact-form end-to-end testing is best done with hCaptcha configured, though the UI can still be developed without production keys.
 - Merchant discovery and GIS features are planned but not yet implemented in the current codebase.
+
+## Google Search Console
+
+Use a URL-prefix property if you want the site to verify through the app itself.
+
+1. Open Google Search Console and add the exact production URL as a URL-prefix property.
+2. Choose the HTML tag verification method.
+3. Copy only the token from the `content` attribute.
+4. Set `GOOGLE_SITE_VERIFICATION` in your deployed environment.
+5. Redeploy the site so the verification meta tag is emitted from the root layout.
+6. In Search Console, verify the property and submit `https://afribit.africa/sitemap.xml`.
+
+If you want a domain property instead of a URL-prefix property, the verification happens in DNS and does not require an application code change.

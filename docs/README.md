@@ -22,6 +22,7 @@ Use these files first:
 - [architecture/content-model.md](architecture/content-model.md)
 - [architecture/schema-redesign-phase-1.md](architecture/schema-redesign-phase-1.md)
 - [integrations/donations.md](integrations/donations.md)
+- [integrations/google-search-console.md](integrations/google-search-console.md)
 
 ## Consolidation Plan
 

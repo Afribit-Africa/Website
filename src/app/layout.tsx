@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/footer";
 import { StructuredData } from "@/components/seo/structured-data";
 import {
   DEFAULT_OG_IMAGE,
+  GOOGLE_SITE_VERIFICATION,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
@@ -62,11 +63,11 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
+      { url: "/icon", type: "image/png", sizes: "512x512" },
       { url: "/Logo/icon%20symbol%20only%20svg.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
     ],
-    shortcut: ["/favicon.ico"],
-    apple: [{ url: "/Logo/icon%20symbol%20only%20svg.svg", type: "image/svg+xml" }],
+    shortcut: ["/icon"],
+    apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],
   },
   openGraph: {
     type: "website",
@@ -104,7 +105,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION,
+    google: GOOGLE_SITE_VERIFICATION,
   },
 };
 

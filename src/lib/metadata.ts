@@ -5,6 +5,7 @@ export const SITE_NAME = 'Afribit Africa';
 export const SITE_DESCRIPTION = 'Afribit advances urgent, strategic change through Bitcoin by challenging inequitable systems, mobilizing collective resources, and backing root-cause solutions led by communities.';
 export const DEFAULT_OG_IMAGE = '/opengraph-image';
 export const ORGANIZATION_LOGO = `${SITE_URL}/Logo/Full%20logo%20png%20transparent.png`;
+export const GOOGLE_SITE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION;
 
 export interface SEOConfig {
   title: string;
@@ -85,7 +86,7 @@ export function generateMetadata({
       images: [imageUrl],
     },
     verification: {
-      google: process.env.GOOGLE_SITE_VERIFICATION,
+      google: GOOGLE_SITE_VERIFICATION,
     },
   };
 }
