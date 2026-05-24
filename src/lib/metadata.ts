@@ -1,8 +1,10 @@
 import { Metadata } from 'next';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://afribit.africa';
-const SITE_NAME = 'Afribit Africa';
-const SITE_DESCRIPTION = 'Afribit advances urgent, strategic change through Bitcoin by challenging inequitable systems, mobilizing collective resources, and backing root-cause solutions led by communities.';
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://afribit.africa';
+export const SITE_NAME = 'Afribit Africa';
+export const SITE_DESCRIPTION = 'Afribit advances urgent, strategic change through Bitcoin by challenging inequitable systems, mobilizing collective resources, and backing root-cause solutions led by communities.';
+export const DEFAULT_OG_IMAGE = '/opengraph-image';
+export const ORGANIZATION_LOGO = `${SITE_URL}/Logo/Full%20logo%20png%20transparent.png`;
 
 export interface SEOConfig {
   title: string;
@@ -18,7 +20,7 @@ export function generateMetadata({
   title,
   description,
   path,
-  image = '/images/og-default.jpg',
+  image = DEFAULT_OG_IMAGE,
   type = 'website',
   keywords = [],
   noIndex = false,
@@ -37,14 +39,16 @@ export function generateMetadata({
     'unrestricted giving',
     'root causes',
     'cryptocurrency',
-    'Uganda',
+    'Kenya',
+    'Nairobi',
+    'Kibera',
     'Bitcoin adoption',
     'blockchain',
     'African development',
   ];
 
   return {
-    title: fullTitle,
+    title,
     description,
     keywords: [...defaultKeywords, ...keywords].join(', '),
     authors: [{ name: SITE_NAME }],
@@ -95,18 +99,25 @@ export function getOrganizationSchema() {
     name: SITE_NAME,
     alternateName: 'Afribit',
     url: SITE_URL,
-    logo: `${SITE_URL}/images/logo.png`,
+    logo: ORGANIZATION_LOGO,
     description: SITE_DESCRIPTION,
     email: 'connect@afribit.africa',
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'Uganda',
-      addressRegion: 'Central Region',
+      addressCountry: 'KE',
+      addressRegion: 'Nairobi County',
+      addressLocality: 'Nairobi',
     },
+    areaServed: [
+      {
+        '@type': 'Place',
+        name: 'Kibera, Nairobi, Kenya',
+      },
+    ],
     sameAs: [
-      'https://twitter.com/AfribitAfrica',
-      'https://facebook.com/AfribitAfrica',
-      'https://github.com/novyrix/Afribit-Africa',
+      'https://x.com/afribitkibera',
+      'https://www.instagram.com/afribit_africa/',
+      'https://youtube.com/@afribitafrica',
     ],
     foundingDate: '2020',
     founders: [
@@ -130,13 +141,8 @@ export function getWebsiteSchema() {
       name: SITE_NAME,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/images/logo.png`,
+        url: ORGANIZATION_LOGO,
       },
-    },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${SITE_URL}/search?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
     },
   };
 }
@@ -202,7 +208,7 @@ export function getEventSchema(event: {
       name: event.location,
       address: {
         '@type': 'PostalAddress',
-        addressCountry: 'Uganda',
+        addressCountry: 'KE',
       },
     },
     organizer: {
@@ -226,7 +232,7 @@ export function getArticleSchema(article: {
     '@type': 'Article',
     headline: article.title,
     description: article.description,
-    image: article.image ? `${SITE_URL}${article.image}` : `${SITE_URL}/images/og-default.jpg`,
+    image: article.image ? `${SITE_URL}${article.image}` : `${SITE_URL}${DEFAULT_OG_IMAGE}`,
     datePublished: article.publishedDate,
     dateModified: article.modifiedDate || article.publishedDate,
     author: {
@@ -238,7 +244,7 @@ export function getArticleSchema(article: {
       name: SITE_NAME,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/images/logo.png`,
+        url: ORGANIZATION_LOGO,
       },
     },
   };

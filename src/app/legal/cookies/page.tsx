@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { LegalLayout, LegalSection, LegalP, LegalList } from '@/components/legal/legal-layout'
+import { generateMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetadata({
   title: 'Cookie Policy',
   description: 'How Afribit Africa uses cookies on its website.',
-  robots: 'noindex, follow',
-}
+  path: '/legal/cookies',
+  noIndex: true,
+})
 
 export default function CookiePolicyPage() {
   return (

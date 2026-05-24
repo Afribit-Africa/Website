@@ -118,6 +118,12 @@ export default async function MerchantsPage() {
               <p className="mt-3 text-sm leading-7 text-muted-foreground">
                 Neighborhood labels, location context, and human-readable discovery come first, so the directory stays useful even while public pin policy is being finalized.
               </p>
+              <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                <Link href="/merchants/location-accuracy" className="font-semibold text-bitcoin underline underline-offset-2 hover:opacity-80 transition-opacity">
+                  Read the merchant location accuracy note
+                </Link>
+                {' '}to understand why some public pins still need refinement.
+              </p>
             </CardSpotlight>
             <CardSpotlight className="h-full p-6">
               <div className="flex size-11 items-center justify-center rounded-2xl bg-sky-400/10">

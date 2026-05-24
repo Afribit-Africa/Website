@@ -1,10 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://afribit.africa';
+import { StructuredData } from "@/components/seo/structured-data";
+import {
+  DEFAULT_OG_IMAGE,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+  getOrganizationSchema,
+  getWebsiteSchema,
+} from "@/lib/metadata";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -21,10 +28,10 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Afribit Africa - Empowering Communities Through Bitcoin",
-    template: "%s | Afribit Africa",
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
   },
-  description: "Afribit advances urgent, strategic change through Bitcoin by challenging inequitable systems, mobilizing collective resources, and backing root-cause solutions led by communities.",
+  description: SITE_DESCRIPTION,
   keywords: [
     "Bitcoin",
     "Africa",
@@ -43,37 +50,47 @@ export const metadata: Metadata = {
     "waste management",
     "merchant onboarding",
   ],
-  authors: [{ name: "Afribit Africa" }],
-  creator: "Afribit Africa",
-  publisher: "Afribit Africa",
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/Logo/icon%20symbol%20only%20svg.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [{ url: "/Logo/icon%20symbol%20only%20svg.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: SITE_URL,
-    siteName: "Afribit Africa",
-    title: "Afribit Africa - Empowering Communities Through Bitcoin",
-    description: "Strategic, community-led change through Bitcoin, social justice, collective resources, and root-cause solutions.",
+    siteName: SITE_NAME,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
     images: [
       {
-        url: `${SITE_URL}/images/og-default.jpg`,
+        url: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
         width: 1200,
         height: 630,
-        alt: "Afribit Africa",
+        alt: SITE_NAME,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@AfribitAfrica",
-    creator: "@AfribitAfrica",
-    title: "Afribit Africa - Empowering Communities Through Bitcoin",
-    description: "Strategic, community-led change through Bitcoin, social justice, collective resources, and root-cause solutions.",
-    images: [`${SITE_URL}/images/og-default.jpg`],
+    site: "@afribitkibera",
+    creator: "@afribitkibera",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: [`${SITE_URL}${DEFAULT_OG_IMAGE}`],
   },
   robots: {
     index: true,
@@ -91,6 +108,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#070807",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -103,6 +124,8 @@ export default function RootLayout({
         className="bg-background font-sans text-foreground antialiased"
         suppressHydrationWarning
       >
+        <StructuredData data={getOrganizationSchema()} />
+        <StructuredData data={getWebsiteSchema()} />
         <Header />
         <main>
           {children}

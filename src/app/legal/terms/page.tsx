@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { LegalLayout, LegalSection, LegalP, LegalList } from '@/components/legal/legal-layout'
+import { generateMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetadata({
   title: 'Terms of Use',
   description: 'Terms and conditions for using the Afribit Africa website.',
-  robots: 'noindex, follow',
-}
+  path: '/legal/terms',
+  noIndex: true,
+})
 
 export default function TermsOfUsePage() {
   return (

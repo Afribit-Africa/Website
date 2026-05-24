@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { LegalLayout, LegalSection, LegalP, LegalList } from '@/components/legal/legal-layout'
+import { generateMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetadata({
   title: 'Privacy Policy',
   description: 'How Afribit Africa collects, uses, and protects your personal information.',
-  robots: 'noindex, follow',
-}
+  path: '/legal/privacy',
+  noIndex: true,
+})
 
 export default function PrivacyPolicyPage() {
   return (

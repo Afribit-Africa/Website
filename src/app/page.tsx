@@ -12,17 +12,20 @@ import { FediSection } from '@/components/sections/fedi-section'
 import { MediaCoverage } from '@/components/sections/media-coverage'
 import { FAQ } from '@/components/sections/faq'
 import { StrategicGoals } from '@/components/sections/strategic-goals'
+import { generateMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Afribit Africa — Empowering Communities Through Bitcoin',
+export const metadata: Metadata = generateMetadata({
+  title: 'Afribit Africa',
   description:
     'Afribit advances urgent, strategic change in Kibera by challenging inequitable systems, mobilizing collective resources, and supporting root-cause solutions through Bitcoin.',
-  openGraph: {
-    title: 'Afribit Africa — Bitcoin Circular Economy in Kibera',
-    description:
-      'Strategic, community-led change in Kibera through Bitcoin, social justice, and coordinated action across time, talent, treasure, and networks.',
-  },
-}
+  path: '/',
+  keywords: [
+    'Bitcoin circular economy Kibera',
+    'Afribit Africa',
+    'Bitcoin Kibera',
+    'community-led Bitcoin adoption',
+  ],
+})
 
 export default function HomePage() {
   return (

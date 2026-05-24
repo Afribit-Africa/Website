@@ -1,6 +1,5 @@
 import { MetadataRoute } from 'next';
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://afribit.africa';
+import { SITE_URL } from '@/lib/metadata';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -19,6 +18,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/',
       },
     ],
+    host: SITE_URL,
     sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

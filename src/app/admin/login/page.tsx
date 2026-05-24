@@ -2,11 +2,14 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { getAdminSession } from '@/lib/auth'
+import { generateMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetadata({
   title: 'Admin Login',
   description: 'Sign in to the Afribit Merchant Management portal.',
-}
+  path: '/admin/login',
+  noIndex: true,
+})
 
 const errorMessages: Record<string, string> = {
   AccessDenied: 'This Google account is not authorized for Afribit admin access.',
