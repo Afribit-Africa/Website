@@ -22,11 +22,7 @@ export function CommunityCTA() {
 
             <div className="content-actions">
               <Button asChild size="lg">
-                <a
-                  href="https://www.afribit.africa/fedi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="#join-on-fedi">
                   <Users className="mr-2 size-4" aria-hidden="true" />
                   Join on Fedi
                 </a>

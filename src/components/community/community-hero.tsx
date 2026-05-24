@@ -25,14 +25,10 @@ export function CommunityHero() {
 
           <div className="content-actions">
             <Button asChild size="lg">
-              <a
-                href="https://www.afribit.africa/fedi"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="#join-on-fedi">
                 Join on Fedi
                 <Users className="size-4 ml-2" aria-hidden="true" />
-              </a>
+              </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
               <a

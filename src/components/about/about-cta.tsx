@@ -28,10 +28,10 @@ export function AboutCTA() {
                 </Link>
               </Button>
               <Button asChild size="xl" variant="outline">
-                <a href="https://www.afribit.africa/fedi" target="_blank" rel="noopener noreferrer">
+                <Link href="/community">
                   Join Community
                   <Users className="size-4" />
-                </a>
+                </Link>
               </Button>
             </div>
           </div>
