@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#070807"/>
+  <circle cx="180" cy="102" r="120" fill="#F7931A" fill-opacity="0.14"/>
+  <circle cx="1038" cy="192" r="156" fill="#008751" fill-opacity="0.12"/>
+  <rect x="44" y="44" width="1112" height="542" rx="28" fill="#121512" fill-opacity="0.9" stroke="#F4F5F0" stroke-opacity="0.08"/>
+  <g>
+    <circle cx="112" cy="110" r="12" fill="#F7931A"/>
+    <text x="136" y="120" fill="#F4F5F0" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Afribit Africa</text>
+  </g>
+  <text x="88" y="282" fill="#F4F5F0" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="800">Bitcoin-powered change</text>
+  <text x="88" y="362" fill="#F4F5F0" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="800">rooted in Kibera.</text>
+  <text x="88" y="430" fill="#F4F5F0" fill-opacity="0.8" font-family="Arial, Helvetica, sans-serif" font-size="30">Community-led action, merchant networks, and practical Bitcoin adoption across Kibera, Nairobi.</text>
+  <text x="88" y="532" fill="#F4F5F0" fill-opacity="0.72" font-family="Arial, Helvetica, sans-serif" font-size="24">afribit.africa</text>
+  <circle cx="280" cy="523" r="4" fill="#F7931A"/>
+  <text x="298" y="532" fill="#F4F5F0" fill-opacity="0.72" font-family="Arial, Helvetica, sans-serif" font-size="24">Merchant networks</text>
+  <circle cx="534" cy="523" r="4" fill="#F7931A"/>
+  <text x="552" y="532" fill="#F4F5F0" fill-opacity="0.72" font-family="Arial, Helvetica, sans-serif" font-size="24">Education</text>
+  <circle cx="704" cy="523" r="4" fill="#F7931A"/>
+  <text x="722" y="532" fill="#F4F5F0" fill-opacity="0.72" font-family="Arial, Helvetica, sans-serif" font-size="24">Community</text>
+</svg>
