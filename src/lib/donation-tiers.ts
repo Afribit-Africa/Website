@@ -132,7 +132,7 @@ export const donationFaqs = [
   {
     question: 'Can I donate in Bitcoin directly?',
     answer:
-      'Yes. Donations are routed through Afribit’s BTCPay Server, so supporters can pay with Bitcoin on-chain or over Lightning without a traditional processor sitting in the middle.',
+      'Yes. During the BTCPay migration, supporters can donate manually through the Afribit Blink QR code or Lightning address. The direct BTCPay checkout will return once Afribit is running it on its own infrastructure.',
   },
   {
     question: 'How does program selection work?',
@@ -142,11 +142,11 @@ export const donationFaqs = [
   {
     question: 'Can I donate anonymously?',
     answer:
-      'Yes. The donate form supports anonymous giving. If you still want impact follow-up or recognition, you can choose to share contact details voluntarily.',
+      'Manual Blink donations do not collect donor details on the Afribit site. If you want follow-up or recognition, include a note in your wallet if supported or contact Afribit after donating.',
   },
   {
     question: 'How does Afribit show transparency?',
     answer:
-      'Afribit pairs BTCPay-based payment flow with public ecosystem references such as BTC Map, Geyser, and Bitcoin Confederation, while also reporting on community outcomes and program growth.',
+      'Afribit pairs Bitcoin-native giving with public ecosystem references such as BTC Map, Geyser, and Bitcoin Confederation, while also reporting on community outcomes and program growth.',
   },
 ]

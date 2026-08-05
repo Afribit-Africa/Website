@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = generateMetadata({
   title: 'Donation Submitted',
-  description: 'Thank you for supporting Afribit. Your donation invoice has been submitted through BTCPay checkout.',
+  description: 'Thank you for supporting Afribit. Your donation helps power community-led Bitcoin work in Kibera.',
   path: '/donate/success',
   noIndex: true,
 })
@@ -26,10 +26,10 @@ export default function DonateSuccessPage() {
             Thank you for backing Afribit.
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-            If your BTCPay checkout completed successfully, your contribution is now part of the work powering merchants, training, cleanup crews, and community resilience in Kibera.
+            If your Lightning payment completed successfully, your contribution is now part of the work powering merchants, training, cleanup crews, and community resilience in Kibera.
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-            If you shared an email address, Afribit can use it for follow-up or recognition updates. You can also return to the donate page to support another tier.
+            Afribit is moving direct BTCPay checkout onto its own infrastructure. You can return to the donate page to scan the current QR code again or support another tier.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

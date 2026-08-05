@@ -1,5 +1,13 @@
-export const CROWDFUND_URL =
-  'https://pay.afribit.africa/apps/2xYtsTMHMqYv6qozQ8j9zjP66FiR/crowdfund'
+export const DONATION_PAY_URL =
+  process.env.NEXT_PUBLIC_DONATION_PAY_URL || 'https://pay.blink.sv/afribit/print'
+
+export const DONATION_LIGHTNING_ADDRESS =
+  process.env.NEXT_PUBLIC_DONATION_LIGHTNING_ADDRESS || 'afribit@blink.sv'
+
+export const DONATION_QR_VALUE =
+  process.env.NEXT_PUBLIC_DONATION_QR_VALUE || DONATION_LIGHTNING_ADDRESS
+
+export const CROWDFUND_URL = DONATION_PAY_URL
 
 export const DONATION_CURRENCIES = ['USD', 'BTC'] as const
 
