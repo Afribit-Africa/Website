@@ -108,7 +108,7 @@ export default async function BuilderProjectPage({ params }: Props) {
             sizes="(max-width: 1280px) 100vw, 1280px"
           />
           {project.slug === 'afribit-wifi' && (
-            <figcaption>Concept illustration for Afribit Wi-Fi</figcaption>
+            <figcaption>Concept illustration for 3 West Satenet Wi-Fi</figcaption>
           )}
         </figure>
       </Container>

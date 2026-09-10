@@ -25,7 +25,7 @@ import { generateMetadata, getBreadcrumbSchema, SITE_URL } from '@/lib/metadata'
 export const metadata = generateMetadata({
   title: 'Afribit Builders | Community Bitcoin Projects',
   description:
-    'Meet Afribit Builders, the team building Bitcoin tools for community life in Kibera: Taka Sats recycling rewards, Afribit Wi-Fi, and price intelligence with Insats.',
+    'Meet Afribit Builders, the team building Bitcoin tools for community life in Kibera: Taka Sats recycling rewards, 3 West Satenet Wi-Fi support, and price intelligence with Insats.',
   path: '/builders',
   image: '/Images/Kibera Aerial view.jpg',
   keywords: [
@@ -33,7 +33,8 @@ export const metadata = generateMetadata({
     'Bitcoin developers Kenya',
     'community technology Kibera',
     'Taka Sats',
-    'Afribit Wi-Fi',
+    '3 West Satenet Wi-Fi',
+    'Kibera Mesh',
     'Insats',
   ],
 })
@@ -48,7 +49,7 @@ const principles = [
   {
     icon: Fingerprint,
     title: 'Keep ownership local.',
-    copy: 'Merchant-controlled wallets, operator-owned systems, and tools our community can understand.',
+    copy: 'Merchant-controlled wallets, community-owned tools, and systems local builders can understand.',
   },
   {
     icon: GitBranch,
@@ -232,8 +233,8 @@ export default function BuildersPage() {
                 One community.
               </h2>
               <p>
-                Recycling, connectivity, and everyday trade. Different challenges, connected by a
-                belief that useful technology starts close to home.
+                Recycling, community-run connectivity, and everyday trade. Different challenges,
+                connected by a belief that useful technology starts close to home.
               </p>
             </div>
           </Reveal>
