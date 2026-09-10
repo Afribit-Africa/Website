@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import type { ProgramContent } from '@/lib/programs'
 import { CometCard } from '@/components/ui/comet-card'
+import { StaggerGroup, StaggerItem } from '@/components/ui/reveal'
 
 interface ProgramFocusCardsProps {
   programs: ProgramContent[]
@@ -10,9 +11,10 @@ interface ProgramFocusCardsProps {
 
 export function ProgramFocusCards({ programs }: ProgramFocusCardsProps) {
   return (
-    <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+    <StaggerGroup className="grid grid-cols-1 gap-5 lg:grid-cols-2">
       {programs.map((program) => (
-        <CometCard key={program.slug} className="min-h-[360px]">
+        <StaggerItem key={program.slug}>
+        <CometCard className="min-h-[360px]">
           <Link href={`/programs/${program.slug}`} className="group relative block h-full w-full">
             <Image
               src={program.imageSrc}
@@ -52,7 +54,8 @@ export function ProgramFocusCards({ programs }: ProgramFocusCardsProps) {
             </div>
           </Link>
         </CometCard>
+        </StaggerItem>
       ))}
-    </div>
+    </StaggerGroup>
   )
 }

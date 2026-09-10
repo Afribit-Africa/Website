@@ -10,6 +10,7 @@ const QUICK_LINKS = [
   { href: '/about', label: 'About Afribit' },
   { href: '/programs/merchants', label: 'Merchant Program' },
   { href: 'https://www.afribit.africa/maps', label: 'Merchant Map', external: true },
+  { href: '/builders', label: 'Afribit Builders' },
   { href: '/donate', label: 'Donate' },
   { href: '/contact', label: 'Contact' },
 ]

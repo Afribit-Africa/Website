@@ -4,10 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import { ArrowRight, ExternalLink, MapPinned, Search } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { CardSpotlight } from '@/components/ui/card-spotlight'
 import { Input } from '@/components/ui/input'
+import { MerchantCard } from '@/components/merchants/merchant-card'
 import {
   Select,
   SelectContent,
@@ -16,6 +15,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { StaggerGroup, StaggerItem } from '@/components/ui/reveal'
 import type { MerchantProfile } from '@/types'
 
 interface MerchantDirectoryClientProps {
@@ -174,66 +174,13 @@ export function MerchantDirectoryClient({ merchants }: MerchantDirectoryClientPr
             </Button>
           </div>
         ) : (
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <StaggerGroup className="grid gap-5 md:grid-cols-2 xl:grid-cols-3" amount={0.05}>
             {filteredMerchants.map((merchant) => (
-              <CardSpotlight key={merchant.slug} className="h-full overflow-hidden border-white/8 bg-bg-surface/90 p-0">
-                <div className="relative h-56 overflow-hidden">
-                  <Image
-                    src={merchant.image || '/Images/Mama mboga groceries accepting bitcoin.jpg'}
-                    alt={merchant.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1280px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-                  <div className="absolute left-4 right-4 top-4 flex items-center justify-between gap-3">
-                    <Badge variant={merchant.featured ? 'default' : 'secondary'}>
-                      {merchant.featured ? 'Featured' : merchant.category}
-                    </Badge>
-                    {merchant.acceptsBitcoin ? (
-                      <Badge variant="green">Accepts Bitcoin</Badge>
-                    ) : null}
-                  </div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-bitcoin/90">
-                      {merchant.neighborhood || merchant.locationLabel || 'Kibera'}
-                    </p>
-                    <h3 className="mt-2 font-display text-2xl font-bold text-white">{merchant.name}</h3>
-                  </div>
-                </div>
-
-                <div className="p-5">
-                  <p className="text-sm leading-7 text-muted-foreground">{merchant.summary}</p>
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {merchant.paymentMethods.slice(0, 3).map((method) => (
-                      <span
-                        key={method}
-                        className="rounded-full border border-white/8 bg-white/[0.03] px-3 py-1 text-xs font-medium text-white/75"
-                      >
-                        {method}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 flex items-center justify-between gap-3">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.16em] text-white/45">Location</p>
-                      <p className="mt-1 text-sm text-foreground/85">
-                        {[merchant.neighborhood, merchant.city].filter(Boolean).join(', ') || merchant.country || 'Kibera, Nairobi'}
-                      </p>
-                    </div>
-                    <Button asChild variant="outline" className="border-white/10 bg-black/20">
-                      <Link href={`/merchants/${merchant.slug}`}>
-                        View profile
-                        <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </CardSpotlight>
+              <StaggerItem key={merchant.slug}>
+                <MerchantCard merchant={merchant} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         )}
       </TabsContent>
 

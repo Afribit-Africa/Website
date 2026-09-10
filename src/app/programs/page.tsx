@@ -16,6 +16,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { CardSpotlight } from '@/components/ui/card-spotlight'
 import { ProgramFocusCards } from '@/components/programs/program-focus-cards'
+import { Reveal, StaggerGroup, StaggerItem } from '@/components/ui/reveal'
 
 export const metadata: Metadata = generateMetadata({
   title: 'Programs',
@@ -59,7 +60,7 @@ export default function ProgramsPage() {
         <div className="absolute inset-0 bg-grid-lines opacity-40" aria-hidden />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(247,147,26,0.14),transparent_28rem),radial-gradient(circle_at_right_center,rgba(0,135,81,0.12),transparent_24rem)]" aria-hidden />
         <Container className="relative z-10">
-          <div className="max-w-3xl py-8 md:py-14">
+          <Reveal className="max-w-3xl py-8 md:py-14">
             <Badge variant="secondary" className="mb-5">
               Programs
             </Badge>
@@ -81,7 +82,7 @@ export default function ProgramsPage() {
                 <Link href="#program-grid">Browse active programs</Link>
               </Button>
             </div>
-          </div>
+          </Reveal>
         </Container>
       </section>
 
@@ -102,20 +103,22 @@ export default function ProgramsPage() {
 
           <ProgramFocusCards programs={programs} />
 
-          <div className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-4">
+          <StaggerGroup className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-4">
             {programs.map((program) => (
-              <CardSpotlight key={`${program.slug}-summary`} className="h-full p-5">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-bitcoin/90">
-                    {program.shortTitle}
-                  </p>
-                  <Badge variant="green">{program.statusLabel}</Badge>
-                </div>
-                <p className="mt-4 text-2xl font-display font-bold text-foreground">{program.impactValue}</p>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">{program.impactLabel}</p>
-              </CardSpotlight>
+              <StaggerItem key={`${program.slug}-summary`}>
+                <CardSpotlight className="h-full p-5">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-bitcoin/90">
+                      {program.shortTitle}
+                    </p>
+                    <Badge variant="green">{program.statusLabel}</Badge>
+                  </div>
+                  <p className="mt-4 text-2xl font-display font-bold text-foreground">{program.impactValue}</p>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{program.impactLabel}</p>
+                </CardSpotlight>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </Container>
       </section>
 
@@ -136,21 +139,23 @@ export default function ProgramsPage() {
               </p>
             </div>
 
-            <div className="grid gap-5">
+            <StaggerGroup className="grid gap-5">
               {operatingModel.map((item) => (
-                <CardSpotlight key={item.title} className="p-6 md:p-7">
-                  <div className="flex items-start gap-4">
-                    <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-bitcoin/10">
-                      <item.icon className="size-5 text-bitcoin" />
+                <StaggerItem key={item.title}>
+                  <CardSpotlight className="p-6 md:p-7">
+                    <div className="flex items-start gap-4">
+                      <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-bitcoin/10">
+                        <item.icon className="size-5 text-bitcoin" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-xl font-bold text-foreground">{item.title}</h3>
+                        <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.description}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-display text-xl font-bold text-foreground">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.description}</p>
-                    </div>
-                  </div>
-                </CardSpotlight>
+                  </CardSpotlight>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerGroup>
           </div>
         </Container>
       </section>

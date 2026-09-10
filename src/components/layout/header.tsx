@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import {
   Menu, X, Compass, Layers, MapPin, Users, MessageSquare,
-  Twitter, Instagram, Youtube, ExternalLink, ArrowRight,
+  Twitter, Instagram, Youtube, ExternalLink, ArrowRight, Code2,
 } from 'lucide-react'
 import { motion, AnimatePresence, type Variants } from 'framer-motion'
 import { cn } from '@/lib/utils'
@@ -17,6 +17,7 @@ const DESKTOP_LINKS = [
   { href: '/about', label: 'About' },
   { href: '/programs', label: 'Programs' },
   { href: '/merchants', label: 'Merchant Map' },
+  { href: '/builders', label: 'Builders' },
   { href: '/community', label: 'Community' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -36,7 +37,7 @@ const MOBILE_CARDS = [
   {
     href: '/programs',
     label: 'Programs',
-    desc: '5 active community programs',
+    desc: '4 active community programs',
     icon: Layers,
     span: 'half' as const,
     iconBg: 'bg-panafrican-green/10',
@@ -55,6 +56,17 @@ const MOBILE_CARDS = [
     border: 'border-panafrican-gold/15',
     glow: 'bg-panafrican-gold/8',
     external: true,
+  },
+  {
+    href: '/builders',
+    label: 'Afribit Builders',
+    desc: 'The people & projects behind the tech',
+    icon: Code2,
+    span: 'half' as const,
+    iconBg: 'bg-bitcoin/10',
+    iconColor: 'text-bitcoin',
+    border: 'border-bitcoin/20',
+    glow: 'bg-bitcoin/10',
   },
   {
     href: '/community',

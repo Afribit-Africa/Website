@@ -7,6 +7,7 @@ import { Container } from '@/components/layout/container'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { CardSpotlight } from '@/components/ui/card-spotlight'
+import { Reveal, StaggerGroup, StaggerItem } from '@/components/ui/reveal'
 import { generateMetadata as buildMetadata } from '@/lib/metadata'
 import { getProgramBySlug, programs } from '@/lib/programs'
 
@@ -56,52 +57,52 @@ function SectionGrid({
 }) {
   if (variant === 'tags') {
     return (
-      <div className="flex flex-wrap gap-3">
+      <StaggerGroup className="flex flex-wrap gap-3">
         {items.map((item) => (
-          <div
-            key={item.title}
-            className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-foreground"
-          >
-            {item.title}
-          </div>
+          <StaggerItem key={item.title}>
+            <div className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-foreground">
+              {item.title}
+            </div>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerGroup>
     )
   }
 
   if (variant === 'steps') {
     return (
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <StaggerGroup className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {items.map((item, index) => (
-          <div
-            key={item.title}
-            className="rounded-[1.5rem] border border-white/8 bg-white/[0.03] p-6"
-          >
-            <div className="mb-4 flex size-10 items-center justify-center rounded-2xl bg-bitcoin/10 text-sm font-semibold text-bitcoin">
-              {index + 1}
+          <StaggerItem key={item.title}>
+            <div className="rounded-[1.5rem] border border-white/8 bg-white/[0.03] p-6 h-full">
+              <div className="mb-4 flex size-10 items-center justify-center rounded-2xl bg-bitcoin/10 text-sm font-semibold text-bitcoin">
+                {index + 1}
+              </div>
+              <h3 className="font-display text-xl font-bold text-foreground">{item.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.description}</p>
             </div>
-            <h3 className="font-display text-xl font-bold text-foreground">{item.title}</h3>
-            <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.description}</p>
-          </div>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerGroup>
     )
   }
 
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <StaggerGroup className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
-        <CardSpotlight key={item.title} className="h-full p-6">
-          {item.value ? (
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-bitcoin/90">{item.value}</p>
-          ) : null}
-          <h3 className="mt-3 font-display text-xl font-bold text-foreground">{item.title}</h3>
-          {item.description ? (
-            <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.description}</p>
-          ) : null}
-        </CardSpotlight>
+        <StaggerItem key={item.title}>
+          <CardSpotlight className="h-full p-6">
+            {item.value ? (
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-bitcoin/90">{item.value}</p>
+            ) : null}
+            <h3 className="mt-3 font-display text-xl font-bold text-foreground">{item.title}</h3>
+            {item.description ? (
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.description}</p>
+            ) : null}
+          </CardSpotlight>
+        </StaggerItem>
       ))}
-    </div>
+    </StaggerGroup>
   )
 }
 
@@ -130,7 +131,7 @@ export default async function ProgramDetailPage({ params }: PageProps) {
           </div>
 
           <div className="grid gap-8 pb-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-            <div className="max-w-2xl">
+            <Reveal className="max-w-2xl">
               <Badge variant="secondary" className="mb-5">
                 {program.statusLabel}
               </Badge>
@@ -170,7 +171,7 @@ export default async function ProgramDetailPage({ params }: PageProps) {
                   )}
                 </Button>
               </div>
-            </div>
+            </Reveal>
 
             <div className="relative overflow-hidden rounded-[2rem] border border-white/8 bg-white/[0.03] p-3">
               <div className="relative aspect-[4/4.5] overflow-hidden rounded-[1.35rem]">
@@ -199,20 +200,20 @@ export default async function ProgramDetailPage({ params }: PageProps) {
 
       <section className="section bg-bg-base">
         <Container>
-          <div className="rounded-[2rem] border border-white/8 bg-bg-surface/70 px-6 py-8 md:px-8">
+          <Reveal className="rounded-[2rem] border border-white/8 bg-bg-surface/70 px-6 py-8 md:px-8">
             <div className="flex items-start gap-4">
               <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-bitcoin/10 text-bitcoin">
                 <Quote className="size-5" />
               </div>
               <div>
-                <p className="text-base leading-8 text-foreground/90">“{program.quote.text}”</p>
+                <p className="text-base leading-8 text-foreground/90">&ldquo;{program.quote.text}&rdquo;</p>
                 <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-bitcoin/90">
                   {program.quote.name}
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">{program.quote.role}</p>
               </div>
             </div>
-          </div>
+          </Reveal>
         </Container>
       </section>
 
@@ -241,7 +242,7 @@ export default async function ProgramDetailPage({ params }: PageProps) {
 
       <section className="section bg-bg-base">
         <Container>
-          <div className="rounded-[2rem] border border-white/8 bg-[radial-gradient(circle_at_top,rgba(247,147,26,0.12),transparent_30rem)] px-6 py-8 md:px-10 md:py-10">
+          <Reveal className="rounded-[2rem] border border-white/8 bg-[radial-gradient(circle_at_top,rgba(247,147,26,0.12),transparent_30rem)] px-6 py-8 md:px-10 md:py-10">
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-bitcoin">
@@ -278,7 +279,7 @@ export default async function ProgramDetailPage({ params }: PageProps) {
                 </Link>
               </Button>
             </div>
-          </div>
+          </Reveal>
         </Container>
       </section>
     </>

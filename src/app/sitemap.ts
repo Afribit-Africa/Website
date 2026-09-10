@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { builderProjects } from '@/lib/builders';
 import { listMerchantSlugs } from '@/lib/content/merchants';
 import { SITE_URL } from '@/lib/metadata';
 import { programs } from '@/lib/programs';
@@ -33,6 +34,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     {
+      url: `${SITE_URL}/builders`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${SITE_URL}/donate`,
       lastModified,
       changeFrequency: 'weekly' as const,
@@ -65,6 +72,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
+  const builderRoutes = builderProjects.map((project) => ({
+    url: `${SITE_URL}/builders/${project.slug}`,
+    lastModified: new Date(`${project.modifiedDate}T00:00:00Z`),
+    changeFrequency: 'monthly' as const,
+    priority: 0.75,
+  }))
+
   const merchantRoutes = merchantSlugs.map((slug) => ({
     url: `${SITE_URL}/merchants/${slug}`,
     lastModified,
@@ -76,5 +90,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...staticRoutes,
     ...merchantRoutes,
     ...programRoutes,
+    ...builderRoutes,
   ];
 }

@@ -28,6 +28,21 @@
 
   --radius: 0.5rem;
   --shadow-card: 0 18px 48px rgba(0, 0, 0, 0.28);
+  --measure: 65ch;
+
+  /* Fluid type scale — clamp(min, preferred, max). Additive: existing
+     per-component text-4xl/5xl/6xl chains are unaffected until callers
+     opt in to the text-fluid-* utilities generated below. */
+  --step--1: clamp(0.8rem, 0.77rem + 0.15vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.125rem, 1.07rem + 0.3vw, 1.25rem);
+  --step-2: clamp(1.25rem, 1.16rem + 0.45vw, 1.5rem);
+  --step-3: clamp(1.5rem, 1.36rem + 0.7vw, 1.875rem);
+  --step-4: clamp(1.875rem, 1.65rem + 1.1vw, 2.25rem);
+  --step-5: clamp(2.25rem, 1.9rem + 1.8vw, 3rem);
+  --step-6: clamp(2.75rem, 2.2rem + 2.75vw, 3.75rem);
+  --step-7: clamp(3.25rem, 2.5rem + 3.75vw, 4.5rem);
+  --step-8: clamp(3.75rem, 2.7rem + 5.25vw, 5.5rem);
 
   --background: 120 7% 3%;
   --foreground: 70 20% 95%;
@@ -90,6 +105,15 @@
   --radius-md: var(--radius);
   --radius-lg: calc(var(--radius) + 2px);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Fluid type utilities (text-fluid-*), built on the --step-* scale above. */
+  --text-fluid-eyebrow: var(--step--1);
+  --text-fluid-body: var(--step-0);
+  --text-fluid-body-lg: var(--step-1);
+  --text-fluid-h4: var(--step-2);
+  --text-fluid-h3: var(--step-4);
+  --text-fluid-h2: var(--step-6);
+  --text-fluid-h1: var(--step-8);
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   @keyframes marquee {

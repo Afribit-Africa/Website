@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { CardSpotlight } from '@/components/ui/card-spotlight'
 import { listMerchants, getMerchantDirectoryStats } from '@/lib/content/merchants'
 import { generateMetadata } from '@/lib/metadata'
+import { Reveal, StaggerGroup, StaggerItem } from '@/components/ui/reveal'
 
 export const metadata: Metadata = generateMetadata({
   title: 'Merchants',
@@ -34,7 +35,7 @@ export default async function MerchantsPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(247,147,26,0.18),transparent_28rem),radial-gradient(circle_at_right_center,rgba(0,107,66,0.16),transparent_26rem)]" aria-hidden />
         <Container className="relative z-10">
           <div className="grid gap-10 pb-10 pt-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="max-w-3xl">
+            <Reveal className="max-w-3xl">
               <Badge variant="secondary" className="mb-5">
                 Merchant Directory
               </Badge>
@@ -44,20 +45,26 @@ export default async function MerchantsPage() {
               <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
                 Explore the shops, traders, riders, and local enterprises accepting Bitcoin in Kibera. Each listing helps visitors, community members, and supporters see how circular trade is growing on the ground.
               </p>
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
-                  <p className="text-2xl font-display font-bold text-foreground">{stats.totalMerchants}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">Active merchants</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
-                  <p className="text-2xl font-display font-bold text-foreground">{stats.neighborhoodsCovered}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">Neighborhood clusters</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
-                  <p className="text-2xl font-display font-bold text-foreground">{stats.lightningEnabled}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">Lightning-friendly listings</p>
-                </div>
-              </div>
+              <StaggerGroup className="mt-8 grid gap-4 sm:grid-cols-3">
+                <StaggerItem>
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
+                    <p className="text-2xl font-display font-bold text-foreground">{stats.totalMerchants}</p>
+                    <p className="mt-2 text-sm text-muted-foreground">Active merchants</p>
+                  </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
+                    <p className="text-2xl font-display font-bold text-foreground">{stats.neighborhoodsCovered}</p>
+                    <p className="mt-2 text-sm text-muted-foreground">Neighborhood clusters</p>
+                  </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
+                    <p className="text-2xl font-display font-bold text-foreground">{stats.lightningEnabled}</p>
+                    <p className="mt-2 text-sm text-muted-foreground">Lightning-friendly listings</p>
+                  </div>
+                </StaggerItem>
+              </StaggerGroup>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="xl">
                   <a href="#merchant-directory">
@@ -71,7 +78,7 @@ export default async function MerchantsPage() {
                   </a>
                 </Button>
               </div>
-            </div>
+            </Reveal>
 
             <div className="relative overflow-hidden rounded-[2rem] border border-white/8 bg-[#141615] p-3 shadow-[0_24px_60px_rgba(0,0,0,0.28)]">
               <div className="relative aspect-[4/4.6] overflow-hidden rounded-[1.45rem]">
@@ -100,41 +107,47 @@ export default async function MerchantsPage() {
 
       <section className="section bg-bg-surface/50 bg-grid-lines">
         <Container>
-          <div className="grid gap-5 md:grid-cols-3">
-            <CardSpotlight className="h-full p-6">
-              <div className="flex size-11 items-center justify-center rounded-2xl bg-bitcoin/10">
-                <Building2 className="size-5 text-bitcoin" />
-              </div>
-              <h2 className="mt-5 font-display text-xl font-bold text-foreground">Built for real discovery</h2>
-              <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                This page is designed to help people quickly find active Bitcoin-accepting businesses, not scroll through abstract impact claims.
-              </p>
-            </CardSpotlight>
-            <CardSpotlight className="h-full p-6">
-              <div className="flex size-11 items-center justify-center rounded-2xl bg-panafrican-green/10">
-                <Landmark className="size-5 text-panafrican-green" />
-              </div>
-              <h2 className="mt-5 font-display text-xl font-bold text-foreground">Grounded in place</h2>
-              <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                Neighborhood labels, location context, and human-readable discovery come first, so the directory stays useful even while public pin policy is being finalized.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                <Link href="/merchants/location-accuracy" className="font-semibold text-bitcoin underline underline-offset-2 hover:opacity-80 transition-opacity">
-                  Read the merchant location accuracy note
-                </Link>
-                {' '}to understand why some public pins still need refinement.
-              </p>
-            </CardSpotlight>
-            <CardSpotlight className="h-full p-6">
-              <div className="flex size-11 items-center justify-center rounded-2xl bg-sky-400/10">
-                <Zap className="size-5 text-sky-400" />
-              </div>
-              <h2 className="mt-5 font-display text-xl font-bold text-foreground">Quiet, fast controls</h2>
-              <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                Search, category, neighborhood, and payment filters help visitors narrow the list without fighting a heavy interface.
-              </p>
-            </CardSpotlight>
-          </div>
+          <StaggerGroup className="grid gap-5 md:grid-cols-3">
+            <StaggerItem>
+              <CardSpotlight className="h-full p-6">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-bitcoin/10">
+                  <Building2 className="size-5 text-bitcoin" />
+                </div>
+                <h2 className="mt-5 font-display text-xl font-bold text-foreground">Built for real discovery</h2>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                  This page is designed to help people quickly find active Bitcoin-accepting businesses, not scroll through abstract impact claims.
+                </p>
+              </CardSpotlight>
+            </StaggerItem>
+            <StaggerItem>
+              <CardSpotlight className="h-full p-6">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-panafrican-green/10">
+                  <Landmark className="size-5 text-panafrican-green" />
+                </div>
+                <h2 className="mt-5 font-display text-xl font-bold text-foreground">Grounded in place</h2>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                  Neighborhood labels, location context, and human-readable discovery come first, so the directory stays useful even while public pin policy is being finalized.
+                </p>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                  <Link href="/merchants/location-accuracy" className="font-semibold text-bitcoin underline underline-offset-2 hover:opacity-80 transition-opacity">
+                    Read the merchant location accuracy note
+                  </Link>
+                  {' '}to understand why some public pins still need refinement.
+                </p>
+              </CardSpotlight>
+            </StaggerItem>
+            <StaggerItem>
+              <CardSpotlight className="h-full p-6">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-sky-400/10">
+                  <Zap className="size-5 text-sky-400" />
+                </div>
+                <h2 className="mt-5 font-display text-xl font-bold text-foreground">Quiet, fast controls</h2>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                  Search, category, neighborhood, and payment filters help visitors narrow the list without fighting a heavy interface.
+                </p>
+              </CardSpotlight>
+            </StaggerItem>
+          </StaggerGroup>
         </Container>
       </section>
 

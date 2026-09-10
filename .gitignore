@@ -24,6 +24,10 @@
 .DS_Store
 *.pem
 
+# Agent working context — living file, updated before each implementation session,
+# tracks in-progress state so work survives context/limit resets. Not committed.
+AGENTS.md
+
 # debug
 npm-debug.log*
 yarn-debug.log*

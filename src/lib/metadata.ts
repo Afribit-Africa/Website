@@ -15,6 +15,10 @@ export interface SEOConfig {
   type?: 'website' | 'article';
   keywords?: string[];
   noIndex?: boolean;
+  publishedTime?: string;
+  modifiedTime?: string;
+  authors?: string[];
+  section?: string;
 }
 
 export function generateMetadata({
@@ -25,6 +29,10 @@ export function generateMetadata({
   type = 'website',
   keywords = [],
   noIndex = false,
+  publishedTime,
+  modifiedTime,
+  authors,
+  section,
 }: SEOConfig): Metadata {
   const fullTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
   const url = `${SITE_URL}${path}`;
@@ -68,6 +76,14 @@ export function generateMetadata({
       siteName: SITE_NAME,
       title: fullTitle,
       description,
+      ...(type === 'article'
+        ? {
+            publishedTime,
+            modifiedTime,
+            authors,
+            section,
+          }
+        : {}),
       images: [
         {
           url: imageUrl,
@@ -79,8 +95,8 @@ export function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      site: '@AfribitAfrica',
-      creator: '@AfribitAfrica',
+      site: '@afribitkibera',
+      creator: '@afribitkibera',
       title: fullTitle,
       description,
       images: [imageUrl],
@@ -227,17 +243,33 @@ export function getArticleSchema(article: {
   modifiedDate?: string;
   author: string;
   image?: string;
+  path?: string;
+  keywords?: string[];
+  section?: string;
+  type?: 'Article' | 'BlogPosting';
+  authorType?: 'Person' | 'Organization';
 }) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': article.type || 'Article',
+    ...(article.path
+      ? {
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `${SITE_URL}${article.path}`,
+          },
+          url: `${SITE_URL}${article.path}`,
+        }
+      : {}),
     headline: article.title,
     description: article.description,
     image: article.image ? `${SITE_URL}${article.image}` : `${SITE_URL}${DEFAULT_OG_IMAGE}`,
     datePublished: article.publishedDate,
     dateModified: article.modifiedDate || article.publishedDate,
+    ...(article.keywords ? { keywords: article.keywords.join(', ') } : {}),
+    ...(article.section ? { articleSection: article.section } : {}),
     author: {
-      '@type': 'Person',
+      '@type': article.authorType || 'Person',
       name: article.author,
     },
     publisher: {
