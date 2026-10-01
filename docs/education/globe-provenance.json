@@ -1,0 +1,20 @@
+{
+  "source": "https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73909/world.topo.bathy.200412.3x5400x2700.jpg",
+  "credit": "NASA Earth Observatory, Blue Marble Next Generation, December 2004",
+  "sourcePage": "https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-topography-bathymetry/",
+  "usage": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+  "notes": "Satellite map only; no video, titles, logo, captions or embedded words. No endorsement implied. Cover is an orthographic projection of this map.",
+  "sourceSha256": "a9f0088972dee0254610af851c4d6838ca3f2cf79176987e0a5713e2c15ec042",
+  "artifacts": [
+    {
+      "path": "public/education/earth-surface.webp",
+      "bytes": 277040,
+      "sha256": "9fff89b6c5733de341813d370e85f829ea30b86e66caefef53d2a7ecc42307fc"
+    },
+    {
+      "path": "public/education/globe-cover.webp",
+      "bytes": 57378,
+      "sha256": "43a78bec8d79dc0fc1ce38582b649799acfa6c92f55a51e245181fb5b0732518"
+    }
+  ]
+}

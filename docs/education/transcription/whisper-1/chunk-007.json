@@ -1,0 +1,2586 @@
+{
+  "provider": "OpenRouter",
+  "model": "openai/whisper-1",
+  "chunk": {
+    "index": 7,
+    "start": 840,
+    "end": 960,
+    "file": "scripts/education/chunks/chunk-007.mp3"
+  },
+  "generatedAt": "2026-10-01T15:40:55.987Z",
+  "generationId": "gen-stt-1790869249-p49VTY5KHLBz83TJU1ux",
+  "response": {
+    "text": "Then they hold the pin. You don't actually have cryptocurrency, you just have an IOU from a company promising to give you the money when you ask for it. And we saw how dangerous centralization was in the 1980s. Exactly. When you hold your own keys, you have total financial sovereignty, but, I mean, it comes with a massive responsibility. Right. Because if you are your own bank, you are entirely responsible for your own security. Yes. If you mess up, there is no 1-800 customer service number to call to reverse a transaction. Which brings us to the seed phrase or recovery code. Right. When you set up a true non-custodial wallet, it generates a list of 12 or 24 random English words. Yep. The seed phrase. It gives you words like media, suspect, effort, dish, album. To a beginner, it just sounds like absolute nonsense. Totally random. But those words are the master backup of your entire financial life on that wallet. It's crucial to understand the cryptography behind this, though. Those 12 words aren't just a fancy password you create. What are they? They are pulled from a standardized list of 2048 words. The specific sequence of those words is actually a mathematical representation of a massive 128-bit or 256-bit integer. Oh, wow. Yeah. That string of words is your master private key. Just translate it into a human-readable format. So the algorithm uses those words to mathematically derive every single private key and public address your wallet will ever use. Exactly. Which means if you drop your phone in a lake, your money isn't just gone. Nope. You just buy a new phone, download a new wallet app, type in those exact 12 words, and the algorithm perfectly rebuilds your entire key structure and pulls your balance right back from the blockchain. But, I mean, the flip side of that convenience is extreme vulnerability, right? Oh, absolutely. Extreme vulnerability. If anyone else gets their hands on those 12 words… They get all your money. Instantly. Irreversibly.",
+    "usage": {
+      "seconds": 120,
+      "cost": 0.012
+    },
+    "task": "transcribe",
+    "language": "english",
+    "duration": 120,
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0,
+        "end": 8.359999656677246,
+        "text": " Then they hold the pin. You don't actually have cryptocurrency, you just have an IOU from a company promising to give you the money when you ask for it.",
+        "tokens": [
+          50364,
+          1396,
+          436,
+          1797,
+          264,
+          5447,
+          13,
+          509,
+          500,
+          380,
+          767,
+          362,
+          28809,
+          11,
+          291,
+          445,
+          362,
+          364,
+          286,
+          4807,
+          490,
+          257,
+          2237,
+          20257,
+          281,
+          976,
+          291,
+          264,
+          1460,
+          562,
+          291,
+          1029,
+          337,
+          309,
+          13,
+          50764
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.19800567626953125,
+        "compression_ratio": 1.5933735370635986,
+        "no_speech_prob": 0.05184335634112358
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 8.420000076293945,
+        "end": 11.100000381469727,
+        "text": " And we saw how dangerous centralization was in the 1980s.",
+        "tokens": [
+          50764,
+          400,
+          321,
+          1866,
+          577,
+          5795,
+          5777,
+          2144,
+          390,
+          294,
+          264,
+          13626,
+          82,
+          13,
+          50914
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.19800567626953125,
+        "compression_ratio": 1.5933735370635986,
+        "no_speech_prob": 0.05184335634112358
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 11.399999618530273,
+        "end": 18.139999389648438,
+        "text": " Exactly. When you hold your own keys, you have total financial sovereignty, but, I mean, it comes with a massive responsibility.",
+        "tokens": [
+          50914,
+          7587,
+          13,
+          1133,
+          291,
+          1797,
+          428,
+          1065,
+          9317,
+          11,
+          291,
+          362,
+          3217,
+          4669,
+          27862,
+          11,
+          457,
+          11,
+          286,
+          914,
+          11,
+          309,
+          1487,
+          365,
+          257,
+          5994,
+          6357,
+          13,
+          51264
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.19800567626953125,
+        "compression_ratio": 1.5933735370635986,
+        "no_speech_prob": 0.05184335634112358
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 18.459999084472656,
+        "end": 22.81999969482422,
+        "text": " Right. Because if you are your own bank, you are entirely responsible for your own security.",
+        "tokens": [
+          51264,
+          1779,
+          13,
+          1436,
+          498,
+          291,
+          366,
+          428,
+          1065,
+          3765,
+          11,
+          291,
+          366,
+          7696,
+          6250,
+          337,
+          428,
+          1065,
+          3825,
+          13,
+          51514
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.19800567626953125,
+        "compression_ratio": 1.5933735370635986,
+        "no_speech_prob": 0.05184335634112358
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 22.959999084472656,
+        "end": 28.219999313354492,
+        "text": " Yes. If you mess up, there is no 1-800 customer service number to call to reverse a transaction.",
+        "tokens": [
+          51514,
+          1079,
+          13,
+          759,
+          291,
+          2082,
+          493,
+          11,
+          456,
+          307,
+          572,
+          502,
+          12,
+          14423,
+          5474,
+          2643,
+          1230,
+          281,
+          818,
+          281,
+          9943,
+          257,
+          14425,
+          13,
+          51764
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.19800567626953125,
+        "compression_ratio": 1.5933735370635986,
+        "no_speech_prob": 0.05184335634112358
+      },
+      {
+        "id": 5,
+        "seek": 2822,
+        "start": 28.219999313354492,
+        "end": 31.639999389648438,
+        "text": " Which brings us to the seed phrase or recovery code.",
+        "tokens": [
+          50364,
+          3013,
+          5607,
+          505,
+          281,
+          264,
+          8871,
+          9535,
+          420,
+          8597,
+          3089,
+          13,
+          50514
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.16624358296394348,
+        "compression_ratio": 1.5310077667236328,
+        "no_speech_prob": 0.054189812391996384
+      },
+      {
+        "id": 6,
+        "seek": 2822,
+        "start": 31.760000228881836,
+        "end": 32.36000061035156,
+        "text": " Right.",
+        "tokens": [
+          50514,
+          1779,
+          13,
+          50564
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.16624358296394348,
+        "compression_ratio": 1.5310077667236328,
+        "no_speech_prob": 0.054189812391996384
+      },
+      {
+        "id": 7,
+        "seek": 2822,
+        "start": 32.36000061035156,
+        "end": 38.540000915527344,
+        "text": " When you set up a true non-custodial wallet, it generates a list of 12 or 24 random English words.",
+        "tokens": [
+          50564,
+          1133,
+          291,
+          992,
+          493,
+          257,
+          2074,
+          2107,
+          12,
+          66,
+          381,
+          378,
+          831,
+          16599,
+          11,
+          309,
+          23815,
+          257,
+          1329,
+          295,
+          2272,
+          420,
+          4022,
+          4974,
+          3669,
+          2283,
+          13,
+          50864
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.16624358296394348,
+        "compression_ratio": 1.5310077667236328,
+        "no_speech_prob": 0.054189812391996384
+      },
+      {
+        "id": 8,
+        "seek": 2822,
+        "start": 38.84000015258789,
+        "end": 39.959999084472656,
+        "text": " Yep. The seed phrase.",
+        "tokens": [
+          50864,
+          7010,
+          13,
+          440,
+          8871,
+          9535,
+          13,
+          50964
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.16624358296394348,
+        "compression_ratio": 1.5310077667236328,
+        "no_speech_prob": 0.054189812391996384
+      },
+      {
+        "id": 9,
+        "seek": 2822,
+        "start": 40.70000076293945,
+        "end": 47.5,
+        "text": " It gives you words like media, suspect, effort, dish, album. To a beginner, it just sounds like absolute nonsense.",
+        "tokens": [
+          50964,
+          467,
+          2709,
+          291,
+          2283,
+          411,
+          3021,
+          11,
+          9091,
+          11,
+          4630,
+          11,
+          5025,
+          11,
+          6030,
+          13,
+          1407,
+          257,
+          22080,
+          11,
+          309,
+          445,
+          3263,
+          411,
+          8236,
+          14925,
+          13,
+          51314
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.16624358296394348,
+        "compression_ratio": 1.5310077667236328,
+        "no_speech_prob": 0.054189812391996384
+      },
+      {
+        "id": 10,
+        "seek": 2822,
+        "start": 47.880001068115234,
+        "end": 48.279998779296875,
+        "text": " Totally random.",
+        "tokens": [
+          51314,
+          22837,
+          4974,
+          13,
+          51364
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.16624358296394348,
+        "compression_ratio": 1.5310077667236328,
+        "no_speech_prob": 0.054189812391996384
+      },
+      {
+        "id": 11,
+        "seek": 2822,
+        "start": 48.599998474121094,
+        "end": 52.7599983215332,
+        "text": " But those words are the master backup of your entire financial life on that wallet.",
+        "tokens": [
+          51364,
+          583,
+          729,
+          2283,
+          366,
+          264,
+          4505,
+          14807,
+          295,
+          428,
+          2302,
+          4669,
+          993,
+          322,
+          300,
+          16599,
+          13,
+          51564
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.16624358296394348,
+        "compression_ratio": 1.5310077667236328,
+        "no_speech_prob": 0.054189812391996384
+      },
+      {
+        "id": 12,
+        "seek": 5276,
+        "start": 52.7599983215332,
+        "end": 60,
+        "text": " It's crucial to understand the cryptography behind this, though. Those 12 words aren't just a fancy password you create.",
+        "tokens": [
+          50364,
+          467,
+          311,
+          11462,
+          281,
+          1223,
+          264,
+          9844,
+          5820,
+          2261,
+          341,
+          11,
+          1673,
+          13,
+          3950,
+          2272,
+          2283,
+          3212,
+          380,
+          445,
+          257,
+          10247,
+          11524,
+          291,
+          1884,
+          13,
+          50714
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.15364991128444672,
+        "compression_ratio": 1.4414414167404175,
+        "no_speech_prob": 0.12083949148654938
+      },
+      {
+        "id": 13,
+        "seek": 5276,
+        "start": 60.2599983215332,
+        "end": 60.91999816894531,
+        "text": " What are they?",
+        "tokens": [
+          50714,
+          708,
+          366,
+          436,
+          30,
+          50764
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.15364991128444672,
+        "compression_ratio": 1.4414414167404175,
+        "no_speech_prob": 0.12083949148654938
+      },
+      {
+        "id": 14,
+        "seek": 5276,
+        "start": 61.2400016784668,
+        "end": 64.9800033569336,
+        "text": " They are pulled from a standardized list of 2048 words.",
+        "tokens": [
+          50764,
+          814,
+          366,
+          7373,
+          490,
+          257,
+          31677,
+          1329,
+          295,
+          945,
+          13318,
+          2283,
+          13,
+          50964
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.15364991128444672,
+        "compression_ratio": 1.4414414167404175,
+        "no_speech_prob": 0.12083949148654938
+      },
+      {
+        "id": 15,
+        "seek": 5276,
+        "start": 65.44000244140625,
+        "end": 74.30000305175781,
+        "text": " The specific sequence of those words is actually a mathematical representation of a massive 128-bit or 256-bit integer.",
+        "tokens": [
+          50964,
+          440,
+          2685,
+          8310,
+          295,
+          729,
+          2283,
+          307,
+          767,
+          257,
+          18894,
+          10290,
+          295,
+          257,
+          5994,
+          29810,
+          12,
+          5260,
+          420,
+          38882,
+          12,
+          5260,
+          24922,
+          13,
+          51414
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.15364991128444672,
+        "compression_ratio": 1.4414414167404175,
+        "no_speech_prob": 0.12083949148654938
+      },
+      {
+        "id": 16,
+        "seek": 5276,
+        "start": 74.54000091552734,
+        "end": 75.37999725341797,
+        "text": " Oh, wow.",
+        "tokens": [
+          51414,
+          876,
+          11,
+          6076,
+          13,
+          51464
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.15364991128444672,
+        "compression_ratio": 1.4414414167404175,
+        "no_speech_prob": 0.12083949148654938
+      },
+      {
+        "id": 17,
+        "seek": 7538,
+        "start": 75.37999725341797,
+        "end": 82.69999694824219,
+        "text": " Yeah. That string of words is your master private key. Just translate it into a human-readable format.",
+        "tokens": [
+          50364,
+          865,
+          13,
+          663,
+          6798,
+          295,
+          2283,
+          307,
+          428,
+          4505,
+          4551,
+          2141,
+          13,
+          1449,
+          13799,
+          309,
+          666,
+          257,
+          1952,
+          12,
+          2538,
+          712,
+          7877,
+          13,
+          50714
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.18153387308120728,
+        "compression_ratio": 1.5843137502670288,
+        "no_speech_prob": 0.10229471325874329
+      },
+      {
+        "id": 18,
+        "seek": 7538,
+        "start": 83.45999908447266,
+        "end": 90.0999984741211,
+        "text": " So the algorithm uses those words to mathematically derive every single private key and public address your wallet will ever use.",
+        "tokens": [
+          50714,
+          407,
+          264,
+          9284,
+          4960,
+          729,
+          2283,
+          281,
+          44003,
+          28446,
+          633,
+          2167,
+          4551,
+          2141,
+          293,
+          1908,
+          2985,
+          428,
+          16599,
+          486,
+          1562,
+          764,
+          13,
+          51064
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.18153387308120728,
+        "compression_ratio": 1.5843137502670288,
+        "no_speech_prob": 0.10229471325874329
+      },
+      {
+        "id": 19,
+        "seek": 7538,
+        "start": 90.22000122070312,
+        "end": 90.77999877929688,
+        "text": " Exactly.",
+        "tokens": [
+          51064,
+          7587,
+          13,
+          51114
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.18153387308120728,
+        "compression_ratio": 1.5843137502670288,
+        "no_speech_prob": 0.10229471325874329
+      },
+      {
+        "id": 20,
+        "seek": 7538,
+        "start": 91.0199966430664,
+        "end": 93.86000061035156,
+        "text": " Which means if you drop your phone in a lake, your money isn't just gone.",
+        "tokens": [
+          51114,
+          3013,
+          1355,
+          498,
+          291,
+          3270,
+          428,
+          2593,
+          294,
+          257,
+          11001,
+          11,
+          428,
+          1460,
+          1943,
+          380,
+          445,
+          2780,
+          13,
+          51264
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.18153387308120728,
+        "compression_ratio": 1.5843137502670288,
+        "no_speech_prob": 0.10229471325874329
+      },
+      {
+        "id": 21,
+        "seek": 7538,
+        "start": 94.04000091552734,
+        "end": 100.04000091552734,
+        "text": " Nope. You just buy a new phone, download a new wallet app, type in those exact 12 words,",
+        "tokens": [
+          51264,
+          12172,
+          13,
+          509,
+          445,
+          2256,
+          257,
+          777,
+          2593,
+          11,
+          5484,
+          257,
+          777,
+          16599,
+          724,
+          11,
+          2010,
+          294,
+          729,
+          1900,
+          2272,
+          2283,
+          11,
+          51564
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.18153387308120728,
+        "compression_ratio": 1.5843137502670288,
+        "no_speech_prob": 0.10229471325874329
+      },
+      {
+        "id": 22,
+        "seek": 10004,
+        "start": 100.04000091552734,
+        "end": 106.16000366210938,
+        "text": " and the algorithm perfectly rebuilds your entire key structure and pulls your balance right back from the blockchain.",
+        "tokens": [
+          50364,
+          293,
+          264,
+          9284,
+          6239,
+          16877,
+          82,
+          428,
+          2302,
+          2141,
+          3877,
+          293,
+          16982,
+          428,
+          4772,
+          558,
+          646,
+          490,
+          264,
+          17176,
+          13,
+          50664
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.1882503628730774,
+        "compression_ratio": 1.4739130735397339,
+        "no_speech_prob": 0.39597412943840027
+      },
+      {
+        "id": 23,
+        "seek": 10004,
+        "start": 106.9000015258789,
+        "end": 110.62000274658203,
+        "text": " But, I mean, the flip side of that convenience is extreme vulnerability, right?",
+        "tokens": [
+          50664,
+          583,
+          11,
+          286,
+          914,
+          11,
+          264,
+          7929,
+          1252,
+          295,
+          300,
+          19283,
+          307,
+          8084,
+          24210,
+          11,
+          558,
+          30,
+          50864
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.1882503628730774,
+        "compression_ratio": 1.4739130735397339,
+        "no_speech_prob": 0.39597412943840027
+      },
+      {
+        "id": 24,
+        "seek": 10004,
+        "start": 111.0199966430664,
+        "end": 113.5,
+        "text": " Oh, absolutely. Extreme vulnerability.",
+        "tokens": [
+          50864,
+          876,
+          11,
+          3122,
+          13,
+          39525,
+          24210,
+          13,
+          51014
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.1882503628730774,
+        "compression_ratio": 1.4739130735397339,
+        "no_speech_prob": 0.39597412943840027
+      },
+      {
+        "id": 25,
+        "seek": 10004,
+        "start": 113.76000213623047,
+        "end": 116.04000091552734,
+        "text": " If anyone else gets their hands on those 12 words…",
+        "tokens": [
+          51014,
+          759,
+          2878,
+          1646,
+          2170,
+          641,
+          2377,
+          322,
+          729,
+          2272,
+          2283,
+          1260,
+          51164
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.1882503628730774,
+        "compression_ratio": 1.4739130735397339,
+        "no_speech_prob": 0.39597412943840027
+      },
+      {
+        "id": 26,
+        "seek": 10004,
+        "start": 116.58000183105469,
+        "end": 119.04000091552734,
+        "text": " They get all your money. Instantly. Irreversibly.",
+        "tokens": [
+          51164,
+          814,
+          483,
+          439,
+          428,
+          1460,
+          13,
+          2730,
+          3627,
+          13,
+          9151,
+          265,
+          840,
+          3545,
+          13,
+          51314
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.1882503628730774,
+        "compression_ratio": 1.4739130735397339,
+        "no_speech_prob": 0.39597412943840027
+      }
+    ],
+    "words": [
+      {
+        "word": "Then",
+        "start": 0,
+        "end": 0.6399999856948853
+      },
+      {
+        "word": "they",
+        "start": 0.6399999856948853,
+        "end": 0.8799999952316284
+      },
+      {
+        "word": "hold",
+        "start": 0.8799999952316284,
+        "end": 1.1200000047683716
+      },
+      {
+        "word": "the",
+        "start": 1.1200000047683716,
+        "end": 1.2400000095367432
+      },
+      {
+        "word": "pin",
+        "start": 1.2400000095367432,
+        "end": 1.4600000381469727
+      },
+      {
+        "word": "You",
+        "start": 1.9199999570846558,
+        "end": 1.9199999570846558
+      },
+      {
+        "word": "don't",
+        "start": 1.9199999570846558,
+        "end": 2.0999999046325684
+      },
+      {
+        "word": "actually",
+        "start": 2.0999999046325684,
+        "end": 2.700000047683716
+      },
+      {
+        "word": "have",
+        "start": 2.700000047683716,
+        "end": 3.140000104904175
+      },
+      {
+        "word": "cryptocurrency",
+        "start": 3.140000104904175,
+        "end": 3.740000009536743
+      },
+      {
+        "word": "you",
+        "start": 3.9600000381469727,
+        "end": 4
+      },
+      {
+        "word": "just",
+        "start": 4,
+        "end": 4.21999979019165
+      },
+      {
+        "word": "have",
+        "start": 4.21999979019165,
+        "end": 4.420000076293945
+      },
+      {
+        "word": "an",
+        "start": 4.420000076293945,
+        "end": 4.599999904632568
+      },
+      {
+        "word": "IOU",
+        "start": 4.599999904632568,
+        "end": 4.980000019073486
+      },
+      {
+        "word": "from",
+        "start": 4.980000019073486,
+        "end": 5.28000020980835
+      },
+      {
+        "word": "a",
+        "start": 5.28000020980835,
+        "end": 5.78000020980835
+      },
+      {
+        "word": "company",
+        "start": 5.78000020980835,
+        "end": 5.78000020980835
+      },
+      {
+        "word": "promising",
+        "start": 5.78000020980835,
+        "end": 6.460000038146973
+      },
+      {
+        "word": "to",
+        "start": 6.460000038146973,
+        "end": 6.699999809265137
+      },
+      {
+        "word": "give",
+        "start": 6.699999809265137,
+        "end": 6.840000152587891
+      },
+      {
+        "word": "you",
+        "start": 6.840000152587891,
+        "end": 6.960000038146973
+      },
+      {
+        "word": "the",
+        "start": 6.960000038146973,
+        "end": 7.239999771118164
+      },
+      {
+        "word": "money",
+        "start": 7.239999771118164,
+        "end": 7.239999771118164
+      },
+      {
+        "word": "when",
+        "start": 7.239999771118164,
+        "end": 7.480000019073486
+      },
+      {
+        "word": "you",
+        "start": 7.480000019073486,
+        "end": 7.639999866485596
+      },
+      {
+        "word": "ask",
+        "start": 7.639999866485596,
+        "end": 7.840000152587891
+      },
+      {
+        "word": "for",
+        "start": 7.840000152587891,
+        "end": 8.039999961853027
+      },
+      {
+        "word": "it",
+        "start": 8.039999961853027,
+        "end": 8.359999656677246
+      },
+      {
+        "word": "And",
+        "start": 8.420000076293945,
+        "end": 8.539999961853027
+      },
+      {
+        "word": "we",
+        "start": 8.539999961853027,
+        "end": 8.699999809265137
+      },
+      {
+        "word": "saw",
+        "start": 8.699999809265137,
+        "end": 8.84000015258789
+      },
+      {
+        "word": "how",
+        "start": 8.84000015258789,
+        "end": 9.380000114440918
+      },
+      {
+        "word": "dangerous",
+        "start": 9.380000114440918,
+        "end": 9.380000114440918
+      },
+      {
+        "word": "centralization",
+        "start": 9.380000114440918,
+        "end": 10.039999961853027
+      },
+      {
+        "word": "was",
+        "start": 10.039999961853027,
+        "end": 10.300000190734863
+      },
+      {
+        "word": "in",
+        "start": 10.300000190734863,
+        "end": 10.399999618530273
+      },
+      {
+        "word": "the",
+        "start": 10.399999618530273,
+        "end": 10.619999885559082
+      },
+      {
+        "word": "1980s",
+        "start": 10.619999885559082,
+        "end": 11.100000381469727
+      },
+      {
+        "word": "Exactly",
+        "start": 11.399999618530273,
+        "end": 11.880000114440918
+      },
+      {
+        "word": "When",
+        "start": 12.260000228881836,
+        "end": 12.34000015258789
+      },
+      {
+        "word": "you",
+        "start": 12.34000015258789,
+        "end": 12.479999542236328
+      },
+      {
+        "word": "hold",
+        "start": 12.479999542236328,
+        "end": 12.600000381469727
+      },
+      {
+        "word": "your",
+        "start": 12.600000381469727,
+        "end": 12.760000228881836
+      },
+      {
+        "word": "own",
+        "start": 12.760000228881836,
+        "end": 13.140000343322754
+      },
+      {
+        "word": "keys",
+        "start": 13.140000343322754,
+        "end": 13.15999984741211
+      },
+      {
+        "word": "you",
+        "start": 13.359999656677246,
+        "end": 13.720000267028809
+      },
+      {
+        "word": "have",
+        "start": 13.720000267028809,
+        "end": 13.920000076293945
+      },
+      {
+        "word": "total",
+        "start": 13.920000076293945,
+        "end": 14.199999809265137
+      },
+      {
+        "word": "financial",
+        "start": 14.199999809265137,
+        "end": 14.619999885559082
+      },
+      {
+        "word": "sovereignty",
+        "start": 14.619999885559082,
+        "end": 14.979999542236328
+      },
+      {
+        "word": "but",
+        "start": 15.520000457763672,
+        "end": 15.65999984741211
+      },
+      {
+        "word": "I",
+        "start": 15.880000114440918,
+        "end": 16.299999237060547
+      },
+      {
+        "word": "mean",
+        "start": 16.299999237060547,
+        "end": 16.299999237060547
+      },
+      {
+        "word": "it",
+        "start": 16.299999237060547,
+        "end": 16.65999984741211
+      },
+      {
+        "word": "comes",
+        "start": 16.65999984741211,
+        "end": 16.799999237060547
+      },
+      {
+        "word": "with",
+        "start": 16.799999237060547,
+        "end": 16.959999084472656
+      },
+      {
+        "word": "a",
+        "start": 16.959999084472656,
+        "end": 17.459999084472656
+      },
+      {
+        "word": "massive",
+        "start": 17.459999084472656,
+        "end": 17.459999084472656
+      },
+      {
+        "word": "responsibility",
+        "start": 17.459999084472656,
+        "end": 18.139999389648438
+      },
+      {
+        "word": "Right",
+        "start": 18.459999084472656,
+        "end": 18.760000228881836
+      },
+      {
+        "word": "Because",
+        "start": 18.760000228881836,
+        "end": 19.18000030517578
+      },
+      {
+        "word": "if",
+        "start": 19.18000030517578,
+        "end": 19.31999969482422
+      },
+      {
+        "word": "you",
+        "start": 19.31999969482422,
+        "end": 19.440000534057617
+      },
+      {
+        "word": "are",
+        "start": 19.440000534057617,
+        "end": 19.6200008392334
+      },
+      {
+        "word": "your",
+        "start": 19.6200008392334,
+        "end": 19.84000015258789
+      },
+      {
+        "word": "own",
+        "start": 19.84000015258789,
+        "end": 20.059999465942383
+      },
+      {
+        "word": "bank",
+        "start": 20.059999465942383,
+        "end": 20.360000610351562
+      },
+      {
+        "word": "you",
+        "start": 20.440000534057617,
+        "end": 20.600000381469727
+      },
+      {
+        "word": "are",
+        "start": 20.600000381469727,
+        "end": 20.920000076293945
+      },
+      {
+        "word": "entirely",
+        "start": 20.920000076293945,
+        "end": 21.299999237060547
+      },
+      {
+        "word": "responsible",
+        "start": 21.299999237060547,
+        "end": 21.81999969482422
+      },
+      {
+        "word": "for",
+        "start": 21.81999969482422,
+        "end": 22.100000381469727
+      },
+      {
+        "word": "your",
+        "start": 22.100000381469727,
+        "end": 22.260000228881836
+      },
+      {
+        "word": "own",
+        "start": 22.260000228881836,
+        "end": 22.520000457763672
+      },
+      {
+        "word": "security",
+        "start": 22.520000457763672,
+        "end": 22.81999969482422
+      },
+      {
+        "word": "Yes",
+        "start": 22.959999084472656,
+        "end": 23.440000534057617
+      },
+      {
+        "word": "If",
+        "start": 23.719999313354492,
+        "end": 24.020000457763672
+      },
+      {
+        "word": "you",
+        "start": 24.020000457763672,
+        "end": 24.219999313354492
+      },
+      {
+        "word": "mess",
+        "start": 24.219999313354492,
+        "end": 24.31999969482422
+      },
+      {
+        "word": "up",
+        "start": 24.31999969482422,
+        "end": 24.520000457763672
+      },
+      {
+        "word": "there",
+        "start": 24.600000381469727,
+        "end": 24.65999984741211
+      },
+      {
+        "word": "is",
+        "start": 24.65999984741211,
+        "end": 24.780000686645508
+      },
+      {
+        "word": "no",
+        "start": 24.780000686645508,
+        "end": 25.059999465942383
+      },
+      {
+        "word": "1",
+        "start": 25.059999465942383,
+        "end": 25.299999237060547
+      },
+      {
+        "word": "800",
+        "start": 25.299999237060547,
+        "end": 25.5
+      },
+      {
+        "word": "customer",
+        "start": 25.5,
+        "end": 26.040000915527344
+      },
+      {
+        "word": "service",
+        "start": 26.040000915527344,
+        "end": 26.420000076293945
+      },
+      {
+        "word": "number",
+        "start": 26.420000076293945,
+        "end": 26.68000030517578
+      },
+      {
+        "word": "to",
+        "start": 26.68000030517578,
+        "end": 26.8799991607666
+      },
+      {
+        "word": "call",
+        "start": 26.8799991607666,
+        "end": 27.100000381469727
+      },
+      {
+        "word": "to",
+        "start": 27.100000381469727,
+        "end": 27.559999465942383
+      },
+      {
+        "word": "reverse",
+        "start": 27.559999465942383,
+        "end": 27.559999465942383
+      },
+      {
+        "word": "a",
+        "start": 27.559999465942383,
+        "end": 28.219999313354492
+      },
+      {
+        "word": "transaction",
+        "start": 28.219999313354492,
+        "end": 28.219999313354492
+      },
+      {
+        "word": "Which",
+        "start": 28.219999313354492,
+        "end": 28.81999969482422
+      },
+      {
+        "word": "brings",
+        "start": 28.81999969482422,
+        "end": 29.15999984741211
+      },
+      {
+        "word": "us",
+        "start": 29.15999984741211,
+        "end": 29.420000076293945
+      },
+      {
+        "word": "to",
+        "start": 29.420000076293945,
+        "end": 29.6200008392334
+      },
+      {
+        "word": "the",
+        "start": 29.6200008392334,
+        "end": 29.8799991607666
+      },
+      {
+        "word": "seed",
+        "start": 29.8799991607666,
+        "end": 30.100000381469727
+      },
+      {
+        "word": "phrase",
+        "start": 30.100000381469727,
+        "end": 30.360000610351562
+      },
+      {
+        "word": "or",
+        "start": 30.360000610351562,
+        "end": 30.84000015258789
+      },
+      {
+        "word": "recovery",
+        "start": 30.84000015258789,
+        "end": 31.18000030517578
+      },
+      {
+        "word": "code",
+        "start": 31.18000030517578,
+        "end": 31.639999389648438
+      },
+      {
+        "word": "Right",
+        "start": 31.760000228881836,
+        "end": 32.36000061035156
+      },
+      {
+        "word": "When",
+        "start": 32.36000061035156,
+        "end": 32.65999984741211
+      },
+      {
+        "word": "you",
+        "start": 32.65999984741211,
+        "end": 32.79999923706055
+      },
+      {
+        "word": "set",
+        "start": 32.79999923706055,
+        "end": 32.939998626708984
+      },
+      {
+        "word": "up",
+        "start": 32.939998626708984,
+        "end": 33
+      },
+      {
+        "word": "a",
+        "start": 33,
+        "end": 33.18000030517578
+      },
+      {
+        "word": "true",
+        "start": 33.18000030517578,
+        "end": 33.439998626708984
+      },
+      {
+        "word": "non",
+        "start": 33.439998626708984,
+        "end": 33.79999923706055
+      },
+      {
+        "word": "custodial",
+        "start": 33.79999923706055,
+        "end": 34.119998931884766
+      },
+      {
+        "word": "wallet",
+        "start": 34.119998931884766,
+        "end": 34.459999084472656
+      },
+      {
+        "word": "it",
+        "start": 34.540000915527344,
+        "end": 34.79999923706055
+      },
+      {
+        "word": "generates",
+        "start": 34.79999923706055,
+        "end": 35.099998474121094
+      },
+      {
+        "word": "a",
+        "start": 35.099998474121094,
+        "end": 35.5
+      },
+      {
+        "word": "list",
+        "start": 35.5,
+        "end": 35.5
+      },
+      {
+        "word": "of",
+        "start": 35.5,
+        "end": 36.02000045776367
+      },
+      {
+        "word": "12",
+        "start": 36.02000045776367,
+        "end": 36.400001525878906
+      },
+      {
+        "word": "or",
+        "start": 36.400001525878906,
+        "end": 36.63999938964844
+      },
+      {
+        "word": "24",
+        "start": 36.63999938964844,
+        "end": 37.220001220703125
+      },
+      {
+        "word": "random",
+        "start": 37.220001220703125,
+        "end": 37.84000015258789
+      },
+      {
+        "word": "English",
+        "start": 37.84000015258789,
+        "end": 38.2599983215332
+      },
+      {
+        "word": "words",
+        "start": 38.2599983215332,
+        "end": 38.540000915527344
+      },
+      {
+        "word": "Yep",
+        "start": 38.84000015258789,
+        "end": 39.15999984741211
+      },
+      {
+        "word": "The",
+        "start": 39.15999984741211,
+        "end": 39.439998626708984
+      },
+      {
+        "word": "seed",
+        "start": 39.439998626708984,
+        "end": 39.65999984741211
+      },
+      {
+        "word": "phrase",
+        "start": 39.65999984741211,
+        "end": 39.959999084472656
+      },
+      {
+        "word": "It",
+        "start": 40.70000076293945,
+        "end": 40.70000076293945
+      },
+      {
+        "word": "gives",
+        "start": 40.70000076293945,
+        "end": 40.84000015258789
+      },
+      {
+        "word": "you",
+        "start": 40.84000015258789,
+        "end": 41
+      },
+      {
+        "word": "words",
+        "start": 41,
+        "end": 41.099998474121094
+      },
+      {
+        "word": "like",
+        "start": 41.099998474121094,
+        "end": 41.81999969482422
+      },
+      {
+        "word": "media",
+        "start": 41.81999969482422,
+        "end": 42.31999969482422
+      },
+      {
+        "word": "suspect",
+        "start": 42.7400016784668,
+        "end": 43.040000915527344
+      },
+      {
+        "word": "effort",
+        "start": 43.400001525878906,
+        "end": 43.7400016784668
+      },
+      {
+        "word": "dish",
+        "start": 43.97999954223633,
+        "end": 44.34000015258789
+      },
+      {
+        "word": "album",
+        "start": 44.720001220703125,
+        "end": 44.939998626708984
+      },
+      {
+        "word": "To",
+        "start": 45.439998626708984,
+        "end": 45.70000076293945
+      },
+      {
+        "word": "a",
+        "start": 45.70000076293945,
+        "end": 46.02000045776367
+      },
+      {
+        "word": "beginner",
+        "start": 46.02000045776367,
+        "end": 46.02000045776367
+      },
+      {
+        "word": "it",
+        "start": 46.099998474121094,
+        "end": 46.13999938964844
+      },
+      {
+        "word": "just",
+        "start": 46.13999938964844,
+        "end": 46.439998626708984
+      },
+      {
+        "word": "sounds",
+        "start": 46.439998626708984,
+        "end": 46.439998626708984
+      },
+      {
+        "word": "like",
+        "start": 46.439998626708984,
+        "end": 46.81999969482422
+      },
+      {
+        "word": "absolute",
+        "start": 46.81999969482422,
+        "end": 47.08000183105469
+      },
+      {
+        "word": "nonsense",
+        "start": 47.08000183105469,
+        "end": 47.5
+      },
+      {
+        "word": "Totally",
+        "start": 47.880001068115234,
+        "end": 48
+      },
+      {
+        "word": "random",
+        "start": 48,
+        "end": 48.279998779296875
+      },
+      {
+        "word": "But",
+        "start": 48.599998474121094,
+        "end": 48.79999923706055
+      },
+      {
+        "word": "those",
+        "start": 48.79999923706055,
+        "end": 49.08000183105469
+      },
+      {
+        "word": "words",
+        "start": 49.08000183105469,
+        "end": 49.36000061035156
+      },
+      {
+        "word": "are",
+        "start": 49.36000061035156,
+        "end": 49.779998779296875
+      },
+      {
+        "word": "the",
+        "start": 49.779998779296875,
+        "end": 50
+      },
+      {
+        "word": "master",
+        "start": 50,
+        "end": 50.31999969482422
+      },
+      {
+        "word": "backup",
+        "start": 50.31999969482422,
+        "end": 50.619998931884766
+      },
+      {
+        "word": "of",
+        "start": 50.619998931884766,
+        "end": 50.880001068115234
+      },
+      {
+        "word": "your",
+        "start": 50.880001068115234,
+        "end": 51.060001373291016
+      },
+      {
+        "word": "entire",
+        "start": 51.060001373291016,
+        "end": 51.5
+      },
+      {
+        "word": "financial",
+        "start": 51.5,
+        "end": 51.91999816894531
+      },
+      {
+        "word": "life",
+        "start": 51.91999816894531,
+        "end": 52.15999984741211
+      },
+      {
+        "word": "on",
+        "start": 52.15999984741211,
+        "end": 52.34000015258789
+      },
+      {
+        "word": "that",
+        "start": 52.34000015258789,
+        "end": 52.7599983215332
+      },
+      {
+        "word": "wallet",
+        "start": 52.7599983215332,
+        "end": 52.7599983215332
+      },
+      {
+        "word": "It's",
+        "start": 52.7599983215332,
+        "end": 53.47999954223633
+      },
+      {
+        "word": "crucial",
+        "start": 53.47999954223633,
+        "end": 53.7400016784668
+      },
+      {
+        "word": "to",
+        "start": 53.7400016784668,
+        "end": 54.31999969482422
+      },
+      {
+        "word": "understand",
+        "start": 54.31999969482422,
+        "end": 54.31999969482422
+      },
+      {
+        "word": "the",
+        "start": 54.31999969482422,
+        "end": 54.619998931884766
+      },
+      {
+        "word": "cryptography",
+        "start": 54.619998931884766,
+        "end": 55.060001373291016
+      },
+      {
+        "word": "behind",
+        "start": 55.060001373291016,
+        "end": 55.599998474121094
+      },
+      {
+        "word": "this",
+        "start": 55.599998474121094,
+        "end": 55.880001068115234
+      },
+      {
+        "word": "though",
+        "start": 56.040000915527344,
+        "end": 56.380001068115234
+      },
+      {
+        "word": "Those",
+        "start": 56.439998626708984,
+        "end": 56.81999969482422
+      },
+      {
+        "word": "12",
+        "start": 56.81999969482422,
+        "end": 57.099998474121094
+      },
+      {
+        "word": "words",
+        "start": 57.099998474121094,
+        "end": 57.380001068115234
+      },
+      {
+        "word": "aren't",
+        "start": 57.380001068115234,
+        "end": 57.79999923706055
+      },
+      {
+        "word": "just",
+        "start": 57.79999923706055,
+        "end": 58.15999984741211
+      },
+      {
+        "word": "a",
+        "start": 58.15999984741211,
+        "end": 58.959999084472656
+      },
+      {
+        "word": "fancy",
+        "start": 58.959999084472656,
+        "end": 58.959999084472656
+      },
+      {
+        "word": "password",
+        "start": 58.959999084472656,
+        "end": 59.34000015258789
+      },
+      {
+        "word": "you",
+        "start": 59.34000015258789,
+        "end": 59.63999938964844
+      },
+      {
+        "word": "create",
+        "start": 59.63999938964844,
+        "end": 60
+      },
+      {
+        "word": "What",
+        "start": 60.2599983215332,
+        "end": 60.52000045776367
+      },
+      {
+        "word": "are",
+        "start": 60.52000045776367,
+        "end": 60.68000030517578
+      },
+      {
+        "word": "they",
+        "start": 60.68000030517578,
+        "end": 60.91999816894531
+      },
+      {
+        "word": "They",
+        "start": 61.2400016784668,
+        "end": 61.47999954223633
+      },
+      {
+        "word": "are",
+        "start": 61.47999954223633,
+        "end": 61.720001220703125
+      },
+      {
+        "word": "pulled",
+        "start": 61.720001220703125,
+        "end": 61.91999816894531
+      },
+      {
+        "word": "from",
+        "start": 61.91999816894531,
+        "end": 62.15999984741211
+      },
+      {
+        "word": "a",
+        "start": 62.15999984741211,
+        "end": 62.52000045776367
+      },
+      {
+        "word": "standardized",
+        "start": 62.52000045776367,
+        "end": 62.720001220703125
+      },
+      {
+        "word": "list",
+        "start": 62.720001220703125,
+        "end": 63.15999984741211
+      },
+      {
+        "word": "of",
+        "start": 63.15999984741211,
+        "end": 63.84000015258789
+      },
+      {
+        "word": "2048",
+        "start": 63.84000015258789,
+        "end": 64.5999984741211
+      },
+      {
+        "word": "words",
+        "start": 64.5999984741211,
+        "end": 64.9800033569336
+      },
+      {
+        "word": "The",
+        "start": 65.44000244140625,
+        "end": 66.12000274658203
+      },
+      {
+        "word": "specific",
+        "start": 66.12000274658203,
+        "end": 66.5199966430664
+      },
+      {
+        "word": "sequence",
+        "start": 66.5199966430664,
+        "end": 66.95999908447266
+      },
+      {
+        "word": "of",
+        "start": 66.95999908447266,
+        "end": 67.18000030517578
+      },
+      {
+        "word": "those",
+        "start": 67.18000030517578,
+        "end": 67.41999816894531
+      },
+      {
+        "word": "words",
+        "start": 67.41999816894531,
+        "end": 67.54000091552734
+      },
+      {
+        "word": "is",
+        "start": 67.54000091552734,
+        "end": 67.83999633789062
+      },
+      {
+        "word": "actually",
+        "start": 67.83999633789062,
+        "end": 68.0999984741211
+      },
+      {
+        "word": "a",
+        "start": 68.0999984741211,
+        "end": 68.72000122070312
+      },
+      {
+        "word": "mathematical",
+        "start": 68.72000122070312,
+        "end": 68.72000122070312
+      },
+      {
+        "word": "representation",
+        "start": 68.72000122070312,
+        "end": 69.33999633789062
+      },
+      {
+        "word": "of",
+        "start": 69.33999633789062,
+        "end": 69.83999633789062
+      },
+      {
+        "word": "a",
+        "start": 69.83999633789062,
+        "end": 71.30000305175781
+      },
+      {
+        "word": "massive",
+        "start": 71.30000305175781,
+        "end": 71.30000305175781
+      },
+      {
+        "word": "128",
+        "start": 71.30000305175781,
+        "end": 72.37999725341797
+      },
+      {
+        "word": "bit",
+        "start": 72.37999725341797,
+        "end": 72.62000274658203
+      },
+      {
+        "word": "or",
+        "start": 72.62000274658203,
+        "end": 72.9800033569336
+      },
+      {
+        "word": "256",
+        "start": 72.9800033569336,
+        "end": 73.62000274658203
+      },
+      {
+        "word": "bit",
+        "start": 73.62000274658203,
+        "end": 74.04000091552734
+      },
+      {
+        "word": "integer",
+        "start": 74.04000091552734,
+        "end": 74.30000305175781
+      },
+      {
+        "word": "Oh",
+        "start": 74.54000091552734,
+        "end": 74.9000015258789
+      },
+      {
+        "word": "wow",
+        "start": 74.9000015258789,
+        "end": 75.37999725341797
+      },
+      {
+        "word": "Yeah",
+        "start": 75.37999725341797,
+        "end": 75.66000366210938
+      },
+      {
+        "word": "That",
+        "start": 75.9800033569336,
+        "end": 76.30000305175781
+      },
+      {
+        "word": "string",
+        "start": 76.30000305175781,
+        "end": 76.66000366210938
+      },
+      {
+        "word": "of",
+        "start": 76.66000366210938,
+        "end": 77.13999938964844
+      },
+      {
+        "word": "words",
+        "start": 77.13999938964844,
+        "end": 77.13999938964844
+      },
+      {
+        "word": "is",
+        "start": 77.13999938964844,
+        "end": 77.4000015258789
+      },
+      {
+        "word": "your",
+        "start": 77.4000015258789,
+        "end": 77.63999938964844
+      },
+      {
+        "word": "master",
+        "start": 77.63999938964844,
+        "end": 78.0999984741211
+      },
+      {
+        "word": "private",
+        "start": 78.0999984741211,
+        "end": 78.5999984741211
+      },
+      {
+        "word": "key",
+        "start": 78.5999984741211,
+        "end": 78.80000305175781
+      },
+      {
+        "word": "Just",
+        "start": 79.63999938964844,
+        "end": 79.87999725341797
+      },
+      {
+        "word": "translate",
+        "start": 79.87999725341797,
+        "end": 80.33999633789062
+      },
+      {
+        "word": "it",
+        "start": 80.33999633789062,
+        "end": 80.63999938964844
+      },
+      {
+        "word": "into",
+        "start": 80.63999938964844,
+        "end": 80.81999969482422
+      },
+      {
+        "word": "a",
+        "start": 80.81999969482422,
+        "end": 81.5199966430664
+      },
+      {
+        "word": "human",
+        "start": 81.5199966430664,
+        "end": 81.86000061035156
+      },
+      {
+        "word": "readable",
+        "start": 81.86000061035156,
+        "end": 82.22000122070312
+      },
+      {
+        "word": "format",
+        "start": 82.22000122070312,
+        "end": 82.69999694824219
+      },
+      {
+        "word": "So",
+        "start": 83.45999908447266,
+        "end": 83.5
+      },
+      {
+        "word": "the",
+        "start": 83.5,
+        "end": 83.77999877929688
+      },
+      {
+        "word": "algorithm",
+        "start": 83.77999877929688,
+        "end": 84.23999786376953
+      },
+      {
+        "word": "uses",
+        "start": 84.23999786376953,
+        "end": 84.80000305175781
+      },
+      {
+        "word": "those",
+        "start": 84.80000305175781,
+        "end": 85.23999786376953
+      },
+      {
+        "word": "words",
+        "start": 85.23999786376953,
+        "end": 85.41999816894531
+      },
+      {
+        "word": "to",
+        "start": 85.41999816894531,
+        "end": 85.86000061035156
+      },
+      {
+        "word": "mathematically",
+        "start": 85.86000061035156,
+        "end": 86.36000061035156
+      },
+      {
+        "word": "derive",
+        "start": 86.36000061035156,
+        "end": 86.72000122070312
+      },
+      {
+        "word": "every",
+        "start": 86.72000122070312,
+        "end": 87.22000122070312
+      },
+      {
+        "word": "single",
+        "start": 87.22000122070312,
+        "end": 87.62000274658203
+      },
+      {
+        "word": "private",
+        "start": 87.62000274658203,
+        "end": 87.91999816894531
+      },
+      {
+        "word": "key",
+        "start": 87.91999816894531,
+        "end": 88.13999938964844
+      },
+      {
+        "word": "and",
+        "start": 88.13999938964844,
+        "end": 88.44000244140625
+      },
+      {
+        "word": "public",
+        "start": 88.44000244140625,
+        "end": 88.77999877929688
+      },
+      {
+        "word": "address",
+        "start": 88.77999877929688,
+        "end": 89.0199966430664
+      },
+      {
+        "word": "your",
+        "start": 89.0199966430664,
+        "end": 89.4000015258789
+      },
+      {
+        "word": "wallet",
+        "start": 89.4000015258789,
+        "end": 89.4000015258789
+      },
+      {
+        "word": "will",
+        "start": 89.4000015258789,
+        "end": 89.5999984741211
+      },
+      {
+        "word": "ever",
+        "start": 89.5999984741211,
+        "end": 89.86000061035156
+      },
+      {
+        "word": "use",
+        "start": 89.86000061035156,
+        "end": 90.0999984741211
+      },
+      {
+        "word": "Exactly",
+        "start": 90.22000122070312,
+        "end": 90.77999877929688
+      },
+      {
+        "word": "Which",
+        "start": 91.0199966430664,
+        "end": 91.27999877929688
+      },
+      {
+        "word": "means",
+        "start": 91.27999877929688,
+        "end": 91.5
+      },
+      {
+        "word": "if",
+        "start": 91.5,
+        "end": 91.63999938964844
+      },
+      {
+        "word": "you",
+        "start": 91.63999938964844,
+        "end": 91.87999725341797
+      },
+      {
+        "word": "drop",
+        "start": 91.87999725341797,
+        "end": 92
+      },
+      {
+        "word": "your",
+        "start": 92,
+        "end": 92.31999969482422
+      },
+      {
+        "word": "phone",
+        "start": 92.31999969482422,
+        "end": 92.31999969482422
+      },
+      {
+        "word": "in",
+        "start": 92.31999969482422,
+        "end": 92.5
+      },
+      {
+        "word": "a",
+        "start": 92.5,
+        "end": 92.72000122070312
+      },
+      {
+        "word": "lake",
+        "start": 92.72000122070312,
+        "end": 92.72000122070312
+      },
+      {
+        "word": "your",
+        "start": 92.86000061035156,
+        "end": 92.9800033569336
+      },
+      {
+        "word": "money",
+        "start": 92.9800033569336,
+        "end": 93.0999984741211
+      },
+      {
+        "word": "isn't",
+        "start": 93.0999984741211,
+        "end": 93.27999877929688
+      },
+      {
+        "word": "just",
+        "start": 93.27999877929688,
+        "end": 93.63999938964844
+      },
+      {
+        "word": "gone",
+        "start": 93.63999938964844,
+        "end": 93.86000061035156
+      },
+      {
+        "word": "Nope",
+        "start": 94.04000091552734,
+        "end": 94.45999908447266
+      },
+      {
+        "word": "You",
+        "start": 94.55999755859375,
+        "end": 95.12000274658203
+      },
+      {
+        "word": "just",
+        "start": 95.12000274658203,
+        "end": 95.5
+      },
+      {
+        "word": "buy",
+        "start": 95.5,
+        "end": 95.62000274658203
+      },
+      {
+        "word": "a",
+        "start": 95.62000274658203,
+        "end": 95.72000122070312
+      },
+      {
+        "word": "new",
+        "start": 95.72000122070312,
+        "end": 96
+      },
+      {
+        "word": "phone",
+        "start": 96,
+        "end": 96.08000183105469
+      },
+      {
+        "word": "download",
+        "start": 96.69999694824219,
+        "end": 96.87999725341797
+      },
+      {
+        "word": "a",
+        "start": 96.87999725341797,
+        "end": 97.04000091552734
+      },
+      {
+        "word": "new",
+        "start": 97.04000091552734,
+        "end": 97.36000061035156
+      },
+      {
+        "word": "wallet",
+        "start": 97.36000061035156,
+        "end": 97.4000015258789
+      },
+      {
+        "word": "app",
+        "start": 97.4000015258789,
+        "end": 97.73999786376953
+      },
+      {
+        "word": "type",
+        "start": 98.36000061035156,
+        "end": 98.4000015258789
+      },
+      {
+        "word": "in",
+        "start": 98.4000015258789,
+        "end": 98.58000183105469
+      },
+      {
+        "word": "those",
+        "start": 98.58000183105469,
+        "end": 98.76000213623047
+      },
+      {
+        "word": "exact",
+        "start": 98.76000213623047,
+        "end": 99.27999877929688
+      },
+      {
+        "word": "12",
+        "start": 99.27999877929688,
+        "end": 99.73999786376953
+      },
+      {
+        "word": "words",
+        "start": 99.73999786376953,
+        "end": 100.04000091552734
+      },
+      {
+        "word": "and",
+        "start": 100.04000091552734,
+        "end": 100.58000183105469
+      },
+      {
+        "word": "the",
+        "start": 100.58000183105469,
+        "end": 100.68000030517578
+      },
+      {
+        "word": "algorithm",
+        "start": 100.68000030517578,
+        "end": 101.19999694824219
+      },
+      {
+        "word": "perfectly",
+        "start": 101.19999694824219,
+        "end": 101.91999816894531
+      },
+      {
+        "word": "rebuilds",
+        "start": 101.91999816894531,
+        "end": 102.36000061035156
+      },
+      {
+        "word": "your",
+        "start": 102.36000061035156,
+        "end": 102.54000091552734
+      },
+      {
+        "word": "entire",
+        "start": 102.54000091552734,
+        "end": 103.13999938964844
+      },
+      {
+        "word": "key",
+        "start": 103.13999938964844,
+        "end": 103.31999969482422
+      },
+      {
+        "word": "structure",
+        "start": 103.31999969482422,
+        "end": 103.63999938964844
+      },
+      {
+        "word": "and",
+        "start": 103.63999938964844,
+        "end": 104.54000091552734
+      },
+      {
+        "word": "pulls",
+        "start": 104.54000091552734,
+        "end": 104.5999984741211
+      },
+      {
+        "word": "your",
+        "start": 104.5999984741211,
+        "end": 104.76000213623047
+      },
+      {
+        "word": "balance",
+        "start": 104.76000213623047,
+        "end": 105.0199966430664
+      },
+      {
+        "word": "right",
+        "start": 105.0199966430664,
+        "end": 105.36000061035156
+      },
+      {
+        "word": "back",
+        "start": 105.36000061035156,
+        "end": 105.54000091552734
+      },
+      {
+        "word": "from",
+        "start": 105.54000091552734,
+        "end": 105.66000366210938
+      },
+      {
+        "word": "the",
+        "start": 105.66000366210938,
+        "end": 105.77999877929688
+      },
+      {
+        "word": "blockchain",
+        "start": 105.77999877929688,
+        "end": 106.16000366210938
+      },
+      {
+        "word": "But",
+        "start": 106.9000015258789,
+        "end": 107.04000091552734
+      },
+      {
+        "word": "I",
+        "start": 107.04000091552734,
+        "end": 107.62000274658203
+      },
+      {
+        "word": "mean",
+        "start": 107.62000274658203,
+        "end": 107.62000274658203
+      },
+      {
+        "word": "the",
+        "start": 107.62000274658203,
+        "end": 107.76000213623047
+      },
+      {
+        "word": "flip",
+        "start": 107.76000213623047,
+        "end": 108.0199966430664
+      },
+      {
+        "word": "side",
+        "start": 108.0199966430664,
+        "end": 108.31999969482422
+      },
+      {
+        "word": "of",
+        "start": 108.31999969482422,
+        "end": 108.5199966430664
+      },
+      {
+        "word": "that",
+        "start": 108.5199966430664,
+        "end": 108.72000122070312
+      },
+      {
+        "word": "convenience",
+        "start": 108.72000122070312,
+        "end": 109.04000091552734
+      },
+      {
+        "word": "is",
+        "start": 109.04000091552734,
+        "end": 109.36000061035156
+      },
+      {
+        "word": "extreme",
+        "start": 109.36000061035156,
+        "end": 109.66000366210938
+      },
+      {
+        "word": "vulnerability",
+        "start": 109.66000366210938,
+        "end": 110.05999755859375
+      },
+      {
+        "word": "right",
+        "start": 110.05999755859375,
+        "end": 110.62000274658203
+      },
+      {
+        "word": "Oh",
+        "start": 111.0199966430664,
+        "end": 111.30000305175781
+      },
+      {
+        "word": "absolutely",
+        "start": 111.36000061035156,
+        "end": 111.9000015258789
+      },
+      {
+        "word": "Extreme",
+        "start": 112.36000061035156,
+        "end": 112.95999908447266
+      },
+      {
+        "word": "vulnerability",
+        "start": 112.95999908447266,
+        "end": 113.5
+      },
+      {
+        "word": "If",
+        "start": 113.76000213623047,
+        "end": 114.19999694824219
+      },
+      {
+        "word": "anyone",
+        "start": 114.19999694824219,
+        "end": 114.5
+      },
+      {
+        "word": "else",
+        "start": 114.5,
+        "end": 114.76000213623047
+      },
+      {
+        "word": "gets",
+        "start": 114.76000213623047,
+        "end": 114.81999969482422
+      },
+      {
+        "word": "their",
+        "start": 114.81999969482422,
+        "end": 115.23999786376953
+      },
+      {
+        "word": "hands",
+        "start": 115.23999786376953,
+        "end": 115.26000213623047
+      },
+      {
+        "word": "on",
+        "start": 115.26000213623047,
+        "end": 115.41999816894531
+      },
+      {
+        "word": "those",
+        "start": 115.41999816894531,
+        "end": 115.5999984741211
+      },
+      {
+        "word": "12",
+        "start": 115.5999984741211,
+        "end": 115.83999633789062
+      },
+      {
+        "word": "words…",
+        "start": 115.83999633789062,
+        "end": 116.13999938964844
+      },
+      {
+        "word": "They",
+        "start": 116.58000183105469,
+        "end": 116.72000122070312
+      },
+      {
+        "word": "get",
+        "start": 116.72000122070312,
+        "end": 116.87999725341797
+      },
+      {
+        "word": "all",
+        "start": 116.87999725341797,
+        "end": 117.0999984741211
+      },
+      {
+        "word": "your",
+        "start": 117.0999984741211,
+        "end": 117.27999877929688
+      },
+      {
+        "word": "money",
+        "start": 117.27999877929688,
+        "end": 117.72000122070312
+      },
+      {
+        "word": "Instantly",
+        "start": 118.13999938964844,
+        "end": 118.37999725341797
+      },
+      {
+        "word": "Irreversibly",
+        "start": 118.95999908447266,
+        "end": 119.26000213623047
+      }
+    ]
+  }
+}

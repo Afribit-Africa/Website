@@ -1,0 +1,54 @@
+{
+  "id": "gen-1790869935-sB8DGfl0i0D2sNGyya4R",
+  "object": "chat.completion",
+  "created": 1790869935,
+  "model": "google/gemini-3.1-flash-lite",
+  "provider": "Google AI Studio",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"segments\": [\n    {\n      \"id\": 80,\n      \"text\": \"heartbeat, perfectly regulating the issuance of new currency regardless of how much computing power is thrown at it. That is incredibly clever.\"\n    },\n    {\n      \"id\": 81,\n      \"text\": \"And it's not an endless supply of money either, right? Not at all. The system is deflationary by design. Because the\"\n    },\n    {\n      \"id\": 82,\n      \"text\": \"reward these miners get for winning the lottery gets cut in half every four years. Exactly. The halving. And there is a hard\"\n    },\n    {\n      \"id\": 83,\n      \"text\": \"mathematical limit in the code, right? There will only ever be 21 million bitcoins created. Ever? Ever. Yes. In fact, the source\"\n    },\n    {\n      \"id\": 84,\n      \"text\": \"notes that by the year 2035, which is around block 1,411,200, 99\"\n    },\n    {\n      \"id\": 85,\n      \"text\": \"of all bitcoins will have already been issued. It creates a monetary policy that is entirely predictable and\"\n    },\n    {\n      \"id\": 86,\n      \"text\": \"transparent. No government can decide to print more of it to cover a deficit. Right. And no central bank can alter\"\n    },\n    {\n      \"id\": 87,\n      \"text\": \"the interest rates. The rules are just baked into the mathematics. OK, so we have this massive global network\"\n    },\n    {\n      \"id\": 88,\n      \"text\": \"of humming supercomputers updating an immutable ledger. But you know, I don't have a warehouse full of cooling fans\"\n    },\n    {\n      \"id\": 89,\n      \"text\": \"and servers. Very few people do. Right. So if I just\"\n    },\n    {\n      \"id\": 90,\n      \"text\": \"want to buy a cup of coffee using this network, how do I actually connect to it without a bank doing it for me? Well, that's where\"\n    },\n    {\n      \"id\": 91,\n      \"text\": \"your wallet comes in. But we have to clarify a major misconception here first. OK, let's clear it up. A Bitcoin wallet\"\n    },\n    {\n      \"id\": 92,\n      \"text\": \"doesn't actually hold physical coins. Wait, really? Yeah, there are no digital coins sitting in a file on your\"\n    },\n    {\n      \"id\": 93,\n      \"text\": \"phone. A wallet is simply a user interface. OK. And just like Google Chrome is a browser that lets you interact with the Internet,\"\n    },\n    {\n      \"id\": 94,\n      \"text\": \"a wallet is a software client that lets you interact with the blockchain. So what does it actually hold if not coins? It holds\"\n    },\n    {\n      \"id\": 95,\n      \"text\": \"the cryptographic keys. Those keys are what prove you have the right to move funds on that public ledger. OK, let's\"\n    },\n    {\n      \"id\": 96,\n      \"text\": \"break down the options then, because choosing a wallet seems like a critical engineering choice for a user. It really is.\"\n    },\n    {\n      \"id\": 97,\n      \"text\": \"So if I download a desktop wallet, I get great autonomy. But if my laptop gets malware,\"\n    },\n    {\n      \"id\": 98,\n      \"text\": \"a hacker can access my keys. Right. There's an OS security risk there. And mobile wallets are like super\"\n    },\n    {\n      \"id\": 99,\n      \"text\": \"convenient for beginners, but they usually rely on remote servers for data. And then web wallets, where you log in through\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "signature": "EnMKcQFpFH0TRGCoP2WPJHFbWVCq1HcjpFg13ucXE/L6vcYnzFQ5p28Zm/ek9HAdid/WSCBLaphDteJzaqzd5DWCqCE1IwyUgn9Lddl8BE0mINhQeN4ktp4JL9E5xLwSGWZYwBMvgjAaoY/fcdKwCaDHXOSk",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 798,
+    "completion_tokens": 923,
+    "total_tokens": 1721,
+    "cost": 0.001584,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.001584,
+      "upstream_inference_prompt_cost": 0.0001995,
+      "upstream_inference_completions_cost": 0.0013845
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

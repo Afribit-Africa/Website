@@ -1,0 +1,57 @@
+{
+  "base": "http://localhost:3003",
+  "status": "passed",
+  "failure": null,
+  "results": [
+    {
+      "name": "library formats, honest empty collections, search and reading entry"
+    },
+    {
+      "name": "responsive large reading, local centering, real transcript and lesson metadata"
+    },
+    {
+      "name": "seeking follows phrases without scrolling the document, browse pause and recenter"
+    },
+    {
+      "name": "nonblank mapped globe, moving frames, mouse/keyboard exploration, independent pause and audio controls",
+      "desktopPixels": {
+        "width": 1188,
+        "height": 511,
+        "colorfulPixels": 48763
+      }
+    },
+    {
+      "name": "transcript search, timestamp seeking, persistent notes and bookmarks"
+    },
+    {
+      "name": "mobile canvas pixels and real touch drag",
+      "mobilePixels": {
+        "width": 390,
+        "height": 410,
+        "colorfulPixels": 21293
+      }
+    },
+    {
+      "name": "mobile chapter drawer, touch playback, browsing and follow"
+    },
+    {
+      "name": "reduced motion freezes globe and keeps reading functional"
+    },
+    {
+      "name": "unavailable WebGL retains clean globe poster, reading and audio"
+    },
+    {
+      "name": "failed audio reports error and recovers"
+    },
+    {
+      "name": "pre-metadata seeking overrides old saved progress"
+    },
+    {
+      "name": "coherent Studio button, nav fit, mobile entry and return to website"
+    },
+    {
+      "name": "legacy redirect, native no-JS audio, sitemap, ranged audio and no runtime errors"
+    }
+  ],
+  "errors": []
+}

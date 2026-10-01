@@ -1,0 +1,54 @@
+{
+  "id": "gen-1790869943-r7jf5g93FD7b18RoAPus",
+  "object": "chat.completion",
+  "created": 1790869943,
+  "model": "google/gemini-3.1-flash-lite",
+  "provider": "Google AI Studio",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"segments\": [\n    {\n      \"id\": 140,\n      \"text\": \"New phone, download a new wallet app, type in those exact 12 words, and the algorithm perfectly rebuilds your\"\n    },\n    {\n      \"id\": 141,\n      \"text\": \"entire key structure and pulls your balance right back from the blockchain. But I mean, the flip side of that convenience is\"\n    },\n    {\n      \"id\": 142,\n      \"text\": \"extreme vulnerability, right? Oh, absolutely. Extreme vulnerability. If anyone else gets their hands on those 12 words...\"\n    },\n    {\n      \"id\": 143,\n      \"text\": \"They get all your money. Instantly. Irreversibly.\"\n    },\n    {\n      \"id\": 144,\n      \"text\": \"They just type your words into their own phone and sweep your funds. This is why phishing is such a massive threat in this space.\"\n    },\n    {\n      \"id\": 145,\n      \"text\": \"Hackers build malicious apps designed to look exactly like your real wallet. Yep. They flash a fake error on your screen that says,\"\n    },\n    {\n      \"id\": 146,\n      \"text\": \"you know, corrupted file, please verify your recovery code. But people need to know a legitimate, properly engineered wallet will\"\n    },\n    {\n      \"id\": 147,\n      \"text\": \"only ask for those words during the initial setup or if you are actively choosing to recover a lost wallet. Exactly. It will never\"\n    },\n    {\n      \"id\": 148,\n      \"text\": \"under any circumstances randomly prompt you to enter them. Wait, I need to stop you there for a second. Because everything I see in the news says\"\n    },\n    {\n      \"id\": 149,\n      \"text\": \"Bitcoin is this anonymous dark web shadow currency used by criminals. Right, that old stereotype. But you're telling me the blockchain is a\"\n    },\n    {\n      \"id\": 150,\n      \"text\": \"completely open public journal that everyone can see every transaction? Yes, anyone can see it. That sounds like\"\n    },\n    {\n      \"id\": 151,\n      \"text\": \"a privacy nightmare. It is a massive misconception. Bitcoin is not anonymous. It is pseudonymous.\"\n    },\n    {\n      \"id\": 152,\n      \"text\": \"Pseudonymous? Right. Yes, the ledger is public. Anyone can view it. But when you want to receive funds, your\"\n    },\n    {\n      \"id\": 153,\n      \"text\": \"wallet generates a public address, a long string of letters and numbers. That address is your pseudonym.\"\n    },\n    {\n      \"id\": 154,\n      \"text\": \"As long as your real-world identity isn't tied to that string of letters, your privacy is maintained. Here's where it gets really\"\n    },\n    {\n      \"id\": 155,\n      \"text\": \"interesting, though. Because if you reuse that same address over and over, well, that's where you run into trouble. Right.\"\n    },\n    {\n      \"id\": 156,\n      \"text\": \"Say you put one single Bitcoin address on your website for donations, or you use the same address every time you invoice a client.\"\n    },\n    {\n      \"id\": 157,\n      \"text\": \"Anyone who sends you money can just take that address, paste it into a public blockchain explorer, and see your entire\"\n    },\n    {\n      \"id\": 158,\n      \"text\": \"financial history. Exactly. It would be like handing a barista your credit card to buy a coffee and the barista suddenly being able to see your\"\n    },\n    {\n      \"id\": 159,\n      \"text\": \"entire bank statement, your total net worth, and everywhere else you shop that week. Which is terrifying. So, to maintain\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "signature": "EnMKcQFpFH0TnFojy/4ohWGyCRv800qDV2NOe++B7LNoEC6VtsJ8SAngh11zl6u1sc265fo98V+NcUYZcGrsSL7mMadtFNUKdb7L09WGMAo4Nvc37DUYiyKMXzhVPiy0WnhKDjIvlBT/OoiQnyaInjCASoJp",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 809,
+    "completion_tokens": 913,
+    "total_tokens": 1722,
+    "cost": 0.00157175,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00157175,
+      "upstream_inference_prompt_cost": 0.00020225,
+      "upstream_inference_completions_cost": 0.0013695
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

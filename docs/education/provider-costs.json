@@ -1,0 +1,216 @@
+{
+  "totalKnownCostUsd": 0.3666124051888431,
+  "includesRejectedPunctuationAttempts": true,
+  "generations": [
+    {
+      "generationId": "gen-1790869735-xQV47w7vhrHfjHUO3Bft",
+      "costUsd": 0.000761,
+      "record": "docs/education/punctuation/batch-0-attempt-0.json"
+    },
+    {
+      "generationId": "gen-1790869741-vsKasQhIDFvTTmtumHer",
+      "costUsd": 0.000767,
+      "record": "docs/education/punctuation/batch-0-attempt-1.json"
+    },
+    {
+      "generationId": "gen-1790869746-BInUtIPybmh0UZLzxpJ7",
+      "costUsd": 0,
+      "record": "docs/education/punctuation/batch-0-attempt-2.json"
+    },
+    {
+      "generationId": "gen-1790869923-ylRbhkmRGArrQ3QlPuag",
+      "costUsd": 0.0015765,
+      "record": "docs/education/punctuation/gemini-3.1-flash-lite-batch-0-attempt-0.json"
+    },
+    {
+      "generationId": "gen-1790869938-9QhiweDFU1gc91YIjKl4",
+      "costUsd": 0.001547,
+      "record": "docs/education/punctuation/gemini-3.1-flash-lite-batch-100-attempt-0.json"
+    },
+    {
+      "generationId": "gen-1790869940-eOCIR4i4LnNobLjQ3DMO",
+      "costUsd": 0.00163525,
+      "record": "docs/education/punctuation/gemini-3.1-flash-lite-batch-120-attempt-0.json"
+    },
+    {
+      "generationId": "gen-1790869943-r7jf5g93FD7b18RoAPus",
+      "costUsd": 0.00157175,
+      "record": "docs/education/punctuation/gemini-3.1-flash-lite-batch-140-attempt-0.json"
+    },
+    {
+      "generationId": "gen-1790869946-FYrc53oFFymaLxGCZ0Pt",
+      "costUsd": 0.001558,
+      "record": "docs/education/punctuation/gemini-3.1-flash-lite-batch-160-attempt-0.json"
+    },
+    {
+      "generationId": "gen-1790869949-OintN8lyCRN9LuPIDQym",
+      "costUsd": 0.00008725,
+      "record": "docs/education/punctuation/gemini-3.1-flash-lite-batch-160-attempt-1.json"
+    },
+    {
+      "generationId": "gen-1790869949-K5Pp0muGYpXxDFKbPeck",
+      "costUsd": 0.00164125,
+      "record": "docs/education/punctuation/gemini-3.1-flash-lite-batch-180-attempt-0.json"
+    },
+    {
+      "generationId": "gen-1790869952-aMGIWEaFeYXEHRTaDbX3",
+      "costUsd": 0.0000785,
+      "record": "docs/education/punctuation/gemini-3.1-flash-lite-batch-180-attempt-1.json"
+    },
+    {
+      "generationId": "gen-1790869926-1a9h6Gf16FNXbJp14kIy",
+      "costUsd": 0.0015475,
+      "record": "docs/education/punctuation/gemini-3.1-flash-lite-batch-20-attempt-0.json"
+    },
+    {
+      "generationId": "gen-1790869953-BVtFXERamqvsnFVUr5nT",
+      "costUsd": 0.00084125,
+      "record": "docs/education/punctuation/gemini-3.1-flash-lite-batch-200-attempt-0.json"
+    },
+    {
+      "generationId": "gen-1790869929-QPANaMEiWn5gYAQbgCQR",
+      "costUsd": 0.00155425,
+      "record": "docs/education/punctuation/gemini-3.1-flash-lite-batch-40-attempt-0.json"
+    },
+    {
+      "generationId": "gen-1790869932-CL8Obf38ZFDLT0NZhOIe",
+      "costUsd": 0.001549,
+      "record": "docs/education/punctuation/gemini-3.1-flash-lite-batch-60-attempt-0.json"
+    },
+    {
+      "generationId": "gen-1790869935-sB8DGfl0i0D2sNGyya4R",
+      "costUsd": 0.001584,
+      "record": "docs/education/punctuation/gemini-3.1-flash-lite-batch-80-attempt-0.json"
+    },
+    {
+      "generationId": "gen-stt-1790868942-gbfUtDYnL9ec4fatPOdr",
+      "costUsd": 0.0003996,
+      "record": "docs/education/transcription/chunk-000.json"
+    },
+    {
+      "generationId": "gen-stt-1790868960-rPrfXcs43CCq2VkezIv8",
+      "costUsd": 0.0003996,
+      "record": "docs/education/transcription/chunk-001.json"
+    },
+    {
+      "generationId": "gen-stt-1790868963-fMcvBIRjiSHg4OQG1W1a",
+      "costUsd": 0.001333333378843111,
+      "record": "docs/education/transcription/chunk-002.json"
+    },
+    {
+      "generationId": "gen-stt-1790868963-NK4ucAXK9gkmoWYCgQjP",
+      "costUsd": 0.0003996,
+      "record": "docs/education/transcription/chunk-003.json"
+    },
+    {
+      "generationId": "gen-stt-1790868969-g22JkBBYTxv9PKffGJal",
+      "costUsd": 0.0003996,
+      "record": "docs/education/transcription/chunk-004.json"
+    },
+    {
+      "generationId": "gen-stt-1790868973-OscfX7AOjyc7Or2jGp9Y",
+      "costUsd": 0.0003996,
+      "record": "docs/education/transcription/chunk-005.json"
+    },
+    {
+      "generationId": "gen-stt-1790868977-INSnqbXIjLI1138ChobF",
+      "costUsd": 0.0003996,
+      "record": "docs/education/transcription/chunk-006.json"
+    },
+    {
+      "generationId": "gen-stt-1790868979-sv1hcPcAeApP4KZ7ioBz",
+      "costUsd": 0.0003996,
+      "record": "docs/education/transcription/chunk-007.json"
+    },
+    {
+      "generationId": "gen-stt-1790868984-HS9dZP7ruICh9pFMNr7S",
+      "costUsd": 0.0003996,
+      "record": "docs/education/transcription/chunk-008.json"
+    },
+    {
+      "generationId": "gen-stt-1790868989-r93vDn2bEhxHvyskblZk",
+      "costUsd": 0.0003996,
+      "record": "docs/education/transcription/chunk-009.json"
+    },
+    {
+      "generationId": "gen-stt-1790868993-4Fy2mx8A2x4ZpkrgXAH1",
+      "costUsd": 0.0003996,
+      "record": "docs/education/transcription/chunk-010.json"
+    },
+    {
+      "generationId": "gen-stt-1790868995-27wKZX6FUpTLAwwRhMxz",
+      "costUsd": 0.00028457181,
+      "record": "docs/education/transcription/chunk-011.json"
+    },
+    {
+      "generationId": "gen-stt-1790869112-E7Ix3mFSJQYBddeHSSKh",
+      "costUsd": 0.012,
+      "record": "docs/education/transcription/whisper-1/chunk-000.json"
+    },
+    {
+      "generationId": "gen-stt-1790869204-8BzK3tBS0StsMC1OnAWd",
+      "costUsd": 0.012,
+      "record": "docs/education/transcription/whisper-1/chunk-001.json"
+    },
+    {
+      "generationId": "gen-stt-1790869212-UITkLiDcZ1DfOmFSOpba",
+      "costUsd": 0.012,
+      "record": "docs/education/transcription/whisper-1/chunk-002.json"
+    },
+    {
+      "generationId": "gen-stt-1790869220-FwEEQsC4yoiFMGjq3rDO",
+      "costUsd": 0.012,
+      "record": "docs/education/transcription/whisper-1/chunk-003.json"
+    },
+    {
+      "generationId": "gen-stt-1790869227-Q1g1TDZ93KJry5MJPKXF",
+      "costUsd": 0.012,
+      "record": "docs/education/transcription/whisper-1/chunk-004.json"
+    },
+    {
+      "generationId": "gen-stt-1790869234-Ev0D4pwcy7wXUdLsihcT",
+      "costUsd": 0.012,
+      "record": "docs/education/transcription/whisper-1/chunk-005.json"
+    },
+    {
+      "generationId": "gen-stt-1790869241-C0bOTurChrgdpK39uAan",
+      "costUsd": 0.012,
+      "record": "docs/education/transcription/whisper-1/chunk-006.json"
+    },
+    {
+      "generationId": "gen-stt-1790869249-p49VTY5KHLBz83TJU1ux",
+      "costUsd": 0.012,
+      "record": "docs/education/transcription/whisper-1/chunk-007.json"
+    },
+    {
+      "generationId": "gen-stt-1790869256-06ULyCcb531K3zV0PXLU",
+      "costUsd": 0.012,
+      "record": "docs/education/transcription/whisper-1/chunk-008.json"
+    },
+    {
+      "generationId": "gen-stt-1790869264-yJFt1Swc538odeFTz9YV",
+      "costUsd": 0.012,
+      "record": "docs/education/transcription/whisper-1/chunk-009.json"
+    },
+    {
+      "generationId": "gen-stt-1790869273-DwQbXPpQ5u5A0GbmoGMP",
+      "costUsd": 0.012,
+      "record": "docs/education/transcription/whisper-1/chunk-010.json"
+    },
+    {
+      "generationId": "gen-stt-1790869279-qiHaUWZ5paOjg4cS2niK",
+      "costUsd": 0.0086,
+      "record": "docs/education/transcription/whisper-1/chunk-011.json"
+    },
+    {
+      "generationId": "gen-img-1790868547-2if2iQCwmO5vRg3bYxPd",
+      "costUsd": 0.101097,
+      "record": "docs/education/bitcoin-studio-concept-provenance.json"
+    },
+    {
+      "generationId": "gen-img-1790868658-Lm7PgEu28ssmbJ9dnAHi",
+      "costUsd": 0.101002,
+      "record": "docs/education/bitcoin-network-provenance.json"
+    }
+  ]
+}

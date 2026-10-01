@@ -1,0 +1,54 @@
+{
+  "id": "gen-1790869929-QPANaMEiWn5gYAQbgCQR",
+  "object": "chat.completion",
+  "created": 1790869929,
+  "model": "google/gemini-3.1-flash-lite",
+  "provider": "Google AI Studio",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"segments\": [\n    {\n      \"id\": 40,\n      \"text\": \"Thought experiment in distributed computing. Okay, break it down for us. So, imagine a massive army divided\"\n    },\n    {\n      \"id\": 41,\n      \"text\": \"into multiple battalions, and they're surrounding an enemy city. Okay, got it. The generals of these battalions need to agree on\"\n    },\n    {\n      \"id\": 42,\n      \"text\": \"a specific time to attack. But here's the catch: they don't have a central commander. So, no one person calling the shots.\"\n    },\n    {\n      \"id\": 43,\n      \"text\": \"Right. They have to coordinate their plan by sending messengers back and forth across enemy lines, which sounds\"\n    },\n    {\n      \"id\": 44,\n      \"text\": \"like an incredibly unreliable network. It is. And to make it worse, they know that some of the generals are\"\n    },\n    {\n      \"id\": 45,\n      \"text\": \"actually traitors. Oh, wow. Traitors who will intentionally send fake messages to confuse the loyalists.\"\n    },\n    {\n      \"id\": 46,\n      \"text\": \"So, the question is, how did the loyal generals reach an undeniable consensus on when to attack despite the bad\"\n    },\n    {\n      \"id\": 47,\n      \"text\": \"actors? Okay, let me translate this into a modern nightmare because I think I get it. Go for it. It's like trying\"\n    },\n    {\n      \"id\": 48,\n      \"text\": \"to organize a dinner via a massive group text. Oh, that is a nightmare. Right. You need everyone to agree on a restaurant and\"\n    },\n    {\n      \"id\": 49,\n      \"text\": \"a time. But here's the catch: you know for an absolute fact that half the people in this group text are actively lying\"\n    },\n    {\n      \"id\": 50,\n      \"text\": \"or they are actively trying to sabotage the plans. Just chaotic evil group chat members. Exactly. Some are sending delayed\"\n    },\n    {\n      \"id\": 51,\n      \"text\": \"messages. Some are sending contradictory locations just to mess with you. How on earth do you still manage to reach a consensus\"\n    },\n    {\n      \"id\": 52,\n      \"text\": \"and all show up at the exact same pizzeria at 7pm? That is a perfect modern equivalent. It's a real problem. It\"\n    },\n    {\n      \"id\": 53,\n      \"text\": \"is. And what's fascinating here is that Satoshi didn't just\"\n    },\n    {\n      \"id\": 54,\n      \"text\": \"invent a currency. They solved this decades-old computer science problem by basically eliminating the need for trust.\"\n    },\n    {\n      \"id\": 55,\n      \"text\": \"OK, so how did they actually solve it? Well, Satoshi solved it through a mechanism called proof-of-work, which is driven by participants we call\"\n    },\n    {\n      \"id\": 56,\n      \"text\": \"miners. OK, I need to stop you there because the word miner immediately makes people think of, like, pickaxes and gold dust. Right.\"\n    },\n    {\n      \"id\": 57,\n      \"text\": \"Yeah, the imagery is a bit misleading. What are these miners actually doing? So, in this network, miners are\"\n    },\n    {\n      \"id\": 58,\n      \"text\": \"simply specialized computers. That's it. Just computers. Just computers. And they dedicate massive amounts of computing power to\"\n    },\n    {\n      \"id\": 59,\n      \"text\": \"perform incredibly complex repetitive computational tasks. Essentially, they are racing to solve.\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "signature": "EnMKcQFpFH0Tw8cG6h0kaqQkyKFuReWI2+KWijY/ZhiKmejreB1ShGKn3k9v7mzQ5mn6d5Jpfe6+gP9ZXLMKyi9Sktzq2li9tNbYH5xiw6bHsT7f3thBYscBTmxVaBd4c3Pr1S1Q0eHR5hwzhajw9UVb91hE",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 775,
+    "completion_tokens": 907,
+    "total_tokens": 1682,
+    "cost": 0.00155425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00155425,
+      "upstream_inference_prompt_cost": 0.00019375,
+      "upstream_inference_completions_cost": 0.0013605
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

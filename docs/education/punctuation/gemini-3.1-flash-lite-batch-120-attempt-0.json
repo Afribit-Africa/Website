@@ -1,0 +1,54 @@
+{
+  "id": "gen-1790869940-eOCIR4i4LnNobLjQ3DMO",
+  "object": "chat.completion",
+  "created": 1790869940,
+  "model": "google/gemini-3.1-flash-lite",
+  "provider": "Google AI Studio",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"segments\": [\n    {\n      \"id\": 120,\n      \"text\": \"Andreas Antonopoulos, the author of our source material, has a golden rule that every user has to memorize. Let's hear it.\"\n    },\n    {\n      \"id\": 121,\n      \"text\": \"Your keys, your coins. Not your keys, not your coins. Your keys, your coins. Exactly. Not\"\n    },\n    {\n      \"id\": 122,\n      \"text\": \"your keys, not your coins. Exactly. Because in this system, you are your own bank. Yeah, because your money is secured\"\n    },\n    {\n      \"id\": 123,\n      \"text\": \"by a private key, which acts like an incredibly long, mathematically unguessable pin. Right. And if you\"\n    },\n    {\n      \"id\": 124,\n      \"text\": \"use a non-custodial wallet, like a hardware device or a proper app on your phone, you hold that pin. But if you use\"\n    },\n    {\n      \"id\": 125,\n      \"text\": \"a custodial service, like leaving your funds sitting on a major web exchange,\"\n    },\n    {\n      \"id\": 126,\n      \"text\": \"then they hold the pin. You don't actually have cryptocurrency; you just have an IOU from a company promising to give you\"\n    },\n    {\n      \"id\": 127,\n      \"text\": \"the money when you ask for it. And we saw how dangerous centralization was in the 1980s. Exactly. When you hold your own keys, you have\"\n    },\n    {\n      \"id\": 128,\n      \"text\": \"total financial sovereignty, but I mean, it comes with a massive responsibility. Right. Because if you are your own bank, you are\"\n    },\n    {\n      \"id\": 129,\n      \"text\": \"entirely responsible for your own security. Yes. If you mess up, there is no 1-800 customer service number to call to reverse\"\n    },\n    {\n      \"id\": 130,\n      \"text\": \"a transaction. Which brings us to the seed phrase or recovery code. Right. When you set up a true non-custodial wallet,\"\n    },\n    {\n      \"id\": 131,\n      \"text\": \"it generates a list of 12 or 24 random English words. Yep. The seed phrase. It gives you words\"\n    },\n    {\n      \"id\": 132,\n      \"text\": \"like media, suspect, effort, dish, album. To a beginner, it just sounds like absolute nonsense. Totally\"\n    },\n    {\n      \"id\": 133,\n      \"text\": \"random. But those words are the master backup of your entire financial life on that wallet. It's crucial to understand the\"\n    },\n    {\n      \"id\": 134,\n      \"text\": \"cryptography behind this, though. Those 12 words aren't just a fancy password you create. What are they? They\"\n    },\n    {\n      \"id\": 135,\n      \"text\": \"are pulled from a standardized list of 2048 words. The specific sequence of those words is actually\"\n    },\n    {\n      \"id\": 136,\n      \"text\": \"a mathematical representation of a massive 128-bit or 256-bit integer. Oh,\"\n    },\n    {\n      \"id\": 137,\n      \"text\": \"wow. Yeah. That string of words is your master private key. Just translate it into a human-\"\n    },\n    {\n      \"id\": 138,\n      \"text\": \"readable format. So the algorithm uses those words to mathematically derive every single private key and public\"\n    },\n    {\n      \"id\": 139,\n      \"text\": \"address your wallet will ever use. Exactly. Which means if you drop your phone in a lake, your money isn't just gone. Nope. You just buy a\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "signature": "EnMKcQFpFH0TDFrxnUlxv78pzGRVk30lacHj/Br06L+xQBbNOfLdGdIrEBbq55J0RGRLcJvcqyQfbqFQYXbJZ97pR9CMhkICJHw4VcmeI/RfI+Xz9iSOsoIeZM4d1uqckMJ6hjoPPPjfvO1jsZCLzenD1DyQ",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 811,
+    "completion_tokens": 955,
+    "total_tokens": 1766,
+    "cost": 0.00163525,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00163525,
+      "upstream_inference_prompt_cost": 0.00020275,
+      "upstream_inference_completions_cost": 0.0014325
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

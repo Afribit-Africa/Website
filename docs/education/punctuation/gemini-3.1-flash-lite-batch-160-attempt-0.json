@@ -1,0 +1,54 @@
+{
+  "id": "gen-1790869946-FYrc53oFFymaLxGCZ0Pt",
+  "object": "chat.completion",
+  "created": 1790869946,
+  "model": "google/gemini-3.1-flash-lite",
+  "provider": "Google AI Studio",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"segments\": [\n    {\n      \"id\": 160,\n      \"text\": \"Your privacy, you have to treat addresses as single-use. You should generate a brand-new address, a new invoice for every single\"\n    },\n    {\n      \"id\": 161,\n      \"text\": \"transaction. Absolutely. Furthermore, privacy\"\n    },\n    {\n      \"id\": 162,\n      \"text\": \"cryptocurrency is drastically reduced where the blockchain meets the traditional financial system. You mean like exchanges? Yes.\"\n    },\n    {\n      \"id\": 163,\n      \"text\": \"When you use a corporate currency exchange to buy cryptocurrency with a traditional bank account, you have to pass Know Your Customer\"\n    },\n    {\n      \"id\": 164,\n      \"text\": \"or KYC checks. Right. You have to hand over your driver's license, your passport, your banking details.\"\n    },\n    {\n      \"id\": 165,\n      \"text\": \"Exactly. And once the exchange links your real-world identity to your withdrawal address, your pseudonymous shield is completely\"\n    },\n    {\n      \"id\": 166,\n      \"text\": \"gone. Chain analysis companies can track your previous and future transactions across the public ledger. Wow.\"\n    },\n    {\n      \"id\": 167,\n      \"text\": \"Okay, let's map all this theory out in real time. Let's walk through the actual step-by-step mechanics of a transaction. Okay, let's do\"\n    },\n    {\n      \"id\": 168,\n      \"text\": \"it. Say our fictional user Alice wants to receive a fraction of a bitcoin from her friend Joe. What\"\n    },\n    {\n      \"id\": 169,\n      \"text\": \"actually happens when she opens her phone? First, Alice opens her mobile non-custodial wallet. Got it.\"\n    },\n    {\n      \"id\": 170,\n      \"text\": \"She hits the receive button. Her wallet uses her master seed phrase to mathematically derive a brand-new, never-before\"\n    },\n    {\n      \"id\": 171,\n      \"text\": \"used private key. For privacy? Exactly. And from that, it generates a brand-new public address. To make it\"\n    },\n    {\n      \"id\": 172,\n      \"text\": \"easy, the wallet displays this address as a QR code on her screen. Which is brilliant, because typing out a 35-character string of random case-\"\n    },\n    {\n      \"id\": 173,\n      \"text\": \"sensitive letters is a guaranteed recipe for a typo. It's just asking for a mistake. So Joe opens his wallet up, selects Send\"\n    },\n    {\n      \"id\": 174,\n      \"text\": \"and uses his phone's camera to scan her QR code. Right. And Joe wants to send her 0.01 bitcoin.\"\n    },\n    {\n      \"id\": 175,\n      \"text\": \"Depending on the interface he uses, that might be displayed as 1 milli-bitcoin or 100,000 satoshis. Satoshis\"\n    },\n    {\n      \"id\": 176,\n      \"text\": \"being the absolute smallest fractional unit of a bitcoin, named after the creator, right? You got it. So Joe\"\n    },\n    {\n      \"id\": 177,\n      \"text\": \"enters the 100,000 satoshis. But before he sends, he has to set a transaction fee. Yes. And this isn't a flat\"\n    },\n    {\n      \"id\": 178,\n      \"text\": \"fee charged by a bank. How does it work then? He gets to choose the fee based on a free market. Every transaction\"\n    },\n    {\n      \"id\": 179,\n      \"text\": \"goes into a waiting room called the mempool.\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "signature": "EnMKcQFpFH0Tin1sYh7wUGFMCCkGsvco3p5XAe0gmC5IpOmDSG8ChHhM6uDOLUtPul3c7MsbNzTQtHcDsFBNk09p6fibhxWSU3qjRGMBnh6fUT/p/twPCBd6Oj4SQBgZnPd/E71n5/oWFvQl/eqN+MQazxbL",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 796,
+    "completion_tokens": 906,
+    "total_tokens": 1702,
+    "cost": 0.001558,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.001558,
+      "upstream_inference_prompt_cost": 0.000199,
+      "upstream_inference_completions_cost": 0.001359
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

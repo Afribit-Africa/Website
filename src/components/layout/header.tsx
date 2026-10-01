@@ -3,9 +3,10 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import {
   Menu, X, Compass, Layers, MapPin, Users, MessageSquare,
-  Twitter, Instagram, Youtube, ExternalLink, ArrowRight, Code2,
+  Twitter, Instagram, Youtube, ExternalLink, ArrowRight, Code2, Headphones,
 } from 'lucide-react'
 import { motion, AnimatePresence, type Variants } from 'framer-motion'
 import { cn } from '@/lib/utils'
@@ -18,11 +19,23 @@ const DESKTOP_LINKS = [
   { href: '/programs', label: 'Programs' },
   { href: '/merchants', label: 'Merchant Map' },
   { href: '/builders', label: 'Builders' },
+  { href: '/studio', label: 'Studio', icon: Headphones },
   { href: '/community', label: 'Community' },
   { href: '/contact', label: 'Contact' },
 ]
 
 const MOBILE_CARDS = [
+  {
+    href: '/studio',
+    label: 'Afribit Studio',
+    desc: 'Bitcoin education, at your pace',
+    icon: Headphones,
+    span: 'half' as const,
+    iconBg: 'bg-bitcoin/10',
+    iconColor: 'text-bitcoin',
+    border: 'border-bitcoin/20',
+    glow: 'bg-bitcoin/10',
+  },
   {
     href: '/about',
     label: 'About',
@@ -115,6 +128,7 @@ const cardVariants: Variants = {
 }
 
 export function Header() {
+  const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -130,6 +144,8 @@ export function Header() {
   }, [mobileOpen])
 
   const close = () => setMobileOpen(false)
+
+  if (pathname === '/education' || pathname === '/studio' || pathname.startsWith('/studio/')) return null
 
   return (
     <>
@@ -171,9 +187,9 @@ export function Header() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5"
+                      className={cn('px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1.5', link.href === '/studio' && 'text-bitcoin bg-bitcoin/8 border border-bitcoin/20')}
                     >
-                      {link.label}
+                      {link.icon && <link.icon className="size-3.5" />}{link.label}
                     </Link>
                   ))}
                 </nav>

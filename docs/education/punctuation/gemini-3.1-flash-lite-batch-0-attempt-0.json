@@ -1,0 +1,54 @@
+{
+  "id": "gen-1790869923-ylRbhkmRGArrQ3QlPuag",
+  "object": "chat.completion",
+  "created": 1790869923,
+  "model": "google/gemini-3.1-flash-lite",
+  "provider": "Google AI Studio",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"segments\": [\n    {\n      \"id\": 0,\n      \"text\": \"You know when you hand someone a 20 bill, there's like an immediate, undeniable reality to it, right? Oh, absolutely.\"\n    },\n    {\n      \"id\": 1,\n      \"text\": \"Yeah. You held it. Now they hold it. The trust is just built right into the physical paper itself. Right? You don't even think about it. Exactly.\"\n    },\n    {\n      \"id\": 2,\n      \"text\": \"But the moment you try to do that online, that physical reality completely vanishes. Poof. Right? Gone.\"\n    },\n    {\n      \"id\": 3,\n      \"text\": \"Suddenly you aren't actually exchanging money anymore. You're just asking a giant centralized bank to update a spreadsheet on your\"\n    },\n    {\n      \"id\": 4,\n      \"text\": \"behalf. Yeah. A massive corporate ledger. Exactly. So what if you could recreate that physical hand-to-hand exchange\"\n    },\n    {\n      \"id\": 5,\n      \"text\": \"that absolute middleman-free certainty, but across the globe, purely digitally? That is the big question.\"\n    },\n    {\n      \"id\": 6,\n      \"text\": \"It is. And that's what we are unpacking today on this Deep Dive. Welcome in. We are going to cut through the noise and look under the hood of\"\n    },\n    {\n      \"id\": 7,\n      \"text\": \"cryptocurrency to figure out how it actually works. Yeah. Stripping away all that market hype. Exactly. Just focusing on\"\n    },\n    {\n      \"id\": 8,\n      \"text\": \"the actual computer science. And today's source material is an introductory chapter on Bitcoin, which is honestly the perfect roadmap\"\n    },\n    {\n      \"id\": 9,\n      \"text\": \"for you, the listener, to grasp everything from the foundational concepts to sending your first fraction of a digital coin. It\"\n    },\n    {\n      \"id\": 10,\n      \"text\": \"really covers all the bases. It does. So okay. Let's unpack this. We need to start with the historical engineering challenges,\"\n    },\n    {\n      \"id\": 11,\n      \"text\": \"right? Because I feel like people don't get the context. Yeah. To really grasp this, we have to look at the history first. I mean, we all just accept\"\n    },\n    {\n      \"id\": 12,\n      \"text\": \"that banking middleman as a mandatory part of modern life. Right? We just trust them. Exactly. We trust them\"\n    },\n    {\n      \"id\": 13,\n      \"text\": \"to keep the ledger accurate, to not lose our money, and to block fraudulent transactions. Sure. But\"\n    },\n    {\n      \"id\": 14,\n      \"text\": \"replacing that human trust with code, that's something engineers have been trying to do for literally decades. Yeah.\"\n    },\n    {\n      \"id\": 15,\n      \"text\": \"Because I think a lot of people assume digital money was just invented out of thin air in 2009. Oh, definitely not. Right? But\"\n    },\n    {\n      \"id\": 16,\n      \"text\": \"computer scientists were trying to build this back in the 1980s, weren't they? They were. Yeah. As soon as public-key cryptography became\"\n    },\n    {\n      \"id\": 17,\n      \"text\": \"viable in the late 80s, researchers immediately\"\n    },\n    {\n      \"id\": 18,\n      \"text\": \"started building digital cash systems. Wow, that early? Yeah. And on a purely technical cryptography level,\"\n    },\n    {\n      \"id\": 19,\n      \"text\": \"some of them actually worked quite brilliantly. But they obviously didn't stick around. No, they didn't. They all crashed and burned because they\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "signature": "EnMKcQFpFH0TucUC4TMOZSc9KbN2xzWanQ/uDv2cE58B9DTu2KwGHQ0mZQfNgBtZY91l0zk9Qj04GE+MQJkro1wtxbix9ktAD+L2VXTVv9o3EkieivWqjqgT+BIH67ePETpNOm+0KDPwj9c7+KOr2+gMUm3Z",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 798,
+    "completion_tokens": 918,
+    "total_tokens": 1716,
+    "cost": 0.0015765,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0015765,
+      "upstream_inference_prompt_cost": 0.0001995,
+      "upstream_inference_completions_cost": 0.001377
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "start": 0,
+    "title": "Money and trust",
+    "summary": "Physical cash, bank ledgers and the double-spend problem behind digital money."
+  },
+  {
+    "start": 229.96,
+    "title": "Satoshi and consensus",
+    "summary": "Bitcoin's origins and the challenge of reaching agreement without a central commander."
+  },
+  {
+    "start": 367.48,
+    "title": "Mining and proof of work",
+    "summary": "How miners compete to add transactions and link blocks into a shared history."
+  },
+  {
+    "start": 493.58,
+    "title": "Difficulty and scarcity",
+    "summary": "The network's difficulty adjustment, halvings and 21-million supply limit."
+  },
+  {
+    "start": 606.8,
+    "title": "Wallets and verification",
+    "summary": "Keys, hardware signing devices, full nodes and lightweight clients."
+  },
+  {
+    "start": 795.56,
+    "title": "Your keys, your coins",
+    "summary": "Custody, personal responsibility, recovery phrases and phishing risks."
+  },
+  {
+    "start": 987.92,
+    "title": "Privacy and public addresses",
+    "summary": "Pseudonyms, address reuse and how exchanges link identities to the public ledger."
+  },
+  {
+    "start": 1115.06,
+    "title": "Sending a Bitcoin payment",
+    "summary": "Alice and Joe's payment, QR codes, fees, the mempool, confirmations and future mining incentives."
+  }
+]

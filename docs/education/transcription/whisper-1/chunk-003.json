@@ -1,0 +1,2930 @@
+{
+  "provider": "OpenRouter",
+  "model": "openai/whisper-1",
+  "chunk": {
+    "index": 3,
+    "start": 360,
+    "end": 480,
+    "file": "scripts/education/chunks/chunk-003.mp3"
+  },
+  "generatedAt": "2026-10-01T15:40:27.283Z",
+  "generationId": "gen-stt-1790869220-FwEEQsC4yoiFMGjq3rDO",
+  "response": {
+    "text": "invent a currency. They solved this decades-old computer science problem by basically eliminating the need for trust. OK, so how did they actually solve it? Well, Satoshi solved it through a mechanism called proof of work, which is driven by participants we call miners. OK, I need to stop you there, because the word miner immediately makes people think of, like, pickaxes and gold dust. Right. Yeah, the imagery is a bit misleading. What are these miners actually doing? So in this network, miners are simply specialized computers. That's it. Just computers. Just computers. And they dedicate massive amounts of computing power to perform incredibly complex repetitive computational tasks.  Essentially, they are racing to solve a cryptographic math puzzle. So it's basically a giant global lottery that happens, what, roughly every 10 minutes, right? Yep, about every 10 minutes. All these humming supercomputers are racing to guess a winning number. Exactly. And the winner of that 10-minute lottery gets the privilege of bundling up the latest batch of user transactions and permanently adding them to the official record, the blockchain. You've got it. And as a reward for doing this work, the winning miner receives brand new bitcoins. Plus the transaction fees, right? Right. Plus the transaction fees from all the payments they just bundled. OK, but why does solving a random math puzzle make it secure? Well, the genius of this design is that the work isn't just arbitrary math. The puzzle the miners are solving is mathematically tied to the data of the previous block of  Oh, so they're chained together. Exactly. So if a malicious actor wanted to go back and alter a transaction, say to reverse a payment they made to someone else, they wouldn't just have to solve the puzzle for that specific block. What would they have to do? They would have to redo the computational work for that block and every single block that came after it. Wow. All while the rest of the network is moving forward. Yes. All while racing against the combined computing power of the rest of the honest network. So what does this all mean? I mean, practically?",
+    "usage": {
+      "seconds": 120,
+      "cost": 0.012
+    },
+    "task": "transcribe",
+    "language": "english",
+    "duration": 120,
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0,
+        "end": 5.78000020980835,
+        "text": " invent a currency. They solved this decades-old computer science problem by basically eliminating",
+        "tokens": [
+          50364,
+          7962,
+          257,
+          13346,
+          13,
+          814,
+          13041,
+          341,
+          7878,
+          12,
+          2641,
+          3820,
+          3497,
+          1154,
+          538,
+          1936,
+          31203,
+          50656
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2772713303565979,
+        "compression_ratio": 1.583892583847046,
+        "no_speech_prob": 0.012431450188159943
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 5.78000020980835,
+        "end": 6.71999979019165,
+        "text": " the need for trust.",
+        "tokens": [
+          50656,
+          264,
+          643,
+          337,
+          3361,
+          13,
+          50714
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2772713303565979,
+        "compression_ratio": 1.583892583847046,
+        "no_speech_prob": 0.012431450188159943
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 7.480000019073486,
+        "end": 9.220000267028809,
+        "text": " OK, so how did they actually solve it?",
+        "tokens": [
+          50714,
+          2264,
+          11,
+          370,
+          577,
+          630,
+          436,
+          767,
+          5039,
+          309,
+          30,
+          50834
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2772713303565979,
+        "compression_ratio": 1.583892583847046,
+        "no_speech_prob": 0.012431450188159943
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 9.619999885559082,
+        "end": 13.819999694824219,
+        "text": " Well, Satoshi solved it through a mechanism called proof of work, which is driven by participants",
+        "tokens": [
+          50834,
+          1042,
+          11,
+          5344,
+          17392,
+          13041,
+          309,
+          807,
+          257,
+          7513,
+          1219,
+          8177,
+          295,
+          589,
+          11,
+          597,
+          307,
+          9555,
+          538,
+          10503,
+          51058
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2772713303565979,
+        "compression_ratio": 1.583892583847046,
+        "no_speech_prob": 0.012431450188159943
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 13.819999694824219,
+        "end": 14.699999809265137,
+        "text": " we call miners.",
+        "tokens": [
+          51058,
+          321,
+          818,
+          35640,
+          13,
+          51108
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2772713303565979,
+        "compression_ratio": 1.583892583847046,
+        "no_speech_prob": 0.012431450188159943
+      },
+      {
+        "id": 5,
+        "seek": 0,
+        "start": 15.100000381469727,
+        "end": 18.68000030517578,
+        "text": " OK, I need to stop you there, because the word miner immediately makes people think",
+        "tokens": [
+          51108,
+          2264,
+          11,
+          286,
+          643,
+          281,
+          1590,
+          291,
+          456,
+          11,
+          570,
+          264,
+          1349,
+          18746,
+          4258,
+          1669,
+          561,
+          519,
+          51296
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2772713303565979,
+        "compression_ratio": 1.583892583847046,
+        "no_speech_prob": 0.012431450188159943
+      },
+      {
+        "id": 6,
+        "seek": 0,
+        "start": 18.68000030517578,
+        "end": 20.559999465942383,
+        "text": " of, like, pickaxes and gold dust.",
+        "tokens": [
+          51296,
+          295,
+          11,
+          411,
+          11,
+          1888,
+          2797,
+          279,
+          293,
+          3821,
+          8634,
+          13,
+          51398
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2772713303565979,
+        "compression_ratio": 1.583892583847046,
+        "no_speech_prob": 0.012431450188159943
+      },
+      {
+        "id": 7,
+        "seek": 0,
+        "start": 20.799999237060547,
+        "end": 23.079999923706055,
+        "text": " Right. Yeah, the imagery is a bit misleading.",
+        "tokens": [
+          51398,
+          1779,
+          13,
+          865,
+          11,
+          264,
+          24340,
+          307,
+          257,
+          857,
+          36429,
+          13,
+          51556
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2772713303565979,
+        "compression_ratio": 1.583892583847046,
+        "no_speech_prob": 0.012431450188159943
+      },
+      {
+        "id": 8,
+        "seek": 0,
+        "start": 23.799999237060547,
+        "end": 25.639999389648438,
+        "text": " What are these miners actually doing?",
+        "tokens": [
+          51556,
+          708,
+          366,
+          613,
+          35640,
+          767,
+          884,
+          30,
+          51684
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2772713303565979,
+        "compression_ratio": 1.583892583847046,
+        "no_speech_prob": 0.012431450188159943
+      },
+      {
+        "id": 9,
+        "seek": 2564,
+        "start": 26.399999618530273,
+        "end": 30.31999969482422,
+        "text": " So in this network, miners are simply specialized computers. That's it.",
+        "tokens": [
+          50402,
+          407,
+          294,
+          341,
+          3209,
+          11,
+          35640,
+          366,
+          2935,
+          19813,
+          10807,
+          13,
+          663,
+          311,
+          309,
+          13,
+          50606
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2676800489425659,
+        "compression_ratio": 1.6655172109603882,
+        "no_speech_prob": 0.063711017370224
+      },
+      {
+        "id": 10,
+        "seek": 2564,
+        "start": 30.540000915527344,
+        "end": 30.81999969482422,
+        "text": " Just computers.",
+        "tokens": [
+          50606,
+          1449,
+          10807,
+          13,
+          50656
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2676800489425659,
+        "compression_ratio": 1.6655172109603882,
+        "no_speech_prob": 0.063711017370224
+      },
+      {
+        "id": 11,
+        "seek": 2564,
+        "start": 31.540000915527344,
+        "end": 36.29999923706055,
+        "text": " Just computers. And they dedicate massive amounts of computing power to perform incredibly",
+        "tokens": [
+          50656,
+          1449,
+          10807,
+          13,
+          400,
+          436,
+          30718,
+          5994,
+          11663,
+          295,
+          15866,
+          1347,
+          281,
+          2042,
+          6252,
+          50894
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2676800489425659,
+        "compression_ratio": 1.6655172109603882,
+        "no_speech_prob": 0.063711017370224
+      },
+      {
+        "id": 12,
+        "seek": 2564,
+        "start": 36.29999923706055,
+        "end": 38.47999954223633,
+        "text": " complex repetitive computational tasks.",
+        "tokens": [
+          50894,
+          3997,
+          29404,
+          28270,
+          9608,
+          13,
+          51024
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2676800489425659,
+        "compression_ratio": 1.6655172109603882,
+        "no_speech_prob": 0.063711017370224
+      },
+      {
+        "id": 13,
+        "seek": 2564,
+        "start": 39.220001220703125,
+        "end": 39.220001220703125,
+        "text": "",
+        "tokens": [],
+        "temperature": 0,
+        "avg_logprob": -0.2676800489425659,
+        "compression_ratio": 1.6655172109603882,
+        "no_speech_prob": 0.063711017370224
+      },
+      {
+        "id": 14,
+        "seek": 2564,
+        "start": 39.58000183105469,
+        "end": 43.540000915527344,
+        "text": " Essentially, they are racing to solve a cryptographic math puzzle.",
+        "tokens": [
+          51074,
+          23596,
+          11,
+          436,
+          366,
+          12553,
+          281,
+          5039,
+          257,
+          9844,
+          12295,
+          5221,
+          12805,
+          13,
+          51304
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2676800489425659,
+        "compression_ratio": 1.6655172109603882,
+        "no_speech_prob": 0.063711017370224
+      },
+      {
+        "id": 15,
+        "seek": 2564,
+        "start": 44.119998931884766,
+        "end": 49.400001525878906,
+        "text": " So it's basically a giant global lottery that happens, what, roughly every 10 minutes,",
+        "tokens": [
+          51304,
+          407,
+          309,
+          311,
+          1936,
+          257,
+          7410,
+          4338,
+          27391,
+          300,
+          2314,
+          11,
+          437,
+          11,
+          9810,
+          633,
+          1266,
+          2077,
+          11,
+          51562
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2676800489425659,
+        "compression_ratio": 1.6655172109603882,
+        "no_speech_prob": 0.063711017370224
+      },
+      {
+        "id": 16,
+        "seek": 2564,
+        "start": 49.47999954223633,
+        "end": 49.779998779296875,
+        "text": " right?",
+        "tokens": [
+          51562,
+          558,
+          30,
+          51612
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2676800489425659,
+        "compression_ratio": 1.6655172109603882,
+        "no_speech_prob": 0.063711017370224
+      },
+      {
+        "id": 17,
+        "seek": 2564,
+        "start": 49.959999084472656,
+        "end": 51.060001373291016,
+        "text": " Yep, about every 10 minutes.",
+        "tokens": [
+          51612,
+          7010,
+          11,
+          466,
+          633,
+          1266,
+          2077,
+          13,
+          51662
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2676800489425659,
+        "compression_ratio": 1.6655172109603882,
+        "no_speech_prob": 0.063711017370224
+      },
+      {
+        "id": 18,
+        "seek": 2564,
+        "start": 51.2599983215332,
+        "end": 54.5,
+        "text": " All these humming supercomputers are racing to guess a winning number.",
+        "tokens": [
+          51662,
+          1057,
+          613,
+          34965,
+          27839,
+          2582,
+          433,
+          366,
+          12553,
+          281,
+          2041,
+          257,
+          8224,
+          1230,
+          13,
+          51834
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2676800489425659,
+        "compression_ratio": 1.6655172109603882,
+        "no_speech_prob": 0.063711017370224
+      },
+      {
+        "id": 19,
+        "seek": 5450,
+        "start": 54.5,
+        "end": 55.560001373291016,
+        "text": " Exactly.",
+        "tokens": [
+          50384,
+          7587,
+          13,
+          50434
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.23544034361839294,
+        "compression_ratio": 1.6635514497756958,
+        "no_speech_prob": 0.00022693289793096483
+      },
+      {
+        "id": 20,
+        "seek": 5450,
+        "start": 55.939998626708984,
+        "end": 60.18000030517578,
+        "text": " And the winner of that 10-minute lottery gets the privilege of bundling up the latest batch",
+        "tokens": [
+          50434,
+          400,
+          264,
+          8507,
+          295,
+          300,
+          1266,
+          12,
+          18256,
+          27391,
+          2170,
+          264,
+          12122,
+          295,
+          13882,
+          1688,
+          493,
+          264,
+          6792,
+          15245,
+          50642
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.23544034361839294,
+        "compression_ratio": 1.6635514497756958,
+        "no_speech_prob": 0.00022693289793096483
+      },
+      {
+        "id": 21,
+        "seek": 5450,
+        "start": 60.18000030517578,
+        "end": 64.66000366210938,
+        "text": " of user transactions and permanently adding them to the official record, the blockchain.",
+        "tokens": [
+          50642,
+          295,
+          4195,
+          16856,
+          293,
+          24042,
+          5127,
+          552,
+          281,
+          264,
+          4783,
+          2136,
+          11,
+          264,
+          17176,
+          13,
+          50890
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.23544034361839294,
+        "compression_ratio": 1.6635514497756958,
+        "no_speech_prob": 0.00022693289793096483
+      },
+      {
+        "id": 22,
+        "seek": 5450,
+        "start": 64.87999725341797,
+        "end": 69.55999755859375,
+        "text": " You've got it. And as a reward for doing this work, the winning miner receives brand",
+        "tokens": [
+          50890,
+          509,
+          600,
+          658,
+          309,
+          13,
+          400,
+          382,
+          257,
+          7782,
+          337,
+          884,
+          341,
+          589,
+          11,
+          264,
+          8224,
+          18746,
+          20717,
+          3360,
+          51112
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.23544034361839294,
+        "compression_ratio": 1.6635514497756958,
+        "no_speech_prob": 0.00022693289793096483
+      },
+      {
+        "id": 23,
+        "seek": 5450,
+        "start": 69.55999755859375,
+        "end": 70.36000061035156,
+        "text": " new bitcoins.",
+        "tokens": [
+          51112,
+          777,
+          857,
+          36989,
+          13,
+          51174
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.23544034361839294,
+        "compression_ratio": 1.6635514497756958,
+        "no_speech_prob": 0.00022693289793096483
+      },
+      {
+        "id": 24,
+        "seek": 5450,
+        "start": 70.68000030517578,
+        "end": 72.0199966430664,
+        "text": " Plus the transaction fees, right?",
+        "tokens": [
+          51174,
+          7721,
+          264,
+          14425,
+          13370,
+          11,
+          558,
+          30,
+          51246
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.23544034361839294,
+        "compression_ratio": 1.6635514497756958,
+        "no_speech_prob": 0.00022693289793096483
+      },
+      {
+        "id": 25,
+        "seek": 5450,
+        "start": 72.13999938964844,
+        "end": 75.04000091552734,
+        "text": " Right. Plus the transaction fees from all the payments they just bundled.",
+        "tokens": [
+          51246,
+          1779,
+          13,
+          7721,
+          264,
+          14425,
+          13370,
+          490,
+          439,
+          264,
+          14348,
+          436,
+          445,
+          13882,
+          1493,
+          13,
+          51404
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.23544034361839294,
+        "compression_ratio": 1.6635514497756958,
+        "no_speech_prob": 0.00022693289793096483
+      },
+      {
+        "id": 26,
+        "seek": 5450,
+        "start": 75.5999984741211,
+        "end": 79.12000274658203,
+        "text": " OK, but why does solving a random math puzzle make it secure?",
+        "tokens": [
+          51404,
+          2264,
+          11,
+          457,
+          983,
+          775,
+          12606,
+          257,
+          4974,
+          5221,
+          12805,
+          652,
+          309,
+          7144,
+          30,
+          51604
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.23544034361839294,
+        "compression_ratio": 1.6635514497756958,
+        "no_speech_prob": 0.00022693289793096483
+      },
+      {
+        "id": 27,
+        "seek": 5450,
+        "start": 79.36000061035156,
+        "end": 83.68000030517578,
+        "text": " Well, the genius of this design is that the work isn't just arbitrary math.",
+        "tokens": [
+          51604,
+          1042,
+          11,
+          264,
+          14017,
+          295,
+          341,
+          1715,
+          307,
+          300,
+          264,
+          589,
+          1943,
+          380,
+          445,
+          23211,
+          5221,
+          13,
+          51856
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.23544034361839294,
+        "compression_ratio": 1.6635514497756958,
+        "no_speech_prob": 0.00022693289793096483
+      },
+      {
+        "id": 28,
+        "seek": 8368,
+        "start": 83.68000030517578,
+        "end": 88.95999908447266,
+        "text": " The puzzle the miners are solving is mathematically tied to the data of the previous block of",
+        "tokens": [
+          50406,
+          440,
+          12805,
+          264,
+          35640,
+          366,
+          12606,
+          307,
+          44003,
+          9601,
+          281,
+          264,
+          1412,
+          295,
+          264,
+          3894,
+          3461,
+          295,
+          50628
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24685251712799072,
+        "compression_ratio": 1.7418301105499268,
+        "no_speech_prob": 0.0025508792605251074
+      },
+      {
+        "id": 29,
+        "seek": 8368,
+        "start": 89.81999969482422,
+        "end": 89.81999969482422,
+        "text": "",
+        "tokens": [],
+        "temperature": 0,
+        "avg_logprob": -0.24685251712799072,
+        "compression_ratio": 1.7418301105499268,
+        "no_speech_prob": 0.0025508792605251074
+      },
+      {
+        "id": 30,
+        "seek": 8368,
+        "start": 90.33999633789062,
+        "end": 91.4800033569336,
+        "text": " Oh, so they're chained together.",
+        "tokens": [
+          50678,
+          876,
+          11,
+          370,
+          436,
+          434,
+          417,
+          3563,
+          1214,
+          13,
+          50782
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24685251712799072,
+        "compression_ratio": 1.7418301105499268,
+        "no_speech_prob": 0.0025508792605251074
+      },
+      {
+        "id": 31,
+        "seek": 8368,
+        "start": 91.73999786376953,
+        "end": 92.13999938964844,
+        "text": " Exactly.",
+        "tokens": [
+          50782,
+          7587,
+          13,
+          50842
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24685251712799072,
+        "compression_ratio": 1.7418301105499268,
+        "no_speech_prob": 0.0025508792605251074
+      },
+      {
+        "id": 32,
+        "seek": 8368,
+        "start": 93.18000030517578,
+        "end": 97.81999969482422,
+        "text": " So if a malicious actor wanted to go back and alter a transaction, say to reverse a",
+        "tokens": [
+          50842,
+          407,
+          498,
+          257,
+          33496,
+          8747,
+          1415,
+          281,
+          352,
+          646,
+          293,
+          11337,
+          257,
+          14425,
+          11,
+          584,
+          281,
+          9943,
+          257,
+          51062
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24685251712799072,
+        "compression_ratio": 1.7418301105499268,
+        "no_speech_prob": 0.0025508792605251074
+      },
+      {
+        "id": 33,
+        "seek": 8368,
+        "start": 97.81999969482422,
+        "end": 102.08000183105469,
+        "text": " payment they made to someone else, they wouldn't just have to solve the puzzle for that specific",
+        "tokens": [
+          51062,
+          10224,
+          436,
+          1027,
+          281,
+          1580,
+          1646,
+          11,
+          436,
+          2759,
+          380,
+          445,
+          362,
+          281,
+          5039,
+          264,
+          12805,
+          337,
+          300,
+          2685,
+          51280
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24685251712799072,
+        "compression_ratio": 1.7418301105499268,
+        "no_speech_prob": 0.0025508792605251074
+      },
+      {
+        "id": 34,
+        "seek": 8368,
+        "start": 102.08000183105469,
+        "end": 102.4000015258789,
+        "text": " block.",
+        "tokens": [
+          51280,
+          3461,
+          13,
+          51330
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24685251712799072,
+        "compression_ratio": 1.7418301105499268,
+        "no_speech_prob": 0.0025508792605251074
+      },
+      {
+        "id": 35,
+        "seek": 8368,
+        "start": 103.0199966430664,
+        "end": 103.77999877929688,
+        "text": " What would they have to do?",
+        "tokens": [
+          51330,
+          708,
+          576,
+          436,
+          362,
+          281,
+          360,
+          30,
+          51380
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24685251712799072,
+        "compression_ratio": 1.7418301105499268,
+        "no_speech_prob": 0.0025508792605251074
+      },
+      {
+        "id": 36,
+        "seek": 8368,
+        "start": 104.08000183105469,
+        "end": 108.4000015258789,
+        "text": " They would have to redo the computational work for that block and every single block",
+        "tokens": [
+          51380,
+          814,
+          576,
+          362,
+          281,
+          29956,
+          264,
+          28270,
+          589,
+          337,
+          300,
+          3461,
+          293,
+          633,
+          2167,
+          3461,
+          51600
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24685251712799072,
+        "compression_ratio": 1.7418301105499268,
+        "no_speech_prob": 0.0025508792605251074
+      },
+      {
+        "id": 37,
+        "seek": 8368,
+        "start": 108.4000015258789,
+        "end": 109.22000122070312,
+        "text": " that came after it.",
+        "tokens": [
+          51600,
+          300,
+          1361,
+          934,
+          309,
+          13,
+          51650
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24685251712799072,
+        "compression_ratio": 1.7418301105499268,
+        "no_speech_prob": 0.0025508792605251074
+      },
+      {
+        "id": 38,
+        "seek": 8368,
+        "start": 109.33999633789062,
+        "end": 109.83999633789062,
+        "text": " Wow.",
+        "tokens": [
+          51650,
+          3153,
+          13,
+          51700
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24685251712799072,
+        "compression_ratio": 1.7418301105499268,
+        "no_speech_prob": 0.0025508792605251074
+      },
+      {
+        "id": 39,
+        "seek": 8368,
+        "start": 109.94000244140625,
+        "end": 111.95999908447266,
+        "text": " All while the rest of the network is moving forward.",
+        "tokens": [
+          51700,
+          1057,
+          1339,
+          264,
+          1472,
+          295,
+          264,
+          3209,
+          307,
+          2684,
+          2128,
+          13,
+          51806
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24685251712799072,
+        "compression_ratio": 1.7418301105499268,
+        "no_speech_prob": 0.0025508792605251074
+      },
+      {
+        "id": 40,
+        "seek": 8368,
+        "start": 112.19999694824219,
+        "end": 112.72000122070312,
+        "text": " Yes.",
+        "tokens": [
+          51806,
+          1079,
+          13,
+          51856
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24685251712799072,
+        "compression_ratio": 1.7418301105499268,
+        "no_speech_prob": 0.0025508792605251074
+      },
+      {
+        "id": 41,
+        "seek": 11272,
+        "start": 112.72000122070312,
+        "end": 116.9800033569336,
+        "text": " All while racing against the combined computing power of the rest of the honest network.",
+        "tokens": [
+          50406,
+          1057,
+          1339,
+          12553,
+          1970,
+          264,
+          9354,
+          15866,
+          1347,
+          295,
+          264,
+          1472,
+          295,
+          264,
+          3245,
+          3209,
+          13,
+          50636
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.34997275471687317,
+        "compression_ratio": 1.2342342138290405,
+        "no_speech_prob": 0.14220507442951202
+      },
+      {
+        "id": 42,
+        "seek": 11272,
+        "start": 117.72000122070312,
+        "end": 119.19999694824219,
+        "text": " So what does this all mean?",
+        "tokens": [
+          50636,
+          407,
+          437,
+          775,
+          341,
+          439,
+          914,
+          30,
+          50686
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.34997275471687317,
+        "compression_ratio": 1.2342342138290405,
+        "no_speech_prob": 0.14220507442951202
+      },
+      {
+        "id": 43,
+        "seek": 11272,
+        "start": 119.37999725341797,
+        "end": 119.9800033569336,
+        "text": " I mean, practically?",
+        "tokens": [
+          50686,
+          286,
+          914,
+          11,
+          15667,
+          30,
+          50736
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.34997275471687317,
+        "compression_ratio": 1.2342342138290405,
+        "no_speech_prob": 0.14220507442951202
+      }
+    ],
+    "words": [
+      {
+        "word": "invent",
+        "start": 0,
+        "end": 0.3799999952316284
+      },
+      {
+        "word": "a",
+        "start": 0.3799999952316284,
+        "end": 0.9599999785423279
+      },
+      {
+        "word": "currency",
+        "start": 0.9599999785423279,
+        "end": 0.9599999785423279
+      },
+      {
+        "word": "They",
+        "start": 1.8200000524520874,
+        "end": 2
+      },
+      {
+        "word": "solved",
+        "start": 2,
+        "end": 2.2200000286102295
+      },
+      {
+        "word": "this",
+        "start": 2.2200000286102295,
+        "end": 2.619999885559082
+      },
+      {
+        "word": "decades",
+        "start": 2.619999885559082,
+        "end": 3.059999942779541
+      },
+      {
+        "word": "old",
+        "start": 3.059999942779541,
+        "end": 3.4600000381469727
+      },
+      {
+        "word": "computer",
+        "start": 3.4600000381469727,
+        "end": 3.9200000762939453
+      },
+      {
+        "word": "science",
+        "start": 3.9200000762939453,
+        "end": 4.239999771118164
+      },
+      {
+        "word": "problem",
+        "start": 4.239999771118164,
+        "end": 4.460000038146973
+      },
+      {
+        "word": "by",
+        "start": 4.460000038146973,
+        "end": 4.900000095367432
+      },
+      {
+        "word": "basically",
+        "start": 4.900000095367432,
+        "end": 5.5
+      },
+      {
+        "word": "eliminating",
+        "start": 5.5,
+        "end": 5.78000020980835
+      },
+      {
+        "word": "the",
+        "start": 5.78000020980835,
+        "end": 6.159999847412109
+      },
+      {
+        "word": "need",
+        "start": 6.159999847412109,
+        "end": 6.179999828338623
+      },
+      {
+        "word": "for",
+        "start": 6.179999828338623,
+        "end": 6.460000038146973
+      },
+      {
+        "word": "trust",
+        "start": 6.460000038146973,
+        "end": 6.71999979019165
+      },
+      {
+        "word": "OK",
+        "start": 7.480000019073486,
+        "end": 7.559999942779541
+      },
+      {
+        "word": "so",
+        "start": 7.579999923706055,
+        "end": 7.900000095367432
+      },
+      {
+        "word": "how",
+        "start": 7.900000095367432,
+        "end": 8.039999961853027
+      },
+      {
+        "word": "did",
+        "start": 8.039999961853027,
+        "end": 8.199999809265137
+      },
+      {
+        "word": "they",
+        "start": 8.199999809265137,
+        "end": 8.300000190734863
+      },
+      {
+        "word": "actually",
+        "start": 8.300000190734863,
+        "end": 8.859999656677246
+      },
+      {
+        "word": "solve",
+        "start": 8.859999656677246,
+        "end": 8.899999618530273
+      },
+      {
+        "word": "it",
+        "start": 8.899999618530273,
+        "end": 9.220000267028809
+      },
+      {
+        "word": "Well",
+        "start": 9.619999885559082,
+        "end": 10.180000305175781
+      },
+      {
+        "word": "Satoshi",
+        "start": 10.180000305175781,
+        "end": 10.180000305175781
+      },
+      {
+        "word": "solved",
+        "start": 10.180000305175781,
+        "end": 10.5
+      },
+      {
+        "word": "it",
+        "start": 10.5,
+        "end": 10.640000343322754
+      },
+      {
+        "word": "through",
+        "start": 10.640000343322754,
+        "end": 10.720000267028809
+      },
+      {
+        "word": "a",
+        "start": 10.720000267028809,
+        "end": 10.9399995803833
+      },
+      {
+        "word": "mechanism",
+        "start": 10.9399995803833,
+        "end": 11.140000343322754
+      },
+      {
+        "word": "called",
+        "start": 11.140000343322754,
+        "end": 11.479999542236328
+      },
+      {
+        "word": "proof",
+        "start": 11.479999542236328,
+        "end": 11.739999771118164
+      },
+      {
+        "word": "of",
+        "start": 11.739999771118164,
+        "end": 11.979999542236328
+      },
+      {
+        "word": "work",
+        "start": 11.979999542236328,
+        "end": 12.220000267028809
+      },
+      {
+        "word": "which",
+        "start": 12.420000076293945,
+        "end": 12.699999809265137
+      },
+      {
+        "word": "is",
+        "start": 12.699999809265137,
+        "end": 13.100000381469727
+      },
+      {
+        "word": "driven",
+        "start": 13.100000381469727,
+        "end": 13.100000381469727
+      },
+      {
+        "word": "by",
+        "start": 13.100000381469727,
+        "end": 13.420000076293945
+      },
+      {
+        "word": "participants",
+        "start": 13.420000076293945,
+        "end": 13.819999694824219
+      },
+      {
+        "word": "we",
+        "start": 13.819999694824219,
+        "end": 14.079999923706055
+      },
+      {
+        "word": "call",
+        "start": 14.079999923706055,
+        "end": 14.359999656677246
+      },
+      {
+        "word": "miners",
+        "start": 14.359999656677246,
+        "end": 14.699999809265137
+      },
+      {
+        "word": "OK",
+        "start": 15.100000381469727,
+        "end": 15.380000114440918
+      },
+      {
+        "word": "I",
+        "start": 15.380000114440918,
+        "end": 15.5600004196167
+      },
+      {
+        "word": "need",
+        "start": 15.5600004196167,
+        "end": 15.600000381469727
+      },
+      {
+        "word": "to",
+        "start": 15.600000381469727,
+        "end": 15.800000190734863
+      },
+      {
+        "word": "stop",
+        "start": 15.800000190734863,
+        "end": 15.859999656677246
+      },
+      {
+        "word": "you",
+        "start": 15.859999656677246,
+        "end": 16
+      },
+      {
+        "word": "there",
+        "start": 16,
+        "end": 16.1200008392334
+      },
+      {
+        "word": "because",
+        "start": 16.1200008392334,
+        "end": 16.479999542236328
+      },
+      {
+        "word": "the",
+        "start": 16.479999542236328,
+        "end": 16.979999542236328
+      },
+      {
+        "word": "word",
+        "start": 16.979999542236328,
+        "end": 17.059999465942383
+      },
+      {
+        "word": "miner",
+        "start": 17.059999465942383,
+        "end": 17.440000534057617
+      },
+      {
+        "word": "immediately",
+        "start": 17.440000534057617,
+        "end": 17.979999542236328
+      },
+      {
+        "word": "makes",
+        "start": 17.979999542236328,
+        "end": 18.200000762939453
+      },
+      {
+        "word": "people",
+        "start": 18.200000762939453,
+        "end": 18.5
+      },
+      {
+        "word": "think",
+        "start": 18.5,
+        "end": 18.68000030517578
+      },
+      {
+        "word": "of",
+        "start": 18.68000030517578,
+        "end": 18.8799991607666
+      },
+      {
+        "word": "like",
+        "start": 18.8799991607666,
+        "end": 19.139999389648438
+      },
+      {
+        "word": "pickaxes",
+        "start": 19.239999771118164,
+        "end": 19.719999313354492
+      },
+      {
+        "word": "and",
+        "start": 19.719999313354492,
+        "end": 20
+      },
+      {
+        "word": "gold",
+        "start": 20,
+        "end": 20.219999313354492
+      },
+      {
+        "word": "dust",
+        "start": 20.219999313354492,
+        "end": 20.559999465942383
+      },
+      {
+        "word": "Right",
+        "start": 20.799999237060547,
+        "end": 21.260000228881836
+      },
+      {
+        "word": "Yeah",
+        "start": 21.260000228881836,
+        "end": 21.540000915527344
+      },
+      {
+        "word": "the",
+        "start": 21.540000915527344,
+        "end": 21.68000030517578
+      },
+      {
+        "word": "imagery",
+        "start": 21.68000030517578,
+        "end": 21.860000610351562
+      },
+      {
+        "word": "is",
+        "start": 21.860000610351562,
+        "end": 22.18000030517578
+      },
+      {
+        "word": "a",
+        "start": 22.18000030517578,
+        "end": 22.719999313354492
+      },
+      {
+        "word": "bit",
+        "start": 22.719999313354492,
+        "end": 22.719999313354492
+      },
+      {
+        "word": "misleading",
+        "start": 22.719999313354492,
+        "end": 23.079999923706055
+      },
+      {
+        "word": "What",
+        "start": 23.799999237060547,
+        "end": 23.8799991607666
+      },
+      {
+        "word": "are",
+        "start": 23.8799991607666,
+        "end": 24.020000457763672
+      },
+      {
+        "word": "these",
+        "start": 24.020000457763672,
+        "end": 24.360000610351562
+      },
+      {
+        "word": "miners",
+        "start": 24.360000610351562,
+        "end": 24.68000030517578
+      },
+      {
+        "word": "actually",
+        "start": 24.68000030517578,
+        "end": 25.31999969482422
+      },
+      {
+        "word": "doing",
+        "start": 25.31999969482422,
+        "end": 25.639999389648438
+      },
+      {
+        "word": "So",
+        "start": 26.059999465942383,
+        "end": 26.420000076293945
+      },
+      {
+        "word": "in",
+        "start": 26.420000076293945,
+        "end": 26.579999923706055
+      },
+      {
+        "word": "this",
+        "start": 26.579999923706055,
+        "end": 26.81999969482422
+      },
+      {
+        "word": "network",
+        "start": 26.81999969482422,
+        "end": 27.18000030517578
+      },
+      {
+        "word": "miners",
+        "start": 27.739999771118164,
+        "end": 27.739999771118164
+      },
+      {
+        "word": "are",
+        "start": 27.739999771118164,
+        "end": 28.100000381469727
+      },
+      {
+        "word": "simply",
+        "start": 28.100000381469727,
+        "end": 28.540000915527344
+      },
+      {
+        "word": "specialized",
+        "start": 28.540000915527344,
+        "end": 29.079999923706055
+      },
+      {
+        "word": "computers",
+        "start": 29.079999923706055,
+        "end": 29.399999618530273
+      },
+      {
+        "word": "That's",
+        "start": 29.81999969482422,
+        "end": 29.84000015258789
+      },
+      {
+        "word": "it",
+        "start": 29.84000015258789,
+        "end": 30.31999969482422
+      },
+      {
+        "word": "Just",
+        "start": 30.540000915527344,
+        "end": 30.540000915527344
+      },
+      {
+        "word": "computers",
+        "start": 30.540000915527344,
+        "end": 30.81999969482422
+      },
+      {
+        "word": "Just",
+        "start": 31.540000915527344,
+        "end": 31.540000915527344
+      },
+      {
+        "word": "computers",
+        "start": 31.540000915527344,
+        "end": 31.540000915527344
+      },
+      {
+        "word": "And",
+        "start": 31.68000030517578,
+        "end": 31.739999771118164
+      },
+      {
+        "word": "they",
+        "start": 31.739999771118164,
+        "end": 31.940000534057617
+      },
+      {
+        "word": "dedicate",
+        "start": 31.940000534057617,
+        "end": 32.20000076293945
+      },
+      {
+        "word": "massive",
+        "start": 32.20000076293945,
+        "end": 32.880001068115234
+      },
+      {
+        "word": "amounts",
+        "start": 32.880001068115234,
+        "end": 33.2400016784668
+      },
+      {
+        "word": "of",
+        "start": 33.2400016784668,
+        "end": 33.68000030517578
+      },
+      {
+        "word": "computing",
+        "start": 33.68000030517578,
+        "end": 34
+      },
+      {
+        "word": "power",
+        "start": 34,
+        "end": 34.36000061035156
+      },
+      {
+        "word": "to",
+        "start": 34.36000061035156,
+        "end": 35.040000915527344
+      },
+      {
+        "word": "perform",
+        "start": 35.040000915527344,
+        "end": 35.400001525878906
+      },
+      {
+        "word": "incredibly",
+        "start": 35.400001525878906,
+        "end": 36.29999923706055
+      },
+      {
+        "word": "complex",
+        "start": 36.29999923706055,
+        "end": 36.779998779296875
+      },
+      {
+        "word": "repetitive",
+        "start": 36.779998779296875,
+        "end": 37.34000015258789
+      },
+      {
+        "word": "computational",
+        "start": 37.34000015258789,
+        "end": 38.02000045776367
+      },
+      {
+        "word": "tasks",
+        "start": 38.02000045776367,
+        "end": 38.47999954223633
+      },
+      {
+        "word": "Essentially",
+        "start": 39.58000183105469,
+        "end": 39.939998626708984
+      },
+      {
+        "word": "they",
+        "start": 39.939998626708984,
+        "end": 40.279998779296875
+      },
+      {
+        "word": "are",
+        "start": 40.279998779296875,
+        "end": 40.599998474121094
+      },
+      {
+        "word": "racing",
+        "start": 40.599998474121094,
+        "end": 40.880001068115234
+      },
+      {
+        "word": "to",
+        "start": 40.880001068115234,
+        "end": 41.70000076293945
+      },
+      {
+        "word": "solve",
+        "start": 41.70000076293945,
+        "end": 41.70000076293945
+      },
+      {
+        "word": "a",
+        "start": 41.70000076293945,
+        "end": 42.220001220703125
+      },
+      {
+        "word": "cryptographic",
+        "start": 42.220001220703125,
+        "end": 42.779998779296875
+      },
+      {
+        "word": "math",
+        "start": 42.779998779296875,
+        "end": 43.2400016784668
+      },
+      {
+        "word": "puzzle",
+        "start": 43.2400016784668,
+        "end": 43.540000915527344
+      },
+      {
+        "word": "So",
+        "start": 44.119998931884766,
+        "end": 44.47999954223633
+      },
+      {
+        "word": "it's",
+        "start": 44.47999954223633,
+        "end": 44.79999923706055
+      },
+      {
+        "word": "basically",
+        "start": 44.79999923706055,
+        "end": 45.08000183105469
+      },
+      {
+        "word": "a",
+        "start": 45.08000183105469,
+        "end": 46
+      },
+      {
+        "word": "giant",
+        "start": 46,
+        "end": 46
+      },
+      {
+        "word": "global",
+        "start": 46,
+        "end": 46.720001220703125
+      },
+      {
+        "word": "lottery",
+        "start": 46.720001220703125,
+        "end": 47
+      },
+      {
+        "word": "that",
+        "start": 47,
+        "end": 47.400001525878906
+      },
+      {
+        "word": "happens",
+        "start": 47.400001525878906,
+        "end": 47.880001068115234
+      },
+      {
+        "word": "what",
+        "start": 47.939998626708984,
+        "end": 48.560001373291016
+      },
+      {
+        "word": "roughly",
+        "start": 48.560001373291016,
+        "end": 48.560001373291016
+      },
+      {
+        "word": "every",
+        "start": 48.560001373291016,
+        "end": 48.959999084472656
+      },
+      {
+        "word": "10",
+        "start": 48.959999084472656,
+        "end": 49.18000030517578
+      },
+      {
+        "word": "minutes",
+        "start": 49.18000030517578,
+        "end": 49.400001525878906
+      },
+      {
+        "word": "right",
+        "start": 49.47999954223633,
+        "end": 49.779998779296875
+      },
+      {
+        "word": "Yep",
+        "start": 49.959999084472656,
+        "end": 50.220001220703125
+      },
+      {
+        "word": "about",
+        "start": 50.220001220703125,
+        "end": 50.439998626708984
+      },
+      {
+        "word": "every",
+        "start": 50.439998626708984,
+        "end": 50.599998474121094
+      },
+      {
+        "word": "10",
+        "start": 50.599998474121094,
+        "end": 50.79999923706055
+      },
+      {
+        "word": "minutes",
+        "start": 50.79999923706055,
+        "end": 51.060001373291016
+      },
+      {
+        "word": "All",
+        "start": 51.2599983215332,
+        "end": 51.540000915527344
+      },
+      {
+        "word": "these",
+        "start": 51.540000915527344,
+        "end": 51.779998779296875
+      },
+      {
+        "word": "humming",
+        "start": 51.779998779296875,
+        "end": 52.02000045776367
+      },
+      {
+        "word": "supercomputers",
+        "start": 52.02000045776367,
+        "end": 52.720001220703125
+      },
+      {
+        "word": "are",
+        "start": 52.720001220703125,
+        "end": 53
+      },
+      {
+        "word": "racing",
+        "start": 53,
+        "end": 53.060001373291016
+      },
+      {
+        "word": "to",
+        "start": 53.060001373291016,
+        "end": 53.619998931884766
+      },
+      {
+        "word": "guess",
+        "start": 53.619998931884766,
+        "end": 53.79999923706055
+      },
+      {
+        "word": "a",
+        "start": 53.79999923706055,
+        "end": 54.18000030517578
+      },
+      {
+        "word": "winning",
+        "start": 54.18000030517578,
+        "end": 54.18000030517578
+      },
+      {
+        "word": "number",
+        "start": 54.18000030517578,
+        "end": 54.5
+      },
+      {
+        "word": "Exactly",
+        "start": 54.5,
+        "end": 55.560001373291016
+      },
+      {
+        "word": "And",
+        "start": 55.939998626708984,
+        "end": 55.939998626708984
+      },
+      {
+        "word": "the",
+        "start": 55.939998626708984,
+        "end": 56.060001373291016
+      },
+      {
+        "word": "winner",
+        "start": 56.060001373291016,
+        "end": 56.459999084472656
+      },
+      {
+        "word": "of",
+        "start": 56.459999084472656,
+        "end": 56.68000030517578
+      },
+      {
+        "word": "that",
+        "start": 56.68000030517578,
+        "end": 56.880001068115234
+      },
+      {
+        "word": "10",
+        "start": 56.880001068115234,
+        "end": 57.31999969482422
+      },
+      {
+        "word": "minute",
+        "start": 57.31999969482422,
+        "end": 57.31999969482422
+      },
+      {
+        "word": "lottery",
+        "start": 57.31999969482422,
+        "end": 57.540000915527344
+      },
+      {
+        "word": "gets",
+        "start": 57.540000915527344,
+        "end": 57.7599983215332
+      },
+      {
+        "word": "the",
+        "start": 57.7599983215332,
+        "end": 58.220001220703125
+      },
+      {
+        "word": "privilege",
+        "start": 58.220001220703125,
+        "end": 58.439998626708984
+      },
+      {
+        "word": "of",
+        "start": 58.439998626708984,
+        "end": 59.2599983215332
+      },
+      {
+        "word": "bundling",
+        "start": 59.2599983215332,
+        "end": 59.2599983215332
+      },
+      {
+        "word": "up",
+        "start": 59.2599983215332,
+        "end": 59.58000183105469
+      },
+      {
+        "word": "the",
+        "start": 59.58000183105469,
+        "end": 59.619998931884766
+      },
+      {
+        "word": "latest",
+        "start": 59.619998931884766,
+        "end": 59.900001525878906
+      },
+      {
+        "word": "batch",
+        "start": 59.900001525878906,
+        "end": 60.18000030517578
+      },
+      {
+        "word": "of",
+        "start": 60.18000030517578,
+        "end": 60.400001525878906
+      },
+      {
+        "word": "user",
+        "start": 60.400001525878906,
+        "end": 60.63999938964844
+      },
+      {
+        "word": "transactions",
+        "start": 60.63999938964844,
+        "end": 61.20000076293945
+      },
+      {
+        "word": "and",
+        "start": 61.20000076293945,
+        "end": 61.84000015258789
+      },
+      {
+        "word": "permanently",
+        "start": 61.84000015258789,
+        "end": 62.29999923706055
+      },
+      {
+        "word": "adding",
+        "start": 62.29999923706055,
+        "end": 62.720001220703125
+      },
+      {
+        "word": "them",
+        "start": 62.720001220703125,
+        "end": 62.959999084472656
+      },
+      {
+        "word": "to",
+        "start": 62.959999084472656,
+        "end": 63.099998474121094
+      },
+      {
+        "word": "the",
+        "start": 63.099998474121094,
+        "end": 63.2599983215332
+      },
+      {
+        "word": "official",
+        "start": 63.2599983215332,
+        "end": 63.599998474121094
+      },
+      {
+        "word": "record",
+        "start": 63.599998474121094,
+        "end": 64.0999984741211
+      },
+      {
+        "word": "the",
+        "start": 64.66000366210938,
+        "end": 64.66000366210938
+      },
+      {
+        "word": "blockchain",
+        "start": 64.66000366210938,
+        "end": 64.66000366210938
+      },
+      {
+        "word": "You've",
+        "start": 64.87999725341797,
+        "end": 65.22000122070312
+      },
+      {
+        "word": "got",
+        "start": 65.22000122070312,
+        "end": 65.27999877929688
+      },
+      {
+        "word": "it",
+        "start": 65.27999877929688,
+        "end": 65.68000030517578
+      },
+      {
+        "word": "And",
+        "start": 65.68000030517578,
+        "end": 65.87999725341797
+      },
+      {
+        "word": "as",
+        "start": 65.87999725341797,
+        "end": 66.04000091552734
+      },
+      {
+        "word": "a",
+        "start": 66.04000091552734,
+        "end": 66.44000244140625
+      },
+      {
+        "word": "reward",
+        "start": 66.44000244140625,
+        "end": 66.44000244140625
+      },
+      {
+        "word": "for",
+        "start": 66.44000244140625,
+        "end": 66.66000366210938
+      },
+      {
+        "word": "doing",
+        "start": 66.66000366210938,
+        "end": 66.80000305175781
+      },
+      {
+        "word": "this",
+        "start": 66.80000305175781,
+        "end": 67.08000183105469
+      },
+      {
+        "word": "work",
+        "start": 67.08000183105469,
+        "end": 67.30000305175781
+      },
+      {
+        "word": "the",
+        "start": 67.72000122070312,
+        "end": 67.81999969482422
+      },
+      {
+        "word": "winning",
+        "start": 67.81999969482422,
+        "end": 68.05999755859375
+      },
+      {
+        "word": "miner",
+        "start": 68.05999755859375,
+        "end": 68.4000015258789
+      },
+      {
+        "word": "receives",
+        "start": 68.4000015258789,
+        "end": 68.91999816894531
+      },
+      {
+        "word": "brand",
+        "start": 68.91999816894531,
+        "end": 69.55999755859375
+      },
+      {
+        "word": "new",
+        "start": 69.55999755859375,
+        "end": 69.73999786376953
+      },
+      {
+        "word": "bitcoins",
+        "start": 69.73999786376953,
+        "end": 70.36000061035156
+      },
+      {
+        "word": "Plus",
+        "start": 70.68000030517578,
+        "end": 70.76000213623047
+      },
+      {
+        "word": "the",
+        "start": 70.76000213623047,
+        "end": 71.4000015258789
+      },
+      {
+        "word": "transaction",
+        "start": 71.4000015258789,
+        "end": 71.4000015258789
+      },
+      {
+        "word": "fees",
+        "start": 71.4000015258789,
+        "end": 71.5999984741211
+      },
+      {
+        "word": "right",
+        "start": 71.68000030517578,
+        "end": 72.0199966430664
+      },
+      {
+        "word": "Right",
+        "start": 72.13999938964844,
+        "end": 72.5
+      },
+      {
+        "word": "Plus",
+        "start": 72.5,
+        "end": 72.66000366210938
+      },
+      {
+        "word": "the",
+        "start": 72.66000366210938,
+        "end": 72.9800033569336
+      },
+      {
+        "word": "transaction",
+        "start": 72.9800033569336,
+        "end": 73.27999877929688
+      },
+      {
+        "word": "fees",
+        "start": 73.27999877929688,
+        "end": 73.4800033569336
+      },
+      {
+        "word": "from",
+        "start": 73.4800033569336,
+        "end": 73.73999786376953
+      },
+      {
+        "word": "all",
+        "start": 73.73999786376953,
+        "end": 73.9800033569336
+      },
+      {
+        "word": "the",
+        "start": 73.9800033569336,
+        "end": 74.16000366210938
+      },
+      {
+        "word": "payments",
+        "start": 74.16000366210938,
+        "end": 74.37999725341797
+      },
+      {
+        "word": "they",
+        "start": 74.37999725341797,
+        "end": 74.62000274658203
+      },
+      {
+        "word": "just",
+        "start": 74.62000274658203,
+        "end": 75.04000091552734
+      },
+      {
+        "word": "bundled",
+        "start": 75.04000091552734,
+        "end": 75.04000091552734
+      },
+      {
+        "word": "OK",
+        "start": 75.5999984741211,
+        "end": 75.87999725341797
+      },
+      {
+        "word": "but",
+        "start": 75.87999725341797,
+        "end": 76.13999938964844
+      },
+      {
+        "word": "why",
+        "start": 76.13999938964844,
+        "end": 76.4800033569336
+      },
+      {
+        "word": "does",
+        "start": 76.4800033569336,
+        "end": 76.83999633789062
+      },
+      {
+        "word": "solving",
+        "start": 76.83999633789062,
+        "end": 77.05999755859375
+      },
+      {
+        "word": "a",
+        "start": 77.05999755859375,
+        "end": 77.63999938964844
+      },
+      {
+        "word": "random",
+        "start": 77.63999938964844,
+        "end": 77.63999938964844
+      },
+      {
+        "word": "math",
+        "start": 77.63999938964844,
+        "end": 77.95999908447266
+      },
+      {
+        "word": "puzzle",
+        "start": 77.95999908447266,
+        "end": 78.26000213623047
+      },
+      {
+        "word": "make",
+        "start": 78.26000213623047,
+        "end": 78.69999694824219
+      },
+      {
+        "word": "it",
+        "start": 78.69999694824219,
+        "end": 78.87999725341797
+      },
+      {
+        "word": "secure",
+        "start": 78.87999725341797,
+        "end": 79.12000274658203
+      },
+      {
+        "word": "Well",
+        "start": 79.36000061035156,
+        "end": 79.73999786376953
+      },
+      {
+        "word": "the",
+        "start": 79.73999786376953,
+        "end": 79.94000244140625
+      },
+      {
+        "word": "genius",
+        "start": 79.94000244140625,
+        "end": 80.19999694824219
+      },
+      {
+        "word": "of",
+        "start": 80.19999694824219,
+        "end": 80.37999725341797
+      },
+      {
+        "word": "this",
+        "start": 80.37999725341797,
+        "end": 80.5999984741211
+      },
+      {
+        "word": "design",
+        "start": 80.5999984741211,
+        "end": 80.91999816894531
+      },
+      {
+        "word": "is",
+        "start": 80.91999816894531,
+        "end": 81.0999984741211
+      },
+      {
+        "word": "that",
+        "start": 81.0999984741211,
+        "end": 81.23999786376953
+      },
+      {
+        "word": "the",
+        "start": 81.23999786376953,
+        "end": 81.5199966430664
+      },
+      {
+        "word": "work",
+        "start": 81.5199966430664,
+        "end": 81.91999816894531
+      },
+      {
+        "word": "isn't",
+        "start": 81.91999816894531,
+        "end": 82.4000015258789
+      },
+      {
+        "word": "just",
+        "start": 82.4000015258789,
+        "end": 82.80000305175781
+      },
+      {
+        "word": "arbitrary",
+        "start": 82.80000305175781,
+        "end": 83.19999694824219
+      },
+      {
+        "word": "math",
+        "start": 83.19999694824219,
+        "end": 83.68000030517578
+      },
+      {
+        "word": "The",
+        "start": 83.68000030517578,
+        "end": 84.41999816894531
+      },
+      {
+        "word": "puzzle",
+        "start": 84.41999816894531,
+        "end": 84.86000061035156
+      },
+      {
+        "word": "the",
+        "start": 84.86000061035156,
+        "end": 85.18000030517578
+      },
+      {
+        "word": "miners",
+        "start": 85.18000030517578,
+        "end": 85.31999969482422
+      },
+      {
+        "word": "are",
+        "start": 85.31999969482422,
+        "end": 85.9000015258789
+      },
+      {
+        "word": "solving",
+        "start": 85.9000015258789,
+        "end": 85.9000015258789
+      },
+      {
+        "word": "is",
+        "start": 85.9000015258789,
+        "end": 86.33999633789062
+      },
+      {
+        "word": "mathematically",
+        "start": 86.33999633789062,
+        "end": 86.95999908447266
+      },
+      {
+        "word": "tied",
+        "start": 86.95999908447266,
+        "end": 87.19999694824219
+      },
+      {
+        "word": "to",
+        "start": 87.19999694824219,
+        "end": 87.33999633789062
+      },
+      {
+        "word": "the",
+        "start": 87.33999633789062,
+        "end": 87.54000091552734
+      },
+      {
+        "word": "data",
+        "start": 87.54000091552734,
+        "end": 87.72000122070312
+      },
+      {
+        "word": "of",
+        "start": 87.72000122070312,
+        "end": 87.94000244140625
+      },
+      {
+        "word": "the",
+        "start": 87.94000244140625,
+        "end": 88.0999984741211
+      },
+      {
+        "word": "previous",
+        "start": 88.0999984741211,
+        "end": 88.63999938964844
+      },
+      {
+        "word": "block",
+        "start": 88.63999938964844,
+        "end": 88.91999816894531
+      },
+      {
+        "word": "of",
+        "start": 88.91999816894531,
+        "end": 89.18000030517578
+      },
+      {
+        "word": "Oh",
+        "start": 90.33999633789062,
+        "end": 90.45999908447266
+      },
+      {
+        "word": "so",
+        "start": 90.5199966430664,
+        "end": 90.66000366210938
+      },
+      {
+        "word": "they're",
+        "start": 90.66000366210938,
+        "end": 91.04000091552734
+      },
+      {
+        "word": "chained",
+        "start": 91.04000091552734,
+        "end": 91.04000091552734
+      },
+      {
+        "word": "together",
+        "start": 91.04000091552734,
+        "end": 91.4800033569336
+      },
+      {
+        "word": "Exactly",
+        "start": 91.73999786376953,
+        "end": 92.13999938964844
+      },
+      {
+        "word": "So",
+        "start": 93.18000030517578,
+        "end": 93.31999969482422
+      },
+      {
+        "word": "if",
+        "start": 93.31999969482422,
+        "end": 93.45999908447266
+      },
+      {
+        "word": "a",
+        "start": 93.45999908447266,
+        "end": 93.87999725341797
+      },
+      {
+        "word": "malicious",
+        "start": 93.87999725341797,
+        "end": 93.87999725341797
+      },
+      {
+        "word": "actor",
+        "start": 93.87999725341797,
+        "end": 94.26000213623047
+      },
+      {
+        "word": "wanted",
+        "start": 94.26000213623047,
+        "end": 94.5
+      },
+      {
+        "word": "to",
+        "start": 94.5,
+        "end": 94.68000030517578
+      },
+      {
+        "word": "go",
+        "start": 94.68000030517578,
+        "end": 94.81999969482422
+      },
+      {
+        "word": "back",
+        "start": 94.81999969482422,
+        "end": 95.13999938964844
+      },
+      {
+        "word": "and",
+        "start": 95.13999938964844,
+        "end": 95.86000061035156
+      },
+      {
+        "word": "alter",
+        "start": 95.86000061035156,
+        "end": 95.86000061035156
+      },
+      {
+        "word": "a",
+        "start": 95.86000061035156,
+        "end": 96.54000091552734
+      },
+      {
+        "word": "transaction",
+        "start": 96.54000091552734,
+        "end": 96.54000091552734
+      },
+      {
+        "word": "say",
+        "start": 96.76000213623047,
+        "end": 96.83999633789062
+      },
+      {
+        "word": "to",
+        "start": 96.83999633789062,
+        "end": 97.33999633789062
+      },
+      {
+        "word": "reverse",
+        "start": 97.33999633789062,
+        "end": 97.55999755859375
+      },
+      {
+        "word": "a",
+        "start": 97.55999755859375,
+        "end": 97.81999969482422
+      },
+      {
+        "word": "payment",
+        "start": 97.81999969482422,
+        "end": 97.9800033569336
+      },
+      {
+        "word": "they",
+        "start": 97.9800033569336,
+        "end": 98.23999786376953
+      },
+      {
+        "word": "made",
+        "start": 98.23999786376953,
+        "end": 98.33999633789062
+      },
+      {
+        "word": "to",
+        "start": 98.33999633789062,
+        "end": 98.55999755859375
+      },
+      {
+        "word": "someone",
+        "start": 98.55999755859375,
+        "end": 98.73999786376953
+      },
+      {
+        "word": "else",
+        "start": 98.73999786376953,
+        "end": 98.9800033569336
+      },
+      {
+        "word": "they",
+        "start": 99.4800033569336,
+        "end": 99.76000213623047
+      },
+      {
+        "word": "wouldn't",
+        "start": 99.76000213623047,
+        "end": 99.91999816894531
+      },
+      {
+        "word": "just",
+        "start": 99.91999816894531,
+        "end": 100.18000030517578
+      },
+      {
+        "word": "have",
+        "start": 100.18000030517578,
+        "end": 100.30000305175781
+      },
+      {
+        "word": "to",
+        "start": 100.30000305175781,
+        "end": 100.68000030517578
+      },
+      {
+        "word": "solve",
+        "start": 100.68000030517578,
+        "end": 100.68000030517578
+      },
+      {
+        "word": "the",
+        "start": 100.68000030517578,
+        "end": 101.08000183105469
+      },
+      {
+        "word": "puzzle",
+        "start": 101.08000183105469,
+        "end": 101.08000183105469
+      },
+      {
+        "word": "for",
+        "start": 101.08000183105469,
+        "end": 101.31999969482422
+      },
+      {
+        "word": "that",
+        "start": 101.31999969482422,
+        "end": 101.55999755859375
+      },
+      {
+        "word": "specific",
+        "start": 101.55999755859375,
+        "end": 102.08000183105469
+      },
+      {
+        "word": "block",
+        "start": 102.08000183105469,
+        "end": 102.4000015258789
+      },
+      {
+        "word": "What",
+        "start": 103.0199966430664,
+        "end": 103.0999984741211
+      },
+      {
+        "word": "would",
+        "start": 103.0999984741211,
+        "end": 103.22000122070312
+      },
+      {
+        "word": "they",
+        "start": 103.22000122070312,
+        "end": 103.31999969482422
+      },
+      {
+        "word": "have",
+        "start": 103.31999969482422,
+        "end": 103.4800033569336
+      },
+      {
+        "word": "to",
+        "start": 103.4800033569336,
+        "end": 103.63999938964844
+      },
+      {
+        "word": "do",
+        "start": 103.63999938964844,
+        "end": 103.77999877929688
+      },
+      {
+        "word": "They",
+        "start": 104.08000183105469,
+        "end": 104.37999725341797
+      },
+      {
+        "word": "would",
+        "start": 104.37999725341797,
+        "end": 104.5
+      },
+      {
+        "word": "have",
+        "start": 104.5,
+        "end": 104.63999938964844
+      },
+      {
+        "word": "to",
+        "start": 104.63999938964844,
+        "end": 105.08000183105469
+      },
+      {
+        "word": "redo",
+        "start": 105.08000183105469,
+        "end": 105.13999938964844
+      },
+      {
+        "word": "the",
+        "start": 105.13999938964844,
+        "end": 105.5
+      },
+      {
+        "word": "computational",
+        "start": 105.5,
+        "end": 105.87999725341797
+      },
+      {
+        "word": "work",
+        "start": 105.87999725341797,
+        "end": 106.16000366210938
+      },
+      {
+        "word": "for",
+        "start": 106.16000366210938,
+        "end": 106.31999969482422
+      },
+      {
+        "word": "that",
+        "start": 106.31999969482422,
+        "end": 106.86000061035156
+      },
+      {
+        "word": "block",
+        "start": 106.86000061035156,
+        "end": 106.86000061035156
+      },
+      {
+        "word": "and",
+        "start": 106.86000061035156,
+        "end": 107.33999633789062
+      },
+      {
+        "word": "every",
+        "start": 107.33999633789062,
+        "end": 107.86000061035156
+      },
+      {
+        "word": "single",
+        "start": 107.86000061035156,
+        "end": 108.22000122070312
+      },
+      {
+        "word": "block",
+        "start": 108.22000122070312,
+        "end": 108.4000015258789
+      },
+      {
+        "word": "that",
+        "start": 108.4000015258789,
+        "end": 108.72000122070312
+      },
+      {
+        "word": "came",
+        "start": 108.72000122070312,
+        "end": 108.76000213623047
+      },
+      {
+        "word": "after",
+        "start": 108.76000213623047,
+        "end": 109.05999755859375
+      },
+      {
+        "word": "it",
+        "start": 109.05999755859375,
+        "end": 109.22000122070312
+      },
+      {
+        "word": "Wow",
+        "start": 109.33999633789062,
+        "end": 109.83999633789062
+      },
+      {
+        "word": "All",
+        "start": 109.94000244140625,
+        "end": 110.12000274658203
+      },
+      {
+        "word": "while",
+        "start": 110.12000274658203,
+        "end": 110.33999633789062
+      },
+      {
+        "word": "the",
+        "start": 110.33999633789062,
+        "end": 110.4800033569336
+      },
+      {
+        "word": "rest",
+        "start": 110.4800033569336,
+        "end": 110.62000274658203
+      },
+      {
+        "word": "of",
+        "start": 110.62000274658203,
+        "end": 111.13999938964844
+      },
+      {
+        "word": "the",
+        "start": 111.13999938964844,
+        "end": 111.13999938964844
+      },
+      {
+        "word": "network",
+        "start": 111.13999938964844,
+        "end": 111.13999938964844
+      },
+      {
+        "word": "is",
+        "start": 111.13999938964844,
+        "end": 111.41999816894531
+      },
+      {
+        "word": "moving",
+        "start": 111.41999816894531,
+        "end": 111.62000274658203
+      },
+      {
+        "word": "forward",
+        "start": 111.62000274658203,
+        "end": 111.95999908447266
+      },
+      {
+        "word": "Yes",
+        "start": 112.19999694824219,
+        "end": 112.72000122070312
+      },
+      {
+        "word": "All",
+        "start": 112.72000122070312,
+        "end": 113.5199966430664
+      },
+      {
+        "word": "while",
+        "start": 113.5199966430664,
+        "end": 113.80000305175781
+      },
+      {
+        "word": "racing",
+        "start": 113.80000305175781,
+        "end": 114.0999984741211
+      },
+      {
+        "word": "against",
+        "start": 114.0999984741211,
+        "end": 114.31999969482422
+      },
+      {
+        "word": "the",
+        "start": 114.31999969482422,
+        "end": 114.58000183105469
+      },
+      {
+        "word": "combined",
+        "start": 114.58000183105469,
+        "end": 114.87999725341797
+      },
+      {
+        "word": "computing",
+        "start": 114.87999725341797,
+        "end": 115.27999877929688
+      },
+      {
+        "word": "power",
+        "start": 115.27999877929688,
+        "end": 115.58000183105469
+      },
+      {
+        "word": "of",
+        "start": 115.58000183105469,
+        "end": 115.83999633789062
+      },
+      {
+        "word": "the",
+        "start": 115.83999633789062,
+        "end": 115.9000015258789
+      },
+      {
+        "word": "rest",
+        "start": 115.9000015258789,
+        "end": 115.9800033569336
+      },
+      {
+        "word": "of",
+        "start": 115.9800033569336,
+        "end": 116.12000274658203
+      },
+      {
+        "word": "the",
+        "start": 116.12000274658203,
+        "end": 116.26000213623047
+      },
+      {
+        "word": "honest",
+        "start": 116.26000213623047,
+        "end": 116.5999984741211
+      },
+      {
+        "word": "network",
+        "start": 116.5999984741211,
+        "end": 116.9800033569336
+      },
+      {
+        "word": "So",
+        "start": 117.72000122070312,
+        "end": 118.19999694824219
+      },
+      {
+        "word": "what",
+        "start": 118.19999694824219,
+        "end": 118.41999816894531
+      },
+      {
+        "word": "does",
+        "start": 118.41999816894531,
+        "end": 118.55999755859375
+      },
+      {
+        "word": "this",
+        "start": 118.55999755859375,
+        "end": 118.69999694824219
+      },
+      {
+        "word": "all",
+        "start": 118.69999694824219,
+        "end": 118.95999908447266
+      },
+      {
+        "word": "mean",
+        "start": 118.95999908447266,
+        "end": 119.19999694824219
+      },
+      {
+        "word": "I",
+        "start": 119.37999725341797,
+        "end": 119.5999984741211
+      },
+      {
+        "word": "mean",
+        "start": 119.5999984741211,
+        "end": 119.73999786376953
+      },
+      {
+        "word": "practically",
+        "start": 119.86000061035156,
+        "end": 119.9800033569336
+      }
+    ]
+  }
+}

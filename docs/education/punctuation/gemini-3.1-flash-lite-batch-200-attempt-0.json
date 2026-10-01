@@ -1,0 +1,54 @@
+{
+  "id": "gen-1790869953-BVtFXERamqvsnFVUr5nT",
+  "object": "chat.completion",
+  "created": 1790869953,
+  "model": "google/gemini-3.1-flash-lite",
+  "provider": "Google AI Studio",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"segments\": [\n    {\n      \"id\": 200,\n      \"text\": \"With total ownership, but it absolutely demands an understanding of the underlying mechanics to stay safe. It does. And\"\n    },\n    {\n      \"id\": 201,\n      \"text\": \"I want to leave you, the listener, with a final thought today, something to ponder that builds on everything we've learned. Oh, OK.\"\n    },\n    {\n      \"id\": 202,\n      \"text\": \"So, we established that Bitcoin has a hard limit, right? And that 99% of all coins will be issued by the year 2035.\"\n    },\n    {\n      \"id\": 203,\n      \"text\": \"Right. We talked about that. We also know that the miners are currently incentivized to burn all that computing power because they receive\"\n    },\n    {\n      \"id\": 204,\n      \"text\": \"both newly created coins and transaction fees. Yes. So, what happens decades from now when\"\n    },\n    {\n      \"id\": 205,\n      \"text\": \"the block reward drops to absolutely zero and this massive global network of supercomputers has to survive\"\n    },\n    {\n      \"id\": 206,\n      \"text\": \"entirely on the transaction fees from users alone? Will the incentive structure hold up? Will the network remain secure?\"\n    },\n    {\n      \"id\": 207,\n      \"text\": \"It is arguably the most profound open question in the entire field of cryptocurrency engineering. It really\"\n    },\n    {\n      \"id\": 208,\n      \"text\": \"makes you rethink the mechanics of value. Well, thank you for joining us on this deep dive. Keep questioning, keep learning, and remember,\"\n    },\n    {\n      \"id\": 209,\n      \"text\": \"whether it's a physical 20 bill in your... The real currency\"\n    },\n    {\n      \"id\": 210,\n      \"text\": \"is trust. See you next time.\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "signature": "EnMKcQFpFH0TvbTd3c2SKv6sA6R3PlZCR4qHjfiPT9IfGl0uvLkLxn4V72FFGcya3d7AqYL4o1vZBwSTToRzprOatiLp4eJS++8EWHWW1rUwhyiF83kmRWbKvR4b115ug2Y5dYjQjzQJDAEFtgSRpTvHHPxk",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 509,
+    "completion_tokens": 476,
+    "total_tokens": 985,
+    "cost": 0.00084125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00084125,
+      "upstream_inference_prompt_cost": 0.00012725,
+      "upstream_inference_completions_cost": 0.000714
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

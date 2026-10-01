@@ -1,0 +1,87 @@
+{
+  "provider": "OpenRouter",
+  "stage": "ASR export before final chapter and punctuation steps",
+  "finalVerification": "docs/education/validation.json",
+  "endpoint": "https://openrouter.ai/api/v1/audio/transcriptions",
+  "timestampSource": "actual provider verbose_json word timestamps grouped into captions, plus source chunk offsets; segment timestamps used only if words unavailable",
+  "reviewed": "machine-generated, editorial topic review only; not manually verbatim-verified",
+  "requests": [
+    {
+      "model": "openai/whisper-1",
+      "generationId": "gen-stt-1790869112-E7Ix3mFSJQYBddeHSSKh",
+      "chunk": 0,
+      "costUsd": 0.012
+    },
+    {
+      "model": "openai/whisper-1",
+      "generationId": "gen-stt-1790869204-8BzK3tBS0StsMC1OnAWd",
+      "chunk": 1,
+      "costUsd": 0.012
+    },
+    {
+      "model": "openai/whisper-1",
+      "generationId": "gen-stt-1790869212-UITkLiDcZ1DfOmFSOpba",
+      "chunk": 2,
+      "costUsd": 0.012
+    },
+    {
+      "model": "openai/whisper-1",
+      "generationId": "gen-stt-1790869220-FwEEQsC4yoiFMGjq3rDO",
+      "chunk": 3,
+      "costUsd": 0.012
+    },
+    {
+      "model": "openai/whisper-1",
+      "generationId": "gen-stt-1790869227-Q1g1TDZ93KJry5MJPKXF",
+      "chunk": 4,
+      "costUsd": 0.012
+    },
+    {
+      "model": "openai/whisper-1",
+      "generationId": "gen-stt-1790869234-Ev0D4pwcy7wXUdLsihcT",
+      "chunk": 5,
+      "costUsd": 0.012
+    },
+    {
+      "model": "openai/whisper-1",
+      "generationId": "gen-stt-1790869241-C0bOTurChrgdpK39uAan",
+      "chunk": 6,
+      "costUsd": 0.012
+    },
+    {
+      "model": "openai/whisper-1",
+      "generationId": "gen-stt-1790869249-p49VTY5KHLBz83TJU1ux",
+      "chunk": 7,
+      "costUsd": 0.012
+    },
+    {
+      "model": "openai/whisper-1",
+      "generationId": "gen-stt-1790869256-06ULyCcb531K3zV0PXLU",
+      "chunk": 8,
+      "costUsd": 0.012
+    },
+    {
+      "model": "openai/whisper-1",
+      "generationId": "gen-stt-1790869264-yJFt1Swc538odeFTz9YV",
+      "chunk": 9,
+      "costUsd": 0.012
+    },
+    {
+      "model": "openai/whisper-1",
+      "generationId": "gen-stt-1790869273-DwQbXPpQ5u5A0GbmoGMP",
+      "chunk": 10,
+      "costUsd": 0.012
+    },
+    {
+      "model": "openai/whisper-1",
+      "generationId": "gen-stt-1790869279-qiHaUWZ5paOjg4cS2niK",
+      "chunk": 11,
+      "costUsd": 0.0086
+    }
+  ],
+  "knownCostUsd": 0.14059999999999997,
+  "segments": 211,
+  "duration": 1405.457415,
+  "chapters": 8,
+  "chapterSource": "docs/education/chapters.json"
+}

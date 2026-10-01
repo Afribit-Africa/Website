@@ -1,0 +1,43 @@
+{
+  "provider": "OpenRouter",
+  "endpoint": "https://openrouter.ai/api/v1/images",
+  "model": "google/gemini-3.1-flash-image",
+  "request": "docs/education/concept-prompt.json",
+  "output": "docs/education/bitcoin-studio-concept.webp",
+  "startedAt": "2026-10-01T15:29:06.683Z",
+  "completedAt": "2026-10-01T15:29:27.349Z",
+  "generationId": "gen-img-1790868547-2if2iQCwmO5vRg3bYxPd",
+  "dimensions": {
+    "width": 2752,
+    "height": 1536
+  },
+  "usage": {
+    "prompt_tokens": 594,
+    "completion_tokens": 1680,
+    "total_tokens": 2274,
+    "cost": 0.101097,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.101097,
+      "upstream_inference_prompt_cost": 0.000297,
+      "upstream_inference_completions_cost": 0.1008
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 1680
+    }
+  },
+  "costUsd": 0.101097,
+  "optimization": {
+    "format": "webp",
+    "quality": 88,
+    "maximumWidth": 2400
+  },
+  "synthetic": true
+}

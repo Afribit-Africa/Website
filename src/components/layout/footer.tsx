@@ -11,6 +11,7 @@ const QUICK_LINKS = [
   { href: '/programs/merchants', label: 'Merchant Program' },
   { href: 'https://www.afribit.africa/maps', label: 'Merchant Map', external: true },
   { href: '/builders', label: 'Afribit Builders' },
+  { href: '/studio', label: 'Afribit Studio' },
   { href: '/donate', label: 'Donate' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -36,6 +37,7 @@ const SOCIALS = [
 
 export function Footer() {
   const pathname = usePathname()
+  if (pathname === '/education' || pathname === '/studio' || pathname.startsWith('/studio/')) return null
   const isHome = pathname === '/'
   const bgClass = isHome
     ? 'bg-grid-lines glow-green bg-bg-surface/50 mt-0'

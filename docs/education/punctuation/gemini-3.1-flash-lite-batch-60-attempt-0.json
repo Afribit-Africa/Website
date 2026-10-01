@@ -1,0 +1,54 @@
+{
+  "id": "gen-1790869932-CL8Obf38ZFDLT0NZhOIe",
+  "object": "chat.completion",
+  "created": 1790869932,
+  "model": "google/gemini-3.1-flash-lite",
+  "provider": "Google AI Studio",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"segments\": [\n    {\n      \"id\": 60,\n      \"text\": \"A cryptographic math puzzle. So, it's basically a giant global lottery that happens, what, roughly\"\n    },\n    {\n      \"id\": 61,\n      \"text\": \"every 10 minutes, right? Yep, about every 10 minutes. All these humming supercomputers are racing to guess a winning number. Exactly.\"\n    },\n    {\n      \"id\": 62,\n      \"text\": \"And the winner of that 10-minute lottery gets the privilege of bundling up the latest batch of user transactions and permanently adding\"\n    },\n    {\n      \"id\": 63,\n      \"text\": \"them to the official record, the blockchain. You've got it. And as a reward for doing this work, the winning miner receives brand\"\n    },\n    {\n      \"id\": 64,\n      \"text\": \"new bitcoins. Plus the transaction fees, right? Right. Plus the transaction fees from all the payments they just bundled. OK, but why\"\n    },\n    {\n      \"id\": 65,\n      \"text\": \"does solving a random math puzzle make it secure? Well, the genius of this design is that the work isn't just arbitrary\"\n    },\n    {\n      \"id\": 66,\n      \"text\": \"math. The puzzle the miners are solving is mathematically tied to the data of the previous block of\"\n    },\n    {\n      \"id\": 67,\n      \"text\": \"Oh, so they're chained together? Exactly. So if a malicious actor wanted to go back and alter a transaction, say to\"\n    },\n    {\n      \"id\": 68,\n      \"text\": \"reverse a payment they made to someone else, they wouldn't just have to solve the puzzle for that specific block. What would they have to do?\"\n    },\n    {\n      \"id\": 69,\n      \"text\": \"They would have to redo the computational work for that block and every single block that came after it. Wow. All while the rest\"\n    },\n    {\n      \"id\": 70,\n      \"text\": \"of the network is moving forward. Yes. All while racing against the combined computing power of the rest of the honest network.\"\n    },\n    {\n      \"id\": 71,\n      \"text\": \"So what does this all mean? I mean, practically.\"\n    },\n    {\n      \"id\": 72,\n      \"text\": \"Practically speaking? Well, it effectively replaces the human trust we put in a bank clerk with mathematical certainty. To cheat\"\n    },\n    {\n      \"id\": 73,\n      \"text\": \"the system, you would need more computing power than the rest of the globe combined. Which is economically and physically impractical. Practically\"\n    },\n    {\n      \"id\": 74,\n      \"text\": \"impossible. Yeah. But wait, what happens if a ton of new computers join the network? Like if I have a million supercomputers jump\"\n    },\n    {\n      \"id\": 75,\n      \"text\": \"online tomorrow to mine, wouldn't they start solving these 10-minute lotteries in, I don't know, three seconds? You would think so. But\"\n    },\n    {\n      \"id\": 76,\n      \"text\": \"the protocol has a brilliant self-regulating mechanism called dynamic difficulty. Dynamic difficulty. Okay.\"\n    },\n    {\n      \"id\": 77,\n      \"text\": \"Every 2016 blocks, which takes about two weeks, the network automatically evaluates how fast the blocks\"\n    },\n    {\n      \"id\": 78,\n      \"text\": \"were solved. Oh, it checks itself? Right. And if they were solved too quickly because more computing power joined, the protocol literally\"\n    },\n    {\n      \"id\": 79,\n      \"text\": \"makes the math puzzle harder. And if computers leave? It makes the puzzle easier. It automatically maintains that 10-minute\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "signature": "EnMKcQFpFH0TsNyR/xko4Ychi+MUIcXBPlLmUhbCdpYsPYkCbAJCHulezF9TSYTFVCI9yQ2yqTd4ViZ1k5gOCtctOKHBUgM2n87Dwyaf2bJz2hJZkymU/dyVU0lmRq+hyJJHa+qxJMCcpuEExhqp+sJwBCj/",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 796,
+    "completion_tokens": 900,
+    "total_tokens": 1696,
+    "cost": 0.001549,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.001549,
+      "upstream_inference_prompt_cost": 0.000199,
+      "upstream_inference_completions_cost": 0.00135
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

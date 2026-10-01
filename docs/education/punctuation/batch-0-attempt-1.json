@@ -1,0 +1,46 @@
+{
+  "id": "gen-1790869741-vsKasQhIDFvTTmtumHer",
+  "object": "chat.completion",
+  "created": 1790869741,
+  "model": "google/gemini-2.5-flash-lite",
+  "provider": "Google",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "{\"segments\": [{\"id\":0,\"text\":\"You know when you hand someone a 20 bill, there's like an immediate, undeniable reality to it, right? Oh, absolutely.\"},{\"id\":1,\"text\":\"Yeah. You held it. Now they hold it. The trust is just built right into the physical paper itself. Right? You don't even think about it. Exactly.\"},{\"id\":2,\"text\":\"But the moment you try to do that online, that physical reality completely vanishes. Poof. Right? Gone.\"},{\"id\":3,\"text\":\"Suddenly, you aren't actually exchanging money anymore. You're just asking a giant, centralized bank to update a spreadsheet on your\"},{\"id\":4,\"text\":\"behalf. Yeah. A massive corporate ledger. Exactly. So what if you could recreate that physical, hand-to-hand exchange,\"},{\"id\":5,\"text\":\"that absolute, middleman-free certainty, but across the globe, purely digitally? That is the big question.\"},{\"id\":6,\"text\":\"It is. And that's what we are unpacking today on this Deep Dive. Welcome in. We are going to cut through the noise and look under the hood of\"},{\"id\":7,\"text\":\"cryptocurrency to figure out how it actually works. Yeah. Stripping away all that market hype. Exactly. Just focusing on\"},{\"id\":8,\"text\":\"the actual computer science. And today's source material is an introductory chapter on Bitcoin, which is honestly the perfect roadmap\"},{\"id\":9,\"text\":\"for you, the listener, to grasp everything from the foundational concepts to sending your first fraction of a digital coin. It\"},{\"id\":10,\"text\":\"really covers all the bases. It does. So, okay. Let's unpack this. We need to start with the historical engineering challenges,\"},{\"id\":11,\"text\":\"right? Because I feel like people don't get the context. Yeah. To really grasp this, we have to look at the history first. I mean, we all just accept\"},{\"id\":12,\"text\":\"that banking middleman as a mandatory part of modern life, right? We just trust them. Exactly. We trust them\"},{\"id\":13,\"text\":\"to keep the ledger accurate, to not lose our money, and to block fraudulent transactions. Sure. But\"},{\"id\":14,\"text\":\"replacing that human trust with code, that's something engineers have been trying to do for literally decades. Yeah.\"},{\"id\":15,\"text\":\"Because I think a lot of people assume digital money was just invented out of thin air in 2009. Oh, definitely not. Right? But\"},{\"id\":16,\"text\":\"computer scientists were trying to build this back in the 1980s, weren't they? They were. Yeah. As soon as public-key cryptography became\"},{\"id\":17,\"text\":\"viable in the late 80s, researchers immediately\"},{\"id\":18,\"text\":\"started building digital cash systems. Wow, that early? Yeah. And on a purely technical, cryptography level,\"},{\"id\":19,\"text\":\"some of them actually worked quite brilliantly. But they obviously didn't stick around. No, they didn't. They all crashed and burned because they\"},{\"id\":20,\"text\":\"fell into the exact same structural trap, which was, they were completely centralized.\"},{\"id\":21,\"text\":\"Ah. Meaning they still had, like, a central server or a corporate headquarters managing the final settlement of the money.\"},{\"id\":22,\"text\":\"Right. And centralized architecture creates a massive single point of failure. Just a giant target.\"},{\"id\":23,\"text\":\"Exactly. If you build a centralized digital currency, you are essentially painting a giant bullseye on a single server.\"},{\"id\":24,\"text\":\"Hackers targeted them relentlessly. I can imagine. And governments, who were obviously nervous about unregulated money, they\"},{\"id\":25,\"text\":\"just litigated them out of existence. Wow. Or, you know, in some cases, the parent company simply ran out of funding and liquidated,\"},{\"id\":26,\"text\":\"leaving the users holding what? Just worthless digital tokens. Completely worthless. Yikes. But the engineers didn't just\"},{\"id\":27,\"text\":\"build centralized servers because they wanted to be in charge, right? No, no, they had to. Because of the double-spend problem. Exactly. The double-\"},{\"id\":28,\"text\":\"spend problem. Right? Because, okay, think about it like this. If I have an MP3 file on my computer, I can copy it and send it to 10 different\"},{\"id\":29,\"text\":\"friends. And everyone gets a perfect copy. Right? But if I have a digital dollar, what's stopping me from right-clicking, hitting copy,\"},{\"id\":30,\"text\":\"and spending it 10 times at 10 different stores? Which would destroy the currency instantly. Without a central bank checking\"},{\"id\":31,\"text\":\"my account balance and updating their master spreadsheet every single time I swipe my card, how do you prevent me from spending the same\"},{\"id\":32,\"text\":\"digital dollar twice? And that is the core dilemma that blocked digital currency for 20 years. 20 years of being stuck on\"},{\"id\":33,\"text\":\"that one problem. Yeah. How do you create a system where no one is in charge, there is no central server, yet every\"},{\"id\":34,\"text\":\"single participant agrees exactly on who owns what? Enter the mysterious Satoshi Nakamoto.\"},{\"id\":35,\"text\":\"Because in 2008, this person or group of people, I mean, we still\"},{\"id\":36,\"text\":\"still have absolutely no idea who they are, published a white paper proposing a peer-to-peer electronic cash system. And the\"},{\"id\":37,\"text\":\"network actually launched in 2009. Right? And then by 2011, Satoshi just vanished. Just walked away. Yeah. Completely\"},{\"id\":38,\"text\":\"gone, leaving behind this open-source, totally decentralized system. But to make this work, Satoshi had to solve a legendary\"},{\"id\":39,\"text\":\"computer science dilemma, right? The Byzantine Generals Problem. Yes. The Byzantine Generals Problem. Yeah. It is a fascinating\"},{\"id\":40,\"text\":\"thought experiment in distributed computing. Okay. Break it down for us. So imagine a massive army divided\"},{\"id\":41,\"text\":\"into multiple battalions and they're surrounding an enemy city. Okay. Got it. The generals of these battalions need to agree on\"},{\"id\":42,\"text\":\"a specific time to attack. But here's the catch: they don't have a central commander. So no one person calling the shots.\"},{\"id\":43,\"text\":\"Right? They have to coordinate their plan by sending messengers back and forth across enemy lines. Which sounds\"},{\"id\":44,\"text\":\"like an incredibly unreliable network. It is. And to make it worse, they know that some of the generals are\"}]}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1574,
+    "completion_tokens": 1524,
+    "total_tokens": 3098,
+    "cost": 0.000767,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000767,
+      "upstream_inference_prompt_cost": 0.0001574,
+      "upstream_inference_completions_cost": 0.0006096
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

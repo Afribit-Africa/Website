@@ -1,0 +1,158 @@
+{
+  "preparedAt": "2026-10-01T15:43:15.082Z",
+  "original": {
+    "path": "audio/How_Bitcoin_Replaces_Banks_With_Math.m4a",
+    "bytes": 45233876,
+    "sha256": "89747f20ec29fcdd61cd27b6369ce099c378e7428396b062f6e83890886794a2",
+    "metadata": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "aac",
+          "codec_long_name": "AAC (Advanced Audio Coding)",
+          "profile": "LC",
+          "codec_type": "audio",
+          "codec_time_base": "1/44100",
+          "codec_tag_string": "mp4a",
+          "codec_tag": "0x6134706d",
+          "sample_fmt": "fltp",
+          "sample_rate": "44100",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/44100",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 61980672,
+          "duration": "1405.457415",
+          "bit_rate": "1818",
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0
+          },
+          "tags": {
+            "creation_time": "2026-10-01T14:53:08.000000Z",
+            "language": "und",
+            "handler_name": "ISO Media file produced by Google Inc."
+          }
+        }
+      ],
+      "format": {
+        "filename": "D:\\dev\\afribit\\audio\\How_Bitcoin_Replaces_Banks_With_Math.m4a",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "1405.457415",
+        "size": "45233876",
+        "bit_rate": "257475",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "dash",
+          "minor_version": "0",
+          "compatible_brands": "iso6mp41",
+          "creation_time": "2026-10-01T14:53:08.000000Z",
+          "encoder": "Google"
+        }
+      }
+    }
+  },
+  "browserAudio": {
+    "path": "public/education/bitcoin-101.mp3",
+    "bytes": 11244247,
+    "sha256": "ed30a9efe53c06ceda32087c7e2233c1cc466ff397c75e7e64c10393135435e3",
+    "metadata": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_time_base": "1/44100",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "sample_fmt": "fltp",
+          "sample_rate": "44100",
+          "channels": 1,
+          "channel_layout": "mono",
+          "bits_per_sample": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 353600,
+          "start_time": "0.025057",
+          "duration_ts": 19834306560,
+          "duration": "1405.492245",
+          "bit_rate": "64000",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0
+          }
+        }
+      ],
+      "format": {
+        "filename": "D:\\dev\\afribit\\public\\education\\bitcoin-101.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.025057",
+        "duration": "1405.492245",
+        "size": "11244247",
+        "bit_rate": "64001",
+        "probe_score": 51,
+        "tags": {
+          "title": "Bitcoin Podcast 101",
+          "artist": "Afribit Africa",
+          "encoder": "Lavf60.16.100"
+        }
+      }
+    }
+  },
+  "processing": {
+    "codec": "libmp3lame",
+    "bitrate": "64k",
+    "channels": 1,
+    "sampleRate": 44100,
+    "loudness": "loudnorm=I=-16:TP=-5:LRA=11",
+    "peakHeadroom": "conservative pre-encoder peak target to allow MP3 codec overshoot",
+    "trimmed": false
+  },
+  "waveform": {
+    "bins": 1200,
+    "input": "encoded playback audio",
+    "peakType": "absolute maximum",
+    "decodeSampleRate": 8000,
+    "normalizedMaximum": 0.8162606358528137,
+    "decodedDuration": 1405.4575
+  },
+  "transcriptionChunks": {
+    "secondsPerChunk": 120,
+    "count": 12,
+    "codec": "MP3 48k mono 16kHz",
+    "offsetsFrom": "untrimmed original recording"
+  }
+}

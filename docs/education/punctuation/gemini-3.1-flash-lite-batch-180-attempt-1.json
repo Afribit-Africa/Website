@@ -1,0 +1,54 @@
+{
+  "id": "gen-1790869952-aMGIWEaFeYXEHRTaDbX3",
+  "object": "chat.completion",
+  "created": 1790869952,
+  "model": "google/gemini-3.1-flash-lite",
+  "provider": "Google AI Studio",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "{\"segments\":[{\"id\":198,\"text\":\"Ability of being your own bank, guarding those 12 mathematically generated seed words, and managing hardware wallets.\"}]}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "signature": "EnMKcQFpFH0TjUJF9NDN8kSnWhWGDoTzhw5W0mCcRFPKaB/oyTWjI7yjw5L96A1CEY36H35nTNxRpnRfNVQewBEv2+/jQxF4/bKa6hz7pDOZMu/0yPFjJEFBvSqsHUg8euHr9VuD/KQlHarD+epprIj2VaK6",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 254,
+    "completion_tokens": 10,
+    "total_tokens": 264,
+    "cost": 0.0000785,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0000785,
+      "upstream_inference_prompt_cost": 0.0000635,
+      "upstream_inference_completions_cost": 0.000015
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

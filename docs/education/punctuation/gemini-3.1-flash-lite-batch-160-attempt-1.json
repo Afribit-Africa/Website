@@ -1,0 +1,54 @@
+{
+  "id": "gen-1790869949-OintN8lyCRN9LuPIDQym",
+  "object": "chat.completion",
+  "created": 1790869949,
+  "model": "google/gemini-3.1-flash-lite",
+  "provider": "Google AI Studio",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "{\"segments\":[{\"id\":174,\"text\":\"And uses his phone's camera to scan her QR code. Right. And Joe wants to send her 001 bitcoin.\"}]}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "signature": "EnMKcQFpFH0TquHYltpikmRO9+fqlhXYQlnatg2tWYleuH9N5KCEZ7hCYV4LHFIu6DsDDFyTC0zl0WJSg+hzLY1zdJDvLyYcMDxlGwv+c2z8hAFMGZbNe0StRCgIB0xI7VEComkW5NP4WtQEmjtz3iU+9gIv",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 259,
+    "completion_tokens": 15,
+    "total_tokens": 274,
+    "cost": 0.00008725,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00008725,
+      "upstream_inference_prompt_cost": 0.00006475,
+      "upstream_inference_completions_cost": 0.0000225
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

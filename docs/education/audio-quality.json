@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-01",
+  "file": "public/education/bitcoin-101.mp3",
+  "measurement": "FFmpeg loudnorm input measurements of the full encoded MP3",
+  "integratedLufs": -17.66,
+  "truePeakDbtp": -1.55,
+  "loudnessRangeLu": 4.0,
+  "notes": "Pre-encoder true-peak target was reduced to -5 dBTP after the initial lossy encode exceeded full scale. Final MP3 passes peak-headroom verification. The waveform already delivered to application integration remains unchanged per the user's instruction; it is real peak data from the same untrimmed recording's initial MP3 encode, before the final peak-headroom adjustment."
+}

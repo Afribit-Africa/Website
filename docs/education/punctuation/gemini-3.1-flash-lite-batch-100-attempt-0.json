@@ -1,0 +1,54 @@
+{
+  "id": "gen-1790869938-9QhiweDFU1gc91YIjKl4",
+  "object": "chat.completion",
+  "created": 1790869938,
+  "model": "google/gemini-3.1-flash-lite",
+  "provider": "Google AI Studio",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"segments\": [\n    {\n      \"id\": 100,\n      \"text\": \"A browser mean you are completely trusting a third party company with your keys, which is incredibly risky for large amounts.\"\n    },\n    {\n      \"id\": 101,\n      \"text\": \"This raises an important question about security, which is why cybersecurity professionals strongly advocate for\"\n    },\n    {\n      \"id\": 102,\n      \"text\": \"hardware signing devices. OK, hardware devices. Those are the ones that look a bit like a USB thumb drive, right?\"\n    },\n    {\n      \"id\": 103,\n      \"text\": \"Yep. Specialized offline hardware. Why are they so much safer? Because they generate and store your private cryptographic keys completely\"\n    },\n    {\n      \"id\": 104,\n      \"text\": \"offline. So they never touch the Internet. Exactly. When you want to send a transaction, you plug the device into your computer.\"\n    },\n    {\n      \"id\": 105,\n      \"text\": \"The computer sends the unsigned transaction to the hardware device. The physical chip inside the device\"\n    },\n    {\n      \"id\": 106,\n      \"text\": \"signs the transaction cryptographically and then sends only the signed approval back to the computer.\"\n    },\n    {\n      \"id\": 107,\n      \"text\": \"So your private key never actually touches your Internet\"\n    },\n    {\n      \"id\": 108,\n      \"text\": \"connected computer. Never. Even if your laptop is completely riddled with viruses, the hackers cannot steal the. That's\"\n    },\n    {\n      \"id\": 109,\n      \"text\": \"brilliant. Now, when these wallets talk to the network, there's a big distinction in the source material between running a full node\"\n    },\n    {\n      \"id\": 110,\n      \"text\": \"and a lightweight client. Yes. Huge difference. A full node downloads and validates the entire history of Bitcoin. Every\"\n    },\n    {\n      \"id\": 111,\n      \"text\": \"transaction by every user ever, which requires a massive amount of hard drive space and computing\"\n    },\n    {\n      \"id\": 112,\n      \"text\": \"resources. Right. But lightweight clients, sometimes called Simplified Payment Verification or SPV clients,\"\n    },\n    {\n      \"id\": 113,\n      \"text\": \"are what most people have on their phones, right? Exactly. They rely on those full nodes to do the heavy lifting of storing the entire blockchain.\"\n    },\n    {\n      \"id\": 114,\n      \"text\": \"Okay. But they use cryptographic proofs to verify their own specific transactions without having to trust the full node\"\n    },\n    {\n      \"id\": 115,\n      \"text\": \"blindly. I look at it like this: Running a full node is like doing your own accounting by auditing every single grocery\"\n    },\n    {\n      \"id\": 116,\n      \"text\": \"receipt, every paycheck, every penny spent in the entire global economy since the dawn of time, just to be absolutely\"\n    },\n    {\n      \"id\": 117,\n      \"text\": \"sure your own balance is correct. That is an intense way to do accounting. Right. Whereas using a lightweight client is\"\n    },\n    {\n      \"id\": 118,\n      \"text\": \"like calling the bank to check your balance, but you still keep the physical cash in your own pocket. That's a great analogy. And that\"\n    },\n    {\n      \"id\": 119,\n      \"text\": \"brings up the most critical concept in all of cryptocurrency: Who actually controls the money? Right.\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "signature": "EnMKcQFpFH0TP43zCP+Ngq6LMcLHgqdnA6IBRx4iDnemlTfz349t1a4iL6aaF+bULXGBzx66bmCGX3iRFobMyrxSBhyZENWO5Eg/EaXudRbXY3m/3yU4x87bqePyBrdP65SAnlQdSPiZa9G3bj49gk8jWNnN",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 764,
+    "completion_tokens": 904,
+    "total_tokens": 1668,
+    "cost": 0.001547,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.001547,
+      "upstream_inference_prompt_cost": 0.000191,
+      "upstream_inference_completions_cost": 0.001356
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

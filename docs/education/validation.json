@@ -1,0 +1,32 @@
+{
+  "validatedAt": "2026-10-01T21:30:47.469Z",
+  "status": "passed",
+  "duration": 1405.457415,
+  "encodedDuration": 1405.492245,
+  "segments": 211,
+  "chapters": 8,
+  "waveformBins": 1200,
+  "mp3Bytes": 11244247,
+  "originalUnchanged": true,
+  "noSecretInArtifacts": true,
+  "wordingAndTimingPreservedDuringPunctuation": true,
+  "durationAndWaveformPreservedDuringPunctuation": true,
+  "vttMatchesJson": true,
+  "scenic": {
+    "width": 2400,
+    "height": 1340,
+    "bytes": 169004
+  },
+  "concept": {
+    "width": 2400,
+    "height": 1340
+  },
+  "totalKnownProviderCostUsd": 0.3666124051888431,
+  "globe": {
+    "textureWidth": 2048,
+    "textureHeight": 1024,
+    "coverWidth": 1600,
+    "coverHeight": 900,
+    "provenanceMatches": true
+  }
+}

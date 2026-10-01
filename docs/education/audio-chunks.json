@@ -1,0 +1,77 @@
+{
+  "duration": 1405.457415,
+  "chunks": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 120,
+      "file": "scripts/education/chunks/chunk-000.mp3"
+    },
+    {
+      "index": 1,
+      "start": 120,
+      "end": 240,
+      "file": "scripts/education/chunks/chunk-001.mp3"
+    },
+    {
+      "index": 2,
+      "start": 240,
+      "end": 360,
+      "file": "scripts/education/chunks/chunk-002.mp3"
+    },
+    {
+      "index": 3,
+      "start": 360,
+      "end": 480,
+      "file": "scripts/education/chunks/chunk-003.mp3"
+    },
+    {
+      "index": 4,
+      "start": 480,
+      "end": 600,
+      "file": "scripts/education/chunks/chunk-004.mp3"
+    },
+    {
+      "index": 5,
+      "start": 600,
+      "end": 720,
+      "file": "scripts/education/chunks/chunk-005.mp3"
+    },
+    {
+      "index": 6,
+      "start": 720,
+      "end": 840,
+      "file": "scripts/education/chunks/chunk-006.mp3"
+    },
+    {
+      "index": 7,
+      "start": 840,
+      "end": 960,
+      "file": "scripts/education/chunks/chunk-007.mp3"
+    },
+    {
+      "index": 8,
+      "start": 960,
+      "end": 1080,
+      "file": "scripts/education/chunks/chunk-008.mp3"
+    },
+    {
+      "index": 9,
+      "start": 1080,
+      "end": 1200,
+      "file": "scripts/education/chunks/chunk-009.mp3"
+    },
+    {
+      "index": 10,
+      "start": 1200,
+      "end": 1320,
+      "file": "scripts/education/chunks/chunk-010.mp3"
+    },
+    {
+      "index": 11,
+      "start": 1320,
+      "end": 1405.457415,
+      "file": "scripts/education/chunks/chunk-011.mp3"
+    }
+  ]
+}

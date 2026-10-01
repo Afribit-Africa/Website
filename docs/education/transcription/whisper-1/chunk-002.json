@@ -1,0 +1,3025 @@
+{
+  "provider": "OpenRouter",
+  "model": "openai/whisper-1",
+  "chunk": {
+    "index": 2,
+    "start": 240,
+    "end": 360,
+    "file": "scripts/education/chunks/chunk-002.mp3"
+  },
+  "generatedAt": "2026-10-01T15:40:20.015Z",
+  "generationId": "gen-stt-1790869212-UITkLiDcZ1DfOmFSOpba",
+  "response": {
+    "text": "still have absolutely no idea who they are, published a white paper proposing a peer-to-peer electronic cash system. And the network actually launched in 2009. Right. And then by 2011, Satoshi just vanished. Just walked away? Yeah, completely gone, leaving behind this open source, totally decentralized system. But to make this work, Satoshi had to solve a legendary computer science dilemma, right? The Byzantine Generals Problem. Yes. The Byzantine Generals Problem. Yeah. It is a fascinating thought experiment in distributed computing. Okay. Break it down for us. So imagine a massive army divided into multiple battalions, and they're surrounding an enemy city. Okay. Got it. The generals of these battalions need to agree on a specific time to attack. But here's the catch. They don't have a central commander. So no one person calling the shots. Right. They have to coordinate their plan by sending messengers back and forth across enemy lines. Which sounds like an incredibly unreliable network. It is. And to make it worse, they know that some of the generals are actually traitors. Oh, wow.  Traitors who will intentionally send fake messages to confuse the loyalists. So the question is, how did the loyal generals reach an undeniable consensus on when to attack, despite the bad actors? Okay, let me translate this into a modern nightmare, because I think I get it. Go for it. It's like trying to organize a dinner via a massive group text. Oh, that is a nightmare. Right. You need everyone to agree on a restaurant and a time. But here's the catch. You know for an absolute fact that half the people in this group text are actively lying, or they are actively trying to sabotage the plans. Just chaotic evil group chat members. Exactly. Some are sending delayed messages. Some are sending contradictory locations just to mess with you. How on earth do you still manage to reach a consensus and all show up at the exact same pizzeria at 7pm? That is a perfect modern equivalent. It's a real problem. It is. And what's fascinating here is that Satoshi didn't just...",
+    "usage": {
+      "seconds": 120,
+      "cost": 0.012
+    },
+    "task": "transcribe",
+    "language": "english",
+    "duration": 120,
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0,
+        "end": 4.679999828338623,
+        "text": " still have absolutely no idea who they are, published a white paper proposing a peer-to-peer",
+        "tokens": [
+          50364,
+          920,
+          362,
+          3122,
+          572,
+          1558,
+          567,
+          436,
+          366,
+          11,
+          6572,
+          257,
+          2418,
+          3035,
+          29939,
+          257,
+          15108,
+          12,
+          1353,
+          12,
+          494,
+          260,
+          50596
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.27990108728408813,
+        "compression_ratio": 1.6314198970794678,
+        "no_speech_prob": 0.028006067499518394
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 4.800000190734863,
+        "end": 6.199999809265137,
+        "text": " electronic cash system.",
+        "tokens": [
+          50596,
+          10092,
+          6388,
+          1185,
+          13,
+          50702
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.27990108728408813,
+        "compression_ratio": 1.6314198970794678,
+        "no_speech_prob": 0.028006067499518394
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 6.639999866485596,
+        "end": 8.640000343322754,
+        "text": " And the network actually launched in 2009.",
+        "tokens": [
+          50702,
+          400,
+          264,
+          3209,
+          767,
+          8730,
+          294,
+          11453,
+          13,
+          50810
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.27990108728408813,
+        "compression_ratio": 1.6314198970794678,
+        "no_speech_prob": 0.028006067499518394
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 8.920000076293945,
+        "end": 9.359999656677246,
+        "text": " Right.",
+        "tokens": [
+          50810,
+          1779,
+          13,
+          50860
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.27990108728408813,
+        "compression_ratio": 1.6314198970794678,
+        "no_speech_prob": 0.028006067499518394
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 9.359999656677246,
+        "end": 12.279999732971191,
+        "text": " And then by 2011, Satoshi just vanished.",
+        "tokens": [
+          50860,
+          400,
+          550,
+          538,
+          10154,
+          11,
+          5344,
+          17392,
+          445,
+          37518,
+          13,
+          50992
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.27990108728408813,
+        "compression_ratio": 1.6314198970794678,
+        "no_speech_prob": 0.028006067499518394
+      },
+      {
+        "id": 5,
+        "seek": 0,
+        "start": 12.420000076293945,
+        "end": 13.119999885559082,
+        "text": " Just walked away?",
+        "tokens": [
+          50992,
+          1449,
+          7628,
+          1314,
+          30,
+          51042
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.27990108728408813,
+        "compression_ratio": 1.6314198970794678,
+        "no_speech_prob": 0.028006067499518394
+      },
+      {
+        "id": 6,
+        "seek": 0,
+        "start": 13.359999656677246,
+        "end": 17.459999084472656,
+        "text": " Yeah, completely gone, leaving behind this open source, totally decentralized system.",
+        "tokens": [
+          51042,
+          865,
+          11,
+          2584,
+          2780,
+          11,
+          5012,
+          2261,
+          341,
+          1269,
+          4009,
+          11,
+          3879,
+          32870,
+          1185,
+          13,
+          51278
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.27990108728408813,
+        "compression_ratio": 1.6314198970794678,
+        "no_speech_prob": 0.028006067499518394
+      },
+      {
+        "id": 7,
+        "seek": 0,
+        "start": 17.81999969482422,
+        "end": 22.1200008392334,
+        "text": " But to make this work, Satoshi had to solve a legendary computer science dilemma, right?",
+        "tokens": [
+          51278,
+          583,
+          281,
+          652,
+          341,
+          589,
+          11,
+          5344,
+          17392,
+          632,
+          281,
+          5039,
+          257,
+          16698,
+          3820,
+          3497,
+          34312,
+          11,
+          558,
+          30,
+          51500
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.27990108728408813,
+        "compression_ratio": 1.6314198970794678,
+        "no_speech_prob": 0.028006067499518394
+      },
+      {
+        "id": 8,
+        "seek": 0,
+        "start": 22.31999969482422,
+        "end": 24.219999313354492,
+        "text": " The Byzantine Generals Problem.",
+        "tokens": [
+          51500,
+          440,
+          41014,
+          13566,
+          15409,
+          1124,
+          11676,
+          13,
+          51592
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.27990108728408813,
+        "compression_ratio": 1.6314198970794678,
+        "no_speech_prob": 0.028006067499518394
+      },
+      {
+        "id": 9,
+        "seek": 0,
+        "start": 24.420000076293945,
+        "end": 24.940000534057617,
+        "text": " Yes.",
+        "tokens": [
+          51592,
+          1079,
+          13,
+          51642
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.27990108728408813,
+        "compression_ratio": 1.6314198970794678,
+        "no_speech_prob": 0.028006067499518394
+      },
+      {
+        "id": 10,
+        "seek": 0,
+        "start": 24.940000534057617,
+        "end": 26.100000381469727,
+        "text": " The Byzantine Generals Problem.",
+        "tokens": [
+          51642,
+          440,
+          41014,
+          13566,
+          15409,
+          1124,
+          11676,
+          13,
+          51692
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.27990108728408813,
+        "compression_ratio": 1.6314198970794678,
+        "no_speech_prob": 0.028006067499518394
+      },
+      {
+        "id": 11,
+        "seek": 0,
+        "start": 26.200000762939453,
+        "end": 26.520000457763672,
+        "text": " Yeah.",
+        "tokens": [
+          51692,
+          865,
+          13,
+          51742
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.27990108728408813,
+        "compression_ratio": 1.6314198970794678,
+        "no_speech_prob": 0.028006067499518394
+      },
+      {
+        "id": 12,
+        "seek": 0,
+        "start": 26.520000457763672,
+        "end": 29.540000915527344,
+        "text": " It is a fascinating thought experiment in distributed computing.",
+        "tokens": [
+          51742,
+          467,
+          307,
+          257,
+          10343,
+          1194,
+          5120,
+          294,
+          12631,
+          15866,
+          13,
+          51846
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.27990108728408813,
+        "compression_ratio": 1.6314198970794678,
+        "no_speech_prob": 0.028006067499518394
+      },
+      {
+        "id": 13,
+        "seek": 2954,
+        "start": 29.540000915527344,
+        "end": 29.959999084472656,
+        "text": " Okay.",
+        "tokens": [
+          50366,
+          1033,
+          13,
+          50416
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 14,
+        "seek": 2954,
+        "start": 30.079999923706055,
+        "end": 31.040000915527344,
+        "text": " Break it down for us.",
+        "tokens": [
+          50416,
+          16925,
+          309,
+          760,
+          337,
+          505,
+          13,
+          50466
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 15,
+        "seek": 2954,
+        "start": 31.360000610351562,
+        "end": 37.2400016784668,
+        "text": " So imagine a massive army divided into multiple battalions, and they're surrounding an enemy",
+        "tokens": [
+          50466,
+          407,
+          3811,
+          257,
+          5994,
+          7267,
+          6666,
+          666,
+          3866,
+          9591,
+          304,
+          626,
+          11,
+          293,
+          436,
+          434,
+          11498,
+          364,
+          5945,
+          50756
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 16,
+        "seek": 2954,
+        "start": 37.2400016784668,
+        "end": 37.599998474121094,
+        "text": " city.",
+        "tokens": [
+          50756,
+          2307,
+          13,
+          50806
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 17,
+        "seek": 2954,
+        "start": 37.7400016784668,
+        "end": 37.91999816894531,
+        "text": " Okay.",
+        "tokens": [
+          50806,
+          1033,
+          13,
+          50856
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 18,
+        "seek": 2954,
+        "start": 38.040000915527344,
+        "end": 38.599998474121094,
+        "text": " Got it.",
+        "tokens": [
+          50856,
+          5803,
+          309,
+          13,
+          50906
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 19,
+        "seek": 2954,
+        "start": 38.70000076293945,
+        "end": 42.65999984741211,
+        "text": " The generals of these battalions need to agree on a specific time to attack.",
+        "tokens": [
+          50906,
+          440,
+          41346,
+          295,
+          613,
+          9591,
+          304,
+          626,
+          643,
+          281,
+          3986,
+          322,
+          257,
+          2685,
+          565,
+          281,
+          2690,
+          13,
+          51056
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 20,
+        "seek": 2954,
+        "start": 42.959999084472656,
+        "end": 44.02000045776367,
+        "text": " But here's the catch.",
+        "tokens": [
+          51056,
+          583,
+          510,
+          311,
+          264,
+          3745,
+          13,
+          51106
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 21,
+        "seek": 2954,
+        "start": 44.15999984741211,
+        "end": 45.65999984741211,
+        "text": " They don't have a central commander.",
+        "tokens": [
+          51106,
+          814,
+          500,
+          380,
+          362,
+          257,
+          5777,
+          17885,
+          13,
+          51199
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 22,
+        "seek": 2954,
+        "start": 46.08000183105469,
+        "end": 48.060001373291016,
+        "text": " So no one person calling the shots.",
+        "tokens": [
+          51199,
+          407,
+          572,
+          472,
+          954,
+          1335,
+          2669,
+          264,
+          8305,
+          13,
+          51314
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 23,
+        "seek": 2954,
+        "start": 48.13999938964844,
+        "end": 48.439998626708984,
+        "text": " Right.",
+        "tokens": [
+          51314,
+          1779,
+          13,
+          51364
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 24,
+        "seek": 2954,
+        "start": 48.70000076293945,
+        "end": 53.7599983215332,
+        "text": " They have to coordinate their plan by sending messengers back and forth across enemy lines.",
+        "tokens": [
+          51364,
+          814,
+          362,
+          281,
+          15670,
+          641,
+          1393,
+          538,
+          7750,
+          2082,
+          15315,
+          646,
+          293,
+          5220,
+          2108,
+          5945,
+          3876,
+          13,
+          51624
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 25,
+        "seek": 2954,
+        "start": 54.29999923706055,
+        "end": 57.119998931884766,
+        "text": " Which sounds like an incredibly unreliable network.",
+        "tokens": [
+          51624,
+          3013,
+          3263,
+          411,
+          364,
+          6252,
+          20584,
+          2081,
+          712,
+          3209,
+          13,
+          51752
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 26,
+        "seek": 2954,
+        "start": 57.34000015258789,
+        "end": 57.779998779296875,
+        "text": " It is.",
+        "tokens": [
+          51752,
+          467,
+          307,
+          13,
+          51802
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2658061385154724,
+        "compression_ratio": 1.5986394882202148,
+        "no_speech_prob": 0.0011160052381455898
+      },
+      {
+        "id": 27,
+        "seek": 5778,
+        "start": 57.779998779296875,
+        "end": 62.279998779296875,
+        "text": " And to make it worse, they know that some of the generals are actually traitors.",
+        "tokens": [
+          50394,
+          400,
+          281,
+          652,
+          309,
+          5324,
+          11,
+          436,
+          458,
+          300,
+          512,
+          295,
+          264,
+          41346,
+          366,
+          767,
+          944,
+          9862,
+          13,
+          50596
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24624060094356537,
+        "compression_ratio": 1.620339035987854,
+        "no_speech_prob": 0.14032702147960663
+      },
+      {
+        "id": 28,
+        "seek": 5778,
+        "start": 62.5,
+        "end": 63.279998779296875,
+        "text": " Oh, wow.",
+        "tokens": [
+          50596,
+          876,
+          11,
+          6076,
+          13,
+          50646
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24624060094356537,
+        "compression_ratio": 1.620339035987854,
+        "no_speech_prob": 0.14032702147960663
+      },
+      {
+        "id": 29,
+        "seek": 5778,
+        "start": 63.779998779296875,
+        "end": 63.779998779296875,
+        "text": "",
+        "tokens": [],
+        "temperature": 0,
+        "avg_logprob": -0.24624060094356537,
+        "compression_ratio": 1.620339035987854,
+        "no_speech_prob": 0.14032702147960663
+      },
+      {
+        "id": 30,
+        "seek": 5778,
+        "start": 63.779998779296875,
+        "end": 67.68000030517578,
+        "text": " Traitors who will intentionally send fake messages to confuse the loyalists.",
+        "tokens": [
+          50696,
+          5403,
+          9862,
+          567,
+          486,
+          22062,
+          2845,
+          7592,
+          7897,
+          281,
+          28584,
+          264,
+          12682,
+          1751,
+          13,
+          50918
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24624060094356537,
+        "compression_ratio": 1.620339035987854,
+        "no_speech_prob": 0.14032702147960663
+      },
+      {
+        "id": 31,
+        "seek": 5778,
+        "start": 68.45999908447266,
+        "end": 74.45999908447266,
+        "text": " So the question is, how did the loyal generals reach an undeniable consensus on when to attack,",
+        "tokens": [
+          50918,
+          407,
+          264,
+          1168,
+          307,
+          11,
+          577,
+          630,
+          264,
+          12682,
+          41346,
+          2524,
+          364,
+          674,
+          268,
+          9364,
+          19115,
+          322,
+          562,
+          281,
+          2690,
+          11,
+          51218
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24624060094356537,
+        "compression_ratio": 1.620339035987854,
+        "no_speech_prob": 0.14032702147960663
+      },
+      {
+        "id": 32,
+        "seek": 5778,
+        "start": 74.91999816894531,
+        "end": 75.73999786376953,
+        "text": " despite the bad actors?",
+        "tokens": [
+          51218,
+          7228,
+          264,
+          1578,
+          10037,
+          30,
+          51268
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24624060094356537,
+        "compression_ratio": 1.620339035987854,
+        "no_speech_prob": 0.14032702147960663
+      },
+      {
+        "id": 33,
+        "seek": 5778,
+        "start": 76.05999755859375,
+        "end": 80.63999938964844,
+        "text": " Okay, let me translate this into a modern nightmare, because I think I get it.",
+        "tokens": [
+          51268,
+          1033,
+          11,
+          718,
+          385,
+          13799,
+          341,
+          666,
+          257,
+          4363,
+          18724,
+          11,
+          570,
+          286,
+          519,
+          286,
+          483,
+          309,
+          13,
+          51514
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24624060094356537,
+        "compression_ratio": 1.620339035987854,
+        "no_speech_prob": 0.14032702147960663
+      },
+      {
+        "id": 34,
+        "seek": 5778,
+        "start": 80.87999725341797,
+        "end": 81.18000030517578,
+        "text": " Go for it.",
+        "tokens": [
+          51514,
+          1037,
+          337,
+          309,
+          13,
+          51564
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24624060094356537,
+        "compression_ratio": 1.620339035987854,
+        "no_speech_prob": 0.14032702147960663
+      },
+      {
+        "id": 35,
+        "seek": 5778,
+        "start": 81.26000213623047,
+        "end": 84.94000244140625,
+        "text": " It's like trying to organize a dinner via a massive group text.",
+        "tokens": [
+          51564,
+          467,
+          311,
+          411,
+          1382,
+          281,
+          13859,
+          257,
+          6148,
+          5766,
+          257,
+          5994,
+          1594,
+          2487,
+          13,
+          51724
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24624060094356537,
+        "compression_ratio": 1.620339035987854,
+        "no_speech_prob": 0.14032702147960663
+      },
+      {
+        "id": 36,
+        "seek": 5778,
+        "start": 85.22000122070312,
+        "end": 86.04000091552734,
+        "text": " Oh, that is a nightmare.",
+        "tokens": [
+          51724,
+          876,
+          11,
+          300,
+          307,
+          257,
+          18724,
+          13,
+          51800
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24624060094356537,
+        "compression_ratio": 1.620339035987854,
+        "no_speech_prob": 0.14032702147960663
+      },
+      {
+        "id": 37,
+        "seek": 5778,
+        "start": 86.30000305175781,
+        "end": 86.63999938964844,
+        "text": " Right.",
+        "tokens": [
+          51800,
+          1779,
+          13,
+          51850
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.24624060094356537,
+        "compression_ratio": 1.620339035987854,
+        "no_speech_prob": 0.14032702147960663
+      },
+      {
+        "id": 38,
+        "seek": 8664,
+        "start": 86.63999938964844,
+        "end": 89.12000274658203,
+        "text": " You need everyone to agree on a restaurant and a time.",
+        "tokens": [
+          50400,
+          509,
+          643,
+          1518,
+          281,
+          3986,
+          322,
+          257,
+          6383,
+          293,
+          257,
+          565,
+          13,
+          50512
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2134702354669571,
+        "compression_ratio": 1.6284829378128052,
+        "no_speech_prob": 0.0021489255595952272
+      },
+      {
+        "id": 39,
+        "seek": 8664,
+        "start": 89.62000274658203,
+        "end": 90.19999694824219,
+        "text": " But here's the catch.",
+        "tokens": [
+          50512,
+          583,
+          510,
+          311,
+          264,
+          3745,
+          13,
+          50568
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2134702354669571,
+        "compression_ratio": 1.6284829378128052,
+        "no_speech_prob": 0.0021489255595952272
+      },
+      {
+        "id": 40,
+        "seek": 8664,
+        "start": 90.66000366210938,
+        "end": 95.5999984741211,
+        "text": " You know for an absolute fact that half the people in this group text are actively lying,",
+        "tokens": [
+          50568,
+          509,
+          458,
+          337,
+          364,
+          8236,
+          1186,
+          300,
+          1922,
+          264,
+          561,
+          294,
+          341,
+          1594,
+          2487,
+          366,
+          13022,
+          8493,
+          11,
+          50846
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2134702354669571,
+        "compression_ratio": 1.6284829378128052,
+        "no_speech_prob": 0.0021489255595952272
+      },
+      {
+        "id": 41,
+        "seek": 8664,
+        "start": 95.77999877929688,
+        "end": 98.4800033569336,
+        "text": " or they are actively trying to sabotage the plans.",
+        "tokens": [
+          50846,
+          420,
+          436,
+          366,
+          13022,
+          1382,
+          281,
+          37167,
+          609,
+          264,
+          5482,
+          13,
+          50984
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2134702354669571,
+        "compression_ratio": 1.6284829378128052,
+        "no_speech_prob": 0.0021489255595952272
+      },
+      {
+        "id": 42,
+        "seek": 8664,
+        "start": 98.55999755859375,
+        "end": 100.55999755859375,
+        "text": " Just chaotic evil group chat members.",
+        "tokens": [
+          50984,
+          1449,
+          27013,
+          6724,
+          1594,
+          5081,
+          2679,
+          13,
+          51086
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2134702354669571,
+        "compression_ratio": 1.6284829378128052,
+        "no_speech_prob": 0.0021489255595952272
+      },
+      {
+        "id": 43,
+        "seek": 8664,
+        "start": 100.95999908447266,
+        "end": 101.33999633789062,
+        "text": " Exactly.",
+        "tokens": [
+          51086,
+          7587,
+          13,
+          51136
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2134702354669571,
+        "compression_ratio": 1.6284829378128052,
+        "no_speech_prob": 0.0021489255595952272
+      },
+      {
+        "id": 44,
+        "seek": 8664,
+        "start": 101.80000305175781,
+        "end": 103,
+        "text": " Some are sending delayed messages.",
+        "tokens": [
+          51136,
+          2188,
+          366,
+          7750,
+          20268,
+          7897,
+          13,
+          51214
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2134702354669571,
+        "compression_ratio": 1.6284829378128052,
+        "no_speech_prob": 0.0021489255595952272
+      },
+      {
+        "id": 45,
+        "seek": 8664,
+        "start": 103.63999938964844,
+        "end": 106.4000015258789,
+        "text": " Some are sending contradictory locations just to mess with you.",
+        "tokens": [
+          51214,
+          2188,
+          366,
+          7750,
+          49555,
+          9253,
+          445,
+          281,
+          2082,
+          365,
+          291,
+          13,
+          51382
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2134702354669571,
+        "compression_ratio": 1.6284829378128052,
+        "no_speech_prob": 0.0021489255595952272
+      },
+      {
+        "id": 46,
+        "seek": 8664,
+        "start": 106.94000244140625,
+        "end": 111.63999938964844,
+        "text": " How on earth do you still manage to reach a consensus and all show up at the exact same",
+        "tokens": [
+          51382,
+          1012,
+          322,
+          4120,
+          360,
+          291,
+          920,
+          3067,
+          281,
+          2524,
+          257,
+          19115,
+          293,
+          439,
+          855,
+          493,
+          412,
+          264,
+          1900,
+          912,
+          51604
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2134702354669571,
+        "compression_ratio": 1.6284829378128052,
+        "no_speech_prob": 0.0021489255595952272
+      },
+      {
+        "id": 47,
+        "seek": 8664,
+        "start": 111.63999938964844,
+        "end": 112.68000030517578,
+        "text": " pizzeria at 7pm?",
+        "tokens": [
+          51604,
+          280,
+          590,
+          4527,
+          654,
+          412,
+          1614,
+          14395,
+          30,
+          51690
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2134702354669571,
+        "compression_ratio": 1.6284829378128052,
+        "no_speech_prob": 0.0021489255595952272
+      },
+      {
+        "id": 48,
+        "seek": 8664,
+        "start": 112.94000244140625,
+        "end": 114.72000122070312,
+        "text": " That is a perfect modern equivalent.",
+        "tokens": [
+          51690,
+          663,
+          307,
+          257,
+          2176,
+          4363,
+          10344,
+          13,
+          51792
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2134702354669571,
+        "compression_ratio": 1.6284829378128052,
+        "no_speech_prob": 0.0021489255595952272
+      },
+      {
+        "id": 49,
+        "seek": 8664,
+        "start": 115.05999755859375,
+        "end": 115.80000305175781,
+        "text": " It's a real problem.",
+        "tokens": [
+          51792,
+          467,
+          311,
+          257,
+          957,
+          1154,
+          13,
+          51848
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.2134702354669571,
+        "compression_ratio": 1.6284829378128052,
+        "no_speech_prob": 0.0021489255595952272
+      },
+      {
+        "id": 50,
+        "seek": 11580,
+        "start": 115.80000305175781,
+        "end": 116.68000030517578,
+        "text": " It is.",
+        "tokens": [
+          50386,
+          467,
+          307,
+          13,
+          50436
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.4794231057167053,
+        "compression_ratio": 0.9420289993286133,
+        "no_speech_prob": 0.6920297741889954
+      },
+      {
+        "id": 51,
+        "seek": 11580,
+        "start": 117.19999694824219,
+        "end": 119.9800033569336,
+        "text": " And what's fascinating here is that Satoshi didn't just...",
+        "tokens": [
+          50436,
+          400,
+          437,
+          311,
+          10343,
+          510,
+          307,
+          300,
+          5344,
+          17392,
+          994,
+          380,
+          445,
+          485,
+          50572
+        ],
+        "temperature": 0,
+        "avg_logprob": -0.4794231057167053,
+        "compression_ratio": 0.9420289993286133,
+        "no_speech_prob": 0.6920297741889954
+      }
+    ],
+    "words": [
+      {
+        "word": "still",
+        "start": 0,
+        "end": 0.2199999988079071
+      },
+      {
+        "word": "have",
+        "start": 0.2199999988079071,
+        "end": 0.3400000035762787
+      },
+      {
+        "word": "absolutely",
+        "start": 0.3400000035762787,
+        "end": 0.7400000095367432
+      },
+      {
+        "word": "no",
+        "start": 0.7400000095367432,
+        "end": 1.0399999618530273
+      },
+      {
+        "word": "idea",
+        "start": 1.0399999618530273,
+        "end": 1.1399999856948853
+      },
+      {
+        "word": "who",
+        "start": 1.1399999856948853,
+        "end": 1.2999999523162842
+      },
+      {
+        "word": "they",
+        "start": 1.2999999523162842,
+        "end": 1.3799999952316284
+      },
+      {
+        "word": "are",
+        "start": 1.3799999952316284,
+        "end": 1.659999966621399
+      },
+      {
+        "word": "published",
+        "start": 2.4200000762939453,
+        "end": 2.440000057220459
+      },
+      {
+        "word": "a",
+        "start": 2.440000057220459,
+        "end": 2.6600000858306885
+      },
+      {
+        "word": "white",
+        "start": 2.6600000858306885,
+        "end": 3.0799999237060547
+      },
+      {
+        "word": "paper",
+        "start": 3.0799999237060547,
+        "end": 3.1600000858306885
+      },
+      {
+        "word": "proposing",
+        "start": 3.1600000858306885,
+        "end": 3.619999885559082
+      },
+      {
+        "word": "a",
+        "start": 3.619999885559082,
+        "end": 4.199999809265137
+      },
+      {
+        "word": "peer",
+        "start": 4.199999809265137,
+        "end": 4.239999771118164
+      },
+      {
+        "word": "to",
+        "start": 4.239999771118164,
+        "end": 4.440000057220459
+      },
+      {
+        "word": "peer",
+        "start": 4.440000057220459,
+        "end": 4.679999828338623
+      },
+      {
+        "word": "electronic",
+        "start": 4.800000190734863,
+        "end": 5.320000171661377
+      },
+      {
+        "word": "cash",
+        "start": 5.320000171661377,
+        "end": 5.760000228881836
+      },
+      {
+        "word": "system",
+        "start": 5.760000228881836,
+        "end": 6.199999809265137
+      },
+      {
+        "word": "And",
+        "start": 6.639999866485596,
+        "end": 6.78000020980835
+      },
+      {
+        "word": "the",
+        "start": 6.78000020980835,
+        "end": 6.880000114440918
+      },
+      {
+        "word": "network",
+        "start": 6.880000114440918,
+        "end": 7.119999885559082
+      },
+      {
+        "word": "actually",
+        "start": 7.119999885559082,
+        "end": 7.840000152587891
+      },
+      {
+        "word": "launched",
+        "start": 7.840000152587891,
+        "end": 7.840000152587891
+      },
+      {
+        "word": "in",
+        "start": 7.840000152587891,
+        "end": 8.039999961853027
+      },
+      {
+        "word": "2009",
+        "start": 8.039999961853027,
+        "end": 8.640000343322754
+      },
+      {
+        "word": "Right",
+        "start": 8.920000076293945,
+        "end": 9.359999656677246
+      },
+      {
+        "word": "And",
+        "start": 9.359999656677246,
+        "end": 9.579999923706055
+      },
+      {
+        "word": "then",
+        "start": 9.579999923706055,
+        "end": 9.739999771118164
+      },
+      {
+        "word": "by",
+        "start": 9.739999771118164,
+        "end": 9.920000076293945
+      },
+      {
+        "word": "2011",
+        "start": 9.920000076293945,
+        "end": 10.539999961853027
+      },
+      {
+        "word": "Satoshi",
+        "start": 10.899999618530273,
+        "end": 10.899999618530273
+      },
+      {
+        "word": "just",
+        "start": 10.899999618530273,
+        "end": 11.579999923706055
+      },
+      {
+        "word": "vanished",
+        "start": 11.579999923706055,
+        "end": 12.279999732971191
+      },
+      {
+        "word": "Just",
+        "start": 12.420000076293945,
+        "end": 12.899999618530273
+      },
+      {
+        "word": "walked",
+        "start": 12.899999618530273,
+        "end": 12.920000076293945
+      },
+      {
+        "word": "away",
+        "start": 12.920000076293945,
+        "end": 13.119999885559082
+      },
+      {
+        "word": "Yeah",
+        "start": 13.359999656677246,
+        "end": 13.619999885559082
+      },
+      {
+        "word": "completely",
+        "start": 13.619999885559082,
+        "end": 13.880000114440918
+      },
+      {
+        "word": "gone",
+        "start": 13.880000114440918,
+        "end": 14.119999885559082
+      },
+      {
+        "word": "leaving",
+        "start": 14.819999694824219,
+        "end": 14.920000076293945
+      },
+      {
+        "word": "behind",
+        "start": 14.920000076293945,
+        "end": 15.15999984741211
+      },
+      {
+        "word": "this",
+        "start": 15.15999984741211,
+        "end": 15.34000015258789
+      },
+      {
+        "word": "open",
+        "start": 15.34000015258789,
+        "end": 15.720000267028809
+      },
+      {
+        "word": "source",
+        "start": 15.720000267028809,
+        "end": 16.079999923706055
+      },
+      {
+        "word": "totally",
+        "start": 16.280000686645508,
+        "end": 16.6200008392334
+      },
+      {
+        "word": "decentralized",
+        "start": 16.6200008392334,
+        "end": 17.040000915527344
+      },
+      {
+        "word": "system",
+        "start": 17.040000915527344,
+        "end": 17.459999084472656
+      },
+      {
+        "word": "But",
+        "start": 17.81999969482422,
+        "end": 18.34000015258789
+      },
+      {
+        "word": "to",
+        "start": 18.34000015258789,
+        "end": 18.479999542236328
+      },
+      {
+        "word": "make",
+        "start": 18.479999542236328,
+        "end": 18.600000381469727
+      },
+      {
+        "word": "this",
+        "start": 18.600000381469727,
+        "end": 18.799999237060547
+      },
+      {
+        "word": "work",
+        "start": 18.799999237060547,
+        "end": 19.040000915527344
+      },
+      {
+        "word": "Satoshi",
+        "start": 19.360000610351562,
+        "end": 19.360000610351562
+      },
+      {
+        "word": "had",
+        "start": 19.360000610351562,
+        "end": 19.579999923706055
+      },
+      {
+        "word": "to",
+        "start": 19.579999923706055,
+        "end": 19.84000015258789
+      },
+      {
+        "word": "solve",
+        "start": 19.84000015258789,
+        "end": 19.84000015258789
+      },
+      {
+        "word": "a",
+        "start": 19.84000015258789,
+        "end": 20.600000381469727
+      },
+      {
+        "word": "legendary",
+        "start": 20.600000381469727,
+        "end": 20.600000381469727
+      },
+      {
+        "word": "computer",
+        "start": 20.600000381469727,
+        "end": 21.239999771118164
+      },
+      {
+        "word": "science",
+        "start": 21.239999771118164,
+        "end": 21.600000381469727
+      },
+      {
+        "word": "dilemma",
+        "start": 21.600000381469727,
+        "end": 21.760000228881836
+      },
+      {
+        "word": "right",
+        "start": 21.899999618530273,
+        "end": 22.1200008392334
+      },
+      {
+        "word": "The",
+        "start": 22.31999969482422,
+        "end": 22.84000015258789
+      },
+      {
+        "word": "Byzantine",
+        "start": 22.84000015258789,
+        "end": 23.360000610351562
+      },
+      {
+        "word": "Generals",
+        "start": 23.360000610351562,
+        "end": 23.84000015258789
+      },
+      {
+        "word": "Problem",
+        "start": 23.84000015258789,
+        "end": 24.219999313354492
+      },
+      {
+        "word": "Yes",
+        "start": 24.420000076293945,
+        "end": 24.940000534057617
+      },
+      {
+        "word": "The",
+        "start": 24.940000534057617,
+        "end": 25.260000228881836
+      },
+      {
+        "word": "Byzantine",
+        "start": 25.260000228881836,
+        "end": 25.520000457763672
+      },
+      {
+        "word": "Generals",
+        "start": 25.520000457763672,
+        "end": 25.8799991607666
+      },
+      {
+        "word": "Problem",
+        "start": 25.8799991607666,
+        "end": 26.100000381469727
+      },
+      {
+        "word": "Yeah",
+        "start": 26.200000762939453,
+        "end": 26.520000457763672
+      },
+      {
+        "word": "It",
+        "start": 26.520000457763672,
+        "end": 26.579999923706055
+      },
+      {
+        "word": "is",
+        "start": 26.579999923706055,
+        "end": 26.739999771118164
+      },
+      {
+        "word": "a",
+        "start": 26.739999771118164,
+        "end": 27.31999969482422
+      },
+      {
+        "word": "fascinating",
+        "start": 27.31999969482422,
+        "end": 27.579999923706055
+      },
+      {
+        "word": "thought",
+        "start": 27.579999923706055,
+        "end": 28.040000915527344
+      },
+      {
+        "word": "experiment",
+        "start": 28.040000915527344,
+        "end": 28.34000015258789
+      },
+      {
+        "word": "in",
+        "start": 28.34000015258789,
+        "end": 28.760000228881836
+      },
+      {
+        "word": "distributed",
+        "start": 28.760000228881836,
+        "end": 29.15999984741211
+      },
+      {
+        "word": "computing",
+        "start": 29.15999984741211,
+        "end": 29.540000915527344
+      },
+      {
+        "word": "Okay",
+        "start": 29.540000915527344,
+        "end": 29.959999084472656
+      },
+      {
+        "word": "Break",
+        "start": 30.079999923706055,
+        "end": 30.200000762939453
+      },
+      {
+        "word": "it",
+        "start": 30.200000762939453,
+        "end": 30.34000015258789
+      },
+      {
+        "word": "down",
+        "start": 30.34000015258789,
+        "end": 30.479999542236328
+      },
+      {
+        "word": "for",
+        "start": 30.479999542236328,
+        "end": 30.739999771118164
+      },
+      {
+        "word": "us",
+        "start": 30.739999771118164,
+        "end": 31.040000915527344
+      },
+      {
+        "word": "So",
+        "start": 31.360000610351562,
+        "end": 31.420000076293945
+      },
+      {
+        "word": "imagine",
+        "start": 31.420000076293945,
+        "end": 31.799999237060547
+      },
+      {
+        "word": "a",
+        "start": 31.799999237060547,
+        "end": 33
+      },
+      {
+        "word": "massive",
+        "start": 33,
+        "end": 33.20000076293945
+      },
+      {
+        "word": "army",
+        "start": 33.20000076293945,
+        "end": 33.560001373291016
+      },
+      {
+        "word": "divided",
+        "start": 33.560001373291016,
+        "end": 34.31999969482422
+      },
+      {
+        "word": "into",
+        "start": 34.31999969482422,
+        "end": 34.7400016784668
+      },
+      {
+        "word": "multiple",
+        "start": 34.7400016784668,
+        "end": 35.13999938964844
+      },
+      {
+        "word": "battalions",
+        "start": 35.13999938964844,
+        "end": 35.68000030517578
+      },
+      {
+        "word": "and",
+        "start": 35.939998626708984,
+        "end": 36.65999984741211
+      },
+      {
+        "word": "they're",
+        "start": 36.65999984741211,
+        "end": 36.65999984741211
+      },
+      {
+        "word": "surrounding",
+        "start": 36.65999984741211,
+        "end": 36.65999984741211
+      },
+      {
+        "word": "an",
+        "start": 36.65999984741211,
+        "end": 37.119998931884766
+      },
+      {
+        "word": "enemy",
+        "start": 37.119998931884766,
+        "end": 37.2400016784668
+      },
+      {
+        "word": "city",
+        "start": 37.2400016784668,
+        "end": 37.599998474121094
+      },
+      {
+        "word": "Okay",
+        "start": 37.7400016784668,
+        "end": 37.91999816894531
+      },
+      {
+        "word": "Got",
+        "start": 38.040000915527344,
+        "end": 38.220001220703125
+      },
+      {
+        "word": "it",
+        "start": 38.220001220703125,
+        "end": 38.599998474121094
+      },
+      {
+        "word": "The",
+        "start": 38.70000076293945,
+        "end": 39.2599983215332
+      },
+      {
+        "word": "generals",
+        "start": 39.2599983215332,
+        "end": 39.5
+      },
+      {
+        "word": "of",
+        "start": 39.5,
+        "end": 39.720001220703125
+      },
+      {
+        "word": "these",
+        "start": 39.720001220703125,
+        "end": 39.91999816894531
+      },
+      {
+        "word": "battalions",
+        "start": 39.91999816894531,
+        "end": 40.380001068115234
+      },
+      {
+        "word": "need",
+        "start": 40.380001068115234,
+        "end": 40.63999938964844
+      },
+      {
+        "word": "to",
+        "start": 40.63999938964844,
+        "end": 41
+      },
+      {
+        "word": "agree",
+        "start": 41,
+        "end": 41
+      },
+      {
+        "word": "on",
+        "start": 41,
+        "end": 41.20000076293945
+      },
+      {
+        "word": "a",
+        "start": 41.20000076293945,
+        "end": 41.540000915527344
+      },
+      {
+        "word": "specific",
+        "start": 41.540000915527344,
+        "end": 41.7599983215332
+      },
+      {
+        "word": "time",
+        "start": 41.7599983215332,
+        "end": 42.099998474121094
+      },
+      {
+        "word": "to",
+        "start": 42.099998474121094,
+        "end": 42.65999984741211
+      },
+      {
+        "word": "attack",
+        "start": 42.65999984741211,
+        "end": 42.65999984741211
+      },
+      {
+        "word": "But",
+        "start": 42.959999084472656,
+        "end": 43.52000045776367
+      },
+      {
+        "word": "here's",
+        "start": 43.52000045776367,
+        "end": 43.619998931884766
+      },
+      {
+        "word": "the",
+        "start": 43.619998931884766,
+        "end": 43.79999923706055
+      },
+      {
+        "word": "catch",
+        "start": 43.79999923706055,
+        "end": 44.02000045776367
+      },
+      {
+        "word": "They",
+        "start": 44.15999984741211,
+        "end": 44.47999954223633
+      },
+      {
+        "word": "don't",
+        "start": 44.47999954223633,
+        "end": 44.619998931884766
+      },
+      {
+        "word": "have",
+        "start": 44.619998931884766,
+        "end": 44.779998779296875
+      },
+      {
+        "word": "a",
+        "start": 44.779998779296875,
+        "end": 45.2599983215332
+      },
+      {
+        "word": "central",
+        "start": 45.2599983215332,
+        "end": 45.2599983215332
+      },
+      {
+        "word": "commander",
+        "start": 45.2599983215332,
+        "end": 45.65999984741211
+      },
+      {
+        "word": "So",
+        "start": 46.08000183105469,
+        "end": 46.36000061035156
+      },
+      {
+        "word": "no",
+        "start": 46.36000061035156,
+        "end": 46.7400016784668
+      },
+      {
+        "word": "one",
+        "start": 46.7400016784668,
+        "end": 47.099998474121094
+      },
+      {
+        "word": "person",
+        "start": 47.099998474121094,
+        "end": 47.36000061035156
+      },
+      {
+        "word": "calling",
+        "start": 47.36000061035156,
+        "end": 47.58000183105469
+      },
+      {
+        "word": "the",
+        "start": 47.58000183105469,
+        "end": 48.060001373291016
+      },
+      {
+        "word": "shots",
+        "start": 48.060001373291016,
+        "end": 48.060001373291016
+      },
+      {
+        "word": "Right",
+        "start": 48.13999938964844,
+        "end": 48.439998626708984
+      },
+      {
+        "word": "They",
+        "start": 48.70000076293945,
+        "end": 49.2599983215332
+      },
+      {
+        "word": "have",
+        "start": 49.2599983215332,
+        "end": 49.439998626708984
+      },
+      {
+        "word": "to",
+        "start": 49.439998626708984,
+        "end": 49.959999084472656
+      },
+      {
+        "word": "coordinate",
+        "start": 49.959999084472656,
+        "end": 49.959999084472656
+      },
+      {
+        "word": "their",
+        "start": 49.959999084472656,
+        "end": 50.220001220703125
+      },
+      {
+        "word": "plan",
+        "start": 50.220001220703125,
+        "end": 50.52000045776367
+      },
+      {
+        "word": "by",
+        "start": 50.52000045776367,
+        "end": 50.79999923706055
+      },
+      {
+        "word": "sending",
+        "start": 50.79999923706055,
+        "end": 51.02000045776367
+      },
+      {
+        "word": "messengers",
+        "start": 51.02000045776367,
+        "end": 51.63999938964844
+      },
+      {
+        "word": "back",
+        "start": 51.63999938964844,
+        "end": 52.20000076293945
+      },
+      {
+        "word": "and",
+        "start": 52.20000076293945,
+        "end": 52.599998474121094
+      },
+      {
+        "word": "forth",
+        "start": 52.599998474121094,
+        "end": 52.599998474121094
+      },
+      {
+        "word": "across",
+        "start": 52.599998474121094,
+        "end": 53.040000915527344
+      },
+      {
+        "word": "enemy",
+        "start": 53.040000915527344,
+        "end": 53.34000015258789
+      },
+      {
+        "word": "lines",
+        "start": 53.34000015258789,
+        "end": 53.7599983215332
+      },
+      {
+        "word": "Which",
+        "start": 54.29999923706055,
+        "end": 54.86000061035156
+      },
+      {
+        "word": "sounds",
+        "start": 54.86000061035156,
+        "end": 55.08000183105469
+      },
+      {
+        "word": "like",
+        "start": 55.08000183105469,
+        "end": 55.2400016784668
+      },
+      {
+        "word": "an",
+        "start": 55.2400016784668,
+        "end": 55.52000045776367
+      },
+      {
+        "word": "incredibly",
+        "start": 55.52000045776367,
+        "end": 56.02000045776367
+      },
+      {
+        "word": "unreliable",
+        "start": 56.02000045776367,
+        "end": 56.68000030517578
+      },
+      {
+        "word": "network",
+        "start": 56.68000030517578,
+        "end": 57.119998931884766
+      },
+      {
+        "word": "It",
+        "start": 57.34000015258789,
+        "end": 57.540000915527344
+      },
+      {
+        "word": "is",
+        "start": 57.540000915527344,
+        "end": 57.779998779296875
+      },
+      {
+        "word": "And",
+        "start": 57.779998779296875,
+        "end": 58.34000015258789
+      },
+      {
+        "word": "to",
+        "start": 58.34000015258789,
+        "end": 58.619998931884766
+      },
+      {
+        "word": "make",
+        "start": 58.619998931884766,
+        "end": 58.7400016784668
+      },
+      {
+        "word": "it",
+        "start": 58.7400016784668,
+        "end": 58.939998626708984
+      },
+      {
+        "word": "worse",
+        "start": 58.939998626708984,
+        "end": 59.20000076293945
+      },
+      {
+        "word": "they",
+        "start": 59.7599983215332,
+        "end": 59.81999969482422
+      },
+      {
+        "word": "know",
+        "start": 59.81999969482422,
+        "end": 60
+      },
+      {
+        "word": "that",
+        "start": 60,
+        "end": 60.31999969482422
+      },
+      {
+        "word": "some",
+        "start": 60.31999969482422,
+        "end": 60.41999816894531
+      },
+      {
+        "word": "of",
+        "start": 60.41999816894531,
+        "end": 60.540000915527344
+      },
+      {
+        "word": "the",
+        "start": 60.540000915527344,
+        "end": 60.97999954223633
+      },
+      {
+        "word": "generals",
+        "start": 60.97999954223633,
+        "end": 60.97999954223633
+      },
+      {
+        "word": "are",
+        "start": 60.97999954223633,
+        "end": 61.41999816894531
+      },
+      {
+        "word": "actually",
+        "start": 61.41999816894531,
+        "end": 62.279998779296875
+      },
+      {
+        "word": "traitors",
+        "start": 62.279998779296875,
+        "end": 62.279998779296875
+      },
+      {
+        "word": "Oh",
+        "start": 62.5,
+        "end": 62.68000030517578
+      },
+      {
+        "word": "wow",
+        "start": 62.779998779296875,
+        "end": 63.279998779296875
+      },
+      {
+        "word": "Traitors",
+        "start": 63.779998779296875,
+        "end": 63.779998779296875
+      },
+      {
+        "word": "who",
+        "start": 63.779998779296875,
+        "end": 63.97999954223633
+      },
+      {
+        "word": "will",
+        "start": 63.97999954223633,
+        "end": 64.26000213623047
+      },
+      {
+        "word": "intentionally",
+        "start": 64.26000213623047,
+        "end": 64.58000183105469
+      },
+      {
+        "word": "send",
+        "start": 64.58000183105469,
+        "end": 64.94000244140625
+      },
+      {
+        "word": "fake",
+        "start": 64.94000244140625,
+        "end": 65.27999877929688
+      },
+      {
+        "word": "messages",
+        "start": 65.27999877929688,
+        "end": 65.68000030517578
+      },
+      {
+        "word": "to",
+        "start": 65.68000030517578,
+        "end": 66.4800033569336
+      },
+      {
+        "word": "confuse",
+        "start": 66.4800033569336,
+        "end": 66.9000015258789
+      },
+      {
+        "word": "the",
+        "start": 66.9000015258789,
+        "end": 67.18000030517578
+      },
+      {
+        "word": "loyalists",
+        "start": 67.18000030517578,
+        "end": 67.68000030517578
+      },
+      {
+        "word": "So",
+        "start": 68.45999908447266,
+        "end": 68.9000015258789
+      },
+      {
+        "word": "the",
+        "start": 68.9000015258789,
+        "end": 69.0199966430664
+      },
+      {
+        "word": "question",
+        "start": 69.0199966430664,
+        "end": 69.31999969482422
+      },
+      {
+        "word": "is",
+        "start": 69.31999969482422,
+        "end": 69.73999786376953
+      },
+      {
+        "word": "how",
+        "start": 70.19999694824219,
+        "end": 70.27999877929688
+      },
+      {
+        "word": "did",
+        "start": 70.27999877929688,
+        "end": 70.4800033569336
+      },
+      {
+        "word": "the",
+        "start": 70.4800033569336,
+        "end": 70.72000122070312
+      },
+      {
+        "word": "loyal",
+        "start": 70.72000122070312,
+        "end": 71.04000091552734
+      },
+      {
+        "word": "generals",
+        "start": 71.04000091552734,
+        "end": 71.41999816894531
+      },
+      {
+        "word": "reach",
+        "start": 71.41999816894531,
+        "end": 71.73999786376953
+      },
+      {
+        "word": "an",
+        "start": 71.73999786376953,
+        "end": 72.30000305175781
+      },
+      {
+        "word": "undeniable",
+        "start": 72.30000305175781,
+        "end": 72.66000366210938
+      },
+      {
+        "word": "consensus",
+        "start": 72.66000366210938,
+        "end": 73.23999786376953
+      },
+      {
+        "word": "on",
+        "start": 73.23999786376953,
+        "end": 73.72000122070312
+      },
+      {
+        "word": "when",
+        "start": 73.72000122070312,
+        "end": 73.87999725341797
+      },
+      {
+        "word": "to",
+        "start": 73.87999725341797,
+        "end": 74.45999908447266
+      },
+      {
+        "word": "attack",
+        "start": 74.45999908447266,
+        "end": 74.45999908447266
+      },
+      {
+        "word": "despite",
+        "start": 74.91999816894531,
+        "end": 75.05999755859375
+      },
+      {
+        "word": "the",
+        "start": 75.05999755859375,
+        "end": 75.30000305175781
+      },
+      {
+        "word": "bad",
+        "start": 75.30000305175781,
+        "end": 75.41999816894531
+      },
+      {
+        "word": "actors",
+        "start": 75.41999816894531,
+        "end": 75.73999786376953
+      },
+      {
+        "word": "Okay",
+        "start": 76.05999755859375,
+        "end": 76.33999633789062
+      },
+      {
+        "word": "let",
+        "start": 76.37999725341797,
+        "end": 76.55999755859375
+      },
+      {
+        "word": "me",
+        "start": 76.55999755859375,
+        "end": 76.80000305175781
+      },
+      {
+        "word": "translate",
+        "start": 76.80000305175781,
+        "end": 77.13999938964844
+      },
+      {
+        "word": "this",
+        "start": 77.13999938964844,
+        "end": 77.41999816894531
+      },
+      {
+        "word": "into",
+        "start": 77.41999816894531,
+        "end": 77.80000305175781
+      },
+      {
+        "word": "a",
+        "start": 77.80000305175781,
+        "end": 78.27999877929688
+      },
+      {
+        "word": "modern",
+        "start": 78.27999877929688,
+        "end": 78.58000183105469
+      },
+      {
+        "word": "nightmare",
+        "start": 78.58000183105469,
+        "end": 78.9800033569336
+      },
+      {
+        "word": "because",
+        "start": 79.13999938964844,
+        "end": 79.36000061035156
+      },
+      {
+        "word": "I",
+        "start": 79.36000061035156,
+        "end": 79.81999969482422
+      },
+      {
+        "word": "think",
+        "start": 79.81999969482422,
+        "end": 80.05999755859375
+      },
+      {
+        "word": "I",
+        "start": 80.05999755859375,
+        "end": 80.36000061035156
+      },
+      {
+        "word": "get",
+        "start": 80.36000061035156,
+        "end": 80.44000244140625
+      },
+      {
+        "word": "it",
+        "start": 80.44000244140625,
+        "end": 80.63999938964844
+      },
+      {
+        "word": "Go",
+        "start": 80.87999725341797,
+        "end": 80.87999725341797
+      },
+      {
+        "word": "for",
+        "start": 80.87999725341797,
+        "end": 81
+      },
+      {
+        "word": "it",
+        "start": 81,
+        "end": 81.18000030517578
+      },
+      {
+        "word": "It's",
+        "start": 81.26000213623047,
+        "end": 81.45999908447266
+      },
+      {
+        "word": "like",
+        "start": 81.45999908447266,
+        "end": 81.68000030517578
+      },
+      {
+        "word": "trying",
+        "start": 81.68000030517578,
+        "end": 81.94000244140625
+      },
+      {
+        "word": "to",
+        "start": 81.94000244140625,
+        "end": 82.58000183105469
+      },
+      {
+        "word": "organize",
+        "start": 82.58000183105469,
+        "end": 82.58000183105469
+      },
+      {
+        "word": "a",
+        "start": 82.58000183105469,
+        "end": 83.05999755859375
+      },
+      {
+        "word": "dinner",
+        "start": 83.05999755859375,
+        "end": 83.05999755859375
+      },
+      {
+        "word": "via",
+        "start": 83.05999755859375,
+        "end": 83.44000244140625
+      },
+      {
+        "word": "a",
+        "start": 83.44000244140625,
+        "end": 84.23999786376953
+      },
+      {
+        "word": "massive",
+        "start": 84.23999786376953,
+        "end": 84.23999786376953
+      },
+      {
+        "word": "group",
+        "start": 84.23999786376953,
+        "end": 84.54000091552734
+      },
+      {
+        "word": "text",
+        "start": 84.54000091552734,
+        "end": 84.94000244140625
+      },
+      {
+        "word": "Oh",
+        "start": 85.22000122070312,
+        "end": 85.41999816894531
+      },
+      {
+        "word": "that",
+        "start": 85.41999816894531,
+        "end": 85.55999755859375
+      },
+      {
+        "word": "is",
+        "start": 85.55999755859375,
+        "end": 85.66000366210938
+      },
+      {
+        "word": "a",
+        "start": 85.66000366210938,
+        "end": 86.04000091552734
+      },
+      {
+        "word": "nightmare",
+        "start": 86.04000091552734,
+        "end": 86.04000091552734
+      },
+      {
+        "word": "Right",
+        "start": 86.30000305175781,
+        "end": 86.63999938964844
+      },
+      {
+        "word": "You",
+        "start": 86.63999938964844,
+        "end": 87.12000274658203
+      },
+      {
+        "word": "need",
+        "start": 87.12000274658203,
+        "end": 87.27999877929688
+      },
+      {
+        "word": "everyone",
+        "start": 87.27999877929688,
+        "end": 87.66000366210938
+      },
+      {
+        "word": "to",
+        "start": 87.66000366210938,
+        "end": 87.95999908447266
+      },
+      {
+        "word": "agree",
+        "start": 87.95999908447266,
+        "end": 87.95999908447266
+      },
+      {
+        "word": "on",
+        "start": 87.95999908447266,
+        "end": 88.16000366210938
+      },
+      {
+        "word": "a",
+        "start": 88.16000366210938,
+        "end": 88.37999725341797
+      },
+      {
+        "word": "restaurant",
+        "start": 88.37999725341797,
+        "end": 88.54000091552734
+      },
+      {
+        "word": "and",
+        "start": 88.54000091552734,
+        "end": 88.83999633789062
+      },
+      {
+        "word": "a",
+        "start": 88.83999633789062,
+        "end": 89.04000091552734
+      },
+      {
+        "word": "time",
+        "start": 89.04000091552734,
+        "end": 89.12000274658203
+      },
+      {
+        "word": "But",
+        "start": 89.62000274658203,
+        "end": 89.66000366210938
+      },
+      {
+        "word": "here's",
+        "start": 89.66000366210938,
+        "end": 89.83999633789062
+      },
+      {
+        "word": "the",
+        "start": 89.83999633789062,
+        "end": 90.16000366210938
+      },
+      {
+        "word": "catch",
+        "start": 90.16000366210938,
+        "end": 90.19999694824219
+      },
+      {
+        "word": "You",
+        "start": 90.66000366210938,
+        "end": 90.80000305175781
+      },
+      {
+        "word": "know",
+        "start": 90.80000305175781,
+        "end": 91.12000274658203
+      },
+      {
+        "word": "for",
+        "start": 91.12000274658203,
+        "end": 91.45999908447266
+      },
+      {
+        "word": "an",
+        "start": 91.45999908447266,
+        "end": 91.76000213623047
+      },
+      {
+        "word": "absolute",
+        "start": 91.76000213623047,
+        "end": 91.9800033569336
+      },
+      {
+        "word": "fact",
+        "start": 91.9800033569336,
+        "end": 92.33999633789062
+      },
+      {
+        "word": "that",
+        "start": 92.33999633789062,
+        "end": 92.81999969482422
+      },
+      {
+        "word": "half",
+        "start": 92.81999969482422,
+        "end": 93.04000091552734
+      },
+      {
+        "word": "the",
+        "start": 93.04000091552734,
+        "end": 93.23999786376953
+      },
+      {
+        "word": "people",
+        "start": 93.23999786376953,
+        "end": 93.4800033569336
+      },
+      {
+        "word": "in",
+        "start": 93.4800033569336,
+        "end": 93.63999938964844
+      },
+      {
+        "word": "this",
+        "start": 93.63999938964844,
+        "end": 93.80000305175781
+      },
+      {
+        "word": "group",
+        "start": 93.80000305175781,
+        "end": 93.9800033569336
+      },
+      {
+        "word": "text",
+        "start": 93.9800033569336,
+        "end": 94.27999877929688
+      },
+      {
+        "word": "are",
+        "start": 94.27999877929688,
+        "end": 94.72000122070312
+      },
+      {
+        "word": "actively",
+        "start": 94.72000122070312,
+        "end": 95.16000366210938
+      },
+      {
+        "word": "lying",
+        "start": 95.16000366210938,
+        "end": 95.5999984741211
+      },
+      {
+        "word": "or",
+        "start": 95.77999877929688,
+        "end": 96.27999877929688
+      },
+      {
+        "word": "they",
+        "start": 96.27999877929688,
+        "end": 96.4800033569336
+      },
+      {
+        "word": "are",
+        "start": 96.4800033569336,
+        "end": 96.80000305175781
+      },
+      {
+        "word": "actively",
+        "start": 96.80000305175781,
+        "end": 97.22000122070312
+      },
+      {
+        "word": "trying",
+        "start": 97.22000122070312,
+        "end": 97.4800033569336
+      },
+      {
+        "word": "to",
+        "start": 97.4800033569336,
+        "end": 97.9800033569336
+      },
+      {
+        "word": "sabotage",
+        "start": 97.9800033569336,
+        "end": 97.9800033569336
+      },
+      {
+        "word": "the",
+        "start": 97.9800033569336,
+        "end": 98.16000366210938
+      },
+      {
+        "word": "plans",
+        "start": 98.16000366210938,
+        "end": 98.4800033569336
+      },
+      {
+        "word": "Just",
+        "start": 98.55999755859375,
+        "end": 99.08000183105469
+      },
+      {
+        "word": "chaotic",
+        "start": 99.08000183105469,
+        "end": 99.5199966430664
+      },
+      {
+        "word": "evil",
+        "start": 99.5199966430664,
+        "end": 99.86000061035156
+      },
+      {
+        "word": "group",
+        "start": 99.86000061035156,
+        "end": 100.12000274658203
+      },
+      {
+        "word": "chat",
+        "start": 100.12000274658203,
+        "end": 100.27999877929688
+      },
+      {
+        "word": "members",
+        "start": 100.27999877929688,
+        "end": 100.55999755859375
+      },
+      {
+        "word": "Exactly",
+        "start": 100.95999908447266,
+        "end": 101.33999633789062
+      },
+      {
+        "word": "Some",
+        "start": 101.80000305175781,
+        "end": 101.91999816894531
+      },
+      {
+        "word": "are",
+        "start": 101.91999816894531,
+        "end": 102.30000305175781
+      },
+      {
+        "word": "sending",
+        "start": 102.30000305175781,
+        "end": 102.31999969482422
+      },
+      {
+        "word": "delayed",
+        "start": 102.31999969482422,
+        "end": 102.66000366210938
+      },
+      {
+        "word": "messages",
+        "start": 102.66000366210938,
+        "end": 103
+      },
+      {
+        "word": "Some",
+        "start": 103.63999938964844,
+        "end": 103.63999938964844
+      },
+      {
+        "word": "are",
+        "start": 103.63999938964844,
+        "end": 104.18000030517578
+      },
+      {
+        "word": "sending",
+        "start": 104.18000030517578,
+        "end": 104.18000030517578
+      },
+      {
+        "word": "contradictory",
+        "start": 104.18000030517578,
+        "end": 104.95999908447266
+      },
+      {
+        "word": "locations",
+        "start": 104.95999908447266,
+        "end": 105.4800033569336
+      },
+      {
+        "word": "just",
+        "start": 105.4800033569336,
+        "end": 105.83999633789062
+      },
+      {
+        "word": "to",
+        "start": 105.83999633789062,
+        "end": 106.12000274658203
+      },
+      {
+        "word": "mess",
+        "start": 106.12000274658203,
+        "end": 106.12000274658203
+      },
+      {
+        "word": "with",
+        "start": 106.12000274658203,
+        "end": 106.27999877929688
+      },
+      {
+        "word": "you",
+        "start": 106.27999877929688,
+        "end": 106.4000015258789
+      },
+      {
+        "word": "How",
+        "start": 106.94000244140625,
+        "end": 107.0999984741211
+      },
+      {
+        "word": "on",
+        "start": 107.0999984741211,
+        "end": 107.62000274658203
+      },
+      {
+        "word": "earth",
+        "start": 107.62000274658203,
+        "end": 107.62000274658203
+      },
+      {
+        "word": "do",
+        "start": 107.62000274658203,
+        "end": 107.80000305175781
+      },
+      {
+        "word": "you",
+        "start": 107.80000305175781,
+        "end": 107.94000244140625
+      },
+      {
+        "word": "still",
+        "start": 107.94000244140625,
+        "end": 108.30000305175781
+      },
+      {
+        "word": "manage",
+        "start": 108.30000305175781,
+        "end": 108.54000091552734
+      },
+      {
+        "word": "to",
+        "start": 108.54000091552734,
+        "end": 108.80000305175781
+      },
+      {
+        "word": "reach",
+        "start": 108.80000305175781,
+        "end": 108.91999816894531
+      },
+      {
+        "word": "a",
+        "start": 108.91999816894531,
+        "end": 109.22000122070312
+      },
+      {
+        "word": "consensus",
+        "start": 109.22000122070312,
+        "end": 109.44000244140625
+      },
+      {
+        "word": "and",
+        "start": 109.44000244140625,
+        "end": 110.04000091552734
+      },
+      {
+        "word": "all",
+        "start": 110.04000091552734,
+        "end": 110.37999725341797
+      },
+      {
+        "word": "show",
+        "start": 110.37999725341797,
+        "end": 110.5
+      },
+      {
+        "word": "up",
+        "start": 110.5,
+        "end": 110.66000366210938
+      },
+      {
+        "word": "at",
+        "start": 110.66000366210938,
+        "end": 110.77999877929688
+      },
+      {
+        "word": "the",
+        "start": 110.77999877929688,
+        "end": 110.9800033569336
+      },
+      {
+        "word": "exact",
+        "start": 110.9800033569336,
+        "end": 111.26000213623047
+      },
+      {
+        "word": "same",
+        "start": 111.26000213623047,
+        "end": 111.63999938964844
+      },
+      {
+        "word": "pizzeria",
+        "start": 111.63999938964844,
+        "end": 111.95999908447266
+      },
+      {
+        "word": "at",
+        "start": 111.95999908447266,
+        "end": 112.26000213623047
+      },
+      {
+        "word": "7pm",
+        "start": 112.26000213623047,
+        "end": 112.68000030517578
+      },
+      {
+        "word": "That",
+        "start": 112.94000244140625,
+        "end": 113.18000030517578
+      },
+      {
+        "word": "is",
+        "start": 113.18000030517578,
+        "end": 113.36000061035156
+      },
+      {
+        "word": "a",
+        "start": 113.36000061035156,
+        "end": 113.66000366210938
+      },
+      {
+        "word": "perfect",
+        "start": 113.66000366210938,
+        "end": 114.04000091552734
+      },
+      {
+        "word": "modern",
+        "start": 114.04000091552734,
+        "end": 114.4000015258789
+      },
+      {
+        "word": "equivalent",
+        "start": 114.4000015258789,
+        "end": 114.72000122070312
+      },
+      {
+        "word": "It's",
+        "start": 115.05999755859375,
+        "end": 115.22000122070312
+      },
+      {
+        "word": "a",
+        "start": 115.22000122070312,
+        "end": 115.36000061035156
+      },
+      {
+        "word": "real",
+        "start": 115.36000061035156,
+        "end": 115.5199966430664
+      },
+      {
+        "word": "problem",
+        "start": 115.5199966430664,
+        "end": 115.80000305175781
+      },
+      {
+        "word": "It",
+        "start": 115.80000305175781,
+        "end": 116.33999633789062
+      },
+      {
+        "word": "is",
+        "start": 116.33999633789062,
+        "end": 116.68000030517578
+      },
+      {
+        "word": "And",
+        "start": 117.19999694824219,
+        "end": 117.80000305175781
+      },
+      {
+        "word": "what's",
+        "start": 117.80000305175781,
+        "end": 117.9800033569336
+      },
+      {
+        "word": "fascinating",
+        "start": 117.9800033569336,
+        "end": 118.27999877929688
+      },
+      {
+        "word": "here",
+        "start": 118.27999877929688,
+        "end": 118.76000213623047
+      },
+      {
+        "word": "is",
+        "start": 118.76000213623047,
+        "end": 118.87999725341797
+      },
+      {
+        "word": "that",
+        "start": 118.87999725341797,
+        "end": 119.18000030517578
+      },
+      {
+        "word": "Satoshi",
+        "start": 119.18000030517578,
+        "end": 119.45999908447266
+      },
+      {
+        "word": "didn't",
+        "start": 119.45999908447266,
+        "end": 119.80000305175781
+      },
+      {
+        "word": "just",
+        "start": 119.80000305175781,
+        "end": 119.9800033569336
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "gen-1790869949-K5Pp0muGYpXxDFKbPeck",
+  "object": "chat.completion",
+  "created": 1790869949,
+  "model": "google/gemini-3.1-flash-lite",
+  "provider": "Google AI Studio",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"segments\": [\n    {\n      \"id\": 180,\n      \"text\": \"pool. Right. Miners want to make money, so they prioritize bundling transactions that offer the highest fees. That makes\"\n    },\n    {\n      \"id\": 181,\n      \"text\": \"sense. If Joe is in a rush, he sets a high fee to jump to the front of the line. If he doesn't care if it takes a few hours, he sets a low fee.\"\n    },\n    {\n      \"id\": 182,\n      \"text\": \"He double-checks the amount, he checks the fee, and he hits send. And this is the critical moment, right? The transaction\"\n    },\n    {\n      \"id\": 183,\n      \"text\": \"broadcasts out across the peer-to-peer network. Yes. And once Joe's wallet broadcasts that mathematical proof, it is\"\n    },\n    {\n      \"id\": 184,\n      \"text\": \"gone. Completely irreversible. There is no customer service hotline to dispute the charge. Within seconds,\"\n    },\n    {\n      \"id\": 185,\n      \"text\": \"Alice's wallet, which is constantly listening to the chatter on the network, sees the transaction floating in the mempool. So her screen\"\n    },\n    {\n      \"id\": 186,\n      \"text\": \"lights up showing she received the funds. But the wallet displays the status as unconfirmed. Oh, because she has\"\n    },\n    {\n      \"id\": 187,\n      \"text\": \"the cryptographic proof that Joe sent it, but it isn't officially in the ledger yet. Exactly. And if we connect this to the bigger\"\n    },\n    {\n      \"id\": 188,\n      \"text\": \"picture. Back to the miners. Right. It brings us right back to the proof-of-work lotteries we were discussing earlier. The transaction is valid\"\n    },\n    {\n      \"id\": 189,\n      \"text\": \"but it hasn't been locked into the historical record. So Alice has to wait. Yep, Alice has to wait for a miner somewhere\"\n    },\n    {\n      \"id\": 190,\n      \"text\": \"in the world to win that 10-minute lottery, bundle Joe's transaction into a new block, and cement it onto the blockchain. And once\"\n    },\n    {\n      \"id\": 191,\n      \"text\": \"that winning miner solves the puzzle and broadcasts the new block, Alice's wallet updates the status to Confirmed. The money is officially cleared.\"\n    },\n    {\n      \"id\": 192,\n      \"text\": \"No central bank required. No clearinghouse skimming a massive percentage. Just pure cryptography and decentralized\"\n    },\n    {\n      \"id\": 193,\n      \"text\": \"consensus. It's a remarkable journey of engineering, honestly. An entire global financial ecosystem operating strictly\"\n    },\n    {\n      \"id\": 194,\n      \"text\": \"on mathematics. It really is. We've covered incredible ground today. We really have. We started with the failures\"\n    },\n    {\n      \"id\": 195,\n      \"text\": \"of centralized digital cash in the 80s, which led to Satoshi Nakamoto solving the seemingly impossible Byzantine\"\n    },\n    {\n      \"id\": 196,\n      \"text\": \"Generals Problem. We looked at how miners secure the network through proof-of-work lotteries, adjusting difficulty on the fly. The\"\n    },\n    {\n      \"id\": 197,\n      \"text\": \"dynamic difficulty, yeah. We explored the immense responsibility\"\n    },\n    {\n      \"id\": 198,\n      \"text\": \"of being your own bank, guarding those 12 mathematically generated seed words and managing hardware wallets.\"\n    },\n    {\n      \"id\": 199,\n      \"text\": \"And we mapped out exactly how Joe sends Alice 100,000 Satoshis without a middleman. It empowers you as a user.\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "signature": "EnMKcQFpFH0TFmJsTfTaeCrfWyk3DEf0BykN4wEIP+YyIdkjF5IKTEIdz/0Hkn3OkXIKXCOHrrvlc0ZPkhbsdCKK1VkzO8S6PcUxYrEkDDRk7MkA2MU1bXnn8Lh6gFR9TWp2xErTHTy6mlcVbWe/ShIHg/Ox",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 823,
+    "completion_tokens": 957,
+    "total_tokens": 1780,
+    "cost": 0.00164125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00164125,
+      "upstream_inference_prompt_cost": 0.00020575,
+      "upstream_inference_completions_cost": 0.0014355
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}
