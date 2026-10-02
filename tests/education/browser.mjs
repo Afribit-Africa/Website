@@ -115,7 +115,9 @@ try {
   record('seeking follows phrases without scrolling the document, browse pause and recenter')
 
   await page.getByRole('button', { name: 'Hide read-along' }).click()
+  await page.bringToFront()
   await page.locator('.studio-world-stage').scrollIntoViewIfNeeded()
+  await page.waitForFunction(() => document.querySelector('.studio-animated-backdrop').dataset.running === 'true', { timeout: 5000 })
   const desktopPixels = await backgroundPixels(page)
   await page.getByRole('button', { name: 'Play audio', exact: true }).click()
   await page.waitForFunction(() => !document.querySelector('audio').paused)
