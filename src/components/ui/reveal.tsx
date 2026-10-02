@@ -1,6 +1,7 @@
 'use client'
 
-import { motion, useReducedMotion, type Variants } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
+import { useReducedMotionPreference } from '@/lib/use-reduced-motion'
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion'
 
 interface RevealProps {
@@ -19,7 +20,7 @@ interface RevealProps {
  * `prefers-reduced-motion` (renders children statically, already visible).
  */
 export function Reveal({ children, variants = fadeInUp, className, amount = 0.3, delay = 0 }: RevealProps) {
-  const shouldReduceMotion = useReducedMotion()
+  const shouldReduceMotion = useReducedMotionPreference()
 
   if (shouldReduceMotion) {
     return <div className={className}>{children}</div>
@@ -59,7 +60,7 @@ export function StaggerGroup({
   delayChildren = 0,
   amount = 0.2,
 }: StaggerGroupProps) {
-  const shouldReduceMotion = useReducedMotion()
+  const shouldReduceMotion = useReducedMotionPreference()
 
   if (shouldReduceMotion) {
     return <div className={className}>{children}</div>

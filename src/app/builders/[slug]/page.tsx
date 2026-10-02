@@ -60,7 +60,9 @@ export default async function BuilderProjectPage({ params }: Props) {
             '@type': 'Project',
             name: project.name,
             description: project.heroDescription,
-            parentOrganization: { '@type': 'Organization', name: 'Afribit Africa', url: SITE_URL },
+            ...(project.slug === 'afribit-wifi'
+              ? {}
+              : { parentOrganization: { '@type': 'Organization', name: 'Afribit Africa', url: SITE_URL } }),
           },
           ...(project.slug === 'insats' ? { citation: 'https://insats.org' } : {}),
         }}

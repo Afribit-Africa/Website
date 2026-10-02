@@ -10,35 +10,35 @@ import {
 const FAQ_ITEMS = [
   {
     q: 'What is Afribit and what do you do?',
-    a: 'Afribit is a grassroots organisation building a Bitcoin circular economy in Kibera, one of Africa\'s largest informal settlements. We leverage Bitcoin to create financial inclusion, environmental stewardship, and community resilience through education, waste management, rider compliance support, and merchant onboarding.',
+    a: "Afribit is a grassroots organisation supporting a Bitcoin circular economy in Kibera, Nairobi. Our work connects Bitcoin education, merchant onboarding, waste incentives, women's upcycling, and rider compliance support.",
   },
   {
     q: 'Why Bitcoin? Why not use mobile money or cash?',
-    a: 'Bitcoin offers true financial sovereignty without the need for bank accounts or documentation — critical in a community where 80% are unbanked. It\'s borderless, transparent, and can\'t be censored. Unlike mobile money, Bitcoin allows locals to save, earn, and transact without intermediaries taking fees or controlling their funds.',
+    a: 'Bitcoin gives residents and businesses another way to earn, save, and pay. Afribit helps people understand wallets, Lightning payments, security, and the fees and custody arrangements of the tools they choose.',
   },
   {
     q: 'How do residents earn Bitcoin?',
-    a: 'Residents earn Bitcoin through multiple programmes: collecting waste and receiving satoshi rewards, running Bitcoin-accepting businesses, participating in upcycling workshops with weekly stipends, completing driving classes as boda-boda riders, and attending Bitcoin education meetups.',
+    a: 'Residents can receive Bitcoin through local trade and waste collection incentives. Afribit supports wallet education and onboarding so participants can use Bitcoin in community commerce.',
   },
   {
     q: 'How does the Bitcoin circular economy actually work?',
-    a: "It's a self-sustaining loop: residents earn sats through work (waste collection, upcycling, merchant sales), then spend those sats at local merchants who also accept Bitcoin. This keeps value circulating within the community, building local wealth instead of extracting it.",
+    a: 'Residents and local businesses can earn sats and spend them with merchants who accept Bitcoin. Afribit supports the education and onboarding that help those payments become part of everyday trade.',
   },
   {
     q: 'What programmes can I support with my donation?',
-    a: 'Five key initiatives: Bitcoin Education (training 500 community ambassadors), Boda-Boda Compliance (licensing and training riders), Waste Management Expansion (Bitcoin-incentivised recycling), Upcycling & Women\'s Empowerment (sponsoring micro-entrepreneurs), and Business Accelerator (multisig savings and enterprise support).',
+    a: "Your donation supports Afribit's work in Bitcoin education, merchant onboarding, waste incentives, women's upcycling, and rider compliance in Kibera.",
   },
   {
     q: 'Can I donate in Bitcoin?',
-    a: 'Yes! All donations through our BTCPay Server crowdfund can be paid with Bitcoin (on-chain or Lightning Network), ensuring your contribution goes directly to programmes without intermediaries.',
+    a: 'Yes. Donate through the Lightning address or QR code on our donation page.',
   },
   {
-    q: 'How transparent is Afribit with donations?',
-    a: 'We publish regular impact reports showing exactly how funds are used. Bitcoin\'s transparent blockchain means every transaction is verifiable. We are listed on BTC Map, Geyser Fund, and partnered with Bitcoin Confederation for accountability.',
+    q: 'How can I learn more about donation use?',
+    a: "Contact connect@afribit.africa for information about how donations support Afribit's community work in Kibera.",
   },
   {
     q: 'How can I get involved beyond donating?',
-    a: 'Volunteer remotely, share our story on social media, connect us with Bitcoin companies for partnerships, sponsor specific equipment or training cohorts, or visit Kibera to see the impact firsthand. Reach out at connect@afribit.africa.',
+    a: 'Share our story, connect us with potential partners, or contact connect@afribit.africa about volunteering and supporting community activities.',
   },
 ]
 

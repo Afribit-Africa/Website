@@ -11,7 +11,7 @@ export const metadata: Metadata = generateMetadata({
 
 export default function TermsOfUsePage() {
   return (
-    <LegalLayout title="Terms of Use" lastUpdated="May 2026">
+    <LegalLayout title="Terms of Use" lastUpdated="October 2026">
       <LegalSection title="Agreement">
         <LegalP>
           By accessing this website, you agree to these terms. If you do not agree, please do not
@@ -66,7 +66,7 @@ export default function TermsOfUsePage() {
 
       <LegalSection title="External Links">
         <LegalP>
-          We link to third-party platforms (Fedi, Geyser Fund, BTC Map, social media, etc.). These
+          We link to third-party platforms (Fedi, Blink, BTC Map, social media, etc.). These
           are independent services with their own terms and policies. We are not responsible for
           their content or actions.
         </LegalP>
@@ -74,9 +74,9 @@ export default function TermsOfUsePage() {
 
       <LegalSection title="Donations">
         <LegalP>
-          Donations made through our BTCPay Server or Geyser Fund go directly to funding Afribit
-          Africa programs in Kibera. Donations are voluntary and non-refundable. We publish
-          regular impact reports to demonstrate how funds are used.
+          Donations sent using the payment details on our donation page support Afribit&apos;s
+          community programs in Kibera. Donations are voluntary and non-refundable.
+          Contact connect@afribit.africa for information about donation use.
         </LegalP>
       </LegalSection>
 

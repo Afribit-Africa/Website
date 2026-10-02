@@ -45,8 +45,8 @@ export function WhyKibera() {
                 Why Start in Kibera?
               </h2>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                Kibera is home to over 250,000 people, many unbanked and many running informal
-                businesses without access to reliable digital finance. Bitcoin changes that.
+                Afribit supports Bitcoin education and merchant onboarding in Kibera, Nairobi,
+                working with local businesses and community-led initiatives.
               </p>
             </div>
 

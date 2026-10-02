@@ -23,8 +23,8 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async signIn({ user, account }) {
-      if (account?.provider !== 'google' || !user.email) {
+    async signIn({ user, account, profile }) {
+      if (account?.provider !== 'google' || !user.email || !profile || !('email_verified' in profile) || profile.email_verified !== true) {
         return false
       }
 
@@ -59,8 +59,14 @@ export const authOptions: NextAuthOptions = {
         token.sub = user.id
       }
 
-      if (user?.role) {
-        token.role = user.role
+      // Re-check permissions for every session, including admin API requests.
+      // Never accept roles from a client-triggered session update.
+      token.role = 'VIEWER'
+      if (token.sub) {
+        try {
+          const current = await prisma.user.findUnique({ where: { id: token.sub }, select: { role: true } })
+          if (current && isAdminRole(current.role)) token.role = current.role
+        } catch { console.error('[auth] authorization lookup failed') }
       }
 
       return token

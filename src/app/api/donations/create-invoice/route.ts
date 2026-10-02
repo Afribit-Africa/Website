@@ -7,21 +7,13 @@ import {
   getDonationMinimumLabel,
   getDonationMinimumMessage,
   isBelowDonationMinimum,
-  normalizeDonationAmount,
   type DonationCurrency,
 } from '@/lib/donation-policy';
 import { prisma } from '@/lib/prisma';
+import { donationInvoiceSchema, normalizeInvoiceAmount } from '@/lib/donation-validation';
 
 // Validation schema for donation request
-const donationSchema = z.object({
-  amount: z.number().positive(),
-  currency: z.enum(DONATION_CURRENCIES).default('USD'),
-  donorName: z.string().min(2, 'Name must be at least 2 characters').optional(),
-  donorEmail: z.string().email('Invalid email address').optional(),
-  program: z.string().optional(), // Program slug or identifier
-  message: z.string().max(500, 'Message too long').optional(),
-  isAnonymous: z.boolean().default(false),
-});
+const donationSchema = donationInvoiceSchema;
 
 function extractDonationErrorMessage(error: unknown) {
   if (error && typeof error === 'object') {
@@ -53,7 +45,10 @@ export async function POST(request: NextRequest) {
   let requestBody: unknown = null
 
   try {
-    if (!process.env.BTCPAY_API_KEY || !process.env.BTCPAY_STORE_ID || !process.env.BTCPAY_HOST) {
+    if (
+      process.env.BTCPAY_CHECKOUT_ENABLED !== 'true' ||
+      !process.env.BTCPAY_API_KEY || !process.env.BTCPAY_STORE_ID || !process.env.BTCPAY_HOST
+    ) {
       return NextResponse.json(
         {
           success: false,
@@ -78,9 +73,9 @@ export async function POST(request: NextRequest) {
       isAnonymous,
     } = validatedData;
 
-    const normalizedAmount = normalizeDonationAmount(amount, currency)
+    const normalizedAmount = normalizeInvoiceAmount(amount, currency)
 
-    if (isBelowDonationMinimum(normalizedAmount, currency)) {
+    if (isBelowDonationMinimum(normalizedAmount.toNumber(), currency)) {
       return NextResponse.json(buildMinimumAmountResponse(currency), { status: 422 })
     }
 
@@ -104,12 +99,12 @@ export async function POST(request: NextRequest) {
 
     // Create BTCPay invoice
     const invoiceData = await createInvoice({
-      amount: normalizedAmount,
+      amount: normalizedAmount.toString(),
       currency,
       redirectUrl: `${siteUrl}/donate/success`,
       metadata: {
         donorName: isAnonymous ? 'Anonymous' : donorName || 'Anonymous',
-        donorEmail: donorEmail || '',
+        donorEmail: isAnonymous ? undefined : donorEmail,
         program: program || '',
         message: message || '',
         isAnonymous: isAnonymous,
@@ -132,6 +127,7 @@ export async function POST(request: NextRequest) {
         btcAmount: currency === 'BTC' ? normalizedAmount.toString() : null,
         donorName: isAnonymous ? 'Anonymous' : donorName || 'Anonymous',
         donorEmail: isAnonymous ? null : donorEmail || null,
+        isAnonymous,
         program: program || null,
         programId: programRecord?.id || null,
         message: message || null,
@@ -147,12 +143,14 @@ export async function POST(request: NextRequest) {
         donationId: donation.id,
         invoiceId: invoiceData.id,
         checkoutLink: invoiceData.checkoutLink,
-        amount,
+        amount: normalizedAmount.toNumber(),
         currency,
       },
     });
   } catch (error) {
-    console.error('Error creating donation invoice:', error);
+    if (error instanceof SyntaxError) {
+      return NextResponse.json({ success: false, error: 'Invalid JSON body' }, { status: 400 });
+    }
 
     // Handle Zod validation errors
     if (error instanceof z.ZodError) {
@@ -167,6 +165,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Handle other errors
+    console.error('[donation-invoice] Creation failed');
     const errorMessage = extractDonationErrorMessage(error)
     const normalizedErrorMessage = errorMessage.toLowerCase()
     const requestedCurrency = typeof (requestBody as { currency?: unknown } | null)?.currency === 'string' && DONATION_CURRENCIES.includes((requestBody as { currency: DonationCurrency }).currency)
@@ -204,7 +203,6 @@ export async function POST(request: NextRequest) {
         success: false,
         error: 'Failed to create donation invoice',
         message: 'Unable to start the Afribit donation checkout right now. Please try again or use the crowdfund link.',
-        details: errorMessage,
         crowdfundUrl: CROWDFUND_URL,
       },
       { status: 500 }

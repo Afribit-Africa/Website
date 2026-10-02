@@ -29,7 +29,8 @@ export default function DonateSuccessPage() {
             If your Lightning payment completed successfully, your contribution is now part of the work powering merchants, training, cleanup crews, and community resilience in Kibera.
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-            Afribit is moving direct BTCPay checkout onto its own infrastructure. You can return to the donate page to scan the current QR code again or support another tier.
+            Return to the donation page for the Lightning address and QR code, or explore
+            the community programs your support helps sustain.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

@@ -257,8 +257,16 @@ export async function listRelatedMerchants(slug: string, limit = 3): Promise<Mer
 }
 
 export async function listMerchantSlugs(): Promise<string[]> {
-  const merchants = await listMerchants()
+  const merchants = await listMerchantSitemapEntries()
   return merchants.map((merchant) => merchant.slug)
+}
+
+export async function listMerchantSitemapEntries() {
+  return prisma.merchant.findMany({
+    where: { status: MerchantStatus.ACTIVE },
+    select: { slug: true, updatedAt: true },
+    orderBy: { slug: 'asc' },
+  })
 }
 
 export async function getMerchantDirectoryStats() {

@@ -18,7 +18,7 @@ export function OurStory() {
             <div className="absolute inset-0 bg-gradient-to-tr from-bg-base/60 to-transparent" />
             <div className="absolute bottom-4 left-4 right-4">
               <span className="inline-block px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-sm text-xs text-muted-foreground">
-                Kibera, Nairobi. Home to over 250,000 people.
+                Kibera, Nairobi, Kenya.
               </span>
             </div>
           </div>
@@ -37,15 +37,12 @@ export function OurStory() {
                 movement to end financial exclusion in Kibera using Bitcoin as the tool.
               </p>
               <p>
-                Close to 80% of Kibera&apos;s residents are unbanked. No documents, no credit
-                history, no way into formal finance. Bitcoin changed that. With a phone and
-                a Lightning wallet, anyone earns, saves, and spends. Instantly. Without
-                asking permission from anyone.
+                Afribit works with Kibera residents and local businesses to make Bitcoin
+                practical through education, wallet setup, and everyday payments.
               </p>
               <p>
-                Today Afribit connects 40+ merchants, runs Taka Sats (waste-to-Bitcoin),
-                trains youth and women in financial literacy, and is proving what a circular
-                Bitcoin economy looks like at street level.
+                Today Afribit supports merchant onboarding, waste-to-Bitcoin incentives,
+                and Bitcoin education for youth and women in Kibera.
               </p>
             </div>
           </div>

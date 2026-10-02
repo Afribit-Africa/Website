@@ -68,16 +68,16 @@ export const programs: ProgramContent[] = [
     iconBackgroundClassName: 'bg-bitcoin/10',
     imageSrc: '/Images/Mama mboga groceries accepting bitcoin.jpg',
     imageAlt: 'A Kibera merchant accepting a Bitcoin payment at a grocery stand.',
-    impactValue: '40+',
-    impactLabel: 'Merchants actively onboarded into the circular economy.',
+    impactValue: 'Onboarding',
+    impactLabel: 'Wallet setup, payment education, and merchant support.',
     supportLabel: 'Wallet setup, merchant training, and first-payment support.',
     heroTitle: 'Micro-Merchants & Traders',
     heroDescription:
       'Afribit works with mama mbogas, barbers, food vendors, restaurants, and small retailers to make Bitcoin usable in daily trade. The goal is not symbolic adoption. It is a durable network of merchants who can earn, keep, and recirculate value inside Kibera.',
     heroMetrics: [
-      { value: '40+', label: 'Active merchants' },
-      { value: '2,000+', label: 'Bitcoin transactions' },
-      { value: '100%', label: 'Lightning-enabled payments' },
+      { value: 'Training', label: 'Bitcoin education' },
+      { value: 'Wallets', label: 'Setup and security' },
+      { value: 'Payments', label: 'Lightning onboarding' },
     ],
     sections: [
       {
@@ -145,7 +145,7 @@ export const programs: ProgramContent[] = [
         variant: 'metrics',
         items: [
           {
-            value: '100 Merchants by 2026',
+            value: 'Merchant Onboarding',
             title: 'Scale merchant onboarding',
             description: 'Expand the current network across Kibera with stronger category coverage and repeat usage.',
           },
@@ -170,10 +170,10 @@ export const programs: ProgramContent[] = [
     supportTitle: 'Support Micro-Merchants',
     supportDescription:
       'Your donation helps Afribit onboard more local businesses, provide merchant training, and maintain the payment infrastructure that keeps a circular Bitcoin economy alive in Kibera.',
-    donationLabel: 'Donate to This Program',
-    donationHref: '/donate?program=merchants',
-    secondaryCtaLabel: 'View Merchant Directory',
-    secondaryCtaHref: 'https://www.afribit.africa/maps',
+    donationLabel: 'Support Afribit',
+    donationHref: '/donate',
+    secondaryCtaLabel: 'Browse Merchants',
+    secondaryCtaHref: '/merchants',
     quote: {
       text: 'I was the first merchant selling fries, juice, and porridge. Thanks to my Bitcoin earnings, I bought a motorbike and expanded my business. Bitcoin has not just helped me grow; it has given me the confidence to dream even bigger.',
       name: 'Steph',
@@ -193,16 +193,16 @@ export const programs: ProgramContent[] = [
     iconBackgroundClassName: 'bg-panafrican-green/10',
     imageSrc: '/Images/Trezor Academy session pics/IMG-20250914-WA0155.jpg',
     imageAlt: 'Women participating in Afribit upcycling and Bitcoin training.',
-    impactValue: '7 Women',
-    impactLabel: 'Currently training and producing inside the collective.',
+    impactValue: 'Upcycling',
+    impactLabel: 'Craft training, reusable materials, and Bitcoin commerce.',
     supportLabel: 'Training, equipment, material sourcing, and sales support.',
     heroTitle: "Women's Upcycling Collective",
     heroDescription:
       'This program equips women in Kibera with the skills, equipment, and sales pathways needed to turn waste into marketable products. By combining creative production with Bitcoin payments, Afribit helps participants build income and agency while reducing environmental waste.',
     heroMetrics: [
-      { value: '7', label: 'Women currently training' },
-      { value: '150+', label: 'Products created' },
-      { value: '500kg', label: 'Waste diverted' },
+      { value: 'Skills', label: 'Craft and design' },
+      { value: 'Materials', label: 'Reuse and upcycling' },
+      { value: 'Sales', label: 'Bitcoin commerce' },
     ],
     sections: [
       {
@@ -258,7 +258,7 @@ export const programs: ProgramContent[] = [
             description: 'Women apply, join orientation sessions, and learn how the collective works in practice.',
           },
           {
-            title: '8-Week Skills Training',
+            title: 'Skills Training',
             description: 'Hands-on craft and design sessions build the technical foundation for production.',
           },
           {
@@ -278,7 +278,7 @@ export const programs: ProgramContent[] = [
         variant: 'metrics',
         items: [
           {
-            value: '20 Women by 2026',
+            value: 'Participation',
             title: 'Scale participation',
             description: 'Grow the collective from the current cohort to a wider network of women-led producers.',
           },
@@ -293,7 +293,7 @@ export const programs: ProgramContent[] = [
             description: 'Connect the collective to ethical buyers and export opportunities beyond the neighborhood.',
           },
           {
-            value: '5 Tons Diverted Annually',
+            value: 'Material Recovery',
             title: 'Deepen environmental impact',
             description: 'Increase the volume of waste reclaimed through creative upcycling.',
           },
@@ -303,8 +303,8 @@ export const programs: ProgramContent[] = [
     supportTitle: "Support Women's Empowerment",
     supportDescription:
       'Your donation funds training, equipment, materials, and market support so women in Kibera can build sustainable businesses while reducing waste.',
-    donationLabel: 'Donate to This Program',
-    donationHref: '/donate?program=upcycling',
+    donationLabel: 'Support Afribit',
+    donationHref: '/donate',
     secondaryCtaLabel: 'Partner With Afribit',
     secondaryCtaHref: '/contact',
     quote: {
@@ -326,16 +326,16 @@ export const programs: ProgramContent[] = [
     iconBackgroundClassName: 'bg-sky-400/10',
     imageSrc: '/Images/Waste Collection.jpg',
     imageAlt: 'Afribit waste collection activity in Kibera.',
-    impactValue: '2.5 Tons',
-    impactLabel: 'Waste collected monthly through active neighborhood groups.',
+    impactValue: 'Collection',
+    impactLabel: 'Neighborhood cleanup supported by Bitcoin incentives.',
     supportLabel: 'Collector rewards, equipment, verification, and expansion to new zones.',
     heroTitle: 'Waste Incentives Program',
     heroDescription:
       'Afribit tackles Kibera\'s waste crisis by attaching clear Bitcoin incentives to collection and recycling. Participants earn sats based on the quantity and quality of the waste they collect, while the neighborhood benefits from cleaner streets, drainage, and public spaces.',
     heroMetrics: [
-      { value: '4', label: 'Active collection groups' },
-      { value: '2.5 Tons', label: 'Collected monthly' },
-      { value: '30+', label: 'Active participants' },
+      { value: 'Collection', label: 'Neighborhood cleanup' },
+      { value: 'Sorting', label: 'Material recovery' },
+      { value: 'Rewards', label: 'Bitcoin incentives' },
     ],
     sections: [
       {
@@ -368,27 +368,23 @@ export const programs: ProgramContent[] = [
       },
       {
         id: 'payments',
-        eyebrow: 'Payment structure',
-        title: 'Reward rates give collectors a clear reason to participate consistently.',
-        variant: 'metrics',
+        eyebrow: 'Collected materials',
+        title: 'Sorting materials supports recycling and reuse.',
+        variant: 'cards',
         items: [
           {
-            value: '~500 sats/kg',
             title: 'Plastics',
             description: 'Clean, sorted bottles and plastic containers.',
           },
           {
-            value: '~800 sats/kg',
             title: 'Metals',
             description: 'Aluminum, copper, and other recyclable metals.',
           },
           {
-            value: '~300 sats/kg',
             title: 'Paper & cardboard',
             description: 'Clean paper products and boxes ready for recovery.',
           },
           {
-            value: '~400 sats/kg',
             title: 'Glass',
             description: 'Bottles and containers, ideally sorted and unbroken.',
           },
@@ -425,17 +421,17 @@ export const programs: ProgramContent[] = [
         variant: 'metrics',
         items: [
           {
-            value: '10 Collection Groups',
+            value: 'Community Coverage',
             title: 'Expand community coverage',
-            description: 'Grow from four active groups to a network serving all major parts of Kibera.',
+            description: 'Support collection groups in reaching more neighborhoods across Kibera.',
           },
           {
-            value: '3 Permanent Centers',
+            value: 'Collection Facilities',
             title: 'Build durable infrastructure',
             description: 'Create permanent weighing, storage, and processing points for consistent operations.',
           },
           {
-            value: '10 Tons Monthly',
+            value: 'Collection Capacity',
             title: 'Scale collection capacity',
             description: 'Increase the amount of waste removed from streets and waterways every month.',
           },
@@ -450,8 +446,8 @@ export const programs: ProgramContent[] = [
     supportTitle: 'Support Clean Kibera',
     supportDescription:
       'Your donation funds Bitcoin rewards for waste collectors, equipment for collection centers, and expansion into new areas so the program can scale with the community.',
-    donationLabel: 'Donate to This Program',
-    donationHref: '/donate?program=waste-management',
+    donationLabel: 'Support Afribit',
+    donationHref: '/donate',
     secondaryCtaLabel: 'Partner With Us',
     secondaryCtaHref: '/contact',
     quote: {
@@ -473,41 +469,37 @@ export const programs: ProgramContent[] = [
     iconBackgroundClassName: 'bg-amber-400/10',
     imageSrc: '/Images/Motorbike bitcoin onboarding.jpg',
     imageAlt: 'A boda-boda rider participating in Bitcoin onboarding.',
-    impactValue: '100%',
-    impactLabel: 'of program riders now licensed and fully insured.',
+    impactValue: 'Guidance',
+    impactLabel: 'Bitcoin education, savings support, and compliance planning.',
     supportLabel: 'Licensing guidance, insurance support, safety training, and Bitcoin education.',
     heroTitle: 'Boda-Boda "Ride to Freedom"',
     heroDescription:
       'Boda-boda riders are central to Nairobi transport, but many operate without licensing, insurance, or proper equipment. Afribit provides Bitcoin education, savings guidance, and compliance support so riders can formalize their work and build long-term financial stability on their own terms.',
     heroMetrics: [
-      { value: '10', label: 'Riders in program' },
-      { value: '100%', label: 'Licensed and insured' },
-      { value: '100%', label: 'Bitcoin wallets active' },
+      { value: 'Education', label: 'Bitcoin and wallets' },
+      { value: 'Savings', label: 'Planning for compliance' },
+      { value: 'Guidance', label: 'Licensing and insurance' },
     ],
     sections: [
       {
         id: 'coverage',
-        eyebrow: 'Compliance costs',
-        title: 'Knowing the costs is the first step to planning your path to legal operation.',
-        variant: 'metrics',
+        eyebrow: 'Compliance planning',
+        title: 'Plan for licensing, insurance, equipment, and motorcycle upkeep.',
+        variant: 'cards',
         items: [
           {
-            value: 'KES 5,000 - 15,000',
             title: 'Licenses & permits',
             description: 'Operator licensing, PSV permits, and business registration fees riders need to save toward.',
           },
           {
-            value: 'KES 8,000 - 20,000',
             title: 'Insurance & inspection',
             description: 'Annual insurance, inspection fees, and compliance costs tied to legal operation.',
           },
           {
-            value: 'KES 3,000 - 10,000',
             title: 'Safety equipment',
             description: 'Helmets, reflective jackets, locks, and core protective gear.',
           },
           {
-            value: 'KES 10,000 - 50,000',
             title: 'Motorcycle improvements',
             description: 'Repairs, maintenance, and savings milestones toward eventual motorcycle ownership.',
           },
@@ -525,7 +517,7 @@ export const programs: ProgramContent[] = [
           },
           {
             title: 'Wallet Setup',
-            description: 'Set up a self-custody Lightning wallet. Receive your first sats. Own your money from day one.',
+            description: 'Set up a Bitcoin wallet and learn its security, backup, and custody options.',
           },
           {
             title: 'Compliance Planning',
@@ -548,7 +540,7 @@ export const programs: ProgramContent[] = [
         variant: 'cards',
         items: [
           {
-            title: '40 Riders by 2026',
+            title: 'Support More Riders',
             description: 'Scale the program to a much larger cohort of compliant, Bitcoin-literate riders across Kibera.',
           },
           {
@@ -569,8 +561,8 @@ export const programs: ProgramContent[] = [
     supportTitle: 'Empower Boda-Boda Riders',
     supportDescription:
       'Your donation funds Bitcoin education, rider training, and compliance guidance so Kibera\'s motorcycle operators can secure their own licensing, insurance, and future — on their own terms.',
-    donationLabel: 'Donate to This Program',
-    donationHref: '/donate?program=bodaboda',
+    donationLabel: 'Support Afribit',
+    donationHref: '/donate',
     secondaryCtaLabel: 'Talk to the Team',
     secondaryCtaHref: '/contact',
     quote: {

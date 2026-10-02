@@ -2,7 +2,9 @@
 
 import Link from 'next/link'
 import { ArrowRight, ChevronDown, Play } from 'lucide-react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import { useReducedMotionPreference } from '@/lib/use-reduced-motion'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Container } from '@/components/layout/container'
@@ -10,13 +12,22 @@ import { TextReveal } from '@/components/ui/text-reveal'
 import { fadeInUp, staggerContainer } from '@/lib/motion'
 
 export function HeroSection() {
-  const shouldReduceMotion = useReducedMotion()
+  const shouldReduceMotion = useReducedMotionPreference()
+  const videoRef = useRef<HTMLVideoElement>(null)
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    if (shouldReduceMotion) video.pause()
+    else void video.play().catch(() => {})
+  }, [shouldReduceMotion])
 
   return (
     <section className="relative min-h-[100svh] overflow-hidden bg-bg-base">
       {/* Background video */}
       <video
-        autoPlay
+        ref={videoRef}
+        autoPlay={!shouldReduceMotion}
+        poster="/Images/Hero section video background fallback.png"
         muted
         loop
         playsInline
@@ -32,7 +43,7 @@ export function HeroSection() {
       <Container className="relative z-10">
         <motion.div
           className="max-w-[42rem] py-28 md:py-32 lg:py-36"
-          initial="hidden"
+          initial={shouldReduceMotion ? false : 'hidden'}
           animate="visible"
           variants={staggerContainer(0.12, 0.1)}
         >
@@ -86,7 +97,7 @@ export function HeroSection() {
                 </Link>
               </Button>
               <Button asChild size="xl" variant="outline" className="w-full sm:w-auto">
-                <Link href="https://www.afribit.africa/about" target="_blank" rel="noreferrer">
+                <Link href="/about">
                   <Play className="size-4 transition-transform duration-300 group-hover:scale-125" />
                   <span>Learn Our Story</span>
                 </Link>

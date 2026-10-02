@@ -61,7 +61,7 @@ try {
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } })
   const page = await context.newPage(); captureErrors(page)
   await page.goto(`${base}/studio`)
-  assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://afribit.africa/studio')
+  assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://www.afribit.africa/studio')
   assert.equal(await page.locator('.studio-title-tile').count(), 1)
   for (const [width, height] of [[320, 760], [390, 844], [768, 1024], [1440, 1000], [1920, 1080]]) {
     await page.setViewportSize({ width, height }); await screenshot(page, `library-${width}`)
@@ -82,7 +82,7 @@ try {
   record('library formats, honest empty collections, search, external Read and unified listening entry')
 
   await page.setViewportSize({ width: 1440, height: 1000 }); await ready(page)
-  assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://afribit.africa/studio/bitcoin-podcast-101')
+  assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://www.afribit.africa/studio/bitcoin-podcast-101')
   assert.ok((await page.locator('script[type="application/ld+json"]').allTextContents()).some((value) => JSON.parse(value)['@type'] === 'LearningResource'))
   assert.equal(await page.locator('.studio-animated-backdrop canvas').count(), 1)
   assert.equal(await page.getByRole('tab', { name: 'Read', exact: true }).count(), 0)

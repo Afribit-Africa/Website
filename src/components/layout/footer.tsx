@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation'
 const QUICK_LINKS = [
   { href: '/about', label: 'About Afribit' },
   { href: '/programs/merchants', label: 'Merchant Program' },
-  { href: 'https://www.afribit.africa/maps', label: 'Merchant Map', external: true },
+  { href: '/merchants', label: 'Merchants', external: false },
   { href: '/builders', label: 'Afribit Builders' },
   { href: '/studio', label: 'Afribit Studio' },
   { href: '/donate', label: 'Donate' },
@@ -19,7 +19,6 @@ const QUICK_LINKS = [
 const COMMUNITY_LINKS = [
   { href: '/community', label: 'Join Community' },
   { href: 'https://btcmap.org/community/afribit-kibera', label: 'BTC Map', external: true },
-  { href: 'https://staging.geyser.fund/project/afribitkibera', label: 'Geyser Fund', external: true },
 ]
 
 const RESOURCE_LINKS = [

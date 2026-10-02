@@ -11,6 +11,8 @@ import { listMerchants, getMerchantDirectoryStats } from '@/lib/content/merchant
 import { generateMetadata } from '@/lib/metadata'
 import { Reveal, StaggerGroup, StaggerItem } from '@/components/ui/reveal'
 
+export const revalidate = 300
+
 export const metadata: Metadata = generateMetadata({
   title: 'Merchants',
   description:
@@ -49,7 +51,7 @@ export default async function MerchantsPage() {
                 <StaggerItem>
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
                     <p className="text-2xl font-display font-bold text-foreground">{stats.totalMerchants}</p>
-                    <p className="mt-2 text-sm text-muted-foreground">Active merchants</p>
+                    <p className="mt-2 text-sm text-muted-foreground">Directory listings</p>
                   </div>
                 </StaggerItem>
                 <StaggerItem>
@@ -73,9 +75,7 @@ export default async function MerchantsPage() {
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="xl">
-                  <a href="/register">
-                    Register your business
-                  </a>
+                  <Link href="/contact">Request onboarding</Link>
                 </Button>
               </div>
             </Reveal>
@@ -115,7 +115,7 @@ export default async function MerchantsPage() {
                 </div>
                 <h2 className="mt-5 font-display text-xl font-bold text-foreground">Built for real discovery</h2>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  This page is designed to help people quickly find active Bitcoin-accepting businesses, not scroll through abstract impact claims.
+                  Discover local shops, services and enterprises participating in Kibera&apos;s Bitcoin community. Check with the merchant before travelling or making a payment.
                 </p>
               </CardSpotlight>
             </StaggerItem>
@@ -126,7 +126,7 @@ export default async function MerchantsPage() {
                 </div>
                 <h2 className="mt-5 font-display text-xl font-bold text-foreground">Grounded in place</h2>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  Neighborhood labels, location context, and human-readable discovery come first, so the directory stays useful even while public pin policy is being finalized.
+                  Find businesses by neighborhood and use their public map links to plan a visit. Some public pins may differ from the locally surveyed location.
                 </p>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">
                   <Link href="/merchants/location-accuracy" className="font-semibold text-bitcoin underline underline-offset-2 hover:opacity-80 transition-opacity">
@@ -141,9 +141,9 @@ export default async function MerchantsPage() {
                 <div className="flex size-11 items-center justify-center rounded-2xl bg-sky-400/10">
                   <Zap className="size-5 text-sky-400" />
                 </div>
-                <h2 className="mt-5 font-display text-xl font-bold text-foreground">Quiet, fast controls</h2>
+                <h2 className="mt-5 font-display text-xl font-bold text-foreground">Bitcoin payments</h2>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  Search, category, neighborhood, and payment filters help visitors narrow the list without fighting a heavy interface.
+                  Payment options vary by business. Ask the merchant which Bitcoin or Lightning payment method they currently accept.
                 </p>
               </CardSpotlight>
             </StaggerItem>
@@ -193,10 +193,10 @@ export default async function MerchantsPage() {
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg">
-                  <a href="/register">
-                    Register your business
+                  <Link href="/contact">
+                    Request onboarding
                     <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </a>
+                  </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <a href="https://btcmap.org/community/afribit-kibera" target="_blank" rel="noreferrer">

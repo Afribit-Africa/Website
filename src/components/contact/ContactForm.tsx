@@ -1,6 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import Link from 'next/link';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -8,15 +10,7 @@ import { Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CardSpotlight } from '@/components/ui/card-spotlight';
 import { motion } from 'framer-motion';
-
-// Validation schema matching backend
-const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Invalid email address'),
-  phone: z.string().optional(),
-  subject: z.string().min(3, 'Subject must be at least 3 characters').optional(),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
-});
+import { contactSchema } from '@/lib/form-validation';
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
@@ -28,6 +22,9 @@ export function ContactForm({ className = '' }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [submitMessage, setSubmitMessage] = useState('');
+  const [captchaToken, setCaptchaToken] = useState('');
+  const captchaRef = useRef<HCaptcha>(null);
+  const sitekey = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY;
   const fieldClassName =
     'w-full rounded-2xl border border-border-soft bg-bg-surface/80 px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-bitcoin focus:border-transparent transition-colors';
 
@@ -44,6 +41,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
       phone: '',
       subject: '',
       message: '',
+      website: '',
     },
   });
 
@@ -58,7 +56,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, captchaToken }),
       });
 
       const result = await response.json();
@@ -76,6 +74,8 @@ export function ContactForm({ className = '' }: ContactFormProps) {
       setSubmitStatus('error');
       setSubmitMessage('An error occurred. Please try again later.');
     } finally {
+      captchaRef.current?.resetCaptcha();
+      setCaptchaToken('');
       setIsSubmitting(false);
     }
   };
@@ -151,6 +151,10 @@ export function ContactForm({ className = '' }: ContactFormProps) {
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8" aria-label="Contact form">
+          <div className="absolute -left-[10000px] top-auto size-px overflow-hidden" aria-hidden="true">
+            <label htmlFor="contact-website">Website</label>
+            <input id="contact-website" tabIndex={-1} autoComplete="off" {...register('website')} />
+          </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {/* Name Field */}
             <div className="space-y-2.5">
@@ -159,6 +163,8 @@ export function ContactForm({ className = '' }: ContactFormProps) {
               </label>
               <input
                 id="name"
+                maxLength={100}
+                autoComplete="name"
                 type="text"
                 {...register('name')}
                 aria-invalid={!!errors.name}
@@ -182,6 +188,8 @@ export function ContactForm({ className = '' }: ContactFormProps) {
               </label>
               <input
                 id="email"
+                maxLength={254}
+                autoComplete="email"
                 type="email"
                 {...register('email')}
                 aria-invalid={!!errors.email}
@@ -207,6 +215,8 @@ export function ContactForm({ className = '' }: ContactFormProps) {
               </label>
               <input
                 id="phone"
+                maxLength={40}
+                autoComplete="tel"
                 type="tel"
                 {...register('phone')}
                 aria-invalid={!!errors.phone}
@@ -230,6 +240,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
               </label>
               <input
                 id="subject"
+                maxLength={160}
                 type="text"
                 {...register('subject')}
                 aria-invalid={!!errors.subject}
@@ -254,6 +265,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
             </label>
             <textarea
               id="message"
+              maxLength={5000}
               rows={6}
               {...register('message')}
               aria-invalid={!!errors.message}
@@ -271,16 +283,23 @@ export function ContactForm({ className = '' }: ContactFormProps) {
           </div>
 
           {/* Submit Button & Privacy Note */}
+          {sitekey && (
+            <div className="min-h-36">
+              <HCaptcha ref={captchaRef} sitekey={sitekey} size="compact" theme="dark"
+                onVerify={setCaptchaToken} onExpire={() => setCaptchaToken('')}
+                onError={() => { setCaptchaToken(''); setSubmitStatus('error'); setSubmitMessage('Verification could not load. Retry, or email connect@afribit.africa.'); }} />
+            </div>
+          )}
           <div className="rounded-[1.75rem] border border-white/8 bg-black/20 p-4 sm:p-5">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <p className="max-w-2xl text-sm leading-7 text-muted-foreground">
-                By submitting this form, you agree to our privacy policy and consent to being contacted. We respect your privacy and will never share your information with third parties.
+                We use your details to respond to your message. Read our <Link href="/legal/privacy" className="text-bitcoin underline underline-offset-4">privacy policy</Link> for information about storage and service providers.
               </p>
             <Button
               type="submit"
               size="lg"
-              disabled={isSubmitting}
-              aria-disabled={isSubmitting}
+              disabled={isSubmitting || (!!sitekey && !captchaToken)}
+              aria-disabled={isSubmitting || (!!sitekey && !captchaToken)}
                 className="relative w-full overflow-hidden px-8 group sm:w-auto"
             >
               <span className="flex items-center justify-center gap-2">

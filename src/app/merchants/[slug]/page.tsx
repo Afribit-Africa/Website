@@ -16,7 +16,8 @@ import { Container } from '@/components/layout/container'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { CardSpotlight } from '@/components/ui/card-spotlight'
-import { generateMetadata as buildMetadata } from '@/lib/metadata'
+import { generateMetadata as buildMetadata, getBreadcrumbSchema, SITE_URL } from '@/lib/metadata'
+import { StructuredData } from '@/components/seo/structured-data'
 import {
   getMerchantBySlug,
   listMerchantSlugs,
@@ -28,6 +29,8 @@ type PageProps = {
     slug: string
   }>
 }
+
+export const revalidate = 300
 
 function formatDate(date: Date | null | undefined) {
   if (!date) {
@@ -94,12 +97,24 @@ export default async function MerchantDetailPage({ params }: PageProps) {
     merchant.city,
     merchant.country,
   ])
-  const verificationLine = merchant.lastVerifiedByName
+  const verificationLine = !merchant.lastVerifiedAt ? 'A verification date has not been recorded.' : merchant.lastVerifiedByName
     ? `Last verified by ${merchant.lastVerifiedByName} on ${formatDate(merchant.lastVerifiedAt)}`
     : `Last verified on ${formatDate(merchant.lastVerifiedAt)}`
 
   return (
     <>
+      <StructuredData data={[
+        getBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Merchants', url: '/merchants' }, { name: merchant.name, url: `/merchants/${merchant.slug}` }]),
+        {
+          '@context': 'https://schema.org', '@type': 'LocalBusiness',
+          '@id': `${SITE_URL}/merchants/${merchant.slug}#business`,
+          name: merchant.name, description: merchant.summary, url: `${SITE_URL}/merchants/${merchant.slug}`,
+          address: { '@type': 'PostalAddress', addressLocality: merchant.city || 'Nairobi', addressCountry: 'KE', ...(merchant.address ? { streetAddress: merchant.address } : {}) },
+          ...(typeof merchant.latitude === 'number' && typeof merchant.longitude === 'number' && Number.isFinite(merchant.latitude) && Number.isFinite(merchant.longitude) && Math.abs(merchant.latitude) <= 90 && Math.abs(merchant.longitude) <= 180 ? { geo: { '@type': 'GeoCoordinates', latitude: merchant.latitude, longitude: merchant.longitude } } : {}),
+          ...(merchant.phone ? { telephone: merchant.phone } : {}),
+          ...(merchant.email ? { email: merchant.email } : {}),
+        },
+      ]} />
       <section className="section-hero relative overflow-hidden bg-bg-base">
         <div className="absolute inset-0 bg-grid-lines opacity-35" aria-hidden />
         <div
@@ -156,7 +171,7 @@ export default async function MerchantDetailPage({ params }: PageProps) {
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/45">Verification</p>
                   <p className="mt-2 text-base font-semibold text-foreground">
-                    {merchant.btcmapUrl ? 'Listed on BTC Map' : 'Afribit directory profile'}
+                    {merchant.btcmapUrl ? 'Public map link' : 'Afribit directory profile'}
                   </p>
                 </div>
               </div>
@@ -265,7 +280,7 @@ export default async function MerchantDetailPage({ params }: PageProps) {
                 <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/45">Lightning</p>
                   <p className="mt-2 text-sm font-semibold text-foreground">
-                    {merchant.paymentLightningEnabled || merchant.paymentMethods.some((method) => method.toLowerCase().includes('lightning'))
+                    {(merchant.paymentLightningEnabled ?? merchant.paymentMethods.some((method) => method.toLowerCase().includes('lightning')))
                       ? 'Lightning-friendly'
                       : 'Check payment methods before visiting'}
                   </p>
@@ -336,7 +351,7 @@ export default async function MerchantDetailPage({ params }: PageProps) {
               <div className="mt-6 rounded-[1.5rem] border border-white/8 bg-white/[0.03] p-5">
                 <p className="text-sm font-semibold text-foreground">{verificationLine}</p>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  {merchant.verificationNotes || 'This profile is part of the Afribit merchant directory and linked to public ecosystem discovery surfaces where available.'}
+                  This profile is part of the Afribit directory. Payment availability and opening hours can change; please confirm details with the merchant.
                 </p>
               </div>
             </CardSpotlight>

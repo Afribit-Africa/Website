@@ -1,49 +1,33 @@
-import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
-import { getStoreStats } from '@/lib/btcpay';
+import { NextResponse } from 'next/server'
+import { prisma } from '@/lib/prisma'
+import { getStoreStats } from '@/lib/btcpay'
+import { DONATION_CURRENCIES } from '@/lib/donation-policy'
+import { summarizeDonationTotals } from '@/lib/donation-totals'
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic'
 
 export async function GET() {
+  let stats: ReturnType<typeof summarizeDonationTotals> | null = null
   try {
-    // Query DB for donation stats
-    const [dbStats, btcpayStats] = await Promise.allSettled([
-      prisma.donation.aggregate({
-        where: { status: 'COMPLETED' },
-        _sum: { amount: true },
-        _count: { id: true },
-      }),
-      getStoreStats(),
-    ]);
-
-    let totalRaised = 0;
-    let totalDonations = 0;
-
-    // Prefer DB stats (authoritative), fall back to BTCPay stats
-    if (dbStats.status === 'fulfilled' && dbStats.value) {
-      totalDonations = dbStats.value._count.id;
-      totalRaised = parseFloat(dbStats.value._sum.amount?.toString() ?? '0') || 0;
-    }
-
-    // If DB is empty, fall back to BTCPay direct count
-    if (totalDonations === 0 && btcpayStats.status === 'fulfilled' && btcpayStats.value) {
-      totalRaised = btcpayStats.value.totalRaised;
-      totalDonations = btcpayStats.value.totalDonations;
-    }
-
-    return NextResponse.json({
-      success: true,
-      data: {
-        totalRaised: Math.round(totalRaised * 100) / 100,
-        totalDonations,
-        currency: 'USD',
-      },
-    });
-  } catch (error) {
-    console.error('Error fetching donation stats:', error);
-    return NextResponse.json(
-      { success: false, error: 'Failed to fetch stats' },
-      { status: 500 }
-    );
+    const rows = await prisma.donation.groupBy({
+      by: ['currency'],
+      where: { status: 'COMPLETED', currency: { in: [...DONATION_CURRENCIES] } },
+      _sum: { amount: true },
+      _count: { id: true },
+    })
+    stats = summarizeDonationTotals(rows.map((row) => ({
+      currency: row.currency,
+      amount: row._sum.amount,
+      count: row._count.id,
+    })))
+  } catch {
+    console.error('[donation-stats] Database totals unavailable')
   }
+  if (!stats || stats.totalDonations === 0) {
+    stats = await getStoreStats().catch(() => null) || stats
+  }
+  if (!stats) {
+    return NextResponse.json({ success: false, error: 'Donation totals unavailable' }, { status: 503 })
+  }
+  return NextResponse.json({ success: true, data: stats })
 }

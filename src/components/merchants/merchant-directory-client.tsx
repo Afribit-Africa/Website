@@ -190,7 +190,7 @@ export function MerchantDirectoryClient({ merchants }: MerchantDirectoryClientPr
             <div className="relative min-h-[420px] overflow-hidden rounded-[1.5rem]">
               <Image
                 src="/Images/Kibera Aerial view.jpg"
-                alt="Approximate view of Kibera neighborhoods"
+                alt="Aerial view of Kibera"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1280px) 100vw, 66vw"
@@ -202,7 +202,7 @@ export function MerchantDirectoryClient({ merchants }: MerchantDirectoryClientPr
                   <span className="text-sm font-semibold uppercase tracking-[0.18em]">Map view</span>
                 </div>
                 <p className="mt-3 text-sm leading-7 text-white/82">
-                  Merchant discovery is neighborhood-led for now. Exact public pin placement should follow the privacy rules for each business, so this map view stays approximate while the directory remains fully usable in list view.
+                  Afribit keeps precise, locally surveyed GPS locations. OpenStreetMap pins have not been updated to match those records, so BTC Map locations can differ.
                 </p>
               </div>
             </div>
@@ -216,7 +216,7 @@ export function MerchantDirectoryClient({ merchants }: MerchantDirectoryClientPr
               Explore the wider Bitcoin merchant ecosystem
             </h3>
             <p className="mt-4 text-sm leading-7 text-muted-foreground">
-              Use the Afribit directory for curated local context, then jump into BTC Map for the broader community view and external discovery tools.
+              Merchant profiles bring together business details, neighborhood context, and public map references.
             </p>
             <div className="mt-6 grid gap-3">
               <a
@@ -229,10 +229,10 @@ export function MerchantDirectoryClient({ merchants }: MerchantDirectoryClientPr
                 <ExternalLink className="size-4 text-bitcoin" />
               </a>
               <Link
-                href="/register"
+                href="/contact"
                 className="inline-flex items-center justify-between rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-foreground transition-colors hover:border-bitcoin/40"
               >
-                Register your business
+                Request onboarding
                 <ArrowRight className="size-4 text-bitcoin" />
               </Link>
             </div>

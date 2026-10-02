@@ -17,7 +17,7 @@ import { MaintenanceBanner } from './maintenance-banner'
 const DESKTOP_LINKS = [
   { href: '/about', label: 'About' },
   { href: '/programs', label: 'Programs' },
-  { href: '/merchants', label: 'Merchant Map' },
+  { href: '/merchants', label: 'Merchants' },
   { href: '/builders', label: 'Builders' },
   { href: '/studio', label: 'Studio', icon: Headphones },
   { href: '/community', label: 'Community' },
@@ -50,7 +50,7 @@ const MOBILE_CARDS = [
   {
     href: '/programs',
     label: 'Programs',
-    desc: '4 active community programs',
+    desc: 'Community programs in Kibera',
     icon: Layers,
     span: 'half' as const,
     iconBg: 'bg-panafrican-green/10',
@@ -59,16 +59,16 @@ const MOBILE_CARDS = [
     glow: 'bg-panafrican-green/8',
   },
   {
-    href: 'https://www.afribit.africa/maps',
-    label: 'Merchant Map',
-    desc: '40+ shops accepting Bitcoin in Kibera',
+    href: '/merchants',
+    label: 'Merchants',
+    desc: 'Browse local business profiles',
     icon: MapPin,
     span: 'full' as const,
     iconBg: 'bg-panafrican-gold/10',
     iconColor: 'text-panafrican-gold',
     border: 'border-panafrican-gold/15',
     glow: 'bg-panafrican-gold/8',
-    external: true,
+    external: false,
   },
   {
     href: '/builders',
@@ -300,9 +300,11 @@ export function Header() {
                       <div className={cn('size-10 rounded-xl flex items-center justify-center shrink-0', card.iconBg)}>
                         <Icon className={cn('size-4', card.iconColor)} />
                       </div>
-                      {(card.external || isFullWidth) && (
+                      {card.external ? (
                         <ExternalLink className="size-3.5 text-muted-foreground mt-1 shrink-0" />
-                      )}
+                      ) : isFullWidth ? (
+                        <ArrowRight className="size-3.5 text-muted-foreground mt-1 shrink-0" />
+                      ) : null}
                     </div>
 
                     <div className="relative">

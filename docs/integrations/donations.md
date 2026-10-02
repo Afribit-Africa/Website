@@ -50,15 +50,18 @@ The repo already contains a mostly complete BTCPay integration. It is not used b
   - Returns the BTCPay checkout link.
 - `src/app/api/donations/check-status/[invoiceId]/route.ts`
   - Pulls invoice state from BTCPay.
-  - Updates local donation status.
-  - Increments linked program totals when completed.
+  - Reports status read-only; never writes or credits donations during polling.
 - `src/app/api/donations/webhook/route.ts`
   - Verifies BTCPay webhook signatures.
-  - Maps BTCPay invoice events to local donation status.
+  - Validates the signed event and store, then reads authoritative invoice state.
+  - Claims settlement and credits USD program totals atomically; retries cannot
+    reopen completion or double-credit. Processing/partial payments are not settled.
   - Sends donor/admin email notifications when configured.
 - `src/app/api/donations/stats/route.ts`
   - Reads completed donation totals from the database.
   - Falls back to BTCPay store stats when local DB totals are empty.
+  - Keeps USD and BTC totals separate using decimal arithmetic; legacy
+    `totalRaised` is USD-only. BTC is not added raw to USD program goals.
 - `prisma/schema.prisma`
   - `Donation` stores invoice id, amount, currency, donor info, status, optional program linkage, and completion time.
   - `Program` has a `donations` relation and `raised` total for program-linked giving.
@@ -71,14 +74,20 @@ When the Afribit BTCPay server is ready, configure:
 
 ```env
 BTCPAY_HOST="https://pay.afribit.africa"
+BTCPAY_CHECKOUT_ENABLED="false"
 BTCPAY_STORE_ID=""
 BTCPAY_API_KEY=""
 BTCPAY_WEBHOOK_SECRET=""
-NEXT_PUBLIC_SITE_URL="https://afribit.africa"
+NEXT_PUBLIC_SITE_URL="https://www.afribit.africa"
 ADMIN_EMAIL=""
 ```
 
 The API key should be scoped to the Afribit store and allow invoice creation/read access. The webhook secret must match the secret configured for the BTCPay webhook endpoint.
+
+Keep `BTCPAY_CHECKOUT_ENABLED=false` until the server, invoice limits, webhook,
+currency accounting and public checkout UI have been verified together. Setting
+it to `true` permits API/SDK creation; it does not restore the static donation UI.
+Email notifications are best-effort; durable notification retries need an outbox.
 
 ## BTCPay Server Setup Checklist
 

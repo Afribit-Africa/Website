@@ -68,3 +68,6 @@ public/Videos/Merchant\ Interviews/Lilian\ Interview.mp4
 
 # ChunkHound MCP indexer
 .chunkhound/
+
+# Private operational backups (may contain merchant contact details)
+.maintenance-private/

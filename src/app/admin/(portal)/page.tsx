@@ -7,9 +7,9 @@ export default async function AdminHomePage() {
     <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
       <section className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-bitcoin">Status</p>
-        <h2 className="text-3xl font-bold">Protected admin shell preserved</h2>
+        <h2 className="text-3xl font-bold">Afribit administration</h2>
         <p className="mt-4 text-base leading-8 text-muted-foreground">
-          The public frontend has been archived to clear the workspace for the 2026 rebuild. Admin authentication remains active so backend and role-protected flows can still be validated during implementation.
+          You are signed in to the Afribit admin area. Access is limited to approved administrators and editors.
         </p>
       </section>
 

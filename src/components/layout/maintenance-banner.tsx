@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react'
 
 const NOTICE_ROUTE = '/merchants/location-accuracy'
 const MARQUEE_REPEATS = 4
+const NOTICE_MESSAGE = 'Some public map pins differ from surveyed shop locations. Confirm directions with the merchant before visiting.'
 
 function NoticeStrip({ hidden = false }: { hidden?: boolean }) {
   return (
@@ -14,10 +15,7 @@ function NoticeStrip({ hidden = false }: { hidden?: boolean }) {
     >
       <span className="font-semibold text-bitcoin">Merchant map notice</span>
       <span className="text-foreground/90">
-        Some BTC Map GPS points are still being refined.
-      </span>
-      <span className="text-muted-foreground">
-        Afribit&apos;s listed businesses are authentic, but exact pins can be off in dense market areas or on low-accuracy devices.
+        {NOTICE_MESSAGE}
       </span>
     </div>
   )
@@ -30,7 +28,7 @@ export function MaintenanceBanner() {
         <span className="mt-1 size-1.5 shrink-0 rounded-full bg-bitcoin" aria-hidden="true" />
         <p className="min-w-0 flex-1 text-foreground/90 leading-snug">
           <span className="font-semibold text-bitcoin">Merchant map notice</span>
-          {' '}Some BTC Map GPS points are still being refined. Afribit&apos;s listed businesses are authentic, but exact pins can be off in dense market areas or on low-accuracy devices.
+          {' '}{NOTICE_MESSAGE}
         </p>
         <Link
           href={NOTICE_ROUTE}

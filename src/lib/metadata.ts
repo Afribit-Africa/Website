@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://afribit.africa';
+const configuredOrigin = new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.afribit.africa').origin;
+export const SITE_URL = ['https://afribit.africa', 'https://www.afribit.africa'].includes(configuredOrigin) ? 'https://www.afribit.africa' : configuredOrigin;
 export const SITE_NAME = 'Afribit Africa';
-export const SITE_DESCRIPTION = 'Afribit advances urgent, strategic change through Bitcoin by challenging inequitable systems, mobilizing collective resources, and backing root-cause solutions led by communities.';
-export const DEFAULT_OG_IMAGE = '/opengraph-image.svg';
+export const SITE_DESCRIPTION = 'Community-led Bitcoin education, local merchant payments and circular economy projects in Kibera, Nairobi. Explore Afribit Africa and support practical change.';
+export const DEFAULT_OG_IMAGE = '/opengraph-image';
 export const ORGANIZATION_LOGO = `${SITE_URL}/Logo/Full%20logo%20png%20transparent.png`;
 export const GOOGLE_SITE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION;
 
@@ -47,12 +48,10 @@ export function generateMetadata({
     'strategic giving',
     'unrestricted giving',
     'root causes',
-    'cryptocurrency',
     'Kenya',
     'Nairobi',
     'Kibera',
     'Bitcoin adoption',
-    'blockchain',
     'African development',
   ];
 
@@ -135,13 +134,6 @@ export function getOrganizationSchema() {
       'https://x.com/afribitkibera',
       'https://www.instagram.com/afribit_africa/',
       'https://youtube.com/@afribitafrica',
-    ],
-    foundingDate: '2020',
-    founders: [
-      {
-        '@type': 'Person',
-        name: 'Afribit Team',
-      },
     ],
   };
 }

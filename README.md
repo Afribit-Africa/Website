@@ -5,17 +5,17 @@ Afribit Africa is a Bitcoin-powered community platform focused on education, mer
 This repository contains the public website and operational platform for Afribit Africa. It currently includes:
 
 - public-facing pages for mission, programs, donations, and contact
-- a working Bitcoin donation flow powered by BTCPay Server
-- a Prisma and MySQL data layer for donations, programs, testimonials, subscribers, and operational data
-- a growing content and architecture foundation for merchant discovery and map-based experiences
+- a static Lightning donation page, with the BTCPay integration retained but checkout disabled
+- a Prisma and PostgreSQL (Neon) data layer for merchants, donations and submissions
+- a searchable merchant directory, Builders project pages and the Bitcoin education Studio
 
 ## What The Site Does
 
 - explains Afribit Africa's mission and programs
-- accepts Bitcoin donations through BTCPay Server
+- shares a Lightning address and QR code for donations
 - captures contact and newsletter submissions
 - presents community stories and program progress
-- provides the base for a future merchant directory and GIS-enabled merchant discovery experience
+- provides merchant profiles and public map links, alongside audio education with synchronized text
 
 ## Who This README Is For
 
@@ -31,8 +31,8 @@ If you want the technical details, local setup guidance, or architecture notes, 
 
 - Node.js 20 or later
 - npm
-- a MySQL database
-- BTCPay Server credentials if you want the donation flow to work end-to-end
+- a PostgreSQL database (Neon in production)
+- BTCPay Server credentials and explicit checkout opt-in only when restoring invoice payments
 
 ### 2. Install dependencies
 
@@ -62,12 +62,22 @@ The site will run at `http://localhost:3000`.
 
 Depending on which features you need locally, the project may require:
 
-- MySQL for application data
-- BTCPay Server for Bitcoin invoice creation and payment status
+- PostgreSQL for application data
+- BTCPay Server for retained invoice/webhook operations; new checkout requires `BTCPAY_CHECKOUT_ENABLED=true`
 - SMTP email credentials for outbound notifications
 - hCaptcha keys for contact-form bot protection
+- A healthy Upstash Redis connection and `PUBLIC_FORM_REDIS_ENABLED=true` for distributed form limits; otherwise limits are per instance
 
 You can still work on most UI pages without all production integrations configured.
+
+## Maintenance
+
+`npm run merchants:audit` produces a sanitized directory report. `npm run merchants:dedup`
+is dry-run-only unless passed `-- --apply`; it archives only the two reviewed import copies,
+backs up privately, preserves canonical GPS/history and never edits OSM nodes.
+
+See [the October maintenance report](docs/maintenance/2026-10-02.md) for changes,
+verification, held merchant identities and remaining security/configuration work.
 
 ## Documentation
 

@@ -1,6 +1,8 @@
 import { OpenAPI, InvoicesService } from 'btcpay-greenfield-node-client'
 import crypto from 'crypto'
-import { normalizeDonationAmount, type DonationCurrency } from '@/lib/donation-policy'
+import { type DonationCurrency } from '@/lib/donation-policy'
+import { normalizeInvoiceAmount } from '@/lib/donation-validation'
+import { summarizeDonationTotals } from '@/lib/donation-totals'
 
 // BTCPay Server configuration
 const BTCPAY_HOST = process.env.BTCPAY_HOST || 'https://btcpay.afribit.africa'
@@ -17,7 +19,7 @@ if (BTCPAY_API_KEY) {
 }
 
 export interface CreateInvoiceParams {
-  amount: number
+  amount: number | string
   currency?: DonationCurrency
   buyerEmail?: string
   buyerName?: string
@@ -49,13 +51,17 @@ export interface InvoiceData {
  * Create a new BTCPay invoice for donation
  */
 export async function createInvoice(params: CreateInvoiceParams): Promise<InvoiceData | null> {
+  if (process.env.BTCPAY_CHECKOUT_ENABLED !== 'true') {
+    throw new Error('BTCPay checkout is not enabled')
+  }
   if (!BTCPAY_API_KEY || !BTCPAY_STORE_ID) {
     throw new Error('BTCPay client not configured')
   }
 
   try {
     const currency = params.currency || 'USD'
-    const amount = normalizeDonationAmount(params.amount, currency)
+    const amount = normalizeInvoiceAmount(params.amount, currency)
+    if (amount.isZero()) throw new Error('Donation amount must be positive')
 
     const invoice = await InvoicesService.invoicesCreateInvoice({
       storeId: BTCPAY_STORE_ID,
@@ -86,7 +92,7 @@ export async function createInvoice(params: CreateInvoiceParams): Promise<Invoic
       metadata: invoice.metadata,
     }
   } catch (error) {
-    console.error('Error creating BTCPay invoice:', error)
+    console.error('[btcpay-invoice] Provider invoice creation failed')
     throw error
   }
 }
@@ -115,8 +121,8 @@ export async function getInvoiceStatus(invoiceId: string): Promise<InvoiceData |
       expirationTime: new Date(invoice.expirationTime || Date.now()).getTime(),
       metadata: invoice.metadata,
     }
-  } catch (error) {
-    console.error('Error getting invoice status:', error)
+  } catch {
+    console.error('[btcpay-invoice] Provider status lookup failed')
     return null
   }
 }
@@ -138,19 +144,13 @@ export async function getStoreStats() {
     // Filter settled invoices
     const settledInvoices = invoices.filter((inv) => inv.status === 'Settled')
 
-    const totalRaised = settledInvoices.reduce((sum: number, inv) => {
-      return sum + parseFloat(inv.amount || '0')
-    }, 0)
-
-    const totalDonations = settledInvoices.length
-
-    return {
-      totalRaised,
-      totalDonations,
-      currency: 'USD',
-    }
-  } catch (error) {
-    console.error('Error getting store stats:', error)
+    return summarizeDonationTotals(settledInvoices.map((invoice) => ({
+      currency: invoice.currency || '',
+      amount: invoice.amount || '0',
+      count: 1,
+    })))
+  } catch {
+    console.error('[btcpay-stats] Provider totals unavailable')
     return null
   }
 }
@@ -158,9 +158,11 @@ export async function getStoreStats() {
 /**
  * Verify webhook signature (for security)
  */
-export function verifyWebhookSignature(payload: string, signature: string, secret: string): boolean {
+export function verifyWebhookSignature(payload: string | Buffer, signature: string, secret: string): boolean {
+  if (!secret || !/^sha256=[a-f0-9]{64}$/.test(signature)) return false
   const hmac = crypto.createHmac('sha256', secret)
   hmac.update(payload)
-  const calculatedSignature = hmac.digest('hex')
-  return calculatedSignature === signature
+  const calculatedSignature = hmac.digest()
+  const suppliedSignature = Buffer.from(signature.slice('sha256='.length), 'hex')
+  return crypto.timingSafeEqual(calculatedSignature, suppliedSignature)
 }

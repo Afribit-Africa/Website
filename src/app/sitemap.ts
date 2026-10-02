@@ -1,77 +1,67 @@
 import { MetadataRoute } from 'next';
 import { builderProjects } from '@/lib/builders';
-import { listMerchantSlugs } from '@/lib/content/merchants';
+import { listMerchantSitemapEntries } from '@/lib/content/merchants';
 import { SITE_URL } from '@/lib/metadata';
 import { programs } from '@/lib/programs';
 
+export const revalidate = 300
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const lastModified = new Date()
-  const merchantSlugs = await listMerchantSlugs()
+  const merchantEntries = await listMerchantSitemapEntries()
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,
-      lastModified,
       changeFrequency: 'weekly' as const,
       priority: 1.0,
     },
     {
       url: `${SITE_URL}/about`,
-      lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/community`,
-      lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/contact`,
-      lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/builders`,
-      lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/studio`,
-      lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.85,
     },
     {
       url: `${SITE_URL}/studio/bitcoin-podcast-101`,
-      lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/donate`,
-      lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/merchants`,
-      lastModified,
       changeFrequency: 'daily' as const,
       priority: 0.85,
     },
     {
       url: `${SITE_URL}/merchants/location-accuracy`,
-      lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     },
     {
       url: `${SITE_URL}/programs`,
-      lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
@@ -79,7 +69,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const programRoutes = programs.map((program) => ({
     url: `${SITE_URL}/programs/${program.slug}`,
-    lastModified,
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }))
@@ -91,9 +80,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.75,
   }))
 
-  const merchantRoutes = merchantSlugs.map((slug) => ({
-    url: `${SITE_URL}/merchants/${slug}`,
-    lastModified,
+  const merchantRoutes = merchantEntries.map((merchant) => ({
+    url: `${SITE_URL}/merchants/${merchant.slug}`,
+    lastModified: merchant.updatedAt,
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }))

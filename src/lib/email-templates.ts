@@ -1,4 +1,8 @@
 // Email template functions
+export function escapeEmailHtml(value: string): string {
+  const entities: Record<string, string> = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+  return value.replace(/[&<>"']/g, character => entities[character]);
+}
 
 export function donationConfirmationEmail({
   donorName,
@@ -15,7 +19,11 @@ export function donationConfirmationEmail({
   invoiceId: string;
   isAnonymous: boolean;
 }) {
-  const programName = program ? getProgramName(program) : 'General Support';
+  const programName = escapeEmailHtml(program ? getProgramName(program) : 'General Support');
+  donorName = escapeEmailHtml(donorName);
+  amount = escapeEmailHtml(amount);
+  currency = escapeEmailHtml(currency);
+  invoiceId = escapeEmailHtml(invoiceId);
   
   return {
     subject: `Thank You for Your ${currency} ${amount} Donation!`,
@@ -71,10 +79,9 @@ export function donationConfirmationEmail({
       <h3>Your Impact</h3>
       <p>Your donation helps us:</p>
       <ul>
-        <li>Educate ${Math.floor(parseFloat(amount) / 5)} people about Bitcoin</li>
-        <li>Support ${Math.floor(parseFloat(amount) / 50)} merchants in accepting Bitcoin payments</li>
-        <li>Fund ${Math.floor(parseFloat(amount) / 25)} training sessions</li>
-        <li>Set up ${Math.floor(parseFloat(amount) / 10)} Bitcoin wallets</li>
+        <li>Support practical Bitcoin education</li>
+        <li>Help local merchants use Bitcoin payments</li>
+        <li>Back community-led training and tools</li>
       </ul>
     </div>
     
@@ -123,8 +130,14 @@ export function contactFormNotification({
   message: string;
   submittedAt: Date;
 }) {
+  const notificationSubject = (subject || 'General Inquiry').replace(/[\r\n]/g, ' ');
+  name = escapeEmailHtml(name);
+  email = escapeEmailHtml(email);
+  phone = phone ? escapeEmailHtml(phone) : undefined;
+  subject = subject ? escapeEmailHtml(subject) : undefined;
+  message = escapeEmailHtml(message);
   return {
-    subject: `New Contact Form Submission: ${subject || 'General Inquiry'}`,
+    subject: `New Contact Form Submission: ${notificationSubject}`,
     html: `
 <!DOCTYPE html>
 <html lang="en">
@@ -185,6 +198,7 @@ export function contactFormNotification({
 }
 
 export function newsletterWelcomeEmail({ name }: { name?: string }) {
+  name = name ? escapeEmailHtml(name) : undefined;
   return {
     subject: 'Welcome to Afribit Africa Newsletter!',
     html: `
@@ -259,7 +273,7 @@ export function newsletterWelcomeEmail({ name }: { name?: string }) {
     </p>
     <p style="font-size: 12px; color: #999; margin-top: 15px;">
       You're receiving this because you subscribed to our newsletter.<br>
-      <a href="https://afribit.africa/unsubscribe" style="color: #f97316;">Unsubscribe</a> if you no longer wish to receive updates.
+      <a href="mailto:connect@afribit.africa?subject=Unsubscribe" style="color: #f97316;">Request unsubscribe</a> if you no longer wish to receive updates.
     </p>
   </div>
 </body>
@@ -285,7 +299,12 @@ export function adminDonationNotification({
   invoiceId: string;
   isAnonymous: boolean;
 }) {
-  const programName = program ? getProgramName(program) : 'General Support';
+  const programName = escapeEmailHtml(program ? getProgramName(program) : 'General Support');
+  donorName = escapeEmailHtml(donorName);
+  donorEmail = donorEmail ? escapeEmailHtml(donorEmail) : undefined;
+  amount = escapeEmailHtml(amount);
+  currency = escapeEmailHtml(currency);
+  invoiceId = escapeEmailHtml(invoiceId);
   
   return {
     subject: `New Donation Received: ${currency} ${amount}`,

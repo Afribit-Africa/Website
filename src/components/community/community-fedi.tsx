@@ -4,7 +4,7 @@ import { FediInviteCard } from '@/components/community/fedi-invite-card'
 import { FEDI_INVITES } from '@/lib/fedi-invites'
 
 const FEATURES = [
-  { icon: Shield, title: 'Censorship-Resistant', desc: 'No one can block your messages or transactions' },
+  { icon: Shield, title: 'Community Connection', desc: 'Community messaging and Bitcoin payments in Fedi' },
   { icon: Zap, title: 'Lightning Integrated', desc: 'Send sats directly in community chat' },
   { icon: MessageSquare, title: 'Private & Local', desc: 'Community-controlled, not corporate servers' },
   { icon: Globe, title: 'Offline-Capable', desc: 'Works even with limited connectivity' },

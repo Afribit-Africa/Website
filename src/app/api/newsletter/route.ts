@@ -3,19 +3,19 @@ import { prisma } from '@/lib/prisma'
 import { z } from 'zod'
 import { sendEmail } from '@/lib/email'
 import { newsletterWelcomeEmail } from '@/lib/email-templates'
-
-// Validation schema
-const newsletterSchema = z.object({
-  email: z.string().email('Invalid email address'),
-  name: z.string().min(2, 'Name must be at least 2 characters').optional(),
-})
+import { newsletterSchema, captchaSchema } from '@/lib/form-validation'
+import { assertFormOrigin, readFormJson, limitFormRequests, verifyFormCaptcha, FormRequestError } from '@/lib/public-form-security'
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json()
+    assertFormOrigin(request)
+    await limitFormRequests(request, 'newsletter')
+    const body = await readFormJson(request)
 
     // Validate input
     const validatedData = newsletterSchema.parse(body)
+    if (validatedData.website) return NextResponse.json({ success: true, message: 'Thank you for subscribing to Afribit updates.' })
+    await verifyFormCaptcha(captchaSchema.parse(body).captchaToken)
 
     // Check if email already exists
     const existingSubscriber = await prisma.subscriber.findUnique({
@@ -24,10 +24,7 @@ export async function POST(request: NextRequest) {
 
     if (existingSubscriber) {
       if (existingSubscriber.status === 'ACTIVE') {
-        return NextResponse.json(
-          { success: false, error: 'This email is already subscribed to our newsletter.' },
-          { status: 400 }
-        )
+        return NextResponse.json({ success: true, message: 'Thank you for subscribing to Afribit updates.' })
       } else {
         // Re-activate if previously unsubscribed
         await prisma.subscriber.update({
@@ -37,14 +34,16 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json({
           success: true,
-          message: 'Welcome back! Your subscription has been reactivated.',
+          message: 'Thank you for subscribing to Afribit updates.',
         })
       }
     }
 
     // Create new subscriber
-    const subscriber = await prisma.subscriber.create({
-      data: {
+    const subscriber = await prisma.subscriber.upsert({
+      where: { email: validatedData.email },
+      update: {},
+      create: {
         email: validatedData.email,
         name: validatedData.name || null,
         status: 'ACTIVE',
@@ -67,9 +66,12 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Thank you for subscribing! Check your inbox for a confirmation email.',
+      message: 'Thank you for subscribing to Afribit updates.',
     })
   } catch (error) {
+    if (error instanceof FormRequestError) return NextResponse.json({ success: false, error: error.message }, {
+      status: error.status, headers: error.retryAfter ? { 'Retry-After': String(error.retryAfter) } : undefined,
+    })
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         { success: false, error: 'Invalid email address', details: error.issues },

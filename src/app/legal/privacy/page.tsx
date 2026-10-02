@@ -11,7 +11,7 @@ export const metadata: Metadata = generateMetadata({
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalLayout title="Privacy Policy" lastUpdated="May 2026">
+    <LegalLayout title="Privacy Policy" lastUpdated="October 2026">
       <LegalSection title="Who We Are">
         <LegalP>
           Afribit Africa is a grassroots Bitcoin organisation based in Kibera, Nairobi, Kenya. We
@@ -25,17 +25,17 @@ export default function PrivacyPolicyPage() {
       </LegalSection>
 
       <LegalSection title="What We Collect">
-        <LegalP>We collect only what you give us directly:</LegalP>
+        <LegalP>When you submit a form, we collect the details needed to handle it:</LegalP>
         <LegalList
           items={[
             'Name and email address when you submit our contact form',
             'Phone number if you choose to include it in the contact form',
             'Message content you send us',
+            'Email address and optional name when you subscribe to the newsletter',
           ]}
         />
         <LegalP>
-          We do not run advertising trackers, analytics scripts, or third-party cookies on this
-          website. We do not collect data passively.
+          Administrator sign-in uses functional session cookies.
         </LegalP>
       </LegalSection>
 
@@ -49,27 +49,30 @@ export default function PrivacyPolicyPage() {
           ]}
         />
         <LegalP>
-          We do not sell, rent, or share your data with third parties. We do not use your
-          information for automated decision-making or profiling.
+          The Afribit team handles contact messages using our database and email services.
+          Newsletter subscription details are used for updates you request.
         </LegalP>
       </LegalSection>
 
       <LegalSection title="Data Storage and Retention">
         <LegalP>
-          Contact form submissions are received via email and stored only as long as necessary to
-          respond to your inquiry. We do not maintain a marketing database. If you would like your
-          information removed, email us and we will delete it promptly.
+          Contact submissions are stored in our database and sent to the team by email.
+          Newsletter subscriptions are stored separately. To ask about stored information or
+          request its removal, email connect@afribit.africa.
         </LegalP>
       </LegalSection>
 
       <LegalSection title="Third-Party Services">
-        <LegalP>This website links to external platforms we use as a community:</LegalP>
+        <LegalP>The site uses services to operate and links to community platforms:</LegalP>
         <LegalList
           items={[
+            'Hosting, database, and email services used to handle site operations and submissions',
+            'Google (administrator sign-in)',
+            'hCaptcha (form abuse prevention) - verification is subject to hCaptcha\'s privacy policy',
             'Fedi (community messaging) — governed by Fedi\'s own privacy policy',
-            'Geyser Fund (donations) — governed by Geyser\'s own privacy policy',
+            'Blink (Lightning donation payments)',
             'BTC Map — an open-source community project',
-            'Social platforms (X, Instagram, Telegram, YouTube, Medium)',
+            'Social platforms (X, Instagram, Telegram, YouTube)',
           ]}
         />
         <LegalP>

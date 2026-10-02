@@ -12,7 +12,7 @@ const TECHNICAL_FACTORS = [
     icon: Smartphone,
     title: 'Phone hardware varies widely',
     description:
-      'Many registrations happened on everyday Android phones whose GPS chips can drift by several meters, especially when signal quality is weak.',
+      'Phone GPS readings can vary, especially when signal quality is weak.',
   },
   {
     icon: MapPinned,
@@ -30,24 +30,24 @@ const TECHNICAL_FACTORS = [
 
 const ARTICLE_SECTIONS = [
   {
-    title: 'How the first merchant locations were collected',
+    title: 'Read location details alongside the map',
     paragraphs: [
-      'Afribit opened merchant onboarding through its registration flow so business owners could submit their details quickly and begin participating in the Bitcoin circular economy without waiting for every listing to be captured only through a separate field-device workflow.',
-      'That flow was designed to support stronger location capture, offline drafts, and status updates, and it gave Afribit a faster way to bring real businesses into the directory. After submission, validators still reviewed the merchant details before the business was published into public references and mapping surfaces.',
+      'Afribit\'s directory brings together business details and map references for merchants in Kibera.',
+      'Use the merchant name, neighborhood, and any verification date shown on a profile when checking a location.',
     ],
   },
   {
     title: 'Why a real business can still have an imperfect pin',
     paragraphs: [
       'A public map point depends on the quality of the device capturing it. In practice, lower-end phones can report broad error ranges, especially when the merchant is indoors, under roofing, or surrounded by dense structures that interrupt satellite visibility.',
-      'Kibera also has tightly packed businesses. When several shops, kiosks, or stalls operate within a few meters of each other, even a modest GPS error can place the public point on the wrong doorway while the business itself remains genuine and verified.',
+      'Kibera also has tightly packed businesses. When several shops, kiosks, or stalls operate close together, a GPS error can place a public point on the wrong doorway.',
     ],
   },
   {
-    title: 'Why the listings are still trustworthy',
+    title: 'Check the details before visiting',
     paragraphs: [
-      'Afribit did not rely on raw GPS alone to decide whether a business was real. Merchant details, neighborhood context, and human review all mattered before a listing was confirmed and represented publicly.',
-      'That means a pin may still need refinement, but the merchant identity, the Bitcoin acceptance claim, and the underlying business relationship are not based on coordinates alone.',
+      'A map coordinate and a business\'s Bitcoin acceptance describe different things. Review the profile details and any verification information, rather than treating a pin alone as confirmation.',
+      'If details appear outdated or the location is unclear, contact Afribit at connect@afribit.africa.',
     ],
   },
   {
@@ -60,7 +60,7 @@ const ARTICLE_SECTIONS = [
   {
     title: 'How to use the merchant map right now',
     paragraphs: [
-      'Treat the current map as a trusted discovery tool, especially at neighborhood level. Merchant profiles, category filters, and local context remain useful even when a specific public point still needs a tighter recapture.',
+      'Use the directory and map references together. Merchant profiles, category filters, and neighborhood details help you check a business location.',
       'If you are visiting a merchant, use the neighborhood label, the business name, and nearby context together. That is the best way to navigate while Afribit continues improving coordinate accuracy across the directory.',
     ],
   },
@@ -97,14 +97,16 @@ export default function MerchantLocationAccuracyPage() {
                 Why some merchant GPS points still need <span className="text-bitcoin">refinement</span>
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-                Afribit&apos;s merchant directory is built from real business onboarding in Kibera. Some public map points can still be imprecise, not because the businesses are unverified, but because collecting strong coordinates in dense trading areas is technically difficult.
+                Some public map points can be imprecise. Use business names, neighborhood
+                details, and available verification information alongside the map.
               </p>
               <div className="mt-8 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-bitcoin/95">
                   What visitors should know now
                 </p>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  The businesses in Afribit&apos;s directory are authentic. What may still change is the exact public pin for some merchants as location quality is recaptured and updated.
+                  A map pin is one part of a merchant listing. Check the profile&apos;s location
+                  details and any verification date before relying on it.
                 </p>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -115,8 +117,8 @@ export default function MerchantLocationAccuracyPage() {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="xl">
-                  <Link href="/register">
-                    Register your business
+                  <Link href="/contact">
+                    Request onboarding
                   </Link>
                 </Button>
               </div>
@@ -135,7 +137,7 @@ export default function MerchantLocationAccuracyPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
                 <div className="absolute inset-x-5 bottom-5 rounded-[1.5rem] border border-white/12 bg-black/35 p-5 backdrop-blur-md">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-bitcoin/95">
-                    Verified business, evolving coordinates
+                    Business details and map coordinates
                   </p>
                   <p className="mt-3 text-sm leading-7 text-white/82">
                     Afribit&apos;s location work is focused on keeping merchant discovery useful today while steadily improving exact point accuracy for tomorrow.
@@ -173,7 +175,8 @@ export default function MerchantLocationAccuracyPage() {
                 A clear explanation
               </p>
               <p className="mt-4 text-base leading-8 text-muted-foreground">
-                Afribit chose to grow the directory through real merchant onboarding instead of waiting for a perfect mapping pass before businesses could be seen. That decision made visibility and participation possible earlier, but it also meant some public coordinates depended on the quality of the devices available in the field.
+                A useful location check combines the business name, neighborhood details,
+                available verification information, and map coordinates.
               </p>
             </div>
 
@@ -198,13 +201,14 @@ export default function MerchantLocationAccuracyPage() {
           <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
             <div>
               <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-bitcoin">
-                Trust the directory, read the location carefully
+                Read the location carefully
               </p>
               <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
                 Merchant authenticity and map precision are related, but they are not the same thing.
               </h2>
               <p className="mt-4 text-muted-foreground leading-8">
-                Afribit uses merchant onboarding, human review, and neighborhood context to make the directory useful now, while continued field recapture improves exact location quality over time.
+                Check the available profile details alongside the map. Contact Afribit if
+                the location or Bitcoin acceptance information needs clarification.
               </p>
             </div>
 
@@ -216,7 +220,8 @@ export default function MerchantLocationAccuracyPage() {
                 <div>
                   <p className="text-sm font-semibold text-foreground">Need the broader merchant view?</p>
                   <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                    Explore the live directory to browse by neighborhood, business type, and payment style, or bring your own business into the network through Afribit&apos;s registration flow.
+                    Browse businesses by neighborhood, business type, and payment style,
+                    or contact Afribit to request merchant onboarding.
                   </p>
                 </div>
               </div>
@@ -228,8 +233,8 @@ export default function MerchantLocationAccuracyPage() {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="/register">
-                    Start registration
+                  <Link href="/contact">
+                    Request onboarding
                   </Link>
                 </Button>
               </div>

@@ -1,118 +1,47 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { getInvoiceStatus } from '@/lib/btcpay';
-import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from 'next/server'
+import { getInvoiceStatus } from '@/lib/btcpay'
+import { prisma } from '@/lib/prisma'
+import { assertDonationInvoice, getDonationStatus } from '@/lib/donation-settlement'
+import { donationInvoiceIdSchema } from '@/lib/donation-validation'
+import { z } from 'zod'
 
 export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ invoiceId: string }> }
+  _request: NextRequest,
+  { params }: { params: Promise<{ invoiceId: string }> },
 ) {
   try {
-    const { invoiceId } = await params;
-
-    if (!invoiceId) {
-      return NextResponse.json(
-        { success: false, error: 'Invoice ID is required' },
-        { status: 400 }
-      );
-    }
-
-    // Get invoice status from BTCPay
-    const invoiceStatus = await getInvoiceStatus(invoiceId);
-
-    if (!invoiceStatus) {
-      return NextResponse.json(
-        { success: false, error: 'Invoice not found in BTCPay' },
-        { status: 404 }
-      );
-    }
-
-    // Find donation record in database
-    const donation = await prisma.donation.findFirst({
-      where: { btcpayInvoiceId: invoiceId },
-    });
-
+    const invoiceId = donationInvoiceIdSchema.parse((await params).invoiceId)
+    const donation = await prisma.donation.findUnique({ where: { btcpayInvoiceId: invoiceId } })
     if (!donation) {
-      return NextResponse.json(
-        { success: false, error: 'Donation not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ success: false, error: 'Donation not found' }, { status: 404 })
     }
-
-    // Map BTCPay status to our donation status
-    let donationStatus = donation.status;
-    const btcpayStatus = invoiceStatus.status;
-
-    if (
-      btcpayStatus === 'Settled' ||
-      btcpayStatus === 'Processing'
-    ) {
-      donationStatus = 'COMPLETED';
-    } else if (btcpayStatus === 'Expired' || btcpayStatus === 'Invalid') {
-      donationStatus = 'FAILED';
-    } else if (btcpayStatus === 'New') {
-      donationStatus = 'PENDING';
+    const invoice = await getInvoiceStatus(invoiceId)
+    if (!invoice) {
+      return NextResponse.json({ success: false, error: 'Invoice verification unavailable' }, { status: 503 })
     }
-
-    // Update donation status if changed
-    if (donationStatus !== donation.status) {
-      await prisma.donation.update({
-        where: { id: donation.id },
-        data: {
-          status: donationStatus,
-          completedAt: donationStatus === 'COMPLETED' ? new Date() : null,
-        },
-      });
-
-      // If completed and has program, update program raised amount
-      if (donationStatus === 'COMPLETED' && (donation.programId || donation.program)) {
-        const programRecord = donation.programId
-          ? await prisma.program.findUnique({
-              where: { id: donation.programId },
-            })
-          : await prisma.program.findUnique({
-              where: { slug: donation.program! },
-            });
-
-        if (programRecord) {
-          await prisma.program.update({
-            where: { id: programRecord.id },
-            data: {
-              raised: {
-                increment: parseFloat(donation.amount.toString()),
-              },
-            },
-          });
-        }
-      }
-    }
-
-    // Return status information
+    assertDonationInvoice(donation, invoice)
     return NextResponse.json({
       success: true,
       data: {
         donationId: donation.id,
-        invoiceId: invoiceStatus.id,
-        status: donationStatus,
-        btcpayStatus: btcpayStatus,
+        invoiceId: invoice.id,
+        status: donation.completedAt || donation.status === 'COMPLETED'
+          ? 'COMPLETED' : getDonationStatus(invoice.status),
+        btcpayStatus: invoice.status,
         amount: donation.amount.toString(),
         currency: donation.currency,
-        createdAt: invoiceStatus.createdTime,
-        expirationTime: invoiceStatus.expirationTime,
-        checkoutLink: invoiceStatus.checkoutLink,
+        createdAt: invoice.createdTime,
+        expirationTime: invoice.expirationTime,
+        checkoutLink: invoice.checkoutLink,
         program: donation.program,
         programId: donation.programId,
       },
-    });
+    }, { headers: { 'Cache-Control': 'no-store' } })
   } catch (error) {
-    console.error('Error checking donation status:', error);
-
-    return NextResponse.json(
-      {
-        success: false,
-        error: 'Failed to check donation status',
-        message: error instanceof Error ? error.message : 'Unknown error',
-      },
-      { status: 500 }
-    );
+    if (error instanceof z.ZodError) {
+      return NextResponse.json({ success: false, error: 'Invalid invoice ID' }, { status: 400 })
+    }
+    console.error('[donation-status] Invoice lookup failed')
+    return NextResponse.json({ success: false, error: 'Failed to check donation status' }, { status: 500 })
   }
 }
