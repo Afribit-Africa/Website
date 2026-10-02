@@ -22,8 +22,11 @@ export default async function LessonPage({ searchParams }: { searchParams: Promi
       learningResourceType: 'Audio lesson', educationalLevel: 'Beginner', inLanguage: 'en', isAccessibleForFree: true,
       teaches: ['Bitcoin fundamentals', 'Peer-to-peer money', 'Cryptographic verification'],
       provider: { '@type': 'Organization', name: 'Afribit Africa', url: SITE_URL },
+      creditText: `Learning content: ${bitcoinLesson.credits.content.name}. AI-generated audio: ${bitcoinLesson.credits.audio.name}.`,
+      isBasedOn: { '@type': 'WebPage', name: bitcoinLesson.credits.content.name, url: bitcoinLesson.credits.content.href },
       associatedMedia: { '@type': 'AudioObject', name: bitcoinLesson.subtitle, contentUrl: `${SITE_URL}${bitcoinLesson.audio}`,
-        encodingFormat: 'audio/mpeg', duration: `PT${Math.floor(lessonMedia.duration / 60)}M${Math.floor(lessonMedia.duration % 60)}S`, inLanguage: 'en' },
+        encodingFormat: 'audio/mpeg', duration: `PT${Math.floor(lessonMedia.duration / 60)}M${Math.floor(lessonMedia.duration % 60)}S`, inLanguage: 'en',
+        creditText: `AI-generated audio created with ${bitcoinLesson.credits.audio.name}.` },
     }} />
     <EducationStudio media={lessonMedia} initialView={view === 'listen' ? 'listen' : 'read'} />
     <noscript><div style={{ padding: '24px', color: '#f0f2ee', background: '#101211' }}><h2>{bitcoinLesson.title}</h2><p>{bitcoinLesson.description}</p><audio controls preload="metadata" src={bitcoinLesson.audio}><track src={bitcoinLesson.captions} kind="captions" srcLang="en" label="English" /></audio></div></noscript>

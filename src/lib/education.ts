@@ -30,6 +30,10 @@ export const bitcoinLesson = {
   imageryCredit: 'https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-topography-bathymetry/',
   href: '/studio/bitcoin-podcast-101',
   language: 'English',
+  credits: {
+    content: { name: 'Btrust Pathway', href: 'https://pathways.btrust.tech/', logo: '/education/credits/btrust.png' },
+    audio: { name: 'Gemini', href: 'https://gemini.google/about/' },
+  },
 } as const
 
 export interface ReadingCue extends TranscriptSegment {

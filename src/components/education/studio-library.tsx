@@ -7,6 +7,7 @@ import * as Tabs from '@radix-ui/react-tabs'
 import { ArrowUpRight, AudioLines, BookOpen, Headphones, Library, Play, Video } from 'lucide-react'
 import { bitcoinLesson, formatAudioTime } from '@/lib/education'
 import { StudioHeader } from './studio-shell'
+import { StudioCredits } from './studio-credits'
 
 const formats = [
   { id: 'audio', name: 'Audiobooks', icon: Headphones, count: 1 },
@@ -37,6 +38,7 @@ export function StudioLibrary({ duration, chapters }: { duration: number; chapte
           </Link> : <div className="studio-catalog-empty"><item.icon size={35} strokeWidth={1} /><h3>{available ? 'No matching titles.' : `No ${item.name.toLowerCase()} in this collection.`}</h3>{available ? <button type="button" onClick={() => setQuery('')}>Clear search</button> : <button type="button" onClick={() => setFormat('audio')}><Headphones size={16} />Explore audiobooks</button>}</div>}
         </Tabs.Content>)}
       </Tabs.Root>
+      <StudioCredits />
       <div className="studio-catalog-footer"><span>ROOTED IN KIBERA. OPEN TO EVERYONE.</span><a href={bitcoinLesson.imageryCredit} target="_blank" rel="noopener noreferrer">Earth map: NASA Earth Observatory</a><Link href="/community">Learn with the community<ArrowUpRight size={15} /></Link></div>
     </div>
   </div>

@@ -1,9 +1,16 @@
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { test } from 'node:test'
-import { chapterAt, chapterScene, createReadingCues, readingPosition, formatAudioTime, segmentAt, type EducationMedia } from '../../src/lib/education'
+import { bitcoinLesson, chapterAt, chapterScene, createReadingCues, readingPosition, formatAudioTime, segmentAt, type EducationMedia } from '../../src/lib/education'
 
 const media: EducationMedia = JSON.parse(readFileSync(new URL('../../public/education/bitcoin-101-transcript.json', import.meta.url), 'utf8'))
+
+test('lesson credits identify the content source separately from AI audio generation', () => {
+  assert.equal(bitcoinLesson.credits.content.name, 'Btrust Pathway')
+  assert.equal(bitcoinLesson.credits.content.href, 'https://pathways.btrust.tech/')
+  assert.equal(bitcoinLesson.credits.audio.name, 'Gemini')
+  assert.equal(new URL(bitcoinLesson.credits.audio.href).hostname, 'gemini.google')
+})
 
 test('prepared media has ordered real captions, chapter boundaries, and waveform peaks', () => {
   assert.ok(media.duration > 1400 && media.duration < 1410)

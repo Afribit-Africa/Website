@@ -31,7 +31,7 @@ compressed desktop sidebar.
 | Production build | Passed, 93 routes generated |
 | TypeScript | Passed |
 | Repository lint | No errors; two pre-existing unused-variable warnings |
-| Media unit tests | 5 passed |
+| Media unit tests | 6 passed, including content/AI-audio attribution |
 | Browser suite | Passed, no runtime or hydration errors |
 | Responsive screenshots | 320, 390, 768, 1440 and 1920 pixel widths |
 | Rendered canvas | Nonblank desktop/mobile pixels; rotation, pause, mouse/touch drag and keyboard verified |
@@ -45,6 +45,13 @@ compressed desktop sidebar.
 
 Lint warnings are in `scripts/check-osm-verifications.ts` and
 `src/components/ui/card-spotlight.tsx`, outside this task.
+
+Credit update (2026-10-02): the focused `credits.browser.mjs` suite passes on the
+library and lesson at 320, 390, 768 and 1440 pixels, verifying the Btrust logo,
+distinct content/AI-audio labels, official links, nonoverlapping layout, JSON-LD
+credits and audio playback. Screenshots/results live under
+`%TEMP%/afribit-credit-qa/<hostname>/`. Btrust has its official mark; Gemini is a
+linked name credit because its product-icon approval has not been provided.
 
 ## Review Limits
 

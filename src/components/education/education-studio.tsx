@@ -16,6 +16,7 @@ import { bitcoinLesson, chapterAt, createReadingCues, formatAudioTime, learningC
 import { useStudioAudio } from './use-studio-audio'
 import { SpaceBackdrop } from './space-backdrop'
 import { StudioHeader } from './studio-shell'
+import { StudioCredits } from './studio-credits'
 import { SyncedReading } from './synced-reading'
 
 const BOOKMARK_KEY = 'afribit:bitcoin-101:bookmarks'
@@ -291,6 +292,7 @@ export function EducationStudio({ media, initialView = 'read' }: { media: Educat
             </div>
             <div className="studio-player-message" role="status">{player.error || notice}</div>
           </section>
+          <StudioCredits />
           <div className="studio-bottom-line"><span>MADE FOR CURIOUS MINDS.</span><Link href="/community">Rooted in Kibera. Open to everyone.<ChevronRight size={13} /></Link></div>
         </div>
       </Tabs.Root>

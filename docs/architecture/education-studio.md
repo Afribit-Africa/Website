@@ -38,6 +38,23 @@ without taking over the reader's scrolling gestures.
 Saved contains bookmarks and personal notes. Progress and bookmarks remain in
 localStorage using the original keys; storage failure does not block playback.
 
+## Episode Credits
+
+`bitcoinLesson.credits` is the attribution source for both library and lesson.
+The project owner identifies Btrust Pathway as the supplied learning-content
+source and Gemini as the AI audio-generation tool. `StudioCredits` shows these
+roles separately below the tile/player; the globe/reader remain unobstructed.
+LearningResource and AudioObject JSON-LD also include the credit text, with the
+pathway linked via `isBasedOn`. No exact Gemini model/version is claimed.
+
+The Btrust mark comes from its official website and is rasterized without
+redrawing or recoloring. Source/hashes and attribution basis are recorded in
+`docs/education/credits-provenance.json`; `prepare-credit-assets.mjs` reproduces it.
+Gemini uses a linked name and neutral audio icon, not a product-logo badge:
+Google's current product-icon rules request approval, which has not been supplied.
+These are educational credits, not sponsor/partner claims. Existing NASA map
+credit and automatic-transcription disclosure remain separate.
+
 ## Timings
 
 The original 211 ASR utterances and VTT timings are unchanged. `createReadingCues`
@@ -102,7 +119,7 @@ npm run lint
 npm run build
 ```
 
-The five unit tests check media integrity, phrase token/timing preservation,
+The six unit tests check attribution, media integrity, phrase token/timing preservation,
 seeking, chapter selection and silence. Browser screenshots/results are under
 `docs/education/qa-globe/`; older QA folders document replaced prototypes, not the
 current experience. Tests wait for hydration before testing pre-metadata seeking.
@@ -111,3 +128,8 @@ See `docs/education/qa-review.md` for current evidence and device-review limitat
 Avoid rebuilding while the same workspace's dev server is serving a browser test;
 the initial simultaneous build/dev run hit a transient generated-cache error.
 Studio data and rendering have no database dependency.
+
+Credit-specific layout, logo loading, links, structured data and playback checks:
+`node tests/education/credits.browser.mjs <path-to-playwright-module> <base-url>`.
+Evidence is written to `%TEMP%/afribit-credit-qa/<hostname>/`, separate from the
+original globe QA so those screenshots/results are not silently overwritten.

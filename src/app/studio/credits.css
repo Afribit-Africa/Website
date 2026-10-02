@@ -1,0 +1,15 @@
+.studio-credits { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 40px; border-top: 1px solid #2b2e2c; padding: 18px 0; }
+.studio-catalog .studio-credits { margin-top: 24px; }
+.studio-credit { display: flex; align-items: center; gap: 14px; min-width: 0; padding: 4px 0; }
+.studio-credit-mark { display: flex; align-items: center; justify-content: center; width: 80px; height: 40px; flex: 0 0 80px; }
+.studio-credit-mark img { width: 72px; height: 30px; object-fit: contain; }
+.studio-credit-audio { width: 40px; flex-basis: 40px; color: #a6d9bd; }
+.studio-credit-copy { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.studio-credit-copy > span { color: #aeb9b1; font-size: 10px; line-height: 1.5; }
+.studio-credit-copy > strong { display: flex; align-items: center; gap: 6px; color: #e5ebe6; font-size: 12px; line-height: 1.5; font-weight: 500; }
+.studio-credit-copy svg { flex-shrink: 0; color: #aeb9b1; }
+.studio-credit:hover .studio-credit-copy > strong { color: #ffbb6a; }
+.studio-credit:focus-visible { outline: 2px solid #ffab48; outline-offset: 4px; }
+@media (max-width: 767px) {
+  .studio-credits { gap: 12px 28px; padding: 16px 0; }
+}
