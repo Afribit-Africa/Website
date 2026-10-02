@@ -65,6 +65,10 @@ const concept = await sharp(path.join(docsDirectory, 'bitcoin-studio-concept.web
 if (scenic.format !== 'webp' || scenic.width < 1600 || scenic.height < 800) throw new Error('Scenic asset does not meet the resolution contract');
 const globe = await sharp(path.join(mediaDirectory, 'earth-surface.webp')).metadata();
 const cover = await sharp(path.join(mediaDirectory, 'globe-cover.webp')).metadata();
+const studioCover = await sharp(path.join(mediaDirectory, 'studio-cover.webp')).metadata();
+if (studioCover.format !== 'webp' || studioCover.width !== 1600 || studioCover.height !== 900) throw new Error('Studio cover does not match the background contract');
+const backgroundProvenance = JSON.parse(await readFile(path.join(docsDirectory, 'studio-background-provenance.json'), 'utf8'));
+if (createHash('sha256').update(await readFile(path.join(root, backgroundProvenance.artifact.path))).digest('hex') !== backgroundProvenance.artifact.sha256) throw new Error('Studio cover no longer matches provenance');
 if (globe.width !== 2048 || globe.height !== 1024 || cover.width !== 1600 || cover.height !== 900) throw new Error('Globe texture/cover dimensions do not match contract');
 const globeProvenance = JSON.parse(await readFile(path.join(docsDirectory, 'globe-provenance.json'), 'utf8'));
 for (const artifact of globeProvenance.artifacts) {
@@ -108,7 +112,8 @@ const report = {
   wordingAndTimingPreservedDuringPunctuation: true, durationAndWaveformPreservedDuringPunctuation: true,
   vttMatchesJson: true, scenic: { width: scenic.width, height: scenic.height, bytes: (await stat(path.join(mediaDirectory, 'bitcoin-network.webp'))).size },
   concept: { width: concept.width, height: concept.height }, totalKnownProviderCostUsd: totalCostUsd,
-  globe: { textureWidth: globe.width, textureHeight: globe.height, coverWidth: cover.width, coverHeight: cover.height, provenanceMatches: true },
+  background: { coverWidth: studioCover.width, coverHeight: studioCover.height, provenanceMatches: true, scenes: ['beams', 'paths', 'flow'] },
+  historicalGlobe: { textureWidth: globe.width, textureHeight: globe.height, coverWidth: cover.width, coverHeight: cover.height, provenanceMatches: true, currentlyDisplayed: false },
 };
 await writeFile(path.join(docsDirectory, 'validation.json'), `${JSON.stringify(report, null, 2)}\n`);
 console.log(JSON.stringify(report));

@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-10-01T21:30:47.469Z",
+  "validatedAt": "2026-10-02T05:07:05.793Z",
   "status": "passed",
   "duration": 1405.457415,
   "encodedDuration": 1405.492245,
@@ -22,11 +22,22 @@
     "height": 1340
   },
   "totalKnownProviderCostUsd": 0.3666124051888431,
-  "globe": {
+  "background": {
+    "coverWidth": 1600,
+    "coverHeight": 900,
+    "provenanceMatches": true,
+    "scenes": [
+      "beams",
+      "paths",
+      "flow"
+    ]
+  },
+  "historicalGlobe": {
     "textureWidth": 2048,
     "textureHeight": 1024,
     "coverWidth": 1600,
     "coverHeight": 900,
-    "provenanceMatches": true
+    "provenanceMatches": true,
+    "currentlyDisplayed": false
   }
 }

@@ -1,4 +1,5 @@
 import { EducationStudio } from '@/components/education/education-studio'
+import { redirect } from 'next/navigation'
 import { StructuredData } from '@/components/seo/structured-data'
 import { bitcoinLesson, type EducationMedia } from '@/lib/education'
 import { generateMetadata, getBreadcrumbSchema, SITE_URL } from '@/lib/metadata'
@@ -13,6 +14,7 @@ export const metadata = generateMetadata({
 
 export default async function LessonPage({ searchParams }: { searchParams: Promise<{ view?: string | string[] }> }) {
   const { view } = await searchParams
+  if (view === 'read') redirect(bitcoinLesson.credits.content.href)
   const lessonMedia: EducationMedia = media
   return <>
     <StructuredData data={getBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Afribit Studio', url: '/studio' }, { name: bitcoinLesson.title, url: bitcoinLesson.href }])} />
@@ -28,7 +30,7 @@ export default async function LessonPage({ searchParams }: { searchParams: Promi
         encodingFormat: 'audio/mpeg', duration: `PT${Math.floor(lessonMedia.duration / 60)}M${Math.floor(lessonMedia.duration % 60)}S`, inLanguage: 'en',
         creditText: `AI-generated audio created with ${bitcoinLesson.credits.audio.name}.` },
     }} />
-    <EducationStudio media={lessonMedia} initialView={view === 'listen' ? 'listen' : 'read'} />
+    <EducationStudio media={lessonMedia} />
     <noscript><div style={{ padding: '24px', color: '#f0f2ee', background: '#101211' }}><h2>{bitcoinLesson.title}</h2><p>{bitcoinLesson.description}</p><audio controls preload="metadata" src={bitcoinLesson.audio}><track src={bitcoinLesson.captions} kind="captions" srcLang="en" label="English" /></audio></div></noscript>
   </>
 }

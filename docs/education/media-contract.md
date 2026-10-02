@@ -14,9 +14,13 @@ Validated browser assets:
 - `/education/bitcoin-101.mp3`: mono speech, MP3, 64 kbps, 44.1 kHz; 11,244,247 bytes.
 - `/education/bitcoin-101.vtt`: 211 English captions derived from real ASR timestamps.
 - `/education/bitcoin-101-transcript.json`: static player/transcript metadata.
-- `/education/globe-cover.webp`: text-free 1600x900 globe cover and WebGL fallback.
-- `/education/earth-surface.webp`: text-free 2048x1024 NASA Blue Marble surface map
-  used by the Three.js Earth. Source, byte sizes and hashes: `globe-provenance.json`.
+- `/education/studio-cover.webp`: text-free 1600x900 cover and canvas fallback,
+  generated from the Studio's deterministic beams renderer. Source, license and
+  hash: `studio-background-provenance.json`. Runtime scenery cycles through beams,
+  flowing paths and contour streams; it contains no video, words or external calls.
+- `/education/globe-cover.webp` and `/education/earth-surface.webp`: retained
+  historical NASA-derived assets, no longer displayed or loaded by Studio.
+  Historical provenance remains in `globe-provenance.json`.
   The sourced Earth video is rejected and not included in the application release.
 - `/education/bitcoin-network.webp`: retained historical generated concept asset,
   not displayed in the redesigned studio.

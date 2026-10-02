@@ -1,0 +1,60 @@
+{
+  "base": "http://localhost:3003",
+  "status": "passed",
+  "failure": null,
+  "results": [
+    {
+      "name": "library formats, honest empty collections, search, external Read and unified listening entry"
+    },
+    {
+      "name": "responsive unified Listen, local centering, real transcript and lesson metadata"
+    },
+    {
+      "name": "seeking follows phrases without scrolling the document, browse pause and recenter"
+    },
+    {
+      "name": "three nonblank scenes, moving frames, independent motion pause, external reading and audio controls",
+      "desktopPixels": {
+        "width": 1188,
+        "height": 510,
+        "colorfulPixels": 251647
+      }
+    },
+    {
+      "name": "transcript search, timestamp seeking, persistent notes and bookmarks"
+    },
+    {
+      "name": "45-second scene cycle, smooth crossfade, motion pause, hidden-document and offscreen suspension"
+    },
+    {
+      "name": "mobile canvas pixels and touch scenery control",
+      "mobilePixels": {
+        "width": 390,
+        "height": 409,
+        "colorfulPixels": 105034
+      }
+    },
+    {
+      "name": "mobile chapter drawer, touch playback, browsing and follow"
+    },
+    {
+      "name": "reduced motion freezes scenery and keeps reading and playback functional"
+    },
+    {
+      "name": "unavailable canvas retains text-free poster, reading and audio"
+    },
+    {
+      "name": "failed audio reports error and recovers"
+    },
+    {
+      "name": "pre-metadata seeking overrides old saved progress"
+    },
+    {
+      "name": "coherent Studio button, nav fit, mobile entry and return to website"
+    },
+    {
+      "name": "legacy redirect, native no-JS audio, sitemap, ranged audio and no runtime errors"
+    }
+  ],
+  "errors": []
+}

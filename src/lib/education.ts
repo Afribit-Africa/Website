@@ -25,9 +25,7 @@ export const bitcoinLesson = {
     'Begin with the big questions. What is money, who do we trust, and how can a network let us exchange value without a bank in the middle?',
   audio: '/education/bitcoin-101.mp3',
   captions: '/education/bitcoin-101.vtt',
-  artwork: '/education/globe-cover.webp',
-  globeTexture: '/education/earth-surface.webp',
-  imageryCredit: 'https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-topography-bathymetry/',
+  artwork: '/education/studio-cover.webp',
   href: '/studio/bitcoin-podcast-101',
   language: 'English',
   credits: {

@@ -2,8 +2,22 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { test } from 'node:test'
 import { bitcoinLesson, chapterAt, chapterScene, createReadingCues, readingPosition, formatAudioTime, segmentAt, type EducationMedia } from '../../src/lib/education'
+import { backgroundFrame, SCENE_SECONDS } from '../../src/lib/studio-background'
 
 const media: EducationMedia = JSON.parse(readFileSync(new URL('../../public/education/bitcoin-101-transcript.json', import.meta.url), 'utf8'))
+
+test('dark scenery crossfades smoothly, changes every 45 seconds and cycles', () => {
+  assert.equal(SCENE_SECONDS, 45)
+  assert.deepEqual(backgroundFrame(0), { scene: 'beams', next: 'paths', blend: 0 })
+  assert.equal(backgroundFrame(40).blend, 0)
+  assert.equal(backgroundFrame(42.5).blend, .5)
+  assert.ok(backgroundFrame(44.999).blend > .999)
+  assert.equal(backgroundFrame(45).scene, 'paths')
+  assert.equal(backgroundFrame(90).scene, 'flow')
+  assert.equal(backgroundFrame(135).scene, 'beams')
+  assert.equal(backgroundFrame(0, 2).scene, 'flow')
+  assert.deepEqual(backgroundFrame(-5), backgroundFrame(0))
+})
 
 test('lesson credits identify the content source separately from AI audio generation', () => {
   assert.equal(bitcoinLesson.credits.content.name, 'Btrust Pathway')

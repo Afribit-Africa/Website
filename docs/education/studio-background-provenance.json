@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-10-02T05:00:45.444Z",
+  "description": "Text-free cover rendered from the same deterministic canvas beams used in Studio. No external video or AI-generated media.",
+  "generator": "tools/education/prepare-studio-cover.mjs",
+  "license": "MIT; adapted from Kokonut UI. See kokonut-LICENSE.txt.",
+  "sources": [
+    "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/beams-background.tsx",
+    "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/background-paths.tsx",
+    "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/flow-field.tsx"
+  ],
+  "artifact": {
+    "path": "public/education/studio-cover.webp",
+    "width": 1600,
+    "height": 900,
+    "bytes": 14136,
+    "sha256": "0025bef04122fe0099988385e2fb02f741b696c18aa701833fe2635994bbbfd5"
+  }
+}
