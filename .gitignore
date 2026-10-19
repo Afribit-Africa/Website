@@ -27,6 +27,8 @@
 # Agent working context — living file, updated before each implementation session,
 # tracks in-progress state so work survives context/limit resets. Not committed.
 AGENTS.md
+.internal/
+/internal/
 
 # debug
 npm-debug.log*
